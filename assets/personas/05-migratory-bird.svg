@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g5" cx="50%" cy="40%"><stop offset="0%" stop-color="#c8d8e8"/><stop offset="100%" stop-color="#1a2535"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g5)"/>
+  <path d="M60 100 Q80 75 100 70 Q120 75 140 100" stroke="#8898b8" stroke-width="2" fill="none"/>
+  <path d="M80 85 L75 75 L85 82" fill="#a0b8d0" opacity="0.7"/>
+  <path d="M120 85 L125 75 L115 82" fill="#a0b8d0" opacity="0.7"/>
+  <circle cx="100" cy="68" r="3" fill="#d0dff0"/>
+  <circle cx="140" cy="100" r="2" fill="#a0b8d0" opacity="0.4"/>
+  <circle cx="60" cy="100" r="2" fill="#a0b8d0" opacity="0.4"/>
+  <text x="100" y="195" text-anchor="middle" fill="#8898b8" font-size="10" font-family="sans-serif">候鸟型</text>
+</svg>
