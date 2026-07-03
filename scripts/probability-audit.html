@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心岛计划 Beta 0.9 — 概率测评</title>
+<style>
+body { font-family: system-ui, monospace; max-width: 900px; margin: 20px auto; padding: 0 16px; background: #0a0a1a; color: #ccc; }
+h1 { color: #d4a853; }
+h2 { color: #5abcba; margin-top: 24px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+#status { padding: 12px; background: #111; border-radius: 8px; margin: 8px 0; font-size: 13px; }
+#output { white-space: pre-wrap; font-size: 12px; background: #0d0d20; padding: 12px; border-radius: 8px; max-height: 600px; overflow-y: auto; }
+.btn { padding: 10px 20px; background: #d4a853; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 4px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 12px; }
+th, td { border: 1px solid #333; padding: 4px 8px; text-align: left; }
+th { background: #1a1a2e; color: #d4a853; }
+.warn { color: #f08050; }
+.good { color: #5abcba; }
+.crit { color: #ff4040; }
+</style>
+</head>
+<body>
+<h1>🧪 心岛计划 Beta 0.9 — 概率测评</h1>
+<p>此页面在浏览器中运行完整测评，无需 Node.js。</p>
+<p><strong>注意</strong>：100,000 次模拟在浏览器中可能需要 10-60 秒，请耐心等待。</p>
+
+<button class="btn" id="startBtn" onclick="startAudit()">▶ 开始测评</button>
+<button class="btn" id="dlMdBtn" disabled onclick="downloadMD()">📥 下载 Markdown 报告</button>
+<button class="btn" id="dlJsonBtn" disabled onclick="downloadJSON()">📥 下载 JSON 数据</button>
+
+<div id="status">等待开始...</div>
+<div id="output"></div>
+
+<script type="module">
+// Import from the shared scoring module
+import {
+  scenes, displayScenes, DIM_META, DIM_ORDER, personalities,
+  getScore, computeDimensionScores, matchAllTypes, shuffleArray
+} from '../core/scoring.mjs';
+
+const RANDOM_SIM = 100000;
+const FIXED_DISP_SIM = 10000;
+
+function prct(n, total) { return (n / total * 100).toFixed(1) + '%'; }
+function median(arr) { const s = [...arr].sort((a,b)=>a-b); const m = Math.floor(s.length/2); return s.length%2 ? s[m] : Math.round((s[m-1]+s[m])/2); }
+function mean(arr) { return Math.round(arr.reduce((a,b)=>a+b,0) / arr.length); }
+function labelProb(pct) {
+  const p = parseFloat(pct);
+  if (p > 15) return '🔴 超高频'; if (p >= 8) return '🟠 高频';
+  if (p >= 3) return '🟢 正常'; if (p >= 1) return '🟡 低频';
+  return '⚫ 极低频';
+}
+
+// Make functions available globally for the download buttons
+window._auditData = null;
+
+window.startAudit = async function() {
+  const status = document.getElementById('status');
+  const output = document.getElementById('output');
+  const startBtn = document.getElementById('startBtn');
+  startBtn.disabled = true;
+
+  const log = (msg) => { output.textContent += msg + '\n'; output.scrollTop = output.scrollHeight; };
+  const stat = (msg) => { status.textContent = msg; };
+
+  output.textContent = '';
+  log('═══════════════════════════════════');
+  log('🧪 心岛计划 Beta 0.9 概率测评');
+  log(`   A. 随机真实模拟 × ${RANDOM_SIM.toLocaleString()}`);
+  log('═══════════════════════════════════');
+
+  // ===== A. Random Simulation =====
+  function simulateRandomJourney() {
+    const history = [];
+    for (const scene of displayScenes) {
+      const shuffled = shuffleArray(scene.options);
+      const chosen = shuffled[Math.floor(Math.random() * 4)];
+      history.push({ sceneId: scene.id, dimension: scene.dimension, optionId: chosen.id, score: chosen.score });
+    }
+    const avgs = computeDimensionScores(history);
+    const results = matchAllTypes(avgs);
+    return { primary: results[0], secondary: results[1], gap: results[0].matchScore - results[1].matchScore, results, avgs };
+  }
+
+  const rpc = {}, rsc = {}, allGaps = [];
+  personalities.forEach(p => { rpc[p.id] = 0; rsc[p.id] = 0; });
+
+  const t0 = performance.now();
+  for (let i = 0; i < RANDOM_SIM; i++) {
+    const { primary, secondary, gap } = simulateRandomJourney();
+    rpc[primary.personality.id]++; rsc[secondary.personality.id]++; allGaps.push(gap);
+    if ((i+1) % 20000 === 0) { stat(`A. 随机模拟: ${(i+1).toLocaleString()} / ${RANDOM_SIM.toLocaleString()} (${((performance.now()-t0)/1000).toFixed(0)}s)`); await sleep(0); }
+  }
+  const t1 = performance.now();
+  stat(`A. 完成 (${((t1-t0)/1000).toFixed(1)}s)`);
+  log(`   ✅ 完成 (${((t1-t0)/1000).toFixed(1)}s)`);
+
+  const primaryDist = Object.entries(rpc).map(([id,count]) => ({
+    id, name: personalities.find(p=>p.id===id).name, count, pct: count/RANDOM_SIM*100
+  })).sort((a,b)=>b.count-a.count);
+
+  const secondaryDist = Object.entries(rsc).map(([id,count]) => ({
+    id, name: personalities.find(p=>p.id===id).name, count, pct: count/RANDOM_SIM*100
+  })).sort((a,b)=>b.count-a.count);
+
+  // ===== B. Fixed Displayed Position =====
+  stat('B. 固定显示位置模拟...');
+  log('\n   B. 固定显示位置模拟 × 10,000');
+
+  function simulateFixedDisplay(displayPos) {
+    const history = [];
+    for (const scene of displayScenes) {
+      const shuffled = shuffleArray(scene.options);
+      const chosen = shuffled[displayPos];
+      history.push({ sceneId: scene.id, dimension: scene.dimension, optionId: chosen.id, score: chosen.score });
+    }
+    return matchAllTypes(computeDimensionScores(history));
+  }
+
+  const fixedDispResults = {};
+  for (const pos of [0,1,2,3]) {
+    const counts = {}; personalities.forEach(p => { counts[p.id] = 0; });
+    for (let i = 0; i < FIXED_DISP_SIM; i++) {
+      const results = simulateFixedDisplay(pos);
+      counts[results[0].personality.id]++;
+    }
+    const top = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+    const top1Pct = parseFloat(prct(top[0][1], FIXED_DISP_SIM));
+    fixedDispResults[pos] = {
+      top1Type: personalities.find(p=>p.id===top[0][0]).name,
+      top1Pct: prct(top[0][1], FIXED_DISP_SIM),
+      top2Type: top[1] ? personalities.find(p=>p.id===top[1][0]).name : '-',
+      top2Pct: top[1] ? prct(top[1][1], FIXED_DISP_SIM) : '-',
+      isBiased: top1Pct > 30
+    };
+    log(`   位置${pos+1}: Top1=${fixedDispResults[pos].top1Type} (${fixedDispResults[pos].top1Pct}) 偏向=${fixedDispResults[pos].isBiased?'⚠️是':'✅否'}`);
+  }
+  stat('B. 完成');
+
+  // ===== C. Fixed Raw Option =====
+  stat('C. 固定原始选项...');
+  log('\n   C. 固定原始选项极端路径');
+
+  const fixedRawResults = {};
+  const labels = ['全A','全B','全C','全D'];
+  for (const optIdx of [0,1,2,3]) {
+    const history = [];
+    for (const scene of displayScenes) {
+      const chosen = scene.options[optIdx];
+      history.push({ sceneId: scene.id, dimension: scene.dimension, optionId: chosen.id, score: chosen.score });
+    }
+    const avgs = computeDimensionScores(history);
+    const results = matchAllTypes(avgs);
+    fixedRawResults[labels[optIdx]] = {
+      primary: results[0].personality.name, primaryScore: results[0].matchScore,
+      secondary: results[1].personality.name, secondaryScore: results[1].matchScore,
+      gap: results[0].matchScore - results[1].matchScore,
+      top5: results.slice(0,5).map(r=>`${r.personality.name}(${r.matchScore})`), avgs
+    };
+    log(`   ${labels[optIdx]}: ${fixedRawResults[labels[optIdx]].primary}(${fixedRawResults[labels[optIdx]].primaryScore}) gap=${fixedRawResults[labels[optIdx]].gap}`);
+  }
+  stat('C. 完成');
+
+  // ===== D. Self-Match =====
+  stat('D. 类型自匹配...');
+  log('\n   D. 类型自匹配测试');
+  const selfMatchResults = [];
+  for (const p of personalities) {
+    const results = matchAllTypes(p.targetVector);
+    const rank = results.findIndex(r=>r.personality.id===p.id)+1;
+    const selfScore = results.find(r=>r.personality.id===p.id).matchScore;
+    const first = results[0];
+    const risk = rank===1?'✅ 自洽':rank<=3?'⚠️ 微弱偏差':'🔴 区分度不足';
+    selfMatchResults.push({ name:p.name, selfFirst:rank===1, actualFirst:first.personality.name, selfRank:rank, diff:first.matchScore-selfScore, risk });
+    if (rank!==1) log(`   ⚠️ ${p.name}: 自排第${rank}, 第1=${first.personality.name}(${first.matchScore}), 分差=${first.matchScore-selfScore}`);
+  }
+  const smPass = selfMatchResults.filter(r=>r.selfFirst).length;
+  log(`   ✅ 自匹配通过: ${smPass}/20`);
+  stat('D. 完成');
+
+  // ===== E. Dimension Coverage =====
+  log('\n   E. 题目贡献度');
+  const dimCov = {};
+  for (const dim of DIM_ORDER) dimCov[dim] = { count:0, locations:new Set(), chapters:new Set() };
+  for (const scene of scenes) {
+    const d = dimCov[scene.dimension];
+    d.count++; d.locations.add(scene.location); d.chapters.add(scene.chapter);
+  }
+  DIM_ORDER.forEach(dim => log(`   ${DIM_META[dim].icon} ${dim}: ${dimCov[dim].count}题`));
+  stat('E. 完成');
+
+  // ===== Gap Analysis =====
+  stat('F&G. Gap分析 & 稀有度预警...');
+  const gapM = mean(allGaps), gapMed = median(allGaps);
+  const gapMax = Math.max(...allGaps), gapMin = Math.min(...allGaps);
+  const gapLe3 = allGaps.filter(g=>g<=3).length, gapLe5 = allGaps.filter(g=>g<=5).length;
+  const gapLe8 = allGaps.filter(g=>g<=8).length, gapLe12 = allGaps.filter(g=>g<=12).length;
+
+  const gapStats = { mean:gapM, median:gapMed, max:gapMax, min:gapMin,
+    le3:gapLe3, le3Pct:prct(gapLe3,RANDOM_SIM), le5:gapLe5, le5Pct:prct(gapLe5,RANDOM_SIM),
+    le8:gapLe8, le8Pct:prct(gapLe8,RANDOM_SIM), le12:gapLe12, le12Pct:prct(gapLe12,RANDOM_SIM)
+  };
+
+  log(`\n   G. 置信度分析`);
+  log(`   gap均值=${gapM} 中位数=${gapMed}`);
+  log(`   ≤3: ${gapStats.le3Pct}  ≤5: ${gapStats.le5Pct}  ≤8: ${gapStats.le8Pct}  ≤12: ${gapStats.le12Pct}`);
+
+  // Warnings
+  const warnings = [];
+  for (const d of primaryDist) {
+    const lab = labelProb(d.pct.toFixed(1));
+    if (lab.includes('超高频')) warnings.push({type:d.name,issue:'超高频主岛',pct:d.pct.toFixed(1)+'%',severity:'high'});
+    if (lab.includes('极低频')) warnings.push({type:d.name,issue:'极低频主岛',pct:d.pct.toFixed(1)+'%',severity:'critical'});
+    if (lab.includes('低频')) warnings.push({type:d.name,issue:'低频主岛',pct:d.pct.toFixed(1)+'%',severity:'medium'});
+  }
+  primaryDist.filter(d=>d.count===0).forEach(d=>warnings.push({type:d.name,issue:'从未出现',pct:'0%',severity:'critical'}));
+
+  const neverAppeared = primaryDist.filter(d=>d.count===0);
+  const top3 = primaryDist.slice(0,3), bottom3 = primaryDist.slice(-3);
+  const gapLe5Num = parseFloat(gapStats.le5Pct);
+
+  let gapJudgment = gapLe5Num>60?'⚠️ gap≤5超60%,区分度偏弱':gapLe5Num>40?'🟡 适中偏高':'✅ 正常';
+  let suitability = neverAppeared.length>0?'❌ 不建议':gapLe5Num>60?'⚠️ 谨慎':warnings.filter(w=>w.severity==='high').length>3?'⚠️ 谨慎':'✅ 可以开放';
+
+  // Store data for download
+  window._auditData = {
+    primaryDist, secondaryDist, gapStats, fixedDispResults, fixedRawResults,
+    selfMatchResults, smPass, warnings, neverAppeared, top3, bottom3,
+    gapJudgment, suitability, dimCov, DIM_ORDER, DIM_META, labels, gapLe5Num
+  };
+
+  // Summary
+  log('\n═══════════════════════════════════');
+  log('📊 测评完成');
+  log(`   主岛最高频: ${top3[0].name} (${top3[0].pct.toFixed(1)}%)`);
+  log(`   主岛最低频: ${bottom3[0].name} (${bottom3[0].pct.toFixed(1)}%)`);
+  log(`   gap ≤ 5: ${gapStats.le5Pct}`);
+  log(`   从未出现: ${neverAppeared.length===0?'无':neverAppeared.map(d=>d.name).join(', ')}`);
+  log(`   自匹配: ${smPass}/20`);
+  log(`   建议开放: ${suitability}`);
+  log('═══════════════════════════════════');
+
+  stat('✅ 全部完成！可下载报告。');
+  document.getElementById('dlMdBtn').disabled = false;
+  document.getElementById('dlJsonBtn').disabled = false;
+  startBtn.disabled = false;
+};
+
+window.downloadMD = function() {
+  const d = window._auditData;
+  if (!d) return alert('请先运行测评');
+
+  const covHTML = d.DIM_ORDER.map(dim => {
+    const m = d.DIM_META[dim];
+    return `| ${m.icon} ${m.label} | ${dim} | ${m.location} | ${d.dimCov[dim].count} | ${[...d.dimCov[dim].chapters].join(', ')} |`;
+  }).join('\n');
+
+  const md = `# 心岛计划 Beta 0.9 人格类型到达概率测评报告
+
+> 生成时间：${new Date().toISOString().replace('T',' ').slice(0,19)}
+> 运行环境：浏览器 (概率测评页面)
+> 共享模块：core/scoring.mjs（与 app.js 评分逻辑一致）
+
+---
+
+## 1. 测试结论摘要
+
+| 指标 | 数值 | 判断 |
+|------|------|------|
+| 随机模拟次数 | ${RANDOM_SIM.toLocaleString()} | — |
+| 主岛最高频 | ${d.top3[0].name} (${d.top3[0].pct.toFixed(1)}%) | ${labelProb(d.top3[0].pct.toFixed(1))} |
+| 主岛最低频 | ${d.bottom3[0].name} (${d.bottom3[0].pct.toFixed(1)}%) | ${labelProb(d.bottom3[0].pct.toFixed(1))} |
+| gap 均值 | ${d.gapStats.mean} | — |
+| gap ≤ 5 比例 | ${d.gapStats.le5Pct} | ${d.gapLe5Num>60?'⚠️ 偏高':'✅ 正常'} |
+| 自匹配通过率 | ${d.smPass}/20 | ${d.smPass>=18?'✅ 优秀':'⚠️ 需改进'} |
+| 从未出现类型 | ${d.neverAppeared.length} | ${d.neverAppeared.length===0?'✅ 无':'🔴 有'} |
+| 是否建议开放测试 | — | ${d.suitability} |
+
+---
+
+## 2. 测试环境
+
+- **项目版本**：心岛计划 Beta 0.9
+- **题库**：36 题 × 12 维度 × 4 选项（A=100 / B=67 / C=33 / D=0）
+- **人格数量**：20 种恋爱人格
+- **匹配算法**：加权平均绝对差值（核心维权重 1.80）+ 核心阈值奖惩（+1.5 / -4.5）
+- **选项随机**：每题 display 时 Fisher-Yates 打乱
+- **评分数据来源**：core/scoring.mjs
+
+---
+
+## 3. 题库结构
+
+${covHTML}
+
+---
+
+## 4. 随机真实答题模拟
+
+**参数**：${RANDOM_SIM.toLocaleString()} 次。
+
+### 4.1 主岛概率
+
+| 排名 | 类型 | 出现次数 | 出现概率 | 标签 |
+|------|------|--------:|---------:|------|
+${d.primaryDist.map((e,i)=>`| ${i+1} | ${e.name} | ${e.count.toLocaleString()} | ${e.pct.toFixed(1)}% | ${labelProb(e.pct.toFixed(1))} |`).join('\n')}
+
+### 4.2 副岛概率
+
+| 排名 | 类型 | 出现次数 | 出现概率 | 标签 |
+|------|------|--------:|---------:|------|
+${d.secondaryDist.map((e,i)=>`| ${i+1} | ${e.name} | ${e.count.toLocaleString()} | ${e.pct.toFixed(1)}% | ${labelProb(e.pct.toFixed(1))} |`).join('\n')}
+
+---
+
+## 5. 固定显示位置模拟
+
+| 固定点击位置 | Top1类型 | Top1概率 | Top2类型 | Top2概率 | 是否明显偏向 |
+|-------------|---------|--------:|---------|--------:|:----------:|
+${[0,1,2,3].map(pos=>`| 第${pos+1}个 | ${d.fixedDispResults[pos].top1Type} | ${d.fixedDispResults[pos].top1Pct} | ${d.fixedDispResults[pos].top2Type} | ${d.fixedDispResults[pos].top2Pct} | ${d.fixedDispResults[pos].isBiased?'⚠️是':'✅否'} |`).join('\n')}
+
+---
+
+## 6. 固定原始选项极端路径
+
+| 方式 | 主岛 | 匹配度 | 副岛 | 匹配度 | gap |
+|------|------|:---:|------|:---:|:--:|
+${d.labels.map(l=>`| ${l} | ${d.fixedRawResults[l].primary} | ${d.fixedRawResults[l].primaryScore} | ${d.fixedRawResults[l].secondary} | ${d.fixedRawResults[l].secondaryScore} | ${d.fixedRawResults[l].gap} |`).join('\n')}
+
+---
+
+## 7. 类型自匹配
+
+| 类型 | 自匹配第一? | 实际第一名 | 自身排名 | 分差 | 风险 |
+|------|:--------:|----------|:------:|----:|------|
+${d.selfMatchResults.map(r=>`| ${r.name} | ${r.selfFirst?'✅':'❌'} | ${r.selfFirst?'—':r.actualFirst} | ${r.selfRank} | ${r.diff} | ${r.risk} |`).join('\n')}
+
+> 通过率：${d.smPass}/20
+
+---
+
+## 8. Gap 置信度分析
+
+| 指标 | 数值 |
+|------|-----:|
+| 平均值 | ${d.gapStats.mean} |
+| 中位数 | ${d.gapStats.median} |
+| ≤ 3 | ${d.gapStats.le3Pct} |
+| ≤ 5 | ${d.gapStats.le5Pct} |
+| ≤ 8 | ${d.gapStats.le8Pct} |
+| ≤ 12 | ${d.gapStats.le12Pct} |
+
+**判断**：${d.gapJudgment}
+
+---
+
+## 9. 高频/低频预警
+
+### 🔴 超高频 (>15%)
+${d.primaryDist.filter(e=>e.pct>15).map(e=>`- **${e.name}**：${e.pct.toFixed(1)}%`).join('\n')||'（无）'}
+
+### ⚫ 极低频 (<1%)
+${d.primaryDist.filter(e=>e.pct<1).map(e=>`- **${e.name}**：${e.pct.toFixed(1)}% ${e.count===0?'⚠️ 从未出现':''}`).join('\n')||'（无）'}
+
+---
+
+## 10. 是否建议开放测试
+
+**${d.suitability}**
+
+---
+
+*报告由 scripts/probability-audit.html 在浏览器中生成*
+`;
+
+  const blob = new Blob([md], {type:'text/markdown'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'probability-audit.md'; a.click();
+};
+
+window.downloadJSON = function() {
+  const d = window._auditData;
+  if (!d) return alert('请先运行测评');
+
+  const json = {
+    generatedAt: new Date().toISOString(),
+    simulationCount: RANDOM_SIM,
+    primaryDistribution: d.primaryDist.map(e=>({...e,label:labelProb(e.pct.toFixed(1))})),
+    secondaryDistribution: d.secondaryDist.map(e=>({...e,label:labelProb(e.pct.toFixed(1))})),
+    gapStats: d.gapStats,
+    fixedDisplayedPositionResults: d.fixedDispResults,
+    fixedRawOptionResults: d.fixedRawResults,
+    selfMatchResults: d.selfMatchResults,
+    dimensionCoverage: d.DIM_ORDER.map(dim=>({dim,count:d.dimCov[dim].count})),
+    warnings: d.warnings,
+    suitabilityJudgment: d.suitability
+  };
+
+  const blob = new Blob([JSON.stringify(json,null,2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'probability-audit.json'; a.click();
+};
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Auto-start
+console.log('Audit runner loaded. Click "开始测评" to begin.');
+</script>
+</body>
+</html>

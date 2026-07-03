@@ -1,0 +1,654 @@
+{
+  "generatedAt": "2026-06-12T10:22:03.281Z",
+  "profile": "calibrationC",
+  "algorithmParams": {
+    "coreWeight": 2.5,
+    "metBonus": 3,
+    "failPenalty": 8,
+    "antiPatternPenalty": 2
+  },
+  "simulationCount": 100000,
+  "primaryDistribution": [
+    {
+      "id": "mirror",
+      "name": "镜像型",
+      "count": 10498,
+      "pct": 10.498000000000001,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "deep_sea",
+      "name": "深海型",
+      "count": 9228,
+      "pct": 9.228,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "migratory_bird",
+      "name": "候鸟型",
+      "count": 8122,
+      "pct": 8.122,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "gatekeeper",
+      "name": "守门人型",
+      "count": 7738,
+      "pct": 7.738,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "collector",
+      "name": "收藏家型",
+      "count": 7249,
+      "pct": 7.249,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "wandering_poet",
+      "name": "流浪诗人型",
+      "count": 7166,
+      "pct": 7.166,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "resonance",
+      "name": "共振型",
+      "count": 6286,
+      "pct": 6.286,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "lighthouse",
+      "name": "灯塔型",
+      "count": 5441,
+      "pct": 5.441,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "moonlight",
+      "name": "月光型",
+      "count": 4936,
+      "pct": 4.936,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "greenhouse",
+      "name": "温室型",
+      "count": 4783,
+      "pct": 4.7829999999999995,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "stargazer",
+      "name": "观星者型",
+      "count": 4537,
+      "pct": 4.537,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "script_writer",
+      "name": "剧本型",
+      "count": 3529,
+      "pct": 3.5290000000000004,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "island",
+      "name": "岛屿型",
+      "count": 3377,
+      "pct": 3.3770000000000002,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "nest_builder",
+      "name": "筑巢型",
+      "count": 3360,
+      "pct": 3.36,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "explorer",
+      "name": "探险家型",
+      "count": 2945,
+      "pct": 2.945,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "old_captain",
+      "name": "旧船长型",
+      "count": 2923,
+      "pct": 2.923,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "tide",
+      "name": "潮汐型",
+      "count": 2461,
+      "pct": 2.461,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "aurora",
+      "name": "极光型",
+      "count": 1989,
+      "pct": 1.989,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "spark",
+      "name": "星火型",
+      "count": 1728,
+      "pct": 1.728,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "black_forest",
+      "name": "黑森林型",
+      "count": 1704,
+      "pct": 1.704,
+      "label": "🟡 低频"
+    }
+  ],
+  "secondaryDistribution": [
+    {
+      "id": "deep_sea",
+      "name": "深海型",
+      "count": 8536,
+      "pct": 8.536000000000001,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "moonlight",
+      "name": "月光型",
+      "count": 7793,
+      "pct": 7.793,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "mirror",
+      "name": "镜像型",
+      "count": 7402,
+      "pct": 7.402,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "wandering_poet",
+      "name": "流浪诗人型",
+      "count": 7253,
+      "pct": 7.253,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "gatekeeper",
+      "name": "守门人型",
+      "count": 7247,
+      "pct": 7.247000000000001,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "migratory_bird",
+      "name": "候鸟型",
+      "count": 7051,
+      "pct": 7.051,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "collector",
+      "name": "收藏家型",
+      "count": 5780,
+      "pct": 5.779999999999999,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "stargazer",
+      "name": "观星者型",
+      "count": 5413,
+      "pct": 5.412999999999999,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "resonance",
+      "name": "共振型",
+      "count": 5053,
+      "pct": 5.053,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "greenhouse",
+      "name": "温室型",
+      "count": 4795,
+      "pct": 4.795,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "script_writer",
+      "name": "剧本型",
+      "count": 4636,
+      "pct": 4.636,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "lighthouse",
+      "name": "灯塔型",
+      "count": 4386,
+      "pct": 4.386,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "nest_builder",
+      "name": "筑巢型",
+      "count": 4020,
+      "pct": 4.02,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "island",
+      "name": "岛屿型",
+      "count": 3710,
+      "pct": 3.71,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "old_captain",
+      "name": "旧船长型",
+      "count": 3569,
+      "pct": 3.569,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "explorer",
+      "name": "探险家型",
+      "count": 3410,
+      "pct": 3.4099999999999997,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "aurora",
+      "name": "极光型",
+      "count": 2802,
+      "pct": 2.802,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "tide",
+      "name": "潮汐型",
+      "count": 2769,
+      "pct": 2.769,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "black_forest",
+      "name": "黑森林型",
+      "count": 2599,
+      "pct": 2.5989999999999998,
+      "label": "🟡 低频"
+    },
+    {
+      "id": "spark",
+      "name": "星火型",
+      "count": 1776,
+      "pct": 1.7760000000000002,
+      "label": "🟡 低频"
+    }
+  ],
+  "gapStats": {
+    "mean": 5,
+    "median": 4,
+    "max": 36,
+    "min": 0,
+    "le3": 49420,
+    "le3Pct": "49.4%",
+    "le5": 62788,
+    "le5Pct": "62.8%",
+    "le8": 75154,
+    "le8Pct": "75.2%",
+    "le12": 88871,
+    "le12Pct": "88.9%"
+  },
+  "fixedDisplayedPositionResults": {
+    "0": {
+      "top1Type": "镜像型",
+      "top1Pct": "10.4%",
+      "top2Type": "深海型",
+      "top2Pct": "9.5%",
+      "isBiased": false
+    },
+    "1": {
+      "top1Type": "镜像型",
+      "top1Pct": "10.3%",
+      "top2Type": "深海型",
+      "top2Pct": "9.4%",
+      "isBiased": false
+    },
+    "2": {
+      "top1Type": "镜像型",
+      "top1Pct": "10.5%",
+      "top2Type": "深海型",
+      "top2Pct": "9.4%",
+      "isBiased": false
+    },
+    "3": {
+      "top1Type": "镜像型",
+      "top1Pct": "10.1%",
+      "top2Type": "深海型",
+      "top2Pct": "8.8%",
+      "isBiased": false
+    }
+  },
+  "fixedRawOptionResults": {
+    "全A": {
+      "primary": "灯塔型",
+      "primaryScore": 76,
+      "secondary": "星火型",
+      "secondaryScore": 76,
+      "gap": 0,
+      "top5": [
+        "灯塔型(76)",
+        "星火型(76)",
+        "极光型(75)",
+        "剧本型(74)",
+        "共振型(74)"
+      ],
+      "avgs": {
+        "CL": 100,
+        "AU": 100,
+        "SE": 100,
+        "EX": 100,
+        "RP": 100,
+        "IN": 100,
+        "ID": 100,
+        "ST": 100,
+        "CA": 100,
+        "NV": 100,
+        "ME": 100,
+        "EV": 100
+      }
+    },
+    "全B": {
+      "primary": "月光型",
+      "primaryScore": 87,
+      "secondary": "剧本型",
+      "secondaryScore": 84,
+      "gap": 3,
+      "top5": [
+        "月光型(87)",
+        "剧本型(84)",
+        "深海型(77)",
+        "共振型(73)",
+        "灯塔型(69)"
+      ],
+      "avgs": {
+        "CL": 67,
+        "AU": 67,
+        "SE": 67,
+        "EX": 67,
+        "RP": 67,
+        "IN": 67,
+        "ID": 67,
+        "ST": 67,
+        "CA": 67,
+        "NV": 67,
+        "ME": 67,
+        "EV": 67
+      }
+    },
+    "全C": {
+      "primary": "收藏家型",
+      "primaryScore": 75,
+      "secondary": "岛屿型",
+      "secondaryScore": 71,
+      "gap": 4,
+      "top5": [
+        "收藏家型(75)",
+        "岛屿型(71)",
+        "守门人型(66)",
+        "观星者型(62)",
+        "候鸟型(61)"
+      ],
+      "avgs": {
+        "CL": 33,
+        "AU": 33,
+        "SE": 33,
+        "EX": 33,
+        "RP": 33,
+        "IN": 33,
+        "ID": 33,
+        "ST": 33,
+        "CA": 33,
+        "NV": 33,
+        "ME": 33,
+        "EV": 33
+      }
+    },
+    "全D": {
+      "primary": "岛屿型",
+      "primaryScore": 58,
+      "secondary": "收藏家型",
+      "secondaryScore": 46,
+      "gap": 12,
+      "top5": [
+        "岛屿型(58)",
+        "收藏家型(46)",
+        "守门人型(34)",
+        "黑森林型(34)",
+        "深海型(31)"
+      ],
+      "avgs": {
+        "CL": 0,
+        "AU": 0,
+        "SE": 0,
+        "EX": 0,
+        "RP": 0,
+        "IN": 0,
+        "ID": 0,
+        "ST": 0,
+        "CA": 0,
+        "NV": 0,
+        "ME": 0,
+        "EV": 0
+      }
+    }
+  },
+  "selfMatchResults": [
+    {
+      "name": "灯塔型",
+      "selfFirst": true,
+      "actualFirst": "灯塔型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "守门人型",
+      "selfFirst": true,
+      "actualFirst": "守门人型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "筑巢型",
+      "selfFirst": true,
+      "actualFirst": "筑巢型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "旧船长型",
+      "selfFirst": true,
+      "actualFirst": "旧船长型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "候鸟型",
+      "selfFirst": true,
+      "actualFirst": "候鸟型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "岛屿型",
+      "selfFirst": true,
+      "actualFirst": "岛屿型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "探险家型",
+      "selfFirst": true,
+      "actualFirst": "探险家型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "流浪诗人型",
+      "selfFirst": true,
+      "actualFirst": "流浪诗人型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "收藏家型",
+      "selfFirst": true,
+      "actualFirst": "收藏家型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "剧本型",
+      "selfFirst": true,
+      "actualFirst": "剧本型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "星火型",
+      "selfFirst": true,
+      "actualFirst": "星火型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "月光型",
+      "selfFirst": true,
+      "actualFirst": "月光型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "镜像型",
+      "selfFirst": true,
+      "actualFirst": "镜像型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "共振型",
+      "selfFirst": true,
+      "actualFirst": "共振型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "潮汐型",
+      "selfFirst": true,
+      "actualFirst": "潮汐型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "温室型",
+      "selfFirst": true,
+      "actualFirst": "温室型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "深海型",
+      "selfFirst": true,
+      "actualFirst": "深海型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "极光型",
+      "selfFirst": false,
+      "actualFirst": "候鸟型",
+      "selfRank": 4,
+      "diff": 0,
+      "risk": "🔴"
+    },
+    {
+      "name": "黑森林型",
+      "selfFirst": false,
+      "actualFirst": "深海型",
+      "selfRank": 2,
+      "diff": 0,
+      "risk": "⚠️"
+    },
+    {
+      "name": "观星者型",
+      "selfFirst": true,
+      "actualFirst": "观星者型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "探险家型",
+      "issue": "低频",
+      "pct": "2.9%",
+      "severity": "medium"
+    },
+    {
+      "type": "旧船长型",
+      "issue": "低频",
+      "pct": "2.9%",
+      "severity": "medium"
+    },
+    {
+      "type": "潮汐型",
+      "issue": "低频",
+      "pct": "2.5%",
+      "severity": "medium"
+    },
+    {
+      "type": "极光型",
+      "issue": "低频",
+      "pct": "2.0%",
+      "severity": "medium"
+    },
+    {
+      "type": "星火型",
+      "issue": "低频",
+      "pct": "1.7%",
+      "severity": "medium"
+    },
+    {
+      "type": "黑森林型",
+      "issue": "低频",
+      "pct": "1.7%",
+      "severity": "medium"
+    }
+  ],
+  "neverAppeared": 0
+}

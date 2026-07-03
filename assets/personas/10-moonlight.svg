@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g10" cx="50%" cy="40%"><stop offset="0%" stop-color="#c8dce8"/><stop offset="100%" stop-color="#101a28"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g10)"/>
+  <circle cx="100" cy="70" r="22" fill="#e0ecf4" opacity="0.15"/>
+  <circle cx="100" cy="70" r="18" fill="#e0ecf4" opacity="0.1"/>
+  <circle cx="100" cy="70" r="14" fill="#d0dce8" opacity="0.3"/>
+  <path d="M88 65 A14 14 0 0 0 112 65" stroke="#e0ecf4" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <circle cx="100" cy="120" r="2" fill="#c8dce8" opacity="0.4"/>
+  <circle cx="80" cy="115" r="1.5" fill="#c8dce8" opacity="0.3"/>
+  <circle cx="120" cy="118" r="1.5" fill="#c8dce8" opacity="0.3"/>
+  <text x="100" y="195" text-anchor="middle" fill="#90a8c0" font-size="10" font-family="sans-serif">月光型</text>
+</svg>

@@ -1,0 +1,455 @@
+{
+  "generatedAt": "2026-07-03T15:56:18.601Z",
+  "profile": "baseline",
+  "pool": "12核心主岛",
+  "poolTypeCount": 12,
+  "algorithmParams": {
+    "coreWeight": 1.8,
+    "metBonus": 1.5,
+    "failPenalty": 4.5
+  },
+  "simulationCount": 100000,
+  "primaryDistribution": [
+    {
+      "id": "gatekeeper",
+      "name": "守门人型",
+      "count": 16075,
+      "pct": 16.075,
+      "label": "🔴 超高频"
+    },
+    {
+      "id": "migratory_bird",
+      "name": "候鸟型",
+      "count": 13936,
+      "pct": 13.936000000000002,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "moonlight",
+      "name": "月光型",
+      "count": 11958,
+      "pct": 11.958,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "mirror",
+      "name": "镜像型",
+      "count": 11162,
+      "pct": 11.161999999999999,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "collector",
+      "name": "收藏家型",
+      "count": 9020,
+      "pct": 9.02,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "wandering_poet",
+      "name": "流浪诗人型",
+      "count": 6979,
+      "pct": 6.979,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "lighthouse",
+      "name": "灯塔型",
+      "count": 6844,
+      "pct": 6.844,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "island",
+      "name": "岛屿型",
+      "count": 6396,
+      "pct": 6.396,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "stargazer",
+      "name": "观星者型",
+      "count": 6112,
+      "pct": 6.112,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "nest_builder",
+      "name": "筑巢型",
+      "count": 4982,
+      "pct": 4.982,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "explorer",
+      "name": "探险家型",
+      "count": 4125,
+      "pct": 4.125,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "spark",
+      "name": "星火型",
+      "count": 2411,
+      "pct": 2.411,
+      "label": "🟡 低频"
+    }
+  ],
+  "secondaryDistribution": [
+    {
+      "id": "gatekeeper",
+      "name": "守门人型",
+      "count": 13206,
+      "pct": 13.206000000000001,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "migratory_bird",
+      "name": "候鸟型",
+      "count": 12376,
+      "pct": 12.376,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "moonlight",
+      "name": "月光型",
+      "count": 12292,
+      "pct": 12.292,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "wandering_poet",
+      "name": "流浪诗人型",
+      "count": 11660,
+      "pct": 11.66,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "mirror",
+      "name": "镜像型",
+      "count": 10425,
+      "pct": 10.424999999999999,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "stargazer",
+      "name": "观星者型",
+      "count": 8139,
+      "pct": 8.139000000000001,
+      "label": "🟠 高频"
+    },
+    {
+      "id": "collector",
+      "name": "收藏家型",
+      "count": 7318,
+      "pct": 7.318,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "island",
+      "name": "岛屿型",
+      "count": 6711,
+      "pct": 6.711,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "lighthouse",
+      "name": "灯塔型",
+      "count": 5717,
+      "pct": 5.717,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "nest_builder",
+      "name": "筑巢型",
+      "count": 5402,
+      "pct": 5.402,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "explorer",
+      "name": "探险家型",
+      "count": 4342,
+      "pct": 4.342,
+      "label": "🟢 正常"
+    },
+    {
+      "id": "spark",
+      "name": "星火型",
+      "count": 2412,
+      "pct": 2.412,
+      "label": "🟡 低频"
+    }
+  ],
+  "gapStats": {
+    "mean": 4,
+    "median": 3,
+    "max": 26,
+    "min": 0,
+    "le3": 56746,
+    "le3Pct": "56.7%",
+    "le5": 72982,
+    "le5Pct": "73.0%",
+    "le8": 88234,
+    "le8Pct": "88.2%",
+    "le12": 97391,
+    "le12Pct": "97.4%"
+  },
+  "fixedDisplayedPositionResults": {
+    "0": {
+      "top1Type": "守门人型",
+      "top1Pct": "15.8%",
+      "top2Type": "候鸟型",
+      "top2Pct": "13.4%",
+      "isBiased": false
+    },
+    "1": {
+      "top1Type": "守门人型",
+      "top1Pct": "16.2%",
+      "top2Type": "候鸟型",
+      "top2Pct": "14.1%",
+      "isBiased": false
+    },
+    "2": {
+      "top1Type": "守门人型",
+      "top1Pct": "15.7%",
+      "top2Type": "候鸟型",
+      "top2Pct": "14.5%",
+      "isBiased": false
+    },
+    "3": {
+      "top1Type": "守门人型",
+      "top1Pct": "15.7%",
+      "top2Type": "候鸟型",
+      "top2Pct": "14.2%",
+      "isBiased": false
+    }
+  },
+  "fixedRawOptionResults": {
+    "全A": {
+      "primary": "星火型",
+      "primaryScore": 71,
+      "secondary": "月光型",
+      "secondaryScore": 70,
+      "gap": 1,
+      "top5": [
+        "星火型(71)",
+        "月光型(70)",
+        "灯塔型(62)",
+        "筑巢型(61)",
+        "流浪诗人型(61)"
+      ],
+      "avgs": {
+        "CL": 100,
+        "AU": 100,
+        "SE": 100,
+        "EX": 100,
+        "RP": 100,
+        "IN": 100,
+        "ID": 100,
+        "ST": 100,
+        "CA": 78,
+        "NV": 100,
+        "ME": 100,
+        "EV": 100
+      }
+    },
+    "全B": {
+      "primary": "月光型",
+      "primaryScore": 87,
+      "secondary": "候鸟型",
+      "secondaryScore": 76,
+      "gap": 11,
+      "top5": [
+        "月光型(87)",
+        "候鸟型(76)",
+        "流浪诗人型(76)",
+        "镜像型(76)",
+        "灯塔型(74)"
+      ],
+      "avgs": {
+        "CL": 67,
+        "AU": 67,
+        "SE": 67,
+        "EX": 67,
+        "RP": 67,
+        "IN": 67,
+        "ID": 67,
+        "ST": 67,
+        "CA": 67,
+        "NV": 67,
+        "ME": 67,
+        "EV": 67
+      }
+    },
+    "全C": {
+      "primary": "岛屿型",
+      "primaryScore": 83,
+      "secondary": "收藏家型",
+      "secondaryScore": 75,
+      "gap": 8,
+      "top5": [
+        "岛屿型(83)",
+        "收藏家型(75)",
+        "守门人型(71)",
+        "镜像型(69)",
+        "观星者型(69)"
+      ],
+      "avgs": {
+        "CL": 33,
+        "AU": 33,
+        "SE": 33,
+        "EX": 33,
+        "RP": 33,
+        "IN": 33,
+        "ID": 33,
+        "ST": 33,
+        "CA": 55,
+        "NV": 33,
+        "ME": 33,
+        "EV": 33
+      }
+    },
+    "全D": {
+      "primary": "岛屿型",
+      "primaryScore": 60,
+      "secondary": "收藏家型",
+      "secondaryScore": 46,
+      "gap": 14,
+      "top5": [
+        "岛屿型(60)",
+        "收藏家型(46)",
+        "守门人型(38)",
+        "探险家型(36)",
+        "观星者型(36)"
+      ],
+      "avgs": {
+        "CL": 0,
+        "AU": 0,
+        "SE": 0,
+        "EX": 0,
+        "RP": 0,
+        "IN": 0,
+        "ID": 0,
+        "ST": 0,
+        "CA": 0,
+        "NV": 0,
+        "ME": 0,
+        "EV": 0
+      }
+    }
+  },
+  "selfMatchResults": [
+    {
+      "name": "灯塔型",
+      "selfFirst": true,
+      "actualFirst": "灯塔型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "守门人型",
+      "selfFirst": true,
+      "actualFirst": "守门人型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "筑巢型",
+      "selfFirst": true,
+      "actualFirst": "筑巢型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "候鸟型",
+      "selfFirst": true,
+      "actualFirst": "候鸟型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "岛屿型",
+      "selfFirst": true,
+      "actualFirst": "岛屿型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "探险家型",
+      "selfFirst": true,
+      "actualFirst": "探险家型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "流浪诗人型",
+      "selfFirst": true,
+      "actualFirst": "流浪诗人型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "收藏家型",
+      "selfFirst": true,
+      "actualFirst": "收藏家型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "星火型",
+      "selfFirst": true,
+      "actualFirst": "星火型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "月光型",
+      "selfFirst": true,
+      "actualFirst": "月光型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "镜像型",
+      "selfFirst": true,
+      "actualFirst": "镜像型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    },
+    {
+      "name": "观星者型",
+      "selfFirst": true,
+      "actualFirst": "观星者型",
+      "selfRank": 1,
+      "diff": 0,
+      "risk": "✅"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "守门人型",
+      "issue": "超高频",
+      "pct": "16.1%",
+      "severity": "high"
+    },
+    {
+      "type": "星火型",
+      "issue": "低频",
+      "pct": "2.4%",
+      "severity": "medium"
+    }
+  ],
+  "neverAppeared": 0
+}

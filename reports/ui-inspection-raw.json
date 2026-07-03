@@ -1,0 +1,310 @@
+[
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"靠近海岸 · 漂流瓶里的信\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"月潮湖 · 满月之夜\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"关系回声：月光型（80%）\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"12维心岛地图、Top5相近人格、旅途回顾、人格图鉴\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"图片生成后可直接保存到相册，在微信 / 小红书 / 朋友圈分享\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "1440px",
+    "title": "字体过小 (10px)",
+    "detail": "\"结果仅保存在当前设备和浏览器中，清理缓存后会消失。\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Home",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"01 / 36\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"01 / 36\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Quiz",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"靠近海岸 · 漂流瓶里的信\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"Beta 0.9.9.3\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"当前结果仅供自我探索参考不代表专业心理诊断\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"约 5 分钟完成36 道心岛旅程题\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"获得你的核心主岛人格看见你在关系中的真实模样\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"生成专属心岛地图支持分享给信任的人\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (9px)",
+    "detail": "\"36 / 36\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"月潮湖 · 满月之夜\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"关系回声：候鸟型（69%）\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"12维心岛地图、Top5相近人格、旅途回顾、人格图鉴\" 在移动端可能难以阅读"
+  },
+  {
+    "severity": "LOW",
+    "page": "Result",
+    "viewport": "390px",
+    "title": "字体过小 (10px)",
+    "detail": "\"图片生成后可直接保存到相册，在微信 / 小红书 / 朋友圈分享\" 在移动端可能难以阅读"
+  }
+]

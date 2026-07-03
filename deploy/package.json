@@ -1,0 +1,23 @@
+{
+  "name": "heart-island",
+  "version": "0.9.9.7-beta",
+  "description": "心岛计划 — 沉浸式恋爱人格测试 H5",
+  "private": true,
+  "scripts": {
+    "check": "npm run test:consistency && npm run audit:probability:live && npm run audit:options",
+    "test": "npm run check",
+    "audit:probability": "node scripts/probability-audit.mjs",
+    "audit:probability:live": "node scripts/probability-audit.mjs --profile calibrationB",
+    "audit:options": "node scripts/option-alignment-audit.mjs",
+    "test:consistency": "node scripts/consistency-test.mjs",
+    "ui:inspect": "node scripts/inspect-ui.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "sharp": "^0.35.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.0",
+    "prettier": "^3.8.4"
+  }
+}

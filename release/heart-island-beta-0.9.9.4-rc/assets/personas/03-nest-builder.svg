@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g3" cx="50%" cy="40%"><stop offset="0%" stop-color="#d4b896"/><stop offset="100%" stop-color="#2a2018"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g3)"/>
+  <path d="M55 110 Q70 70 100 65 Q130 70 145 110 L140 120 Q120 100 100 95 Q80 100 60 120 Z" fill="#a08060" opacity="0.6"/>
+  <ellipse cx="100" cy="85" rx="10" ry="7" fill="#e8d4b0" opacity="0.8"/>
+  <line x1="85" y1="60" x2="115" y2="60" stroke="#8a6a4a" stroke-width="2"/>
+  <circle cx="85" cy="55" r="3" fill="#d4b896" opacity="0.6"/>
+  <circle cx="115" cy="55" r="3" fill="#d4b896" opacity="0.6"/>
+  <text x="100" y="195" text-anchor="middle" fill="#a08060" font-size="10" font-family="sans-serif">筑巢型</text>
+</svg>

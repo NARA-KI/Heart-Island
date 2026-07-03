@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g9" cx="50%" cy="40%"><stop offset="0%" stop-color="#f0a060"/><stop offset="100%" stop-color="#2a1510"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g9)"/>
+  <path d="M100 50 Q105 70 115 75 Q105 72 100 90 Q95 72 85 75 Q95 70 100 50" fill="#f0c080" opacity="0.8"/>
+  <circle cx="90" cy="95" r="3" fill="#f0a060" opacity="0.6"/>
+  <circle cx="110" cy="90" r="2" fill="#f0a060" opacity="0.4"/>
+  <circle cx="100" cy="100" r="4" fill="#f0c080" opacity="0.5"/>
+  <text x="100" y="195" text-anchor="middle" fill="#d08040" font-size="10" font-family="sans-serif">星火型</text>
+</svg>

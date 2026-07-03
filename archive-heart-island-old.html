@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>心岛计划 — 探索你的恋爱人格</title>
+<style>
+/* ============================================ */
+/* 心岛计划 — 完整样式表                         */
+/* ============================================ */
+
+:root {
+  --bg-deep: #0a0e1a;
+  --bg-ocean: #0b1a2e;
+  --gold: #d4a853;
+  --gold-glow: #f0d080;
+  --teal: #5abcb9;
+  --teal-glow: #8ef0ed;
+  --purple: #7b5ea7;
+  --purple-glow: #b89ae0;
+  --rose: #c9707c;
+  --white-soft: #e8e0d8;
+  --white-dim: rgba(232,224,216,0.6);
+  --white-faint: rgba(232,224,216,0.3);
+  --card-bg: rgba(15,20,40,0.75);
+  --card-border: rgba(255,255,255,0.08);
+  --font-title: 'PingFang SC','Noto Serif SC','STSong',serif;
+  --font-body: 'PingFang SC','Noto Sans SC','STHeiti',sans-serif;
+  --safe-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width:100%; height:100%; overflow:hidden;
+  font-family:var(--font-body);
+  background:var(--bg-deep);
+  color:var(--white-soft);
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing:antialiased;
+  user-select:none;
+  touch-action:manipulation;
+}
+
+/* ---- Starfield ---- */
+#starfield {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  pointer-events:none; z-index:0;
+}
+.star {
+  position:absolute; border-radius:50%; background:white;
+  animation: twinkle var(--dur) ease-in-out infinite;
+  animation-delay:var(--delay); opacity:0;
+}
+@keyframes twinkle {
+  0%,100% { opacity:0.2; }
+  50% { opacity:0.9; }
+}
+
+/* ---- Ocean Waves ---- */
+#ocean-layer {
+  position:fixed; bottom:0; left:0; width:100%; height:30vh;
+  pointer-events:none; z-index:0; overflow:hidden;
+}
+.wave {
+  position:absolute; bottom:0; width:200%; height:100%;
+  background:linear-gradient(180deg,
+    rgba(20,60,100,0) 0%,
+    rgba(20,70,120,0.3) 30%,
+    rgba(15,50,90,0.6) 60%,
+    rgba(10,30,60,0.85) 100%);
+  border-radius:40% 40% 0 0;
+  animation:waveDrift var(--wv-dur) ease-in-out infinite;
+}
+.wave:nth-child(1) { animation-duration:7s; opacity:0.6; }
+.wave:nth-child(2) { animation-duration:9s; opacity:0.4; animation-delay:-2s; }
+.wave:nth-child(3) { animation-duration:12s; opacity:0.25; animation-delay:-5s; }
+@keyframes waveDrift {
+  0%,100% { transform:translateX(0) translateY(0); }
+  25% { transform:translateX(-3%) translateY(-8px); }
+  50% { transform:translateX(0) translateY(0); }
+  75% { transform:translateX(3%) translateY(-5px); }
+}
+
+/* ---- Light Particles (Fireflies) ---- */
+.particle {
+  position:fixed; pointer-events:none; z-index:1;
+  width:3px; height:3px; border-radius:50%;
+  background:var(--clr, #f0d080);
+  box-shadow:0 0 6px 2px var(--clr, #f0d080);
+  animation:floatUp var(--fp-dur) ease-in infinite;
+  animation-delay:var(--fp-delay);
+  opacity:0;
+}
+@keyframes floatUp {
+  0% { opacity:0; transform:translateY(0) translateX(0) scale(0); }
+  10% { opacity:0.8; transform:translateY(-10vh) translateX(5px) scale(1); }
+  90% { opacity:0.3; transform:translateY(-80vh) translateX(-15px) scale(0.6); }
+  100% { opacity:0; transform:translateY(-100vh) translateX(0) scale(0); }
+}
+
+/* ---- Screen Container ---- */
+.screen {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:10; transition:opacity 0.8s ease, visibility 0.8s ease;
+  padding:24px 20px;
+  padding-bottom:calc(24px + var(--safe-bottom));
+}
+.screen.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+
+/* ============================================ */
+/* INTRO SCREEN                                  */
+/* ============================================ */
+#intro-screen { z-index:20; }
+
+#intro-boat {
+  position:absolute; bottom:28vh; left:-80px;
+  font-size:40px; animation:boatSail 10s ease-in-out forwards;
+  animation-play-state:paused;
+}
+#intro-boat.sailing { animation-play-state:running; }
+@keyframes boatSail {
+  0% { left:-80px; bottom:28vh; transform:rotate(-5deg); }
+  30% { left:25vw; bottom:26vh; transform:rotate(-2deg) translateY(-6px); }
+  60% { left:55vw; bottom:23vh; transform:rotate(2deg) translateY(-3px); }
+  80% { left:70vw; bottom:18vh; transform:rotate(0deg) translateY(0); }
+  100% { left:85vw; bottom:14vh; transform:rotate(3deg); opacity:0; }
+}
+
+#intro-lighthouse {
+  position:absolute; right:8vw; top:18vh;
+  font-size:56px; opacity:0;
+  transition:opacity 1.5s ease;
+}
+#intro-lighthouse.visible { opacity:1; }
+
+#lighthouse-beam {
+  position:absolute; right:calc(8vw + 20px); top:calc(18vh + 10px);
+  width:60px; height:60px;
+  background:conic-gradient(from 0deg, rgba(240,208,128,0.7) 0deg, rgba(240,208,128,0) 30deg, rgba(240,208,128,0) 330deg, rgba(240,208,128,0.7) 360deg);
+  border-radius:50%;
+  animation:beamRotate 3s linear infinite;
+  opacity:0; transition:opacity 1.5s ease;
+}
+#lighthouse-beam.visible { opacity:0.9; }
+@keyframes beamRotate {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+
+#intro-moon {
+  position:absolute; left:12vw; top:10vh;
+  width:60px; height:60px; border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, #ffe9c0 0%, #f0d080 40%, #c9a040 100%);
+  box-shadow:0 0 40px 10px rgba(240,208,128,0.3), 0 0 100px 20px rgba(240,208,128,0.1);
+  opacity:0; transition:opacity 2s ease;
+}
+#intro-moon.visible { opacity:1; }
+
+#intro-text-container {
+  position:relative; z-index:5; text-align:center;
+  opacity:0; transform:translateY(20px);
+  transition:opacity 1.2s ease, transform 1.2s ease;
+}
+#intro-text-container.visible { opacity:1; transform:translateY(0); }
+
+#intro-title {
+  font-family:var(--font-title);
+  font-size:clamp(28px,7vw,40px);
+  color:var(--gold-glow);
+  text-shadow:0 0 30px rgba(240,208,128,0.5);
+  margin-bottom:12px;
+  letter-spacing:4px;
+}
+#intro-subtitle {
+  font-size:clamp(14px,3.5vw,17px);
+  color:var(--white-dim);
+  letter-spacing:2px;
+}
+
+#intro-start-btn {
+  position:relative; z-index:5;
+  margin-top:40px;
+  padding:16px 48px;
+  border:1px solid var(--gold);
+  border-radius:50px;
+  background:rgba(212,168,83,0.1);
+  color:var(--gold-glow);
+  font-size:clamp(16px,4vw,20px);
+  font-family:var(--font-title);
+  letter-spacing:3px;
+  cursor:pointer;
+  opacity:0; transform:translateY(10px);
+  transition:opacity 0.8s ease, transform 0.8s ease, background 0.3s ease, box-shadow 0.3s ease;
+  animation:pulseGlow 2.5s ease-in-out infinite;
+  animation-play-state:paused;
+}
+#intro-start-btn.visible { opacity:1; transform:translateY(0); animation-play-state:running; }
+#intro-start-btn:active { background:rgba(212,168,83,0.25); box-shadow:0 0 30px rgba(212,168,83,0.4); }
+@keyframes pulseGlow {
+  0%,100% { box-shadow:0 0 10px rgba(212,168,83,0.2); }
+  50% { box-shadow:0 0 30px rgba(240,208,128,0.5); }
+}
+
+/* ============================================ */
+/* GAME SCREEN                                  */
+/* ============================================ */
+#game-screen { justify-content:flex-start; padding-top:40px; }
+
+#zone-indicator {
+  display:flex; align-items:center; gap:6px;
+  margin-bottom:10px; opacity:0.7;
+  font-size:12px; letter-spacing:2px; color:var(--white-faint);
+}
+#zone-icon { font-size:18px; }
+#zone-name { text-transform:uppercase; }
+
+/* subtle constellation progress */
+#constellation-progress {
+  display:flex; gap:4px; margin-bottom:20px;
+  flex-wrap:wrap; justify-content:center; max-width:280px;
+}
+.star-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--white-faint);
+  transition:all 0.6s ease;
+}
+.star-dot.lit { background:var(--gold-glow); box-shadow:0 0 8px var(--gold-glow); }
+
+/* Scene Card */
+#scene-card {
+  width:100%; max-width:380px;
+  background:var(--card-bg);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--card-border);
+  border-radius:20px;
+  padding:28px 24px;
+  transition:opacity 0.35s ease, transform 0.35s ease;
+}
+#scene-card.transitioning { opacity:0; transform:translateY(15px); }
+
+#scene-narrative {
+  font-family:var(--font-title);
+  font-size:clamp(15px,3.8vw,18px);
+  line-height:1.8;
+  color:var(--white-soft);
+  margin-bottom:28px;
+  text-align:center;
+}
+
+#options-container { display:flex; flex-direction:column; gap:12px; }
+
+.option-btn {
+  width:100%; padding:16px 20px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  color:var(--white-soft);
+  font-size:clamp(14px,3.5vw,16px);
+  font-family:var(--font-body);
+  text-align:left;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+  line-height:1.5;
+}
+.option-btn::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(212,168,83,0.08), rgba(122,180,180,0.08));
+  opacity:0; transition:opacity 0.3s ease;
+}
+.option-btn:active::after { opacity:1; }
+.option-btn:active {
+  border-color:rgba(212,168,83,0.4);
+  transform:scale(0.98);
+  box-shadow:0 0 20px rgba(212,168,83,0.15);
+}
+.option-btn .opt-icon {
+  display:inline-block; margin-right:8px; font-size:18px; vertical-align:-2px;
+}
+
+/* ============================================ */
+/* FINAL SCENE — Ancient Tree                    */
+/* ============================================ */
+#final-screen { z-index:15; }
+
+#ancient-tree {
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:280px; height:65vh;
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:flex-end;
+}
+.tree-trunk {
+  width:24px; height:40%;
+  background:linear-gradient(180deg, #3d2b1f 0%, #5c3d2e 40%, #4a3020 100%);
+  border-radius:4px 4px 0 0;
+  position:relative;
+}
+.tree-trunk::before {
+  content:''; position:absolute; top:10%; left:-20px;
+  width:18px; height:30%;
+  background:linear-gradient(180deg, #4a3020, #3d2b1f);
+  border-radius:0 60% 0 0;
+  transform:rotate(-25deg);
+}
+.tree-trunk::after {
+  content:''; position:absolute; top:15%; right:-16px;
+  width:16px; height:25%;
+  background:linear-gradient(180deg, #4a3020, #3d2b1f);
+  border-radius:60% 0 0 0;
+  transform:rotate(20deg);
+}
+.tree-crown {
+  width:200px; height:200px;
+  background:radial-gradient(ellipse at 50% 40%,
+    rgba(30,60,40,0.9) 0%,
+    rgba(20,50,30,0.85) 30%,
+    rgba(15,35,20,0.7) 60%,
+    rgba(10,25,15,0.3) 100%);
+  border-radius:50% 50% 45% 45%;
+  position:absolute; bottom:35%;
+  box-shadow:0 0 60px rgba(100,180,120,0.15);
+  animation:treeBreathe 6s ease-in-out infinite;
+}
+@keyframes treeBreathe {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.03); }
+}
+
+/* Glowing Fruit */
+#glowing-fruit {
+  position:absolute;
+  width:40px; height:40px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ffd89b, #f0984a 50%, #c0392b 100%);
+  box-shadow:0 0 30px rgba(240,152,74,0.7), 0 0 80px rgba(240,152,74,0.3);
+  z-index:5; cursor:pointer;
+  animation:fruitGlow 2s ease-in-out infinite, fruitHover 3s ease-in-out infinite;
+  transition:transform 0.3s ease;
+}
+#glowing-fruit:active { transform:scale(1.2); }
+@keyframes fruitGlow {
+  0%,100% { box-shadow:0 0 30px rgba(240,152,74,0.7), 0 0 80px rgba(240,152,74,0.3); }
+  50% { box-shadow:0 0 50px rgba(255,200,120,0.9), 0 0 120px rgba(240,152,74,0.5); }
+}
+@keyframes fruitHover {
+  0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-8px); }
+}
+
+#fruit-fall-hint {
+  position:absolute; bottom:20%;
+  color:var(--white-dim); font-size:13px;
+  letter-spacing:2px; text-align:center;
+  animation:hintPulse 2s ease-in-out infinite;
+  z-index:4;
+}
+@keyframes hintPulse {
+  0%,100% { opacity:0.4; }
+  50% { opacity:1; }
+}
+
+/* ============================================ */
+/* RESULT SCREEN                                */
+/* ============================================ */
+#result-screen {
+  overflow-y:auto; justify-content:flex-start;
+  padding-top:30px; padding-bottom:60px;
+}
+
+#result-card {
+  width:100%; max-width:400px;
+  background:var(--card-bg);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--card-border);
+  border-radius:24px;
+  padding:32px 22px;
+  text-align:center;
+}
+
+#result-personality-name {
+  font-family:var(--font-title);
+  font-size:clamp(24px,6vw,34px);
+  color:var(--gold-glow);
+  text-shadow:0 0 20px rgba(240,208,128,0.4);
+  margin-bottom:8px;
+  letter-spacing:3px;
+}
+
+#result-hit-line {
+  font-size:clamp(14px,3.5vw,16px);
+  color:var(--teal-glow);
+  font-style:italic;
+  margin-bottom:24px;
+  line-height:1.6;
+}
+
+.result-section {
+  text-align:left; margin-bottom:20px;
+}
+.result-section h3 {
+  font-family:var(--font-title);
+  font-size:15px; color:var(--gold);
+  margin-bottom:8px; letter-spacing:2px;
+  display:flex; align-items:center; gap:6px;
+}
+.result-section h3 .sec-icon { font-size:18px; }
+.result-section p {
+  font-size:14px; line-height:1.7;
+  color:var(--white-dim); padding-left:4px;
+}
+
+#result-tags { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:24px; }
+.result-tag {
+  padding:6px 16px; border-radius:20px;
+  font-size:13px; letter-spacing:1px;
+  border:1px solid;
+}
+.tag-match { border-color:var(--teal); color:var(--teal-glow); background:rgba(90,188,185,0.1); }
+.tag-danger { border-color:var(--rose); color:#e8a0a8; background:rgba(201,112,124,0.1); }
+
+#result-restart-btn {
+  margin-top:16px; padding:12px 36px;
+  border:1px solid var(--gold);
+  border-radius:50px;
+  background:rgba(212,168,83,0.08);
+  color:var(--gold-glow);
+  font-size:15px; letter-spacing:2px;
+  cursor:pointer;
+  font-family:var(--font-title);
+  transition:all 0.3s ease;
+}
+#result-restart-btn:active { background:rgba(212,168,83,0.2); }
+
+/* ============================================ */
+/* RESPONSIVE                                   */
+/* ============================================ */
+@media (max-width:360px) {
+  #scene-card { padding:20px 16px; }
+  .option-btn { padding:14px 16px; }
+}
+
+@media (min-height:800px) {
+  #game-screen { padding-top:60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Stars Container -->
+<div id="starfield"></div>
+
+<!-- Ocean Waves -->
+<div id="ocean-layer">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+
+<!-- Particle Layer -->
+<div id="particle-layer"></div>
+
+<!-- ============================================ -->
+<!-- INTRO SCREEN                                 -->
+<!-- ============================================ -->
+<div id="intro-screen" class="screen">
+  <div id="intro-moon"></div>
+  <div id="intro-lighthouse">🏛️</div>
+  <div id="lighthouse-beam"></div>
+  <div id="intro-boat">⛵</div>
+  <div id="intro-text-container">
+    <div id="intro-title">心 岛 计 划</div>
+    <div id="intro-subtitle">在这座岛上，遇见真实的自己</div>
+  </div>
+  <button id="intro-start-btn">开 始 探 索</button>
+</div>
+
+<!-- ============================================ -->
+<!-- GAME SCREEN                                  -->
+<!-- ============================================ -->
+<div id="game-screen" class="screen hidden">
+  <div id="zone-indicator">
+    <span id="zone-icon">🏝️</span>
+    <span id="zone-name">海岸</span>
+  </div>
+  <div id="constellation-progress"></div>
+  <div id="scene-card">
+    <div id="scene-narrative"></div>
+    <div id="options-container"></div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- FINAL SCREEN — Ancient Tree                  -->
+<!-- ============================================ -->
+<div id="final-screen" class="screen hidden">
+  <div id="ancient-tree">
+    <div class="tree-crown"></div>
+    <div class="tree-trunk"></div>
+  </div>
+  <div id="glowing-fruit" style="top:22%; left:50%; transform:translateX(-50%);"></div>
+  <div id="fruit-fall-hint">✨ 点击果实 · 揭晓答案 ✨</div>
+</div>
+
+<!-- ============================================ -->
+<!-- RESULT SCREEN                               -->
+<!-- ============================================ -->
+<div id="result-screen" class="screen hidden">
+  <div id="result-card"></div>
+  <button id="result-restart-btn">再 次 探 索</button>
+</div>
+
+<script>
+// ============================================
+// 心岛计划 — 核心数据 & 逻辑
+// ============================================
+
+// ---- 24 个探索场景 ----
+const scenes = [
+  // ===== 海岸区域 (1-6) =====
+  {
+    id:1, zone:'coast',
+    narrative:'你乘坐的小船缓缓触岸，脚下的细沙泛着微弱的银光。海风带来陌生的花香，岛屿深处传来低沉的回响，像是什么在呼唤你……',
+    options:[
+      { text:'先在沙滩上观察四周，确认安全后再行动', icon:'🔍', scores:{S:2,F:0,E:0,A:0} },
+      { text:'循着花香的方向，径直深入岛屿', icon:'🌿', scores:{S:0,F:2,E:0,A:1} },
+      { text:'闭上眼睛感受海风与回响，让自己融入这片土地', icon:'🧘', scores:{S:0,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:2, zone:'coast',
+    narrative:'沙滩上散落着微微发光的贝壳，每一枚都像是藏着一段未说出口的话。一枚螺旋形的贝壳格外吸引你的目光……',
+    options:[
+      { text:'小心翼翼地将贝壳捡起，贴身收藏', icon:'💝', scores:{S:2,F:0,E:1,A:0} },
+      { text:'把贝壳放回原处，继续向前探索', icon:'🚶', scores:{S:0,F:2,E:0,A:1} },
+      { text:'将贝壳轻轻贴在耳边，试图聆听它的故事', icon:'👂', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:3, zone:'coast',
+    narrative:'一只散发蓝色荧光的水母搁浅在岸边，光芒正在缓缓变暗，触须微微颤抖，像是一个微弱的求救信号……',
+    options:[
+      { text:'立刻用手捧起它，送回海水之中', icon:'🤲', scores:{S:0,F:0,E:1,A:2} },
+      { text:'用树叶盛水不停浇在它身上，等待涨潮', icon:'💧', scores:{S:1,F:0,E:2,A:0} },
+      { text:'守在旁边静静观察，相信大海会来接它', icon:'🌊', scores:{S:1,F:1,E:0,A:0} }
+    ]
+  },
+  {
+    id:4, zone:'coast',
+    narrative:'通往岛屿深处的小径旁，立着一块被苔藓覆盖的古旧木牌。模糊的刻痕中依稀可辨一个心形符号……',
+    options:[
+      { text:'仔细研究上面的文字，尝试解读它的含义', icon:'📖', scores:{S:1,F:0,E:1,A:0} },
+      { text:'用手抚摸那个心形符号，感受刻下它的人的心情', icon:'💫', scores:{S:0,F:0,E:2,A:0} },
+      { text:'不管它写的什么，继续沿小径前行', icon:'🏃', scores:{S:0,F:2,E:0,A:1} }
+    ]
+  },
+  {
+    id:5, zone:'coast',
+    narrative:'潮水开始上涨，你发现了一处隐藏在礁石后的岩洞。洞口低矮，需要弯腰才能进入，里面隐约透出微光……',
+    options:[
+      { text:'毫不犹豫弯腰进入，想一探究竟', icon:'🔥', scores:{S:0,F:1,E:0,A:2} },
+      { text:'先在洞口轻声询问，确认安全再进入', icon:'🗣️', scores:{S:2,F:0,E:0,A:0} },
+      { text:'站在洞口感受从里面吹出的微风，判断洞的深浅', icon:'🌬️', scores:{S:1,F:0,E:1,A:0} }
+    ]
+  },
+  {
+    id:6, zone:'coast',
+    narrative:'岩洞深处，古老的壁画在微光中浮现：两颗星星从不同的方向飞来，在岛屿上空交汇，迸发出万丈光芒……',
+    options:[
+      { text:'用手指描摹星轨的路径，感受这段宇宙级的相遇', icon:'✨', scores:{S:1,F:0,E:2,A:0} },
+      { text:'思考两颗星为何选择在这里交汇，其中必有深意', icon:'🤔', scores:{S:2,F:0,E:0,A:0} },
+      { text:'觉得这是属于自己的预兆，兴奋地继续深入探索', icon:'⭐', scores:{S:0,F:1,E:0,A:2} }
+    ]
+  },
+
+  // ===== 森林区域 (7-12) =====
+  {
+    id:7, zone:'forest',
+    narrative:'你走进一片奇异的发光森林。树木的枝叶间漂浮着无数萤火般的光点，空气中弥漫着甜美的树脂香气……',
+    options:[
+      { text:'追着最亮的光点奔跑，看它会带你到哪里', icon:'🏃', scores:{S:0,F:2,E:0,A:1} },
+      { text:'放慢脚步，让光点自然地围绕在身边', icon:'🕯️', scores:{S:1,F:0,E:2,A:0} },
+      { text:'尝试用手轻轻触碰一个光点，看它是否愿意停留', icon:'🫧', scores:{S:1,F:0,E:0,A:1} }
+    ]
+  },
+  {
+    id:8, zone:'forest',
+    narrative:'一棵老树的枝干上垂下一枚晶莹剔透的果实，散发出温柔的粉色光芒。空气中顿时弥漫着甜蜜的芬芳……',
+    options:[
+      { text:'伸手摘下果实，想要品尝它的滋味', icon:'🍑', scores:{S:0,F:1,E:0,A:2} },
+      { text:'凑近闻一闻香气，但不摘取，让它继续生长', icon:'🌸', scores:{S:2,F:0,E:0,A:0} },
+      { text:'坐在树下静静欣赏，享受这份美好的相遇', icon:'😌', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:9, zone:'forest',
+    narrative:'林间出现两条岔路：一条铺满柔软花瓣，明亮而温暖；另一条长满发光的蘑菇，幽深而神秘……',
+    options:[
+      { text:'选择明亮温暖的花瓣之路', icon:'🌺', scores:{S:2,F:0,E:1,A:0} },
+      { text:'选择幽深神秘的蘑菇之路', icon:'🍄', scores:{S:0,F:2,E:0,A:1} },
+      { text:'在岔路口坐下，不知该如何选择', icon:'😶', scores:{S:0,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:10, zone:'forest',
+    narrative:'一只通体银白的鹿从林中缓步走出，角上缠绕着发光的藤蔓。它深邃的眼睛安静地注视着你，仿佛能看透灵魂……',
+    options:[
+      { text:'慢慢走近它，尝试与它建立心灵的连接', icon:'🦌', scores:{S:1,F:0,E:2,A:0} },
+      { text:'保持距离，用目光追随它的每一个优雅动作', icon:'👀', scores:{S:2,F:0,E:0,A:0} },
+      { text:'跟着它走，相信它会带你到应该去的地方', icon:'🌿', scores:{S:0,F:2,E:0,A:1} }
+    ]
+  },
+  {
+    id:11, zone:'forest',
+    narrative:'林间空地中央有一口古老的石井，井沿上刻满了时间的纹路。井中传来隐约的水声，像是来自深处的低语……',
+    options:[
+      { text:'趴在井边向下张望，看看井底藏着什么', icon:'🕳️', scores:{S:0,F:1,E:0,A:2} },
+      { text:'投下一片树叶，许一个关于爱的愿望', icon:'🍃', scores:{S:1,F:0,E:2,A:0} },
+      { text:'在井边坐下，整理这一路走来的感受', icon:'📝', scores:{S:2,F:0,E:0,A:0} }
+    ]
+  },
+  {
+    id:12, zone:'forest',
+    narrative:'你探头望向井水，水面映出的却不是自己的倒影——而是一个模糊但温柔的身影，仿佛在对你微笑……',
+    options:[
+      { text:'对那个身影微笑回应，像对老朋友一样', icon:'😊', scores:{S:0,F:0,E:2,A:1} },
+      { text:'仔细观察那个身影的细节，想看清那是谁', icon:'🔎', scores:{S:1,F:0,E:0,A:1} },
+      { text:'心跳微微加速，只是静静地看着不说话', icon:'💓', scores:{S:2,F:0,E:0,A:0} }
+    ]
+  },
+
+  // ===== 山与湖区域 (13-18) =====
+  {
+    id:13, zone:'mountain',
+    narrative:'山路越来越陡峭，但山顶有一团温暖的微光在闪烁，像是一盏为你点亮的灯……',
+    options:[
+      { text:'加快脚步，一口气爬到山顶看个究竟', icon:'⛰️', scores:{S:0,F:1,E:0,A:2} },
+      { text:'稳步前行，每走一段就停下来看看风景', icon:'🏔️', scores:{S:2,F:0,E:1,A:0} },
+      { text:'在路边找一块平坦的石头坐下，先感受山间的宁静', icon:'🧘', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:14, zone:'mountain',
+    narrative:'一座被藤蔓和青苔覆盖的古老石桥横跨溪流。桥下的水声叮咚，像是一首哼唱了千年的歌谣……',
+    options:[
+      { text:'大胆走过石桥，相信它的坚固', icon:'🌉', scores:{S:0,F:2,E:0,A:1} },
+      { text:'先试探性地踩上一块石板，确认稳定再过', icon:'🦶', scores:{S:2,F:0,E:0,A:0} },
+      { text:'坐在桥头，把脚伸进清凉的溪水中', icon:'💦', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:15, zone:'mountain',
+    narrative:'溪流汇入一片静谧的湖泊。湖边有一间木头小屋，窗户透出温暖的橘色光芒，像在等待谁的归来……',
+    options:[
+      { text:'直接敲门，想看看里面住着怎样的人', icon:'🚪', scores:{S:0,F:1,E:0,A:2} },
+      { text:'透过窗户悄悄向里张望，先了解情况', icon:'🪟', scores:{S:1,F:0,E:0,A:1} },
+      { text:'在屋外的木椅上坐下，享受这片安宁', icon:'🪑', scores:{S:2,F:0,E:0,A:0} }
+    ]
+  },
+  {
+    id:16, zone:'mountain',
+    narrative:'小屋的门虚掩着，里面传出轻柔的琴声。旋律陌生却动人，像在诉说着一个久远而温暖的故事……',
+    options:[
+      { text:'推门而入，想见到弹琴的人', icon:'🎵', scores:{S:0,F:1,E:0,A:2} },
+      { text:'站在门外静静聆听，不愿打扰这份美好', icon:'🎶', scores:{S:1,F:0,E:2,A:0} },
+      { text:'随着音乐轻轻摇摆，让自己沉浸在旋律中', icon:'💃', scores:{S:0,F:1,E:2,A:0} }
+    ]
+  },
+  {
+    id:17, zone:'mountain',
+    narrative:'湖面泛起涟漪，一轮巨大而温柔的金色月亮从山后缓缓升起。整个世界都被镀上了一层梦境般的光辉……',
+    options:[
+      { text:'走到湖边，张开双臂让月光洒满全身', icon:'🌕', scores:{S:1,F:0,E:2,A:0} },
+      { text:'寻找最佳角度，想把这美景永远记在心里', icon:'📸', scores:{S:2,F:0,E:0,A:0} },
+      { text:'脱掉鞋子走进浅水，与月亮和湖水融为一体', icon:'🦶', scores:{S:0,F:2,E:0,A:1} }
+    ]
+  },
+  {
+    id:18, zone:'mountain',
+    narrative:'月光照亮了湖对岸的一座古老灯塔。塔顶的光芒有节奏地旋转着，像是对你发出的温柔召唤……',
+    options:[
+      { text:'立刻决定前往灯塔——这就是你在找的方向', icon:'🗼', scores:{S:0,F:1,E:0,A:2} },
+      { text:'在湖边多待一会儿吧，灯塔又不会消失', icon:'😌', scores:{S:2,F:0,E:0,A:0} },
+      { text:'对着灯塔的方向，默默许下一个心愿', icon:'🙏', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+
+  // ===== 灯塔区域 (19-24) =====
+  {
+    id:19, zone:'lighthouse',
+    narrative:'通往灯塔的石板路两旁，长满了泛着幽幽蓝光的苔藓。踩上去软软的，像是走在银河铺就的路上……',
+    options:[
+      { text:'脱下鞋子，赤脚感受发光苔藓的温度', icon:'🦶', scores:{S:0,F:1,E:2,A:0} },
+      { text:'蹲下来用手轻轻触摸苔藓，感受它的微光', icon:'🤚', scores:{S:2,F:0,E:0,A:0} },
+      { text:'沿着发光的小路兴奋地向前跑去', icon:'🏃', scores:{S:0,F:2,E:0,A:1} }
+    ]
+  },
+  {
+    id:20, zone:'lighthouse',
+    narrative:'灯塔沉重的大门在你面前缓缓打开，门轴发出古老的叹息。螺旋楼梯向上延伸，看不到尽头……',
+    options:[
+      { text:'毫不犹豫踏上第一级台阶', icon:'🪜', scores:{S:0,F:1,E:0,A:2} },
+      { text:'在门口驻足环顾，先感受这个地方的能量', icon:'🧭', scores:{S:2,F:0,E:0,A:0} },
+      { text:'用手触摸门框上的刻痕，感受曾经来过这里的人', icon:'🤲', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:21, zone:'lighthouse',
+    narrative:'沿着螺旋楼梯攀登，墙壁上的古老烛台在你经过时逐一自动点亮。昏黄的光晕连成一条温暖的长廊……',
+    options:[
+      { text:'每经过一个烛台，都轻声说一句"谢谢"', icon:'🕯️', scores:{S:1,F:0,E:2,A:0} },
+      { text:'好奇地停下来研究烛台为何会自动点亮', icon:'🤔', scores:{S:2,F:0,E:0,A:0} },
+      { text:'感受被光明环绕的温暖，安静地继续向上', icon:'🔥', scores:{S:1,F:0,E:0,A:1} }
+    ]
+  },
+  {
+    id:22, zone:'lighthouse',
+    narrative:'你终于到达灯塔之巅。整座岛屿尽收眼底——来时的沙滩、发光的森林、宁静的湖泊，串成一幅你的探索地图……',
+    options:[
+      { text:'张开双臂，让海风尽情拥抱自己', icon:'🌬️', scores:{S:0,F:1,E:2,A:0} },
+      { text:'仔细辨认每一处走过的地方，回味一路的旅程', icon:'🗺️', scores:{S:2,F:0,E:0,A:0} },
+      { text:'朝岛屿的方向大声喊出深藏心底的话', icon:'📣', scores:{S:0,F:0,E:1,A:2} }
+    ]
+  },
+  {
+    id:23, zone:'lighthouse',
+    narrative:'灯塔的光芒旋转着扫过岛屿。当光束掠过远处一片密林时，一棵参天古树的轮廓在光芒中猛然闪现……',
+    options:[
+      { text:'调整灯塔的透镜，让光芒照亮古树的方向', icon:'🔦', scores:{S:0,F:1,E:0,A:2} },
+      { text:'记住古树的位置，在脑海中绘制前往的路线', icon:'🧠', scores:{S:2,F:0,E:0,A:0} },
+      { text:'被古树的神秘深深吸引，久久凝视那个方向', icon:'🌳', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  },
+  {
+    id:24, zone:'lighthouse',
+    narrative:'一阵温暖的风从古树的方向吹来，带来了树叶的沙沙声和一种莫名的熟悉感。你知道，最后的答案就藏在那里……',
+    options:[
+      { text:'毫不迟疑，立刻出发前往古树', icon:'💪', scores:{S:0,F:1,E:0,A:2} },
+      { text:'先在灯塔顶端冥想片刻，让内心充分准备好', icon:'🧘', scores:{S:2,F:0,E:1,A:0} },
+      { text:'对着风的方向，轻声说出此刻最想说的话', icon:'💬', scores:{S:1,F:0,E:2,A:0} }
+    ]
+  }
+];
+
+// ---- 20 种恋爱人格档案 ----
+const personalities = [
+  {
+    id:'moonlight_tide',
+    name:'月光潮汐',
+    profile:{S:0.50,F:0.50,E:0.70,A:0.50},
+    hitLine:'你的爱如月光下的潮汐——温柔却有力量，安静却永不停息。',
+    portrait:'你是一个情感丰富但不张扬的人。对待爱情，你像月光一样温柔地照亮对方，也像潮汐一样有自己的节奏。你懂得用恰到好处的距离感，让关系保持呼吸的空间，同时又不失亲密的温度。',
+    loveMode:'渐进式沉浸型。你不会一见钟情地扑入一段关系，而是让感情像潮水一样慢慢涨起。一旦认定，你会用持久的温柔包裹对方。你喜欢用行动而非语言来表达爱意——一个眼神、一次触碰、一个默默的准备，都是你的情书。',
+    strengths:'情感细腻、共情能力强、给予对方舒适的边界感、持久的温柔、不轻易放弃一段关系。',
+    blindSpots:'有时过于含蓄让对方猜不透你的心意；在冲突面前倾向于回避而非直面；偶尔因过度照顾对方感受而委屈自己。',
+    matches:['灯塔守望者','珊瑚筑梦师','晨露守望者'],
+    dangers:['风暴海燕','火山心跳','浪尖舞者'],
+    growthTips:'学会在关键时刻勇敢说出自己的感受。温柔不等于沉默，边界不等于距离。当你有需求时，试着直接而温和地表达——真正爱你的人会感激你的坦诚。'
+  },
+  {
+    id:'deep_sea_pearl',
+    name:'深海珍珠',
+    profile:{S:0.80,F:0.20,E:0.30,A:0.30},
+    hitLine:'你的心是深海中的珍珠——需要耐心潜入，才见璀璨光芒。',
+    portrait:'你是一个内心世界极为丰富但不轻易向人展示的人。像深海中的珍珠，外表坚硬平滑，内在却藏着岁月打磨出的璀璨。在爱情中你习惯先观察、再靠近，需要大量的安全感才会真正打开心扉。',
+    loveMode:'慢热深潜型。进入一段关系对你来说是重大的决定。你需要反复确认对方是否值得信任。但一旦你认定了那个人，你会展现出令人惊叹的深情和忠诚。你的爱不喧嚣，但极为深沉和持久。',
+    strengths:'忠诚度高、情感深度惊人、一旦承诺就全力以赴、给人可靠的安全感、善于守护一段关系。',
+    blindSpots:'过度防御可能让潜在的好对象望而却步；不擅长主动表达情感让对方感到被冷落；偶尔因害怕受伤而错失机会。',
+    matches:['静谧湖泊','贝壳低语者','古树根系'],
+    dangers:['永恒航海者','极光引路人','流星信使'],
+    growthTips:'试着在感到安全的小事上先打开自己。不是每颗心都会伤害你——有些人值得你提前展示珍珠的光芒。安全感来自内心，也来自勇敢的尝试。'
+  },
+  {
+    id:'lighthouse_keeper',
+    name:'灯塔守望者',
+    profile:{S:0.80,F:0.30,E:0.70,A:0.40},
+    hitLine:'你是一座永不熄灭的灯塔——在爱的海域里，为值得的人照亮归途。',
+    portrait:'你兼具安全感和情感表达能力。在爱情中你像一个温暖而坚定的港湾——既能够给予对方稳定的依靠，又能够用自己的光芒照亮对方的世界。你相信爱需要经营，需要每天都往里面添一点光。',
+    loveMode:'守护引导型。你喜欢在关系中扮演那个稳定输出温暖的角色。你会记住对方的每一个细节，在对方低落的时候默默点亮自己。你享受被需要的感觉，也渴望对方能看到你光芒背后偶尔的疲惫。',
+    strengths:'稳定可靠、情感外显但不泛滥、善于营造安全感、细心体贴、对关系有长远的规划意识。',
+    blindSpots:'有时过度付出让自己疲惫不堪；期待对方按自己的方式回应而失望；偶尔忽略了自己也需要被照亮。',
+    matches:['月光潮汐','星轨编织者','晨露守望者'],
+    dangers:['浪尖舞者','雾中漫游者','风暴海燕'],
+    growthTips:'灯塔也需要有人为它添油、擦拭镜片。别总是做那个照亮别人的人——学会接受爱和关怀，允许自己偶尔也成为被守护的那一个。'
+  },
+  {
+    id:'storm_petrel',
+    name:'风暴海燕',
+    profile:{S:0.20,F:0.90,E:0.50,A:0.80},
+    hitLine:'你是风暴中飞翔的海燕——爱就是你的风暴，越激烈，你越自由。',
+    portrait:'你天生不被束缚。在爱情中，你需要的是并肩飞行的伙伴，而非停靠的港湾。你渴望激情、冒险和持续的刺激感。平凡和重复会让你感到窒息，你需要一段不断进化、不断向前的感情。',
+    loveMode:'冒险追逐型。你在爱情中像一个探险家——总是在寻找新的情感体验和关系突破。你不会在关系初期就做出承诺，而是需要确认对方能跟上你的节奏。你的爱炽热而短暂明亮，除非遇到那个愿意陪你飞遍世界的人。',
+    strengths:'激情澎湃、勇于追求、不拘泥于传统关系模式、能给伴侣带来无限的刺激和新奇感、面对困难不会退缩。',
+    blindSpots:'对稳定的恐惧可能导致错过真正适合长期发展的人；偶尔忽略伴侣对安全感和稳定性的需求；新鲜感消退后容易失去耐心。',
+    matches:['极光引路人','永恒航海者','海风诗人'],
+    dangers:['深海珍珠','贝壳低语者','静谧湖泊'],
+    growthTips:'自由不等于孤独，稳定不等于无聊。试着在关系中找到"一起成长"的节奏——真正好的爱情不是牢笼，而是一起飞得更远的顺风。'
+  },
+  {
+    id:'tranquil_lake',
+    name:'静谧湖泊',
+    profile:{S:0.80,F:0.30,E:0.50,A:0.20},
+    hitLine:'你的爱如深山中的湖泊——表面平静如镜，深处却藏着整片天空。',
+    portrait:'你是一个安静而有深度的人。在爱情中你不喜欢喧嚣和戏剧化，更愿意用平静的方式经营一段关系。你看似被动，实则内心有着丰富的感知力和坚定的判断。和你在一起的人，会感受到一种难得的平静和安心。',
+    loveMode:'静水流深型。你不会主动出击，但你会在对方靠近时给予最温柔的接纳。你喜欢的关系状态是两个人安静地在一起，各自做各自的事，却感受到彼此的存在。你的爱需要时间来品味，但越品越有回甘。',
+    strengths:'情绪稳定、善于倾听、给对方极大的舒适空间、不轻易动摇、沉静的力量感。',
+    blindSpots:'过度被动可能被误解为不在乎；在需要主动争取时犹豫不决；偶尔压抑自己的真实需求以求和谐。',
+    matches:['深海珍珠','贝壳低语者','古树根系'],
+    dangers:['火山心跳','流星信使','浪尖舞者'],
+    growthTips:'平静是力量，但偶尔的涟漪能让湖水更加生动。试着在重要的事情上主动迈出一步——你会发现，表达自己并不会打破平静，反而会让关系更加清澈。'
+  },
+  {
+    id:'meteor_messenger',
+    name:'流星信使',
+    profile:{S:0.30,F:0.50,E:0.90,A:0.80},
+    hitLine:'你是划过夜空的流星——短暂却耀眼，让人甘愿用一生来回味那个瞬间。',
+    portrait:'你的情感表达像流星一样璀璨而直接。在爱情中你不吝于表达自己的感受，也敢于追求自己想要的人。你的热情具有感染力，和你在一起的人很难不被你的光芒所吸引。你相信爱就要说出来，而且要大声说。',
+    loveMode:'热烈告白型。你在感情中直接而坦率，喜欢就会让对方知道，想念就会立刻联系。你享受爱情中的每一个高潮时刻，在表达爱意这件事上从不含糊。你的挑战在于如何让热情不止于瞬间的绚烂。',
+    strengths:'表达能力强、极具魅力、敢于主动追求、能给对方强烈的情感体验、真诚不伪装。',
+    blindSpots:'热情来得快去得也快，关系容易大起大落；偶尔忽略了安静陪伴的力量；可能给对方造成情感压力。',
+    matches:['火山心跳','海风诗人','极光引路人'],
+    dangers:['贝壳低语者','岛屿隐者','静谧湖泊'],
+    growthTips:'流星的美丽在于瞬间，但最好的爱情是两个人一起看遍每一场流星雨。让自己的热情多一点续航力——激情之后，温柔才是最长久的告白。'
+  },
+  {
+    id:'ancient_root',
+    name:'古树根系',
+    profile:{S:0.90,F:0.10,E:0.50,A:0.40},
+    hitLine:'你的爱如千年古树的根——深扎于大地，风雨不动，时间越久越坚韧。',
+    portrait:'你对爱情有着近乎执着的认真。在你看来，爱不是游戏也不是即兴的诗——它是一棵需要共同浇灌、共同守护的古树。你不追求刺激和新奇，你追求的是"执子之手，与子偕老"的深度承诺。一旦扎根，你便是这世上最可靠的伴侣。',
+    loveMode:'深耕型。你不会轻易进入一段关系，因为每一段对你来说都意味着巨大的投入。你更倾向于和一个人慢慢建立信任、习惯和羁绊。你对"家"的概念有很强的渴望，喜欢和伴侣共建一个稳固的未来。',
+    strengths:'极度可靠、长情专一、有强烈的责任感、给伴侣无与伦比的安全感、在危机时刻是最稳定的依靠。',
+    blindSpots:'过于固执可能让关系缺乏弹性；不善于制造浪漫让对方感到乏味；偶尔因为害怕变化而阻碍了关系的成长。',
+    matches:['静谧湖泊','深海珍珠','贝壳低语者'],
+    dangers:['风暴海燕','永恒航海者','浪尖舞者'],
+    growthTips:'古树也需要新芽。试着偶尔打破常规，给对方一些意想不到的小惊喜。稳定不等于一成不变——最好的关系是两个人一起扎根，也一起向上生长。'
+  },
+  {
+    id:'sea_breeze_poet',
+    name:'海风诗人',
+    profile:{S:0.20,F:0.80,E:0.80,A:0.50},
+    hitLine:'你是拂过海面的风——自由、浪漫、永远在寻找最美的词句来描绘爱。',
+    portrait:'你有一颗诗意的灵魂。在爱情中，你把每一天都过成一首诗——你善于发现关系中的美好瞬间，也擅长用优美的语言和行动表达爱意。你需要大量的自由和灵感来源，爱情对你来说是创作，不是作业。',
+    loveMode:'浪漫随性型。你相信最好的爱情是自然而然的，不需要刻意规划。你喜欢和伴侣一起探索世界，在旅途、音乐、艺术中寻找共鸣。你不喜欢被关系的形式所约束——爱就爱了，不需要向任何人证明。',
+    strengths:'浪漫有情趣、想象力丰富、善于用创意表达爱意、给对方极大的个人空间、乐观感染人。',
+    blindSpots:'过度随性可能让对方缺乏安全感；不擅长处理关系中的实际问题；偶尔因为追求"感觉"而逃避责任。',
+    matches:['风暴海燕','流星信使','月光潮汐'],
+    dangers:['贝壳低语者','古树根系','深海珍珠'],
+    growthTips:'诗很美，但爱也需要一点"散文"——那些平淡的日常、共同的责任，才是让诗歌有地方栖息的纸张。自由和承诺并不矛盾，找到那个让你自愿靠岸的人吧。'
+  },
+  {
+    id:'coral_dreamweaver',
+    name:'珊瑚筑梦师',
+    profile:{S:0.70,F:0.30,E:0.60,A:0.40},
+    hitLine:'你用爱一点一点筑起梦的珊瑚礁——温柔而坚定，让两个人的世界日渐丰饶。',
+    portrait:'你是一个温柔的理想主义者。在爱情中，你像一个用心的建筑师——每天都在为两个人的未来添一块砖、加一片瓦。你不急不躁，相信好的关系是慢慢"长"出来的，就像珊瑚礁需要时间和耐心才能形成。',
+    loveMode:'共建型。你享受和伴侣一起规划未来的过程——从周末去哪里，到几年后的生活蓝图。你擅长在小事上表达爱意，也懂得在重要决定中和对方协商。你的爱是一种温暖的、持续的、建设性的力量。',
+    strengths:'耐心持久、善于沟通规划、给伴侣参与感和安全感、注重日常中的小确幸、建设性思维。',
+    blindSpots:'过度规划可能让对方感到压力；偶尔忽略了当下的浪漫和即兴的快乐；在计划被打乱时容易焦虑。',
+    matches:['月光潮汐','灯塔守望者','星轨编织者'],
+    dangers:['风暴海燕','雾中漫游者','浪尖舞者'],
+    growthTips:'珊瑚礁很美，但也给海浪留一些自由进出的通道。计划是好的，但别忘了偶尔放下图纸，和伴侣一起做一些"没有目的"的快乐事情。'
+  },
+  {
+    id:'tide_balancer',
+    name:'潮汐平衡者',
+    profile:{S:0.50,F:0.50,E:0.50,A:0.50},
+    hitLine:'你深谙爱的平衡之道——就像潮汐，有涨有落，张弛有度。',
+    portrait:'你拥有罕见的平衡感。在爱情中你不会走极端——既能够给予安全感，又懂得保留自由；既会表达情感，也知道何时沉默。你的存在就像大海的潮汐，有自己稳定的节奏，让人感到舒适和自然。',
+    loveMode:'自然平衡型。你不会刻意经营也不放任自流。你相信好的关系就像呼吸——有吸入也有呼出。你善于在不同的情境中调整自己的角色：有时是温柔的港湾，有时是一起冒险的伙伴。',
+    strengths:'情绪稳定、适应力强、善于在不同需求间找到平衡、给对方舒适自然的相处体验、成熟理性。',
+    blindSpots:'四平八稳偶尔显得缺乏激情；在需要明确立场时可能犹豫不决；可能让对方不确定你最真实的想法。',
+    matches:['月光潮汐','萤火微光','珊瑚筑梦师'],
+    dangers:['火山心跳','极光引路人','风暴海燕'],
+    growthTips:'平衡是一种智慧，但偶尔的"失衡"也能带来惊喜。试着在安全范围内让自己偶尔疯狂一次——你会发现，打破节奏的瞬间，也可能是最美的乐章。'
+  },
+  {
+    id:'island_hermit',
+    name:'岛屿隐者',
+    profile:{S:0.60,F:0.40,E:0.20,A:0.20},
+    hitLine:'你的心是一座宁静的岛屿——不是拒绝来客，只是等待真正懂它的人。',
+    portrait:'你是一个习惯于独处但不排斥深度连接的人。在爱情中你非常慢热，对于外界的接近本能地保持距离。但你的"隐世"并非冷漠——你只是太珍视内心的宁静，不愿意为了任何一段关系牺牲它。你需要的是那个愿意放轻脚步登上你的岛的人。',
+    loveMode:'静候型。你不会主动觅爱，但你会在自己的世界里好好生活，等待那个有缘人自然而然地出现。你相信真正的爱不需要费力追逐。一旦有人走进了你的世界，你会展现出令人意外的温柔和专一。',
+    strengths:'内心世界丰富、不依赖他人来获得快乐、给伴侣极大的独立空间、一旦接纳就极为珍惜、不会无理取闹。',
+    blindSpots:'过于封闭可能让喜欢你的人无从靠近；不表达让对方误以为不在乎；可能错过那些需要你主动一点的关系。',
+    matches:['静谧湖泊','深海珍珠','贝壳低语者'],
+    dangers:['流星信使','火山心跳','极光引路人'],
+    growthTips:'岛很美，但偶尔也要升起一缕炊烟，让远方的人知道这里有人。试着在感到安全的时候，主动邀请值得的人来你的岛上坐坐——分享宁静不会让它减少，反而会让它更温暖。'
+  },
+  {
+    id:'aurora_guide',
+    name:'极光引路人',
+    profile:{S:0.20,F:0.80,E:0.50,A:0.90},
+    hitLine:'你是极夜中的极光——绚烂夺目，引领着敢于追随你的人走向未知的浪漫。',
+    portrait:'你天生就是一个领导者，在爱情中也一样。你对自己的魅力有清晰的认知，敢于主动追求喜欢的人，也善于策划令人难忘的约会和惊喜。和你在一起永远不会无聊——你就是那束变幻莫测却美得让人屏息的极光。',
+    loveMode:'引领主导型。你喜欢在关系中掌握主动权——安排约会、规划未来、制造浪漫。你享受被对方仰慕和追随的感觉。但你也需要伴侣有自己的主见——盲从会让你觉得无趣，你需要的是势均力敌的碰撞。',
+    strengths:'自信有魅力、行动力强、善于引领关系发展、给对方强烈的安全感和方向感、浪漫而有创造力。',
+    blindSpots:'主导欲过强可能压制伴侣的声音；偶尔忽略了对方也需要被尊重和被倾听；遇到同样强势的人时容易产生冲突。',
+    matches:['风暴海燕','永恒航海者','火山心跳'],
+    dangers:['古树根系','贝壳低语者','岛屿隐者'],
+    growthTips:'引路人也需要学会倾听同行者的声音。极光虽美，但它之所以能被看见，是因为有黑暗的天空做底色。偶尔退后一步，让伴侣来选择方向——你会发现并肩同行比独自领航更快乐。'
+  },
+  {
+    id:'shell_whisperer',
+    name:'贝壳低语者',
+    profile:{S:0.90,F:0.10,E:0.30,A:0.10},
+    hitLine:'你把最深的情感藏在贝壳里——只有俯身倾听的人，才能听见大海的声音。',
+    portrait:'你是所有人中最需要安全感的那一个。在爱情中你极度谨慎，几乎不会主动迈出第一步。你的内心世界丰富而敏感，但你把最真实的情感层层包裹、小心收藏。你需要的是一个愿意蹲下来、耐心倾听你的人——不催促、不逼迫、只是安静地陪在你身边。',
+    loveMode:'被动等待型。你几乎从不主动追求爱情，但这不代表你不渴望。你在等待一个能看穿你所有伪装的人——那个人不需要你解释，就能从你的沉默中读出千言万语。一旦你感到安全，你会是世界上最温柔、最细腻的伴侣。',
+    strengths:'极度细腻敏感、一旦信任就全心投入、给对方被深度需要的满足感、情感纯净、忠诚不渝。',
+    blindSpots:'过度被动可能导致一直错过合适的人；不表达需求让对方无从了解你；偶尔因缺乏安全感而过度试探伴侣。',
+    matches:['深海珍珠','静谧湖泊','古树根系'],
+    dangers:['流星信使','极光引路人','火山心跳'],
+    growthTips:'贝壳很美，但偶尔也要自己打开一丝缝隙，让阳光照进来。不是每个靠近你的人都会伤害你——试着在低压力的情境中多说一点点，你会发现表达自己并没有想象中那么可怕。'
+  },
+  {
+    id:'wave_dancer',
+    name:'浪尖舞者',
+    profile:{S:0.10,F:0.90,E:0.60,A:0.80},
+    hitLine:'你在爱的浪尖起舞——不惧风浪，只为那一瞬间的心跳加速。',
+    portrait:'你是爱情世界里的极限运动员。你追求刺激、新鲜和征服感。在爱情中你从不犹豫，看到喜欢的就会冲上去。你享受关系的初期阶段——暧昧、试探、第一次心动。你对"稳定"有一种本能的抗拒，因为你害怕爱会变成习惯而非心跳。',
+    loveMode:'征服挑战型。你把爱情当成一场冒险——每一次都是全力以赴的冲浪。你喜欢有挑战性的对象，太容易得到的关系反而让你失去兴趣。你需要在新鲜感和深度之间找到属于自己的平衡。',
+    strengths:'极具冒险精神、活力四射、敢爱敢恨、给对方前所未有的刺激体验、真实不造作。',
+    blindSpots:'新鲜感消退后容易离开；可能伤害那些真心对待你的人；害怕承诺和长期关系中的平淡；偶尔以自己的需求为中心。',
+    matches:['风暴海燕','极光引路人','火山心跳'],
+    dangers:['贝壳低语者','古树根系','深海珍珠'],
+    growthTips:'浪尖很美，但每道浪最终都会回到海里。真正的爱不是永远在浪尖——而是找到一个人，让你觉得"风平浪静时，和他在一起也很好"。试着给某段关系多一点时间，你会发现平静也有平静的美。'
+  },
+  {
+    id:'firefly_glow',
+    name:'萤火微光',
+    profile:{S:0.50,F:0.40,E:0.90,A:0.20},
+    hitLine:'你的爱是夏夜里的萤火——微小却温暖，不刺眼，却让人忍不住微笑。',
+    portrait:'你是天生的情感表达者，但你的表达方式不是呐喊宣言，而是润物无声的温柔。在爱情中你善于用小细节打动对方——一条关心的消息、一个恰好的拥抱、一个会意的眼神。你不需要站在舞台中央，你更愿意在黑暗中为你爱的人点亮一小片温暖。',
+    loveMode:'细水长流型。你不会轰轰烈烈地告白，但你会用365天的坚持告诉对方你的心意。你喜欢的关系是两个人慢慢靠近、慢慢了解、慢慢离不开彼此。你的被动不代表不渴望——你只是更相信水到渠成。',
+    strengths:'情感细腻入微、善于用小事表达大爱、给对方被温柔包裹的感觉、真诚不做作、持久有耐心。',
+    blindSpots:'过于被动可能让对方误以为你不敢兴趣；在需要争取时容易退缩；偶尔因为期待对方主动而失望。',
+    matches:['潮汐平衡者','星轨编织者','晨露守望者'],
+    dangers:['浪尖舞者','风暴海燕','极光引路人'],
+    growthTips:'萤火虽小，但夏夜因你而变得不同。你的光芒比你以为的更动人——试着偶尔大胆一点，让你的萤火不只照亮别人，也照亮自己。主动不是失去自我，而是对内心渴望的尊重。'
+  },
+  {
+    id:'star_weaver',
+    name:'星轨编织者',
+    profile:{S:0.70,F:0.20,E:0.90,A:0.50},
+    hitLine:'你用深情编织星轨——让两个人在浩瀚宇宙中，有一条只属于彼此的银河。',
+    portrait:'你是爱情中的艺术家兼守护者。你既有着强烈的安全感需求，又有着非常丰富的情感表达欲。在爱情中，你像一个编织星星的人——用细腻的情感、温柔的关怀和浪漫的想象力，为两个人创造出一个只属于你们的小宇宙。你相信爱需要仪式感，需要被说出来、被看见、被记住。',
+    loveMode:'仪式守护型。你非常注重关系中的"仪式感"——纪念日、定情物、专属的称呼和只属于两个人的小习惯。你既想要长久的稳定，又想要持续的浪漫。对你来说，爱情应该是两者兼得的。',
+    strengths:'浪漫且可靠、善于创造仪式感和归属感、情感表达能力强、给伴侣双重的满足（安全+浪漫）、有丰富的内心世界。',
+    blindSpots:'对仪式感的高期待偶尔让对方感到压力；在浪漫幻想和现实之间可能失衡；伴侣达不到期待时容易感到受伤。',
+    matches:['灯塔守望者','晨露守望者','萤火微光'],
+    dangers:['浪尖舞者','雾中漫游者','风暴海燕'],
+    growthTips:'星轨很美，但偶尔也抬头看看真实的星空——不完美但同样浩瀚。降低一点点对"完美爱情"的期待，你会发现真实的日常中也藏着诗篇。浪漫不在形式，而在用心。'
+  },
+  {
+    id:'mist_wanderer',
+    name:'雾中漫游者',
+    profile:{S:0.20,F:0.70,E:0.40,A:0.20},
+    hitLine:'你在爱的迷雾中漫步——不急着找到出口，享受每一步未知的风景。',
+    portrait:'你是一个随遇而安的灵魂。在爱情中你不喜欢给关系下定义、设框架。顺其自然是你的信条——该来的会来，该走的会走。你不热衷于主动追求，也不太需要确定的关系来获得安全感。你的洒脱让人着迷，也让人困惑。',
+    loveMode:'顺其自然型。你不规划、不强求、不定义。你喜欢和一个人在一起就在一起，但不在一起也不会焦虑。你享受关系中最自然的部分——没有承诺的压力、没有未来的焦虑、只有当下的自在。',
+    strengths:'极度洒脱不内耗、给伴侣绝对的自由、不会因为关系而焦虑、相处轻松无压力、包容度高。',
+    blindSpots:'过度随缘可能让伴侣觉得你根本不在乎；不愿意给关系下定义让对方缺乏安全感；偶尔因为逃避承诺而伤害认真的人。',
+    matches:['海风诗人','永恒航海者','风暴海燕'],
+    dangers:['贝壳低语者','古树根系','深海珍珠'],
+    growthTips:'迷雾很美，但陪你走的人也需要偶尔看到路标。洒脱不等于逃避——如果你在乎一个人，试着给他一些确定的信号。承诺不需要很重，一句"这段时间我只想和你一起走"就够了。'
+  },
+  {
+    id:'volcano_heartbeat',
+    name:'火山心跳',
+    profile:{S:0.10,F:0.60,E:0.80,A:0.90},
+    hitLine:'你的爱是火山喷发——炽热、猛烈、不给自己和对方任何犹豫的空间。',
+    portrait:'你是爱情世界里的行动派和激情派。在爱情中你不懂什么叫"慢慢来"——喜欢就要立刻表达，爱了就要全力以赴。你的感情炽热而直接，像火山喷发一样让人无法忽视。和你在一起的人会体验到前所未有的热情和关注，但也可能被你的热度灼伤。',
+    loveMode:'全情投入型。你每一次恋爱都是全力以赴。你不保留、不计算、不设防。你喜欢把所有的感情都倾注在一个人身上，也希望得到同样热烈的回应。你的爱是火焰——能温暖人，也能烧伤人。',
+    strengths:'热情真挚、行动力超强、给对方被全身心爱着的感觉、不怕受伤敢爱敢恨、真诚不做作。',
+    blindSpots:'热度难以为继可能导致关系大起大落；可能给对方造成巨大的情感压力；偶尔忽略了节奏和空间的重要性；受伤时反弹也极为剧烈。',
+    matches:['流星信使','浪尖舞者','极光引路人'],
+    dangers:['贝壳低语者','静谧湖泊','岛屿隐者'],
+    growthTips:'火山壮美，但不是每个人都能承受你的热度。试着学会控制火焰的大小——不是每一刻都需要炽热，有些时候，余烬的温度刚刚好。给爱一点喘息的空间，它反而会燃得更久。'
+  },
+  {
+    id:'morning_dew_guardian',
+    name:'晨露守护者',
+    profile:{S:0.80,F:0.10,E:0.80,A:0.40},
+    hitLine:'你如晨露般纯净温柔——用你的全部，守护着那颗你认定了的心。',
+    portrait:'你是温柔的坚定者。在爱情中，你既有强烈的保护欲和责任感，又有非常丰富的柔情表达。一旦你认定了某个人，你会用全部的自己去守护这段关系——但你不会用轰轰烈烈的方式，而是用每一天清晨的问候、每一个细微的关心。你是那种"愿意为爱变得更好"的人。',
+    loveMode:'温柔守护型。你在关系中是一个体贴入微的照顾者。你记得对方爱吃什么、怕什么、什么时候需要安慰、什么时候需要空间。你对"家"的渴望很深，希望在爱情中找到归属感。你的爱很重，但表达得很轻。',
+    strengths:'极度体贴温柔、责任感强、善于日常关怀、给对方被捧在手心的感觉、珍惜关系的每一个细节。',
+    blindSpots:'过度付出可能让自己枯竭；守护欲太强偶尔让对方感到窒息；在需要为自己争取时退缩；不习惯接受同等的回报。',
+    matches:['灯塔守望者','星轨编织者','萤火微光'],
+    dangers:['浪尖舞者','风暴海燕','极光引路人'],
+    growthTips:'晨露很美，但太阳出来后它就会消失。别把自己全部蒸发在守护里——你也值得被守护。学会接受对方的付出，给爱一个双向流动的机会。有时接受比给予更需要勇气。'
+  },
+  {
+    id:'eternal_voyager',
+    name:'永恒航海者',
+    profile:{S:0.30,F:0.90,E:0.50,A:0.60},
+    hitLine:'你生来就是航海者——不是不渴望靠岸，只是你的海还远没有看够。',
+    portrait:'你有一颗永远在路上的心。在爱情中，你渴望一个能和你一起看世界的人，而不是把你留在一个地方的人。你对爱情的定义不是"安定下来"，而是"找到那个让旅程更有意义的人"。你害怕被束缚，但你不害怕承诺——你只是需要承诺里有足够的海洋。',
+    loveMode:'同行探索型。你理想的爱情是两个人一起航海——各自掌舵，却朝着同一个方向。你不想要传统的"柴米油盐"，你想要的是"我们一起去看极光，一起在异国的小巷迷路，一起在星空下聊一整夜"。你相信爱是旅程，不是目的地。',
+    strengths:'独立且有趣、给伴侣无限的新奇体验、不依赖不捆绑、思想开阔包容、在面对挑战时是可靠的伙伴。',
+    blindSpots:'永远在路上的状态可能让对方缺乏安全感；偶尔忽略了关系需要一些"落地"的时刻；逃避日常琐碎中的责任。',
+    matches:['风暴海燕','海风诗人','极光引路人'],
+    dangers:['贝壳低语者','古树根系','晨露守望者'],
+    growthTips:'航海者，偶尔也找一个港湾停下来晒晒网。最美的航行不是永远不靠岸，而是你知道不管走多远，总有一个地方愿意等你回来。给自己一个机会，体验一下"锚定"的感觉——也许你会发现，停下来比想象中更美好。'
+  }
+];
+
+// ============================================
+// 应用状态
+// ============================================
+const state = {
+  phase: 'intro',           // 'intro' | 'exploring' | 'final' | 'result'
+  currentSceneIndex: 0,
+  scores: { S:0, F:0, E:0, A:0 },
+  resultPersonality: null
+};
+
+// ============================================
+// DOM 引用
+// ============================================
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+const dom = {
+  introScreen: $('#intro-screen'),
+  introMoon: $('#intro-moon'),
+  introLighthouse: $('#intro-lighthouse'),
+  lighthouseBeam: $('#lighthouse-beam'),
+  introBoat: $('#intro-boat'),
+  introText: $('#intro-text-container'),
+  introStartBtn: $('#intro-start-btn'),
+  gameScreen: $('#game-screen'),
+  sceneCard: $('#scene-card'),
+  sceneNarrative: $('#scene-narrative'),
+  optionsContainer: $('#options-container'),
+  zoneIcon: $('#zone-icon'),
+  zoneName: $('#zone-name'),
+  constellationProgress: $('#constellation-progress'),
+  finalScreen: $('#final-screen'),
+  glowingFruit: $('#glowing-fruit'),
+  fruitFallHint: $('#fruit-fall-hint'),
+  resultScreen: $('#result-screen'),
+  resultCard: $('#result-card'),
+  resultRestartBtn: $('#result-restart-btn'),
+  starfield: $('#starfield'),
+  particleLayer: $('#particle-layer')
+};
+
+// ============================================
+// 星空生成
+// ============================================
+function createStarfield() {
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < 120; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 2.5 + 0.8;
+    star.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random() * 100}%;
+      left:${Math.random() * 100}%;
+      --dur:${Math.random() * 3 + 2}s;
+      --delay:${Math.random() * 5}s;
+    `;
+    frag.appendChild(star);
+  }
+  dom.starfield.appendChild(frag);
+}
+
+// ============================================
+// 粒子（萤火虫）生成
+// ============================================
+let particleInterval = null;
+
+function startParticles(color = '#f0d080') {
+  stopParticles();
+  particleInterval = setInterval(() => {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left:${Math.random() * 90 + 5}%;
+      bottom:-10px;
+      --clr:${color};
+      --fp-dur:${Math.random() * 6 + 6}s;
+      --fp-delay:0s;
+    `;
+    dom.particleLayer.appendChild(p);
+    p.addEventListener('animationend', () => p.remove());
+    // Limit particles
+    if (dom.particleLayer.children.length > 30) {
+      dom.particleLayer.firstChild.remove();
+    }
+  }, 800);
+}
+
+function stopParticles() {
+  if (particleInterval) { clearInterval(particleInterval); particleInterval = null; }
+  dom.particleLayer.innerHTML = '';
+}
+
+function updateParticleColor(color) {
+  stopParticles();
+  startParticles(color);
+}
+
+// ============================================
+// 序章动画
+// ============================================
+function runIntro() {
+  // Phase 1: Moon appears (0s)
+  setTimeout(() => dom.introMoon.classList.add('visible'), 300);
+
+  // Phase 2: Lighthouse appears (1.5s)
+  setTimeout(() => {
+    dom.introLighthouse.classList.add('visible');
+    dom.lighthouseBeam.classList.add('visible');
+  }, 1500);
+
+  // Phase 3: Boat starts sailing (2s)
+  setTimeout(() => {
+    dom.introBoat.classList.add('sailing');
+  }, 2000);
+
+  // Phase 4: After boat journey, show text (8s)
+  setTimeout(() => {
+    dom.introText.classList.add('visible');
+  }, 8000);
+
+  // Phase 5: Show start button (10s)
+  setTimeout(() => {
+    dom.introStartBtn.classList.add('visible');
+  }, 10000);
+}
+
+// ============================================
+// 场景渲染
+// ============================================
+function getZoneInfo(zone) {
+  const map = {
+    coast:     { icon:'🏝️', name:'海岸', particleColor:'#8ef0ed' },
+    forest:    { icon:'🌲', name:'森林', particleColor:'#b89ae0' },
+    mountain:  { icon:'🏔️', name:'山与湖', particleColor:'#f0d080' },
+    lighthouse:{ icon:'🗼', name:'灯塔', particleColor:'#ffd89b' }
+  };
+  return map[zone] || map.coast;
+}
+
+function updateBackgroundForZone(zone) {
+  const zi = getZoneInfo(zone);
+  dom.zoneIcon.textContent = zi.icon;
+  dom.zoneName.textContent = zi.name;
+  // Update particle color
+  updateParticleColor(zi.particleColor);
+
+  // Update ocean gradient based on zone
+  const waves = $$('#ocean-layer .wave');
+  const gradients = {
+    coast: [
+      'linear-gradient(180deg, rgba(20,60,100,0) 0%, rgba(20,70,120,0.3) 30%, rgba(15,50,90,0.6) 60%, rgba(10,30,60,0.85) 100%)',
+      'linear-gradient(180deg, rgba(20,60,100,0) 0%, rgba(20,70,120,0.2) 30%, rgba(15,50,90,0.4) 60%, rgba(10,30,60,0.7) 100%)',
+      'linear-gradient(180deg, rgba(20,60,100,0) 0%, rgba(20,70,120,0.15) 30%, rgba(15,50,90,0.3) 60%, rgba(10,30,60,0.55) 100%)'
+    ],
+    forest: [
+      'linear-gradient(180deg, rgba(15,40,25,0) 0%, rgba(25,55,35,0.3) 30%, rgba(15,35,25,0.6) 60%, rgba(10,25,15,0.85) 100%)',
+      'linear-gradient(180deg, rgba(15,40,25,0) 0%, rgba(25,55,35,0.2) 30%, rgba(15,35,25,0.4) 60%, rgba(10,25,15,0.7) 100%)',
+      'linear-gradient(180deg, rgba(15,40,25,0) 0%, rgba(25,55,35,0.15) 30%, rgba(15,35,25,0.3) 60%, rgba(10,25,15,0.55) 100%)'
+    ],
+    mountain: [
+      'linear-gradient(180deg, rgba(25,20,50,0) 0%, rgba(35,25,60,0.3) 30%, rgba(20,15,45,0.6) 60%, rgba(15,10,35,0.85) 100%)',
+      'linear-gradient(180deg, rgba(25,20,50,0) 0%, rgba(35,25,60,0.2) 30%, rgba(20,15,45,0.4) 60%, rgba(15,10,35,0.7) 100%)',
+      'linear-gradient(180deg, rgba(25,20,50,0) 0%, rgba(35,25,60,0.15) 30%, rgba(20,15,45,0.3) 60%, rgba(15,10,35,0.55) 100%)'
+    ],
+    lighthouse: [
+      'linear-gradient(180deg, rgba(20,25,45,0) 0%, rgba(30,35,55,0.3) 30%, rgba(20,25,40,0.6) 60%, rgba(10,15,30,0.85) 100%)',
+      'linear-gradient(180deg, rgba(20,25,45,0) 0%, rgba(30,35,55,0.2) 30%, rgba(20,25,40,0.4) 60%, rgba(10,15,30,0.7) 100%)',
+      'linear-gradient(180deg, rgba(20,25,45,0) 0%, rgba(30,35,55,0.15) 30%, rgba(20,25,40,0.3) 60%, rgba(10,15,30,0.55) 100%)'
+    ]
+  };
+  const gset = gradients[zone] || gradients.coast;
+  waves.forEach((w, i) => { w.style.background = gset[i] || gset[0]; });
+}
+
+function updateConstellationProgress() {
+  const total = scenes.length;
+  const done = state.currentSceneIndex;
+  let html = '';
+  for (let i = 0; i < total; i++) {
+    html += `<div class="star-dot${i < done ? ' lit' : ''}"></div>`;
+  }
+  dom.constellationProgress.innerHTML = html;
+}
+
+function renderScene() {
+  if (state.currentSceneIndex >= scenes.length) {
+    showFinalScene();
+    return;
+  }
+  const scene = scenes[state.currentSceneIndex];
+  updateBackgroundForZone(scene.zone);
+  updateConstellationProgress();
+
+  dom.sceneNarrative.textContent = scene.narrative;
+  dom.optionsContainer.innerHTML = '';
+
+  scene.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="opt-icon">${opt.icon}</span>${opt.text}`;
+    btn.addEventListener('click', () => selectOption(scene, idx));
+    dom.optionsContainer.appendChild(btn);
+  });
+
+  // Fade in card
+  dom.sceneCard.classList.remove('transitioning');
+}
+
+function selectOption(scene, optionIndex) {
+  const chosen = scene.options[optionIndex];
+  // Update scores
+  for (const dim of ['S','F','E','A']) {
+    state.scores[dim] += (chosen.scores[dim] || 0);
+  }
+
+  // Transition out
+  dom.sceneCard.classList.add('transitioning');
+
+  // Advance to next scene
+  setTimeout(() => {
+    state.currentSceneIndex++;
+    renderScene();
+  }, 400);
+}
+
+// ============================================
+// 最终场景 — 古树 & 果实
+// ============================================
+function showFinalScene() {
+  stopParticles();
+  dom.gameScreen.classList.add('hidden');
+  dom.finalScreen.classList.remove('hidden');
+  state.phase = 'final';
+
+  // Position the fruit on the tree
+  const fruit = dom.glowingFruit;
+  fruit.style.top = '28%';
+  fruit.style.left = '50%';
+  fruit.style.transform = 'translateX(-50%)';
+  fruit.style.cursor = 'pointer';
+
+  dom.fruitFallHint.style.opacity = '1';
+
+  // Fruit drop animation after a brief moment
+  setTimeout(() => {
+    fruit.style.transition = 'top 1.5s cubic-bezier(0.25, 0.8, 0.25, 1.2)';
+    fruit.style.top = '50%';
+    fruit.style.boxShadow = '0 0 50px rgba(240,152,74,0.9), 0 0 120px rgba(240,152,74,0.5)';
+  }, 800);
+
+  fruit.addEventListener('click', revealResult);
+}
+
+function revealResult() {
+  dom.glowingFruit.removeEventListener('click', revealResult);
+  const personality = calculatePersonality();
+  state.resultPersonality = personality;
+
+  // Flash effect
+  dom.glowingFruit.style.transition = 'all 0.5s ease';
+  dom.glowingFruit.style.transform = 'translateX(-50%) scale(3)';
+  dom.glowingFruit.style.opacity = '0';
+
+  setTimeout(() => {
+    dom.finalScreen.classList.add('hidden');
+    dom.resultScreen.classList.remove('hidden');
+    state.phase = 'result';
+    renderResult(personality);
+  }, 600);
+}
+
+// ============================================
+// 人格匹配算法
+// ============================================
+function calculatePersonality() {
+  // Normalize scores (max possible per dimension = 2 * 24 = 48)
+  const maxPossible = 48;
+  const userProfile = {
+    S: Math.min(1, state.scores.S / maxPossible),
+    F: Math.min(1, state.scores.F / maxPossible),
+    E: Math.min(1, state.scores.E / maxPossible),
+    A: Math.min(1, state.scores.A / maxPossible)
+  };
+
+  // Rescale to emphasize differences
+  // Map from [0,1] to ensure good spread
+  const rescale = (v) => v;
+
+  // Find closest personality by Euclidean distance
+  let bestDist = Infinity;
+  let bestMatch = personalities[0];
+
+  for (const p of personalities) {
+    const dS = rescale(userProfile.S) - p.profile.S;
+    const dF = rescale(userProfile.F) - p.profile.F;
+    const dE = rescale(userProfile.E) - p.profile.E;
+    const dA = rescale(userProfile.A) - p.profile.A;
+    const dist = Math.sqrt(dS*dS + dF*dF + dE*dE + dA*dA);
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestMatch = p;
+    }
+  }
+
+  return bestMatch;
+}
+
+// ============================================
+// 结果页渲染
+// ============================================
+function renderResult(personality) {
+  const matchTags = personality.matches.map(n =>
+    `<span class="result-tag tag-match">💚 ${n}</span>`
+  ).join('');
+  const dangerTags = personality.dangers.map(n =>
+    `<span class="result-tag tag-danger">⚠️ ${n}</span>`
+  ).join('');
+
+  dom.resultCard.innerHTML = `
+    <div id="result-personality-name">${personality.name}</div>
+    <div id="result-hit-line">"${personality.hitLine}"</div>
+
+    <div class="result-section">
+      <h3><span class="sec-icon">🎨</span>人格画像</h3>
+      <p>${personality.portrait}</p>
+    </div>
+
+    <div class="result-section">
+      <h3><span class="sec-icon">💞</span>恋爱模式</h3>
+      <p>${personality.loveMode}</p>
+    </div>
+
+    <div class="result-section">
+      <h3><span class="sec-icon">✨</span>优势</h3>
+      <p>${personality.strengths}</p>
+    </div>
+
+    <div class="result-section">
+      <h3><span class="sec-icon">🌑</span>盲区</h3>
+      <p>${personality.blindSpots}</p>
+    </div>
+
+    <div id="result-tags">
+      ${matchTags}
+      ${dangerTags}
+    </div>
+
+    <div class="result-section">
+      <h3><span class="sec-icon">🌱</span>成长建议</h3>
+      <p>${personality.growthTips}</p>
+    </div>
+  `;
+
+  // Update background for result
+  updateParticleColor('#f0d080');
+  // Scroll to top
+  dom.resultScreen.scrollTop = 0;
+}
+
+// ============================================
+// 屏幕切换
+// ============================================
+function showScreen(screen) {
+  ['introScreen','gameScreen','finalScreen','resultScreen'].forEach(k => {
+    dom[k].classList.add('hidden');
+  });
+  screen.classList.remove('hidden');
+}
+
+// ============================================
+// 事件绑定 & 初始化
+// ============================================
+function init() {
+  createStarfield();
+  startParticles('#8ef0ed');
+
+  // Intro start button
+  dom.introStartBtn.addEventListener('click', () => {
+    state.phase = 'exploring';
+    dom.introScreen.classList.add('hidden');
+    dom.gameScreen.classList.remove('hidden');
+    dom.introBoat.classList.remove('sailing'); // reset
+    updateConstellationProgress();
+    renderScene();
+  });
+
+  // Restart button
+  dom.resultRestartBtn.addEventListener('click', () => {
+    state.phase = 'exploring';
+    state.currentSceneIndex = 0;
+    state.scores = { S:0, F:0, E:0, A:0 };
+    state.resultPersonality = null;
+    dom.resultScreen.classList.add('hidden');
+    dom.finalScreen.classList.add('hidden');
+    dom.gameScreen.classList.remove('hidden');
+    // Reset fruit
+    const fruit = dom.glowingFruit;
+    fruit.style.transition = 'none';
+    fruit.style.top = '28%';
+    fruit.style.left = '50%';
+    fruit.style.transform = 'translateX(-50%)';
+    fruit.style.opacity = '1';
+    fruit.style.boxShadow = '0 0 30px rgba(240,152,74,0.7), 0 0 80px rgba(240,152,74,0.3)';
+    fruit.addEventListener('click', revealResult);
+    dom.fruitFallHint.style.opacity = '1';
+    updateConstellationProgress();
+    renderScene();
+  });
+
+  // Run intro animation
+  runIntro();
+}
+
+// Start the app
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

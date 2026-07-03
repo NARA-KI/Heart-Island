@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "command": "powershell -ExecutionPolicy Bypass -File .claude/hooks/pre-bash-guard.ps1",
+        "description": "拦截危险命令: rm -rf / del /s / git reset --hard / 删除 assets public deploy core scripts"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "command": "powershell -ExecutionPolicy Bypass -File .claude/hooks/post-format.ps1",
+        "description": "修改 HTML/CSS/JS 文件后自动运行 prettier 格式化"
+      },
+      {
+        "matcher": "Edit|Write",
+        "command": "powershell -ExecutionPolicy Bypass -File .claude/hooks/post-audit.ps1",
+        "description": "修改核心文件后自动运行 npm audit:probability / audit:options / build (120s 冷却)"
+      }
+    ]
+  }
+}

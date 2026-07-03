@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g1" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5d78c"/><stop offset="100%" stop-color="#1a2a4a"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g1)"/>
+  <circle cx="100" cy="70" r="12" fill="#ffe9b0" opacity="0.9"/><circle cx="100" cy="70" r="4" fill="#fff"/>
+  <path d="M88 170 L88 85 L112 85 L112 170" stroke="#c8a86e" stroke-width="3" fill="none"/>
+  <line x1="70" y1="90" x2="130" y2="90" stroke="#ffe9b0" stroke-width="1.5" opacity="0.5"/>
+  <line x1="75" y1="98" x2="125" y2="98" stroke="#ffe9b0" stroke-width="1.5" opacity="0.4"/>
+  <line x1="80" y1="106" x2="120" y2="106" stroke="#ffe9b0" stroke-width="1.5" opacity="0.3"/>
+  <text x="100" y="195" text-anchor="middle" fill="#c8a86e" font-size="10" font-family="sans-serif">灯塔型</text>
+</svg>

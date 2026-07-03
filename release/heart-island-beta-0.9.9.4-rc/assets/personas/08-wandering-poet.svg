@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g8" cx="50%" cy="40%"><stop offset="0%" stop-color="#c8c0e8"/><stop offset="100%" stop-color="#1a1828"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g8)"/>
+  <path d="M70 120 Q80 60 100 50 Q120 60 130 120" stroke="#8880b8" stroke-width="2" fill="none"/>
+  <path d="M82 75 L78 65 L86 72" fill="#a098d0" opacity="0.6"/>
+  <circle cx="100" cy="55" r="8" stroke="#c8c0e8" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <circle cx="100" cy="55" r="2" fill="#d8d0f0"/>
+  <text x="100" y="195" text-anchor="middle" fill="#8880b8" font-size="10" font-family="sans-serif">流浪诗人型</text>
+</svg>

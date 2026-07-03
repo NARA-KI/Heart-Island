@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs><radialGradient id="g7" cx="50%" cy="40%"><stop offset="0%" stop-color="#f0c878"/><stop offset="100%" stop-color="#1a2015"/></radialGradient></defs>
+  <rect width="200" height="200" rx="16" fill="url(#g7)"/>
+  <circle cx="100" cy="80" r="24" stroke="#d0a858" stroke-width="2" fill="none"/>
+  <circle cx="100" cy="80" r="4" fill="#f0d8a0"/>
+  <line x1="100" y1="56" x2="100" y2="50" stroke="#d0a858" stroke-width="2"/>
+  <line x1="100" y1="104" x2="100" y2="110" stroke="#d0a858" stroke-width="2"/>
+  <line x1="76" y1="80" x2="70" y2="80" stroke="#d0a858" stroke-width="2"/>
+  <line x1="124" y1="80" x2="130" y2="80" stroke="#d0a858" stroke-width="2"/>
+  <polygon points="100,56 98,64 108,68" fill="#f0d8a0" opacity="0.6"/>
+  <text x="100" y="195" text-anchor="middle" fill="#c8a858" font-size="10" font-family="sans-serif">探险家型</text>
+</svg>

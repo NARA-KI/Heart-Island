@@ -1,0 +1,2814 @@
+{
+  "generatedAt": "2026-07-03T15:56:20.818Z",
+  "version": "Beta 0.9 B+ calibration",
+  "totalScenes": 36,
+  "totalOptions": 144,
+  "dimensions": 12,
+  "personalityTypes": 20,
+  "dimensionPathTests": {
+    "passCount": 12,
+    "totalDimensions": 12,
+    "results": {
+      "CL": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "AU": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "SE": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "EX": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "RP": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "IN": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "ID": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "ST": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "CA": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "NV": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "ME": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      },
+      "EV": {
+        "high": {
+          "dimScore": 100,
+          "allScores": [
+            100,
+            100,
+            100
+          ],
+          "ok": true
+        },
+        "low": {
+          "dimScore": 0,
+          "allScores": [
+            0,
+            0,
+            0
+          ],
+          "ok": true
+        },
+        "mid": {
+          "dimScore": 56,
+          "allScores": [
+            67,
+            33,
+            67
+          ],
+          "ok": true
+        },
+        "mixed": {
+          "dimScore": 56,
+          "allScores": [
+            100,
+            0,
+            67
+          ],
+          "ok": true
+        },
+        "allOk": true
+      }
+    }
+  },
+  "goldenPathTests": {
+    "passCount": 17,
+    "totalTypes": 20,
+    "corePassCount": 12,
+    "coreTotalTypes": 12,
+    "branchPassCount": 5,
+    "branchTotalTypes": 8,
+    "results": [
+      {
+        "type": "灯塔型",
+        "typeId": "lighthouse",
+        "hit": true,
+        "actualPrimary": "灯塔型",
+        "actualSecondary": "筑巢型",
+        "selfRank": 1,
+        "selfScore": 96,
+        "gap": 23,
+        "primaryScore": 96,
+        "secondaryScore": 73,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "守门人型",
+        "typeId": "gatekeeper",
+        "hit": true,
+        "actualPrimary": "守门人型",
+        "actualSecondary": "岛屿型",
+        "selfRank": 1,
+        "selfScore": 96,
+        "gap": 0,
+        "primaryScore": 96,
+        "secondaryScore": 96,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "筑巢型",
+        "typeId": "nest_builder",
+        "hit": true,
+        "actualPrimary": "筑巢型",
+        "actualSecondary": "温室型",
+        "selfRank": 1,
+        "selfScore": 98,
+        "gap": 19,
+        "primaryScore": 98,
+        "secondaryScore": 79,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "旧船长型",
+        "typeId": "old_captain",
+        "hit": false,
+        "actualPrimary": "收藏家型",
+        "actualSecondary": "深海型",
+        "selfRank": 3,
+        "selfScore": 88,
+        "gap": 4,
+        "primaryScore": 95,
+        "secondaryScore": 91,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "候鸟型",
+        "typeId": "migratory_bird",
+        "hit": true,
+        "actualPrimary": "候鸟型",
+        "actualSecondary": "极光型",
+        "selfRank": 1,
+        "selfScore": 96,
+        "gap": 9,
+        "primaryScore": 96,
+        "secondaryScore": 87,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "岛屿型",
+        "typeId": "island",
+        "hit": true,
+        "actualPrimary": "岛屿型",
+        "actualSecondary": "守门人型",
+        "selfRank": 1,
+        "selfScore": 99,
+        "gap": 16,
+        "primaryScore": 99,
+        "secondaryScore": 83,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "探险家型",
+        "typeId": "explorer",
+        "hit": true,
+        "actualPrimary": "探险家型",
+        "actualSecondary": "极光型",
+        "selfRank": 1,
+        "selfScore": 97,
+        "gap": 10,
+        "primaryScore": 97,
+        "secondaryScore": 87,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "流浪诗人型",
+        "typeId": "wandering_poet",
+        "hit": true,
+        "actualPrimary": "流浪诗人型",
+        "actualSecondary": "极光型",
+        "selfRank": 1,
+        "selfScore": 99,
+        "gap": 13,
+        "primaryScore": 99,
+        "secondaryScore": 86,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "收藏家型",
+        "typeId": "collector",
+        "hit": true,
+        "actualPrimary": "收藏家型",
+        "actualSecondary": "深海型",
+        "selfRank": 1,
+        "selfScore": 99,
+        "gap": 5,
+        "primaryScore": 99,
+        "secondaryScore": 94,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "剧本型",
+        "typeId": "script_writer",
+        "hit": true,
+        "actualPrimary": "剧本型",
+        "actualSecondary": "流浪诗人型",
+        "selfRank": 1,
+        "selfScore": 97,
+        "gap": 13,
+        "primaryScore": 97,
+        "secondaryScore": 84,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "星火型",
+        "typeId": "spark",
+        "hit": true,
+        "actualPrimary": "星火型",
+        "actualSecondary": "剧本型",
+        "selfRank": 1,
+        "selfScore": 89,
+        "gap": 9,
+        "primaryScore": 89,
+        "secondaryScore": 80,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "月光型",
+        "typeId": "moonlight",
+        "hit": true,
+        "actualPrimary": "月光型",
+        "actualSecondary": "镜像型",
+        "selfRank": 1,
+        "selfScore": 91,
+        "gap": 2,
+        "primaryScore": 91,
+        "secondaryScore": 89,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "镜像型",
+        "typeId": "mirror",
+        "hit": true,
+        "actualPrimary": "镜像型",
+        "actualSecondary": "月光型",
+        "selfRank": 1,
+        "selfScore": 99,
+        "gap": 13,
+        "primaryScore": 99,
+        "secondaryScore": 86,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "共振型",
+        "typeId": "resonance",
+        "hit": true,
+        "actualPrimary": "共振型",
+        "actualSecondary": "月光型",
+        "selfRank": 1,
+        "selfScore": 87,
+        "gap": 3,
+        "primaryScore": 87,
+        "secondaryScore": 84,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "潮汐型",
+        "typeId": "tide",
+        "hit": true,
+        "actualPrimary": "潮汐型",
+        "actualSecondary": "流浪诗人型",
+        "selfRank": 1,
+        "selfScore": 91,
+        "gap": 6,
+        "primaryScore": 91,
+        "secondaryScore": 85,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "温室型",
+        "typeId": "greenhouse",
+        "hit": false,
+        "actualPrimary": "镜像型",
+        "actualSecondary": "潮汐型",
+        "selfRank": 3,
+        "selfScore": 88,
+        "gap": 6,
+        "primaryScore": 98,
+        "secondaryScore": 92,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "深海型",
+        "typeId": "deep_sea",
+        "hit": true,
+        "actualPrimary": "深海型",
+        "actualSecondary": "收藏家型",
+        "selfRank": 1,
+        "selfScore": 97,
+        "gap": 10,
+        "primaryScore": 97,
+        "secondaryScore": 87,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "极光型",
+        "typeId": "aurora",
+        "hit": true,
+        "actualPrimary": "极光型",
+        "actualSecondary": "探险家型",
+        "selfRank": 1,
+        "selfScore": 90,
+        "gap": 2,
+        "primaryScore": 90,
+        "secondaryScore": 88,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "黑森林型",
+        "typeId": "black_forest",
+        "hit": false,
+        "actualPrimary": "深海型",
+        "actualSecondary": "岛屿型",
+        "selfRank": 3,
+        "selfScore": 89,
+        "gap": 5,
+        "primaryScore": 94,
+        "secondaryScore": 89,
+        "dimGaps": {},
+        "issueCount": 0
+      },
+      {
+        "type": "观星者型",
+        "typeId": "stargazer",
+        "hit": true,
+        "actualPrimary": "观星者型",
+        "actualSecondary": "共振型",
+        "selfRank": 1,
+        "selfScore": 90,
+        "gap": 8,
+        "primaryScore": 90,
+        "secondaryScore": 82,
+        "dimGaps": {},
+        "issueCount": 0
+      }
+    ]
+  },
+  "reversePathTests": {
+    "passCount": 20,
+    "totalTypes": 20,
+    "results": [
+      {
+        "type": "灯塔型",
+        "typeId": "lighthouse",
+        "stillHit": false,
+        "actualPrimary": "深海型",
+        "selfRank": 20,
+        "selfScore": 23,
+        "risk": "low"
+      },
+      {
+        "type": "守门人型",
+        "typeId": "gatekeeper",
+        "stillHit": false,
+        "actualPrimary": "星火型",
+        "selfRank": 19,
+        "selfScore": 27,
+        "risk": "low"
+      },
+      {
+        "type": "筑巢型",
+        "typeId": "nest_builder",
+        "stillHit": false,
+        "actualPrimary": "候鸟型",
+        "selfRank": 20,
+        "selfScore": 26,
+        "risk": "low"
+      },
+      {
+        "type": "旧船长型",
+        "typeId": "old_captain",
+        "stillHit": false,
+        "actualPrimary": "探险家型",
+        "selfRank": 20,
+        "selfScore": 24,
+        "risk": "low"
+      },
+      {
+        "type": "候鸟型",
+        "typeId": "migratory_bird",
+        "stillHit": false,
+        "actualPrimary": "灯塔型",
+        "selfRank": 20,
+        "selfScore": 30,
+        "risk": "low"
+      },
+      {
+        "type": "岛屿型",
+        "typeId": "island",
+        "stillHit": false,
+        "actualPrimary": "温室型",
+        "selfRank": 20,
+        "selfScore": 23,
+        "risk": "low"
+      },
+      {
+        "type": "探险家型",
+        "typeId": "explorer",
+        "stillHit": false,
+        "actualPrimary": "筑巢型",
+        "selfRank": 19,
+        "selfScore": 22,
+        "risk": "low"
+      },
+      {
+        "type": "流浪诗人型",
+        "typeId": "wandering_poet",
+        "stillHit": false,
+        "actualPrimary": "筑巢型",
+        "selfRank": 20,
+        "selfScore": 29,
+        "risk": "low"
+      },
+      {
+        "type": "收藏家型",
+        "typeId": "collector",
+        "stillHit": false,
+        "actualPrimary": "星火型",
+        "selfRank": 19,
+        "selfScore": 26,
+        "risk": "low"
+      },
+      {
+        "type": "剧本型",
+        "typeId": "script_writer",
+        "stillHit": false,
+        "actualPrimary": "灯塔型",
+        "selfRank": 18,
+        "selfScore": 29,
+        "risk": "low"
+      },
+      {
+        "type": "星火型",
+        "typeId": "spark",
+        "stillHit": false,
+        "actualPrimary": "守门人型",
+        "selfRank": 19,
+        "selfScore": 23,
+        "risk": "low"
+      },
+      {
+        "type": "月光型",
+        "typeId": "moonlight",
+        "stillHit": false,
+        "actualPrimary": "岛屿型",
+        "selfRank": 19,
+        "selfScore": 31,
+        "risk": "low"
+      },
+      {
+        "type": "镜像型",
+        "typeId": "mirror",
+        "stillHit": false,
+        "actualPrimary": "岛屿型",
+        "selfRank": 19,
+        "selfScore": 31,
+        "risk": "low"
+      },
+      {
+        "type": "共振型",
+        "typeId": "resonance",
+        "stillHit": false,
+        "actualPrimary": "潮汐型",
+        "selfRank": 20,
+        "selfScore": 30,
+        "risk": "low"
+      },
+      {
+        "type": "潮汐型",
+        "typeId": "tide",
+        "stillHit": false,
+        "actualPrimary": "灯塔型",
+        "selfRank": 20,
+        "selfScore": 29,
+        "risk": "low"
+      },
+      {
+        "type": "温室型",
+        "typeId": "greenhouse",
+        "stillHit": false,
+        "actualPrimary": "探险家型",
+        "selfRank": 20,
+        "selfScore": 27,
+        "risk": "low"
+      },
+      {
+        "type": "深海型",
+        "typeId": "deep_sea",
+        "stillHit": false,
+        "actualPrimary": "星火型",
+        "selfRank": 18,
+        "selfScore": 29,
+        "risk": "low"
+      },
+      {
+        "type": "极光型",
+        "typeId": "aurora",
+        "stillHit": false,
+        "actualPrimary": "筑巢型",
+        "selfRank": 20,
+        "selfScore": 16,
+        "risk": "low"
+      },
+      {
+        "type": "黑森林型",
+        "typeId": "black_forest",
+        "stillHit": false,
+        "actualPrimary": "共振型",
+        "selfRank": 20,
+        "selfScore": 27,
+        "risk": "low"
+      },
+      {
+        "type": "观星者型",
+        "typeId": "stargazer",
+        "stillHit": false,
+        "actualPrimary": "镜像型",
+        "selfRank": 20,
+        "selfScore": 27,
+        "risk": "low"
+      }
+    ]
+  },
+  "textConsistencyCheck": {
+    "passCount": 20,
+    "totalTypes": 20,
+    "results": [
+      {
+        "type": "灯塔型",
+        "typeId": "lighthouse",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "守门人型",
+        "typeId": "gatekeeper",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "筑巢型",
+        "typeId": "nest_builder",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "旧船长型",
+        "typeId": "old_captain",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "候鸟型",
+        "typeId": "migratory_bird",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "岛屿型",
+        "typeId": "island",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "探险家型",
+        "typeId": "explorer",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "流浪诗人型",
+        "typeId": "wandering_poet",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "收藏家型",
+        "typeId": "collector",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "剧本型",
+        "typeId": "script_writer",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "星火型",
+        "typeId": "spark",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "月光型",
+        "typeId": "moonlight",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "镜像型",
+        "typeId": "mirror",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "共振型",
+        "typeId": "resonance",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "潮汐型",
+        "typeId": "tide",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "温室型",
+        "typeId": "greenhouse",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "深海型",
+        "typeId": "deep_sea",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "极光型",
+        "typeId": "aurora",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "黑森林型",
+        "typeId": "black_forest",
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "type": "观星者型",
+        "typeId": "stargazer",
+        "conflicts": [],
+        "pass": true
+      }
+    ]
+  },
+  "optionData": [
+    {
+      "sceneId": "scene-01",
+      "sceneTitle": "漂流瓶里的信",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "立刻打开瓶子，迫不及待读信",
+      "memoryTag": "主动迎接每一份来自远方的问候"
+    },
+    {
+      "sceneId": "scene-01",
+      "sceneTitle": "漂流瓶里的信",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "小心地打开，先在手中感受瓶身的温度",
+      "memoryTag": "带着珍惜靠近每一个故事"
+    },
+    {
+      "sceneId": "scene-01",
+      "sceneTitle": "漂流瓶里的信",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "犹豫了一下才打开，不确定是否该窥探别人的心事",
+      "memoryTag": "在靠近之前需要片刻准备"
+    },
+    {
+      "sceneId": "scene-01",
+      "sceneTitle": "漂流瓶里的信",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "把瓶子放回海里，有些故事不该被打扰",
+      "memoryTag": "尊重每一份留在海上的秘密"
+    },
+    {
+      "sceneId": "scene-02",
+      "sceneTitle": "两个人影",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "走过去坐在他们旁边，想分享这一刻",
+      "memoryTag": "天然地靠近温暖的人和事"
+    },
+    {
+      "sceneId": "scene-02",
+      "sceneTitle": "两个人影",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在不远处坐下，让气氛自然融入",
+      "memoryTag": "用存在代替打扰"
+    },
+    {
+      "sceneId": "scene-02",
+      "sceneTitle": "两个人影",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "远远看了一眼，继续自己的路",
+      "memoryTag": "保持距离也是一种温柔"
+    },
+    {
+      "sceneId": "scene-02",
+      "sceneTitle": "两个人影",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "绕开这片沙滩，不打扰属于他们的时刻",
+      "memoryTag": "相信有些温暖不需要第三者"
+    },
+    {
+      "sceneId": "scene-03",
+      "sceneTitle": "海螺的低语",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "把海螺贴在耳边很久，想听完所有的声音",
+      "memoryTag": "渴望听完整每一个故事"
+    },
+    {
+      "sceneId": "scene-03",
+      "sceneTitle": "海螺的低语",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "听了片刻，把海螺收进口袋",
+      "memoryTag": "珍藏美好的片段"
+    },
+    {
+      "sceneId": "scene-03",
+      "sceneTitle": "海螺的低语",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "听了一下就放下了，不贪心",
+      "memoryTag": "浅尝辄止也是一种选择"
+    },
+    {
+      "sceneId": "scene-03",
+      "sceneTitle": "海螺的低语",
+      "location": "靠近海岸",
+      "dimension": "CL",
+      "dimLabel": "亲密连接",
+      "dimDesc": "渴望陪伴、靠近、共享日常",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "没有拿起海螺，继续走自己的路",
+      "memoryTag": "不被声音牵引自己的方向"
+    },
+    {
+      "sceneId": "scene-04",
+      "sceneTitle": "独行小径",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "独自走上小径，享受一个人的节奏",
+      "memoryTag": "独行不是孤独，是选择"
+    },
+    {
+      "sceneId": "scene-04",
+      "sceneTitle": "独行小径",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "走在上面感受风的形状，但愿意随时折返与人同行",
+      "memoryTag": "自由与陪伴可以共存"
+    },
+    {
+      "sceneId": "scene-04",
+      "sceneTitle": "独行小径",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "犹豫要不要走上去，回头看有没有人也想一起",
+      "memoryTag": "在自由和陪伴之间需要权衡"
+    },
+    {
+      "sceneId": "scene-04",
+      "sceneTitle": "独行小径",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "退回山脚，想等有人一起再走这条路",
+      "memoryTag": "不想被狭窄的路径定义"
+    },
+    {
+      "sceneId": "scene-05",
+      "sceneTitle": "盘旋的鹰",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "羡慕它的自由，你是那种也需要广阔天空的人",
+      "memoryTag": "自由是灵魂的必需品"
+    },
+    {
+      "sceneId": "scene-05",
+      "sceneTitle": "盘旋的鹰",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "欣赏它的姿态，但也觉得有同伴的飞行更温暖",
+      "memoryTag": "独立但不拒绝连接"
+    },
+    {
+      "sceneId": "scene-05",
+      "sceneTitle": "盘旋的鹰",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看了片刻，担心它会不会孤单",
+      "memoryTag": "自由和孤单在你的世界里容易混淆"
+    },
+    {
+      "sceneId": "scene-05",
+      "sceneTitle": "盘旋的鹰",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "觉得鹰飞得太远太孤单，还是更想回到有人陪伴的路上",
+      "memoryTag": "不被外物轻易影响"
+    },
+    {
+      "sceneId": "scene-06",
+      "sceneTitle": "分岔路口",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "毫不犹豫走向荒野，那才是你的方向",
+      "memoryTag": "荒野的呼唤比人群的温暖更吸引你"
+    },
+    {
+      "sceneId": "scene-06",
+      "sceneTitle": "分岔路口",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "先走荒野那条，如果无聊了再去村落",
+      "memoryTag": "先探索自己，再寻找他人"
+    },
+    {
+      "sceneId": "scene-06",
+      "sceneTitle": "分岔路口",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "在路口徘徊了很久，难以决定",
+      "memoryTag": "选择本身有时比方向更让人焦虑"
+    },
+    {
+      "sceneId": "scene-06",
+      "sceneTitle": "分岔路口",
+      "location": "边界山脊",
+      "dimension": "AU",
+      "dimLabel": "自由边界",
+      "dimDesc": "需要自由、空间、自主节奏",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "走向村落，人多的地方更让你安心",
+      "memoryTag": "人群的温度比独自前行更重要"
+    },
+    {
+      "sceneId": "scene-07",
+      "sceneTitle": "等待回应的呼喊",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "再喊一次，渴望听到更清晰的回应",
+      "memoryTag": "需要确认的声音被听到了"
+    },
+    {
+      "sceneId": "scene-07",
+      "sceneTitle": "等待回应的呼喊",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "微笑了一下，知道有人在就足够",
+      "memoryTag": "回应不需要完美，存在就够了"
+    },
+    {
+      "sceneId": "scene-07",
+      "sceneTitle": "等待回应的呼喊",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定那是不是真正的回应，选择观察",
+      "memoryTag": "对回应的真实性保持谨慎"
+    },
+    {
+      "sceneId": "scene-07",
+      "sceneTitle": "等待回应的呼喊",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不在意回声，继续做自己的事",
+      "memoryTag": "不需要外界的回应来确认自己"
+    },
+    {
+      "sceneId": "scene-08",
+      "sceneTitle": "灯塔的信号",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "朝着灯塔走去，想知道谁在等",
+      "memoryTag": "被承诺的信号牵引"
+    },
+    {
+      "sceneId": "scene-08",
+      "sceneTitle": "灯塔的信号",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "对灯塔的方向点了点头，先完成自己的探索再过去",
+      "memoryTag": "确认有人在等，但不会改变自己的节奏"
+    },
+    {
+      "sceneId": "scene-08",
+      "sceneTitle": "灯塔的信号",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定那灯光是不是真的为自己而亮",
+      "memoryTag": "对信号的真实性保持怀疑"
+    },
+    {
+      "sceneId": "scene-08",
+      "sceneTitle": "灯塔的信号",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去在意灯塔——有没有人等，对你来说并不重要",
+      "memoryTag": "不依赖外部信号导航"
+    },
+    {
+      "sceneId": "scene-09",
+      "sceneTitle": "沙滩上的誓言",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "蹲下来把快要消失的字迹重新描深",
+      "memoryTag": "愿意守住每一个即将消逝的承诺"
+    },
+    {
+      "sceneId": "scene-09",
+      "sceneTitle": "沙滩上的誓言",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "看了一会儿，默默记住这行字的样子",
+      "memoryTag": "记住承诺，但不强求"
+    },
+    {
+      "sceneId": "scene-09",
+      "sceneTitle": "沙滩上的誓言",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "心想：写这句话的人真的会回来吗",
+      "memoryTag": "对承诺保持理性质疑"
+    },
+    {
+      "sceneId": "scene-09",
+      "sceneTitle": "沙滩上的誓言",
+      "location": "回声港湾",
+      "dimension": "SE",
+      "dimLabel": "安全确认",
+      "dimDesc": "需要回应、承诺、明确关系信号",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去读它——别人的承诺与你无关",
+      "memoryTag": "不被别人的承诺牵动"
+    },
+    {
+      "sceneId": "scene-10",
+      "sceneTitle": "水面的倒映",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "对着水面说出你此刻真正的感受",
+      "memoryTag": "面对自己时从不伪装"
+    },
+    {
+      "sceneId": "scene-10",
+      "sceneTitle": "水面的倒映",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在心里默默承认那个倒影才是真实的你",
+      "memoryTag": "对自己诚实，只是不太习惯说出口"
+    },
+    {
+      "sceneId": "scene-10",
+      "sceneTitle": "水面的倒映",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "移开视线——有些感受现在还不是面对的时候",
+      "memoryTag": "真实有时需要合适的时机"
+    },
+    {
+      "sceneId": "scene-10",
+      "sceneTitle": "水面的倒映",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "搅乱了水面，不需要倒影来告诉你你是谁",
+      "memoryTag": "不需要反射来确认自己"
+    },
+    {
+      "sceneId": "scene-11",
+      "sceneTitle": "漂流的话语",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "也找一片叶子，写下自己最想说的话",
+      "memoryTag": "愿意让心事漂流到未知的远方"
+    },
+    {
+      "sceneId": "scene-11",
+      "sceneTitle": "漂流的话语",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "读完了叶子上的字，在心里默默回应",
+      "memoryTag": "共情但不一定说出口"
+    },
+    {
+      "sceneId": "scene-11",
+      "sceneTitle": "漂流的话语",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看完了就把叶子放回水里，不留下痕迹",
+      "memoryTag": "感受了，但选择不参与"
+    },
+    {
+      "sceneId": "scene-11",
+      "sceneTitle": "漂流的话语",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去读也不去写——有些表达是多余的",
+      "memoryTag": "表达不是你的语言"
+    },
+    {
+      "sceneId": "scene-12",
+      "sceneTitle": "河底的石头",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "走进河里，亲手摸一摸那些棱角分明的石头",
+      "memoryTag": "愿意触碰最真实的不完美"
+    },
+    {
+      "sceneId": "scene-12",
+      "sceneTitle": "河底的石头",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "站在岸边，仔细看每一块石头的形状",
+      "memoryTag": "观察真实的细节，但不急着触碰"
+    },
+    {
+      "sceneId": "scene-12",
+      "sceneTitle": "河底的石头",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "只看那些光滑好看的石头",
+      "memoryTag": "倾向于展示美好的一面"
+    },
+    {
+      "sceneId": "scene-12",
+      "sceneTitle": "河底的石头",
+      "location": "潮汐河流",
+      "dimension": "EX",
+      "dimLabel": "表达开放",
+      "dimDesc": "愿意表达真实感受、暴露脆弱",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去看河底——看到的未必是真的",
+      "memoryTag": "对表面之下的真实保持距离"
+    },
+    {
+      "sceneId": "scene-13",
+      "sceneTitle": "裂开的大地",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "寻找材料搭一座简易的桥，连接裂缝两边",
+      "memoryTag": "相信裂痕可以被修复"
+    },
+    {
+      "sceneId": "scene-13",
+      "sceneTitle": "裂开的大地",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在两棵树之间系一根绳子，让它们知道彼此还存在",
+      "memoryTag": "连接不需要完美，只需要存在"
+    },
+    {
+      "sceneId": "scene-13",
+      "sceneTitle": "裂开的大地",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "站在裂缝边思考：有些裂缝也许不该被填上",
+      "memoryTag": "质疑修复是否总是必要的"
+    },
+    {
+      "sceneId": "scene-13",
+      "sceneTitle": "裂开的大地",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "裂缝存在一定有它的原因，不去干预",
+      "memoryTag": "接受断裂作为一种存在的状态"
+    },
+    {
+      "sceneId": "scene-14",
+      "sceneTitle": "喷发的余烬",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "用随身的水壶给它降温，留在它身边直到它能飞",
+      "memoryTag": "在伤害发生后第一时间给予温暖"
+    },
+    {
+      "sceneId": "scene-14",
+      "sceneTitle": "喷发的余烬",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "把它移到安全的地方，但知道真正的恢复需要时间",
+      "memoryTag": "提供庇护但不强求快速痊愈"
+    },
+    {
+      "sceneId": "scene-14",
+      "sceneTitle": "喷发的余烬",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "站在远处守护，不想过度干预它的恢复过程",
+      "memoryTag": "在远近之间寻找合适的距离"
+    },
+    {
+      "sceneId": "scene-14",
+      "sceneTitle": "喷发的余烬",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "自然是残酷的，有些伤需要自己愈合",
+      "memoryTag": "相信自然疗愈的力量，不主动介入"
+    },
+    {
+      "sceneId": "scene-15",
+      "sceneTitle": "重新生长的花",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "每天来这里浇水，直到它完全开放",
+      "memoryTag": "相信持续的努力可以让美好重生"
+    },
+    {
+      "sceneId": "scene-15",
+      "sceneTitle": "重新生长的花",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "给它浇一次水，然后让它自己面对风雨",
+      "memoryTag": "提供一个起点，但尊重它自己的节奏"
+    },
+    {
+      "sceneId": "scene-15",
+      "sceneTitle": "重新生长的花",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "在旁边放一块石头为它挡风，仅此而已",
+      "memoryTag": "提供最小的帮助，不多不少"
+    },
+    {
+      "sceneId": "scene-15",
+      "sceneTitle": "重新生长的花",
+      "location": "裂隙火山",
+      "dimension": "RP",
+      "dimLabel": "修复能力",
+      "dimDesc": "冲突后愿意沟通、修复、重新连接",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不打扰——能活下来的花，不需要人为干预",
+      "memoryTag": "相信生命有自己的韧性"
+    },
+    {
+      "sceneId": "scene-16",
+      "sceneTitle": "顺风的方向",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "张开双臂顺着风大步跑去，恨不得立刻到达",
+      "memoryTag": "被方向牵引时你会全力以赴"
+    },
+    {
+      "sceneId": "scene-16",
+      "sceneTitle": "顺风的方向",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "顺着风走，但不急——终点是确定的，过程可以慢一点",
+      "memoryTag": "有方向，但享受沿途"
+    },
+    {
+      "sceneId": "scene-16",
+      "sceneTitle": "顺风的方向",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定风的方向是不是对的，先走走看再说",
+      "memoryTag": "跟随但保持怀疑"
+    },
+    {
+      "sceneId": "scene-16",
+      "sceneTitle": "顺风的方向",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "停在原地，等风自己过去——你不想被任何方向催着走",
+      "memoryTag": "不被任何外力推动你的方向"
+    },
+    {
+      "sceneId": "scene-17",
+      "sceneTitle": "远方的篝火",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "立刻出发，想在火灭之前到达",
+      "memoryTag": "为了温暖不惜跋涉"
+    },
+    {
+      "sceneId": "scene-17",
+      "sceneTitle": "远方的篝火",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "整理好背包再出发，确保路上有足够的补给",
+      "memoryTag": "主动但有准备"
+    },
+    {
+      "sceneId": "scene-17",
+      "sceneTitle": "远方的篝火",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "等天亮再走吧——篝火也许还会在",
+      "memoryTag": "等待比行动更让你安心"
+    },
+    {
+      "sceneId": "scene-17",
+      "sceneTitle": "远方的篝火",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不再追那团火，原地坐下等夜色过去",
+      "memoryTag": "不依赖远方的温暖，自己创造"
+    },
+    {
+      "sceneId": "scene-18",
+      "sceneTitle": "十字路口",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "凭直觉选一条路，立刻启程",
+      "memoryTag": "相信直觉，不犹豫"
+    },
+    {
+      "sceneId": "scene-18",
+      "sceneTitle": "十字路口",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在路口找一些线索——脚印、风向、光的方向",
+      "memoryTag": "先收集信息再行动"
+    },
+    {
+      "sceneId": "scene-18",
+      "sceneTitle": "十字路口",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "坐下來等一等，也许会有路人经过可以问路",
+      "memoryTag": "在决策前等待外部信息"
+    },
+    {
+      "sceneId": "scene-18",
+      "sceneTitle": "十字路口",
+      "location": "风向平原",
+      "dimension": "IN",
+      "dimLabel": "主动推进",
+      "dimDesc": "主动靠近、推动关系、规划下一步",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不急着走——此时此刻的停留本身也是一种选择",
+      "memoryTag": "不行动也是一种立场"
+    },
+    {
+      "sceneId": "scene-19",
+      "sceneTitle": "望远镜里的星",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "凑上去看那颗星，想了解它的一切",
+      "memoryTag": "被未知的美深深吸引"
+    },
+    {
+      "sceneId": "scene-19",
+      "sceneTitle": "望远镜里的星",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "先调整焦距，确保看清楚了再做判断",
+      "memoryTag": "欣赏但不冲动"
+    },
+    {
+      "sceneId": "scene-19",
+      "sceneTitle": "望远镜里的星",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看了一会儿，觉得它和别的星星没有太大不同",
+      "memoryTag": "浪漫滤镜在你这里比较薄"
+    },
+    {
+      "sceneId": "scene-19",
+      "sceneTitle": "望远镜里的星",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不看——星星在天上就够了，不需要通过望远镜",
+      "memoryTag": "不需要工具来确认美好"
+    },
+    {
+      "sceneId": "scene-20",
+      "sceneTitle": "流星划过",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "闭上眼睛许了一个关于爱情的愿望",
+      "memoryTag": "相信星星能把心意传给对的人"
+    },
+    {
+      "sceneId": "scene-20",
+      "sceneTitle": "流星划过",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "默默在心里说了一句话，但不太确信会被听到",
+      "memoryTag": "渴望被听见，但保持理性"
+    },
+    {
+      "sceneId": "scene-20",
+      "sceneTitle": "流星划过",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看完了流星没有许愿——愿望应该靠自己实现",
+      "memoryTag": "浪漫和务实之间你倾向后者"
+    },
+    {
+      "sceneId": "scene-20",
+      "sceneTitle": "流星划过",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "流星只是陨石燃烧，不需要赋予它意义",
+      "memoryTag": "不需要浪漫化的解释"
+    },
+    {
+      "sceneId": "scene-21",
+      "sceneTitle": "星座的传说",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "仔细研究星座图，想知道哪一颗星属于你",
+      "memoryTag": "渴望找到灵魂层面的归属"
+    },
+    {
+      "sceneId": "scene-21",
+      "sceneTitle": "星座的传说",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "觉得这个传说很美，但不一定需要星座来指引爱情",
+      "memoryTag": "欣赏浪漫但保持自主"
+    },
+    {
+      "sceneId": "scene-21",
+      "sceneTitle": "星座的传说",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看了半天也看不出哪颗星星和自己有关",
+      "memoryTag": "在浪漫叙事中容易迷失"
+    },
+    {
+      "sceneId": "scene-21",
+      "sceneTitle": "星座的传说",
+      "location": "星眠天文台",
+      "dimension": "ID",
+      "dimLabel": "灵魂理想",
+      "dimDesc": "重视灵魂共鸣、命运感、浪漫想象",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "星座和人没有必然联系——你相信更实在的东西",
+      "memoryTag": "灵魂共鸣不如脚踏实地"
+    },
+    {
+      "sceneId": "scene-22",
+      "sceneTitle": "古老的钟",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "敲响那口钟，让钟声见证你此刻的决心",
+      "memoryTag": "相信承诺需要被听见和记住"
+    },
+    {
+      "sceneId": "scene-22",
+      "sceneTitle": "古老的钟",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "摸了摸钟，但没有敲——承诺在心不在钟声",
+      "memoryTag": "重视承诺但不需要仪式"
+    },
+    {
+      "sceneId": "scene-22",
+      "sceneTitle": "古老的钟",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定自己是否准备好敲响它——承诺太重了",
+      "memoryTag": "对承诺的重量保持敬畏"
+    },
+    {
+      "sceneId": "scene-22",
+      "sceneTitle": "古老的钟",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去碰它——你不想让任何承诺提前固定未来",
+      "memoryTag": "不需要外部仪式来确认决心"
+    },
+    {
+      "sceneId": "scene-23",
+      "sceneTitle": "石墙上的名字",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "也把你的名字刻在墙上，和那些名字一起留在这里",
+      "memoryTag": "愿意留下长久的印记"
+    },
+    {
+      "sceneId": "scene-23",
+      "sceneTitle": "石墙上的名字",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "用手指在墙上轻轻写了一下，不留永久的痕迹",
+      "memoryTag": "存在过但不强求永恒"
+    },
+    {
+      "sceneId": "scene-23",
+      "sceneTitle": "石墙上的名字",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看完了那些名字，没有留下自己的——不知道值不值得",
+      "memoryTag": "对自己的停留保持不确定"
+    },
+    {
+      "sceneId": "scene-23",
+      "sceneTitle": "石墙上的名字",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不在意墙上的名字——来过就够了，不需要证明",
+      "memoryTag": "存在不需要被记录"
+    },
+    {
+      "sceneId": "scene-24",
+      "sceneTitle": "塔的基石",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "从旁边搬来一块石头，放在基石旁边",
+      "memoryTag": "愿意一块一块地搭建长久"
+    },
+    {
+      "sceneId": "scene-24",
+      "sceneTitle": "塔的基石",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "摸了摸基石，感受它的重量和温度",
+      "memoryTag": "欣赏长久但不急着参与搭建"
+    },
+    {
+      "sceneId": "scene-24",
+      "sceneTitle": "塔的基石",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "觉得\"长久\"是一个太遥远的词，不确定自己能坚持",
+      "memoryTag": "对长期承诺感到不确定"
+    },
+    {
+      "sceneId": "scene-24",
+      "sceneTitle": "塔的基石",
+      "location": "誓约之塔",
+      "dimension": "ST",
+      "dimLabel": "稳定经营",
+      "dimDesc": "渴望长期关系、共同规划、稳定建设",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不需要基石——短暂的事物也可以很美",
+      "memoryTag": "长久不是唯一的价值标准"
+    },
+    {
+      "sceneId": "scene-25",
+      "sceneTitle": "等待的人",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "走过去帮他捡起行李，问他要不要一起走",
+      "memoryTag": "看见需要时本能地伸出援手"
+    },
+    {
+      "sceneId": "scene-25",
+      "sceneTitle": "等待的人",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "问他需不需要帮忙——如果他摇头，你就不勉强",
+      "memoryTag": "提供帮助但尊重对方的边界"
+    },
+    {
+      "sceneId": "scene-25",
+      "sceneTitle": "等待的人",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "在旁边观察了一会儿，不确定自己的帮助是否会被接受",
+      "memoryTag": "想要帮助但需要确认对方需要"
+    },
+    {
+      "sceneId": "scene-25",
+      "sceneTitle": "等待的人",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "每个人都有自己的路要走，不需要你来承担",
+      "memoryTag": "不替别人承担属于他们的事"
+    },
+    {
+      "sceneId": "scene-26",
+      "sceneTitle": "熄灭的灯",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "用自己的方式——也许用手遮挡、也许添油——让灯继续亮着",
+      "memoryTag": "本能让你不让温暖熄灭"
+    },
+    {
+      "sceneId": "scene-26",
+      "sceneTitle": "熄灭的灯",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在还能亮的灯下坐一会儿，享受最后的微光",
+      "memoryTag": "珍惜尚存的温暖但不强求"
+    },
+    {
+      "sceneId": "scene-26",
+      "sceneTitle": "熄灭的灯",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看到灯灭了有些难过，但不觉得自己能做什么",
+      "memoryTag": "被熄灭触动但不行动"
+    },
+    {
+      "sceneId": "scene-26",
+      "sceneTitle": "熄灭的灯",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "灯灭不灭是天意——不需要人为去维持",
+      "memoryTag": "不需要承担维持光亮的责任"
+    },
+    {
+      "sceneId": "scene-27",
+      "sceneTitle": "沉重的行囊",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "A",
+      "currentScore": 33,
+      "optionText": "检查行囊，把属于别人的东西还给别人，属于自己的留着",
+      "memoryTag": "能分清哪些责任属于自己"
+    },
+    {
+      "sceneId": "scene-27",
+      "sceneTitle": "沉重的行囊",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "放下一些最重的东西，但留几样最重要的",
+      "memoryTag": "学会选择性地承担"
+    },
+    {
+      "sceneId": "scene-27",
+      "sceneTitle": "沉重的行囊",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "C",
+      "currentScore": 100,
+      "optionText": "觉得每样东西都很重要，舍不得放下任何一件",
+      "memoryTag": "总觉得每一份重量都不该被放下"
+    },
+    {
+      "sceneId": "scene-27",
+      "sceneTitle": "沉重的行囊",
+      "location": "灯火码头",
+      "dimension": "CA",
+      "dimLabel": "照顾承担",
+      "dimDesc": "容易照顾、托底、成为支撑者",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "把整个行囊放在路边——旅途不需要那么多负担",
+      "memoryTag": "轻松前行比背负更重要"
+    },
+    {
+      "sceneId": "scene-28",
+      "sceneTitle": "未知的海图",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "调转船头驶向那片\"未知\"海域",
+      "memoryTag": "未知不是危险，是邀请"
+    },
+    {
+      "sceneId": "scene-28",
+      "sceneTitle": "未知的海图",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "先沿着已知航线航行，等准备好了再探索未知",
+      "memoryTag": "对未知有兴趣但需要准备"
+    },
+    {
+      "sceneId": "scene-28",
+      "sceneTitle": "未知的海图",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定是否该去——未知里可能有好东西，也可能有危险",
+      "memoryTag": "在刺激和安全之间犹豫"
+    },
+    {
+      "sceneId": "scene-28",
+      "sceneTitle": "未知的海图",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "沿已知航线走就够了——不需要冒险",
+      "memoryTag": "安全比新鲜更重要"
+    },
+    {
+      "sceneId": "scene-29",
+      "sceneTitle": "海市蜃楼",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "全速前进，就算是幻觉也值得追一次",
+      "memoryTag": "被每一个\"可能\"点燃"
+    },
+    {
+      "sceneId": "scene-29",
+      "sceneTitle": "海市蜃楼",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "慢慢靠近，保持警惕但不想错过",
+      "memoryTag": "在探索中保留理性"
+    },
+    {
+      "sceneId": "scene-29",
+      "sceneTitle": "海市蜃楼",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "停下来观察——如果是真的，它不会消失",
+      "memoryTag": "等待确认而不是追逐"
+    },
+    {
+      "sceneId": "scene-29",
+      "sceneTitle": "海市蜃楼",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "海市蜃楼不是真的——不值得为了幻觉偏离航线",
+      "memoryTag": "不为虚假的希望改变方向"
+    },
+    {
+      "sceneId": "scene-30",
+      "sceneTitle": "换一条路",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "猛转舵，换个全新的方向——重复让人厌倦",
+      "memoryTag": "变化本身就是一种兴奋剂"
+    },
+    {
+      "sceneId": "scene-30",
+      "sceneTitle": "换一条路",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "偶尔偏离航线看看新风景，但保留回到主航线的可能",
+      "memoryTag": "在稳定和变化之间找到节奏"
+    },
+    {
+      "sceneId": "scene-30",
+      "sceneTitle": "换一条路",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定要不要换方向——现在的航线虽然没什么惊喜但也安全",
+      "memoryTag": "对变化感到矛盾"
+    },
+    {
+      "sceneId": "scene-30",
+      "sceneTitle": "换一条路",
+      "location": "迷雾航线",
+      "dimension": "NV",
+      "dimLabel": "新鲜探索",
+      "dimDesc": "热爱变化、新鲜感、未知可能性",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不换方向——沿着固定航线走到终点就是胜利",
+      "memoryTag": "一致性和坚持比新鲜感重要"
+    },
+    {
+      "sceneId": "scene-31",
+      "sceneTitle": "搁浅的旧船",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "登上旧船，想了解它曾经航行过哪些海域",
+      "memoryTag": "被过去的故事深深吸引"
+    },
+    {
+      "sceneId": "scene-31",
+      "sceneTitle": "搁浅的旧船",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在船边站了一会儿，想象它曾经乘风破浪的样子",
+      "memoryTag": "尊重过去但不沉溺"
+    },
+    {
+      "sceneId": "scene-31",
+      "sceneTitle": "搁浅的旧船",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看了一眼就移开了目光——旧船让人有些伤感",
+      "memoryTag": "过去容易勾起复杂的情绪"
+    },
+    {
+      "sceneId": "scene-31",
+      "sceneTitle": "搁浅的旧船",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "旧船已经完成了它的使命，不需要再去打扰",
+      "memoryTag": "向前看，不回头"
+    },
+    {
+      "sceneId": "scene-32",
+      "sceneTitle": "船长的日志",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "一页一页翻看整本日志，从第一页到最后",
+      "memoryTag": "渴望完整地了解一个故事的全貌"
+    },
+    {
+      "sceneId": "scene-32",
+      "sceneTitle": "船长的日志",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "只看第一页和最后一页——开头和结局最重要",
+      "memoryTag": "有选择地回顾过去"
+    },
+    {
+      "sceneId": "scene-32",
+      "sceneTitle": "船长的日志",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "只看了最后一页就放下了——不想被太多的故事牵动",
+      "memoryTag": "过去看一点就好，多了容易情绪起伏"
+    },
+    {
+      "sceneId": "scene-32",
+      "sceneTitle": "船长的日志",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不翻看日志——别人的过去与你无关",
+      "memoryTag": "不被过去的叙述萦绕"
+    },
+    {
+      "sceneId": "scene-33",
+      "sceneTitle": "旧照片",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "仔细端详每张模糊的脸，尝试想象他们的故事",
+      "memoryTag": "对过去的每一个细节都充满深情"
+    },
+    {
+      "sceneId": "scene-33",
+      "sceneTitle": "旧照片",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "看了看那张照片，微笑了一下然后离开",
+      "memoryTag": "对过去温柔，但不会停留太久"
+    },
+    {
+      "sceneId": "scene-33",
+      "sceneTitle": "旧照片",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "想伸手把照片拿下来，但又觉得不该碰别人的回忆",
+      "memoryTag": "在靠近和尊重之间徘徊"
+    },
+    {
+      "sceneId": "scene-33",
+      "sceneTitle": "旧照片",
+      "location": "旧船湾",
+      "dimension": "ME",
+      "dimLabel": "回忆牵引",
+      "dimDesc": "念旧、怀念、珍藏关系记忆",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "过去的事没有太多意义——眼前的路更重要",
+      "memoryTag": "不为过去的人和事花费心力"
+    },
+    {
+      "sceneId": "scene-34",
+      "sceneTitle": "月下的湖水",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "坐在湖边感受月光和湖水，让情绪自然流淌",
+      "memoryTag": "愿意完全沉浸在情绪里"
+    },
+    {
+      "sceneId": "scene-34",
+      "sceneTitle": "月下的湖水",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "在湖边坐了一小会儿，感受了一下然后继续前行",
+      "memoryTag": "感受情绪但不被淹没"
+    },
+    {
+      "sceneId": "scene-34",
+      "sceneTitle": "月下的湖水",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "看了一会儿，没太多感觉，只觉得这里比想象中安静",
+      "memoryTag": "安静有时比喧闹更让人不安"
+    },
+    {
+      "sceneId": "scene-34",
+      "sceneTitle": "月下的湖水",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "不去感受湖水——情绪和环境没有必然联系",
+      "memoryTag": "不被环境影响情绪"
+    },
+    {
+      "sceneId": "scene-35",
+      "sceneTitle": "湖中的倒影",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "蹲下来看自己的倒影——它看起来比你平时更真实",
+      "memoryTag": "在情绪的涟漪中看见更真实的自己"
+    },
+    {
+      "sceneId": "scene-35",
+      "sceneTitle": "湖中的倒影",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "注意到自己心跳变快了——承认这一刻湖水确实触动了你",
+      "memoryTag": "承认情绪但不完全沉浸"
+    },
+    {
+      "sceneId": "scene-35",
+      "sceneTitle": "湖中的倒影",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "不确定为什么湖水会让你有反应——也许只是累了",
+      "memoryTag": "用理性解释情绪波动"
+    },
+    {
+      "sceneId": "scene-35",
+      "sceneTitle": "湖中的倒影",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "站起来继续走——湖水不该影响你",
+      "memoryTag": "不被任何外物影响情绪"
+    },
+    {
+      "sceneId": "scene-36",
+      "sceneTitle": "满月之夜",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "A",
+      "currentScore": 100,
+      "optionText": "深吸一口气——你能感受到空气中所有微妙的情绪震动",
+      "memoryTag": "情绪的触角伸向每一个角落"
+    },
+    {
+      "sceneId": "scene-36",
+      "sceneTitle": "满月之夜",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "B",
+      "currentScore": 67,
+      "optionText": "觉得今晚确实有些不一样，但说不清是什么",
+      "memoryTag": "感受到氛围但保持距离"
+    },
+    {
+      "sceneId": "scene-36",
+      "sceneTitle": "满月之夜",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "C",
+      "currentScore": 33,
+      "optionText": "今晚和平时没什么不同——月亮圆不圆和你无关",
+      "memoryTag": "对氛围变化免疫"
+    },
+    {
+      "sceneId": "scene-36",
+      "sceneTitle": "满月之夜",
+      "location": "月潮湖",
+      "dimension": "EV",
+      "dimLabel": "情绪敏感",
+      "dimDesc": "容易被情绪、关系氛围、对方状态影响",
+      "optionId": "D",
+      "currentScore": 0,
+      "optionText": "满月只是天文现象——不需要赋予额外意义",
+      "memoryTag": "情绪和天象没有关联"
+    }
+  ]
+}
