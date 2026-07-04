@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>心岛 v2.0 内部验证</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro" id="introView">
+        <p class="eyebrow">Heart Island v2.0 Pilot</p>
+        <h1>心岛 v2.0 内部验证</h1>
+        <p class="notice">本测试仍处于心岛 v2.0 内部验证阶段，不属于专业心理诊断。测试结果仅用于产品体验研究，请根据自己的真实感受作答。</p>
+        <p class="summary">60 道题 · 约 8-10 分钟 · 不采集姓名、手机号、位置或伴侣信息</p>
+        <label class="field">
+          <span>可选：测试前的一句自我描述，最多 100 字</span>
+          <textarea id="selfDescription" maxlength="100" rows="3" placeholder="例如：我在关系里比较慢热，但熟悉后很投入。"></textarea>
+        </label>
+        <button class="primary-action" id="startButton" type="button">开始内测</button>
+      </section>
+
+      <section class="question-view hidden" id="questionView" aria-live="polite">
+        <header class="question-header">
+          <div>
+            <p class="eyebrow" id="progressText">01 / 60</p>
+            <h2 id="questionTitle">题目加载中</h2>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+        </header>
+
+        <div class="option-list" id="optionList"></div>
+
+        <fieldset class="question-flags">
+          <legend>这题是否需要标记？</legend>
+          <label><input type="checkbox" data-flag="difficult" /> 难选择</label>
+          <label><input type="checkbox" data-flag="unclear" /> 看不懂</label>
+          <label><input type="checkbox" data-flag="bothFit" /> 两个选项都像</label>
+          <label><input type="checkbox" data-flag="noneFit" /> 四个选项都不像</label>
+          <label><input type="checkbox" data-flag="correctAnswer" /> 有正确答案感</label>
+        </fieldset>
+
+        <footer class="nav-row">
+          <button class="secondary-action" id="prevButton" type="button">上一题</button>
+          <button class="primary-action" id="nextButton" type="button">下一题</button>
+        </footer>
+      </section>
+
+      <section class="result-view hidden" id="resultView">
+        <p class="eyebrow">匿名结果对照</p>
+        <h2>结果与反馈</h2>
+        <p class="muted" id="resultHint">系统正在同时计算 baseline 与 candidate-A。</p>
+        <div class="result-grid" id="resultCards"></div>
+
+        <form class="feedback-form" id="feedbackForm">
+          <label class="field">
+            <span>整体测试贴合度：<b id="overallValue">3</b>/5</span>
+            <input id="overallFitScore" type="range" min="1" max="5" value="3" />
+          </label>
+          <label class="field">
+            <span>Top1 人格贴合度：<b id="top1Value">3</b>/5</span>
+            <input id="top1FitScore" type="range" min="1" max="5" value="3" />
+          </label>
+          <div class="split-fields hidden" id="cardFitFields">
+            <label class="field">
+              <span>结果 A 贴合度：<b id="cardAValue">3</b>/5</span>
+              <input id="cardAFitScore" type="range" min="1" max="5" value="3" />
+            </label>
+            <label class="field">
+              <span>结果 B 贴合度：<b id="cardBValue">3</b>/5</span>
+              <input id="cardBFitScore" type="range" min="1" max="5" value="3" />
+            </label>
+          </div>
+          <fieldset class="field">
+            <legend>Top3 中是否至少有一个明显符合？</legend>
+            <label><input name="top3ContainsFit" type="radio" value="yes" required /> 是</label>
+            <label><input name="top3ContainsFit" type="radio" value="no" /> 否</label>
+          </fieldset>
+          <fieldset class="field hidden" id="preferenceField">
+            <legend>如果必须比较，哪个结果更像你？</legend>
+            <label><input name="preferredCard" type="radio" value="A" /> A 更像我</label>
+            <label><input name="preferredCard" type="radio" value="B" /> B 更像我</label>
+            <label><input name="preferredCard" type="radio" value="both" /> 都像</label>
+            <label><input name="preferredCard" type="radio" value="neither" /> 都不像</label>
+          </fieldset>
+          <label class="field">
+            <span>结果最符合自己的部分</span>
+            <textarea id="mostFitText" rows="3"></textarea>
+          </label>
+          <label class="field">
+            <span>结果最不符合自己的部分</span>
+            <textarea id="leastFitText" rows="3"></textarea>
+          </label>
+          <fieldset class="field">
+            <legend>是否觉得题目存在“正确答案”？</legend>
+            <label><input name="correctAnswerFeeling" type="radio" value="no" required /> 没有明显感觉</label>
+            <label><input name="correctAnswerFeeling" type="radio" value="some" /> 有一点</label>
+            <label><input name="correctAnswerFeeling" type="radio" value="strong" /> 比较明显</label>
+          </fieldset>
+          <fieldset class="field">
+            <legend>是否愿意把结果分享给朋友？</legend>
+            <label><input name="shareIntent" type="radio" value="yes" required /> 愿意</label>
+            <label><input name="shareIntent" type="radio" value="maybe" /> 可能会</label>
+            <label><input name="shareIntent" type="radio" value="no" /> 不太会</label>
+          </fieldset>
+          <label class="field">
+            <span>可选：你认为自己更接近哪个人格</span>
+            <input id="selfPersonaGuess" type="text" maxlength="30" />
+          </label>
+          <div class="nav-row">
+            <button class="secondary-action" id="downloadButton" type="button">导出匿名 JSON</button>
+            <button class="secondary-action" id="restartButton" type="button">重新开始</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

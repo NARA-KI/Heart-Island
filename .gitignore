@@ -12,6 +12,8 @@ dist/
 .cache/
 .tmp/
 temp/
+pilot-data/
+tools/v2-pilot/exports/
 *.mp4
 *.zip
 *.tar.gz
