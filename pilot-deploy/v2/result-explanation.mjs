@@ -1,5 +1,6 @@
-export const RESULT_EXPLANATION_VERSION = 'v2-result-explanation-1';
-export const FEEDBACK_SCHEMA_VERSION = 'v2-pilot-feedback-2';
+export const RESULT_EXPLANATION_VERSION = 'v2-result-explanation-2';
+export const PUBLIC_RESULT_VERSION = 'v2-public-single-persona-1';
+export const FEEDBACK_SCHEMA_VERSION = 'v2-pilot-feedback-3';
 
 export const constructLabels = {
   SC: '安全确认',
@@ -15,26 +16,41 @@ export const constructLabels = {
   EC: '表达沟通',
   CR: '冲突修复',
   ER: '情绪调节',
-  RI: '关系投入 / 留下倾向',
-  MN: '回忆牵引 / 关系叙事',
+  RI: '关系投入',
+  MN: '回忆牵引',
 };
 
 const constructMeanings = {
-  SC: { high: '更需要关系状态被确认，信息越清楚越安心。', low: '不一定需要频繁确认关系状态，可能更看行动或自然相处。' },
-  AU: { high: '很重视自我节奏和边界，亲密不能取消个人空间。', low: '更容易把关系共同体放在前面，也可能需要提醒自己保留边界。' },
-  TR: { high: '更容易把关系建立在信任和稳定回应上。', low: '信息不完整时更容易保留、防御或暂缓判断，不等于一定多疑。' },
-  CL: { high: '需要情感连接、共享和被靠近的感觉。', low: '不代表没有感情，可能不依赖高频分享或黏合感维持关系。' },
-  PA: { high: '容易被吸引、热情和关系里的火花推动。', low: '不太依赖激情启动关系，更看重其他长期因素。' },
-  CM: { high: '愿意把关系放进日常经营和长期维护里。', low: '不代表不认真，可能只是抗拒过早把关系变成任务。' },
-  SI: { high: '很在意精神共鸣、价值感和关系背后的意义。', low: '更可能从现实互动或稳定回应判断关系，而不是理想感。' },
-  NV: { high: '需要变化、新可能和探索感。', low: '更偏向稳定熟悉，不太需要持续新鲜刺激。' },
-  RM: { high: '会认真看现实条件、节奏和生活可行性。', low: '可能先被感受或意义推动，现实落地需要之后再整理。' },
-  CS: { high: '倾向通过照顾、支持和实际帮助表达在乎。', low: '不代表冷漠，可能更尊重各自处理问题的空间。' },
-  EC: { high: '更愿意把感受、误解和需求说出来。', low: '表达可能更慢或更含蓄，不一定代表没有想法。' },
-  CR: { high: '愿意把冲突带回沟通和修复。', low: '可能更倾向暂时避开冲突，或先观察关系是否值得修复。' },
-  ER: { high: '能较好整理关系里的情绪波动。', low: '情绪更容易被关系牵动，需要更多时间恢复稳定。' },
-  RI: { high: '有较强留下和持续投入倾向。', low: '不等于不爱，可能更需要确认关系值得留下。' },
-  MN: { high: '容易被共同记忆、细节和关系叙事牵引。', low: '更倾向看当下和未来，不太让过去定义关系。' },
+  SC: { high: '你会因为关系状态被看见、被确认而更安心。', low: '你不一定需要频繁确认关系状态，更常通过相处本身判断关系。', blend: '你在关系里需要一些明确回应，才能更安心地继续投入。' },
+  AU: { high: '你很重视自己的节奏和边界，亲密不能取消个人空间。', low: '你更容易把共同感放在前面，也需要偶尔提醒自己保留边界。', blend: '你会在亲密里保留自己的呼吸感，不希望关系变成互相吞没。' },
+  TR: { high: '你倾向先把关系放在信任里，而不是立刻用怀疑保护自己。', low: '当信息不完整时，你可能会先保留判断，这不等于不信任，只是需要更多稳定回应。', blend: '你需要关系里有足够稳定的信任，才会让自己真正放松。' },
+  CL: { high: '你需要情感连接、分享和被靠近的感觉。', low: '这不代表你没有感情，只是你不一定依赖高频分享或黏合感维持关系。', blend: '你在靠近时需要真实连接，但不一定用外放的方式表现。' },
+  PA: { high: '你容易被吸引、热情和关系里的火花推动。', low: '你不太依赖激情启动关系，更看重其他长期因素。', blend: '你会被关系里的新鲜火花点亮，但也不想只停留在热度里。' },
+  CM: { high: '你愿意把关系放进日常经营和长期维护里。', low: '这不代表你不认真，可能只是抗拒过早把关系变成任务。', blend: '你在意关系能不能被持续维护，而不是只靠一时感觉。' },
+  SI: { high: '你在意精神共鸣、价值感和关系背后的意义。', low: '你更可能从现实互动或稳定回应判断关系，而不是先寻找理想感。', blend: '你会把关系放进更大的意义里，希望爱不只是陪伴，也有精神方向。' },
+  NV: { high: '你需要变化、新可能和探索感。', low: '你更偏向稳定熟悉，不太需要持续新鲜刺激。', blend: '你需要关系里保留一点未知和远方感。' },
+  RM: { high: '你会认真看现实条件、节奏和生活可行性。', low: '你可能先被感受或意义推动，现实落地需要之后再整理。', blend: '你会在感受之外，也留意关系能不能进入现实生活。' },
+  CS: { high: '你倾向通过照顾、支持和实际帮助表达在乎。', low: '这不代表冷漠，可能只是更尊重各自处理问题的空间。', blend: '你会用实际支持表达在乎，但也需要避免把所有责任都接过来。' },
+  EC: { high: '你更愿意把感受、误解和需要说出来。', low: '你的表达可能更慢或更含蓄，不一定代表没有想法。', blend: '你需要把关键感受说清楚，关系才不容易停在误解里。' },
+  CR: { high: '你愿意把冲突带回沟通和修复。', low: '你可能更倾向暂时避开冲突，或先观察关系是否值得修复。', blend: '你不希望冲突只是冷掉，而是希望它最终能回到理解。' },
+  ER: { high: '你能较好整理关系里的情绪波动。', low: '情绪更容易被关系牵动时，你需要更多时间恢复稳定。', blend: '你会被关系中的情绪牵动，也会试着把它整理成可理解的东西。' },
+  RI: { high: '你有较强留下和持续投入倾向。', low: '这不等于不爱，可能是你需要确认关系值得留下。', blend: '你会认真评估关系是否值得继续，也不轻易把投入当成消耗品。' },
+  MN: { high: '你容易被共同记忆、细节和关系叙事牵引。', low: '你更倾向看当下和未来，不太让过去定义关系。', blend: '你不仅重视精神意义，也会把关系中的细节和记忆保存得很深。' },
+};
+
+const personaImageMap = {
+  lighthouse: '../../assets/personas/lighthouse.webp',
+  gatekeeper: '../../assets/personas/gatekeeper.webp',
+  'nest-builder': '../../assets/personas/nest-builder.webp',
+  collector: '../../assets/personas/collector.webp',
+  'migratory-bird': '../../assets/personas/migratory-bird.webp',
+  islander: '../../assets/personas/islander.webp',
+  explorer: '../../assets/personas/explorer.webp',
+  'wandering-poet': '../../assets/personas/wandering-poet.webp',
+  spark: '../../assets/personas/spark.webp',
+  moonlight: '../../assets/personas/moonlight.webp',
+  mirror: '../../assets/personas/mirror.webp',
+  stargazer: '../../assets/personas/stargazer.webp',
 };
 
 export async function loadPersonaDescriptions(path = './persona-descriptions.v2.pilot.json') {
@@ -61,6 +77,14 @@ export function lowConstructs(constructScores, count = 4) {
     .map(([code, score]) => ({ code, label: constructLabels[code], score, meaning: constructMeanings[code].low }));
 }
 
+export function publicResultWordingMode(result) {
+  return result.lowConfidence ? 'tendency' : 'definitive';
+}
+
+export function selectPublicResult(comparison) {
+  return comparison.candidateA ?? comparison.baseline;
+}
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -74,11 +98,156 @@ function list(items) {
 }
 
 function constructList(items) {
-  return `<ul>${items.map((item) => `<li><b>${escapeHtml(item.label)}</b>：${item.score}。${escapeHtml(item.meaning)}</li>`).join('')}</ul>`;
+  return `<ul>${items.map((item) => `<li><b>${escapeHtml(item.label)}</b>：${escapeHtml(item.meaning)}</li>`).join('')}</ul>`;
 }
 
-function differenceText(description, nearbyName) {
-  return description?.differencesFromNearbyPersonas?.[nearbyName] ?? '两者相邻，但当前 pilot 文案还需要继续补充更细的差异说明。';
+function keywordList(description, highs) {
+  const fromConstructs = highs.slice(0, 5).map((item) => item.label);
+  const fromPersona = [
+    ...(description?.primaryConstructs ?? []),
+    ...(description?.secondaryConstructs ?? []),
+  ].map((code) => constructLabels[code]).filter(Boolean);
+  return [...new Set([...fromPersona, ...fromConstructs])].slice(0, 5);
+}
+
+function behaviorGrid(description) {
+  return [
+    ['如何靠近', description?.intimacyStyle],
+    ['如何表达', description?.communicationStyle],
+    ['如何投入', description?.relationshipPattern],
+    ['如何面对承诺', description?.commitmentStyle],
+    ['如何处理冲突', description?.conflictStyle],
+    ['如何看待空间', description?.spaceAndBoundary],
+  ];
+}
+
+function adviceItems(description, highs, lows) {
+  const items = [];
+  const highCodes = highs.map((item) => item.code);
+  const lowCodes = lows.map((item) => item.code);
+  if (highCodes.includes('MN')) items.push('当你被某个细节反复牵动时，先写下它真正代表的需要，而不是只反复回到那一幕。');
+  if (highCodes.includes('SI')) items.push('当你期待精神共鸣时，可以把“我在意的意义”说具体，让对方知道怎样回应你。');
+  if (lowCodes.includes('CL')) items.push('如果你不习惯高频表达亲密，可以提前告诉对方：安静并不等于疏远。');
+  if (highCodes.includes('AU')) items.push('当你需要空间时，给出一个可被理解的边界和回来的时间，会比突然后退更稳定。');
+  if (highCodes.includes('EC') || highCodes.includes('CR')) items.push('冲突里先说最关键的一句话，不急着解释全部，能让关系更快回到同一张地图上。');
+  if (items.length < 2) items.push('选一个你最常出现的自动反应，下一次先停三秒，再决定是靠近、解释还是暂时保留空间。');
+  if (items.length < 3) items.push('把“我希望对方懂我”的部分翻译成一个具体请求，关系会更容易接住你。');
+  return items.slice(0, 3);
+}
+
+function buildBlendedPersonalization(result, constructScores, descriptions) {
+  const top1 = result.top5[0];
+  const top1Desc = getPersonaDescription(descriptions, top1.displayName);
+  const highs = topConstructs(constructScores, 5);
+  const highCodes = new Set(highs.map((item) => item.code));
+  const top1Codes = new Set([...(top1Desc?.primaryConstructs ?? []), ...(top1Desc?.secondaryConstructs ?? [])]);
+  const adjacentCodes = new Set();
+
+  for (const item of result.top5.slice(1, 3)) {
+    const desc = getPersonaDescription(descriptions, item.displayName);
+    for (const code of [...(desc?.primaryConstructs ?? []), ...(desc?.secondaryConstructs ?? [])]) {
+      if (highCodes.has(code)) adjacentCodes.add(code);
+    }
+  }
+
+  const blendedConstructs = [...adjacentCodes].filter((code) => highCodes.has(code));
+  const extraConstructs = blendedConstructs.filter((code) => !top1Codes.has(code));
+  const selected = extraConstructs.length ? extraConstructs : blendedConstructs.slice(0, 2);
+  const text = selected.map((code) => constructMeanings[code]?.blend).filter(Boolean).slice(0, 2);
+
+  return {
+    used: text.length > 0,
+    constructs: selected,
+    text,
+  };
+}
+
+export function publicResultMetadata({ comparison, descriptions }) {
+  const result = selectPublicResult(comparison);
+  const top1 = result.top5[0];
+  const blend = buildBlendedPersonalization(result, result.constructScores, descriptions);
+  return {
+    publicDisplayedPersona: top1.displayName,
+    publicResultWordingMode: publicResultWordingMode(result),
+    blendedPersonalizationUsed: blend.used,
+    blendedConstructs: blend.constructs,
+    publicResultVersion: PUBLIC_RESULT_VERSION,
+  };
+}
+
+export function renderPublicResult({ container, comparison, descriptions }) {
+  const result = selectPublicResult(comparison);
+  const top1 = result.top5[0];
+  const desc = getPersonaDescription(descriptions, top1.displayName);
+  const highs = topConstructs(result.constructScores, 5);
+  const lows = lowConstructs(result.constructScores, 4);
+  const keywords = keywordList(desc, highs);
+  const blend = buildBlendedPersonalization(result, result.constructScores, descriptions);
+  const mode = publicResultWordingMode(result);
+  const titleLine = mode === 'tendency'
+    ? `你的核心关系倾向更接近${top1.displayName}`
+    : `你的心岛人格是${top1.displayName}`;
+  const imagePath = personaImageMap[desc?.id];
+  const advice = adviceItems(desc, highs, lows);
+
+  container.innerHTML = `
+    <article class="public-result-profile" data-persona="${escapeHtml(top1.displayName)}" data-blended-personalization="${blend.used ? 'true' : 'false'}">
+      <section class="public-result-hero">
+        ${imagePath ? `<div class="public-portrait-wrap"><img class="public-portrait-img" src="${escapeHtml(imagePath)}" alt="${escapeHtml(top1.displayName)}拟人图" onerror="this.closest('.public-portrait-wrap').classList.add('image-missing')" /></div>` : ''}
+        <p class="eyebrow">登岛结果</p>
+        <h3>${escapeHtml(titleLine)}</h3>
+        <p class="public-hitline">${escapeHtml(desc?.oneLineSummary)}</p>
+        <div class="public-keywords">${keywords.map((keyword) => `<span>${escapeHtml(keyword)}</span>`).join('')}</div>
+      </section>
+
+      <section class="explanation-section">
+        <h4>你的关系底色</h4>
+        <p>${escapeHtml(desc?.coreDrive)}</p>
+        ${blend.used ? `<p class="blended-note">${blend.text.map(escapeHtml).join('')}</p>` : ''}
+      </section>
+
+      <section class="explanation-section">
+        <h4>你是怎样爱人的</h4>
+        <div class="detail-grid public-behavior-grid">
+          ${behaviorGrid(desc).map(([label, text]) => `<section><h5>${escapeHtml(label)}</h5><p>${escapeHtml(text)}</p></section>`).join('')}
+        </div>
+      </section>
+
+      <section class="explanation-section">
+        <h4>你的天赋</h4>
+        ${list(desc?.strengths ?? [])}
+      </section>
+
+      <section class="explanation-section">
+        <h4>你的关系惯性</h4>
+        ${list(desc?.blindSpots ?? [])}
+      </section>
+
+      <section class="explanation-section">
+        <h4>为什么你会得到这个结果</h4>
+        <p>这份结果来自你在关系中的几组稳定倾向。高分不代表更好，低分也不是缺点，它们只是说明你更自然使用哪一种靠近方式。</p>
+        <h5>比较突出的倾向</h5>
+        ${constructList(highs)}
+        <h5>相对没那么依赖的倾向</h5>
+        ${constructList(lows)}
+        <p>这些倾向共同指向：${escapeHtml(desc?.relationshipPattern)}</p>
+      </section>
+
+      <section class="explanation-section">
+        <h4>你真正需要的关系</h4>
+        <p>${escapeHtml(desc?.relationshipNeeds)}</p>
+        <p>${escapeHtml(desc?.suitableRelationshipEnvironment)}</p>
+        <p class="diagnostic-note">${escapeHtml(desc?.commonMisunderstandings)}</p>
+      </section>
+
+      <section class="explanation-section">
+        <h4>给你的关系提醒</h4>
+        ${list(advice)}
+      </section>
+
+      <p class="diagnostic-note">本结果不属于专业心理诊断，只用于心岛 v2.0 产品体验研究。</p>
+    </article>
+  `;
 }
 
 function confidenceLabel(result) {
@@ -87,9 +256,13 @@ function confidenceLabel(result) {
   return '中等置信：结果有主倾向，也需要结合 Top2 阅读';
 }
 
+function differenceText(description, nearbyName) {
+  return description?.differencesFromNearbyPersonas?.[nearbyName] ?? '两者相邻，但当前 pilot 文案还需要继续补充更细的差异说明。';
+}
+
 export function renderResultExplanation({
   container,
-  title = '结果',
+  title = '内部结果',
   result,
   constructScores,
   descriptions,
@@ -97,61 +270,30 @@ export function renderResultExplanation({
 }) {
   const top1 = result.top5[0];
   const top2 = result.top5[1];
-  const top3 = result.top5[2];
   const desc1 = getPersonaDescription(descriptions, top1.displayName);
   const desc2 = getPersonaDescription(descriptions, top2.displayName);
   const highs = topConstructs(constructScores, 5);
   const lows = lowConstructs(constructScores, 4);
-  const primarySupport = highs.filter((item) => desc1?.primaryConstructs?.includes(item.code) || desc1?.secondaryConstructs?.includes(item.code));
-  const top2Support = highs.filter((item) => desc2?.primaryConstructs?.includes(item.code) || desc2?.secondaryConstructs?.includes(item.code));
   const distinction = differenceText(desc1, top2.displayName);
 
   container.innerHTML = `
-    <article class="result-profile" data-persona="${escapeHtml(top1.displayName)}">
+    <article class="result-profile research-result-profile" data-persona="${escapeHtml(top1.displayName)}">
       <p class="eyebrow">${escapeHtml(anonymousLabel ?? title)}</p>
-      <h3>${escapeHtml(result.lowConfidence ? `你的主要倾向是 ${top1.displayName}` : top1.displayName)}</h3>
-      <p class="confidence-line">${escapeHtml(confidenceLabel(result))} · Top1-Top2 gap：${result.top1Top2Gap}</p>
-      ${result.lowConfidence ? `<div class="low-confidence-note">你的主要倾向是 <b>${escapeHtml(top1.displayName)}</b>，同时非常接近 <b>${escapeHtml(top2.displayName)}</b>。当前结果差距较小，请结合两种人格的详细解析判断哪一侧更符合你。</div>` : ''}
+      <h3>${escapeHtml(top1.displayName)}</h3>
+      <p class="confidence-line">${escapeHtml(confidenceLabel(result))} · Top1-Top2 gap：${escapeHtml(result.top1Top2Gap)}</p>
+      ${result.lowConfidence ? `<div class="low-confidence-note">低置信结果：${escapeHtml(top1.displayName)} 与 ${escapeHtml(top2.displayName)} 接近。此信息仅供内部研究使用。</div>` : ''}
 
       <section class="explanation-section">
-        <h4>一句话概括</h4>
-        <p>${escapeHtml(desc1?.oneLineSummary)}</p>
-      </section>
-
-      <details open class="explanation-details">
-        <summary>完整人格解析</summary>
-        <div class="detail-grid">
-          <section><h4>核心关系驱动力</h4><p>${escapeHtml(desc1?.coreDrive)}</p></section>
-          <section><h4>在关系中如何靠近别人</h4><p>${escapeHtml(desc1?.relationshipPattern)}</p></section>
-          <section><h4>亲密方式</h4><p>${escapeHtml(desc1?.intimacyStyle)}</p></section>
-          <section><h4>如何表达感受和需求</h4><p>${escapeHtml(desc1?.communicationStyle)}</p></section>
-          <section><h4>如何面对承诺和长期经营</h4><p>${escapeHtml(desc1?.commitmentStyle)}</p></section>
-          <section><h4>如何处理冲突和情绪</h4><p>${escapeHtml(desc1?.conflictStyle)} ${escapeHtml(desc1?.emotionalPattern)}</p></section>
-          <section><h4>空间和边界需求</h4><p>${escapeHtml(desc1?.spaceAndBoundary)}</p></section>
-          <section><h4>主要优势</h4>${list(desc1?.strengths ?? [])}</section>
-          <section><h4>可能盲点</h4>${list(desc1?.blindSpots ?? [])}</section>
-          <section><h4>在关系中真正需要什么</h4><p>${escapeHtml(desc1?.relationshipNeeds)}</p></section>
-          <section><h4>适合的关系环境</h4><p>${escapeHtml(desc1?.suitableRelationshipEnvironment)}</p></section>
-          <section><h4>常见误解</h4><p>${escapeHtml(desc1?.commonMisunderstandings)}</p></section>
-        </div>
-      </details>
-
-      <section class="explanation-section">
-        <h4>Top3 人格排行</h4>
+        <h4>Top5 内部排行</h4>
         <ol class="top-list">
-          ${result.top5.slice(0, 3).map((item) => `<li>${escapeHtml(item.displayName)} · 相似度 ${item.similarity} · 距离 ${item.distance}</li>`).join('')}
+          ${result.top5.slice(0, 5).map((item) => `<li>${escapeHtml(item.displayName)} · similarity ${escapeHtml(item.similarity)} · distance ${escapeHtml(item.distance)}</li>`).join('')}
         </ol>
       </section>
 
       <section class="explanation-section">
-        <h4>为什么得到这个结果</h4>
-        <p>这次结果主要由你的高分构念和低分构念共同形成。高分不代表“更好”，低分也不代表“缺陷”，它们只是说明你在亲密关系中更自然使用哪些路径。</p>
-        <h5>较高构念</h5>
-        ${constructList(highs)}
-        <h5>较低构念</h5>
-        ${constructList(lows)}
-        <p>${primarySupport.length ? `其中 ${primarySupport.map((item) => item.label).join('、')} 更支持 ${top1.displayName} 的判断。` : `${top1.displayName} 的判断来自整体构念组合，而非单一高分。`}</p>
-        <p>${top2Support.length ? `${top2.displayName} 也被 ${top2Support.map((item) => item.label).join('、')} 支持，所以它会靠近你的 Top1。` : `${top2.displayName} 与你接近，更多来自整体距离而非单个构念。`}</p>
+        <h4>Top1 解析</h4>
+        <p>${escapeHtml(desc1?.oneLineSummary)}</p>
+        <p>${escapeHtml(desc1?.coreDrive)}</p>
       </section>
 
       <section class="explanation-section comparison-section" data-comparison-viewed="true">
@@ -169,30 +311,19 @@ export function renderResultExplanation({
           </div>
         </div>
         <p><b>核心差异：</b>${escapeHtml(distinction)}</p>
-        <p>${result.lowConfidence ? `因为 gap 只有 ${result.top1Top2Gap}，差距不足以形成高置信结论。你也可能处在 ${top1.displayName} 与 ${top2.displayName} 两种倾向之间。` : `当前 gap 为 ${result.top1Top2Gap}，主倾向比 Top2 更明确，但仍建议阅读相邻人格差异。`}</p>
       </section>
 
-      <p class="diagnostic-note">本结果不属于专业心理诊断，只用于心岛 v2.0 产品体验研究。</p>
+      <section class="explanation-section">
+        <h4>构念得分解释</h4>
+        <h5>较高构念</h5>
+        ${constructList(highs)}
+        <h5>较低构念</h5>
+        ${constructList(lows)}
+      </section>
     </article>
   `;
 }
 
-export function renderAnonymousResults({ container, comparison, descriptions, cardOrder }) {
-  container.innerHTML = '';
-  const cards = comparison.resultAgreement
-    ? [{ label: '结果', result: comparison.baseline }]
-    : cardOrder.map((item) => ({ label: `结果 ${item.label}`, result: item.source === 'baseline' ? comparison.baseline : comparison.candidateA }));
-  for (const card of cards) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'result-card explanation-card';
-    renderResultExplanation({
-      container: wrapper,
-      title: card.label,
-      anonymousLabel: card.label,
-      result: card.result,
-      constructScores: comparison.baseline.constructScores,
-      descriptions,
-    });
-    container.append(wrapper);
-  }
+export function renderAnonymousResults({ container, comparison, descriptions }) {
+  renderPublicResult({ container, comparison, descriptions });
 }

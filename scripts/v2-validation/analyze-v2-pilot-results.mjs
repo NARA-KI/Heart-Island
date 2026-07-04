@@ -135,6 +135,7 @@ function answerIds(record) {
 function validateRecord(record, index, pilotIdCounts) {
   const reasons = [];
   const source = record.__sourceFile ?? `record-${index}`;
+  const isSinglePersonaPublicResult = Boolean(record.publicResultVersion);
 
   if (!record.pilotId) reasons.push('missing-pilotId');
   if (!record.exportedAt) reasons.push('missing-exportedAt');
@@ -146,7 +147,7 @@ function validateRecord(record, index, pilotIdCounts) {
   if (!record.candidateAVectorHash) reasons.push('missing-candidateAVectorHash');
   if (!Array.isArray(record.baselineTop5) || record.baselineTop5.length < 5) reasons.push('invalid-baselineTop5');
   if (!Array.isArray(record.candidateATop5) || record.candidateATop5.length < 5) reasons.push('invalid-candidateATop5');
-  if (!['yes', 'no'].includes(record.top3ContainsFit)) reasons.push('missing-top3ContainsFit');
+  if (!isSinglePersonaPublicResult && !['yes', 'no'].includes(record.top3ContainsFit)) reasons.push('missing-top3ContainsFit');
   if (!['no', 'some', 'strong'].includes(record.correctAnswerFeeling)) reasons.push('missing-correctAnswerFeeling');
   if (!['yes', 'maybe', 'no'].includes(record.shareIntent)) reasons.push('missing-shareIntent');
 
@@ -193,7 +194,11 @@ function fitValidation(record) {
   if (typeof record.resultExplanationViewed !== 'boolean') legacyReasons.push('missing resultExplanationViewed');
   if (!record.resultExplanationSufficient) legacyReasons.push('missing resultExplanationSufficient');
   if (!record.feedbackSchemaVersion || record.feedbackSchemaVersion < 'v2-pilot-feedback-2') legacyReasons.push('feedback schema before explanation fix');
-  if (record.pilotToolVersion !== 'v2.0-pilot-result-explanation-p0-fix') legacyReasons.push('pilotToolVersion before result explanation fix');
+  const compatiblePilotVersions = new Set([
+    'v2.0-pilot-result-explanation-p0-fix',
+    'v2.0-pilot-single-persona-result-display',
+  ]);
+  if (!compatiblePilotVersions.has(record.pilotToolVersion)) legacyReasons.push('pilotToolVersion before result explanation fix');
   if (legacyReasons.length) {
     return {
       valid: false,

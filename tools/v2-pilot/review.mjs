@@ -51,25 +51,23 @@ function renderReview(record) {
   wrapper.className = 'result-card explanation-card';
   renderResultExplanation({
     container: wrapper,
-    title: '原始导出结果',
+    title: 'Baseline 内部结果',
     result: baselineResult,
     constructScores: record.constructScores,
     descriptions: state.descriptions,
   });
   reviewCards.append(wrapper);
-  if (baselineResult.top1 !== candidateResult.top1) {
-    const second = document.createElement('div');
-    second.className = 'result-card explanation-card';
-    renderResultExplanation({
-      container: second,
-      title: '另一套候选结果',
-      result: candidateResult,
-      constructScores: record.constructScores,
-      descriptions: state.descriptions,
-    });
-    reviewCards.append(second);
-  }
-  sampleMeta.textContent = `pilotId：${record.pilotId ?? '未知'}；Top1：${baselineResult.top1}；Top2：${baselineResult.top5[1].displayName}；Top3：${baselineResult.top5[2].displayName}；gap：${baselineResult.top1Top2Gap}；${baselineResult.lowConfidence ? '低置信' : '非低置信'}`;
+  const second = document.createElement('div');
+  second.className = 'result-card explanation-card';
+  renderResultExplanation({
+    container: second,
+    title: 'Candidate-A 内部结果',
+    result: candidateResult,
+    constructScores: record.constructScores,
+    descriptions: state.descriptions,
+  });
+  reviewCards.append(second);
+  sampleMeta.textContent = `pilotId：${record.pilotId ?? '未知'}；baseline Top1：${baselineResult.top1}；baseline Top2：${baselineResult.top5[1].displayName}；baseline Top3：${baselineResult.top5[2].displayName}；baseline gap：${baselineResult.top1Top2Gap}；${baselineResult.lowConfidence ? '低置信' : '非低置信'}；candidate-A Top1：${candidateResult.top1}；candidate-A gap：${candidateResult.top1Top2Gap}`;
   reviewResult.classList.remove('hidden');
   reviewResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
   reviewStatus.textContent = '导入成功。页面没有上传或修改该文件。';

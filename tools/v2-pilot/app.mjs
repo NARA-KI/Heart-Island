@@ -1,7 +1,7 @@
 import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportRecord, shuffledOptions } from './scoring.mjs';
-import { FEEDBACK_SCHEMA_VERSION, RESULT_EXPLANATION_VERSION, loadPersonaDescriptions, renderAnonymousResults } from './result-explanation.mjs';
+import { FEEDBACK_SCHEMA_VERSION, PUBLIC_RESULT_VERSION, RESULT_EXPLANATION_VERSION, loadPersonaDescriptions, publicResultMetadata, renderAnonymousResults } from './result-explanation.mjs';
 
-const PILOT_TOOL_VERSION = 'v2.0-pilot-result-explanation-p0-fix';
+const PILOT_TOOL_VERSION = 'v2.0-pilot-single-persona-result-display';
 const PERSONA_DESCRIPTION_VERSION = 'v2-pilot-persona-descriptions-1';
 const SCORING_RULE_VERSION = 'v2-draft-rms-distance-low-confidence-v1';
 const STORAGE_KEY = 'heart-island-v2-pilot-draft';
@@ -208,7 +208,7 @@ function bindEvents() {
   elements.beginFeedbackButton.addEventListener('click', () => {
     state.feedbackStartedAt = Date.now();
     state.fullExplanationOpened = true;
-    state.comparisonViewed = true;
+    state.comparisonViewed = false;
     elements.readGate.classList.add('hidden');
     elements.feedbackForm.classList.remove('hidden');
     elements.feedbackForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -237,6 +237,7 @@ function bindEvents() {
 function bindRange(inputSelector, outputSelector) {
   const input = $(inputSelector);
   const output = $(outputSelector);
+  if (!input || !output) return;
   input.addEventListener('input', () => {
     output.textContent = input.value;
   });
@@ -386,20 +387,16 @@ function buildAnonymousCardOrder() {
 }
 
 function renderResults() {
-  const { resultAgreement } = state.comparison;
   renderAnonymousResults({
     container: elements.resultCards,
     comparison: state.comparison,
     descriptions: state.personaDescriptions,
-    cardOrder: state.anonymousCardOrder,
   });
-  elements.preferenceField.classList.toggle('hidden', resultAgreement);
-  elements.cardFitFields.classList.toggle('hidden', resultAgreement);
+  elements.preferenceField.classList.add('hidden');
+  elements.cardFitFields.classList.add('hidden');
   elements.feedbackForm.classList.add('hidden');
   elements.readGate.classList.remove('hidden');
-  elements.resultHint.textContent = resultAgreement
-    ? '两套候选向量得到相同 Top1。请先阅读完整解析，再判断贴合度。'
-    : '两套候选向量得到不同 Top1。页面只展示匿名结果 A / B，不标注来源；两张卡片使用相同解释结构。';
+  elements.resultHint.textContent = '请先阅读你的心岛人格档案，再判断这个结果整体像不像你。';
 }
 
 function selectedRadio(name) {
@@ -425,6 +422,7 @@ function preferredSourceFromCard() {
 
 function selectedBestPersona() {
   const value = selectedRadio('selectedBestPersona');
+  if (!value) return null;
   if (value === 'top1') return state.comparison.baseline.top5[0].displayName;
   if (value === 'top2') return state.comparison.baseline.top5[1].displayName;
   return value;
@@ -445,6 +443,7 @@ function fitJudgmentStatus() {
 
 function buildExportRecord() {
   const comparison = state.comparison ?? compareTwoSchemes(state.questionBank, state.baseline, state.candidateA, state.answers);
+  const publicMeta = publicResultMetadata({ comparison, descriptions: state.personaDescriptions });
   const answerSequence = state.questionBank.questions.map((question) => ({
     questionId: question.id,
     optionId: state.answers[question.id],
@@ -457,6 +456,7 @@ function buildExportRecord() {
     pilotToolVersion: PILOT_TOOL_VERSION,
     personaDescriptionVersion: PERSONA_DESCRIPTION_VERSION,
     resultExplanationVersion: RESULT_EXPLANATION_VERSION,
+    publicResultVersion: PUBLIC_RESULT_VERSION,
     feedbackSchemaVersion: FEEDBACK_SCHEMA_VERSION,
     questionnaireVersion: state.questionBank.sourceVersion ?? 'heart-island-v2-question-bank-draft',
     questionBankHash: state.hashes.questionBankHash,
@@ -479,6 +479,10 @@ function buildExportRecord() {
     baselineLowConfidence: comparison.baseline.lowConfidence,
     candidateALowConfidence: comparison.candidateA.lowConfidence,
     resultAgreement: comparison.resultAgreement,
+    publicDisplayedPersona: publicMeta.publicDisplayedPersona,
+    publicResultWordingMode: publicMeta.publicResultWordingMode,
+    blendedPersonalizationUsed: publicMeta.blendedPersonalizationUsed,
+    blendedConstructs: publicMeta.blendedConstructs,
     anonymousCardOrder: state.anonymousCardOrder,
     userPreferredResult: preferredSourceFromCard(),
     resultExplanationViewed: Boolean(state.feedbackStartedAt),
@@ -490,15 +494,12 @@ function buildExportRecord() {
     fullExplanationOpened: state.fullExplanationOpened,
     top1Top2ComparisonViewed: state.comparisonViewed,
     overallFitScore: Number($('#overallFitScore').value),
-    top1FitScore: Number($('#top1FitScore').value),
-    top2FitScore: Number($('#top2FitScore').value),
-    top2MoreAccurate: selectedRadio('selectedBestPersona') === 'top2',
+    top1FitScore: Number($('#overallFitScore').value),
+    top2FitScore: null,
+    top2MoreAccurate: false,
     selectedBestPersona: selectedBestPersona(),
-    cardFitScores: comparison.resultAgreement ? null : {
-      A: Number($('#cardAFitScore').value),
-      B: Number($('#cardBFitScore').value),
-    },
-    top3ContainsFit: selectedRadio('top3ContainsFit'),
+    cardFitScores: null,
+    top3ContainsFit: null,
     mostFitText: $('#mostFitText').value.trim(),
     leastFitText: $('#leastFitText').value.trim(),
     inaccurateRelationshipArea: $('#inaccurateRelationshipArea').value.trim(),

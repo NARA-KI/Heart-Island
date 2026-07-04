@@ -57,17 +57,17 @@
       </section>
 
       <section class="result-view hidden" id="resultView">
-        <p class="eyebrow">匿名结果对照</p>
-        <h2>结果与反馈</h2>
+        <p class="eyebrow">Heart Island v2.0 Pilot</p>
+        <h2>你的登岛档案</h2>
         <ol class="completion-steps">
-          <li><b>1. 查看匿名结果</b></li>
+          <li><b>1. 查看你的心岛人格</b></li>
           <li><b>2. 完成反馈</b></li>
           <li><b>3. 下载匿名测试文件</b></li>
         </ol>
-        <p class="muted" id="resultHint">系统正在同时计算 baseline 与 candidate-A。</p>
+        <p class="muted" id="resultHint">请先阅读你的心岛人格档案，再判断这个结果整体像不像你。</p>
         <div class="result-grid" id="resultCards"></div>
         <div class="read-gate" id="readGate">
-          <p class="muted">请先阅读完整解析、构念依据和 Top1 / Top2 对比，再开始填写准确度反馈。</p>
+          <p class="muted">请先阅读完整解析、关系底色和构念依据，再开始填写反馈。</p>
           <button class="primary-action" id="beginFeedbackButton" type="button">我已阅读解析，开始反馈</button>
         </div>
 
@@ -81,14 +81,8 @@
             <span>整体测试贴合度：<b id="overallValue">3</b>/5</span>
             <input id="overallFitScore" type="range" min="1" max="5" value="3" />
           </label>
-          <label class="field">
-            <span>Top1 人格贴合度：<b id="top1Value">3</b>/5</span>
-            <input id="top1FitScore" type="range" min="1" max="5" value="3" />
-          </label>
-          <label class="field">
-            <span>Top2 人格贴合度：<b id="top2Value">3</b>/5</span>
-            <input id="top2FitScore" type="range" min="1" max="5" value="3" />
-          </label>
+          <input id="top1FitScore" type="hidden" value="3" />
+          <input id="top2FitScore" type="hidden" value="3" />
           <div class="split-fields hidden" id="cardFitFields">
             <label class="field">
               <span>结果 A 贴合度：<b id="cardAValue">3</b>/5</span>
@@ -99,11 +93,6 @@
               <input id="cardBFitScore" type="range" min="1" max="5" value="3" />
             </label>
           </div>
-          <fieldset class="field">
-            <legend>Top3 中是否至少有一个明显符合？</legend>
-            <label><input name="top3ContainsFit" type="radio" value="yes" required /> 是</label>
-            <label><input name="top3ContainsFit" type="radio" value="no" /> 否</label>
-          </fieldset>
           <fieldset class="field hidden" id="preferenceField">
             <legend>如果必须比较，哪个结果更像你？</legend>
             <label><input name="preferredCard" type="radio" value="A" /> A 更像我</label>
@@ -112,19 +101,8 @@
             <label><input name="preferredCard" type="radio" value="neither" /> 都不像</label>
             <label><input name="preferredCard" type="radio" value="insufficient" /> 信息不足，暂时无法判断</label>
           </fieldset>
-          <fieldset class="field">
-            <legend>Top1 和 Top2 中，哪一个更像你？</legend>
-            <label><input name="selectedBestPersona" type="radio" value="top1" required /> Top1 更像我</label>
-            <label><input name="selectedBestPersona" type="radio" value="top2" /> Top2 更像我</label>
-            <label><input name="selectedBestPersona" type="radio" value="both" /> 两者都像</label>
-            <label><input name="selectedBestPersona" type="radio" value="neither" /> 两者都不像</label>
-            <label><input name="selectedBestPersona" type="radio" value="insufficient" /> 信息不足</label>
-          </fieldset>
-          <fieldset class="field">
-            <legend>你是否理解这次结果的置信度说明？</legend>
-            <label><input name="confidenceUnderstood" type="radio" value="yes" required /> 理解</label>
-            <label><input name="confidenceUnderstood" type="radio" value="no" /> 不太理解</label>
-          </fieldset>
+          <input name="selectedBestPersona" type="hidden" value="top1" />
+          <input name="confidenceUnderstood" type="hidden" value="not-shown" />
           <label class="field">
             <span>结果最符合自己的部分</span>
             <textarea id="mostFitText" rows="3"></textarea>
