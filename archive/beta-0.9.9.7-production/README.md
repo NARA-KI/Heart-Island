@@ -20,6 +20,15 @@ This directory is a rollback snapshot created before the Heart Island v2.0 Alpha
 - `package.json`
 - `core/scoring.mjs`
 - `core/calibration-profiles.mjs`
+- `asset-manifest.json`
+
+## Asset Restore Notes
+
+Shared visual assets are not duplicated in this snapshot. To restore Beta 0.9.9.7, restore the files in this directory to the project root and keep the root `assets/` directory available.
+
+`asset-manifest.json` records local visual asset references found in the archived entry files, including relative path, size, SHA-256, and whether the asset currently exists.
+
+If a manifest item is marked missing, do not assume v2 Alpha removed it. Confirm whether the referenced asset was already absent in the Beta baseline or whether it should be recovered from an older archive/source package before using this snapshot for rollback.
 
 ## Notes
 

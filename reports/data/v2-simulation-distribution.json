@@ -1,0 +1,300 @@
+{
+  "generatedAt": "2026-07-04T16:05:48.664Z",
+  "seed": "heart-island-v2-alpha-random-distribution-v1",
+  "sampleCount": 100000,
+  "nearTieThreshold": 2.5,
+  "rows": [
+    {
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "top1Count": 2876,
+      "top1Rate": 0.0288,
+      "top2Count": 2605,
+      "top2Rate": 0.0261,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "top1Count": 14581,
+      "top1Rate": 0.1458,
+      "top2Count": 12463,
+      "top2Rate": 0.1246,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "top1Count": 224,
+      "top1Rate": 0.0022,
+      "top2Count": 429,
+      "top2Rate": 0.0043,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "collector",
+      "displayName": "收藏家",
+      "top1Count": 13886,
+      "top1Rate": 0.1389,
+      "top2Count": 9531,
+      "top2Rate": 0.0953,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "top1Count": 19176,
+      "top1Rate": 0.1918,
+      "top2Count": 14651,
+      "top2Rate": 0.1465,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "islander",
+      "displayName": "岛屿型",
+      "top1Count": 6088,
+      "top1Rate": 0.0609,
+      "top2Count": 5524,
+      "top2Rate": 0.0552,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "explorer",
+      "displayName": "探险家",
+      "top1Count": 4989,
+      "top1Rate": 0.0499,
+      "top2Count": 8992,
+      "top2Rate": 0.0899,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "top1Count": 5425,
+      "top1Rate": 0.0542,
+      "top2Count": 9521,
+      "top2Rate": 0.0952,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "spark",
+      "displayName": "星火型",
+      "top1Count": 6396,
+      "top1Rate": 0.064,
+      "top2Count": 4929,
+      "top2Rate": 0.0493,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "moonlight",
+      "displayName": "月光型",
+      "top1Count": 3916,
+      "top1Rate": 0.0392,
+      "top2Count": 6373,
+      "top2Rate": 0.0637,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "mirror",
+      "displayName": "镜像型",
+      "top1Count": 11301,
+      "top1Rate": 0.113,
+      "top2Count": 9983,
+      "top2Rate": 0.0998,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "stargazer",
+      "displayName": "观星者",
+      "top1Count": 4234,
+      "top1Rate": 0.0423,
+      "top2Count": 5138,
+      "top2Rate": 0.0514,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "companion",
+      "displayName": "同行者",
+      "top1Count": 1844,
+      "top1Rate": 0.0184,
+      "top2Count": 3670,
+      "top2Rate": 0.0367,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "harbor",
+      "displayName": "港湾型",
+      "top1Count": 570,
+      "top1Rate": 0.0057,
+      "top2Count": 1035,
+      "top2Rate": 0.0103,
+      "averageGap": null,
+      "medianGap": null
+    },
+    {
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "top1Count": 4494,
+      "top1Rate": 0.0449,
+      "top2Count": 5156,
+      "top2Rate": 0.0516,
+      "averageGap": null,
+      "medianGap": null
+    }
+  ],
+  "missingPersonas": [],
+  "lowFrequencyPersonas": [
+    "筑巢型"
+  ],
+  "overConcentratedPersonas": [],
+  "tieCount": 32,
+  "nearTieCount": 83379,
+  "gap": {
+    "mean": 1.4034,
+    "median": 1.081,
+    "p10": 0.1737,
+    "p25": 0.4737,
+    "p75": 2.0044,
+    "p90": 3.0767
+  },
+  "extremePatterns": [
+    {
+      "id": "allLowest",
+      "top1": "岛屿型",
+      "top2": "探险家",
+      "gap": 7.6563,
+      "matchScore": 52.0361
+    },
+    {
+      "id": "allHighest",
+      "top1": "月光型",
+      "top2": "港湾型",
+      "gap": 1.9478,
+      "matchScore": 62.3667
+    },
+    {
+      "id": "firstDisplayed",
+      "top1": "岛屿型",
+      "top2": "候鸟型",
+      "gap": 3.0607,
+      "matchScore": 77.0535
+    },
+    {
+      "id": "lastDisplayed",
+      "top1": "同行者",
+      "top2": "月光型",
+      "gap": 0.8979,
+      "matchScore": 78.9549
+    },
+    {
+      "id": "alternatingLowHigh",
+      "top1": "候鸟型",
+      "top2": "探险家",
+      "gap": 2.1125,
+      "matchScore": 66.9899
+    },
+    {
+      "id": "cycleABCD",
+      "top1": "守门人",
+      "top2": "观星者",
+      "gap": 3.944,
+      "matchScore": 83.129
+    },
+    {
+      "id": "allMiddle",
+      "top1": "候鸟型",
+      "top2": "守门人",
+      "gap": 2.9585,
+      "matchScore": 82.7195
+    },
+    {
+      "id": "AU-high-CL-high-CM-high",
+      "top1": "守门人",
+      "top2": "候鸟型",
+      "gap": 0.3881,
+      "matchScore": 76.7467
+    },
+    {
+      "id": "SC-high-TR-high",
+      "top1": "港湾型",
+      "top2": "候鸟型",
+      "gap": 0.7907,
+      "matchScore": 76.1966
+    },
+    {
+      "id": "CS-high-AU-high",
+      "top1": "候鸟型",
+      "top2": "守门人",
+      "gap": 0.7129,
+      "matchScore": 77.0232
+    },
+    {
+      "id": "PA-high-CM-high",
+      "top1": "星火型",
+      "top2": "候鸟型",
+      "gap": 0.3856,
+      "matchScore": 75.2964
+    },
+    {
+      "id": "NV-high-RM-high",
+      "top1": "候鸟型",
+      "top2": "探险家",
+      "gap": 1.9018,
+      "matchScore": 77.0265
+    },
+    {
+      "id": "EC-high-ER-low",
+      "top1": "星火型",
+      "top2": "候鸟型",
+      "gap": 1.756,
+      "matchScore": 75.9736
+    },
+    {
+      "id": "CR-high-RI-low",
+      "top1": "候鸟型",
+      "top2": "摆渡人",
+      "gap": 0.1258,
+      "matchScore": 75.4182
+    },
+    {
+      "id": "MN-high-ER-high",
+      "top1": "收藏家",
+      "top2": "候鸟型",
+      "gap": 3.5925,
+      "matchScore": 81.2628
+    },
+    {
+      "id": "SI-high-RM-high",
+      "top1": "观星者",
+      "top2": "月光型",
+      "gap": 5.6689,
+      "matchScore": 82.2485
+    },
+    {
+      "id": "CL-low-RI-high",
+      "top1": "守门人",
+      "top2": "观星者",
+      "gap": 4.2239,
+      "matchScore": 77.0959
+    }
+  ],
+  "summary": {
+    "maxTop1Rate": 0.1918,
+    "minTop1Rate": 0.0022,
+    "maxTop1Persona": "候鸟型",
+    "minTop1Persona": "筑巢型"
+  }
+}

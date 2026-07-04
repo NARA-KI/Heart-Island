@@ -100,8 +100,9 @@ export function scoreAnswers(questionBank, personaData, answers) {
     const option = question.options.find((item) => item.id === optionId);
     if (!option) throw new Error(`Invalid answer ${optionId} for ${question.id}`);
 
-    // V2 frozen options already store normalized construct scores. Reverse items
-    // are validated and tracked here, but not inverted a second time.
+    // Important: V2 frozen options already store the final normalized construct
+    // score. `reverse` is audit metadata only; runtime scoring must not invert a
+    // reverse item a second time. Regression tests lock this behavior.
     const normalizedScore = option.score;
     constructValues[question.construct].push(normalizedScore);
     answerDebug.push({

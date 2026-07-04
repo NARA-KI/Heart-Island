@@ -1,0 +1,741 @@
+{
+  "generatedAt": "2026-07-04T16:05:55.157Z",
+  "sourceArchive": "archive/beta-0.9.9.7-production",
+  "scannedFiles": [
+    "index.html",
+    "app.js",
+    "styles.css"
+  ],
+  "summary": {
+    "referencedAssets": 88,
+    "existingAssets": 56,
+    "missingAssets": 32
+  },
+  "assets": [
+    {
+      "path": "assets/personas/01-lighthouse.svg",
+      "exists": true,
+      "size": 897,
+      "sha256": "98cc84f1907731a6a019b1e273425b6b34947e5a3a7a34d3c71ae58d5c227c26"
+    },
+    {
+      "path": "assets/personas/02-gatekeeper.svg",
+      "exists": true,
+      "size": 775,
+      "sha256": "5a50f6ad47206bceebec0484a92341d83fbc346a48e76b4e317443f15614958e"
+    },
+    {
+      "path": "assets/personas/03-nest-builder.svg",
+      "exists": true,
+      "size": 816,
+      "sha256": "15c6fe208473d6d8bef27c6218e6bfa36e273e5e84ee7f1c7e88a15db75e50b4"
+    },
+    {
+      "path": "assets/personas/04-collector.svg",
+      "exists": true,
+      "size": 912,
+      "sha256": "1d00199c347e8db001f83b6e56ec8f6ad34aeecdf3cd5d0723af52dba0637d69"
+    },
+    {
+      "path": "assets/personas/05-migratory-bird.svg",
+      "exists": true,
+      "size": 823,
+      "sha256": "9e7ff5e4055ee90d1dd19835e7e258c9e732cb7dcf64699cdc4c1308ecccafab"
+    },
+    {
+      "path": "assets/personas/06-island.svg",
+      "exists": true,
+      "size": 751,
+      "sha256": "d84fe63f32e4e9b7238ce576bded9fe351438640497759c37881b73f5880298c"
+    },
+    {
+      "path": "assets/personas/07-explorer.svg",
+      "exists": true,
+      "size": 933,
+      "sha256": "63d0d8d36448c0dbb83f0d5e139bec1ca44f18161dd7f7e7f01d6ed2167f9413"
+    },
+    {
+      "path": "assets/personas/08-wandering-poet.svg",
+      "exists": true,
+      "size": 730,
+      "sha256": "19e1074bbe042f8114a236d72366154c220a5d216b3efd6886fc58bcb2780549"
+    },
+    {
+      "path": "assets/personas/09-spark.svg",
+      "exists": true,
+      "size": 715,
+      "sha256": "0f4a3448cd42d80d55ea9d074b6c891c7cd5c5e2719bd706ffa377f7fa356836"
+    },
+    {
+      "path": "assets/personas/10-moonlight.svg",
+      "exists": true,
+      "size": 914,
+      "sha256": "8367eb4393abdf7aae10c298cda9eb50f654febb5426e3594647bcadb7824ef1"
+    },
+    {
+      "path": "assets/personas/11-mirror.svg",
+      "exists": true,
+      "size": 796,
+      "sha256": "9dff03a2e3a1d8359fbd9a3f052f56b355abe150c86c835592024bcf729f475c"
+    },
+    {
+      "path": "assets/personas/12-stargazer.svg",
+      "exists": true,
+      "size": 1045,
+      "sha256": "a106995810d7a8354b24338efcdde90882a6342c151a5606063c8b95e093bc5c"
+    },
+    {
+      "path": "assets/personas/collector.webp",
+      "exists": true,
+      "size": 166202,
+      "sha256": "80de5fa531af50a547331a85463d52f918ad75487bee2c32f58c54e4d774a6fc"
+    },
+    {
+      "path": "assets/personas/explorer.webp",
+      "exists": true,
+      "size": 147916,
+      "sha256": "194d019d0684c6d757573260f6b488c65c6603753be75701af3eab962b0b0c86"
+    },
+    {
+      "path": "assets/personas/gatekeeper.webp",
+      "exists": true,
+      "size": 114250,
+      "sha256": "bff80772a01daf66de2e82a79be8e95ebba717ca7cf674947bc5a94b6bfca865"
+    },
+    {
+      "path": "assets/personas/islander.webp",
+      "exists": true,
+      "size": 134222,
+      "sha256": "e542c37a16cafa465a5d42e2a99a59ff431070117a888f62d8d09d841ecfa386"
+    },
+    {
+      "path": "assets/personas/lighthouse.webp",
+      "exists": true,
+      "size": 92096,
+      "sha256": "a27cb1af7896d92d7566de7394cbda966d7cac0a43c7e252442f1b613d511fce"
+    },
+    {
+      "path": "assets/personas/migratory-bird.webp",
+      "exists": true,
+      "size": 139782,
+      "sha256": "c89c0b376a26c6ef8b3f470c6ed5975031f8b30f5e501cab9b1a7d43b0a54d0a"
+    },
+    {
+      "path": "assets/personas/mirror.webp",
+      "exists": true,
+      "size": 156946,
+      "sha256": "bd9cec70d2c664e4d15690438e416994b9cb339d6ffc7961471b23c4b61c120e"
+    },
+    {
+      "path": "assets/personas/moonlight.webp",
+      "exists": true,
+      "size": 145634,
+      "sha256": "d5106cd0a5caab922e71cfe58e480a413d4c9670915a2af0f61be5ce0634ea86"
+    },
+    {
+      "path": "assets/personas/nest-builder.webp",
+      "exists": true,
+      "size": 176720,
+      "sha256": "87046c434aec95cd27d7956ef0c884d2a20d8ebab5cde11e68d9963684b03f9a"
+    },
+    {
+      "path": "assets/personas/spark.webp",
+      "exists": true,
+      "size": 141948,
+      "sha256": "7bbc3a2fb9e6e34387170719342668e941bd5f495e20e323eb427ff1e1a68569"
+    },
+    {
+      "path": "assets/personas/stargazer.webp",
+      "exists": true,
+      "size": 201120,
+      "sha256": "daa36eb44ce1aa6837a3b5e613772180e20db4bd876a5a09a893c8bfe395c34d"
+    },
+    {
+      "path": "assets/personas/thumbs/collector.webp",
+      "exists": true,
+      "size": 21178,
+      "sha256": "0324ab92ac6e5d34ffa7eadde5114d6d424d8bab742a6cf84018c3627a0a217c"
+    },
+    {
+      "path": "assets/personas/thumbs/explorer.webp",
+      "exists": true,
+      "size": 18248,
+      "sha256": "b53d1ff4c68fa197a71c00103ec54168f884473984e42b909a886dcf6df2d125"
+    },
+    {
+      "path": "assets/personas/thumbs/gatekeeper.webp",
+      "exists": true,
+      "size": 13578,
+      "sha256": "c052d0403c279c9abc594909440ec16b78bdc023b52f4ffd3444f3a38bd1031d"
+    },
+    {
+      "path": "assets/personas/thumbs/islander.webp",
+      "exists": true,
+      "size": 15542,
+      "sha256": "52d17819e8133c579276b61b3fc1dbde047cb90b4189e414cd16baecc3d25288"
+    },
+    {
+      "path": "assets/personas/thumbs/lighthouse.webp",
+      "exists": true,
+      "size": 11136,
+      "sha256": "e7b856face86e6bd41ba3dba571cbe9c3e42ac7c416e3e7e6c2586c6829361e5"
+    },
+    {
+      "path": "assets/personas/thumbs/migratory-bird.webp",
+      "exists": true,
+      "size": 18062,
+      "sha256": "5ee0d484f09bdd9cc2973560992fc8c864628ba2aa328caeb4c29808a60329b4"
+    },
+    {
+      "path": "assets/personas/thumbs/mirror.webp",
+      "exists": true,
+      "size": 17366,
+      "sha256": "c3e457ce5344c398cccaee03fdbea2be24368da90c937d5253f49b90a099b73d"
+    },
+    {
+      "path": "assets/personas/thumbs/moonlight.webp",
+      "exists": true,
+      "size": 17812,
+      "sha256": "6f463ef8fad74beaa2489625725faf253a20406103c92ea590db8ae7238a0080"
+    },
+    {
+      "path": "assets/personas/thumbs/nest-builder.webp",
+      "exists": true,
+      "size": 21994,
+      "sha256": "f93ffc4178622b24cffa657ac12b46aa4920f2ec2bd351c46ba067fba5aec20b"
+    },
+    {
+      "path": "assets/personas/thumbs/spark.webp",
+      "exists": true,
+      "size": 18516,
+      "sha256": "af81d4c5ff7eb99fb342c2680090f20869d904ac7fee6df52407a48a5ce5d3cb"
+    },
+    {
+      "path": "assets/personas/thumbs/stargazer.webp",
+      "exists": true,
+      "size": 21996,
+      "sha256": "093aad95887e9eaaf0987f1e28457f099da986520c01aeb650da67ddadcfc93b"
+    },
+    {
+      "path": "assets/personas/thumbs/wandering-poet.webp",
+      "exists": true,
+      "size": 18416,
+      "sha256": "10b0e37c1c51cb77ba841c28749b636e0e9095434bc21a68c592b86737ac06c3"
+    },
+    {
+      "path": "assets/personas/wandering-poet.webp",
+      "exists": true,
+      "size": 156384,
+      "sha256": "f0555cd974f87736c303ca49e95e6d2e6884fd52932f7949cc288bedb5816ecb"
+    },
+    {
+      "path": "assets/result/common-bg.webp",
+      "exists": true,
+      "size": 62816,
+      "sha256": "d2ec004e08e3268160cffabcce181d33782df7f4fa51b567d12fe9481e0a8d42"
+    },
+    {
+      "path": "assets/result/main-island.webp",
+      "exists": true,
+      "size": 216812,
+      "sha256": "f96591104c75c3caa85be736b80f2ecef41a0344f10554db1cb6bc271a26d045"
+    },
+    {
+      "path": "assets/result/silver-lake.webp",
+      "exists": true,
+      "size": 252156,
+      "sha256": "f9306a8b8c577dbf140ea39e191a3c0b1a92e8ba21d7129f0d2cb01d225cf798"
+    },
+    {
+      "path": "assets/result/voyage.webp",
+      "exists": true,
+      "size": 127536,
+      "sha256": "a2019a2a4ce9b97529f3126bdef7ec2dea7be3302f3e49614ddbbad5e71bdbe8"
+    },
+    {
+      "path": "assets/scenes/au-ridge.webp",
+      "exists": true,
+      "size": 70786,
+      "sha256": "c40f8623ea946597951b7b725922fdddc4a32be1d630793c09d57c5c9c9ca3a9"
+    },
+    {
+      "path": "assets/scenes/ca-dock.webp",
+      "exists": true,
+      "size": 83438,
+      "sha256": "13a84728a0514f69e502fa2683c1bf7e97ffd6c326f9b9a3a5fc99ec7f104364"
+    },
+    {
+      "path": "assets/scenes/cl-coast.webp",
+      "exists": true,
+      "size": 62266,
+      "sha256": "2985d3aa96f550318f2668dfc0990edb4bbda9a56301b8d97e6a77ca90f3af0b"
+    },
+    {
+      "path": "assets/scenes/ev-moon-lake.webp",
+      "exists": true,
+      "size": 196604,
+      "sha256": "e3acb411c8b58b8efab0909fa40f5ab6362b6f64f83246217d8d91cd3832c9e1"
+    },
+    {
+      "path": "assets/scenes/ex-river.webp",
+      "exists": true,
+      "size": 61858,
+      "sha256": "380af17f93ad6606d2d12fbb79c7040d737d2aabf74623c6668424cb52f1bb7b"
+    },
+    {
+      "path": "assets/scenes/id-observatory.webp",
+      "exists": true,
+      "size": 69304,
+      "sha256": "687ae2f498318c93c202606c8d3a3c710db30ac8590f99eaf1b0a97aed679ad2"
+    },
+    {
+      "path": "assets/scenes/in-plain.webp",
+      "exists": true,
+      "size": 92468,
+      "sha256": "832903aa8fdd7dd7a1f1a1116e89670ef430b6bb11c1ab741ef1482a163bf0c0"
+    },
+    {
+      "path": "assets/scenes/me-old-bay.webp",
+      "exists": true,
+      "size": 152186,
+      "sha256": "b2d874d79c3af3f016aa4e02040f1b3f3da25eeed994102b325e360abbbc9a12"
+    },
+    {
+      "path": "assets/scenes/nv-fog-route.webp",
+      "exists": true,
+      "size": 86588,
+      "sha256": "2c78020ebea1c505efa7f593ea2e218efdb202875d76ce11b39b29fd20713513"
+    },
+    {
+      "path": "assets/scenes/props/scene-01-drift-bottle.svg",
+      "exists": true,
+      "size": 558,
+      "sha256": "5fea50629201f31f68e28c66b2c81b4d5409fc30d04b5ba79f03bcf2ccc2ad09"
+    },
+    {
+      "path": "assets/scenes/props/scene-02-two-shadows.svg",
+      "exists": true,
+      "size": 455,
+      "sha256": "8dc5e79cb8f75e4cfc0c405b9f82ce3991b1e8bf5a8673f26378a3b33492d120"
+    },
+    {
+      "path": "assets/scenes/props/scene-03-seashell.svg",
+      "exists": true,
+      "size": 446,
+      "sha256": "83e5086979bf0c3219bb380e7d1da2940203d02b5fefe530fef7b82bb272e618"
+    },
+    {
+      "path": "assets/scenes/props/scene-04-lone-path.svg",
+      "exists": true,
+      "size": 380,
+      "sha256": "2385c41f494ec8a150042aee1800a33c0584ed62019b1109438046f652d4acf6"
+    },
+    {
+      "path": "assets/scenes/props/scene-05-eagle.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-06-fork-road.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-07-echo-wave.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-08-lighthouse-signal.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-09-sand-vow.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-10-water-reflection.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-11-floating-words.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-12-river-stones.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-13-earth-crack.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-14-embers.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-15-new-flower.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-16-wind-direction.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-17-distant-campfire.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-18-crossroad.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-19-telescope-star.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-20-shooting-star.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-21-constellation-map.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-22-ancient-clock.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-23-stone-wall-names.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-24-foundation-stone.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-25-waiting-person.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-26-dim-lamp.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-27-heavy-bag.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-28-unknown-map.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-29-mirage-island.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-30-new-route.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-31-stranded-ship.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-32-captain-log.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-33-old-photo.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-34-moonlit-water.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-35-lake-reflection.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-36-full-moon-lake.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/rp-volcano.webp",
+      "exists": true,
+      "size": 110878,
+      "sha256": "7dc551107e89c1ba59328462f25de6e2ea6f036b007e548a2aaa5bcc195b6f6e"
+    },
+    {
+      "path": "assets/scenes/se-harbor.webp",
+      "exists": true,
+      "size": 61858,
+      "sha256": "380af17f93ad6606d2d12fbb79c7040d737d2aabf74623c6668424cb52f1bb7b"
+    },
+    {
+      "path": "assets/scenes/st-tower.webp",
+      "exists": true,
+      "size": 92964,
+      "sha256": "7ac7497ea39e5000bb2596489a792dafd6b8f688d26afdb8072afa66e4aed2cb"
+    }
+  ],
+  "missingAssets": [
+    {
+      "path": "assets/scenes/props/scene-05-eagle.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-06-fork-road.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-07-echo-wave.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-08-lighthouse-signal.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-09-sand-vow.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-10-water-reflection.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-11-floating-words.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-12-river-stones.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-13-earth-crack.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-14-embers.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-15-new-flower.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-16-wind-direction.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-17-distant-campfire.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-18-crossroad.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-19-telescope-star.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-20-shooting-star.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-21-constellation-map.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-22-ancient-clock.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-23-stone-wall-names.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-24-foundation-stone.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-25-waiting-person.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-26-dim-lamp.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-27-heavy-bag.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-28-unknown-map.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-29-mirage-island.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-30-new-route.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-31-stranded-ship.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-32-captain-log.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-33-old-photo.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-34-moonlit-water.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-35-lake-reflection.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    {
+      "path": "assets/scenes/props/scene-36-full-moon-lake.svg",
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  ],
+  "unknownDynamicReferences": [
+    "app.js may construct persona and scene asset paths dynamically; this manifest records static string references and direct assets/ path literals."
+  ]
+}

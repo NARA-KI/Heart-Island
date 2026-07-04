@@ -1,0 +1,260 @@
+{
+  "generatedAt": "2026-07-04T16:05:48.696Z",
+  "constructs": [
+    {
+      "construct": "SC",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 347.9048,
+      "questionIds": [
+        "v2-q01",
+        "v2-q04",
+        "v2-q07",
+        "v2-q10"
+      ]
+    },
+    {
+      "construct": "AU",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 346.3612,
+      "questionIds": [
+        "v2-q02",
+        "v2-q05",
+        "v2-q08",
+        "v2-q11"
+      ]
+    },
+    {
+      "construct": "TR",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 349.1649,
+      "questionIds": [
+        "v2-q03",
+        "v2-q06",
+        "v2-q09",
+        "v2-q12"
+      ]
+    },
+    {
+      "construct": "CL",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 351.77,
+      "questionIds": [
+        "v2-q13",
+        "v2-q16",
+        "v2-q19",
+        "v2-q22"
+      ]
+    },
+    {
+      "construct": "PA",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 347.8447,
+      "questionIds": [
+        "v2-q14",
+        "v2-q17",
+        "v2-q20",
+        "v2-q23"
+      ]
+    },
+    {
+      "construct": "CM",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 348.698,
+      "questionIds": [
+        "v2-q15",
+        "v2-q18",
+        "v2-q21",
+        "v2-q24"
+      ]
+    },
+    {
+      "construct": "SI",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 347.3073,
+      "questionIds": [
+        "v2-q25",
+        "v2-q29",
+        "v2-q33",
+        "v2-q37"
+      ]
+    },
+    {
+      "construct": "NV",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 349.7185,
+      "questionIds": [
+        "v2-q26",
+        "v2-q30",
+        "v2-q34",
+        "v2-q38"
+      ]
+    },
+    {
+      "construct": "RM",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 350.4231,
+      "questionIds": [
+        "v2-q27",
+        "v2-q31",
+        "v2-q35",
+        "v2-q39"
+      ]
+    },
+    {
+      "construct": "CS",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 350.7386,
+      "questionIds": [
+        "v2-q28",
+        "v2-q32",
+        "v2-q36",
+        "v2-q40"
+      ]
+    },
+    {
+      "construct": "EC",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 348.1897,
+      "questionIds": [
+        "v2-q41",
+        "v2-q44",
+        "v2-q47",
+        "v2-q50"
+      ]
+    },
+    {
+      "construct": "CR",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 349.8909,
+      "questionIds": [
+        "v2-q42",
+        "v2-q45",
+        "v2-q48",
+        "v2-q51"
+      ]
+    },
+    {
+      "construct": "ER",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 348.0497,
+      "questionIds": [
+        "v2-q43",
+        "v2-q46",
+        "v2-q49",
+        "v2-q52"
+      ]
+    },
+    {
+      "construct": "RI",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 349.6611,
+      "questionIds": [
+        "v2-q53",
+        "v2-q55",
+        "v2-q57",
+        "v2-q59"
+      ]
+    },
+    {
+      "construct": "MN",
+      "theoreticalMin": 0,
+      "theoreticalMax": 100,
+      "actualMin": 0,
+      "actualMax": 100,
+      "questionCount": 4,
+      "positiveQuestionCount": 3,
+      "reverseQuestionCount": 1,
+      "varianceInSimulation": 350.3092,
+      "questionIds": [
+        "v2-q54",
+        "v2-q56",
+        "v2-q58",
+        "v2-q60"
+      ]
+    }
+  ]
+}

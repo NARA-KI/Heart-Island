@@ -11,7 +11,8 @@
     "audit:options": "node scripts/option-alignment-audit.mjs",
     "test:consistency": "node scripts/consistency-test.mjs",
     "ui:inspect": "node scripts/inspect-ui.mjs",
-    "v2:validate": "node scripts/v2-product-validation/validate-v2-alpha.mjs"
+    "v2:validate": "node scripts/v2-product-validation/validate-v2-alpha.mjs",
+    "v2:audit:scoring": "node scripts/v2-product-validation/audit-v2-scoring-reliability.mjs"
   },
   "type": "module",
   "dependencies": {
