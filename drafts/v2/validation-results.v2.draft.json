@@ -1,0 +1,7084 @@
+{
+  "schemaVersion": "v2-validation-results-draft-1",
+  "scoringRule": "construct average + 15-dimensional Euclidean distance to draft targetVector; lower distance is better",
+  "summary": {
+    "generatedAt": "2026-07-04T07:22:21.589Z",
+    "totalFixtures": 110,
+    "idealTotal": 15,
+    "idealHits": 15,
+    "perturbTotal": 45,
+    "perturbHits": 45,
+    "confusableTotal": 36,
+    "confusableHits": 36,
+    "riskTotal": 14,
+    "riskHits": 14,
+    "riskTop1Changes": 0,
+    "adjacentMisses": 0,
+    "nonAdjacentMisses": 0,
+    "top1Counts": {
+      "摆渡人": 11,
+      "港湾型": 9,
+      "灯塔型": 8,
+      "候鸟型": 8,
+      "同行者": 8,
+      "岛屿型": 7,
+      "流浪诗人": 7,
+      "收藏家": 7,
+      "守门人": 7,
+      "探险家": 7,
+      "月光型": 7,
+      "观星者": 6,
+      "镜像型": 6,
+      "星火型": 6,
+      "筑巢型": 6
+    },
+    "falseTop1Counts": {},
+    "missedExpectedCounts": {},
+    "gapDistribution": {
+      "min": 0.5221,
+      "p25": 3.0542,
+      "median": 4.82,
+      "p75": 6.456,
+      "max": 13.287,
+      "smallGapUnder2": 16,
+      "smallGapUnder5": 57
+    },
+    "scenarios": [
+      {
+        "type": "ideal-primary-persona",
+        "total": 15,
+        "hits": 15,
+        "hitRate": "100.0%",
+        "adjacentMisses": 0,
+        "nonAdjacentMisses": 0
+      },
+      {
+        "type": "minor-perturbation",
+        "total": 45,
+        "hits": 45,
+        "hitRate": "100.0%",
+        "adjacentMisses": 0,
+        "nonAdjacentMisses": 0
+      },
+      {
+        "type": "confusable-contrast",
+        "total": 36,
+        "hits": 36,
+        "hitRate": "100.0%",
+        "adjacentMisses": 0,
+        "nonAdjacentMisses": 0
+      },
+      {
+        "type": "risk-question-single-perturbation",
+        "total": 14,
+        "hits": 14,
+        "hitRate": "100.0%",
+        "adjacentMisses": 0,
+        "nonAdjacentMisses": 0
+      }
+    ]
+  },
+  "riskSensitivity": {
+    "v2-q06": {
+      "questionId": "v2-q06",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q11": {
+      "questionId": "v2-q11",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q15": {
+      "questionId": "v2-q15",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q21": {
+      "questionId": "v2-q21",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q28": {
+      "questionId": "v2-q28",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q32": {
+      "questionId": "v2-q32",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q36": {
+      "questionId": "v2-q36",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q38": {
+      "questionId": "v2-q38",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q41": {
+      "questionId": "v2-q41",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q47": {
+      "questionId": "v2-q47",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q50": {
+      "questionId": "v2-q50",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q57": {
+      "questionId": "v2-q57",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q58": {
+      "questionId": "v2-q58",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    },
+    "v2-q60": {
+      "questionId": "v2-q60",
+      "total": 1,
+      "top1Changed": 0,
+      "changedTo": []
+    }
+  },
+  "results": [
+    {
+      "fixtureId": "ideal-lighthouse-01",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 100,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 9.4446,
+          "similarity": 90.5554
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 12.6675,
+          "similarity": 87.3325
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 16.4803,
+          "similarity": 83.5197
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 16.775,
+          "similarity": 83.225
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 17.6503,
+          "similarity": 82.3497
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 3.2229,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-gatekeeper-01",
+      "expectedPersona": "守门人",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 9.5638,
+          "similarity": 90.4362
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 15.5156,
+          "similarity": 84.4844
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 15.7184,
+          "similarity": 84.2816
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 20.5297,
+          "similarity": 79.4703
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 24.5438,
+          "similarity": 75.4562
+        }
+      ],
+      "top1": "守门人",
+      "top2": "观星者",
+      "top1Top2Gap": 5.9518,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-nest-builder-01",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 100,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 9.252,
+          "similarity": 90.748
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.5892,
+          "similarity": 86.4108
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.0133,
+          "similarity": 84.9867
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.9437,
+          "similarity": 84.0563
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.0571,
+          "similarity": 78.9429
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 4.3372,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-collector-01",
+      "expectedPersona": "收藏家",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 100
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 9.0259,
+          "similarity": 90.9741
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 22.3129,
+          "similarity": 77.6871
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 22.9012,
+          "similarity": 77.0988
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 23.5499,
+          "similarity": 76.4501
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 24.3447,
+          "similarity": 75.6553
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 13.287,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-migratory-bird-01",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 100,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 8.9443,
+          "similarity": 91.0557
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.1349,
+          "similarity": 84.8651
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 15.5842,
+          "similarity": 84.4158
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 22.2081,
+          "similarity": 77.7919
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 27.0345,
+          "similarity": 72.9655
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 6.1906,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-islander-01",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 8.1076,
+          "similarity": 91.8924
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.5346,
+          "similarity": 80.4654
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.4745,
+          "similarity": 75.5255
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 26.9938,
+          "similarity": 73.0062
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 27.3581,
+          "similarity": 72.6419
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 11.427,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-explorer-01",
+      "expectedPersona": "探险家",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 8.579,
+          "similarity": 91.421
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.1377,
+          "similarity": 86.8623
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 16.4134,
+          "similarity": 83.5866
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 16.7073,
+          "similarity": 83.2927
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.7171,
+          "similarity": 75.2829
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.5587,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-wandering-poet-01",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 100,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 8.2583,
+          "similarity": 91.7417
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.5671,
+          "similarity": 86.4329
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 17.5917,
+          "similarity": 82.4083
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 19.5533,
+          "similarity": 80.4467
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.472,
+          "similarity": 76.528
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 5.3088,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-spark-01",
+      "expectedPersona": "星火型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 100,
+        "CM": 33,
+        "SI": 67,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 8.6948,
+          "similarity": 91.3052
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 20.5085,
+          "similarity": 79.4915
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 22.2471,
+          "similarity": 77.7529
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.5329,
+          "similarity": 77.4671
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.5289,
+          "similarity": 75.4711
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 11.8137,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-moonlight-01",
+      "expectedPersona": "月光型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 7.6985,
+          "similarity": 92.3015
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 12.8062,
+          "similarity": 87.1938
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 13.4239,
+          "similarity": 86.5761
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 13.7113,
+          "similarity": 86.2887
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.1138,
+          "similarity": 85.8862
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 5.1077,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-mirror-01",
+      "expectedPersona": "镜像型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 9.4481,
+          "similarity": 90.5519
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.4717,
+          "similarity": 88.5283
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 15.1085,
+          "similarity": 84.8915
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4271,
+          "similarity": 79.5729
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 21.429,
+          "similarity": 78.571
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 2.0236,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-stargazer-01",
+      "expectedPersona": "观星者",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 100,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 9.6125,
+          "similarity": 90.3875
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.131,
+          "similarity": 81.869
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 18.8414,
+          "similarity": 81.1586
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 21.3464,
+          "similarity": 78.6536
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.936,
+          "similarity": 76.064
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 8.5185,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-companion-01",
+      "expectedPersona": "同行者",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.3381,
+          "similarity": 90.6619
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 16.1555,
+          "similarity": 83.8445
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.5867,
+          "similarity": 81.4133
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.5903,
+          "similarity": 81.4097
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 20.6833,
+          "similarity": 79.3167
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 6.8174,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-harbor-01",
+      "expectedPersona": "港湾型",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.4913,
+          "similarity": 89.5087
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 12.9923,
+          "similarity": 87.0077
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 14.3991,
+          "similarity": 85.6009
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 16.3666,
+          "similarity": 83.6334
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.3931,
+          "similarity": 83.6069
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.501,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "ideal-ferryman-01",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "ideal-primary-persona",
+      "changedQuestions": [],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.9818,
+          "similarity": 89.0182
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.6515,
+          "similarity": 85.3485
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.2182,
+          "similarity": 82.7818
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 19.7146,
+          "similarity": 80.2854
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.0275,
+          "similarity": 76.9725
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.6697,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-lighthouse-primary-soften-01",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q28"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 91.75,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 9.3347,
+          "similarity": 90.6653
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.773,
+          "similarity": 88.227
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.5929,
+          "similarity": 84.4071
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.8347,
+          "similarity": 84.1653
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 16.4277,
+          "similarity": 83.5723
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.4383,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-lighthouse-low-raised-02",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q30"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 100,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 9.87,
+          "similarity": 90.13
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 12.7678,
+          "similarity": 87.2322
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 16.8963,
+          "similarity": 83.1037
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 17.2825,
+          "similarity": 82.7175
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 17.3997,
+          "similarity": 82.6003
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.8978,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-lighthouse-mixed-03",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q21",
+        "v2-q38"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 58.5,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 100,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 10.7098,
+          "similarity": 89.2902
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.0856,
+          "similarity": 86.9144
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 16.9794,
+          "similarity": 83.0206
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 17.4002,
+          "similarity": 82.5998
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.2784,
+          "similarity": 81.7216
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.3758,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-gatekeeper-primary-soften-01",
+      "expectedPersona": "守门人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q02"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 91.75,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 9.0997,
+          "similarity": 90.9003
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 14.4938,
+          "similarity": 85.5062
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 15.6526,
+          "similarity": 84.3474
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 19.4886,
+          "similarity": 80.5114
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.6799,
+          "similarity": 76.3201
+        }
+      ],
+      "top1": "守门人",
+      "top2": "观星者",
+      "top1Top2Gap": 5.3941,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-gatekeeper-low-raised-02",
+      "expectedPersona": "守门人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q17"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 41.5,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 9.9842,
+          "similarity": 90.0158
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 15.5975,
+          "similarity": 84.4025
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 16.189,
+          "similarity": 83.811
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 20.6741,
+          "similarity": 79.3259
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 24.7107,
+          "similarity": 75.2893
+        }
+      ],
+      "top1": "守门人",
+      "top2": "观星者",
+      "top1Top2Gap": 5.6133,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-gatekeeper-mixed-03",
+      "expectedPersona": "守门人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q49",
+        "v2-q23"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 41.5,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 58.5,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 10.2778,
+          "similarity": 89.7222
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 15.4973,
+          "similarity": 84.5027
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 16.7143,
+          "similarity": 83.2857
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 20.7629,
+          "similarity": 79.2371
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 24.9219,
+          "similarity": 75.0781
+        }
+      ],
+      "top1": "守门人",
+      "top2": "观星者",
+      "top1Top2Gap": 5.2195,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-nest-builder-primary-soften-01",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q13"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 91.75,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 8.8959,
+          "similarity": 91.1041
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.0155,
+          "similarity": 86.9845
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.4961,
+          "similarity": 85.5039
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.0246,
+          "similarity": 84.9754
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 20.5046,
+          "similarity": 79.4954
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 4.1196,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-nest-builder-low-raised-02",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q30"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 100,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 10.1431,
+          "similarity": 89.8569
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.6827,
+          "similarity": 86.3173
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.4688,
+          "similarity": 84.5312
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.1993,
+          "similarity": 83.8007
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.3842,
+          "similarity": 78.6158
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 3.5396,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-nest-builder-mixed-03",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q35",
+        "v2-q38"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 100,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 58.5,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 10.9621,
+          "similarity": 89.0379
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.4846,
+          "similarity": 86.5154
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.551,
+          "similarity": 84.449
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.2778,
+          "similarity": 83.7222
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 20.8271,
+          "similarity": 79.1729
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.5225,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-collector-primary-soften-01",
+      "expectedPersona": "收藏家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q54"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 91.75
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 8.9724,
+          "similarity": 91.0276
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 20.9429,
+          "similarity": 79.0571
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.9728,
+          "similarity": 78.0272
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.9856,
+          "similarity": 77.0144
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 23.4031,
+          "similarity": 76.5969
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 11.9705,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-collector-low-raised-02",
+      "expectedPersona": "收藏家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q17"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 41.5,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 100
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 9.4701,
+          "similarity": 90.5299
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 22.4963,
+          "similarity": 77.5037
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 22.5835,
+          "similarity": 77.4165
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.8725,
+          "similarity": 77.1275
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 23.8569,
+          "similarity": 76.1431
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 13.0262,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-collector-mixed-03",
+      "expectedPersona": "收藏家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q19",
+        "v2-q23"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 58.5,
+        "PA": 41.5,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 100
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 9.4251,
+          "similarity": 90.5749
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 22.1216,
+          "similarity": 77.8784
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.8539,
+          "similarity": 77.1461
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 22.8889,
+          "similarity": 77.1111
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 24.3098,
+          "similarity": 75.6902
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 12.6965,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-migratory-bird-primary-soften-01",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q02"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 91.75,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 8.3149,
+          "similarity": 91.6851
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 14.1635,
+          "similarity": 85.8365
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 14.94,
+          "similarity": 85.06
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 20.7783,
+          "similarity": 79.2217
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.0424,
+          "similarity": 73.9576
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 5.8486,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-migratory-bird-low-raised-02",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q18"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 100,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 41.5,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 9.3924,
+          "similarity": 90.6076
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.404,
+          "similarity": 84.596
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 16.0587,
+          "similarity": 83.9413
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 22.2654,
+          "similarity": 77.7346
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.766,
+          "similarity": 73.234
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 6.0116,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-migratory-bird-mixed-03",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q33",
+        "v2-q24"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 100,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 41.5,
+        "SI": 58.5,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 9.704,
+          "similarity": 90.296
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 16.0323,
+          "similarity": 83.9677
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 16.5821,
+          "similarity": 83.4179
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 22.4492,
+          "similarity": 77.5508
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.8136,
+          "similarity": 73.1864
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "探险家",
+      "top1Top2Gap": 6.3283,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-islander-primary-soften-01",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q02"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 91.75,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 7.9794,
+          "similarity": 92.0206
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.3116,
+          "similarity": 80.6884
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.2515,
+          "similarity": 75.7485
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 26.6271,
+          "similarity": 73.3729
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 26.7919,
+          "similarity": 73.2081
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 11.3322,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-islander-low-raised-02",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q16"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 41.5,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 8.9228,
+          "similarity": 91.0772
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.2202,
+          "similarity": 80.7798
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 23.7518,
+          "similarity": 76.2482
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 26.6186,
+          "similarity": 73.3814
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 26.988,
+          "similarity": 73.012
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 10.2974,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-islander-mixed-03",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q35",
+        "v2-q22"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 41.5,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 58.5,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 8.8751,
+          "similarity": 91.1249
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.3744,
+          "similarity": 80.6256
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 23.1538,
+          "similarity": 76.8462
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 26.0211,
+          "similarity": 73.9789
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 26.7849,
+          "similarity": 73.2151
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 10.4993,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-explorer-primary-soften-01",
+      "expectedPersona": "探险家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q26"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 91.75,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 8.5228,
+          "similarity": 91.4772
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.6308,
+          "similarity": 87.3692
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.6983,
+          "similarity": 84.3017
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 16.1081,
+          "similarity": 83.8919
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 23.5578,
+          "similarity": 76.4422
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.108,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-explorer-low-raised-02",
+      "expectedPersona": "探险家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q18"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 41.5,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 9.4136,
+          "similarity": 90.5864
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.4468,
+          "similarity": 86.5532
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 16.6618,
+          "similarity": 83.3382
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 16.7834,
+          "similarity": 83.2166
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.423,
+          "similarity": 75.577
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.0332,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-explorer-mixed-03",
+      "expectedPersona": "探险家",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q47",
+        "v2-q24"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 41.5,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 58.5,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 9.7245,
+          "similarity": 90.2755
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.2451,
+          "similarity": 86.7549
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 16.6363,
+          "similarity": 83.3637
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 17.6153,
+          "similarity": 82.3847
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.8656,
+          "similarity": 75.1344
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 3.5206,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-wandering-poet-primary-soften-01",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q25"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 91.75,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 8.2666,
+          "similarity": 91.7334
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.3856,
+          "similarity": 87.6144
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 16.4986,
+          "similarity": 83.5014
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 18.8115,
+          "similarity": 81.1885
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.097,
+          "similarity": 76.903
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.119,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-wandering-poet-low-raised-02",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q31"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 100,
+        "NV": 67,
+        "RM": 41.5,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 9.06,
+          "similarity": 90.94
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.5358,
+          "similarity": 86.4642
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 17.664,
+          "similarity": 82.336
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 19.6184,
+          "similarity": 80.3816
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.2841,
+          "similarity": 76.7159
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.4758,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-wandering-poet-mixed-03",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q19",
+        "v2-q39"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 58.5,
+        "PA": 67,
+        "CM": 33,
+        "SI": 100,
+        "NV": 67,
+        "RM": 41.5,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 9.013,
+          "similarity": 90.987
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.7538,
+          "similarity": 86.2462
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 17.4136,
+          "similarity": 82.5864
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 20.0541,
+          "similarity": 79.9459
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.2659,
+          "similarity": 76.7341
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.7408,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-spark-primary-soften-01",
+      "expectedPersona": "星火型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q14"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 91.75,
+        "CM": 33,
+        "SI": 67,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 8.5754,
+          "similarity": 91.4246
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 20.0234,
+          "similarity": 79.9766
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 21.3932,
+          "similarity": 78.6068
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 21.7663,
+          "similarity": 78.2337
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 23.7572,
+          "similarity": 76.2428
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 11.448,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-spark-low-raised-02",
+      "expectedPersona": "星火型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q18"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 100,
+        "CM": 41.5,
+        "SI": 67,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 8.8402,
+          "similarity": 91.1598
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 20.8714,
+          "similarity": 79.1286
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 22.431,
+          "similarity": 77.569
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.7145,
+          "similarity": 77.2855
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.2326,
+          "similarity": 75.7674
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 12.0312,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-spark-mixed-03",
+      "expectedPersona": "星火型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q34",
+        "v2-q24"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 100,
+        "CM": 41.5,
+        "SI": 67,
+        "NV": 58.5,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 9.769,
+          "similarity": 90.231
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 21.7294,
+          "similarity": 78.2706
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 22.9616,
+          "similarity": 77.0384
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 23.0181,
+          "similarity": 76.9819
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 23.8139,
+          "similarity": 76.1861
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 11.9604,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-moonlight-primary-soften-01",
+      "expectedPersona": "月光型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q13"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 58.5,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 9.0046,
+          "similarity": 90.9954
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 13.1231,
+          "similarity": 86.8769
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.485,
+          "similarity": 85.515
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.5287,
+          "similarity": 85.4713
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.5974,
+          "similarity": 85.4026
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 4.1185,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-moonlight-low-raised-02",
+      "expectedPersona": "月光型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q30"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 7.8624,
+          "similarity": 92.1376
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 13.1231,
+          "similarity": 86.8769
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.0529,
+          "similarity": 85.9471
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 14.1968,
+          "similarity": 85.8032
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.2086,
+          "similarity": 85.7914
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 5.2607,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-moonlight-mixed-03",
+      "expectedPersona": "月光型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q49",
+        "v2-q38"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 58.5,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 8.7655,
+          "similarity": 91.2345
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 13.0907,
+          "similarity": 86.9093
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.1032,
+          "similarity": 85.8968
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.5728,
+          "similarity": 85.4272
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 15.1712,
+          "similarity": 84.8288
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 4.3252,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-mirror-primary-soften-01",
+      "expectedPersona": "镜像型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q43"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 91.75,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 9.2198,
+          "similarity": 90.7802
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.0877,
+          "similarity": 88.9123
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 14.3668,
+          "similarity": 85.6332
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 19.4937,
+          "similarity": 80.5063
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 20.8072,
+          "similarity": 79.1928
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 1.8679,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-mirror-low-raised-02",
+      "expectedPersona": "镜像型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q05"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 41.5,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 9.8734,
+          "similarity": 90.1266
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.9278,
+          "similarity": 89.0722
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 15.0803,
+          "similarity": 84.9197
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4894,
+          "similarity": 79.5106
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 20.873,
+          "similarity": 79.127
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 1.0544,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-mirror-mixed-03",
+      "expectedPersona": "镜像型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q19",
+        "v2-q11"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 41.5,
+        "TR": 33,
+        "CL": 58.5,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 10.553,
+          "similarity": 89.447
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.3974,
+          "similarity": 88.6026
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 15.7871,
+          "similarity": 84.2129
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.689,
+          "similarity": 79.311
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 20.8527,
+          "similarity": 79.1473
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 0.8444,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-stargazer-primary-soften-01",
+      "expectedPersona": "观星者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q25"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 91.75,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 9.5046,
+          "similarity": 90.4954
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 16.6815,
+          "similarity": 83.3185
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 17.3879,
+          "similarity": 82.6121
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 20.8807,
+          "similarity": 79.1193
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.9057,
+          "similarity": 77.0943
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 7.1769,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-stargazer-low-raised-02",
+      "expectedPersona": "观星者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q17"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 41.5,
+        "CM": 100,
+        "SI": 100,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 9.7442,
+          "similarity": 90.2558
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.3562,
+          "similarity": 81.6438
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 18.9987,
+          "similarity": 81.0013
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 20.7882,
+          "similarity": 79.2118
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.7518,
+          "similarity": 76.2482
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 8.612,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-stargazer-mixed-03",
+      "expectedPersona": "观星者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q09",
+        "v2-q23"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 58.5,
+        "CL": 67,
+        "PA": 41.5,
+        "CM": 100,
+        "SI": 100,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 10.594,
+          "similarity": 89.406
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.6396,
+          "similarity": 81.3604
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 19.6223,
+          "similarity": 80.3777
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 21.0389,
+          "similarity": 78.9611
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 24.4861,
+          "similarity": 75.5139
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 8.0456,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-companion-primary-soften-01",
+      "expectedPersona": "同行者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q27"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 91.75,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.3455,
+          "similarity": 90.6545
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.0678,
+          "similarity": 84.9322
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 17.7427,
+          "similarity": 82.2573
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.0537,
+          "similarity": 81.9463
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.2082,
+          "similarity": 79.7918
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 5.7223,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-companion-low-raised-02",
+      "expectedPersona": "同行者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q17"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 41.5,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.6514,
+          "similarity": 90.3486
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.8813,
+          "similarity": 84.1187
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 17.9467,
+          "similarity": 82.0533
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.8065,
+          "similarity": 81.1935
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4096,
+          "similarity": 79.5904
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 6.2299,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-companion-mixed-03",
+      "expectedPersona": "同行者",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q48",
+        "v2-q23"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 41.5,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 58.5,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 10.0681,
+          "similarity": 89.9319
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 16.4165,
+          "similarity": 83.5835
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.3603,
+          "similarity": 81.6397
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.7839,
+          "similarity": 81.2161
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 20.7244,
+          "similarity": 79.2756
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 6.3484,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-harbor-primary-soften-01",
+      "expectedPersona": "港湾型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q03"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 91.75,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.3925,
+          "similarity": 89.6075
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.9389,
+          "similarity": 88.0611
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 13.9381,
+          "similarity": 86.0619
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.5007,
+          "similarity": 84.4993
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.7545,
+          "similarity": 84.2455
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.5464,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-harbor-low-raised-02",
+      "expectedPersona": "港湾型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q30"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 11.1333,
+          "similarity": 88.8667
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.0901,
+          "similarity": 86.9099
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 14.8734,
+          "similarity": 85.1266
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.6418,
+          "similarity": 83.3582
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 16.8864,
+          "similarity": 83.1136
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.9568,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-harbor-mixed-03",
+      "expectedPersona": "港湾型",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q07",
+        "v2-q38"
+      ],
+      "constructScores": {
+        "SC": 58.5,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 11.8842,
+          "similarity": 88.1158
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.3154,
+          "similarity": 86.6846
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 14.5751,
+          "similarity": 85.4249
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.3758,
+          "similarity": 83.6242
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 16.9696,
+          "similarity": 83.0304
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.4312,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-ferryman-primary-soften-01",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q43"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 91.75,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.5801,
+          "similarity": 89.4199
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.5053,
+          "similarity": 85.4947
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 16.5712,
+          "similarity": 83.4288
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 18.7458,
+          "similarity": 81.2542
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.45,
+          "similarity": 77.55
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.9252,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-ferryman-low-raised-02",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q06"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 41.5,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.5743,
+          "similarity": 89.4257
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.4666,
+          "similarity": 85.5334
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 16.0338,
+          "similarity": 83.9662
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 18.7497,
+          "similarity": 81.2503
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 21.5859,
+          "similarity": 78.4141
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.8923,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "perturb-ferryman-mixed-03",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "minor-perturbation",
+      "changedQuestions": [
+        "v2-q07",
+        "v2-q12"
+      ],
+      "constructScores": {
+        "SC": 58.5,
+        "AU": 33,
+        "TR": 41.5,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.262,
+          "similarity": 88.738
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 15.202,
+          "similarity": 84.798
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 16.2183,
+          "similarity": 83.7817
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 18.514,
+          "similarity": 81.486
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 21.9826,
+          "similarity": 78.0174
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.94,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-lighthouse-soften-01",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q32"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 91.75,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 9.3347,
+          "similarity": 90.6653
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.773,
+          "similarity": 88.227
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.5929,
+          "similarity": 84.4071
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.8347,
+          "similarity": 84.1653
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 16.4277,
+          "similarity": 83.5723
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.4383,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-lighthouse-neighbor-02",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q19"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 75.25,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 100,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 9.5099,
+          "similarity": 90.4901
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 12.1862,
+          "similarity": 87.8138
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 16.1133,
+          "similarity": 83.8867
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 16.1443,
+          "similarity": 83.8557
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 17.623,
+          "similarity": 82.377
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.6763,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-moonlight-soften-01",
+      "expectedPersona": "月光型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q16"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 58.5,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 9.0046,
+          "similarity": 90.9954
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 13.1231,
+          "similarity": 86.8769
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.485,
+          "similarity": 85.515
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.5287,
+          "similarity": 85.4713
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.5974,
+          "similarity": 85.4026
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 4.1185,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-moonlight-neighbor-02",
+      "expectedPersona": "月光型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q48"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 75.25,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 7.9186,
+          "similarity": 92.0814
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 11.9682,
+          "similarity": 88.0318
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 13.2226,
+          "similarity": 86.7774
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 13.4327,
+          "similarity": 86.5673
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 13.9273,
+          "similarity": 86.0727
+        }
+      ],
+      "top1": "月光型",
+      "top2": "灯塔型",
+      "top1Top2Gap": 4.0496,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-ferryman-soften-01",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q46"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 91.75,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.5801,
+          "similarity": 89.4199
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.5053,
+          "similarity": 85.4947
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 16.5712,
+          "similarity": 83.4288
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 18.7458,
+          "similarity": 81.2542
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.45,
+          "similarity": 77.55
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.9252,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-lighthouse-moonlight-ferryman-ferryman-neighbor-02",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q36"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 75.25,
+        "EC": 67,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.6206,
+          "similarity": 88.3794
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.6186,
+          "similarity": 85.3814
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.0618,
+          "similarity": 82.9382
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 19.0658,
+          "similarity": 80.9342
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.0544,
+          "similarity": 76.9456
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 2.998,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-gatekeeper-soften-01",
+      "expectedPersona": "守门人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q05"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 91.75,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 9.0997,
+          "similarity": 90.9003
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 14.4938,
+          "similarity": 85.5062
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 15.6526,
+          "similarity": 84.3474
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 19.4886,
+          "similarity": 80.5114
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.6799,
+          "similarity": 76.3201
+        }
+      ],
+      "top1": "守门人",
+      "top2": "观星者",
+      "top1Top2Gap": 5.3941,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-gatekeeper-neighbor-02",
+      "expectedPersona": "守门人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q49"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 75.25,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 9.7419,
+          "similarity": 90.2581
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 15.4759,
+          "similarity": 84.5241
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 15.9051,
+          "similarity": 84.0949
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 20.6665,
+          "similarity": 79.3335
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 24.5242,
+          "similarity": 75.4758
+        }
+      ],
+      "top1": "守门人",
+      "top2": "岛屿型",
+      "top1Top2Gap": 5.734,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-islander-soften-01",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q05"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 91.75,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 7.9794,
+          "similarity": 92.0206
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.3116,
+          "similarity": 80.6884
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.2515,
+          "similarity": 75.7485
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 26.6271,
+          "similarity": 73.3729
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 26.7919,
+          "similarity": 73.2081
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 11.3322,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-islander-neighbor-02",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q21"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 41.5,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 7.5465,
+          "similarity": 92.4535
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.1902,
+          "similarity": 81.8098
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.6418,
+          "similarity": 75.3582
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 26.372,
+          "similarity": 73.628
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 27.2706,
+          "similarity": 72.7294
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 10.6437,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-migratory-bird-soften-01",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q05"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 91.75,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 8.3149,
+          "similarity": 91.6851
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 14.1635,
+          "similarity": 85.8365
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 14.94,
+          "similarity": 85.06
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 20.7783,
+          "similarity": 79.2217
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.0424,
+          "similarity": 73.9576
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 5.8486,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-gatekeeper-islander-migratory-migratory-bird-neighbor-02",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q09"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 100,
+        "TR": 41.5,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 8.2351,
+          "similarity": 91.7649
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 14.727,
+          "similarity": 85.273
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 15.2998,
+          "similarity": 84.7002
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 21.8804,
+          "similarity": 78.1196
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.8716,
+          "similarity": 73.1284
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 6.4919,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-nest-builder-soften-01",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q16"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 91.75,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 8.8959,
+          "similarity": 91.1041
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.0155,
+          "similarity": 86.9845
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.4961,
+          "similarity": 85.5039
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.0246,
+          "similarity": 84.9754
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 20.5046,
+          "similarity": 79.4954
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 4.1196,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-nest-builder-neighbor-02",
+      "expectedPersona": "筑巢型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q35"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 100,
+        "PA": 67,
+        "CM": 100,
+        "SI": 67,
+        "NV": 33,
+        "RM": 75.25,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 100,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 8.8339,
+          "similarity": 91.1661
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 14.1104,
+          "similarity": 85.8896
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.2361,
+          "similarity": 84.7639
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.1536,
+          "similarity": 83.8464
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 20.9659,
+          "similarity": 79.0341
+        }
+      ],
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "top1Top2Gap": 5.2765,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-companion-soften-01",
+      "expectedPersona": "同行者",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q31"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 91.75,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.3455,
+          "similarity": 90.6545
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.0678,
+          "similarity": 84.9322
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 17.7427,
+          "similarity": 82.2573
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.0537,
+          "similarity": 81.9463
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.2082,
+          "similarity": 79.7918
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 5.7223,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-companion-neighbor-02",
+      "expectedPersona": "同行者",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q19"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 75.25,
+        "PA": 33,
+        "CM": 100,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.9718,
+          "similarity": 90.0282
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.7809,
+          "similarity": 84.2191
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.0232,
+          "similarity": 81.9768
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.2589,
+          "similarity": 80.7411
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 21.0611,
+          "similarity": 78.9389
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 5.8091,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-harbor-soften-01",
+      "expectedPersona": "港湾型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q06"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 91.75,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.3925,
+          "similarity": 89.6075
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.9389,
+          "similarity": 88.0611
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 13.9381,
+          "similarity": 86.0619
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.5007,
+          "similarity": 84.4993
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.7545,
+          "similarity": 84.2455
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.5464,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-nest-companion-harbor-harbor-neighbor-02",
+      "expectedPersona": "港湾型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q21"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 75.25,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.1244,
+          "similarity": 89.8756
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.0398,
+          "similarity": 86.9602
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 13.7394,
+          "similarity": 86.2606
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.579,
+          "similarity": 84.421
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.1608,
+          "similarity": 83.8392
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.9154,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-explorer-soften-01",
+      "expectedPersona": "探险家",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q30"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 91.75,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 8.5228,
+          "similarity": 91.4772
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.6308,
+          "similarity": 87.3692
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.6983,
+          "similarity": 84.3017
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 16.1081,
+          "similarity": 83.8919
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 23.5578,
+          "similarity": 76.4422
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.108,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-explorer-neighbor-02",
+      "expectedPersona": "探险家",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q47"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 75.25,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 8.7771,
+          "similarity": 91.2229
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.6762,
+          "similarity": 86.3238
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 16.1422,
+          "similarity": 83.8578
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 16.7164,
+          "similarity": 83.2836
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 24.4739,
+          "similarity": 75.5261
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.8991,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-spark-soften-01",
+      "expectedPersona": "星火型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q17"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 91.75,
+        "CM": 33,
+        "SI": 67,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 8.5754,
+          "similarity": 91.4246
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 20.0234,
+          "similarity": 79.9766
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 21.3932,
+          "similarity": 78.6068
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 21.7663,
+          "similarity": 78.2337
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 23.7572,
+          "similarity": 76.2428
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 11.448,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-spark-neighbor-02",
+      "expectedPersona": "星火型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q34"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 100,
+        "CM": 33,
+        "SI": 67,
+        "NV": 75.25,
+        "RM": 33,
+        "CS": 33,
+        "EC": 100,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 8.2485,
+          "similarity": 91.7515
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 19.8579,
+          "similarity": 80.1421
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 21.9265,
+          "similarity": 78.0735
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.4382,
+          "similarity": 77.5618
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 25.1079,
+          "similarity": 74.8921
+        }
+      ],
+      "top1": "星火型",
+      "top2": "探险家",
+      "top1Top2Gap": 11.6094,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-migratory-bird-soften-01",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q05"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 91.75,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 8.3149,
+          "similarity": 91.6851
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 14.1635,
+          "similarity": 85.8365
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 14.94,
+          "similarity": 85.06
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 20.7783,
+          "similarity": 79.2217
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 26.0424,
+          "similarity": 73.9576
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "流浪诗人",
+      "top1Top2Gap": 5.8486,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-explorer-spark-migratory-migratory-bird-neighbor-02",
+      "expectedPersona": "候鸟型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q20"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 100,
+        "TR": 33,
+        "CL": 67,
+        "PA": 75.25,
+        "CM": 33,
+        "SI": 67,
+        "NV": 100,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 9.4888,
+          "similarity": 90.5112
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 15.3396,
+          "similarity": 84.6604
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.3559,
+          "similarity": 84.6441
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 21.6342,
+          "similarity": 78.3658
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 27.2196,
+          "similarity": 72.7804
+        }
+      ],
+      "top1": "候鸟型",
+      "top2": "探险家",
+      "top1Top2Gap": 5.8508,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-collector-soften-01",
+      "expectedPersona": "收藏家",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q56"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 91.75
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 8.9724,
+          "similarity": 91.0276
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 20.9429,
+          "similarity": 79.0571
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.9728,
+          "similarity": 78.0272
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.9856,
+          "similarity": 77.0144
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 23.4031,
+          "similarity": 76.5969
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 11.9705,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-collector-neighbor-02",
+      "expectedPersona": "收藏家",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q34"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 41.5,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 100
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 9.8226,
+          "similarity": 90.1774
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 22.5466,
+          "similarity": 77.4534
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.6234,
+          "similarity": 77.3766
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 23.2024,
+          "similarity": 76.7976
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.0447,
+          "similarity": 75.9553
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 12.724,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-wandering-poet-soften-01",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q29"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 91.75,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 8.2666,
+          "similarity": 91.7334
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.3856,
+          "similarity": 87.6144
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 16.4986,
+          "similarity": 83.5014
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 18.8115,
+          "similarity": 81.1885
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.097,
+          "similarity": 76.903
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 4.119,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-wandering-poet-neighbor-02",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q49"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 100,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 75.25,
+        "RI": 33,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 8.4639,
+          "similarity": 91.5361
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.8132,
+          "similarity": 86.1868
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 17.9973,
+          "similarity": 82.0027
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 19.8638,
+          "similarity": 80.1362
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.4515,
+          "similarity": 76.5485
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 5.3493,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-stargazer-soften-01",
+      "expectedPersona": "观星者",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q29"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 91.75,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 9.5046,
+          "similarity": 90.4954
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 16.6815,
+          "similarity": 83.3185
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 17.3879,
+          "similarity": 82.6121
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 20.8807,
+          "similarity": 79.1193
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.9057,
+          "similarity": 77.0943
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 7.1769,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-collector-poet-stargazer-stargazer-neighbor-02",
+      "expectedPersona": "观星者",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q58"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 100,
+        "SI": 100,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 41.5
+      },
+      "top5": [
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 9.449,
+          "similarity": 90.551
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 17.9819,
+          "similarity": 82.0181
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 18.909,
+          "similarity": 81.091
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 20.8698,
+          "similarity": 79.1302
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.6802,
+          "similarity": 76.3198
+        }
+      ],
+      "top1": "观星者",
+      "top2": "守门人",
+      "top1Top2Gap": 8.5329,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-mirror-soften-01",
+      "expectedPersona": "镜像型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q46"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 91.75,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 9.2198,
+          "similarity": 90.7802
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.0877,
+          "similarity": 88.9123
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 14.3668,
+          "similarity": 85.6332
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 19.4937,
+          "similarity": 80.5063
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 20.8072,
+          "similarity": 79.1928
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 1.8679,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-mirror-neighbor-02",
+      "expectedPersona": "镜像型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q09"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 41.5,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 9.1588,
+          "similarity": 90.8412
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 11.0823,
+          "similarity": 88.9177
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.7435,
+          "similarity": 86.2565
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 19.4974,
+          "similarity": 80.5026
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 20.9543,
+          "similarity": 79.0457
+        }
+      ],
+      "top1": "镜像型",
+      "top2": "摆渡人",
+      "top1Top2Gap": 1.9235,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-harbor-soften-01",
+      "expectedPersona": "港湾型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q06"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 91.75,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.3925,
+          "similarity": 89.6075
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.9389,
+          "similarity": 88.0611
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 13.9381,
+          "similarity": 86.0619
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.5007,
+          "similarity": 84.4993
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 15.7545,
+          "similarity": 84.2455
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.5464,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-harbor-neighbor-02",
+      "expectedPersona": "港湾型",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q49"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 75.25,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 10.4453,
+          "similarity": 89.5547
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 12.7843,
+          "similarity": 87.2157
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 14.5935,
+          "similarity": 85.4065
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 16.6043,
+          "similarity": 83.3957
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 16.6964,
+          "similarity": 83.3036
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 2.339,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-ferryman-soften-01",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q46"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 91.75,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.5801,
+          "similarity": 89.4199
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.5053,
+          "similarity": 85.4947
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 16.5712,
+          "similarity": 83.4288
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 18.7458,
+          "similarity": 81.2542
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.45,
+          "similarity": 77.55
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.9252,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "confusable-mirror-harbor-ferryman-ferryman-neighbor-02",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "confusable-contrast",
+      "changedQuestions": [
+        "v2-q07"
+      ],
+      "constructScores": {
+        "SC": 75.25,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 67,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 10.7349,
+          "similarity": 89.2651
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.2374,
+          "similarity": 85.7626
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.3177,
+          "similarity": 82.6823
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.1595,
+          "similarity": 79.8405
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 22.8627,
+          "similarity": 77.1373
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 3.5025,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q06-gatekeeper-single-flip",
+      "expectedPersona": "守门人",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q06"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 100,
+        "TR": 50.25,
+        "CL": 33,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 11.0153,
+          "similarity": 88.9847
+        },
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 15.9563,
+          "similarity": 84.0437
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 16.8524,
+          "similarity": 83.1476
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 21.8664,
+          "similarity": 78.1336
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 24.3784,
+          "similarity": 75.6216
+        }
+      ],
+      "top1": "守门人",
+      "top2": "岛屿型",
+      "top1Top2Gap": 4.941,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q11-islander-single-flip",
+      "expectedPersona": "岛屿型",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q11"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 75,
+        "TR": 67,
+        "CL": 33,
+        "PA": 33,
+        "CM": 33,
+        "SI": 33,
+        "NV": 33,
+        "RM": 67,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 9.3488,
+          "similarity": 90.6512
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 19.5772,
+          "similarity": 80.4228
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 24.3721,
+          "similarity": 75.6279
+        },
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 25.8315,
+          "similarity": 74.1685
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 26.1432,
+          "similarity": 73.8568
+        }
+      ],
+      "top1": "岛屿型",
+      "top2": "守门人",
+      "top1Top2Gap": 10.2284,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q15-companion-single-flip",
+      "expectedPersona": "同行者",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q15"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 75,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.4269,
+          "similarity": 90.5731
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.1438,
+          "similarity": 84.8562
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.0868,
+          "similarity": 81.9132
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 19.1642,
+          "similarity": 80.8358
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.2649,
+          "similarity": 79.7351
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 5.7169,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q21-companion-single-flip",
+      "expectedPersona": "同行者",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q21"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 75,
+        "SI": 33,
+        "NV": 33,
+        "RM": 100,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 9.4269,
+          "similarity": 90.5731
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.1438,
+          "similarity": 84.8562
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.0868,
+          "similarity": 81.9132
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 19.1642,
+          "similarity": 80.8358
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.2649,
+          "similarity": 79.7351
+        }
+      ],
+      "top1": "同行者",
+      "top2": "港湾型",
+      "top1Top2Gap": 5.7169,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q28-lighthouse-single-flip",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q28"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 75,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 10.5293,
+          "similarity": 89.4707
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.0514,
+          "similarity": 88.9486
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 14.6014,
+          "similarity": 85.3986
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.6037,
+          "similarity": 85.3963
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.7105,
+          "similarity": 85.2895
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 0.5221,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q32-lighthouse-single-flip",
+      "expectedPersona": "灯塔型",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q32"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 75,
+        "EC": 67,
+        "CR": 100,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 10.5293,
+          "similarity": 89.4707
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 11.0514,
+          "similarity": 88.9486
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 14.6014,
+          "similarity": 85.3986
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.6037,
+          "similarity": 85.3963
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.7105,
+          "similarity": 85.2895
+        }
+      ],
+      "top1": "灯塔型",
+      "top2": "月光型",
+      "top1Top2Gap": 0.5221,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q36-moonlight-single-flip",
+      "expectedPersona": "月光型",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q36"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 67,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 50.25,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 9.9031,
+          "similarity": 90.0969
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 14.1823,
+          "similarity": 85.8177
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 14.4547,
+          "similarity": 85.5453
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 14.6084,
+          "similarity": 85.3916
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 15.1351,
+          "similarity": 84.8649
+        }
+      ],
+      "top1": "月光型",
+      "top2": "筑巢型",
+      "top1Top2Gap": 4.2792,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q38-explorer-single-flip",
+      "expectedPersona": "探险家",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q38"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 67,
+        "NV": 75,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 33,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 9.9298,
+          "similarity": 90.0702
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.686,
+          "similarity": 87.314
+        },
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 15.0908,
+          "similarity": 84.9092
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 15.7311,
+          "similarity": 84.2689
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 21.6626,
+          "similarity": 78.3374
+        }
+      ],
+      "top1": "探险家",
+      "top2": "候鸟型",
+      "top1Top2Gap": 2.7562,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q41-ferryman-single-flip",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q41"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 50.25,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 13.1455,
+          "similarity": 86.8545
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.6038,
+          "similarity": 85.3962
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.8158,
+          "similarity": 82.1842
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4582,
+          "similarity": 79.5418
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.1906,
+          "similarity": 76.8094
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 1.4583,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q47-ferryman-single-flip",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q47"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 50.25,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 13.1455,
+          "similarity": 86.8545
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.6038,
+          "similarity": 85.3962
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.8158,
+          "similarity": 82.1842
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4582,
+          "similarity": 79.5418
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.1906,
+          "similarity": 76.8094
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 1.4583,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q50-ferryman-single-flip",
+      "expectedPersona": "摆渡人",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q50"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 67,
+        "EC": 50.25,
+        "CR": 100,
+        "ER": 100,
+        "RI": 67,
+        "MN": 67
+      },
+      "top5": [
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 13.1455,
+          "similarity": 86.8545
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 14.6038,
+          "similarity": 85.3962
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 17.8158,
+          "similarity": 82.1842
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 20.4582,
+          "similarity": 79.5418
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 23.1906,
+          "similarity": 76.8094
+        }
+      ],
+      "top1": "摆渡人",
+      "top2": "镜像型",
+      "top1Top2Gap": 1.4583,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q57-harbor-single-flip",
+      "expectedPersona": "港湾型",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q57"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 33,
+        "TR": 100,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 67,
+        "CS": 67,
+        "EC": 67,
+        "CR": 67,
+        "ER": 67,
+        "RI": 50.25,
+        "MN": 33
+      },
+      "top5": [
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 12.7386,
+          "similarity": 87.2614
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.9357,
+          "similarity": 86.0643
+        },
+        {
+          "id": "companion",
+          "displayName": "同行者",
+          "distance": 15.8305,
+          "similarity": 84.1695
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 17.9147,
+          "similarity": 82.0853
+        },
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 18.2612,
+          "similarity": 81.7388
+        }
+      ],
+      "top1": "港湾型",
+      "top2": "月光型",
+      "top1Top2Gap": 1.1971,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q58-collector-single-flip",
+      "expectedPersona": "收藏家",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q58"
+      ],
+      "constructScores": {
+        "SC": 67,
+        "AU": 67,
+        "TR": 67,
+        "CL": 67,
+        "PA": 33,
+        "CM": 67,
+        "SI": 67,
+        "NV": 33,
+        "RM": 33,
+        "CS": 33,
+        "EC": 33,
+        "CR": 33,
+        "ER": 67,
+        "RI": 67,
+        "MN": 75
+      },
+      "top5": [
+        {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 10.3183,
+          "similarity": 89.6817
+        },
+        {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 18.6065,
+          "similarity": 81.3935
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 20.643,
+          "similarity": 79.357
+        },
+        {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "distance": 21.5407,
+          "similarity": 78.4593
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 22.0076,
+          "similarity": 77.9924
+        }
+      ],
+      "top1": "收藏家",
+      "top2": "守门人",
+      "top1Top2Gap": 8.2882,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    },
+    {
+      "fixtureId": "risk-v2-q60-wandering-poet-single-flip",
+      "expectedPersona": "流浪诗人",
+      "scenarioType": "risk-question-single-perturbation",
+      "changedQuestions": [
+        "v2-q60"
+      ],
+      "constructScores": {
+        "SC": 33,
+        "AU": 67,
+        "TR": 33,
+        "CL": 67,
+        "PA": 67,
+        "CM": 33,
+        "SI": 100,
+        "NV": 67,
+        "RM": 33,
+        "CS": 33,
+        "EC": 67,
+        "CR": 33,
+        "ER": 67,
+        "RI": 33,
+        "MN": 50.25
+      },
+      "top5": [
+        {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 9.9031,
+          "similarity": 90.0969
+        },
+        {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 13.2654,
+          "similarity": 86.7346
+        },
+        {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 15.6696,
+          "similarity": 84.3304
+        },
+        {
+          "id": "spark",
+          "displayName": "星火型",
+          "distance": 17.8439,
+          "similarity": 82.1561
+        },
+        {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 25.0094,
+          "similarity": 74.9906
+        }
+      ],
+      "top1": "流浪诗人",
+      "top2": "候鸟型",
+      "top1Top2Gap": 3.3623,
+      "hit": true,
+      "adjacentMiss": false,
+      "nonAdjacentMiss": false
+    }
+  ]
+}

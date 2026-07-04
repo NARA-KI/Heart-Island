@@ -1,0 +1,1825 @@
+{
+  "schemaVersion": "v2-question-bank-draft-1",
+  "sourceVersion": "v2.0-question-bank-isolated-scoring-validation",
+  "generatedAt": "2026-07-04T07:20:07.853Z",
+  "notes": "隔离验证用 60 题候选题库草案；不接入生产代码。",
+  "constructs": [
+    "SC",
+    "AU",
+    "TR",
+    "CL",
+    "PA",
+    "CM",
+    "SI",
+    "NV",
+    "RM",
+    "CS",
+    "EC",
+    "CR",
+    "ER",
+    "RI",
+    "MN"
+  ],
+  "questions": [
+    {
+      "id": "v2-q01",
+      "construct": "SC",
+      "reverse": false,
+      "question": "在近岸灯标旁，你想起一段刚开始靠近的关系。对方没有明确说过你们现在算什么，你通常更在意什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先观察相处，不急着要一个说法。",
+          "score": 33
+        },
+        {
+          "id": "B",
+          "text": "我希望至少知道对方是不是认真靠近。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会直接问清楚，不想长期猜。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我更看行动，暂时不需要语言确认。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q02",
+      "construct": "AU",
+      "reverse": false,
+      "question": "航线忽然靠近一片热闹港口。你想起对方开始频繁约你、想参与你的日常时，你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会享受这种靠近，让生活自然交叠。",
+          "score": 33
+        },
+        {
+          "id": "B",
+          "text": "我愿意靠近，但会留出自己的固定时间。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会先放慢一点，确认自己还有空间。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会把大部分日常都分享给对方。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q03",
+      "construct": "TR",
+      "reverse": false,
+      "question": "雾气让航线暂时看不清。你想起对方临时改了计划，却没有解释太多。你通常会怎么理解？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先给对方一点余地，等合适时再问。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会有些不安，但愿意听后续说明。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会开始怀疑这段关系是不是不稳。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会暂时不多想，计划变化不一定代表什么。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q04",
+      "construct": "SC",
+      "reverse": true,
+      "question": "夜航时消息迟迟没有回音。你更接近哪种等待方式？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我能先做自己的事，不把沉默立刻放大。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会有点在意，但可以等到对方方便。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会反复看消息，想知道是不是哪里变了。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会直接找一个方式确认对方还在不在。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q05",
+      "construct": "AU",
+      "reverse": false,
+      "question": "船停在两条小径前，一条通往两个人的日常，一条通往自己的安静角落。恋爱里你通常更需要什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "有一个只属于自己的角落，关系才不会太满。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "多数时间可以共享，但重要的私人节奏要保留。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我更喜欢自然黏在一起，不必分太清。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会先保留一点距离，再看自己是否舒服。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q06",
+      "construct": "TR",
+      "reverse": false,
+      "question": "对方有件事没有解释完整，你能感觉到还有一点空白。你第一反应更接近哪一种？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先相信这里面未必有问题。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会保留疑问，但不急着下判断。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会很快往不好的方向联想。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会先把这份空白放在心里，对关系多一点保留。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q07",
+      "construct": "SC",
+      "reverse": false,
+      "question": "海面忽明忽暗。你想起一段关系里，对方有时很热，有时又突然变淡。你最容易在意什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我想知道这种变化是不是代表对方变心。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我希望对方至少说清楚最近发生了什么。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会把它当成正常起伏，先不急着判断。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会先放着观察，不马上要求解释。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q08",
+      "construct": "AU",
+      "reverse": true,
+      "question": "对方很自然地想进入你的社交、时间表和休息日。你更接近哪种感受？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会觉得被需要，也愿意把生活打开。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我能接受一部分，但不想所有角落都被看见。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会明显紧张，需要把节奏拉回来。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会先答应，之后再看自己会不会不舒服。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q09",
+      "construct": "TR",
+      "reverse": false,
+      "question": "如果一段关系暂时没有给出所有答案，你通常更容易预设什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "可靠的人会用持续行动慢慢证明。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我需要更多证据，才敢真的相信。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会先保持开放，不急着把关系判坏。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我倾向先保护自己，不太预设对方可靠。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q10",
+      "construct": "SC",
+      "reverse": false,
+      "question": "一个对你重要的日子，对方没有主动提起。你最接近哪种反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会很在意，这会影响我对被重视的感受。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会提醒一下，看对方之后怎么回应。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我不太会放在心上，每个人记事方式不同。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会降低期待，不想让自己显得太需要。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q11",
+      "construct": "AU",
+      "reverse": false,
+      "question": "对方希望你们更快进入稳定节奏，但你心里还没准备好。你身体里的第一反应更像什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会跟上对方节奏，先让关系继续推进。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会需要更多时间，确认自己是否舒服。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会先守住自己的节奏，不急着被关系推着走。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会试着适应，但心里会保留一点空间。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q12",
+      "construct": "TR",
+      "reverse": true,
+      "question": "看到一点模糊线索时，你会不会想通过对方反应来确认关系是否稳定？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我很少这样确认，更愿意先看整体相处。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "偶尔会留意反应，但不会反复测试。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会用一些小反应看对方会不会靠近。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "如果不这样确认，我很难安心。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q13",
+      "construct": "CL",
+      "reverse": false,
+      "question": "心岛的浅湾很安静，你想起自己喜欢一个人时，最自然想分享的是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一些日常小事，让对方进入我的生活感。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "重要决定，普通细节可以各自保留。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我更喜欢见面时再说，不需要高频分享。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会分享当下感受，让关系更贴近一点。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q14",
+      "construct": "PA",
+      "reverse": false,
+      "question": "你发现自己对一个人有明显心动。下一步你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会主动创造见面或聊天的机会。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会给一点信号，但等对方也靠近。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会先放在心里，确认这不是一时冲动。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会直接表达兴趣，不太想拖太久。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q15",
+      "construct": "CM",
+      "reverse": false,
+      "question": "关系进入稳定期后，需要有人持续维护它的节奏、回应和方向。你更接近哪种状态？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我愿意把这件事认真放进日常里。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我可以配合，但不想让关系变成任务。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会主动维护节奏，让关系不只靠感觉。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我更希望关系自然发展，不太想经营太多。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q16",
+      "construct": "CL",
+      "reverse": false,
+      "question": "你有点低落，但事情不算严重。关系里你更希望对方怎么在场？",
+      "options": [
+        {
+          "id": "A",
+          "text": "不必知道太多，我自己消化就好。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "能陪我待一会儿，哪怕不解决问题。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "能问我发生了什么，并认真听。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "等我主动说，不要太快靠近。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q17",
+      "construct": "PA",
+      "reverse": false,
+      "question": "当一段关系让你心里亮了一下，你通常会怎样处理这份心动？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会想办法让它发生点什么。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会先享受这种感觉，不急着行动。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会提醒自己慢一点，看它会不会持续。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会直接把热度带进互动里。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q18",
+      "construct": "CM",
+      "reverse": false,
+      "question": "一段关系开始稳定后，你最自然会想把它带向哪里？",
+      "options": [
+        {
+          "id": "A",
+          "text": "带进日常安排，让彼此成为生活的一部分。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "继续保持当下的轻盈，不急着定义以后。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "一起规划一些可执行的未来。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "先看感觉有没有继续，不想提前安排。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q19",
+      "construct": "CL",
+      "reverse": false,
+      "question": "关系因为忙碌变得疏一些。你更可能怎么回应这种距离？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会主动找回一点共享时间。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会适应这种节奏，各自忙也没关系。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会想找一个轻松方式重新靠近。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会暂时减少期待，等忙完再说。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q20",
+      "construct": "PA",
+      "reverse": false,
+      "question": "暧昧的热度慢慢降下来，但你还对这段关系有感觉。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会主动制造一次重新靠近的机会。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会顺其自然，热度降了也说明一些事。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会发出一点邀请，看对方接不接。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会先收回来，不想一个人推动。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q21",
+      "construct": "CM",
+      "reverse": false,
+      "question": "你们开始讨论未来一段时间这段关系要如何持续。你更在意这件事说明什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "说明彼此愿意把关系放进生活计划里。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会把它当作一次普通讨论，不太视为承诺。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会在意这些约定能不能被持续维护。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会有点压力，但仍愿意慢慢尝试。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q22",
+      "construct": "CL",
+      "reverse": true,
+      "question": "对方不了解你很多日常细节，但你们相处并不差。你更接近哪种感受？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我可以接受，不需要什么都分享。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会希望多一点日常交集。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会觉得少了真正亲密的部分。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我更在意关键时刻是否在场。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q23",
+      "construct": "PA",
+      "reverse": true,
+      "question": "你强烈心动，但还不了解对方。你会怎样处理这份热度？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先观察，不让热度替我做决定。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会慢慢靠近，留一点试探空间。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会很快行动，不想错过感觉。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会直接表达，让关系有机会升温。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q24",
+      "construct": "CM",
+      "reverse": true,
+      "question": "对方想给关系一个更固定的安排，你心里第一反应更像什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "固定下来会让我有压力，我想再看看。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "如果彼此认真，可以慢慢进入稳定节奏。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会认真讨论固定之后要如何经营。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我不排斥，但不想让安排覆盖当下感受。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q25",
+      "construct": "SI",
+      "reverse": false,
+      "question": "在星潮海面上，你想起自己被一个人真正打动的时刻。最重要的通常是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "对方懂我的精神世界和那些说不清的部分。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "相处舒服、生活稳定更重要。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "有强烈心动和吸引力。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "能聊到深处，但也要看现实能否合拍。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q26",
+      "construct": "NV",
+      "reverse": false,
+      "question": "关系进入固定日常后，一切都很稳定，但很少有新的体验。你通常会怎么感受？",
+      "options": [
+        {
+          "id": "A",
+          "text": "稳定让我安心，不太需要变化。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会希望偶尔一起尝试新的事。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会明显觉得关系少了亮度。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会自己寻找变化，不一定要求对方参与。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q27",
+      "construct": "RM",
+      "reverse": false,
+      "question": "航海图摊开时，你们聊到钱、城市、家庭边界和生活节奏。你最先会看什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "两个人价值观和现实安排能不能合上。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "感情够不够深，现实可以慢慢磨合。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "有没有愿意一起解决问题的态度。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会先避开太现实的话题，怕影响感觉。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q28",
+      "construct": "CS",
+      "reverse": false,
+      "question": "对方遇到一段压力很大的时期。你最自然的反应是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先问对方现在最需要哪种支持。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会很快进入支持状态，先补上自己能做的部分。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会关心对方，但不急着替对方处理。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我更倾向尊重对方自己处理。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q29",
+      "construct": "SI",
+      "reverse": false,
+      "question": "你很在意的兴趣、信念或创作，对方并不太懂。你更可能怎么感受？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只要相处可靠，不懂这些也没关系。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会有点遗憾，但不一定影响关系。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会明显觉得少了被看见的部分。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会继续分享，希望对方慢慢理解。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q30",
+      "construct": "NV",
+      "reverse": false,
+      "question": "长期关系里，你最怕哪一种状态？",
+      "options": [
+        {
+          "id": "A",
+          "text": "一切太重复，像再也没有新风景。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "关系太不确定，随时可能变化。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "只有稳定，没有一起探索的空间。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "每天都很好预测，很少出现意外惊喜。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q31",
+      "construct": "RM",
+      "reverse": false,
+      "question": "在进入一段关系前，你发现彼此生活节奏差很多。你更可能怎么判断？",
+      "options": [
+        {
+          "id": "A",
+          "text": "如果互相喜欢，节奏差可以以后适应。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会认真看差异会不会长期消耗彼此。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会先相处看看，不急着下结论。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会把这当成很重要的现实信号。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q32",
+      "construct": "CS",
+      "reverse": false,
+      "question": "对方反复遇到相似问题，每次都很依赖你。你最容易怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会自然靠近，继续给出自己能给的帮忙。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会支持，但也会把责任还给对方。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会减少介入，让对方自己面对。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会先安抚，再一起找更长期的办法。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q33",
+      "construct": "SI",
+      "reverse": false,
+      "question": "对方很适合一起生活，但你总觉得精神上少了一点共鸣。你更可能怎么处理？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会很在意这份缺口，难以忽略。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会接受现实合适比共鸣更重要。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会试着创造更多深层交流。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会把它当作关系里可以共存的不完整。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q34",
+      "construct": "NV",
+      "reverse": false,
+      "question": "一段关系很稳定，但你开始觉得每天都像复制。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会主动提议一起做点没做过的事。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会忍一忍，稳定本来就会平淡。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会自己找新的兴趣，让关系不必承担全部变化。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会怀疑是不是这段关系不再适合我。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q35",
+      "construct": "RM",
+      "reverse": false,
+      "question": "你们感情很好，但在城市、家庭边界或金钱安排上差异很大。你更可能看重什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "只要爱还在，现实差异可以慢慢跨过去。",
+          "score": 33
+        },
+        {
+          "id": "B",
+          "text": "我会看有没有清楚可行的解决方案。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会先承认差异，再决定能不能继续。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会尽量不让现实议题破坏当下感觉。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q36",
+      "construct": "CS",
+      "reverse": true,
+      "question": "对方的问题反复出现，你已经有些累了。你最自然的第一反应是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先确认自己还能给出多少支持。",
+          "score": 33
+        },
+        {
+          "id": "B",
+          "text": "我会继续靠近，因为很难看着对方一个人撑。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会陪对方看问题，但不自动接手。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会先拉开，让对方自己处理。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q37",
+      "construct": "SI",
+      "reverse": true,
+      "question": "关系稳定可靠，但没有特别强的精神共鸣。你会怎样看待它？",
+      "options": [
+        {
+          "id": "A",
+          "text": "稳定真实就够了，不一定要灵魂共振。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我可以接受，但会觉得少了一层光。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会继续寻找能不能更深地理解彼此。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "如果始终不懂我，我很难真正满足。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q38",
+      "construct": "NV",
+      "reverse": true,
+      "question": "关系稳定可靠，但你们面前出现一种新的相处方式或生活体验。你更接近哪种反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我不会轻易改变现在稳定的节奏。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会好奇，但不急着尝试。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "新体验会让我重新有活力。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会想看看它会不会打开新的方向。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q39",
+      "construct": "RM",
+      "reverse": true,
+      "question": "你明知道现实条件不太合，但感觉非常强烈。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先跟着感觉走，现实以后再看。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会提醒自己，强烈感觉不能替代可行性。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会一边投入，一边观察现实能不能调整。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会先停下来，把现实问题摊开看。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q40",
+      "construct": "CS",
+      "reverse": false,
+      "question": "在亲密关系里，你更容易把自己放在哪个位置？",
+      "options": [
+        {
+          "id": "A",
+          "text": "先看见对方需要什么，能帮就帮。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "彼此都要照顾好自己，我不会自动托底。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会在对方开口后再提供支持。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我常常会变成那个先撑住局面的人。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q41",
+      "construct": "EC",
+      "reverse": false,
+      "question": "当你心里有不舒服，但事情还没严重到争吵，你通常会怎么处理？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会找个合适时机把重点说出来。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会先收在心里，不太主动提起。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会用一些反应让对方察觉。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会先整理语言，再轻一点说。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q42",
+      "construct": "CR",
+      "reverse": false,
+      "question": "一次争执后，你们都安静了很久。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会等对方先开口，看看关系还有没有余地。",
+          "score": 33
+        },
+        {
+          "id": "B",
+          "text": "我会找个不那么刺痛的时间重新谈。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会先把这件事放下，不想再翻出来。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会用一个小动作试着恢复连接。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q43",
+      "construct": "ER",
+      "reverse": false,
+      "question": "对方明明情绪不对，却只说“没事”。你最容易出现什么反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会被对方情绪带得很乱。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会感到不对劲，但先稳住自己。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会直接切断感受，不想被影响。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会分辨那是对方的情绪，不全揽到自己身上。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q44",
+      "construct": "EC",
+      "reverse": false,
+      "question": "对方不是故意的，但确实碰到了你的边界。你更可能怎么说？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会明确说这件事让我不舒服。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会先消化，之后看有没有必要说。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会用比较轻的方式提醒对方。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会算了，不想让对方有压力。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q45",
+      "construct": "CR",
+      "reverse": false,
+      "question": "裂痕出现后，像船身有一道细缝。你通常更相信哪一种可能？",
+      "options": [
+        {
+          "id": "A",
+          "text": "有些缝出现后，很难真的回到原来。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "如果还在意，它可以被慢慢整理。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会看这道缝是不是反复出现。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我更愿意先冷却，不急着处理。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q46",
+      "construct": "ER",
+      "reverse": false,
+      "question": "一次对话让你情绪突然升上来。你通常第一步会怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先停一下，再决定要不要继续说。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会马上把感受说出来。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会把感受压下去，先当没事。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会找一个方式让自己慢慢稳住。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q47",
+      "construct": "EC",
+      "reverse": false,
+      "question": "你被对方误解了，而且当下气氛有点急。你最可能怎样表达自己的重点？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会当场把核心意思说清楚。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会先说出最关键的一句话，让对方知道重点。",
+          "score": 67
+        },
+        {
+          "id": "C",
+          "text": "我会用反问让对方知道他误会了。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会先不解释，等对方自己慢慢理解。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q48",
+      "construct": "CR",
+      "reverse": false,
+      "question": "同一个矛盾又出现了。你更可能怎么处理？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会觉得说了也没用，先放下。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会想重新复盘一次问题在哪里。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会先看对方有没有修复意愿。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会提出一个具体调整方式。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q49",
+      "construct": "ER",
+      "reverse": false,
+      "question": "对方低气压很重，虽然没有冲你发作，但你也被影响了。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会很快被带进去，心情跟着沉下去。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我能感觉到对方情绪，但会先分清那不是我的全部。",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "我会离开现场，让自己完全不受影响。",
+          "score": 33
+        },
+        {
+          "id": "D",
+          "text": "我会陪着对方，同时保留一点自己的稳定。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q50",
+      "construct": "EC",
+      "reverse": true,
+      "question": "你明明有话想说，但担心说出来会让气氛变差。你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会先收住，暂时不把话说出来。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会用比较间接的方式让对方知道。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会挑一句最轻的话先开口。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会尽量直接说出自己的感受和需要。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q51",
+      "construct": "CR",
+      "reverse": true,
+      "question": "关系里出现裂痕后，你脑中冒出“说了也没用”。你更接近哪种状态？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会真的放弃讨论，让它停在那里。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会先拉开一段时间，等自己愿意再说。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会想找一个还能谈的入口。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会试着确认对方是否也愿意修复。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q52",
+      "construct": "ER",
+      "reverse": true,
+      "question": "对方情绪很强烈地涌过来时，你更像哪一种反应？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会被卷进去，很难分清自己的感受。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会瞬间关掉感受，不想接触。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会先稳住自己，再决定怎么回应。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会感受到波动，但能慢慢把自己拉回来。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q53",
+      "construct": "RI",
+      "reverse": false,
+      "question": "当一段重要关系进入困难期，你通常怎样理解“继续投入”？",
+      "options": [
+        {
+          "id": "A",
+          "text": "如果还重要，我愿意继续把心力放进去。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会看这段关系是否还值得继续加码。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我更倾向及时止损，不让自己陷太深。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我愿意留下，但需要看到双方都在努力。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q54",
+      "construct": "MN",
+      "reverse": false,
+      "question": "翻到一张旧照片时，你想起一段关系里很小但很亮的片段。你通常会怎样看待它？",
+      "options": [
+        {
+          "id": "A",
+          "text": "那些片段会在我心里留很久。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会怀念，但不会让它影响现在。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我更愿意向前看，不太反复回想。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我会把它当作这段关系真实存在过的证据。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q55",
+      "construct": "RI",
+      "reverse": false,
+      "question": "你们已经一起投入了很多时间和心力，但眼前关系进入低谷。过去的投入会怎样影响你的选择？",
+      "options": [
+        {
+          "id": "A",
+          "text": "它会让我更想再努力一次。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会承认投入过，但不一定继续留下。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会看这段关系是否还能继续被经营。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我不想因为已经投入而拖住现在。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q56",
+      "construct": "MN",
+      "reverse": false,
+      "question": "在心岛旧码头，你看见许多被海风磨平的名字。对你来说，关系里的共同记忆更像什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "是爱存在过的证据，我会很珍惜。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "是一部分经历，但不该决定现在。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "是推动我继续理解这段关系的线索。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "是过去的事，我不太会反复翻看。",
+          "score": 0
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q57",
+      "construct": "RI",
+      "reverse": false,
+      "question": "关系变得很重，需要持续投入时间和心力。你更接近哪种选择？",
+      "options": [
+        {
+          "id": "A",
+          "text": "如果这段关系重要，我会继续把心力放进去。",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "我会先评估自己还能投入多少。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会开始减少投入，避免继续变重。",
+          "score": 0
+        },
+        {
+          "id": "D",
+          "text": "我愿意继续，但前提是双方都在投入。",
+          "score": 67
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q58",
+      "construct": "MN",
+      "reverse": false,
+      "question": "一段关系已经结束，但很多细节还会在某些时刻回来。你通常会怎样处理这些记忆？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会让它们留下，像我生命里的一部分。",
+          "score": 67
+        },
+        {
+          "id": "B",
+          "text": "我会尽量少想，过去就让它过去。",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "我会整理它们，理解自己为什么在意。",
+          "score": 100
+        },
+        {
+          "id": "D",
+          "text": "我会偶尔回到这些细节，试着给这段关系一个说法。",
+          "score": 33
+        }
+      ],
+      "sourceVersion": "v2.0-question-bank-isolated-scoring-validation-user-final",
+      "reviewStatus": "user-approved-final-text-for-isolated-validation"
+    },
+    {
+      "id": "v2-q59",
+      "construct": "RI",
+      "reverse": true,
+      "question": "当你发现继续下去会消耗自己，你更可能怎么做？",
+      "options": [
+        {
+          "id": "A",
+          "text": "我会及时收回投入，不让关系继续加重。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "我会先停一停，确认自己还想不想留下。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会继续努力一段时间，看看能否转好。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "如果还爱，我很难马上撤出来。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
+      "reviewStatus": "original-candidate-pending-isolated-validation"
+    },
+    {
+      "id": "v2-q60",
+      "construct": "MN",
+      "reverse": true,
+      "question": "关系翻篇之后，你更希望自己怎样对待过去？",
+      "options": [
+        {
+          "id": "A",
+          "text": "尽量向前看，不让过去反复出现。",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "记得就记得，但不让它决定现在。",
+          "score": 33
+        },
+        {
+          "id": "C",
+          "text": "我会保留那些片段，它们说明我曾经认真爱过。",
+          "score": 67
+        },
+        {
+          "id": "D",
+          "text": "我会慢慢整理遗憾，给那段关系一个位置。",
+          "score": 100
+        }
+      ],
+      "sourceVersion": "pass-2-prep",
+      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+    }
+  ]
+}
