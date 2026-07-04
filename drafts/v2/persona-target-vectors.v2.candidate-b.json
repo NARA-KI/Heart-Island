@@ -1,0 +1,806 @@
+{
+  "schemaVersion": "v2-persona-target-vectors-draft-1",
+  "sourceVersion": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md+calibration-pass-1-candidate-B",
+  "generatedAt": "2026-07-04T08:23:59.375Z",
+  "vectorRule": "使用架构报告 11.2 的候选人格 targetVector 数值；仅用于隔离验证，不是正式人格参数。",
+  "constructs": [
+    "SC",
+    "AU",
+    "TR",
+    "CL",
+    "PA",
+    "CM",
+    "SI",
+    "NV",
+    "RM",
+    "CS",
+    "EC",
+    "CR",
+    "ER",
+    "RI",
+    "MN"
+  ],
+  "personas": [
+    {
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "targetVector": {
+        "SC": 55,
+        "AU": 35,
+        "TR": 70,
+        "CL": 70,
+        "PA": 60,
+        "CM": 78,
+        "SI": 50,
+        "NV": 30,
+        "RM": 65,
+        "CS": 100,
+        "EC": 68,
+        "CR": 90,
+        "ER": 56,
+        "RI": 88,
+        "MN": 50
+      },
+      "primaryConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "secondaryConstructs": [
+        "CM",
+        "EC",
+        "CL"
+      ],
+      "lowConstructs": [
+        "NV",
+        "AU"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 灯塔型；架构文档原名 灯塔型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "targetVector": {
+        "SC": 45,
+        "AU": 88,
+        "TR": 72,
+        "CL": 48,
+        "PA": 30,
+        "CM": 82,
+        "SI": 50,
+        "NV": 28,
+        "RM": 68,
+        "CS": 45,
+        "EC": 38,
+        "CR": 62,
+        "ER": 68,
+        "RI": 70,
+        "MN": 42
+      },
+      "primaryConstructs": [
+        "AU",
+        "TR",
+        "CM"
+      ],
+      "secondaryConstructs": [
+        "ER",
+        "RM"
+      ],
+      "lowConstructs": [
+        "PA",
+        "NV",
+        "EC"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 守门人；架构文档原名 守门人型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "targetVector": {
+        "SC": 70,
+        "AU": 28,
+        "TR": 70,
+        "CL": 90,
+        "PA": 58,
+        "CM": 100,
+        "SI": 50,
+        "NV": 22,
+        "RM": 84,
+        "CS": 64,
+        "EC": 62,
+        "CR": 76,
+        "ER": 60,
+        "RI": 88,
+        "MN": 56
+      },
+      "primaryConstructs": [
+        "CL",
+        "CM",
+        "RI"
+      ],
+      "secondaryConstructs": [
+        "RM",
+        "CR",
+        "CS"
+      ],
+      "lowConstructs": [
+        "NV",
+        "AU"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 筑巢型；架构文档原名 筑巢型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "collector",
+      "displayName": "收藏家",
+      "targetVector": {
+        "SC": 62,
+        "AU": 58,
+        "TR": 55,
+        "CL": 62,
+        "PA": 30,
+        "CM": 55,
+        "SI": 80,
+        "NV": 24,
+        "RM": 45,
+        "CS": 42,
+        "EC": 35,
+        "CR": 45,
+        "ER": 72,
+        "RI": 56,
+        "MN": 95
+      },
+      "primaryConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "secondaryConstructs": [
+        "CL",
+        "SC"
+      ],
+      "lowConstructs": [
+        "PA",
+        "EC",
+        "NV"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 收藏家；架构文档原名 收藏家型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "targetVector": {
+        "SC": 55,
+        "AU": 86,
+        "TR": 48,
+        "CL": 68,
+        "PA": 62,
+        "CM": 30,
+        "SI": 68,
+        "NV": 84,
+        "RM": 38,
+        "CS": 35,
+        "EC": 58,
+        "CR": 42,
+        "ER": 65,
+        "RI": 35,
+        "MN": 55
+      },
+      "primaryConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "secondaryConstructs": [
+        "SI",
+        "ER"
+      ],
+      "lowConstructs": [
+        "CM",
+        "RI"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 候鸟型；架构文档原名 候鸟型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "islander",
+      "displayName": "岛屿型",
+      "targetVector": {
+        "SC": 28,
+        "AU": 94,
+        "TR": 62,
+        "CL": 25,
+        "PA": 24,
+        "CM": 45,
+        "SI": 35,
+        "NV": 38,
+        "RM": 62,
+        "CS": 22,
+        "EC": 28,
+        "CR": 48,
+        "ER": 78,
+        "RI": 32,
+        "MN": 25
+      },
+      "primaryConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "secondaryConstructs": [
+        "RM"
+      ],
+      "lowConstructs": [
+        "CL",
+        "SC",
+        "EC",
+        "CS"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 岛屿型；架构文档原名 岛屿型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "explorer",
+      "displayName": "探险家",
+      "targetVector": {
+        "SC": 38,
+        "AU": 78,
+        "TR": 45,
+        "CL": 55,
+        "PA": 78,
+        "CM": 24,
+        "SI": 62,
+        "NV": 95,
+        "RM": 35,
+        "CS": 30,
+        "EC": 68,
+        "CR": 50,
+        "ER": 58,
+        "RI": 28,
+        "MN": 30
+      },
+      "primaryConstructs": [
+        "NV",
+        "PA",
+        "AU"
+      ],
+      "secondaryConstructs": [
+        "EC",
+        "SI"
+      ],
+      "lowConstructs": [
+        "CM",
+        "RI"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 探险家；架构文档原名 远航者型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "targetVector": {
+        "SC": 48,
+        "AU": 70,
+        "TR": 48,
+        "CL": 62,
+        "PA": 65,
+        "CM": 30,
+        "SI": 96,
+        "NV": 75,
+        "RM": 25,
+        "CS": 38,
+        "EC": 62,
+        "CR": 48,
+        "ER": 68,
+        "RI": 42,
+        "MN": 72
+      },
+      "primaryConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "secondaryConstructs": [
+        "CL",
+        "ER"
+      ],
+      "lowConstructs": [
+        "RM",
+        "CM"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 流浪诗人；架构文档原名 流浪诗人型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "spark",
+      "displayName": "星火型",
+      "targetVector": {
+        "SC": 60,
+        "AU": 40,
+        "TR": 50,
+        "CL": 78,
+        "PA": 94,
+        "CM": 35,
+        "SI": 70,
+        "NV": 78,
+        "RM": 35,
+        "CS": 42,
+        "EC": 88,
+        "CR": 45,
+        "ER": 60,
+        "RI": 38,
+        "MN": 30
+      },
+      "primaryConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "secondaryConstructs": [
+        "NV",
+        "SI"
+      ],
+      "lowConstructs": [
+        "CM",
+        "CR"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 星火型；架构文档原名 星火型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "moonlight",
+      "displayName": "月光型",
+      "targetVector": {
+        "SC": 68,
+        "AU": 38,
+        "TR": 66,
+        "CL": 82,
+        "PA": 58,
+        "CM": 70,
+        "SI": 86,
+        "NV": 35,
+        "RM": 58,
+        "CS": 82,
+        "EC": 68,
+        "CR": 68,
+        "ER": 76,
+        "RI": 64,
+        "MN": 55
+      },
+      "primaryConstructs": [
+        "CL",
+        "CS",
+        "SI"
+      ],
+      "secondaryConstructs": [
+        "ER",
+        "CM",
+        "TR"
+      ],
+      "lowConstructs": [
+        "NV",
+        "AU"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 月光型；架构文档原名 月光型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "mirror",
+      "displayName": "镜像型",
+      "targetVector": {
+        "SC": 82,
+        "AU": 30,
+        "TR": 42,
+        "CL": 75,
+        "PA": 50,
+        "CM": 58,
+        "SI": 62,
+        "NV": 25,
+        "RM": 42,
+        "CS": 75,
+        "EC": 58,
+        "CR": 55,
+        "ER": 97,
+        "RI": 59,
+        "MN": 58
+      },
+      "primaryConstructs": [
+        "ER",
+        "SC",
+        "CS"
+      ],
+      "secondaryConstructs": [
+        "CL",
+        "RI"
+      ],
+      "lowConstructs": [
+        "AU",
+        "TR",
+        "NV"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 镜像型；架构文档原名 镜像型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "stargazer",
+      "displayName": "观星者",
+      "targetVector": {
+        "SC": 42,
+        "AU": 68,
+        "TR": 78,
+        "CL": 55,
+        "PA": 35,
+        "CM": 84,
+        "SI": 94,
+        "NV": 32,
+        "RM": 82,
+        "CS": 45,
+        "EC": 52,
+        "CR": 62,
+        "ER": 60,
+        "RI": 72,
+        "MN": 40
+      },
+      "primaryConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "secondaryConstructs": [
+        "TR",
+        "AU"
+      ],
+      "lowConstructs": [
+        "PA",
+        "NV"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 观星者；架构文档原名 观星者型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "companion",
+      "displayName": "同行者",
+      "targetVector": {
+        "SC": 55,
+        "AU": 58,
+        "TR": 84,
+        "CL": 57,
+        "PA": 32,
+        "CM": 92,
+        "SI": 48,
+        "NV": 25,
+        "RM": 100,
+        "CS": 55,
+        "EC": 60,
+        "CR": 70,
+        "ER": 66,
+        "RI": 78,
+        "MN": 35
+      },
+      "primaryConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "secondaryConstructs": [
+        "CR",
+        "RI"
+      ],
+      "lowConstructs": [
+        "PA",
+        "NV"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 同行者；架构文档原名 合拍规划型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "harbor",
+      "displayName": "港湾型",
+      "targetVector": {
+        "SC": 78,
+        "AU": 42,
+        "TR": 100,
+        "CL": 82,
+        "PA": 45,
+        "CM": 70,
+        "SI": 52,
+        "NV": 25,
+        "RM": 65,
+        "CS": 74,
+        "EC": 62,
+        "CR": 78,
+        "ER": 69,
+        "RI": 86,
+        "MN": 48
+      },
+      "primaryConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "secondaryConstructs": [
+        "SC",
+        "CR",
+        "CS"
+      ],
+      "lowConstructs": [
+        "NV",
+        "AU"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 港湾型；架构文档原名 信任港湾型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    },
+    {
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "targetVector": {
+        "SC": 76,
+        "AU": 48,
+        "TR": 37,
+        "CL": 72,
+        "PA": 62,
+        "CM": 50,
+        "SI": 65,
+        "NV": 45,
+        "RM": 42,
+        "CS": 54,
+        "EC": 90,
+        "CR": 86,
+        "ER": 96,
+        "RI": 47,
+        "MN": 68
+      },
+      "primaryConstructs": [
+        "ER",
+        "CR",
+        "EC"
+      ],
+      "secondaryConstructs": [
+        "SC",
+        "CL",
+        "MN"
+      ],
+      "lowConstructs": [
+        "TR",
+        "AU"
+      ],
+      "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+      "confidence": "draft-validation-only",
+      "unresolvedNotes": "命名按当前展示名 摆渡人；架构文档原名 潮汐修复型。 targetVector 为验证用候选草案，不是正式人格参数。"
+    }
+  ],
+  "calibration": {
+    "label": "candidate-B",
+    "description": "边界优先方案：重点处理筑巢/港湾、灯塔/月光/摆渡人和港湾/摆渡人边界。",
+    "sourceBaseline": "drafts/v2/persona-target-vectors.v2.baseline.json",
+    "sourceBaselineHash": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
+    "constraints": {
+      "maxChangedConstructsPerPersona": 5,
+      "maxDeltaPerConstruct": 15,
+      "noHiddenBonus": true,
+      "noRandomDistributionBalancing": true
+    },
+    "changes": [
+      {
+        "persona": "灯塔型",
+        "construct": "CS",
+        "before": 94,
+        "after": 100,
+        "delta": 6
+      },
+      {
+        "persona": "灯塔型",
+        "construct": "RI",
+        "before": 82,
+        "after": 88,
+        "delta": 6
+      },
+      {
+        "persona": "灯塔型",
+        "construct": "ER",
+        "before": 62,
+        "after": 56,
+        "delta": -6
+      },
+      {
+        "persona": "灯塔型",
+        "construct": "EC",
+        "before": 72,
+        "after": 68,
+        "delta": -4
+      },
+      {
+        "persona": "筑巢型",
+        "construct": "CM",
+        "before": 94,
+        "after": 100,
+        "delta": 6
+      },
+      {
+        "persona": "筑巢型",
+        "construct": "RM",
+        "before": 78,
+        "after": 84,
+        "delta": 6
+      },
+      {
+        "persona": "筑巢型",
+        "construct": "TR",
+        "before": 78,
+        "after": 70,
+        "delta": -8
+      },
+      {
+        "persona": "筑巢型",
+        "construct": "CS",
+        "before": 68,
+        "after": 64,
+        "delta": -4
+      },
+      {
+        "persona": "筑巢型",
+        "construct": "ER",
+        "before": 64,
+        "after": 60,
+        "delta": -4
+      },
+      {
+        "persona": "月光型",
+        "construct": "SI",
+        "before": 78,
+        "after": 86,
+        "delta": 8
+      },
+      {
+        "persona": "月光型",
+        "construct": "CS",
+        "before": 76,
+        "after": 82,
+        "delta": 6
+      },
+      {
+        "persona": "月光型",
+        "construct": "TR",
+        "before": 72,
+        "after": 66,
+        "delta": -6
+      },
+      {
+        "persona": "月光型",
+        "construct": "RI",
+        "before": 70,
+        "after": 64,
+        "delta": -6
+      },
+      {
+        "persona": "镜像型",
+        "construct": "ER",
+        "before": 92,
+        "after": 97,
+        "delta": 5
+      },
+      {
+        "persona": "镜像型",
+        "construct": "CS",
+        "before": 72,
+        "after": 75,
+        "delta": 3
+      },
+      {
+        "persona": "镜像型",
+        "construct": "RI",
+        "before": 62,
+        "after": 59,
+        "delta": -3
+      },
+      {
+        "persona": "同行者",
+        "construct": "RM",
+        "before": 96,
+        "after": 100,
+        "delta": 4
+      },
+      {
+        "persona": "同行者",
+        "construct": "CM",
+        "before": 88,
+        "after": 92,
+        "delta": 4
+      },
+      {
+        "persona": "同行者",
+        "construct": "CL",
+        "before": 60,
+        "after": 57,
+        "delta": -3
+      },
+      {
+        "persona": "港湾型",
+        "construct": "TR",
+        "before": 94,
+        "after": 100,
+        "delta": 6
+      },
+      {
+        "persona": "港湾型",
+        "construct": "RI",
+        "before": 82,
+        "after": 86,
+        "delta": 4
+      },
+      {
+        "persona": "港湾型",
+        "construct": "CM",
+        "before": 78,
+        "after": 70,
+        "delta": -8
+      },
+      {
+        "persona": "港湾型",
+        "construct": "CS",
+        "before": 70,
+        "after": 74,
+        "delta": 4
+      },
+      {
+        "persona": "港湾型",
+        "construct": "ER",
+        "before": 72,
+        "after": 69,
+        "delta": -3
+      },
+      {
+        "persona": "摆渡人",
+        "construct": "EC",
+        "before": 82,
+        "after": 90,
+        "delta": 8
+      },
+      {
+        "persona": "摆渡人",
+        "construct": "ER",
+        "before": 88,
+        "after": 96,
+        "delta": 8
+      },
+      {
+        "persona": "摆渡人",
+        "construct": "RI",
+        "before": 55,
+        "after": 47,
+        "delta": -8
+      },
+      {
+        "persona": "摆渡人",
+        "construct": "TR",
+        "before": 45,
+        "after": 37,
+        "delta": -8
+      },
+      {
+        "persona": "摆渡人",
+        "construct": "CS",
+        "before": 58,
+        "after": 54,
+        "delta": -4
+      }
+    ]
+  }
+}
