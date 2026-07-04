@@ -1,4 +1,4 @@
-import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportRecord, shuffledOptions } from './scoring.mjs';
+﻿import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportRecord, shuffledOptions } from './scoring.mjs';
 
 const PILOT_TOOL_VERSION = 'v2.0-real-user-pilot-distribution-prep';
 const SCORING_RULE_VERSION = 'v2-draft-rms-distance-low-confidence-v1';
@@ -54,6 +54,9 @@ const elements = {
   downloadNote: $('#downloadNote'),
   restartButton: $('#restartButton'),
   feedbackForm: $('#feedbackForm'),
+  initPanel: $('#initPanel'),
+  initStatus: $('#initStatus'),
+  reloadButton: $('#reloadButton'),
 };
 
 async function sha256(text) {
@@ -64,19 +67,29 @@ async function sha256(text) {
 
 async function readJsonWithHash(path) {
   const response = await fetch(path, { cache: 'no-store' });
-  if (!response.ok) throw new Error(`Cannot load ${path}: ${response.status}`);
+  if (!response.ok) throw new Error(`加载失败：${path}（HTTP ${response.status}）`);
   const text = await response.text();
-  return { data: JSON.parse(text), hash: await sha256(text) };
+  try {
+    return { data: JSON.parse(text), hash: await sha256(text) };
+  } catch (error) {
+    throw new Error(`解析失败：${path}（${error.message}）`);
+  }
 }
 
 async function readOptionalJson(path) {
   if (!path) return null;
   const response = await fetch(path, { cache: 'no-store' });
   if (!response.ok) return null;
-  return response.json();
+  try {
+    return await response.json();
+  } catch (error) {
+    throw new Error(`解析失败：${path}（${error.message}）`);
+  }
 }
 
 async function init() {
+  setInitState('loading', '正在加载内测题库与评分数据...');
+  bindEarlyEvents();
   const [questionBank, baseline, candidateA, fixtures, manifest] = await Promise.all([
     readJsonWithHash(DATA_PATHS.questionBank),
     readJsonWithHash(DATA_PATHS.baseline),
@@ -102,6 +115,7 @@ async function init() {
   if (fixtureId && !isDeployBuild) loadFixture(fixtureId);
 
   bindEvents();
+  setInitState('ready', '加载完成，可以开始内测。');
   window.__v2Pilot = {
     state,
     start: startPilot,
@@ -110,6 +124,20 @@ async function init() {
     loadFixture,
     isDeployBuild,
   };
+}
+
+function bindEarlyEvents() {
+  elements.reloadButton.addEventListener('click', () => {
+    location.reload();
+  }, { once: true });
+}
+
+function setInitState(status, message) {
+  elements.initPanel.classList.toggle('error', status === 'error');
+  elements.initStatus.textContent = message;
+  elements.reloadButton.classList.toggle('hidden', status !== 'error');
+  elements.startButton.disabled = status !== 'ready';
+  elements.startButton.textContent = status === 'ready' ? '开始内测' : status === 'error' ? '暂时无法开始' : '正在准备...';
 }
 
 function bindEvents() {
@@ -218,6 +246,7 @@ function loadFixture(fixtureId) {
 }
 
 function startPilot() {
+  if (elements.startButton.disabled) return;
   elements.introView.classList.add('hidden');
   elements.resultView.classList.add('hidden');
   elements.questionView.classList.remove('hidden');
@@ -440,6 +469,7 @@ function downloadJson(record) {
 }
 
 init().catch((error) => {
-  document.body.innerHTML = `<main class="app-shell"><section class="intro"><h1>加载失败</h1><p class="notice">${error.message}</p></section></main>`;
+  setInitState('error', `加载失败：${error.message}`);
   console.error(error);
 });
+

@@ -23,7 +23,11 @@
           <span>可选：测试前的一句自我描述，最多 100 字</span>
           <textarea id="selfDescription" maxlength="100" rows="3" placeholder="例如：我在关系里比较慢热，但熟悉后很投入。"></textarea>
         </label>
-        <button class="primary-action" id="startButton" type="button">开始内测</button>
+        <div class="init-panel" id="initPanel" role="status" aria-live="polite">
+          <p id="initStatus">正在加载内测题库与评分数据...</p>
+          <button class="secondary-action hidden" id="reloadButton" type="button">重新加载</button>
+        </div>
+        <button class="primary-action" id="startButton" type="button" disabled>正在准备...</button>
       </section>
 
       <section class="question-view hidden" id="questionView" aria-live="polite">

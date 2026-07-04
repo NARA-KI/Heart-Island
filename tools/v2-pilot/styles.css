@@ -120,6 +120,26 @@ h2 {
   background: rgba(216, 234, 255, 0.06);
 }
 
+.init-panel {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(216, 234, 255, 0.06);
+}
+
+.init-panel p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.init-panel.error {
+  border-color: rgba(255, 207, 191, 0.55);
+  color: var(--danger);
+}
+
 .field {
   display: grid;
   gap: 8px;
@@ -161,6 +181,12 @@ input[type="text"] {
   background: linear-gradient(180deg, #eef7ff 0%, #a8cde8 100%);
   color: #07111f;
   font-weight: 800;
+}
+
+.primary-action:disabled,
+.secondary-action:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 .secondary-action {
