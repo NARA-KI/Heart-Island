@@ -3,22 +3,14 @@ import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportR
 const PILOT_TOOL_VERSION = 'v2.0-real-user-pilot-distribution-prep';
 const SCORING_RULE_VERSION = 'v2-draft-rms-distance-low-confidence-v1';
 const STORAGE_KEY = 'heart-island-v2-pilot-draft';
-const isDeployBuild = document.documentElement.dataset.build === 'pilot-deploy' || location.pathname.includes('/pilot-deploy/v2/');
-const DATA_PATHS = isDeployBuild
-  ? {
-    questionBank: './question-bank.v2.draft.json',
-    baseline: './persona-target-vectors.v2.baseline.json',
-    candidateA: './persona-target-vectors.v2.candidate-a.json',
-    manifest: './pilot-manifest.json',
-    fixtures: null,
-  }
-  : {
-    questionBank: '../../drafts/v2/question-bank.v2.draft.json',
-    baseline: '../../drafts/v2/persona-target-vectors.v2.baseline.json',
-    candidateA: '../../drafts/v2/persona-target-vectors.v2.candidate-a.json',
-    manifest: null,
-    fixtures: '../../drafts/v2/simulation-fixtures.v2.draft.json',
-  };
+const isDeployBuild = true;
+const DATA_PATHS = {
+  questionBank: './question-bank.v2.draft.json',
+  baseline: './persona-target-vectors.v2.baseline.json',
+  candidateA: './persona-target-vectors.v2.candidate-a.json',
+  manifest: './pilot-manifest.json',
+  fixtures: null,
+};
 
 const state = {
   pilotId: null,

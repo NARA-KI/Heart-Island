@@ -1,0 +1,13 @@
+{
+  "pilotToolVersion": "v2.0-real-user-pilot-distribution-prep",
+  "scoringRuleVersion": "v2-draft-rms-distance-low-confidence-v1",
+  "generatedAt": "2026-07-04T08:49:28.009Z",
+  "questionBankFile": "question-bank.v2.draft.json",
+  "baselineVectorFile": "persona-target-vectors.v2.baseline.json",
+  "candidateAVectorFile": "persona-target-vectors.v2.candidate-a.json",
+  "questionBankHash": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+  "baselineVectorHash": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
+  "candidateAVectorHash": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3",
+  "privacyMode": "local-only-manual-export",
+  "fixturePreloadEnabled": false
+}
