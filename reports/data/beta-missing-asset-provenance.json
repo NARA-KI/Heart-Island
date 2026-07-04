@@ -1,0 +1,718 @@
+{
+  "generatedAt": "2026-07-04T16:20:56.263Z",
+  "baselineCommit": "f9614f5",
+  "missingCount": 32,
+  "summary": {
+    "byClassification": {
+      "missing-before-v2": 32
+    },
+    "requiredAndMissingCount": 0
+  },
+  "resources": [
+    {
+      "path": "assets/scenes/props/scene-05-eagle.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 66418
+        },
+        {
+          "file": "app.js",
+          "index": 66418
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-06-fork-road.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 66552
+        },
+        {
+          "file": "app.js",
+          "index": 66552
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-07-echo-wave.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 66719
+        },
+        {
+          "file": "app.js",
+          "index": 66719
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-08-lighthouse-signal.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 66862
+        },
+        {
+          "file": "app.js",
+          "index": 66862
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-09-sand-vow.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67021
+        },
+        {
+          "file": "app.js",
+          "index": 67021
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-10-water-reflection.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67191
+        },
+        {
+          "file": "app.js",
+          "index": 67191
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-11-floating-words.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67353
+        },
+        {
+          "file": "app.js",
+          "index": 67353
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-12-river-stones.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67511
+        },
+        {
+          "file": "app.js",
+          "index": 67511
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-13-earth-crack.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67690
+        },
+        {
+          "file": "app.js",
+          "index": 67690
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-14-embers.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67843
+        },
+        {
+          "file": "app.js",
+          "index": 67843
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-15-new-flower.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 67986
+        },
+        {
+          "file": "app.js",
+          "index": 67986
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-16-wind-direction.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68159
+        },
+        {
+          "file": "app.js",
+          "index": 68159
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-17-distant-campfire.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68316
+        },
+        {
+          "file": "app.js",
+          "index": 68316
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-18-crossroad.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68477
+        },
+        {
+          "file": "app.js",
+          "index": 68477
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-19-telescope-star.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68651
+        },
+        {
+          "file": "app.js",
+          "index": 68651
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-20-shooting-star.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68810
+        },
+        {
+          "file": "app.js",
+          "index": 68810
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-21-constellation-map.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 68967
+        },
+        {
+          "file": "app.js",
+          "index": 68967
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-22-ancient-clock.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69153
+        },
+        {
+          "file": "app.js",
+          "index": 69153
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-23-stone-wall-names.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69307
+        },
+        {
+          "file": "app.js",
+          "index": 69307
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-24-foundation-stone.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69467
+        },
+        {
+          "file": "app.js",
+          "index": 69467
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-25-waiting-person.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69654
+        },
+        {
+          "file": "app.js",
+          "index": 69654
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-26-dim-lamp.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69813
+        },
+        {
+          "file": "app.js",
+          "index": 69813
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-27-heavy-bag.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 69960
+        },
+        {
+          "file": "app.js",
+          "index": 69960
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-28-unknown-map.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70131
+        },
+        {
+          "file": "app.js",
+          "index": 70131
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-29-mirage-island.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70282
+        },
+        {
+          "file": "app.js",
+          "index": 70282
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-30-new-route.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70437
+        },
+        {
+          "file": "app.js",
+          "index": 70437
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-31-stranded-ship.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70608
+        },
+        {
+          "file": "app.js",
+          "index": 70608
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-32-captain-log.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70764
+        },
+        {
+          "file": "app.js",
+          "index": 70764
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-33-old-photo.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 70916
+        },
+        {
+          "file": "app.js",
+          "index": 70916
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-34-moonlit-water.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 71089
+        },
+        {
+          "file": "app.js",
+          "index": 71089
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-35-lake-reflection.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 71247
+        },
+        {
+          "file": "app.js",
+          "index": 71247
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    },
+    {
+      "path": "assets/scenes/props/scene-36-full-moon-lake.svg",
+      "classification": "missing-before-v2",
+      "baselineExists": false,
+      "historyCommits": [],
+      "localMatches": [],
+      "archiveMatches": [],
+      "references": [
+        {
+          "file": "archive/beta-0.9.9.7-production/app.js",
+          "index": 71409
+        },
+        {
+          "file": "app.js",
+          "index": 71409
+        }
+      ],
+      "inExecutableArchive": true,
+      "wouldLikelyRequestInOldFlow": true,
+      "impact": "Already missing at baseline; old flow may show prop-level visual 404 if this dynamic scene prop is requested.",
+      "restoreRecommendation": "do-not-restore-for-v2; confirm legacy need separately"
+    }
+  ],
+  "exitRule": "Only baseline-present, recoverable required, or required-unrecoverable resources fail this archive audit. Historical pre-v2 missing references are recorded but do not block v2 scoring work."
+}

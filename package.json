@@ -12,7 +12,9 @@
     "test:consistency": "node scripts/consistency-test.mjs",
     "ui:inspect": "node scripts/inspect-ui.mjs",
     "v2:validate": "node scripts/v2-product-validation/validate-v2-alpha.mjs",
-    "v2:audit:scoring": "node scripts/v2-product-validation/audit-v2-scoring-reliability.mjs"
+    "v2:audit:scoring": "node scripts/v2-product-validation/diagnose-v2-calibration.mjs",
+    "v2:audit:archive": "node scripts/v2-product-validation/audit-beta-archive-assets.mjs",
+    "v2:audit:all": "node scripts/v2-product-validation/run-v2-audit-all.mjs"
   },
   "type": "module",
   "dependencies": {

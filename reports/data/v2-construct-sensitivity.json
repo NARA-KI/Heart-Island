@@ -1,0 +1,398 @@
+{
+  "generatedAt": "2026-07-04T16:20:48.432Z",
+  "sampleCount": 12000,
+  "focusPersonas": [
+    "候鸟型",
+    "筑巢型"
+  ],
+  "fullTop1Rates": {
+    "候鸟型": 0.1906,
+    "筑巢型": 0.003
+  },
+  "topQuestionRemovalEffects": [
+    {
+      "questionId": "v2-q54",
+      "construct": "MN",
+      "migratoryBirdDelta": -0.0138,
+      "nestBuilderDelta": -0.0003
+    },
+    {
+      "questionId": "v2-q37",
+      "construct": "SI",
+      "migratoryBirdDelta": -0.013,
+      "nestBuilderDelta": 0
+    },
+    {
+      "questionId": "v2-q58",
+      "construct": "MN",
+      "migratoryBirdDelta": -0.013,
+      "nestBuilderDelta": 0
+    },
+    {
+      "questionId": "v2-q60",
+      "construct": "MN",
+      "migratoryBirdDelta": -0.0118,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "questionId": "v2-q56",
+      "construct": "MN",
+      "migratoryBirdDelta": -0.0107,
+      "nestBuilderDelta": 0
+    },
+    {
+      "questionId": "v2-q25",
+      "construct": "SI",
+      "migratoryBirdDelta": -0.0098,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "questionId": "v2-q30",
+      "construct": "NV",
+      "migratoryBirdDelta": 0.0091,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "questionId": "v2-q01",
+      "construct": "SC",
+      "migratoryBirdDelta": -0.0086,
+      "nestBuilderDelta": 0.0002
+    },
+    {
+      "questionId": "v2-q29",
+      "construct": "SI",
+      "migratoryBirdDelta": -0.0086,
+      "nestBuilderDelta": 0
+    },
+    {
+      "questionId": "v2-q17",
+      "construct": "PA",
+      "migratoryBirdDelta": -0.0083,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "questionId": "v2-q26",
+      "construct": "NV",
+      "migratoryBirdDelta": 0.0083,
+      "nestBuilderDelta": -0.0001
+    },
+    {
+      "questionId": "v2-q20",
+      "construct": "PA",
+      "migratoryBirdDelta": -0.0077,
+      "nestBuilderDelta": -0.0001
+    }
+  ],
+  "constructRemoval": [
+    {
+      "construct": "SC",
+      "migratoryBirdDelta": 0.0118,
+      "nestBuilderDelta": -0.0003
+    },
+    {
+      "construct": "AU",
+      "migratoryBirdDelta": -0.0019,
+      "nestBuilderDelta": -0.0008
+    },
+    {
+      "construct": "TR",
+      "migratoryBirdDelta": 0.0022,
+      "nestBuilderDelta": 0.0004
+    },
+    {
+      "construct": "CL",
+      "migratoryBirdDelta": 0.0059,
+      "nestBuilderDelta": -0.0013
+    },
+    {
+      "construct": "PA",
+      "migratoryBirdDelta": 0.0245,
+      "nestBuilderDelta": 0.0002
+    },
+    {
+      "construct": "CM",
+      "migratoryBirdDelta": -0.0003,
+      "nestBuilderDelta": -0.0026
+    },
+    {
+      "construct": "SI",
+      "migratoryBirdDelta": 0.0229,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "construct": "NV",
+      "migratoryBirdDelta": -0.0196,
+      "nestBuilderDelta": -0.0007
+    },
+    {
+      "construct": "RM",
+      "migratoryBirdDelta": 0.0048,
+      "nestBuilderDelta": -0.0014
+    },
+    {
+      "construct": "CS",
+      "migratoryBirdDelta": 0.0022,
+      "nestBuilderDelta": 0.0005
+    },
+    {
+      "construct": "EC",
+      "migratoryBirdDelta": 0.0141,
+      "nestBuilderDelta": -0.0001
+    },
+    {
+      "construct": "CR",
+      "migratoryBirdDelta": 0.0045,
+      "nestBuilderDelta": 0.0003
+    },
+    {
+      "construct": "ER",
+      "migratoryBirdDelta": 0.0043,
+      "nestBuilderDelta": -0.0003
+    },
+    {
+      "construct": "RI",
+      "migratoryBirdDelta": -0.0012,
+      "nestBuilderDelta": -0.0014
+    },
+    {
+      "construct": "MN",
+      "migratoryBirdDelta": 0.0393,
+      "nestBuilderDelta": 0.0003
+    }
+  ],
+  "constructVariance": {
+    "SC": 349.0212,
+    "AU": 348.5012,
+    "TR": 349.5736,
+    "CL": 351.9269,
+    "PA": 349.163,
+    "CM": 350.6641,
+    "SI": 348.435,
+    "NV": 354.1581,
+    "RM": 346.1088,
+    "CS": 343.8917,
+    "EC": 344.3291,
+    "CR": 352.6856,
+    "ER": 347.1138,
+    "RI": 348.2711,
+    "MN": 345.928
+  },
+  "topConstructCorrelations": [
+    {
+      "a": "RM",
+      "b": "CS",
+      "correlation": 0.0355
+    },
+    {
+      "a": "AU",
+      "b": "MN",
+      "correlation": 0.0344
+    },
+    {
+      "a": "PA",
+      "b": "SI",
+      "correlation": -0.0308
+    },
+    {
+      "a": "NV",
+      "b": "MN",
+      "correlation": 0.0275
+    },
+    {
+      "a": "SC",
+      "b": "CS",
+      "correlation": -0.0273
+    },
+    {
+      "a": "NV",
+      "b": "ER",
+      "correlation": 0.0249
+    },
+    {
+      "a": "AU",
+      "b": "PA",
+      "correlation": 0.0236
+    },
+    {
+      "a": "TR",
+      "b": "SI",
+      "correlation": 0.0225
+    },
+    {
+      "a": "PA",
+      "b": "EC",
+      "correlation": 0.0223
+    },
+    {
+      "a": "SC",
+      "b": "CR",
+      "correlation": -0.0219
+    },
+    {
+      "a": "AU",
+      "b": "CL",
+      "correlation": -0.0219
+    },
+    {
+      "a": "EC",
+      "b": "CR",
+      "correlation": 0.0213
+    }
+  ],
+  "contributionByConstruct": {
+    "候鸟型": [
+      {
+        "construct": "AU",
+        "targetMinusCenter": 36.0752,
+        "absoluteOffset": 36.0752
+      },
+      {
+        "construct": "NV",
+        "targetMinusCenter": 34.0609,
+        "absoluteOffset": 34.0609
+      },
+      {
+        "construct": "CM",
+        "targetMinusCenter": -19.9295,
+        "absoluteOffset": 19.9295
+      },
+      {
+        "construct": "SI",
+        "targetMinusCenter": 17.9903,
+        "absoluteOffset": 17.9903
+      },
+      {
+        "construct": "CL",
+        "targetMinusCenter": 17.9373,
+        "absoluteOffset": 17.9373
+      },
+      {
+        "construct": "ER",
+        "targetMinusCenter": 15.0624,
+        "absoluteOffset": 15.0624
+      },
+      {
+        "construct": "CS",
+        "targetMinusCenter": -15.0228,
+        "absoluteOffset": 15.0228
+      },
+      {
+        "construct": "RI",
+        "targetMinusCenter": -15.0208,
+        "absoluteOffset": 15.0208
+      },
+      {
+        "construct": "PA",
+        "targetMinusCenter": 11.9945,
+        "absoluteOffset": 11.9945
+      },
+      {
+        "construct": "RM",
+        "targetMinusCenter": -11.8165,
+        "absoluteOffset": 11.8165
+      },
+      {
+        "construct": "EC",
+        "targetMinusCenter": 7.9267,
+        "absoluteOffset": 7.9267
+      },
+      {
+        "construct": "CR",
+        "targetMinusCenter": -7.8977,
+        "absoluteOffset": 7.8977
+      },
+      {
+        "construct": "SC",
+        "targetMinusCenter": 5.0687,
+        "absoluteOffset": 5.0687
+      },
+      {
+        "construct": "MN",
+        "targetMinusCenter": 4.9799,
+        "absoluteOffset": 4.9799
+      },
+      {
+        "construct": "TR",
+        "targetMinusCenter": -1.9943,
+        "absoluteOffset": 1.9943
+      }
+    ],
+    "筑巢型": [
+      {
+        "construct": "CM",
+        "targetMinusCenter": 48.0705,
+        "absoluteOffset": 48.0705
+      },
+      {
+        "construct": "CL",
+        "targetMinusCenter": 39.9373,
+        "absoluteOffset": 39.9373
+      },
+      {
+        "construct": "RI",
+        "targetMinusCenter": 37.9792,
+        "absoluteOffset": 37.9792
+      },
+      {
+        "construct": "RM",
+        "targetMinusCenter": 31.1835,
+        "absoluteOffset": 31.1835
+      },
+      {
+        "construct": "NV",
+        "targetMinusCenter": -27.9391,
+        "absoluteOffset": 27.9391
+      },
+      {
+        "construct": "CR",
+        "targetMinusCenter": 26.1023,
+        "absoluteOffset": 26.1023
+      },
+      {
+        "construct": "TR",
+        "targetMinusCenter": 24.0057,
+        "absoluteOffset": 24.0057
+      },
+      {
+        "construct": "AU",
+        "targetMinusCenter": -21.9248,
+        "absoluteOffset": 21.9248
+      },
+      {
+        "construct": "SC",
+        "targetMinusCenter": 20.0687,
+        "absoluteOffset": 20.0687
+      },
+      {
+        "construct": "CS",
+        "targetMinusCenter": 17.9772,
+        "absoluteOffset": 17.9772
+      },
+      {
+        "construct": "ER",
+        "targetMinusCenter": 14.0624,
+        "absoluteOffset": 14.0624
+      },
+      {
+        "construct": "EC",
+        "targetMinusCenter": 11.9267,
+        "absoluteOffset": 11.9267
+      },
+      {
+        "construct": "PA",
+        "targetMinusCenter": 7.9945,
+        "absoluteOffset": 7.9945
+      },
+      {
+        "construct": "MN",
+        "targetMinusCenter": 5.9799,
+        "absoluteOffset": 5.9799
+      },
+      {
+        "construct": "SI",
+        "targetMinusCenter": -0.0097,
+        "absoluteOffset": 0.0097
+      }
+    ]
+  }
+}

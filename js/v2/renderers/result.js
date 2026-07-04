@@ -32,7 +32,7 @@ export function renderResult(root, { result, onRestart }) {
           <div class="v2-keywords">
             ${result.sections.keywords.map((keyword) => `<span>${escapeHtml(keyword)}</span>`).join('')}
           </div>
-          <p class="v2-strength">匹配强度 ${escapeHtml(result.matchStrength)} / 100</p>
+          <p class="v2-strength">${escapeHtml(result.matchStrengthLevel)}</p>
           <p class="v2-note">${escapeHtml(result.matchStrengthNote)}</p>
         </div>
       </article>

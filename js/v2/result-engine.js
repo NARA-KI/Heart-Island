@@ -20,12 +20,20 @@ export function buildResult({ questionBank, candidateA, descriptions, answers })
     persona,
     description,
     matchStrength: persona.matchScore,
-    matchStrengthNote: '按15个关系构念得分与候选人格画像的接近程度换算，数值只表示本次答案与候选模型的贴合强弱。',
+    matchStrengthLevel: matchStrengthLevel(persona.matchScore),
+    matchStrengthNote: '这是本次答案与候选人格画像的贴合倾向分级，不是统计概率，也不是心理测量准确率。',
     highConstructs,
     lowConstructs,
     scoring,
     sections: buildSections(description),
   };
+}
+
+function matchStrengthLevel(score) {
+  if (score >= 82) return '匹配倾向非常明显';
+  if (score >= 70) return '匹配倾向明显';
+  if (score >= 58) return '匹配倾向较明显';
+  return '匹配倾向有一定参考价值';
 }
 
 function buildSections(description) {
