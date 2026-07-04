@@ -66,8 +66,17 @@
         </ol>
         <p class="muted" id="resultHint">系统正在同时计算 baseline 与 candidate-A。</p>
         <div class="result-grid" id="resultCards"></div>
+        <div class="read-gate" id="readGate">
+          <p class="muted">请先阅读完整解析、构念依据和 Top1 / Top2 对比，再开始填写准确度反馈。</p>
+          <button class="primary-action" id="beginFeedbackButton" type="button">我已阅读解析，开始反馈</button>
+        </div>
 
-        <form class="feedback-form" id="feedbackForm">
+        <form class="feedback-form hidden" id="feedbackForm">
+          <fieldset class="field">
+            <legend>这些解析是否足够让你判断准不准？</legend>
+            <label><input name="resultExplanationSufficient" type="radio" value="yes" required /> 解析足够，我可以判断</label>
+            <label><input name="resultExplanationSufficient" type="radio" value="no" /> 解析不够，暂时无法判断</label>
+          </fieldset>
           <label class="field">
             <span>整体测试贴合度：<b id="overallValue">3</b>/5</span>
             <input id="overallFitScore" type="range" min="1" max="5" value="3" />
@@ -75,6 +84,10 @@
           <label class="field">
             <span>Top1 人格贴合度：<b id="top1Value">3</b>/5</span>
             <input id="top1FitScore" type="range" min="1" max="5" value="3" />
+          </label>
+          <label class="field">
+            <span>Top2 人格贴合度：<b id="top2Value">3</b>/5</span>
+            <input id="top2FitScore" type="range" min="1" max="5" value="3" />
           </label>
           <div class="split-fields hidden" id="cardFitFields">
             <label class="field">
@@ -97,6 +110,20 @@
             <label><input name="preferredCard" type="radio" value="B" /> B 更像我</label>
             <label><input name="preferredCard" type="radio" value="both" /> 都像</label>
             <label><input name="preferredCard" type="radio" value="neither" /> 都不像</label>
+            <label><input name="preferredCard" type="radio" value="insufficient" /> 信息不足，暂时无法判断</label>
+          </fieldset>
+          <fieldset class="field">
+            <legend>Top1 和 Top2 中，哪一个更像你？</legend>
+            <label><input name="selectedBestPersona" type="radio" value="top1" required /> Top1 更像我</label>
+            <label><input name="selectedBestPersona" type="radio" value="top2" /> Top2 更像我</label>
+            <label><input name="selectedBestPersona" type="radio" value="both" /> 两者都像</label>
+            <label><input name="selectedBestPersona" type="radio" value="neither" /> 两者都不像</label>
+            <label><input name="selectedBestPersona" type="radio" value="insufficient" /> 信息不足</label>
+          </fieldset>
+          <fieldset class="field">
+            <legend>你是否理解这次结果的置信度说明？</legend>
+            <label><input name="confidenceUnderstood" type="radio" value="yes" required /> 理解</label>
+            <label><input name="confidenceUnderstood" type="radio" value="no" /> 不太理解</label>
           </fieldset>
           <label class="field">
             <span>结果最符合自己的部分</span>
@@ -105,6 +132,10 @@
           <label class="field">
             <span>结果最不符合自己的部分</span>
             <textarea id="leastFitText" rows="3"></textarea>
+          </label>
+          <label class="field">
+            <span>如果不准确，主要不准确在关系中的哪一部分？</span>
+            <textarea id="inaccurateRelationshipArea" rows="3"></textarea>
           </label>
           <fieldset class="field">
             <legend>是否觉得题目存在“正确答案”？</legend>

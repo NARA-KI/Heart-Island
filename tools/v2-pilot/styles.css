@@ -292,6 +292,93 @@ input[type="text"] {
   background: var(--panel-strong);
 }
 
+.result-profile {
+  display: grid;
+  gap: 14px;
+}
+
+.result-profile h3 {
+  margin: 0;
+  font-size: 1.42rem;
+}
+
+.confidence-line,
+.diagnostic-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.low-confidence-note {
+  border: 1px solid rgba(255, 207, 191, 0.44);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--danger);
+  background: rgba(255, 207, 191, 0.08);
+  line-height: 1.65;
+}
+
+.explanation-section,
+.explanation-details {
+  border-top: 1px solid var(--line);
+  padding-top: 13px;
+}
+
+.explanation-section h4,
+.explanation-section h5,
+.explanation-details h4,
+.explanation-details h5 {
+  margin: 0 0 8px;
+}
+
+.explanation-section p,
+.explanation-details p,
+.explanation-section li,
+.explanation-details li {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.explanation-section ul,
+.explanation-details ul,
+.explanation-section ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.explanation-details summary {
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.detail-grid,
+.comparison-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.comparison-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.comparison-grid > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(216, 234, 255, 0.06);
+}
+
+.read-gate {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(216, 234, 255, 0.06);
+}
+
 .result-card h3 {
   margin: 5px 0 8px;
   font-size: 1.3rem;
@@ -342,6 +429,10 @@ input[type="range"] {
   }
 
   .nav-row {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-grid {
     grid-template-columns: 1fr;
   }
 }

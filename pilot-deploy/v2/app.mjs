@@ -1,6 +1,8 @@
-﻿import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportRecord, shuffledOptions } from './scoring.mjs';
+import { compareTwoSchemes, createSeededRng, encodePilotRecord, normalizeExportRecord, shuffledOptions } from './scoring.mjs';
+import { FEEDBACK_SCHEMA_VERSION, RESULT_EXPLANATION_VERSION, loadPersonaDescriptions, renderAnonymousResults } from './result-explanation.mjs';
 
-const PILOT_TOOL_VERSION = 'v2.0-real-user-pilot-distribution-prep';
+const PILOT_TOOL_VERSION = 'v2.0-pilot-result-explanation-p0-fix';
+const PERSONA_DESCRIPTION_VERSION = 'v2-pilot-persona-descriptions-1';
 const SCORING_RULE_VERSION = 'v2-draft-rms-distance-low-confidence-v1';
 const STORAGE_KEY = 'heart-island-v2-pilot-draft';
 const isDeployBuild = true;
@@ -8,6 +10,7 @@ const DATA_PATHS = {
   questionBank: './question-bank.v2.draft.json',
   baseline: './persona-target-vectors.v2.baseline.json',
   candidateA: './persona-target-vectors.v2.candidate-a.json',
+  descriptions: './persona-descriptions.v2.pilot.json',
   manifest: './pilot-manifest.json',
   fixtures: null,
 };
@@ -18,6 +21,7 @@ const state = {
   questionBank: null,
   baseline: null,
   candidateA: null,
+  personaDescriptions: null,
   fixtures: null,
   hashes: {},
   manifest: null,
@@ -28,6 +32,10 @@ const state = {
   testFixtureId: null,
   downloaded: false,
   copied: false,
+  resultShownAt: null,
+  feedbackStartedAt: null,
+  fullExplanationOpened: false,
+  comparisonViewed: false,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -46,6 +54,8 @@ const elements = {
   optionList: $('#optionList'),
   resultHint: $('#resultHint'),
   resultCards: $('#resultCards'),
+  readGate: $('#readGate'),
+  beginFeedbackButton: $('#beginFeedbackButton'),
   preferenceField: $('#preferenceField'),
   cardFitFields: $('#cardFitFields'),
   downloadButton: $('#downloadButton'),
@@ -90,22 +100,25 @@ async function readOptionalJson(path) {
 async function init() {
   setInitState('loading', '正在加载内测题库与评分数据...');
   bindEarlyEvents();
-  const [questionBank, baseline, candidateA, fixtures, manifest] = await Promise.all([
+  const [questionBank, baseline, candidateA, descriptions, fixtures, manifest] = await Promise.all([
     readJsonWithHash(DATA_PATHS.questionBank),
     readJsonWithHash(DATA_PATHS.baseline),
     readJsonWithHash(DATA_PATHS.candidateA),
+    readJsonWithHash(DATA_PATHS.descriptions),
     DATA_PATHS.fixtures ? readOptionalJson(DATA_PATHS.fixtures) : Promise.resolve(null),
     readOptionalJson(DATA_PATHS.manifest),
   ]);
   state.questionBank = questionBank.data;
   state.baseline = baseline.data;
   state.candidateA = candidateA.data;
+  state.personaDescriptions = descriptions.data;
   state.fixtures = fixtures;
   state.manifest = manifest;
   state.hashes = {
     questionBankHash: manifest?.questionBankHash ?? questionBank.hash,
     baselineVectorHash: manifest?.baselineVectorHash ?? baseline.hash,
     candidateAVectorHash: manifest?.candidateAVectorHash ?? candidateA.hash,
+    personaDescriptionHash: manifest?.personaDescriptionHash ?? descriptions.hash,
   };
 
   restoreDraft();
@@ -183,6 +196,14 @@ function bindEvents() {
     state.copied = true;
     saveDraft();
   });
+  elements.beginFeedbackButton.addEventListener('click', () => {
+    state.feedbackStartedAt = Date.now();
+    state.fullExplanationOpened = true;
+    state.comparisonViewed = true;
+    elements.readGate.classList.add('hidden');
+    elements.feedbackForm.classList.remove('hidden');
+    elements.feedbackForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   elements.restartButton.addEventListener('click', () => {
     if (!state.downloaded && !state.copied && Object.keys(state.answers).length) {
       const confirmed = confirm('当前记录还没有下载或复制。确定要重新开始吗？');
@@ -199,6 +220,7 @@ function bindEvents() {
   });
   bindRange('#overallFitScore', '#overallValue');
   bindRange('#top1FitScore', '#top1Value');
+  bindRange('#top2FitScore', '#top2Value');
   bindRange('#cardAFitScore', '#cardAValue');
   bindRange('#cardBFitScore', '#cardBValue');
 }
@@ -331,6 +353,10 @@ function finishQuestionnaire() {
   buildAnonymousCardOrder();
   state.downloaded = false;
   state.copied = false;
+  state.resultShownAt = Date.now();
+  state.feedbackStartedAt = null;
+  state.fullExplanationOpened = false;
+  state.comparisonViewed = false;
   saveDraft();
   renderResults();
   elements.questionView.classList.add('hidden');
@@ -351,35 +377,20 @@ function buildAnonymousCardOrder() {
 }
 
 function renderResults() {
-  const { baseline, candidateA, resultAgreement } = state.comparison;
-  elements.resultCards.innerHTML = '';
+  const { resultAgreement } = state.comparison;
+  renderAnonymousResults({
+    container: elements.resultCards,
+    comparison: state.comparison,
+    descriptions: state.personaDescriptions,
+    cardOrder: state.anonymousCardOrder,
+  });
   elements.preferenceField.classList.toggle('hidden', resultAgreement);
   elements.cardFitFields.classList.toggle('hidden', resultAgreement);
+  elements.feedbackForm.classList.add('hidden');
+  elements.readGate.classList.remove('hidden');
   elements.resultHint.textContent = resultAgreement
-    ? '两套候选向量得到相同 Top1。请根据结果本身评价贴合度。'
-    : '两套候选向量得到不同 Top1。页面只展示匿名结果 A / B，不标注来源。';
-
-  if (resultAgreement) {
-    elements.resultCards.append(resultCard('结果', baseline));
-    return;
-  }
-
-  for (const item of state.anonymousCardOrder) {
-    elements.resultCards.append(resultCard(`结果 ${item.label}`, item.source === 'baseline' ? baseline : candidateA));
-  }
-}
-
-function resultCard(title, result) {
-  const card = document.createElement('article');
-  card.className = 'result-card';
-  const topList = result.top5.map((item, index) => `<li>Top${index + 1}：${item.displayName} · 距离 ${item.distance}</li>`).join('');
-  card.innerHTML = `
-    <p class="eyebrow">${title}</p>
-    <h3>${result.top1}</h3>
-    <p class="muted">Top1-Top2 gap：${result.top1Top2Gap} · ${result.lowConfidence ? '低置信' : '较明确'}</p>
-    <ul class="top-list">${topList}</ul>
-  `;
-  return card;
+    ? '两套候选向量得到相同 Top1。请先阅读完整解析，再判断贴合度。'
+    : '两套候选向量得到不同 Top1。页面只展示匿名结果 A / B，不标注来源；两张卡片使用相同解释结构。';
 }
 
 function selectedRadio(name) {
@@ -398,8 +409,29 @@ function preferredSourceFromCard() {
   if (state.comparison.resultAgreement) return 'same';
   if (preferredCard === 'both') return 'both';
   if (preferredCard === 'neither') return 'neither';
+  if (preferredCard === 'insufficient') return 'insufficient';
   const card = state.anonymousCardOrder.find((item) => item.label === preferredCard);
   return card?.source ?? null;
+}
+
+function selectedBestPersona() {
+  const value = selectedRadio('selectedBestPersona');
+  if (value === 'top1') return state.comparison.baseline.top5[0].displayName;
+  if (value === 'top2') return state.comparison.baseline.top5[1].displayName;
+  return value;
+}
+
+function fitJudgmentStatus() {
+  const sufficient = selectedRadio('resultExplanationSufficient');
+  const preferred = selectedRadio('preferredCard');
+  const best = selectedRadio('selectedBestPersona');
+  if (sufficient === 'no') {
+    return { valid: false, reason: 'result explanation was marked insufficient' };
+  }
+  if (preferred === 'insufficient' || best === 'insufficient') {
+    return { valid: false, reason: 'user selected insufficient information' };
+  }
+  return { valid: true, reason: null };
 }
 
 function buildExportRecord() {
@@ -414,10 +446,14 @@ function buildExportRecord() {
     timestamp: new Date().toISOString(),
     exportedAt: new Date().toISOString(),
     pilotToolVersion: PILOT_TOOL_VERSION,
+    personaDescriptionVersion: PERSONA_DESCRIPTION_VERSION,
+    resultExplanationVersion: RESULT_EXPLANATION_VERSION,
+    feedbackSchemaVersion: FEEDBACK_SCHEMA_VERSION,
     questionnaireVersion: state.questionBank.sourceVersion ?? 'heart-island-v2-question-bank-draft',
     questionBankHash: state.hashes.questionBankHash,
     baselineVectorHash: state.hashes.baselineVectorHash,
     candidateAVectorHash: state.hashes.candidateAVectorHash,
+    personaDescriptionHash: state.hashes.personaDescriptionHash,
     scoringRuleVersion: SCORING_RULE_VERSION,
     vectorVersions: {
       baseline: state.baseline.sourceVersion ?? 'baseline',
@@ -436,8 +472,19 @@ function buildExportRecord() {
     resultAgreement: comparison.resultAgreement,
     anonymousCardOrder: state.anonymousCardOrder,
     userPreferredResult: preferredSourceFromCard(),
+    resultExplanationViewed: Boolean(state.feedbackStartedAt),
+    resultExplanationSufficient: selectedRadio('resultExplanationSufficient'),
+    fitJudgmentValid: fitJudgmentStatus().valid,
+    fitJudgmentInvalidReason: fitJudgmentStatus().reason,
+    confidenceUnderstood: selectedRadio('confidenceUnderstood'),
+    resultReadDurationMs: state.resultShownAt && state.feedbackStartedAt ? state.feedbackStartedAt - state.resultShownAt : null,
+    fullExplanationOpened: state.fullExplanationOpened,
+    top1Top2ComparisonViewed: state.comparisonViewed,
     overallFitScore: Number($('#overallFitScore').value),
     top1FitScore: Number($('#top1FitScore').value),
+    top2FitScore: Number($('#top2FitScore').value),
+    top2MoreAccurate: selectedRadio('selectedBestPersona') === 'top2',
+    selectedBestPersona: selectedBestPersona(),
     cardFitScores: comparison.resultAgreement ? null : {
       A: Number($('#cardAFitScore').value),
       B: Number($('#cardBFitScore').value),
@@ -445,6 +492,8 @@ function buildExportRecord() {
     top3ContainsFit: selectedRadio('top3ContainsFit'),
     mostFitText: $('#mostFitText').value.trim(),
     leastFitText: $('#leastFitText').value.trim(),
+    inaccurateRelationshipArea: $('#inaccurateRelationshipArea').value.trim(),
+    unableToJudge: selectedRadio('resultExplanationSufficient') === 'no' || selectedRadio('selectedBestPersona') === 'insufficient' || selectedRadio('preferredCard') === 'insufficient',
     difficultQuestionIds: flaggedQuestionIds('difficult'),
     unclearQuestionIds: flaggedQuestionIds('unclear'),
     bothFitQuestionIds: flaggedQuestionIds('bothFit'),
@@ -472,4 +521,3 @@ init().catch((error) => {
   setInitState('error', `加载失败：${error.message}`);
   console.error(error);
 });
-

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>心岛 v2.0 内部结果复核</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro" id="reviewIntro">
+        <p class="eyebrow">Internal Review</p>
+        <h1>内部结果复核工具</h1>
+        <p class="notice">该页面只在本地读取匿名 JSON，不上传服务器，不修改原始回答，不重新计算或覆盖原始 baseline / candidate-A 结果。</p>
+        <label class="field">
+          <span>选择匿名 JSON 文件</span>
+          <input id="fileInput" type="file" accept="application/json,.json" />
+        </label>
+        <p class="muted" id="reviewStatus">等待导入文件。</p>
+      </section>
+      <section class="result-view hidden" id="reviewResult">
+        <p class="eyebrow">Review Result</p>
+        <h2>复核结果解析</h2>
+        <p class="muted" id="sampleMeta"></p>
+        <div class="result-grid" id="reviewCards"></div>
+        <div class="read-gate">
+          <p class="muted">如果解析仍不足以判断，请在下一轮真实测试中选择“信息不足，暂时无法判断”。</p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./review.mjs"></script>
+  </body>
+</html>

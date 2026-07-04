@@ -21,7 +21,7 @@ function readText(file) {
 function readJsonIfExists(file) {
   const full = path.join(root, file);
   if (!fs.existsSync(full)) return null;
-  return JSON.parse(fs.readFileSync(full, 'utf8'));
+  return JSON.parse(fs.readFileSync(full, 'utf8').replace(/^\uFEFF/, ''));
 }
 
 function loadExpectedQuestionIds() {
@@ -41,6 +41,7 @@ function base64UrlDecode(text) {
 }
 
 function parseInputText(text, file) {
+  text = text.replace(/^\uFEFF/, '');
   if (text.startsWith('HI2PILOT:')) {
     return [{ ...JSON.parse(base64UrlDecode(text.slice('HI2PILOT:'.length))), __sourceFile: file, __inputKind: 'encoded' }];
   }
@@ -176,6 +177,53 @@ function validateRecord(record, index, pilotIdCounts) {
   };
 }
 
+function flowValidation(record) {
+  const ids = answerIds(record);
+  const hasFlow = Boolean(record.pilotId)
+    && ids.length === 60
+    && new Set(ids).size === 60
+    && Array.isArray(record.baselineTop5)
+    && Array.isArray(record.candidateATop5);
+  return { valid: hasFlow, reason: hasFlow ? null : 'missing flow completion fields' };
+}
+
+function fitValidation(record) {
+  const legacyReasons = [];
+  if (!record.personaDescriptionVersion) legacyReasons.push('missing personaDescriptionVersion');
+  if (typeof record.resultExplanationViewed !== 'boolean') legacyReasons.push('missing resultExplanationViewed');
+  if (!record.resultExplanationSufficient) legacyReasons.push('missing resultExplanationSufficient');
+  if (!record.feedbackSchemaVersion || record.feedbackSchemaVersion < 'v2-pilot-feedback-2') legacyReasons.push('feedback schema before explanation fix');
+  if (record.pilotToolVersion !== 'v2.0-pilot-result-explanation-p0-fix') legacyReasons.push('pilotToolVersion before result explanation fix');
+  if (legacyReasons.length) {
+    return {
+      valid: false,
+      legacy: true,
+      unableToJudge: false,
+      reason: 'legacy result did not include sufficient persona explanation',
+      details: legacyReasons,
+    };
+  }
+  if (record.fitJudgmentValid === false || record.unableToJudge === true) {
+    return {
+      valid: false,
+      legacy: false,
+      unableToJudge: true,
+      reason: record.fitJudgmentInvalidReason || 'user was unable to judge',
+      details: [],
+    };
+  }
+  if (record.resultExplanationViewed !== true || record.resultExplanationSufficient !== 'yes') {
+    return {
+      valid: false,
+      legacy: false,
+      unableToJudge: true,
+      reason: 'result explanation was not sufficiently viewed',
+      details: [],
+    };
+  }
+  return { valid: true, legacy: false, unableToJudge: false, reason: null, details: [] };
+}
+
 function analyze(records, parseErrors) {
   const pilotIdCounts = new Map();
   for (const record of records) {
@@ -184,25 +232,48 @@ function analyze(records, parseErrors) {
 
   const invalidRecords = parseErrors.map((item) => ({ source: item.file, pilotId: null, reasons: [item.reason] }));
   const valid = [];
+  const flowValid = [];
+  const fitValid = [];
+  const fitInvalid = [];
+  const legacySamples = [];
+  const unableToJudgeSamples = [];
 
   records.forEach((record, index) => {
     const validation = validateRecord(record, index, pilotIdCounts);
     if (validation.valid) valid.push(record);
     else invalidRecords.push(validation.invalidRecord);
+    const flow = flowValidation(record);
+    const fit = fitValidation(record);
+    if (flow.valid) flowValid.push(record);
+    if (fit.valid && flow.valid && validation.valid) fitValid.push(record);
+    if (!fit.valid && flow.valid) {
+      const item = {
+        pilotId: record.pilotId ?? null,
+        source: record.__sourceFile ?? `record-${index}`,
+        flowValidationValid: true,
+        fitJudgmentValid: false,
+        fitJudgmentInvalidReason: fit.reason,
+        details: fit.details,
+      };
+      fitInvalid.push(item);
+      if (fit.legacy) legacySamples.push(item);
+      if (fit.unableToJudge) unableToJudgeSamples.push(item);
+    }
   });
 
-  const disagreements = valid.filter((record) => top1(record, 'baseline') !== top1(record, 'candidate-A'));
-  const agreements = valid.length - disagreements.length;
+  const metricSamples = fitValid;
+  const disagreements = metricSamples.filter((record) => top1(record, 'baseline') !== top1(record, 'candidate-A'));
+  const agreements = metricSamples.length - disagreements.length;
   const baselinePreferred = disagreements.filter((record) => preference(record) === 'baseline').length;
   const candidatePreferred = disagreements.filter((record) => preference(record) === 'candidate-A').length;
   const bothPreferred = disagreements.filter((record) => preference(record) === 'both').length;
   const neitherPreferred = disagreements.filter((record) => preference(record) === 'neither').length;
-  const baselineFitScores = valid.map((record) => sourceFitScore(record, 'baseline')).filter((value) => value !== null);
-  const candidateFitScores = valid.map((record) => sourceFitScore(record, 'candidate-A')).filter((value) => value !== null);
+  const baselineFitScores = metricSamples.map((record) => sourceFitScore(record, 'baseline')).filter((value) => value !== null);
+  const candidateFitScores = metricSamples.map((record) => sourceFitScore(record, 'candidate-A')).filter((value) => value !== null);
 
   const byPersonaFit = {};
   for (const source of ['baseline', 'candidate-A']) {
-    for (const record of valid) {
+    for (const record of metricSamples) {
       const persona = top1(record, source);
       const score = sourceFitScore(record, source);
       if (!persona || score === null) continue;
@@ -217,12 +288,18 @@ function analyze(records, parseErrors) {
     totalParsedRecords: records.length,
     validSamples: valid.length,
     invalidSamples: invalidRecords.length,
+    flowValidSamples: flowValid.length,
+    fitValidSamples: fitValid.length,
+    fitInvalidSamples: fitInvalid.length,
+    legacySamplesWithoutExplanation: legacySamples.length,
+    unableToJudgeSamples: unableToJudgeSamples.length,
+    fitInvalidRecords: fitInvalid,
     duplicateSampleCount: [...pilotIdCounts.values()].filter((count) => count > 1).reduce((sum, count) => sum + count, 0),
     versionMismatchSamples: invalidRecords.filter((item) => item.reasons.some((reason) => reason.includes('mismatch'))).length,
     invalidRecords,
     top1Agreement: {
       count: agreements,
-      rate: pct(agreements, valid.length),
+      rate: pct(agreements, metricSamples.length),
     },
     disagreementPreference: {
       total: disagreements.length,
@@ -237,41 +314,41 @@ function analyze(records, parseErrors) {
     },
     top3Coverage: {
       baseline: {
-        count: valid.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'baseline' || preference(record) === 'both')).length,
-        rate: pct(valid.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'baseline' || preference(record) === 'both')).length, valid.length),
+        count: metricSamples.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'baseline' || preference(record) === 'both')).length,
+        rate: pct(metricSamples.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'baseline' || preference(record) === 'both')).length, metricSamples.length),
       },
       candidateA: {
-        count: valid.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'candidate-A' || preference(record) === 'both')).length,
-        rate: pct(valid.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'candidate-A' || preference(record) === 'both')).length, valid.length),
+        count: metricSamples.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'candidate-A' || preference(record) === 'both')).length,
+        rate: pct(metricSamples.filter((record) => record.top3ContainsFit === 'yes' && (record.resultAgreement || preference(record) === 'candidate-A' || preference(record) === 'both')).length, metricSamples.length),
       },
     },
     lowConfidence: {
       baseline: {
-        count: valid.filter((record) => record.baselineLowConfidence).length,
-        rate: pct(valid.filter((record) => record.baselineLowConfidence).length, valid.length),
+        count: metricSamples.filter((record) => record.baselineLowConfidence).length,
+        rate: pct(metricSamples.filter((record) => record.baselineLowConfidence).length, metricSamples.length),
       },
       candidateA: {
-        count: valid.filter((record) => record.candidateALowConfidence).length,
-        rate: pct(valid.filter((record) => record.candidateALowConfidence).length, valid.length),
+        count: metricSamples.filter((record) => record.candidateALowConfidence).length,
+        rate: pct(metricSamples.filter((record) => record.candidateALowConfidence).length, metricSamples.length),
       },
     },
     top1Counts: {
-      baseline: countBy(valid, (record) => top1(record, 'baseline')),
-      candidateA: countBy(valid, (record) => top1(record, 'candidate-A')),
+      baseline: countBy(metricSamples, (record) => top1(record, 'baseline')),
+      candidateA: countBy(metricSamples, (record) => top1(record, 'candidate-A')),
     },
     personaFit: Object.fromEntries(Object.entries(byPersonaFit).map(([key, values]) => [key, {
       count: values.length,
       averageFit: mean(values),
     }])),
     questionFeedback: {
-      difficultQuestionIds: countQuestionIds(valid, 'difficultQuestionIds'),
-      unclearQuestionIds: countQuestionIds(valid, 'unclearQuestionIds'),
-      bothFitQuestionIds: countQuestionIds(valid, 'bothFitQuestionIds'),
-      noneFitQuestionIds: countQuestionIds(valid, 'noneFitQuestionIds'),
-      correctAnswerFeelingQuestionIds: countQuestionIds(valid, 'correctAnswerFeelingQuestionIds'),
+      difficultQuestionIds: countQuestionIds(flowValid, 'difficultQuestionIds'),
+      unclearQuestionIds: countQuestionIds(flowValid, 'unclearQuestionIds'),
+      bothFitQuestionIds: countQuestionIds(flowValid, 'bothFitQuestionIds'),
+      noneFitQuestionIds: countQuestionIds(flowValid, 'noneFitQuestionIds'),
+      correctAnswerFeelingQuestionIds: countQuestionIds(flowValid, 'correctAnswerFeelingQuestionIds'),
     },
-    correctAnswerFeeling: countBy(valid, (record) => record.correctAnswerFeeling),
-    shareIntent: countBy(valid, (record) => record.shareIntent),
+    correctAnswerFeeling: countBy(flowValid, (record) => record.correctAnswerFeeling),
+    shareIntent: countBy(flowValid, (record) => record.shareIntent),
     improvements: disagreements.filter((record) => preference(record) === 'candidate-A').map((record) => ({
       pilotId: record.pilotId,
       baselineTop1: top1(record, 'baseline'),

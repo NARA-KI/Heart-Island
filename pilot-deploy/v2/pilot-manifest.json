@@ -1,5 +1,5 @@
 {
-  "pilotToolVersion": "v2.0-real-user-pilot-distribution-prep",
+  "pilotToolVersion": "v2.0-pilot-result-explanation-p0-fix",
   "scoringRuleVersion": "v2-draft-rms-distance-low-confidence-v1",
   "generatedAt": "2026-07-04T08:49:28.009Z",
   "questionBankFile": "question-bank.v2.draft.json",
@@ -9,5 +9,9 @@
   "baselineVectorHash": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
   "candidateAVectorHash": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3",
   "privacyMode": "local-only-manual-export",
-  "fixturePreloadEnabled": false
+  "fixturePreloadEnabled": false,
+  "personaDescriptionVersion": "v2-pilot-persona-descriptions-1",
+  "personaDescriptionHash": "904987972f14576478418872a99dad5195dbb4fa5f7df2e8c73104150ede48c6",
+  "resultExplanationVersion": "v2-result-explanation-1",
+  "feedbackSchemaVersion": "v2-pilot-feedback-2"
 }
