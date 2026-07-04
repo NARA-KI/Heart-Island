@@ -10,8 +10,7 @@
     "audit:probability:live": "node scripts/probability-audit.mjs --profile calibrationB",
     "audit:options": "node scripts/option-alignment-audit.mjs",
     "test:consistency": "node scripts/consistency-test.mjs",
-    "ui:inspect": "node scripts/inspect-ui.mjs",
-    "v2:validate": "node scripts/v2-product-validation/validate-v2-alpha.mjs"
+    "ui:inspect": "node scripts/inspect-ui.mjs"
   },
   "type": "module",
   "dependencies": {

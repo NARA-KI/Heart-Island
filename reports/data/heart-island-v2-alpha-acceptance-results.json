@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-07-04T15:40:44.936Z",
+  "data": {
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "questionCount": 60,
+      "constructCount": 15,
+      "personaCount": 15
+    },
+    "reverseQuestionCount": 15,
+    "reproducible": true,
+    "sampleFinalPersona": "月光型",
+    "allPersonaNames": [
+      "灯塔型",
+      "守门人",
+      "筑巢型",
+      "收藏家",
+      "候鸟型",
+      "岛屿型",
+      "探险家",
+      "流浪诗人",
+      "星火型",
+      "月光型",
+      "镜像型",
+      "观星者",
+      "同行者",
+      "港湾型",
+      "摆渡人"
+    ]
+  },
+  "browserResults": [
+    {
+      "name": "chromium-375",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "pass": true,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "homeOverflow": false,
+      "resultOverflow": false,
+      "stateChecks": {
+        "q2InitialSelected": 0,
+        "previousRestored": true,
+        "modifiedAnswer": true,
+        "refreshRestored": true
+      },
+      "debugState": {
+        "questionCount": 60,
+        "personaCount": 15,
+        "answerCount": 60,
+        "finalPersona": "星火型"
+      },
+      "restartCleared": true,
+      "resultContainsInternalInfo": false,
+      "readsOldRuntimeData": false
+    },
+    {
+      "name": "chromium-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pass": true,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "homeOverflow": false,
+      "resultOverflow": false,
+      "stateChecks": {
+        "q2InitialSelected": 0,
+        "previousRestored": true,
+        "modifiedAnswer": true,
+        "refreshRestored": true
+      },
+      "debugState": {
+        "questionCount": 60,
+        "personaCount": 15,
+        "answerCount": 60,
+        "finalPersona": "星火型"
+      },
+      "restartCleared": true,
+      "resultContainsInternalInfo": false,
+      "readsOldRuntimeData": false
+    },
+    {
+      "name": "chromium-430",
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "pass": true,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "homeOverflow": false,
+      "resultOverflow": false,
+      "stateChecks": {
+        "q2InitialSelected": 0,
+        "previousRestored": true,
+        "modifiedAnswer": true,
+        "refreshRestored": true
+      },
+      "debugState": {
+        "questionCount": 60,
+        "personaCount": 15,
+        "answerCount": 60,
+        "finalPersona": "星火型"
+      },
+      "restartCleared": true,
+      "resultContainsInternalInfo": false,
+      "readsOldRuntimeData": false
+    },
+    {
+      "name": "edge-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pass": true,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "homeOverflow": false,
+      "resultOverflow": false,
+      "stateChecks": {
+        "q2InitialSelected": 0,
+        "previousRestored": true,
+        "modifiedAnswer": true,
+        "refreshRestored": true
+      },
+      "debugState": {
+        "questionCount": 60,
+        "personaCount": 15,
+        "answerCount": 60,
+        "finalPersona": "星火型"
+      },
+      "restartCleared": true,
+      "resultContainsInternalInfo": false,
+      "readsOldRuntimeData": false
+    }
+  ],
+  "pass": true
+}

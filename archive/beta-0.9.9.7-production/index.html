@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>心岛计划 — 探索你的恋爱人格</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Deep background layers (z-index: 0–2) -->
+<div id="bg-gradient-layer"></div>
+<div id="chart-texture-layer"></div>
+<div id="starfield"></div>
+<div id="mist-layer"></div>
+<div id="island-silhouette"></div>
+<div id="ocean-layer">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+<div id="particle-layer"></div>
+
+<!-- ============================================ -->
+<!-- INTRO SCREEN                                 -->
+<!-- ============================================ -->
+<div id="intro-screen" class="screen">
+  <div id="intro-glow-top"></div>
+  <div id="intro-compass"></div>
+  <div id="intro-text-container">
+    <div id="intro-title">心 岛 计 划</div>
+    <div id="intro-subtitle">探索你的恋爱人格</div>
+  </div>
+  <div id="intro-tagline">这不是一场标准答案测试。<br>而是一段关于你如何靠近、如何爱、如何保护自己的旅程。</div>
+  <div id="intro-concrete-subtitle">36 道题 · 约 5 分钟 · 生成你的心岛人格卡</div>
+  <div id="intro-beta-badge">Beta 0.9.9.7</div>
+  <div id="intro-disclaimer">当前结果仅供自我探索参考<br>不代表专业心理诊断</div>
+
+  <!-- 3 selling point cards (Beta 0.9.9.1 — 12 core focus) -->
+  <div id="intro-selling-points">
+    <div class="sp-card">
+      <span class="sp-icon">⏱</span>
+      <span class="sp-text">约 5 分钟完成<br>36 道心岛旅程题</span>
+    </div>
+    <div class="sp-card">
+      <span class="sp-icon">🏝</span>
+      <span class="sp-text">获得你的核心主岛人格<br>看见你在关系中的真实模样</span>
+    </div>
+    <div class="sp-card">
+      <span class="sp-icon">🗺</span>
+      <span class="sp-text">生成专属心岛地图<br>支持分享给信任的人</span>
+    </div>
+  </div>
+
+  <!-- Saved result notice (Beta 0.9.4) -->
+  <div id="saved-result-notice" class="hidden"></div>
+
+  <!-- All types entry (Beta 0.9.4) -->
+  <button id="intro-all-types-entry">心岛人格图鉴</button>
+
+  <button id="intro-start-btn">开启心岛航行</button>
+</div>
+
+<!-- ============================================ -->
+<!-- CHAPTER HINT OVERLAY                         -->
+<!-- ============================================ -->
+<div id="chapter-hint" class="hint-hidden"></div>
+
+<!-- ============================================ -->
+<!-- GAME SCREEN (Beta 0.9.9.3 — 左右分栏场景系统)     -->
+<!-- ============================================ -->
+<div id="game-screen" class="screen hidden">
+  <!-- Left: Scene visual stage (40-45% desktop, top card mobile) -->
+  <div id="scene-stage">
+    <div class="scene-stage-bg"></div>
+    <img class="scene-stage-image" src="" alt="" />
+    <div class="scene-stage-overlay"></div>
+    <div class="scene-stage-meta">
+      <span id="scene-location-name">靠近海岸</span>
+      <span id="scene-dimension-label">亲密连接</span>
+      <div id="location-progress-nodes"></div>
+    </div>
+  </div>
+  <!-- Right: Question & Options column (55-60% desktop) -->
+  <div id="scene-question-column">
+    <div id="scene-top-bar">
+      <span id="scene-question-counter">01 / 36</span>
+      <div id="location-progress-bar">
+        <div id="location-progress-track">
+          <div id="location-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+    <div id="scene-card">
+      <div id="scene-mood"></div>
+      <div id="scene-title"></div>
+      <div id="scene-narrative"></div>
+      <div id="options-container"></div>
+    </div>
+    <button id="prev-btn" class="hidden">← 返回上一站</button>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- REVEAL TRANSITION (legacy — now replaced by ending sequence) -->
+<!-- ============================================ -->
+<div id="reveal-screen" class="screen hidden">
+  <div id="reveal-ripple"></div>
+  <div id="reveal-text">正在绘制你的心岛地图...</div>
+  <div id="reveal-line-art"></div>
+  <button id="reveal-skip-btn" class="hidden">直接查看结果</button>
+</div>
+
+<!-- ============================================ -->
+<!-- ENDING SEQUENCE (Beta 0.9.9.1)                  -->
+<!-- ============================================ -->
+<div id="ending-screen" class="screen hidden">
+  <div id="ending-backdrop"></div>
+  <!-- Silver mirror-lake ripples -->
+  <div id="ending-lake">
+    <div class="ending-ripple"></div>
+    <div class="ending-ripple"></div>
+    <div class="ending-ripple"></div>
+  </div>
+  <!-- 12 location nodes reflected on lake -->
+  <div id="ending-locations">
+    <div class="ending-loc-node" data-loc="0"></div>
+    <div class="ending-loc-node" data-loc="1"></div>
+    <div class="ending-loc-node" data-loc="2"></div>
+    <div class="ending-loc-node" data-loc="3"></div>
+    <div class="ending-loc-node" data-loc="4"></div>
+    <div class="ending-loc-node" data-loc="5"></div>
+    <div class="ending-loc-node" data-loc="6"></div>
+    <div class="ending-loc-node" data-loc="7"></div>
+    <div class="ending-loc-node" data-loc="8"></div>
+    <div class="ending-loc-node" data-loc="9"></div>
+    <div class="ending-loc-node" data-loc="10"></div>
+    <div class="ending-loc-node" data-loc="11"></div>
+  </div>
+  <!-- 12 light beacons replacing emoji constellation (Beta 0.9.9.2) -->
+	  <div id="ending-beacons">
+	    <div class="ending-beacon" data-beacon="0"></div>
+	    <div class="ending-beacon" data-beacon="1"></div>
+	    <div class="ending-beacon" data-beacon="2"></div>
+	    <div class="ending-beacon" data-beacon="3"></div>
+	    <div class="ending-beacon" data-beacon="4"></div>
+	    <div class="ending-beacon" data-beacon="5"></div>
+	    <div class="ending-beacon" data-beacon="6"></div>
+	    <div class="ending-beacon" data-beacon="7"></div>
+	    <div class="ending-beacon" data-beacon="8"></div>
+	    <div class="ending-beacon" data-beacon="9"></div>
+	    <div class="ending-beacon" data-beacon="10"></div>
+	    <div class="ending-beacon" data-beacon="11"></div>
+	  </div>
+	  <!-- Converging route line to center island -->
+	  <div id="ending-route-line"></div>
+  <!-- Text reveal -->
+  <div id="ending-text">你的主岛，正在浮现。</div>
+  <!-- Skip button (Beta 0.9.9.3: clearer text) -->
+  <button id="ending-skip-btn">直接查看结果 →</button>
+</div>
+
+<!-- ============================================ -->
+<!-- RESULT SCREEN (Beta 0.9.9.3)                   -->
+<!-- ============================================ -->
+<div id="result-screen" class="screen hidden">
+  <div id="result-card"></div>
+  <div id="result-actions">
+    <button id="result-restart-btn">再次探索</button>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PERSONALITY GALLERY (Beta 0.9.9.2)              -->
+<!-- ============================================ -->
+<div id="all-types-modal" class="hidden">
+  <div id="all-types-modal-inner">
+    <div id="all-types-modal-header">
+      <span id="all-types-modal-title">心岛人格图鉴</span>
+      <button id="all-types-modal-close">✕</button>
+    </div>
+    <div id="all-types-modal-body"></div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div id="copy-toast"></div>
+
+<!-- ============================================ -->
+<!-- DEBUG PANEL (hidden, 5x title click)         -->
+<!-- ============================================ -->
+<div id="debug-panel" class="hidden">
+  <div id="debug-panel-header">
+    <span>Debug Panel</span>
+    <button id="debug-close-btn">x</button>
+  </div>
+  <div id="debug-content"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
