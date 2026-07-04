@@ -1,0 +1,3075 @@
+{
+  "generatedAt": "2026-07-04T07:39:11.496Z",
+  "sourceFiles": [
+    "drafts/v2/persona-target-vectors.v2.draft.json",
+    "drafts/v2/validation-results.v2.draft.json",
+    "reports/data/heart-island-v2-robustness-results.json"
+  ],
+  "neutralVector": {
+    "SC": 50,
+    "AU": 50,
+    "TR": 50,
+    "CL": 50,
+    "PA": 50,
+    "CM": 50,
+    "SI": 50,
+    "NV": 50,
+    "RM": 50,
+    "CS": 50,
+    "EC": 50,
+    "CR": 50,
+    "ER": 50,
+    "RI": 50,
+    "MN": 50
+  },
+  "vectorAnalysis": {
+    "neutralVector": {
+      "SC": 50,
+      "AU": 50,
+      "TR": 50,
+      "CL": 50,
+      "PA": 50,
+      "CM": 50,
+      "SI": 50,
+      "NV": 50,
+      "RM": 50,
+      "CS": 50,
+      "EC": 50,
+      "CR": 50,
+      "ER": 50,
+      "RI": 50,
+      "MN": 50
+    },
+    "profile": [
+      {
+        "displayName": "灯塔型",
+        "targetVector": {
+          "SC": 55,
+          "AU": 35,
+          "TR": 70,
+          "CL": 70,
+          "PA": 60,
+          "CM": 78,
+          "SI": 50,
+          "NV": 30,
+          "RM": 65,
+          "CS": 94,
+          "EC": 72,
+          "CR": 90,
+          "ER": 62,
+          "RI": 82,
+          "MN": 50
+        },
+        "highCount": 7,
+        "midCount": 7,
+        "lowCount": 1,
+        "neutralDistance": 22.7259,
+        "norm": 257.9671,
+        "nearestPersona": "筑巢型",
+        "nearestDistance": 12.3261,
+        "secondNearestPersona": "月光型",
+        "secondNearestDistance": 12.7567,
+        "averageDistance": 24.7723,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "守门人",
+        "targetVector": {
+          "SC": 45,
+          "AU": 88,
+          "TR": 72,
+          "CL": 48,
+          "PA": 30,
+          "CM": 82,
+          "SI": 50,
+          "NV": 28,
+          "RM": 68,
+          "CS": 45,
+          "EC": 38,
+          "CR": 62,
+          "ER": 68,
+          "RI": 70,
+          "MN": 42
+        },
+        "highCount": 6,
+        "midCount": 7,
+        "lowCount": 2,
+        "neutralDistance": 18.7794,
+        "norm": 226.6936,
+        "nearestPersona": "同行者",
+        "nearestDistance": 13.8804,
+        "secondNearestPersona": "观星者",
+        "secondNearestDistance": 13.9976,
+        "averageDistance": 24.3104,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "筑巢型",
+        "targetVector": {
+          "SC": 70,
+          "AU": 28,
+          "TR": 78,
+          "CL": 90,
+          "PA": 58,
+          "CM": 94,
+          "SI": 50,
+          "NV": 22,
+          "RM": 78,
+          "CS": 68,
+          "EC": 62,
+          "CR": 76,
+          "ER": 64,
+          "RI": 88,
+          "MN": 56
+        },
+        "highCount": 8,
+        "midCount": 5,
+        "lowCount": 2,
+        "neutralDistance": 25.3719,
+        "norm": 265.2471,
+        "nearestPersona": "港湾型",
+        "nearestDistance": 9.5184,
+        "secondNearestPersona": "灯塔型",
+        "secondNearestDistance": 12.3261,
+        "averageDistance": 25.4876,
+        "duplicateOrSurroundedRisk": "near-duplicate-risk"
+      },
+      {
+        "displayName": "收藏家",
+        "targetVector": {
+          "SC": 62,
+          "AU": 58,
+          "TR": 55,
+          "CL": 62,
+          "PA": 30,
+          "CM": 55,
+          "SI": 80,
+          "NV": 24,
+          "RM": 45,
+          "CS": 42,
+          "EC": 35,
+          "CR": 45,
+          "ER": 72,
+          "RI": 56,
+          "MN": 95
+        },
+        "highCount": 3,
+        "midCount": 10,
+        "lowCount": 2,
+        "neutralDistance": 18.7297,
+        "norm": 222.1756,
+        "nearestPersona": "镜像型",
+        "nearestDistance": 19.3201,
+        "secondNearestPersona": "流浪诗人",
+        "secondNearestDistance": 21.5886,
+        "averageDistance": 25.5245,
+        "duplicateOrSurroundedRisk": "none"
+      },
+      {
+        "displayName": "候鸟型",
+        "targetVector": {
+          "SC": 55,
+          "AU": 86,
+          "TR": 48,
+          "CL": 68,
+          "PA": 62,
+          "CM": 30,
+          "SI": 68,
+          "NV": 84,
+          "RM": 38,
+          "CS": 35,
+          "EC": 58,
+          "CR": 42,
+          "ER": 65,
+          "RI": 35,
+          "MN": 55
+        },
+        "highCount": 4,
+        "midCount": 10,
+        "lowCount": 1,
+        "neutralDistance": 17.5973,
+        "norm": 223.7074,
+        "nearestPersona": "流浪诗人",
+        "nearestDistance": 10.9301,
+        "secondNearestPersona": "探险家",
+        "secondNearestDistance": 11.2576,
+        "averageDistance": 26.0212,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "岛屿型",
+        "targetVector": {
+          "SC": 28,
+          "AU": 94,
+          "TR": 62,
+          "CL": 25,
+          "PA": 24,
+          "CM": 45,
+          "SI": 35,
+          "NV": 38,
+          "RM": 62,
+          "CS": 22,
+          "EC": 28,
+          "CR": 48,
+          "ER": 78,
+          "RI": 32,
+          "MN": 25
+        },
+        "highCount": 2,
+        "midCount": 6,
+        "lowCount": 7,
+        "neutralDistance": 22.2231,
+        "norm": 185.7633,
+        "nearestPersona": "守门人",
+        "nearestDistance": 18.935,
+        "secondNearestPersona": "候鸟型",
+        "secondNearestDistance": 26.421,
+        "averageDistance": 31.5952,
+        "duplicateOrSurroundedRisk": "none"
+      },
+      {
+        "displayName": "探险家",
+        "targetVector": {
+          "SC": 38,
+          "AU": 78,
+          "TR": 45,
+          "CL": 55,
+          "PA": 78,
+          "CM": 24,
+          "SI": 62,
+          "NV": 95,
+          "RM": 35,
+          "CS": 30,
+          "EC": 68,
+          "CR": 50,
+          "ER": 58,
+          "RI": 28,
+          "MN": 30
+        },
+        "highCount": 4,
+        "midCount": 7,
+        "lowCount": 4,
+        "neutralDistance": 20.8231,
+        "norm": 215.4159,
+        "nearestPersona": "候鸟型",
+        "nearestDistance": 11.2576,
+        "secondNearestPersona": "星火型",
+        "secondNearestDistance": 16.0935,
+        "averageDistance": 29.8075,
+        "duplicateOrSurroundedRisk": "none"
+      },
+      {
+        "displayName": "流浪诗人",
+        "targetVector": {
+          "SC": 48,
+          "AU": 70,
+          "TR": 48,
+          "CL": 62,
+          "PA": 65,
+          "CM": 30,
+          "SI": 96,
+          "NV": 75,
+          "RM": 25,
+          "CS": 38,
+          "EC": 62,
+          "CR": 48,
+          "ER": 68,
+          "RI": 42,
+          "MN": 72
+        },
+        "highCount": 5,
+        "midCount": 8,
+        "lowCount": 2,
+        "neutralDistance": 19.5056,
+        "norm": 230.4496,
+        "nearestPersona": "候鸟型",
+        "nearestDistance": 10.9301,
+        "secondNearestPersona": "探险家",
+        "secondNearestDistance": 16.8266,
+        "averageDistance": 26.5442,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "星火型",
+        "targetVector": {
+          "SC": 60,
+          "AU": 40,
+          "TR": 50,
+          "CL": 78,
+          "PA": 94,
+          "CM": 35,
+          "SI": 70,
+          "NV": 78,
+          "RM": 35,
+          "CS": 42,
+          "EC": 88,
+          "CR": 45,
+          "ER": 60,
+          "RI": 38,
+          "MN": 30
+        },
+        "highCount": 5,
+        "midCount": 9,
+        "lowCount": 1,
+        "neutralDistance": 21.1833,
+        "norm": 231.3677,
+        "nearestPersona": "探险家",
+        "nearestDistance": 16.0935,
+        "secondNearestPersona": "候鸟型",
+        "secondNearestDistance": 18.1842,
+        "averageDistance": 28.2334,
+        "duplicateOrSurroundedRisk": "none"
+      },
+      {
+        "displayName": "月光型",
+        "targetVector": {
+          "SC": 68,
+          "AU": 38,
+          "TR": 72,
+          "CL": 82,
+          "PA": 58,
+          "CM": 70,
+          "SI": 78,
+          "NV": 35,
+          "RM": 58,
+          "CS": 76,
+          "EC": 68,
+          "CR": 68,
+          "ER": 76,
+          "RI": 70,
+          "MN": 55
+        },
+        "highCount": 10,
+        "midCount": 5,
+        "lowCount": 0,
+        "neutralDistance": 19.8964,
+        "norm": 256.1991,
+        "nearestPersona": "港湾型",
+        "nearestDistance": 11.659,
+        "secondNearestPersona": "灯塔型",
+        "secondNearestDistance": 12.7567,
+        "averageDistance": 21.2267,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "镜像型",
+        "targetVector": {
+          "SC": 82,
+          "AU": 30,
+          "TR": 42,
+          "CL": 75,
+          "PA": 50,
+          "CM": 58,
+          "SI": 62,
+          "NV": 25,
+          "RM": 42,
+          "CS": 72,
+          "EC": 58,
+          "CR": 55,
+          "ER": 92,
+          "RI": 62,
+          "MN": 58
+        },
+        "highCount": 4,
+        "midCount": 9,
+        "lowCount": 2,
+        "neutralDistance": 19.244,
+        "norm": 233.1416,
+        "nearestPersona": "月光型",
+        "nearestDistance": 13.274,
+        "secondNearestPersona": "摆渡人",
+        "secondNearestDistance": 13.8876,
+        "averageDistance": 23.7179,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "观星者",
+        "targetVector": {
+          "SC": 42,
+          "AU": 68,
+          "TR": 78,
+          "CL": 55,
+          "PA": 35,
+          "CM": 84,
+          "SI": 94,
+          "NV": 32,
+          "RM": 82,
+          "CS": 45,
+          "EC": 52,
+          "CR": 62,
+          "ER": 60,
+          "RI": 72,
+          "MN": 40
+        },
+        "highCount": 6,
+        "midCount": 8,
+        "lowCount": 1,
+        "neutralDistance": 21.1644,
+        "norm": 243.5549,
+        "nearestPersona": "守门人",
+        "nearestDistance": 13.9976,
+        "secondNearestPersona": "同行者",
+        "secondNearestDistance": 14.2384,
+        "averageDistance": 24.3656,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "同行者",
+        "targetVector": {
+          "SC": 55,
+          "AU": 58,
+          "TR": 84,
+          "CL": 60,
+          "PA": 32,
+          "CM": 88,
+          "SI": 48,
+          "NV": 25,
+          "RM": 96,
+          "CS": 55,
+          "EC": 60,
+          "CR": 70,
+          "ER": 66,
+          "RI": 78,
+          "MN": 35
+        },
+        "highCount": 5,
+        "midCount": 8,
+        "lowCount": 2,
+        "neutralDistance": 22.5802,
+        "norm": 247.2812,
+        "nearestPersona": "守门人",
+        "nearestDistance": 13.8804,
+        "secondNearestPersona": "观星者",
+        "secondNearestDistance": 14.2384,
+        "averageDistance": 24.7881,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      },
+      {
+        "displayName": "港湾型",
+        "targetVector": {
+          "SC": 78,
+          "AU": 42,
+          "TR": 94,
+          "CL": 82,
+          "PA": 45,
+          "CM": 78,
+          "SI": 52,
+          "NV": 25,
+          "RM": 65,
+          "CS": 70,
+          "EC": 62,
+          "CR": 78,
+          "ER": 72,
+          "RI": 82,
+          "MN": 48
+        },
+        "highCount": 8,
+        "midCount": 6,
+        "lowCount": 1,
+        "neutralDistance": 23.5386,
+        "norm": 260.9808,
+        "nearestPersona": "筑巢型",
+        "nearestDistance": 9.5184,
+        "secondNearestPersona": "月光型",
+        "secondNearestDistance": 11.659,
+        "averageDistance": 23.5076,
+        "duplicateOrSurroundedRisk": "near-duplicate-risk"
+      },
+      {
+        "displayName": "摆渡人",
+        "targetVector": {
+          "SC": 76,
+          "AU": 48,
+          "TR": 45,
+          "CL": 72,
+          "PA": 62,
+          "CM": 50,
+          "SI": 65,
+          "NV": 45,
+          "RM": 42,
+          "CS": 58,
+          "EC": 82,
+          "CR": 86,
+          "ER": 88,
+          "RI": 55,
+          "MN": 68
+        },
+        "highCount": 6,
+        "midCount": 9,
+        "lowCount": 0,
+        "neutralDistance": 19.7045,
+        "norm": 250.048,
+        "nearestPersona": "镜像型",
+        "nearestDistance": 13.8876,
+        "secondNearestPersona": "月光型",
+        "secondNearestDistance": 14.8683,
+        "averageDistance": 23.2532,
+        "duplicateOrSurroundedRisk": "surrounded-or-neutral-risk"
+      }
+    ],
+    "matrix": {
+      "灯塔型": {
+        "灯塔型": 0,
+        "守门人": 24.3735,
+        "筑巢型": 12.3261,
+        "收藏家": 28.9033,
+        "候鸟型": 34.2442,
+        "岛屿型": 37.636,
+        "探险家": 37.0054,
+        "流浪诗人": 33.6769,
+        "星火型": 31.0355,
+        "月光型": 12.7567,
+        "镜像型": 20.0499,
+        "观星者": 23.4179,
+        "同行者": 18.2957,
+        "港湾型": 12.8478,
+        "摆渡人": 20.2435
+      },
+      "守门人": {
+        "灯塔型": 24.3735,
+        "守门人": 0,
+        "筑巢型": 24.394,
+        "收藏家": 21.8724,
+        "候鸟型": 27.6538,
+        "岛屿型": 18.935,
+        "探险家": 32.2428,
+        "流浪诗人": 30.2357,
+        "星火型": 34.8683,
+        "月光型": 23.3467,
+        "镜像型": 26.1292,
+        "观星者": 13.9976,
+        "同行者": 13.8804,
+        "港湾型": 21.2305,
+        "摆渡人": 27.1858
+      },
+      "筑巢型": {
+        "灯塔型": 12.3261,
+        "守门人": 24.394,
+        "筑巢型": 0,
+        "收藏家": 27.7489,
+        "候鸟型": 36.4463,
+        "岛屿型": 39.365,
+        "探险家": 40.766,
+        "流浪诗人": 36.4079,
+        "星火型": 33.5052,
+        "月光型": 13.5794,
+        "镜像型": 20.6801,
+        "观星者": 22.5728,
+        "同行者": 16.0499,
+        "港湾型": 9.5184,
+        "摆渡人": 23.4663
+      },
+      "收藏家": {
+        "灯塔型": 28.9033,
+        "守门人": 21.8724,
+        "筑巢型": 27.7489,
+        "收藏家": 0,
+        "候鸟型": 24.5452,
+        "岛屿型": 28.8513,
+        "探险家": 32.9828,
+        "流浪诗人": 21.5886,
+        "星火型": 32.3759,
+        "月光型": 21.6241,
+        "镜像型": 19.3201,
+        "观星者": 22.487,
+        "同行者": 27.2666,
+        "港湾型": 25.6372,
+        "摆渡人": 22.139
+      },
+      "候鸟型": {
+        "灯塔型": 34.2442,
+        "守门人": 27.6538,
+        "筑巢型": 36.4463,
+        "收藏家": 24.5452,
+        "候鸟型": 0,
+        "岛屿型": 26.421,
+        "探险家": 11.2576,
+        "流浪诗人": 10.9301,
+        "星火型": 18.1842,
+        "月光型": 27.7669,
+        "镜像型": 27.5874,
+        "观星者": 29.0723,
+        "同行者": 33.755,
+        "港湾型": 33.3467,
+        "摆渡人": 23.0868
+      },
+      "岛屿型": {
+        "灯塔型": 37.636,
+        "守门人": 18.935,
+        "筑巢型": 39.365,
+        "收藏家": 28.8513,
+        "候鸟型": 26.421,
+        "岛屿型": 0,
+        "探险家": 27.95,
+        "流浪诗人": 31.3337,
+        "星火型": 36.3694,
+        "月光型": 35.594,
+        "镜像型": 34.3405,
+        "观星者": 27.1256,
+        "同行者": 28.3995,
+        "港湾型": 35.4955,
+        "摆渡人": 34.5157
+      },
+      "探险家": {
+        "灯塔型": 37.0054,
+        "守门人": 32.2428,
+        "筑巢型": 40.766,
+        "收藏家": 32.9828,
+        "候鸟型": 11.2576,
+        "岛屿型": 27.95,
+        "探险家": 0,
+        "流浪诗人": 16.8266,
+        "星火型": 16.0935,
+        "月光型": 32.6721,
+        "镜像型": 33.1894,
+        "观星者": 33.1873,
+        "同行者": 37.3649,
+        "港湾型": 38.1112,
+        "摆渡人": 27.655
+      },
+      "流浪诗人": {
+        "灯塔型": 33.6769,
+        "守门人": 30.2357,
+        "筑巢型": 36.4079,
+        "收藏家": 21.5886,
+        "候鸟型": 10.9301,
+        "岛屿型": 31.3337,
+        "探险家": 16.8266,
+        "流浪诗人": 0,
+        "星火型": 19.1485,
+        "月光型": 25.9217,
+        "镜像型": 26.2145,
+        "观星者": 28.5657,
+        "同行者": 35.8115,
+        "港湾型": 33.7204,
+        "摆渡人": 21.2368
+      },
+      "星火型": {
+        "灯塔型": 31.0355,
+        "守门人": 34.8683,
+        "筑巢型": 33.5052,
+        "收藏家": 32.3759,
+        "候鸟型": 18.1842,
+        "岛屿型": 36.3694,
+        "探险家": 16.0935,
+        "流浪诗人": 19.1485,
+        "星火型": 0,
+        "月光型": 25.1939,
+        "镜像型": 26.2399,
+        "观星者": 32.7149,
+        "同行者": 35.3412,
+        "港湾型": 32.1621,
+        "摆渡人": 22.0348
+      },
+      "月光型": {
+        "灯塔型": 12.7567,
+        "守门人": 23.3467,
+        "筑巢型": 13.5794,
+        "收藏家": 21.6241,
+        "候鸟型": 27.7669,
+        "岛屿型": 35.594,
+        "探险家": 32.6721,
+        "流浪诗人": 25.9217,
+        "星火型": 25.1939,
+        "月光型": 0,
+        "镜像型": 13.274,
+        "观星者": 19.3993,
+        "同行者": 19.5175,
+        "港湾型": 11.659,
+        "摆渡人": 14.8683
+      },
+      "镜像型": {
+        "灯塔型": 20.0499,
+        "守门人": 26.1292,
+        "筑巢型": 20.6801,
+        "收藏家": 19.3201,
+        "候鸟型": 27.5874,
+        "岛屿型": 34.3405,
+        "探险家": 33.1894,
+        "流浪诗人": 26.2145,
+        "星火型": 26.2399,
+        "月光型": 13.274,
+        "镜像型": 0,
+        "观星者": 26.5531,
+        "同行者": 25.5825,
+        "港湾型": 19.0018,
+        "摆渡人": 13.8876
+      },
+      "观星者": {
+        "灯塔型": 23.4179,
+        "守门人": 13.9976,
+        "筑巢型": 22.5728,
+        "收藏家": 22.487,
+        "候鸟型": 29.0723,
+        "岛屿型": 27.1256,
+        "探险家": 33.1873,
+        "流浪诗人": 28.5657,
+        "星火型": 32.7149,
+        "月光型": 19.3993,
+        "镜像型": 26.5531,
+        "观星者": 0,
+        "同行者": 14.2384,
+        "港湾型": 20.791,
+        "摆渡人": 26.9951
+      },
+      "同行者": {
+        "灯塔型": 18.2957,
+        "守门人": 13.8804,
+        "筑巢型": 16.0499,
+        "收藏家": 27.2666,
+        "候鸟型": 33.755,
+        "岛屿型": 28.3995,
+        "探险家": 37.3649,
+        "流浪诗人": 35.8115,
+        "星火型": 35.3412,
+        "月光型": 19.5175,
+        "镜像型": 25.5825,
+        "观星者": 14.2384,
+        "同行者": 0,
+        "港湾型": 14.443,
+        "摆渡人": 27.0875
+      },
+      "港湾型": {
+        "灯塔型": 12.8478,
+        "守门人": 21.2305,
+        "筑巢型": 9.5184,
+        "收藏家": 25.6372,
+        "候鸟型": 33.3467,
+        "岛屿型": 35.4955,
+        "探险家": 38.1112,
+        "流浪诗人": 33.7204,
+        "星火型": 32.1621,
+        "月光型": 11.659,
+        "镜像型": 19.0018,
+        "观星者": 20.791,
+        "同行者": 14.443,
+        "港湾型": 0,
+        "摆渡人": 21.1424
+      },
+      "摆渡人": {
+        "灯塔型": 20.2435,
+        "守门人": 27.1858,
+        "筑巢型": 23.4663,
+        "收藏家": 22.139,
+        "候鸟型": 23.0868,
+        "岛屿型": 34.5157,
+        "探险家": 27.655,
+        "流浪诗人": 21.2368,
+        "星火型": 22.0348,
+        "月光型": 14.8683,
+        "镜像型": 13.8876,
+        "观星者": 26.9951,
+        "同行者": 27.0875,
+        "港湾型": 21.1424,
+        "摆渡人": 0
+      }
+    },
+    "closestPairs": [
+      {
+        "a": "筑巢型",
+        "b": "港湾型",
+        "distance": 9.5184
+      },
+      {
+        "a": "候鸟型",
+        "b": "流浪诗人",
+        "distance": 10.9301
+      },
+      {
+        "a": "候鸟型",
+        "b": "探险家",
+        "distance": 11.2576
+      },
+      {
+        "a": "月光型",
+        "b": "港湾型",
+        "distance": 11.659
+      },
+      {
+        "a": "灯塔型",
+        "b": "筑巢型",
+        "distance": 12.3261
+      },
+      {
+        "a": "灯塔型",
+        "b": "月光型",
+        "distance": 12.7567
+      },
+      {
+        "a": "灯塔型",
+        "b": "港湾型",
+        "distance": 12.8478
+      },
+      {
+        "a": "月光型",
+        "b": "镜像型",
+        "distance": 13.274
+      },
+      {
+        "a": "筑巢型",
+        "b": "月光型",
+        "distance": 13.5794
+      },
+      {
+        "a": "守门人",
+        "b": "同行者",
+        "distance": 13.8804
+      }
+    ],
+    "farthestPairs": [
+      {
+        "a": "筑巢型",
+        "b": "探险家",
+        "distance": 40.766
+      },
+      {
+        "a": "筑巢型",
+        "b": "岛屿型",
+        "distance": 39.365
+      },
+      {
+        "a": "探险家",
+        "b": "港湾型",
+        "distance": 38.1112
+      },
+      {
+        "a": "灯塔型",
+        "b": "岛屿型",
+        "distance": 37.636
+      },
+      {
+        "a": "探险家",
+        "b": "同行者",
+        "distance": 37.3649
+      },
+      {
+        "a": "灯塔型",
+        "b": "探险家",
+        "distance": 37.0054
+      },
+      {
+        "a": "筑巢型",
+        "b": "候鸟型",
+        "distance": 36.4463
+      },
+      {
+        "a": "筑巢型",
+        "b": "流浪诗人",
+        "distance": 36.4079
+      },
+      {
+        "a": "岛屿型",
+        "b": "星火型",
+        "distance": 36.3694
+      },
+      {
+        "a": "流浪诗人",
+        "b": "同行者",
+        "distance": 35.8115
+      }
+    ],
+    "focusDistances": {
+      "migratoryBird": [
+        {
+          "a": "灯塔型",
+          "b": "候鸟型",
+          "distance": 34.2442
+        },
+        {
+          "a": "守门人",
+          "b": "候鸟型",
+          "distance": 27.6538
+        },
+        {
+          "a": "筑巢型",
+          "b": "候鸟型",
+          "distance": 36.4463
+        },
+        {
+          "a": "收藏家",
+          "b": "候鸟型",
+          "distance": 24.5452
+        },
+        {
+          "a": "候鸟型",
+          "b": "岛屿型",
+          "distance": 26.421
+        },
+        {
+          "a": "候鸟型",
+          "b": "探险家",
+          "distance": 11.2576
+        },
+        {
+          "a": "候鸟型",
+          "b": "流浪诗人",
+          "distance": 10.9301
+        },
+        {
+          "a": "候鸟型",
+          "b": "星火型",
+          "distance": 18.1842
+        },
+        {
+          "a": "候鸟型",
+          "b": "月光型",
+          "distance": 27.7669
+        },
+        {
+          "a": "候鸟型",
+          "b": "镜像型",
+          "distance": 27.5874
+        },
+        {
+          "a": "候鸟型",
+          "b": "观星者",
+          "distance": 29.0723
+        },
+        {
+          "a": "候鸟型",
+          "b": "同行者",
+          "distance": 33.755
+        },
+        {
+          "a": "候鸟型",
+          "b": "港湾型",
+          "distance": 33.3467
+        },
+        {
+          "a": "候鸟型",
+          "b": "摆渡人",
+          "distance": 23.0868
+        }
+      ],
+      "nestBuilder": [
+        {
+          "a": "灯塔型",
+          "b": "筑巢型",
+          "distance": 12.3261
+        },
+        {
+          "a": "守门人",
+          "b": "筑巢型",
+          "distance": 24.394
+        },
+        {
+          "a": "筑巢型",
+          "b": "收藏家",
+          "distance": 27.7489
+        },
+        {
+          "a": "筑巢型",
+          "b": "候鸟型",
+          "distance": 36.4463
+        },
+        {
+          "a": "筑巢型",
+          "b": "岛屿型",
+          "distance": 39.365
+        },
+        {
+          "a": "筑巢型",
+          "b": "探险家",
+          "distance": 40.766
+        },
+        {
+          "a": "筑巢型",
+          "b": "流浪诗人",
+          "distance": 36.4079
+        },
+        {
+          "a": "筑巢型",
+          "b": "星火型",
+          "distance": 33.5052
+        },
+        {
+          "a": "筑巢型",
+          "b": "月光型",
+          "distance": 13.5794
+        },
+        {
+          "a": "筑巢型",
+          "b": "镜像型",
+          "distance": 20.6801
+        },
+        {
+          "a": "筑巢型",
+          "b": "观星者",
+          "distance": 22.5728
+        },
+        {
+          "a": "筑巢型",
+          "b": "同行者",
+          "distance": 16.0499
+        },
+        {
+          "a": "筑巢型",
+          "b": "港湾型",
+          "distance": 9.5184
+        },
+        {
+          "a": "筑巢型",
+          "b": "摆渡人",
+          "distance": 23.4663
+        }
+      ],
+      "triples": {
+        "守门人 / 岛屿型 / 候鸟型": [
+          {
+            "a": "守门人",
+            "b": "岛屿型",
+            "distance": 18.935
+          },
+          {
+            "a": "守门人",
+            "b": "候鸟型",
+            "distance": 27.6538
+          },
+          {
+            "a": "岛屿型",
+            "b": "候鸟型",
+            "distance": 26.421
+          }
+        ],
+        "筑巢型 / 同行者 / 港湾型": [
+          {
+            "a": "筑巢型",
+            "b": "同行者",
+            "distance": 16.0499
+          },
+          {
+            "a": "筑巢型",
+            "b": "港湾型",
+            "distance": 9.5184
+          },
+          {
+            "a": "同行者",
+            "b": "港湾型",
+            "distance": 14.443
+          }
+        ],
+        "镜像型 / 港湾型 / 摆渡人": [
+          {
+            "a": "镜像型",
+            "b": "港湾型",
+            "distance": 19.0018
+          },
+          {
+            "a": "镜像型",
+            "b": "摆渡人",
+            "distance": 13.8876
+          },
+          {
+            "a": "港湾型",
+            "b": "摆渡人",
+            "distance": 21.1424
+          }
+        ]
+      }
+    }
+  },
+  "random": {
+    "breakdown": {
+      "allRandom": {
+        "sampleCount": 16000,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 464,
+            "rate": 0.029
+          },
+          "守门人": {
+            "count": 1863,
+            "rate": 0.1164
+          },
+          "筑巢型": {
+            "count": 41,
+            "rate": 0.0026
+          },
+          "收藏家": {
+            "count": 1724,
+            "rate": 0.1077
+          },
+          "候鸟型": {
+            "count": 2427,
+            "rate": 0.1517
+          },
+          "岛屿型": {
+            "count": 2555,
+            "rate": 0.1597
+          },
+          "探险家": {
+            "count": 595,
+            "rate": 0.0372
+          },
+          "流浪诗人": {
+            "count": 624,
+            "rate": 0.039
+          },
+          "星火型": {
+            "count": 709,
+            "rate": 0.0443
+          },
+          "月光型": {
+            "count": 1926,
+            "rate": 0.1204
+          },
+          "镜像型": {
+            "count": 1220,
+            "rate": 0.0762
+          },
+          "观星者": {
+            "count": 465,
+            "rate": 0.0291
+          },
+          "同行者": {
+            "count": 201,
+            "rate": 0.0126
+          },
+          "港湾型": {
+            "count": 95,
+            "rate": 0.0059
+          },
+          "摆渡人": {
+            "count": 1091,
+            "rate": 0.0682
+          }
+        },
+        "gapStats": {
+          "mean": 1.8071,
+          "p10": 0.2055,
+          "p25": 0.541,
+          "median": 1.276,
+          "p75": 2.4462,
+          "p90": 4.145
+        },
+        "lowConfidenceCount": 14126,
+        "lowConfidenceRate": 0.8829,
+        "migratoryBirdRate": 0.1517,
+        "nestBuilderRate": 0.0026
+      },
+      "highConfidenceRandom": {
+        "sampleCount": 1874,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 2,
+            "rate": 0.0011
+          },
+          "守门人": {
+            "count": 90,
+            "rate": 0.048
+          },
+          "筑巢型": {
+            "count": 0,
+            "rate": 0
+          },
+          "收藏家": {
+            "count": 193,
+            "rate": 0.103
+          },
+          "候鸟型": {
+            "count": 43,
+            "rate": 0.0229
+          },
+          "岛屿型": {
+            "count": 1359,
+            "rate": 0.7252
+          },
+          "探险家": {
+            "count": 8,
+            "rate": 0.0043
+          },
+          "流浪诗人": {
+            "count": 10,
+            "rate": 0.0053
+          },
+          "星火型": {
+            "count": 26,
+            "rate": 0.0139
+          },
+          "月光型": {
+            "count": 34,
+            "rate": 0.0181
+          },
+          "镜像型": {
+            "count": 50,
+            "rate": 0.0267
+          },
+          "观星者": {
+            "count": 8,
+            "rate": 0.0043
+          },
+          "同行者": {
+            "count": 0,
+            "rate": 0
+          },
+          "港湾型": {
+            "count": 1,
+            "rate": 0.0005
+          },
+          "摆渡人": {
+            "count": 50,
+            "rate": 0.0267
+          }
+        },
+        "gapStats": {
+          "mean": 5.5357,
+          "p10": 3.4408,
+          "p25": 4.2896,
+          "median": 5.2619,
+          "p75": 6.6249,
+          "p90": 7.9134
+        },
+        "lowConfidenceCount": 0,
+        "lowConfidenceRate": 0,
+        "migratoryBirdRate": 0.0229,
+        "nestBuilderRate": 0
+      },
+      "lowConfidenceRandom": {
+        "sampleCount": 14126,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 462,
+            "rate": 0.0327
+          },
+          "守门人": {
+            "count": 1773,
+            "rate": 0.1255
+          },
+          "筑巢型": {
+            "count": 41,
+            "rate": 0.0029
+          },
+          "收藏家": {
+            "count": 1531,
+            "rate": 0.1084
+          },
+          "候鸟型": {
+            "count": 2384,
+            "rate": 0.1688
+          },
+          "岛屿型": {
+            "count": 1196,
+            "rate": 0.0847
+          },
+          "探险家": {
+            "count": 587,
+            "rate": 0.0416
+          },
+          "流浪诗人": {
+            "count": 614,
+            "rate": 0.0435
+          },
+          "星火型": {
+            "count": 683,
+            "rate": 0.0484
+          },
+          "月光型": {
+            "count": 1892,
+            "rate": 0.1339
+          },
+          "镜像型": {
+            "count": 1170,
+            "rate": 0.0828
+          },
+          "观星者": {
+            "count": 457,
+            "rate": 0.0324
+          },
+          "同行者": {
+            "count": 201,
+            "rate": 0.0142
+          },
+          "港湾型": {
+            "count": 94,
+            "rate": 0.0067
+          },
+          "摆渡人": {
+            "count": 1041,
+            "rate": 0.0737
+          }
+        },
+        "gapStats": {
+          "mean": 1.3125,
+          "p10": 0.1797,
+          "p25": 0.476,
+          "median": 1.0725,
+          "p75": 1.9512,
+          "p90": 2.81
+        },
+        "lowConfidenceCount": 14126,
+        "lowConfidenceRate": 1,
+        "migratoryBirdRate": 0.1688,
+        "nestBuilderRate": 0.0029
+      },
+      "uniform": {
+        "sampleCount": 10000,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 332,
+            "rate": 0.0332
+          },
+          "守门人": {
+            "count": 1501,
+            "rate": 0.1501
+          },
+          "筑巢型": {
+            "count": 21,
+            "rate": 0.0021
+          },
+          "收藏家": {
+            "count": 1376,
+            "rate": 0.1376
+          },
+          "候鸟型": {
+            "count": 1902,
+            "rate": 0.1902
+          },
+          "岛屿型": {
+            "count": 601,
+            "rate": 0.0601
+          },
+          "探险家": {
+            "count": 500,
+            "rate": 0.05
+          },
+          "流浪诗人": {
+            "count": 525,
+            "rate": 0.0525
+          },
+          "星火型": {
+            "count": 605,
+            "rate": 0.0605
+          },
+          "月光型": {
+            "count": 441,
+            "rate": 0.0441
+          },
+          "镜像型": {
+            "count": 985,
+            "rate": 0.0985
+          },
+          "观星者": {
+            "count": 377,
+            "rate": 0.0377
+          },
+          "同行者": {
+            "count": 176,
+            "rate": 0.0176
+          },
+          "港湾型": {
+            "count": 52,
+            "rate": 0.0052
+          },
+          "摆渡人": {
+            "count": 606,
+            "rate": 0.0606
+          }
+        },
+        "gapStats": {
+          "mean": 1.4051,
+          "p10": 0.1793,
+          "p25": 0.4749,
+          "median": 1.072,
+          "p75": 2.0035,
+          "p90": 3.0782
+        },
+        "lowConfidenceCount": 9518,
+        "lowConfidenceRate": 0.9518,
+        "migratoryBirdRate": 0.1902,
+        "nestBuilderRate": 0.0021
+      },
+      "high": {
+        "sampleCount": 2000,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 101,
+            "rate": 0.0505
+          },
+          "守门人": {
+            "count": 5,
+            "rate": 0.0025
+          },
+          "筑巢型": {
+            "count": 20,
+            "rate": 0.01
+          },
+          "收藏家": {
+            "count": 1,
+            "rate": 0.0005
+          },
+          "候鸟型": {
+            "count": 21,
+            "rate": 0.0105
+          },
+          "岛屿型": {
+            "count": 0,
+            "rate": 0
+          },
+          "探险家": {
+            "count": 0,
+            "rate": 0
+          },
+          "流浪诗人": {
+            "count": 16,
+            "rate": 0.008
+          },
+          "星火型": {
+            "count": 4,
+            "rate": 0.002
+          },
+          "月光型": {
+            "count": 1379,
+            "rate": 0.6895
+          },
+          "镜像型": {
+            "count": 0,
+            "rate": 0
+          },
+          "观星者": {
+            "count": 40,
+            "rate": 0.02
+          },
+          "同行者": {
+            "count": 7,
+            "rate": 0.0035
+          },
+          "港湾型": {
+            "count": 42,
+            "rate": 0.021
+          },
+          "摆渡人": {
+            "count": 364,
+            "rate": 0.182
+          }
+        },
+        "gapStats": {
+          "mean": 1.5426,
+          "p10": 0.2198,
+          "p25": 0.5717,
+          "median": 1.3106,
+          "p75": 2.3002,
+          "p90": 3.2107
+        },
+        "lowConfidenceCount": 1932,
+        "lowConfidenceRate": 0.966,
+        "migratoryBirdRate": 0.0105,
+        "nestBuilderRate": 0.01
+      },
+      "low": {
+        "sampleCount": 2000,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 0,
+            "rate": 0
+          },
+          "守门人": {
+            "count": 0,
+            "rate": 0
+          },
+          "筑巢型": {
+            "count": 0,
+            "rate": 0
+          },
+          "收藏家": {
+            "count": 36,
+            "rate": 0.018
+          },
+          "候鸟型": {
+            "count": 6,
+            "rate": 0.003
+          },
+          "岛屿型": {
+            "count": 1884,
+            "rate": 0.942
+          },
+          "探险家": {
+            "count": 55,
+            "rate": 0.0275
+          },
+          "流浪诗人": {
+            "count": 3,
+            "rate": 0.0015
+          },
+          "星火型": {
+            "count": 10,
+            "rate": 0.005
+          },
+          "月光型": {
+            "count": 0,
+            "rate": 0
+          },
+          "镜像型": {
+            "count": 6,
+            "rate": 0.003
+          },
+          "观星者": {
+            "count": 0,
+            "rate": 0
+          },
+          "同行者": {
+            "count": 0,
+            "rate": 0
+          },
+          "港湾型": {
+            "count": 0,
+            "rate": 0
+          },
+          "摆渡人": {
+            "count": 0,
+            "rate": 0
+          }
+        },
+        "gapStats": {
+          "mean": 4.6312,
+          "p10": 1.3678,
+          "p25": 2.6982,
+          "median": 4.6026,
+          "p75": 6.3698,
+          "p90": 7.8073
+        },
+        "lowConfidenceCount": 727,
+        "lowConfidenceRate": 0.3635,
+        "migratoryBirdRate": 0.003,
+        "nestBuilderRate": 0
+      },
+      "middle": {
+        "sampleCount": 2000,
+        "top1Distribution": {
+          "灯塔型": {
+            "count": 31,
+            "rate": 0.0155
+          },
+          "守门人": {
+            "count": 357,
+            "rate": 0.1785
+          },
+          "筑巢型": {
+            "count": 0,
+            "rate": 0
+          },
+          "收藏家": {
+            "count": 311,
+            "rate": 0.1555
+          },
+          "候鸟型": {
+            "count": 498,
+            "rate": 0.249
+          },
+          "岛屿型": {
+            "count": 70,
+            "rate": 0.035
+          },
+          "探险家": {
+            "count": 40,
+            "rate": 0.02
+          },
+          "流浪诗人": {
+            "count": 80,
+            "rate": 0.04
+          },
+          "星火型": {
+            "count": 90,
+            "rate": 0.045
+          },
+          "月光型": {
+            "count": 106,
+            "rate": 0.053
+          },
+          "镜像型": {
+            "count": 229,
+            "rate": 0.1145
+          },
+          "观星者": {
+            "count": 48,
+            "rate": 0.024
+          },
+          "同行者": {
+            "count": 18,
+            "rate": 0.009
+          },
+          "港湾型": {
+            "count": 1,
+            "rate": 0.0005
+          },
+          "摆渡人": {
+            "count": 121,
+            "rate": 0.0605
+          }
+        },
+        "gapStats": {
+          "mean": 1.2574,
+          "p10": 0.1535,
+          "p25": 0.4369,
+          "median": 0.9789,
+          "p75": 1.8261,
+          "p90": 2.749
+        },
+        "lowConfidenceCount": 1949,
+        "lowConfidenceRate": 0.9745,
+        "migratoryBirdRate": 0.249,
+        "nestBuilderRate": 0
+      }
+    },
+    "migratoryBirdTop1": {
+      "total": 2427,
+      "lowConfidenceCount": 2384,
+      "lowConfidenceRate": 0.9823,
+      "byRandomMode": {
+        "uniform": 1902,
+        "middle": 498,
+        "high": 21,
+        "low": 6
+      }
+    }
+  },
+  "nestBuilder": {
+    "vector": {
+      "displayName": "筑巢型",
+      "targetVector": {
+        "SC": 70,
+        "AU": 28,
+        "TR": 78,
+        "CL": 90,
+        "PA": 58,
+        "CM": 94,
+        "SI": 50,
+        "NV": 22,
+        "RM": 78,
+        "CS": 68,
+        "EC": 62,
+        "CR": 76,
+        "ER": 64,
+        "RI": 88,
+        "MN": 56
+      },
+      "highCount": 8,
+      "midCount": 5,
+      "lowCount": 2,
+      "neutralDistance": 25.3719,
+      "norm": 265.2471,
+      "nearestPersona": "港湾型",
+      "nearestDistance": 9.5184,
+      "secondNearestPersona": "灯塔型",
+      "secondNearestDistance": 12.3261,
+      "averageDistance": 25.4876,
+      "duplicateOrSurroundedRisk": "near-duplicate-risk"
+    },
+    "distanceToCompanion": 16.0499,
+    "distanceToHarbor": 9.5184,
+    "ideal": {
+      "top1": "筑巢型",
+      "top2": "月光型",
+      "gap": 4.3372,
+      "top5": [
+        {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 9.252,
+          "similarity": 90.748
+        },
+        {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 13.5892,
+          "similarity": 86.4108
+        },
+        {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 15.0133,
+          "similarity": 84.9867
+        },
+        {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "distance": 15.9437,
+          "similarity": 84.0563
+        },
+        {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.0571,
+          "similarity": 78.9429
+        }
+      ]
+    },
+    "perturbation": {
+      "3": {
+        "total": 20,
+        "top1Kept": 18,
+        "acceptable": 18,
+        "nonAdjacent": 2,
+        "lowConfidence": 11,
+        "top1Flows": {
+          "筑巢型": 18,
+          "月光型": 2
+        },
+        "averageGap": 3.1528
+      },
+      "5": {
+        "total": 20,
+        "top1Kept": 17,
+        "acceptable": 17,
+        "nonAdjacent": 3,
+        "lowConfidence": 17,
+        "top1Flows": {
+          "筑巢型": 17,
+          "月光型": 3
+        },
+        "averageGap": 1.9508
+      },
+      "8": {
+        "total": 20,
+        "top1Kept": 13,
+        "acceptable": 13,
+        "nonAdjacent": 7,
+        "lowConfidence": 19,
+        "top1Flows": {
+          "筑巢型": 13,
+          "月光型": 7
+        },
+        "averageGap": 1.9251
+      },
+      "12": {
+        "total": 20,
+        "top1Kept": 11,
+        "acceptable": 12,
+        "nonAdjacent": 8,
+        "lowConfidence": 18,
+        "top1Flows": {
+          "筑巢型": 11,
+          "月光型": 7,
+          "灯塔型": 1,
+          "港湾型": 1
+        },
+        "averageGap": 1.3847
+      }
+    },
+    "misclassifiedFlows": {
+      "月光型": 19,
+      "灯塔型": 1,
+      "港湾型": 1
+    },
+    "otherMisclassifiedToNestBuilder": 1,
+    "diagnosis": "自身理想路径能命中，但随机判定区域明显较窄；更像 targetVector 几何区域窄，而不是题库文字不可用。"
+  },
+  "migratoryBird": {
+    "neutralDistance": 17.5973,
+    "distanceToExplorer": 11.2576,
+    "distanceToIslander": 26.421,
+    "distanceToGatekeeper": 27.6538,
+    "averageVectorAllTop1": {
+      "SC": 51.88,
+      "AU": 59.59,
+      "TR": 48.12,
+      "CL": 54.45,
+      "PA": 51.87,
+      "CM": 43.44,
+      "SI": 48.31,
+      "NV": 62.7,
+      "RM": 48.48,
+      "CS": 47.43,
+      "EC": 49.21,
+      "CR": 44.43,
+      "ER": 48.44,
+      "RI": 44.89,
+      "MN": 51.33
+    },
+    "averageVectorHighConfidenceTop1": {
+      "SC": 62.03,
+      "AU": 75.65,
+      "TR": 52.53,
+      "CL": 66.69,
+      "PA": 49.21,
+      "CM": 38.16,
+      "SI": 48.48,
+      "NV": 70.81,
+      "RM": 50.01,
+      "CS": 42.79,
+      "EC": 47.83,
+      "CR": 39.3,
+      "ER": 59.35,
+      "RI": 38.73,
+      "MN": 55.44
+    },
+    "averageVectorLowConfidenceTop1": {
+      "SC": 51.7,
+      "AU": 59.3,
+      "TR": 48.04,
+      "CL": 54.23,
+      "PA": 51.91,
+      "CM": 43.53,
+      "SI": 48.31,
+      "NV": 62.55,
+      "RM": 48.45,
+      "CS": 47.52,
+      "EC": 49.24,
+      "CR": 44.53,
+      "ER": 48.24,
+      "RI": 45,
+      "MN": 51.26
+    },
+    "top1ByRandomMode": {
+      "uniform": 1902,
+      "middle": 498,
+      "high": 21,
+      "low": 6
+    },
+    "lowConfidenceShare": 0.9823,
+    "diagnosis": "候鸟型随机占比较高主要需要通过低置信拆解判断；若高置信样本仍偏高，优先校准 targetVector，而不是改题目。"
+  },
+  "mix": [
+    {
+      "fixtureId": "mix-lighthouse-moonlight-25-75",
+      "pair": [
+        "灯塔型",
+        "月光型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "灯塔型",
+        "月光型"
+      ],
+      "actualTop1": "月光型",
+      "actualTop2": "灯塔型",
+      "gap": 5.1077,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-lighthouse-moonlight-50-50",
+      "pair": [
+        "灯塔型",
+        "月光型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "灯塔型",
+        "月光型"
+      ],
+      "actualTop1": "月光型",
+      "actualTop2": "灯塔型",
+      "gap": 1.248,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-lighthouse-moonlight-75-25",
+      "pair": [
+        "灯塔型",
+        "月光型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "灯塔型",
+        "月光型"
+      ],
+      "actualTop1": "灯塔型",
+      "actualTop2": "月光型",
+      "gap": 3.2229,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-lighthouse-ferryman-25-75",
+      "pair": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "actualTop1": "摆渡人",
+      "actualTop2": "月光型",
+      "gap": 0.026,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-lighthouse-ferryman-50-50",
+      "pair": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "actualTop1": "月光型",
+      "actualTop2": "灯塔型",
+      "gap": 0.3461,
+      "lowConfidence": true,
+      "pass": false,
+      "nonAdjacent": true,
+      "failureReason": "50/50 混合落到第三人格，风险低于占优路径失败，但说明边界区域会被相邻温柔/稳定人格吸走。"
+    },
+    {
+      "fixtureId": "mix-lighthouse-ferryman-75-25",
+      "pair": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "灯塔型",
+        "摆渡人"
+      ],
+      "actualTop1": "灯塔型",
+      "actualTop2": "月光型",
+      "gap": 3.2229,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-gatekeeper-islander-25-75",
+      "pair": [
+        "守门人",
+        "岛屿型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "守门人",
+        "岛屿型"
+      ],
+      "actualTop1": "岛屿型",
+      "actualTop2": "守门人",
+      "gap": 3.6232,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-gatekeeper-islander-50-50",
+      "pair": [
+        "守门人",
+        "岛屿型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "守门人",
+        "岛屿型"
+      ],
+      "actualTop1": "守门人",
+      "actualTop2": "岛屿型",
+      "gap": 3.8178,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-gatekeeper-islander-75-25",
+      "pair": [
+        "守门人",
+        "岛屿型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "守门人",
+        "岛屿型"
+      ],
+      "actualTop1": "守门人",
+      "actualTop2": "岛屿型",
+      "gap": 3.8178,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-islander-migratory-bird-25-75",
+      "pair": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "actualTop1": "候鸟型",
+      "actualTop2": "探险家",
+      "gap": 1.3916,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-islander-migratory-bird-50-50",
+      "pair": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "actualTop1": "岛屿型",
+      "actualTop2": "候鸟型",
+      "gap": 5.3434,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-islander-migratory-bird-75-25",
+      "pair": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "岛屿型",
+        "候鸟型"
+      ],
+      "actualTop1": "岛屿型",
+      "actualTop2": "守门人",
+      "gap": 11.427,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-companion-25-75",
+      "pair": [
+        "筑巢型",
+        "同行者"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "筑巢型",
+        "同行者"
+      ],
+      "actualTop1": "同行者",
+      "actualTop2": "守门人",
+      "gap": 7.7165,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-companion-50-50",
+      "pair": [
+        "筑巢型",
+        "同行者"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "筑巢型",
+        "同行者"
+      ],
+      "actualTop1": "同行者",
+      "actualTop2": "筑巢型",
+      "gap": 3.6784,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-companion-75-25",
+      "pair": [
+        "筑巢型",
+        "同行者"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "筑巢型",
+        "同行者"
+      ],
+      "actualTop1": "筑巢型",
+      "actualTop2": "灯塔型",
+      "gap": 3.2707,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-harbor-25-75",
+      "pair": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "actualTop1": "港湾型",
+      "actualTop2": "筑巢型",
+      "gap": 2.3624,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-harbor-50-50",
+      "pair": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "actualTop1": "筑巢型",
+      "actualTop2": "港湾型",
+      "gap": 2.9081,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-nest-builder-harbor-75-25",
+      "pair": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "筑巢型",
+        "港湾型"
+      ],
+      "actualTop1": "筑巢型",
+      "actualTop2": "月光型",
+      "gap": 4.3372,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-migratory-bird-25-75",
+      "pair": [
+        "探险家",
+        "候鸟型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "探险家",
+        "候鸟型"
+      ],
+      "actualTop1": "候鸟型",
+      "actualTop2": "探险家",
+      "gap": 2.2044,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-migratory-bird-50-50",
+      "pair": [
+        "探险家",
+        "候鸟型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "探险家",
+        "候鸟型"
+      ],
+      "actualTop1": "探险家",
+      "actualTop2": "候鸟型",
+      "gap": 3.0972,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-migratory-bird-75-25",
+      "pair": [
+        "探险家",
+        "候鸟型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "探险家",
+        "候鸟型"
+      ],
+      "actualTop1": "探险家",
+      "actualTop2": "候鸟型",
+      "gap": 3.0972,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-spark-25-75",
+      "pair": [
+        "探险家",
+        "星火型"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "探险家",
+        "星火型"
+      ],
+      "actualTop1": "星火型",
+      "actualTop2": "探险家",
+      "gap": 8.3913,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-spark-50-50",
+      "pair": [
+        "探险家",
+        "星火型"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "探险家",
+        "星火型"
+      ],
+      "actualTop1": "探险家",
+      "actualTop2": "星火型",
+      "gap": 4.6112,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-explorer-spark-75-25",
+      "pair": [
+        "探险家",
+        "星火型"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "探险家",
+        "星火型"
+      ],
+      "actualTop1": "探险家",
+      "actualTop2": "候鸟型",
+      "gap": 3.0972,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-wandering-poet-25-75",
+      "pair": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "actualTop1": "流浪诗人",
+      "actualTop2": "候鸟型",
+      "gap": 3.9142,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-wandering-poet-50-50",
+      "pair": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "actualTop1": "收藏家",
+      "actualTop2": "流浪诗人",
+      "gap": 7.1912,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-wandering-poet-75-25",
+      "pair": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "收藏家",
+        "流浪诗人"
+      ],
+      "actualTop1": "收藏家",
+      "actualTop2": "流浪诗人",
+      "gap": 9.289,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-stargazer-25-75",
+      "pair": [
+        "收藏家",
+        "观星者"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "收藏家",
+        "观星者"
+      ],
+      "actualTop1": "观星者",
+      "actualTop2": "收藏家",
+      "gap": 3.516,
+      "lowConfidence": false,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-stargazer-50-50",
+      "pair": [
+        "收藏家",
+        "观星者"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "收藏家",
+        "观星者"
+      ],
+      "actualTop1": "观星者",
+      "actualTop2": "收藏家",
+      "gap": 0.2739,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-collector-stargazer-75-25",
+      "pair": [
+        "收藏家",
+        "观星者"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "收藏家",
+        "观星者"
+      ],
+      "actualTop1": "收藏家",
+      "actualTop2": "观星者",
+      "gap": 2.4377,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-mirror-ferryman-25-75",
+      "pair": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "actualTop1": "镜像型",
+      "actualTop2": "摆渡人",
+      "gap": 2.0236,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-mirror-ferryman-50-50",
+      "pair": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "actualTop1": "镜像型",
+      "actualTop2": "摆渡人",
+      "gap": 2.0236,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-mirror-ferryman-75-25",
+      "pair": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "镜像型",
+        "摆渡人"
+      ],
+      "actualTop1": "镜像型",
+      "actualTop2": "摆渡人",
+      "gap": 2.0236,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-harbor-ferryman-25-75",
+      "pair": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "ratio": "25/75",
+      "acceptableTopResults": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "actualTop1": "摆渡人",
+      "actualTop2": "月光型",
+      "gap": 2.0568,
+      "lowConfidence": true,
+      "pass": true,
+      "nonAdjacent": false,
+      "failureReason": ""
+    },
+    {
+      "fixtureId": "mix-harbor-ferryman-50-50",
+      "pair": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "ratio": "50/50",
+      "acceptableTopResults": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "actualTop1": "月光型",
+      "actualTop2": "灯塔型",
+      "gap": 5.1077,
+      "lowConfidence": true,
+      "pass": false,
+      "nonAdjacent": true,
+      "failureReason": "50/50 混合落到第三人格，风险低于占优路径失败，但说明边界区域会被相邻温柔/稳定人格吸走。"
+    },
+    {
+      "fixtureId": "mix-harbor-ferryman-75-25",
+      "pair": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "ratio": "75/25",
+      "acceptableTopResults": [
+        "港湾型",
+        "摆渡人"
+      ],
+      "actualTop1": "月光型",
+      "actualTop2": "港湾型",
+      "gap": 3.0841,
+      "lowConfidence": true,
+      "pass": false,
+      "nonAdjacent": true,
+      "failureReason": "占优人格路径未落入 acceptableTopResults，说明该混合边界下 targetVector 判定区域需要复查。"
+    }
+  ],
+  "perturbation": {
+    "byMutationCount": {
+      "3": {
+        "total": 300,
+        "top1KeptRate": 0.9667,
+        "adjacentMigrationRate": 0.0267,
+        "lowConfidenceRate": 0.3167,
+        "nonAdjacentRate": 0.0067,
+        "byPersona": {
+          "灯塔型": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "守门人": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "筑巢型": {
+            "total": 20,
+            "top1KeptRate": 0.9,
+            "acceptableRate": 0.9,
+            "nonAdjacentRate": 0.1
+          },
+          "收藏家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "候鸟型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "岛屿型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "探险家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "流浪诗人": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "星火型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "月光型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "镜像型": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "观星者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "同行者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "港湾型": {
+            "total": 20,
+            "top1KeptRate": 0.9,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "摆渡人": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          }
+        }
+      },
+      "5": {
+        "total": 300,
+        "top1KeptRate": 0.9333,
+        "adjacentMigrationRate": 0.0533,
+        "lowConfidenceRate": 0.3733,
+        "nonAdjacentRate": 0.0133,
+        "byPersona": {
+          "灯塔型": {
+            "total": 20,
+            "top1KeptRate": 0.8,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "守门人": {
+            "total": 20,
+            "top1KeptRate": 0.95,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "筑巢型": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 0.85,
+            "nonAdjacentRate": 0.15
+          },
+          "收藏家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "候鸟型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "岛屿型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "探险家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "流浪诗人": {
+            "total": 20,
+            "top1KeptRate": 0.95,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "星火型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "月光型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "镜像型": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "观星者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "同行者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "港湾型": {
+            "total": 20,
+            "top1KeptRate": 0.7,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "摆渡人": {
+            "total": 20,
+            "top1KeptRate": 0.9,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          }
+        }
+      },
+      "8": {
+        "total": 300,
+        "top1KeptRate": 0.8733,
+        "adjacentMigrationRate": 0.08,
+        "lowConfidenceRate": 0.4767,
+        "nonAdjacentRate": 0.0467,
+        "byPersona": {
+          "灯塔型": {
+            "total": 20,
+            "top1KeptRate": 0.65,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "守门人": {
+            "total": 20,
+            "top1KeptRate": 0.95,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "筑巢型": {
+            "total": 20,
+            "top1KeptRate": 0.65,
+            "acceptableRate": 0.65,
+            "nonAdjacentRate": 0.35
+          },
+          "收藏家": {
+            "total": 20,
+            "top1KeptRate": 0.95,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "候鸟型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "岛屿型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "探险家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "流浪诗人": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 0.85,
+            "nonAdjacentRate": 0.15
+          },
+          "星火型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "月光型": {
+            "total": 20,
+            "top1KeptRate": 0.8,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "镜像型": {
+            "total": 20,
+            "top1KeptRate": 0.85,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "观星者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "同行者": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "港湾型": {
+            "total": 20,
+            "top1KeptRate": 0.6,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "摆渡人": {
+            "total": 20,
+            "top1KeptRate": 0.8,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          }
+        }
+      },
+      "12": {
+        "total": 300,
+        "top1KeptRate": 0.7933,
+        "adjacentMigrationRate": 0.15,
+        "lowConfidenceRate": 0.5633,
+        "nonAdjacentRate": 0.0567,
+        "byPersona": {
+          "灯塔型": {
+            "total": 20,
+            "top1KeptRate": 0.55,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "守门人": {
+            "total": 20,
+            "top1KeptRate": 0.8,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "筑巢型": {
+            "total": 20,
+            "top1KeptRate": 0.55,
+            "acceptableRate": 0.6,
+            "nonAdjacentRate": 0.4
+          },
+          "收藏家": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "候鸟型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "岛屿型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "探险家": {
+            "total": 20,
+            "top1KeptRate": 0.75,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "流浪诗人": {
+            "total": 20,
+            "top1KeptRate": 0.7,
+            "acceptableRate": 0.7,
+            "nonAdjacentRate": 0.3
+          },
+          "星火型": {
+            "total": 20,
+            "top1KeptRate": 1,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "月光型": {
+            "total": 20,
+            "top1KeptRate": 0.75,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "镜像型": {
+            "total": 20,
+            "top1KeptRate": 0.55,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "观星者": {
+            "total": 20,
+            "top1KeptRate": 0.9,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "同行者": {
+            "total": 20,
+            "top1KeptRate": 0.9,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          },
+          "港湾型": {
+            "total": 20,
+            "top1KeptRate": 0.7,
+            "acceptableRate": 0.95,
+            "nonAdjacentRate": 0.05
+          },
+          "摆渡人": {
+            "total": 20,
+            "top1KeptRate": 0.75,
+            "acceptableRate": 1,
+            "nonAdjacentRate": 0
+          }
+        }
+      }
+    },
+    "firstInstability": {
+      "灯塔型": 3,
+      "守门人": 12,
+      "筑巢型": 3,
+      "收藏家": 8,
+      "候鸟型": null,
+      "岛屿型": null,
+      "探险家": 12,
+      "流浪诗人": 5,
+      "星火型": null,
+      "月光型": 8,
+      "镜像型": 3,
+      "观星者": 12,
+      "同行者": 12,
+      "港湾型": 3,
+      "摆渡人": 5
+    },
+    "mostStable": [
+      {
+        "displayName": "摆渡人",
+        "score": 1,
+        "firstInstability": 5
+      },
+      {
+        "displayName": "岛屿型",
+        "score": 1,
+        "firstInstability": null
+      },
+      {
+        "displayName": "观星者",
+        "score": 1,
+        "firstInstability": 12
+      },
+      {
+        "displayName": "候鸟型",
+        "score": 1,
+        "firstInstability": null
+      },
+      {
+        "displayName": "镜像型",
+        "score": 1,
+        "firstInstability": 3
+      }
+    ],
+    "leastStable": [
+      {
+        "displayName": "筑巢型",
+        "score": 0.75,
+        "firstInstability": 3
+      },
+      {
+        "displayName": "流浪诗人",
+        "score": 0.875,
+        "firstInstability": 5
+      },
+      {
+        "displayName": "月光型",
+        "score": 0.975,
+        "firstInstability": 8
+      },
+      {
+        "displayName": "港湾型",
+        "score": 0.975,
+        "firstInstability": 3
+      },
+      {
+        "displayName": "守门人",
+        "score": 0.9875,
+        "firstInstability": 12
+      }
+    ]
+  },
+  "lowConfidence": {
+    "rule": "Top1-Top2 gap < 2.5，或 Top3 spread < 5，或所有构念 40-60，或 fixture 明确标记低置信/50-50 混合。",
+    "byRobustnessType": {
+      "dual-persona-mix": {
+        "total": 36,
+        "lowConfidence": 22,
+        "lowConfidenceRate": 0.6111
+      },
+      "construct-contradiction": {
+        "total": 10,
+        "lowConfidence": 10,
+        "lowConfidenceRate": 1
+      },
+      "middle-answer-pattern": {
+        "total": 5,
+        "lowConfidence": 5,
+        "lowConfidenceRate": 1
+      },
+      "extreme-answer-pattern": {
+        "total": 5,
+        "lowConfidence": 5,
+        "lowConfidenceRate": 1
+      },
+      "monte-carlo-random": {
+        "total": 16000,
+        "lowConfidence": 14126,
+        "lowConfidenceRate": 0.8829
+      },
+      "multi-question-perturbation": {
+        "total": 1200,
+        "lowConfidence": 519,
+        "lowConfidenceRate": 0.4325
+      }
+    },
+    "baseIdealLowConfidenceRate": 0.0667,
+    "basePerturbLowConfidenceRate": 0.1778,
+    "judgment": "85.11% 主要由随机与中间/混合输入造成；阈值在合成随机测试里偏严格，但适合作为产品低置信拦截的起点。"
+  },
+  "attribution": [
+    {
+      "type": "A. 题库文字问题",
+      "applies": false,
+      "evidence": "理想路径 15/15 命中，构念矛盾异常率 0/10；当前风险主要出现在随机和混合边界。",
+      "risk": "低",
+      "nextStep": "暂不修改题库文字。"
+    },
+    {
+      "type": "B. 选项分值问题",
+      "applies": false,
+      "evidence": "多题扰动非相邻误判率仅 0.22%，未显示单题分值大规模失控。",
+      "risk": "低",
+      "nextStep": "暂不调整分值；保留后续真实样本复查。"
+    },
+    {
+      "type": "C. targetVector 几何问题",
+      "applies": true,
+      "evidence": "候鸟型随机均匀 Top1 19.02%，筑巢型 0.21%；筑巢型自身命中但随机区域窄。",
+      "risk": "中高",
+      "nextStep": "进入候选 targetVector 校准。"
+    },
+    {
+      "type": "D. 距离/相似度算法问题",
+      "applies": true,
+      "evidence": "纯欧氏距离对随机中间区域会硬分配 Top1，导致低置信样本仍被给出确定人格。",
+      "risk": "中",
+      "nextStep": "考虑增加低置信出口，不先加隐藏人格 bonus。"
+    },
+    {
+      "type": "E. 低置信规则问题",
+      "applies": true,
+      "evidence": "低置信比例 85.11%，主要来自随机/中间/混合输入；产品侧需要明确呈现策略。",
+      "risk": "中",
+      "nextStep": "校准低置信阈值和展示策略。"
+    },
+    {
+      "type": "F. 合成测试分布本身的问题",
+      "applies": true,
+      "evidence": "A/B/C/D 等概率随机并不代表真实用户分布，不能按随机占比追求 15 类型均匀。",
+      "risk": "中",
+      "nextStep": "保留为压力测试，不作为真实分布目标。"
+    }
+  ],
+  "conclusions": {
+    "editQuestions": "不建议。当前证据不足以支持修改题库文字。",
+    "adjustMigratoryBird": "建议进入候选校准。重点看 AU/NV/CL 组合是否过度贴近随机中间区域。",
+    "adjustNestBuilder": "建议进入候选校准。筑巢型自身可命中，但随机判定区域偏窄。",
+    "adjustOtherVectors": "建议复查月光型、港湾型、摆渡人边界，尤其双人格混合失败处。",
+    "adjustDistanceAlgorithm": "建议评估低置信出口或相对 gap，不建议添加隐藏 bonus。",
+    "adjustLowConfidenceRule": "建议继续校准。当前对随机偏严格，但方向合理。",
+    "mixFailuresSeverity": "中等。50/50 失败不严重；港湾/摆渡人 75/25 仍跳月光型需要复查。",
+    "migratoryMainlyLowConfidence": "是，主要属于低置信结果。",
+    "nestBuilderLowRandomMeaning": "不是不可命中；是随机判定区域较窄，语义路径仍稳定。",
+    "freezeQuestionText": "可以暂时冻结题库文字，进入向量校准；不要因随机分布不均改题。",
+    "enterVectorCalibration": "可以，且建议作为下一轮目标。",
+    "enterProductionPrep": "不建议。应先完成候选 targetVector 校准和低置信策略。",
+    "modifyAppJs": "不可以。"
+  }
+}
