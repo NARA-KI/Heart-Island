@@ -1,0 +1,1991 @@
+{
+  "generatedAt": "2026-07-04T17:07:17.603Z",
+  "rules": {
+    "top3HighOverlapMinimum": 2,
+    "top3LowOverlapMinimum": 2,
+    "nearestNeighborDistanceMustNotCollapseBelow": 6,
+    "manualReviewRequired": true
+  },
+  "rows": [
+    {
+      "profile": "candidate-a",
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "同行者",
+      "newNearestNeighbor": "同行者",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "港湾型",
+      "newNearestNeighbor": "港湾型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "collector",
+      "displayName": "收藏家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 19.3201,
+      "newNearestDistance": 19.3201,
+      "originalTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "newTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "流浪诗人",
+      "newNearestNeighbor": "流浪诗人",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "islander",
+      "displayName": "岛屿型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 18.935,
+      "newNearestDistance": 18.935,
+      "originalTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "newTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "explorer",
+      "displayName": "探险家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 11.2576,
+      "newNearestDistance": 11.2576,
+      "originalTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "originalTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "spark",
+      "displayName": "星火型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "探险家",
+      "newNearestNeighbor": "探险家",
+      "originalNearestDistance": 16.0935,
+      "newNearestDistance": 16.0935,
+      "originalTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "newTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "moonlight",
+      "displayName": "月光型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "newTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "mirror",
+      "displayName": "镜像型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "月光型",
+      "newNearestNeighbor": "月光型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "stargazer",
+      "displayName": "观星者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.9976,
+      "newNearestDistance": 13.9976,
+      "originalTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "companion",
+      "displayName": "同行者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "harbor",
+      "displayName": "港湾型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-a",
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 14.4914,
+      "newNearestDistance": 14.4914,
+      "originalTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "originalTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "newTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 12.0673,
+      "originalTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "同行者",
+      "newNearestNeighbor": "观星者",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.2201,
+      "originalTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "totalShiftFromCandidateA": 2.0946,
+      "originalNearestNeighbor": "港湾型",
+      "newNearestNeighbor": "港湾型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 10.8716,
+      "originalTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "collector",
+      "displayName": "收藏家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 19.3201,
+      "newNearestDistance": 19.3201,
+      "originalTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "newTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "totalShiftFromCandidateA": 2.4723,
+      "originalNearestNeighbor": "流浪诗人",
+      "newNearestNeighbor": "探险家",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.1659,
+      "originalTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "NV",
+        "SI"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "topHighOverlap": 2,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "islander",
+      "displayName": "岛屿型",
+      "totalShiftFromCandidateA": 1.8269,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 18.935,
+      "newNearestDistance": 18.1568,
+      "originalTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "newTopLowConstructs": [
+        "PA",
+        "CS",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 2,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "explorer",
+      "displayName": "探险家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 11.2576,
+      "newNearestDistance": 10.1659,
+      "originalTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 12.0407,
+      "originalTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "originalTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "spark",
+      "displayName": "星火型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "探险家",
+      "newNearestNeighbor": "探险家",
+      "originalNearestDistance": 16.0935,
+      "newNearestDistance": 16.0935,
+      "originalTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "newTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "moonlight",
+      "displayName": "月光型",
+      "totalShiftFromCandidateA": 1.3555,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "港湾型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 12.6988,
+      "originalTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "CL",
+        "CS"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "mirror",
+      "displayName": "镜像型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "月光型",
+      "newNearestNeighbor": "月光型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.0066,
+      "originalTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "stargazer",
+      "displayName": "观星者",
+      "totalShiftFromCandidateA": 1.5612,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.9976,
+      "newNearestDistance": 13.2201,
+      "originalTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "companion",
+      "displayName": "同行者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "观星者",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.7394,
+      "originalTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "harbor",
+      "displayName": "港湾型",
+      "totalShiftFromCandidateA": 2.0946,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 10.8716,
+      "originalTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-b",
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "totalShiftFromCandidateA": 0.9874,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 14.4914,
+      "newNearestDistance": 15.0491,
+      "originalTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "originalTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "newTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "同行者",
+      "newNearestNeighbor": "同行者",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "港湾型",
+      "newNearestNeighbor": "港湾型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "collector",
+      "displayName": "收藏家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 19.3201,
+      "newNearestDistance": 19.3201,
+      "originalTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "newTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "流浪诗人",
+      "newNearestNeighbor": "流浪诗人",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "islander",
+      "displayName": "岛屿型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 18.935,
+      "newNearestDistance": 18.935,
+      "originalTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "newTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "explorer",
+      "displayName": "探险家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 11.2576,
+      "newNearestDistance": 11.2576,
+      "originalTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "originalTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "spark",
+      "displayName": "星火型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "探险家",
+      "newNearestNeighbor": "探险家",
+      "originalNearestDistance": 16.0935,
+      "newNearestDistance": 16.0935,
+      "originalTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "newTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "moonlight",
+      "displayName": "月光型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "newTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "mirror",
+      "displayName": "镜像型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "月光型",
+      "newNearestNeighbor": "月光型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "stargazer",
+      "displayName": "观星者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.9976,
+      "newNearestDistance": 13.9976,
+      "originalTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "companion",
+      "displayName": "同行者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "harbor",
+      "displayName": "港湾型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-c",
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 14.4914,
+      "newNearestDistance": 14.4914,
+      "originalTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "originalTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "newTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "lighthouse",
+      "displayName": "灯塔型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CS",
+        "CR",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "gatekeeper",
+      "displayName": "守门人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "同行者",
+      "newNearestNeighbor": "同行者",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "港湾型",
+      "newNearestNeighbor": "港湾型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "CM",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "SI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "collector",
+      "displayName": "收藏家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 19.3201,
+      "newNearestDistance": 19.3201,
+      "originalTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "newTopHighConstructs": [
+        "MN",
+        "SI",
+        "ER"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "EC"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "流浪诗人",
+      "newNearestNeighbor": "流浪诗人",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "NV",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "CS",
+        "RI"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "islander",
+      "displayName": "岛屿型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 18.935,
+      "newNearestDistance": 18.935,
+      "originalTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "AU",
+        "ER",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "newTopLowConstructs": [
+        "CS",
+        "PA",
+        "CL"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "explorer",
+      "displayName": "探险家",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 11.2576,
+      "newNearestDistance": 11.2576,
+      "originalTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopHighConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "originalTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "CM",
+        "RI",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "wandering-poet",
+      "displayName": "流浪诗人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "候鸟型",
+      "newNearestNeighbor": "候鸟型",
+      "originalNearestDistance": 10.9301,
+      "newNearestDistance": 10.9301,
+      "originalTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "NV",
+        "MN"
+      ],
+      "originalTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "newTopLowConstructs": [
+        "RM",
+        "CM",
+        "CS"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "spark",
+      "displayName": "星火型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "探险家",
+      "newNearestNeighbor": "探险家",
+      "originalNearestDistance": 16.0935,
+      "newNearestDistance": 16.0935,
+      "originalTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "PA",
+        "EC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "newTopLowConstructs": [
+        "MN",
+        "CM",
+        "RM"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "moonlight",
+      "displayName": "月光型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "newTopHighConstructs": [
+        "CL",
+        "SI",
+        "CS"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "mirror",
+      "displayName": "镜像型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "月光型",
+      "newNearestNeighbor": "月光型",
+      "originalNearestDistance": 13.2187,
+      "newNearestDistance": 13.2187,
+      "originalTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "SC",
+        "CL"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "TR"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "stargazer",
+      "displayName": "观星者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.9976,
+      "newNearestDistance": 13.9976,
+      "originalTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "newTopHighConstructs": [
+        "SI",
+        "CM",
+        "RM"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "companion",
+      "displayName": "同行者",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "守门人",
+      "newNearestNeighbor": "守门人",
+      "originalNearestDistance": 13.8804,
+      "newNearestDistance": 13.8804,
+      "originalTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "newTopHighConstructs": [
+        "RM",
+        "CM",
+        "TR"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "PA",
+        "MN"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "harbor",
+      "displayName": "港湾型",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "筑巢型",
+      "newNearestNeighbor": "筑巢型",
+      "originalNearestDistance": 11.8519,
+      "newNearestDistance": 11.8519,
+      "originalTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "newTopHighConstructs": [
+        "TR",
+        "CL",
+        "RI"
+      ],
+      "originalTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "newTopLowConstructs": [
+        "NV",
+        "AU",
+        "PA"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    },
+    {
+      "profile": "candidate-d",
+      "id": "ferryman",
+      "displayName": "摆渡人",
+      "totalShiftFromCandidateA": 0,
+      "originalNearestNeighbor": "镜像型",
+      "newNearestNeighbor": "镜像型",
+      "originalNearestDistance": 14.4914,
+      "newNearestDistance": 14.4914,
+      "originalTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "newTopHighConstructs": [
+        "ER",
+        "EC",
+        "CR"
+      ],
+      "originalTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "newTopLowConstructs": [
+        "TR",
+        "RM",
+        "NV"
+      ],
+      "topHighOverlap": 3,
+      "topLowOverlap": 3,
+      "autoConstraintStatus": "pass-needs-human-review"
+    }
+  ]
+}

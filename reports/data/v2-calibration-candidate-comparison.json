@@ -1,0 +1,261 @@
+{
+  "generatedAt": "2026-07-04T17:07:17.604Z",
+  "sourceHashes": {
+    "questionBank": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+    "baseline": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
+    "candidateA": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3"
+  },
+  "profiles": [
+    {
+      "profile": "baseline",
+      "method": "raw",
+      "trainingUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.1875,
+        "count": 18750
+      },
+      "trainingUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0023,
+        "count": 228
+      },
+      "validationUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.1891,
+        "count": 18906
+      },
+      "validationUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.002,
+        "count": 201
+      },
+      "trainingStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9759,
+        "count": 19518
+      },
+      "validationStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9778,
+        "count": 19556
+      },
+      "validationNearTieRate": 0.837,
+      "robustness10AverageTop1RetainRate": 0.9414,
+      "semanticFailures": 0,
+      "score": 60.77,
+      "requiresRuntimeScoringChange": false
+    },
+    {
+      "profile": "candidate-a",
+      "method": "raw",
+      "trainingUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.19,
+        "count": 19005
+      },
+      "trainingUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0025,
+        "count": 250
+      },
+      "validationUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.192,
+        "count": 19204
+      },
+      "validationUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0022,
+        "count": 215
+      },
+      "trainingStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9759,
+        "count": 19518
+      },
+      "validationStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9778,
+        "count": 19556
+      },
+      "validationNearTieRate": 0.8341,
+      "robustness10AverageTop1RetainRate": 0.9446,
+      "semanticFailures": 0,
+      "score": 60.184,
+      "requiresRuntimeScoringChange": false
+    },
+    {
+      "profile": "candidate-b",
+      "method": "raw",
+      "trainingUniformMaxTop1": {
+        "id": "collector",
+        "displayName": "收藏家",
+        "rate": 0.1405,
+        "count": 14053
+      },
+      "trainingUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.005,
+        "count": 500
+      },
+      "validationUniformMaxTop1": {
+        "id": "collector",
+        "displayName": "收藏家",
+        "rate": 0.139,
+        "count": 13900
+      },
+      "validationUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0047,
+        "count": 472
+      },
+      "trainingStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9856,
+        "count": 19711
+      },
+      "validationStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9876,
+        "count": 19752
+      },
+      "validationNearTieRate": 0.8404,
+      "robustness10AverageTop1RetainRate": 0.9507,
+      "semanticFailures": 0,
+      "score": 61.906,
+      "requiresRuntimeScoringChange": false
+    },
+    {
+      "profile": "candidate-c",
+      "method": "standardized-distance",
+      "trainingUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.1897,
+        "count": 18968
+      },
+      "trainingUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0025,
+        "count": 250
+      },
+      "validationUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.1918,
+        "count": 19175
+      },
+      "validationUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0022,
+        "count": 217
+      },
+      "trainingStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9754,
+        "count": 19508
+      },
+      "validationStylePeak": {
+        "mode": "lowAgreement",
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9776,
+        "count": 19551
+      },
+      "validationNearTieRate": 0.9226,
+      "robustness10AverageTop1RetainRate": 0.9443,
+      "semanticFailures": 0,
+      "score": 60.26,
+      "requiresRuntimeScoringChange": true
+    },
+    {
+      "profile": "candidate-d",
+      "method": "standardized-shape-hybrid",
+      "trainingUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.1879,
+        "count": 18794
+      },
+      "trainingUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.0044,
+        "count": 441
+      },
+      "validationUniformMaxTop1": {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "rate": 0.19,
+        "count": 19004
+      },
+      "validationUniformMinTop1": {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "rate": 0.004,
+        "count": 403
+      },
+      "trainingStylePeak": {
+        "mode": "volatile",
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.8587,
+        "count": 17174
+      },
+      "validationStylePeak": {
+        "mode": "volatile",
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.857,
+        "count": 17141
+      },
+      "validationNearTieRate": 0.932,
+      "robustness10AverageTop1RetainRate": 0.9478,
+      "semanticFailures": 0,
+      "score": 80.42,
+      "requiresRuntimeScoringChange": true
+    }
+  ],
+  "trainingSummary": {
+    "label": "training",
+    "bestUniformMax": "candidate-b",
+    "bestUniformMin": "candidate-b"
+  },
+  "validationSummary": {
+    "label": "validation",
+    "bestUniformMax": "candidate-b",
+    "bestUniformMin": "candidate-b"
+  },
+  "recommendation": {
+    "recommendedCandidate": "candidate-d",
+    "score": 80.42,
+    "replaceCandidateA": true,
+    "note": "Recommendation only. Public runtime remains candidate-a until manual approval."
+  }
+}

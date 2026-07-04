@@ -1,0 +1,1696 @@
+{
+  "generatedAt": "2026-07-04T17:07:17.604Z",
+  "sourceHashes": {
+    "questionBank": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+    "baseline": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
+    "candidateA": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3"
+  },
+  "trainingSeed": "heart-island-v2-alpha-calibration-training-a",
+  "validationSeed": "heart-island-v2-alpha-calibration-validation-b",
+  "searchRules": {
+    "validationSetNotUsedForTuning": true,
+    "publicRuntimeProfileRemains": "candidate-a",
+    "candidateB": "grid over fixed semantic delta intensity",
+    "candidateC": "construct z-score standardization from training uniform set",
+    "candidateD": "alpha grid over standardized absolute plus shape distance"
+  },
+  "candidateBSearch": {
+    "searchSpace": {
+      "intensity": [
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "fixedDeltaRule": "Focus semantic-preserving movement for migratory-bird, nest-builder, harbor, moonlight, islander, stargazer, ferryman."
+    },
+    "rows": [
+      {
+        "intensity": 0.25,
+        "score": 70.792,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1657,
+              "count": 4143
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0032,
+              "count": 81
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2118,
+              "count": 1059
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0008,
+              "count": 4
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2548,
+              "count": 1274
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0002,
+              "count": 1
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "守门人",
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.9796
+        },
+        "eliminated": true
+      },
+      {
+        "intensity": 0.5,
+        "score": 70.824,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1407,
+              "count": 3518
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0042,
+              "count": 105
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1764,
+              "count": 882
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0012,
+              "count": 6
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.207,
+              "count": 1035
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0008,
+              "count": 4
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.983
+        },
+        "eliminated": true
+      },
+      {
+        "intensity": 0.75,
+        "score": 70.84,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "collector",
+              "displayName": "收藏家",
+              "rate": 0.139,
+              "count": 3475
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0054,
+              "count": 134
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [],
+            "overConcentratedPersonas": []
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "collector",
+              "displayName": "收藏家",
+              "rate": 0.148,
+              "count": 740
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0016,
+              "count": 8
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "gatekeeper",
+              "displayName": "守门人",
+              "rate": 0.1652,
+              "count": 826
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0012,
+              "count": 6
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "stylePeak": 0.9858
+        },
+        "eliminated": true
+      },
+      {
+        "intensity": 1,
+        "score": 70.648,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "collector",
+              "displayName": "收藏家",
+              "rate": 0.1369,
+              "count": 3422
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0061,
+              "count": 153
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [],
+            "overConcentratedPersonas": []
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "collector",
+              "displayName": "收藏家",
+              "rate": 0.1476,
+              "count": 738
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0018,
+              "count": 9
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "gatekeeper",
+              "displayName": "守门人",
+              "rate": 0.153,
+              "count": 765
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0018,
+              "count": 9
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "同行者"
+            ],
+            "overConcentratedPersonas": []
+          },
+          "stylePeak": 0.9882
+        },
+        "eliminated": true
+      }
+    ],
+    "selected": {
+      "intensity": 0.75,
+      "score": 70.84,
+      "metrics": {
+        "uniform": {
+          "maxTop1": {
+            "id": "collector",
+            "displayName": "收藏家",
+            "rate": 0.139,
+            "count": 3475
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.0054,
+            "count": 134
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [],
+          "overConcentratedPersonas": []
+        },
+        "middle": {
+          "maxTop1": {
+            "id": "collector",
+            "displayName": "收藏家",
+            "rate": 0.148,
+            "count": 740
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.0016,
+            "count": 8
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [
+            "筑巢型"
+          ],
+          "overConcentratedPersonas": []
+        },
+        "conservative": {
+          "maxTop1": {
+            "id": "gatekeeper",
+            "displayName": "守门人",
+            "rate": 0.1652,
+            "count": 826
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.0012,
+            "count": 6
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [
+            "筑巢型"
+          ],
+          "overConcentratedPersonas": []
+        },
+        "stylePeak": 0.9858
+      },
+      "personaData": {
+        "schemaVersion": "v2-persona-target-vectors-draft-1",
+        "sourceVersion": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md+calibration-pass-1-candidate-A+candidate-B",
+        "generatedAt": "2026-07-04T17:06:52.649Z",
+        "vectorRule": "使用架构报告 11.2 的候选人格 targetVector 数值；仅用于隔离验证，不是正式人格参数。",
+        "constructs": [
+          "SC",
+          "AU",
+          "TR",
+          "CL",
+          "PA",
+          "CM",
+          "SI",
+          "NV",
+          "RM",
+          "CS",
+          "EC",
+          "CR",
+          "ER",
+          "RI",
+          "MN"
+        ],
+        "personas": [
+          {
+            "id": "lighthouse",
+            "displayName": "灯塔型",
+            "targetVector": {
+              "SC": 55,
+              "AU": 35,
+              "TR": 70,
+              "CL": 70,
+              "PA": 60,
+              "CM": 78,
+              "SI": 50,
+              "NV": 30,
+              "RM": 65,
+              "CS": 97,
+              "EC": 72,
+              "CR": 90,
+              "ER": 59,
+              "RI": 85,
+              "MN": 50
+            },
+            "primaryConstructs": [
+              "CS",
+              "CR",
+              "RI"
+            ],
+            "secondaryConstructs": [
+              "CM",
+              "EC",
+              "CL"
+            ],
+            "lowConstructs": [
+              "NV",
+              "AU"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 灯塔型；架构文档原名 灯塔型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "gatekeeper",
+            "displayName": "守门人",
+            "targetVector": {
+              "SC": 45,
+              "AU": 88,
+              "TR": 72,
+              "CL": 48,
+              "PA": 30,
+              "CM": 82,
+              "SI": 50,
+              "NV": 28,
+              "RM": 68,
+              "CS": 45,
+              "EC": 38,
+              "CR": 62,
+              "ER": 68,
+              "RI": 70,
+              "MN": 42
+            },
+            "primaryConstructs": [
+              "AU",
+              "TR",
+              "CM"
+            ],
+            "secondaryConstructs": [
+              "ER",
+              "RM"
+            ],
+            "lowConstructs": [
+              "PA",
+              "NV",
+              "EC"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 守门人；架构文档原名 守门人型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "targetVector": {
+              "SC": 70,
+              "AU": 31,
+              "TR": 72.5,
+              "CL": 87,
+              "PA": 58,
+              "CM": 93.5,
+              "SI": 50,
+              "NV": 25,
+              "RM": 82.5,
+              "CS": 70.25,
+              "EC": 62,
+              "CR": 76,
+              "ER": 64,
+              "RI": 85,
+              "MN": 56
+            },
+            "primaryConstructs": [
+              "CL",
+              "CM",
+              "RI"
+            ],
+            "secondaryConstructs": [
+              "RM",
+              "CR",
+              "CS"
+            ],
+            "lowConstructs": [
+              "NV",
+              "AU"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 筑巢型；架构文档原名 筑巢型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "collector",
+            "displayName": "收藏家",
+            "targetVector": {
+              "SC": 62,
+              "AU": 58,
+              "TR": 55,
+              "CL": 62,
+              "PA": 30,
+              "CM": 55,
+              "SI": 80,
+              "NV": 24,
+              "RM": 45,
+              "CS": 42,
+              "EC": 35,
+              "CR": 45,
+              "ER": 72,
+              "RI": 56,
+              "MN": 95
+            },
+            "primaryConstructs": [
+              "MN",
+              "SI",
+              "ER"
+            ],
+            "secondaryConstructs": [
+              "CL",
+              "SC"
+            ],
+            "lowConstructs": [
+              "PA",
+              "EC",
+              "NV"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 收藏家；架构文档原名 收藏家型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "migratory-bird",
+            "displayName": "候鸟型",
+            "targetVector": {
+              "SC": 55,
+              "AU": 89,
+              "TR": 45.75,
+              "CL": 63.5,
+              "PA": 62,
+              "CM": 27,
+              "SI": 68,
+              "NV": 88.5,
+              "RM": 38,
+              "CS": 32.75,
+              "EC": 58,
+              "CR": 42,
+              "ER": 65,
+              "RI": 31.25,
+              "MN": 52
+            },
+            "primaryConstructs": [
+              "AU",
+              "NV",
+              "CL"
+            ],
+            "secondaryConstructs": [
+              "SI",
+              "ER"
+            ],
+            "lowConstructs": [
+              "CM",
+              "RI"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 候鸟型；架构文档原名 候鸟型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "islander",
+            "displayName": "岛屿型",
+            "targetVector": {
+              "SC": 31,
+              "AU": 90.25,
+              "TR": 62,
+              "CL": 28,
+              "PA": 24,
+              "CM": 45,
+              "SI": 35,
+              "NV": 38,
+              "RM": 62,
+              "CS": 25,
+              "EC": 31,
+              "CR": 48,
+              "ER": 78,
+              "RI": 32,
+              "MN": 25
+            },
+            "primaryConstructs": [
+              "AU",
+              "ER",
+              "TR"
+            ],
+            "secondaryConstructs": [
+              "RM"
+            ],
+            "lowConstructs": [
+              "CL",
+              "SC",
+              "EC",
+              "CS"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 岛屿型；架构文档原名 岛屿型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "explorer",
+            "displayName": "探险家",
+            "targetVector": {
+              "SC": 38,
+              "AU": 78,
+              "TR": 45,
+              "CL": 55,
+              "PA": 78,
+              "CM": 24,
+              "SI": 62,
+              "NV": 95,
+              "RM": 35,
+              "CS": 30,
+              "EC": 68,
+              "CR": 50,
+              "ER": 58,
+              "RI": 28,
+              "MN": 30
+            },
+            "primaryConstructs": [
+              "NV",
+              "PA",
+              "AU"
+            ],
+            "secondaryConstructs": [
+              "EC",
+              "SI"
+            ],
+            "lowConstructs": [
+              "CM",
+              "RI"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 探险家；架构文档原名 远航者型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "wandering-poet",
+            "displayName": "流浪诗人",
+            "targetVector": {
+              "SC": 48,
+              "AU": 70,
+              "TR": 48,
+              "CL": 62,
+              "PA": 65,
+              "CM": 30,
+              "SI": 96,
+              "NV": 75,
+              "RM": 25,
+              "CS": 38,
+              "EC": 62,
+              "CR": 48,
+              "ER": 68,
+              "RI": 42,
+              "MN": 72
+            },
+            "primaryConstructs": [
+              "SI",
+              "NV",
+              "MN"
+            ],
+            "secondaryConstructs": [
+              "CL",
+              "ER"
+            ],
+            "lowConstructs": [
+              "RM",
+              "CM"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 流浪诗人；架构文档原名 流浪诗人型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "spark",
+            "displayName": "星火型",
+            "targetVector": {
+              "SC": 60,
+              "AU": 40,
+              "TR": 50,
+              "CL": 78,
+              "PA": 94,
+              "CM": 35,
+              "SI": 70,
+              "NV": 78,
+              "RM": 35,
+              "CS": 42,
+              "EC": 88,
+              "CR": 45,
+              "ER": 60,
+              "RI": 38,
+              "MN": 30
+            },
+            "primaryConstructs": [
+              "PA",
+              "EC",
+              "CL"
+            ],
+            "secondaryConstructs": [
+              "NV",
+              "SI"
+            ],
+            "lowConstructs": [
+              "CM",
+              "CR"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 星火型；架构文档原名 星火型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "moonlight",
+            "displayName": "月光型",
+            "targetVector": {
+              "SC": 68,
+              "AU": 38,
+              "TR": 67.5,
+              "CL": 79,
+              "PA": 58,
+              "CM": 68.5,
+              "SI": 84.25,
+              "NV": 35,
+              "RM": 58,
+              "CS": 76,
+              "EC": 68,
+              "CR": 68,
+              "ER": 76,
+              "RI": 68,
+              "MN": 55
+            },
+            "primaryConstructs": [
+              "CL",
+              "CS",
+              "SI"
+            ],
+            "secondaryConstructs": [
+              "ER",
+              "CM",
+              "TR"
+            ],
+            "lowConstructs": [
+              "NV",
+              "AU"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 月光型；架构文档原名 月光型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "mirror",
+            "displayName": "镜像型",
+            "targetVector": {
+              "SC": 82,
+              "AU": 30,
+              "TR": 42,
+              "CL": 75,
+              "PA": 50,
+              "CM": 58,
+              "SI": 62,
+              "NV": 25,
+              "RM": 42,
+              "CS": 72,
+              "EC": 58,
+              "CR": 55,
+              "ER": 92,
+              "RI": 62,
+              "MN": 58
+            },
+            "primaryConstructs": [
+              "ER",
+              "SC",
+              "CS"
+            ],
+            "secondaryConstructs": [
+              "CL",
+              "RI"
+            ],
+            "lowConstructs": [
+              "AU",
+              "TR",
+              "NV"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 镜像型；架构文档原名 镜像型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "stargazer",
+            "displayName": "观星者",
+            "targetVector": {
+              "SC": 42,
+              "AU": 66.5,
+              "TR": 78,
+              "CL": 55,
+              "PA": 35,
+              "CM": 81,
+              "SI": 90.25,
+              "NV": 33.5,
+              "RM": 79,
+              "CS": 45,
+              "EC": 52,
+              "CR": 62,
+              "ER": 60,
+              "RI": 72,
+              "MN": 40
+            },
+            "primaryConstructs": [
+              "SI",
+              "CM",
+              "RM"
+            ],
+            "secondaryConstructs": [
+              "TR",
+              "AU"
+            ],
+            "lowConstructs": [
+              "PA",
+              "NV"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 观星者；架构文档原名 观星者型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "companion",
+            "displayName": "同行者",
+            "targetVector": {
+              "SC": 55,
+              "AU": 58,
+              "TR": 84,
+              "CL": 60,
+              "PA": 32,
+              "CM": 88,
+              "SI": 48,
+              "NV": 25,
+              "RM": 96,
+              "CS": 55,
+              "EC": 60,
+              "CR": 70,
+              "ER": 66,
+              "RI": 78,
+              "MN": 35
+            },
+            "primaryConstructs": [
+              "RM",
+              "CM",
+              "TR"
+            ],
+            "secondaryConstructs": [
+              "CR",
+              "RI"
+            ],
+            "lowConstructs": [
+              "PA",
+              "NV"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 同行者；架构文档原名 合拍规划型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "harbor",
+            "displayName": "港湾型",
+            "targetVector": {
+              "SC": 75,
+              "AU": 45,
+              "TR": 93.5,
+              "CL": 79,
+              "PA": 45,
+              "CM": 74,
+              "SI": 52,
+              "NV": 27.25,
+              "RM": 65,
+              "CS": 74.5,
+              "EC": 62,
+              "CR": 76.5,
+              "ER": 72,
+              "RI": 79,
+              "MN": 48
+            },
+            "primaryConstructs": [
+              "TR",
+              "CL",
+              "RI"
+            ],
+            "secondaryConstructs": [
+              "SC",
+              "CR",
+              "CS"
+            ],
+            "lowConstructs": [
+              "NV",
+              "AU"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 港湾型；架构文档原名 信任港湾型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          },
+          {
+            "id": "ferryman",
+            "displayName": "摆渡人",
+            "targetVector": {
+              "SC": 76,
+              "AU": 48,
+              "TR": 39.5,
+              "CL": 72,
+              "PA": 62,
+              "CM": 50,
+              "SI": 65,
+              "NV": 45,
+              "RM": 42,
+              "CS": 58,
+              "EC": 88.25,
+              "CR": 87.5,
+              "ER": 92.5,
+              "RI": 51.75,
+              "MN": 69.5
+            },
+            "primaryConstructs": [
+              "ER",
+              "CR",
+              "EC"
+            ],
+            "secondaryConstructs": [
+              "SC",
+              "CL",
+              "MN"
+            ],
+            "lowConstructs": [
+              "TR",
+              "AU"
+            ],
+            "source": "reports/heart-island-v2-personality-questionnaire-scoring-architecture.md#候选人格-targetVector-初稿",
+            "confidence": "draft-validation-only",
+            "unresolvedNotes": "命名按当前展示名 摆渡人；架构文档原名 潮汐修复型。 targetVector 为验证用候选草案，不是正式人格参数。"
+          }
+        ],
+        "calibration": {
+          "label": "candidate-B",
+          "method": "targetVector-only",
+          "intensity": 0.75,
+          "sourceProfile": "candidate-a",
+          "publicRuntime": false,
+          "constraints": {
+            "maxAbsoluteDelta": 6,
+            "noDistanceAlgorithmChange": true,
+            "noQuestionOrScoreChange": true
+          },
+          "changes": [
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "CM",
+              "before": 98,
+              "after": 93.5,
+              "delta": -4.5
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "CL",
+              "before": 90,
+              "after": 87,
+              "delta": -3
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "RI",
+              "before": 88,
+              "after": 85,
+              "delta": -3
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "RM",
+              "before": 81,
+              "after": 82.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "TR",
+              "before": 74,
+              "after": 72.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "AU",
+              "before": 28,
+              "after": 31,
+              "delta": 3
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "NV",
+              "before": 22,
+              "after": 25,
+              "delta": 3
+            },
+            {
+              "personaId": "nest-builder",
+              "persona": "筑巢型",
+              "construct": "CS",
+              "before": 68,
+              "after": 70.25,
+              "delta": 2.25
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "AU",
+              "before": 86,
+              "after": 89,
+              "delta": 3
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "NV",
+              "before": 84,
+              "after": 88.5,
+              "delta": 4.5
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "CL",
+              "before": 68,
+              "after": 63.5,
+              "delta": -4.5
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "CM",
+              "before": 30,
+              "after": 27,
+              "delta": -3
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "RI",
+              "before": 35,
+              "after": 31.25,
+              "delta": -3.75
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "CS",
+              "before": 35,
+              "after": 32.75,
+              "delta": -2.25
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "TR",
+              "before": 48,
+              "after": 45.75,
+              "delta": -2.25
+            },
+            {
+              "personaId": "migratory-bird",
+              "persona": "候鸟型",
+              "construct": "MN",
+              "before": 55,
+              "after": 52,
+              "delta": -3
+            },
+            {
+              "personaId": "islander",
+              "persona": "岛屿型",
+              "construct": "AU",
+              "before": 94,
+              "after": 90.25,
+              "delta": -3.75
+            },
+            {
+              "personaId": "islander",
+              "persona": "岛屿型",
+              "construct": "CL",
+              "before": 25,
+              "after": 28,
+              "delta": 3
+            },
+            {
+              "personaId": "islander",
+              "persona": "岛屿型",
+              "construct": "CS",
+              "before": 22,
+              "after": 25,
+              "delta": 3
+            },
+            {
+              "personaId": "islander",
+              "persona": "岛屿型",
+              "construct": "SC",
+              "before": 28,
+              "after": 31,
+              "delta": 3
+            },
+            {
+              "personaId": "islander",
+              "persona": "岛屿型",
+              "construct": "EC",
+              "before": 28,
+              "after": 31,
+              "delta": 3
+            },
+            {
+              "personaId": "moonlight",
+              "persona": "月光型",
+              "construct": "CL",
+              "before": 82,
+              "after": 79,
+              "delta": -3
+            },
+            {
+              "personaId": "moonlight",
+              "persona": "月光型",
+              "construct": "CS",
+              "before": 79,
+              "after": 76,
+              "delta": -3
+            },
+            {
+              "personaId": "moonlight",
+              "persona": "月光型",
+              "construct": "SI",
+              "before": 82,
+              "after": 84.25,
+              "delta": 2.25
+            },
+            {
+              "personaId": "moonlight",
+              "persona": "月光型",
+              "construct": "CM",
+              "before": 70,
+              "after": 68.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "moonlight",
+              "persona": "月光型",
+              "construct": "TR",
+              "before": 69,
+              "after": 67.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "stargazer",
+              "persona": "观星者",
+              "construct": "SI",
+              "before": 94,
+              "after": 90.25,
+              "delta": -3.75
+            },
+            {
+              "personaId": "stargazer",
+              "persona": "观星者",
+              "construct": "CM",
+              "before": 84,
+              "after": 81,
+              "delta": -3
+            },
+            {
+              "personaId": "stargazer",
+              "persona": "观星者",
+              "construct": "RM",
+              "before": 82,
+              "after": 79,
+              "delta": -3
+            },
+            {
+              "personaId": "stargazer",
+              "persona": "观星者",
+              "construct": "AU",
+              "before": 68,
+              "after": 66.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "stargazer",
+              "persona": "观星者",
+              "construct": "NV",
+              "before": 32,
+              "after": 33.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "TR",
+              "before": 98,
+              "after": 93.5,
+              "delta": -4.5
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "CL",
+              "before": 82,
+              "after": 79,
+              "delta": -3
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "RI",
+              "before": 82,
+              "after": 79,
+              "delta": -3
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "SC",
+              "before": 78,
+              "after": 75,
+              "delta": -3
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "AU",
+              "before": 42,
+              "after": 45,
+              "delta": 3
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "NV",
+              "before": 25,
+              "after": 27.25,
+              "delta": 2.25
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "CS",
+              "before": 73,
+              "after": 74.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "harbor",
+              "persona": "港湾型",
+              "construct": "CR",
+              "before": 78,
+              "after": 76.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "EC",
+              "before": 86,
+              "after": 88.25,
+              "delta": 2.25
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "CR",
+              "before": 86,
+              "after": 87.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "ER",
+              "before": 91,
+              "after": 92.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "TR",
+              "before": 41,
+              "after": 39.5,
+              "delta": -1.5
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "MN",
+              "before": 68,
+              "after": 69.5,
+              "delta": 1.5
+            },
+            {
+              "personaId": "ferryman",
+              "persona": "摆渡人",
+              "construct": "RI",
+              "before": 51,
+              "after": 51.75,
+              "delta": 0.75
+            }
+          ]
+        },
+        "scoringProfile": "candidate-b"
+      }
+    }
+  },
+  "candidateDSearch": {
+    "searchSpace": {
+      "alpha": [
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ]
+    },
+    "rows": [
+      {
+        "alpha": 0.6,
+        "score": 84.524,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1862,
+              "count": 4655
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0055,
+              "count": 137
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2328,
+              "count": 1164
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0024,
+              "count": 12
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2714,
+              "count": 1357
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0004,
+              "count": 2
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.8604
+        },
+        "eliminated": false
+      },
+      {
+        "alpha": 0.7,
+        "score": 84.716,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1882,
+              "count": 4705
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0045,
+              "count": 113
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2406,
+              "count": 1203
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.002,
+              "count": 10
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2816,
+              "count": 1408
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0004,
+              "count": 2
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.8534
+        },
+        "eliminated": false
+      },
+      {
+        "alpha": 0.8,
+        "score": 79.548,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.1894,
+              "count": 4735
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0038,
+              "count": 96
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2438,
+              "count": 1219
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0008,
+              "count": 4
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2886,
+              "count": 1443
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0002,
+              "count": 1
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.891
+        },
+        "eliminated": false
+      },
+      {
+        "alpha": 0.9,
+        "score": 72.488,
+        "metrics": {
+          "uniform": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.19,
+              "count": 4749
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.003,
+              "count": 74
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "middle": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2464,
+              "count": 1232
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0008,
+              "count": 4
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "候鸟型"
+            ]
+          },
+          "conservative": {
+            "maxTop1": {
+              "id": "migratory-bird",
+              "displayName": "候鸟型",
+              "rate": 0.2938,
+              "count": 1469
+            },
+            "minTop1": {
+              "id": "nest-builder",
+              "displayName": "筑巢型",
+              "rate": 0.0002,
+              "count": 1
+            },
+            "missingPersonas": [],
+            "lowFrequencyPersonas": [
+              "筑巢型",
+              "港湾型"
+            ],
+            "overConcentratedPersonas": [
+              "守门人",
+              "候鸟型"
+            ]
+          },
+          "stylePeak": 0.9466
+        },
+        "eliminated": false
+      }
+    ],
+    "selected": {
+      "alpha": 0.7,
+      "score": 84.716,
+      "metrics": {
+        "uniform": {
+          "maxTop1": {
+            "id": "migratory-bird",
+            "displayName": "候鸟型",
+            "rate": 0.1882,
+            "count": 4705
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.0045,
+            "count": 113
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [
+            "筑巢型"
+          ],
+          "overConcentratedPersonas": [
+            "候鸟型"
+          ]
+        },
+        "middle": {
+          "maxTop1": {
+            "id": "migratory-bird",
+            "displayName": "候鸟型",
+            "rate": 0.2406,
+            "count": 1203
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.002,
+            "count": 10
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [
+            "筑巢型"
+          ],
+          "overConcentratedPersonas": [
+            "候鸟型"
+          ]
+        },
+        "conservative": {
+          "maxTop1": {
+            "id": "migratory-bird",
+            "displayName": "候鸟型",
+            "rate": 0.2816,
+            "count": 1408
+          },
+          "minTop1": {
+            "id": "nest-builder",
+            "displayName": "筑巢型",
+            "rate": 0.0004,
+            "count": 2
+          },
+          "missingPersonas": [],
+          "lowFrequencyPersonas": [
+            "筑巢型",
+            "港湾型"
+          ],
+          "overConcentratedPersonas": [
+            "候鸟型"
+          ]
+        },
+        "stylePeak": 0.8534
+      },
+      "eliminated": false
+    }
+  }
+}
