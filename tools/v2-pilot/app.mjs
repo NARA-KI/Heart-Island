@@ -165,8 +165,14 @@ function setInitState(status, message) {
 function bindEvents() {
   elements.startButton.addEventListener('click', startPilot);
   elements.prevButton.addEventListener('click', () => {
+    const fromQuestionId = currentQuestion().id;
     state.currentIndex = Math.max(0, state.currentIndex - 1);
-    renderQuestion();
+    recordPilotDebugEvent('questionChanged', {
+      direction: 'prev',
+      fromQuestionId,
+      toQuestionId: currentQuestion().id,
+    });
+    renderQuestion({ focusTitle: true, reason: 'prev' });
   });
   elements.nextButton.addEventListener('click', () => {
     const question = currentQuestion();
@@ -178,8 +184,14 @@ function bindEvents() {
       finishQuestionnaire();
       return;
     }
+    const fromQuestionId = question.id;
     state.currentIndex += 1;
-    renderQuestion();
+    recordPilotDebugEvent('questionChanged', {
+      direction: 'next',
+      fromQuestionId,
+      toQuestionId: currentQuestion().id,
+    });
+    renderQuestion({ focusTitle: true, reason: 'next' });
   });
   elements.downloadButton.addEventListener('click', () => {
     if (!elements.feedbackForm.reportValidity()) return;
@@ -289,23 +301,42 @@ function currentQuestion() {
   return state.questionBank.questions[state.currentIndex];
 }
 
-function renderQuestion() {
+function recordPilotDebugEvent(type, payload = {}) {
+  window.__heartIslandPilotDebugEvents ??= [];
+  window.__heartIslandPilotDebugEvents.push({
+    type,
+    timestamp: new Date().toISOString(),
+    ...payload,
+  });
+}
+
+function renderQuestion({ focusTitle = false, reason = 'render' } = {}) {
   const question = currentQuestion();
   const total = state.questionBank.questions.length;
+  const savedAnswer = state.answers[question.id] ?? null;
   elements.progressText.textContent = `${String(state.currentIndex + 1).padStart(2, '0')} / ${total}`;
   elements.progressBar.style.width = `${((state.currentIndex + 1) / total) * 100}%`;
   elements.questionTitle.textContent = question.question;
+  elements.questionTitle.setAttribute('tabindex', '-1');
   elements.optionList.innerHTML = '';
 
   for (const option of shuffledOptions(question.options, `heart-island-v2-pilot:${question.id}`)) {
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = `option-button${state.answers[question.id] === option.id ? ' selected' : ''}`;
+    const isSelected = savedAnswer === option.id;
+    button.className = `option-button${isSelected ? ' selected' : ''}`;
+    button.setAttribute('aria-pressed', String(isSelected));
+    button.dataset.questionId = question.id;
+    button.dataset.optionId = option.id;
     button.textContent = option.text;
     button.addEventListener('click', () => {
       state.answers[question.id] = option.id;
+      recordPilotDebugEvent('answerSelected', {
+        questionId: question.id,
+        optionId: option.id,
+      });
       saveDraft();
-      renderQuestion();
+      renderQuestion({ reason: 'answerSelected' });
     });
     elements.optionList.append(button);
   }
@@ -313,6 +344,22 @@ function renderQuestion() {
   renderFlags(question.id);
   elements.prevButton.disabled = state.currentIndex === 0;
   elements.nextButton.textContent = state.currentIndex === total - 1 ? '查看结果' : '下一题';
+  if (focusTitle) {
+    requestAnimationFrame(() => elements.questionTitle.focus({ preventScroll: true }));
+  }
+  recordPilotDebugEvent('questionRendered', {
+    questionId: question.id,
+    index: state.currentIndex,
+    reason,
+    restoredOptionId: savedAnswer,
+    selectedCount: elements.optionList.querySelectorAll('.option-button.selected').length,
+  });
+  if (savedAnswer) {
+    recordPilotDebugEvent('answerRestored', {
+      questionId: question.id,
+      optionId: savedAnswer,
+    });
+  }
 }
 
 function renderFlags(questionId) {
