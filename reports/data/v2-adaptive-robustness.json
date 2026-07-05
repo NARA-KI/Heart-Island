@@ -1,0 +1,6179 @@
+{
+  "generatedAt": "2026-07-05T06:39:43.256Z",
+  "rows": [
+    {
+      "profile": "baseline",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.964,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 19,
+        "rate": 0.019
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.888,
+      "outOfTop3Rate": 0.016,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 65,
+        "rate": 0.065
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "岛屿型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.979,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 7,
+        "rate": 0.007
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.94,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.893,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 38,
+        "rate": 0.038
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.716,
+      "outOfTop3Rate": 0.075,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 120,
+        "rate": 0.12
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.973,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 8,
+        "rate": 0.008
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "探险家",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.972,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.903,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 38,
+        "rate": 0.038
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.961,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 24,
+        "rate": 0.024
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.881,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 56,
+        "rate": 0.056
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.929,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 63,
+        "rate": 0.063
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.823,
+      "outOfTop3Rate": 0.012,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 125,
+        "rate": 0.125
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.954,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.937,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 28,
+        "rate": 0.028
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.828,
+      "outOfTop3Rate": 0.015,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 63,
+        "rate": 0.063
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.983,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 7,
+        "rate": 0.007
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.918,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 37,
+        "rate": 0.037
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.943,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 41,
+        "rate": 0.041
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.872,
+      "outOfTop3Rate": 0.018,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 72,
+        "rate": 0.072
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.896,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 48,
+        "rate": 0.048
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.757,
+      "outOfTop3Rate": 0.027,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 111,
+        "rate": 0.111
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.991,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.909,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 51,
+        "rate": 0.051
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.732,
+      "outOfTop3Rate": 0.046,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 116,
+        "rate": 0.116
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "baseline",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "baseline",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.949,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 25,
+        "rate": 0.025
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.964,
+      "outOfTop3Rate": 0.009,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 23,
+        "rate": 0.023
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.88,
+      "outOfTop3Rate": 0.025,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 67,
+        "rate": 0.067
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.983,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.939,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 20,
+        "rate": 0.02
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.911,
+      "outOfTop3Rate": 0.009,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 26,
+        "rate": 0.026
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.736,
+      "outOfTop3Rate": 0.053,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 91,
+        "rate": 0.091
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.975,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 11,
+        "rate": 0.011
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "探险家",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.97,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.911,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 51,
+        "rate": 0.051
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.97,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 15,
+        "rate": 0.015
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.893,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 58,
+        "rate": 0.058
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.987,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 13,
+        "rate": 0.013
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.922,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 63,
+        "rate": 0.063
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.853,
+      "outOfTop3Rate": 0.009,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 109,
+        "rate": 0.109
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.949,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 19,
+        "rate": 0.019
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.956,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 13,
+        "rate": 0.013
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.831,
+      "outOfTop3Rate": 0.012,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 61,
+        "rate": 0.061
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.983,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.935,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 20,
+        "rate": 0.02
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.991,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 6,
+        "rate": 0.006
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.932,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 50,
+        "rate": 0.05
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.859,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 90,
+        "rate": 0.09
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.902,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 53,
+        "rate": 0.053
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.776,
+      "outOfTop3Rate": 0.024,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 111,
+        "rate": 0.111
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.918,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 30,
+        "rate": 0.03
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.75,
+      "outOfTop3Rate": 0.053,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 79,
+        "rate": 0.079
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-a",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.919,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 30,
+        "rate": 0.03
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "筑巢型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.944,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 27,
+        "rate": 0.027
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.856,
+      "outOfTop3Rate": 0.024,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 77,
+        "rate": 0.077
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "岛屿型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.968,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "岛屿型",
+        "count": 14,
+        "rate": 0.014
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.914,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 25,
+        "rate": 0.025
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.949,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 20,
+        "rate": 0.02
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.803,
+      "outOfTop3Rate": 0.034,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 60,
+        "rate": 0.06
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.964,
+      "outOfTop3Rate": 0.005,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 14,
+        "rate": 0.014
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.989,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 11,
+        "rate": 0.011
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.951,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 33,
+        "rate": 0.033
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.85,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 104,
+        "rate": 0.104
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.97,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 23,
+        "rate": 0.023
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.89,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 61,
+        "rate": 0.061
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.961,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 28,
+        "rate": 0.028
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.907,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 67,
+        "rate": 0.067
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.964,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 13,
+        "rate": 0.013
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 7,
+        "rate": 0.007
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.922,
+      "outOfTop3Rate": 0.011,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 26,
+        "rate": 0.026
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.846,
+      "outOfTop3Rate": 0.015,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 49,
+        "rate": 0.049
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.976,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 14,
+        "rate": 0.014
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.936,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 30,
+        "rate": 0.03
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 6,
+        "rate": 0.006
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.943,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 32,
+        "rate": 0.032
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.885,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 60,
+        "rate": 0.06
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.989,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.913,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 30,
+        "rate": 0.03
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.769,
+      "outOfTop3Rate": 0.03,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 79,
+        "rate": 0.079
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.938,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.843,
+      "outOfTop3Rate": 0.026,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 42,
+        "rate": 0.042
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.976,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 14,
+        "rate": 0.014
+      }
+    },
+    {
+      "profile": "candidate-b",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.883,
+      "outOfTop3Rate": 0.019,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 43,
+        "rate": 0.043
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.947,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 36,
+        "rate": 0.036
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.857,
+      "outOfTop3Rate": 0.035,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 83,
+        "rate": 0.083
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.979,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 8,
+        "rate": 0.008
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.93,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "岛屿型",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.907,
+      "outOfTop3Rate": 0.014,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 38,
+        "rate": 0.038
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.742,
+      "outOfTop3Rate": 0.056,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 90,
+        "rate": 0.09
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.965,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 13,
+        "rate": 0.013
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "探险家",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.973,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.912,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 43,
+        "rate": 0.043
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.965,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 19,
+        "rate": 0.019
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.872,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 73,
+        "rate": 0.073
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.944,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 52,
+        "rate": 0.052
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.867,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 102,
+        "rate": 0.102
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.991,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.954,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.957,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.859,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 62,
+        "rate": 0.062
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.979,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 8,
+        "rate": 0.008
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.945,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 25,
+        "rate": 0.025
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.986,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.946,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 41,
+        "rate": 0.041
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.868,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 77,
+        "rate": 0.077
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.988,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.931,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 35,
+        "rate": 0.035
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.795,
+      "outOfTop3Rate": 0.023,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 95,
+        "rate": 0.095
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.99,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.894,
+      "outOfTop3Rate": 0.009,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 48,
+        "rate": 0.048
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.771,
+      "outOfTop3Rate": 0.045,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 84,
+        "rate": 0.084
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.987,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 6,
+        "rate": 0.006
+      }
+    },
+    {
+      "profile": "candidate-c",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.929,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 26,
+        "rate": 0.026
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "筑巢型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.964,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 23,
+        "rate": 0.023
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.831,
+      "outOfTop3Rate": 0.032,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 104,
+        "rate": 0.104
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "岛屿型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.975,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 12,
+        "rate": 0.012
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.935,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "收藏家",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.91,
+      "outOfTop3Rate": 0.013,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 31,
+        "rate": 0.031
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.738,
+      "outOfTop3Rate": 0.038,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 106,
+        "rate": 0.106
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.991,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 6,
+        "rate": 0.006
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.963,
+      "outOfTop3Rate": 0.009,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 13,
+        "rate": 0.013
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.967,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 21,
+        "rate": 0.021
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.929,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 36,
+        "rate": 0.036
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.992,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.968,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.863,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 77,
+        "rate": 0.077
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.983,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.935,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 59,
+        "rate": 0.059
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.843,
+      "outOfTop3Rate": 0.012,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 112,
+        "rate": 0.112
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.933,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 25,
+        "rate": 0.025
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.961,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 16,
+        "rate": 0.016
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.878,
+      "outOfTop3Rate": 0.012,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 53,
+        "rate": 0.053
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.97,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 20,
+        "rate": 0.02
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.919,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 34,
+        "rate": 0.034
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "同行者",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.953,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 31,
+        "rate": 0.031
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.893,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 68,
+        "rate": 0.068
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.995,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.907,
+      "outOfTop3Rate": 0.005,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 34,
+        "rate": 0.034
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.785,
+      "outOfTop3Rate": 0.018,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 97,
+        "rate": 0.097
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.937,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 27,
+        "rate": 0.027
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.779,
+      "outOfTop3Rate": 0.027,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 95,
+        "rate": 0.095
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.989,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 6,
+        "rate": 0.006
+      }
+    },
+    {
+      "profile": "candidate-d",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.92,
+      "outOfTop3Rate": 0.008,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 29,
+        "rate": 0.029
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "筑巢型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.974,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "lighthouse",
+      "displayName": "灯塔型",
+      "originalTop1": "灯塔型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.882,
+      "outOfTop3Rate": 0.013,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 74,
+        "rate": 0.074
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.97,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "gatekeeper",
+      "displayName": "守门人",
+      "originalTop1": "守门人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.926,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "港湾型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.937,
+      "outOfTop3Rate": 0.007,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 22,
+        "rate": 0.022
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "nest-builder",
+      "displayName": "筑巢型",
+      "originalTop1": "筑巢型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.784,
+      "outOfTop3Rate": 0.031,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 74,
+        "rate": 0.074
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "观星者",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "collector",
+      "displayName": "收藏家",
+      "originalTop1": "收藏家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.978,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.967,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 22,
+        "rate": 0.022
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "migratory-bird",
+      "displayName": "候鸟型",
+      "originalTop1": "候鸟型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.906,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "流浪诗人",
+        "count": 48,
+        "rate": 0.048
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "islander",
+      "displayName": "岛屿型",
+      "originalTop1": "岛屿型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.997,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.999,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.974,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 18,
+        "rate": 0.018
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "explorer",
+      "displayName": "探险家",
+      "originalTop1": "探险家",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.91,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "星火型",
+        "count": 48,
+        "rate": 0.048
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 4,
+        "rate": 0.004
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.967,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 22,
+        "rate": 0.022
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "wandering-poet",
+      "displayName": "流浪诗人",
+      "originalTop1": "流浪诗人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.869,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 91,
+        "rate": 0.091
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "探险家",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "spark",
+      "displayName": "星火型",
+      "originalTop1": "星火型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.965,
+      "outOfTop3Rate": 0.006,
+      "mostCommonSubstitute": {
+        "displayName": "候鸟型",
+        "count": 10,
+        "rate": 0.01
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "灯塔型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.954,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 24,
+        "rate": 0.024
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "moonlight",
+      "displayName": "月光型",
+      "originalTop1": "月光型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.889,
+      "outOfTop3Rate": 0.004,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 54,
+        "rate": 0.054
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.998,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 1,
+        "rate": 0.001
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.979,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "mirror",
+      "displayName": "镜像型",
+      "originalTop1": "镜像型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.93,
+      "outOfTop3Rate": 0.001,
+      "mostCommonSubstitute": {
+        "displayName": "摆渡人",
+        "count": 31,
+        "rate": 0.031
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.994,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 5,
+        "rate": 0.005
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.96,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 28,
+        "rate": 0.028
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "stargazer",
+      "displayName": "观星者",
+      "originalTop1": "观星者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.881,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 70,
+        "rate": 0.07
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.92,
+      "outOfTop3Rate": 0.002,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 42,
+        "rate": 0.042
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "companion",
+      "displayName": "同行者",
+      "originalTop1": "同行者",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.826,
+      "outOfTop3Rate": 0.013,
+      "mostCommonSubstitute": {
+        "displayName": "守门人",
+        "count": 77,
+        "rate": 0.077
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 0.996,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 2,
+        "rate": 0.002
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.947,
+      "outOfTop3Rate": 0.005,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 17,
+        "rate": 0.017
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "harbor",
+      "displayName": "港湾型",
+      "originalTop1": "港湾型",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.831,
+      "outOfTop3Rate": 0.011,
+      "mostCommonSubstitute": {
+        "displayName": "月光型",
+        "count": 50,
+        "rate": 0.05
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 1,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 3,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 5,
+      "variants": 1000,
+      "top1RetainRate": 1,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": null
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 10,
+      "variants": 1000,
+      "top1RetainRate": 0.993,
+      "outOfTop3Rate": 0,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 3,
+        "rate": 0.003
+      }
+    },
+    {
+      "profile": "candidate-e-adaptive-hybrid",
+      "personaId": "ferryman",
+      "displayName": "摆渡人",
+      "originalTop1": "摆渡人",
+      "perturbationQuestions": 15,
+      "variants": 1000,
+      "top1RetainRate": 0.947,
+      "outOfTop3Rate": 0.003,
+      "mostCommonSubstitute": {
+        "displayName": "镜像型",
+        "count": 20,
+        "rate": 0.02
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9993,
+        "minPersona": "观星者",
+        "minTop1RetainRate": 0.996
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9967,
+        "minPersona": "流浪诗人",
+        "minTop1RetainRate": 0.99
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9568,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.893
+      },
+      "15": {
+        "averageTop1RetainRate": 0.8752,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.716
+      }
+    },
+    "candidate-a": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9993,
+        "minPersona": "观星者",
+        "minTop1RetainRate": 0.997
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9961,
+        "minPersona": "流浪诗人",
+        "minTop1RetainRate": 0.987
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9591,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.902
+      },
+      "15": {
+        "averageTop1RetainRate": 0.8799,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.736
+      }
+    },
+    "candidate-b": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9991,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.997
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9961,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.989
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9601,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.913
+      },
+      "15": {
+        "averageTop1RetainRate": 0.887,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.769
+      }
+    },
+    "candidate-c": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9992,
+        "minPersona": "流浪诗人",
+        "minTop1RetainRate": 0.995
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9957,
+        "minPersona": "观星者",
+        "minTop1RetainRate": 0.986
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9595,
+        "minPersona": "港湾型",
+        "minTop1RetainRate": 0.894
+      },
+      "15": {
+        "averageTop1RetainRate": 0.8839,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.742
+      }
+    },
+    "candidate-d": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9995,
+        "minPersona": "观星者",
+        "minTop1RetainRate": 0.995
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9962,
+        "minPersona": "流浪诗人",
+        "minTop1RetainRate": 0.983
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9613,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.907
+      },
+      "15": {
+        "averageTop1RetainRate": 0.8801,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.738
+      }
+    },
+    "candidate-e-adaptive-hybrid": {
+      "1": {
+        "averageTop1RetainRate": 1,
+        "minPersona": "摆渡人",
+        "minTop1RetainRate": 1
+      },
+      "3": {
+        "averageTop1RetainRate": 0.9998,
+        "minPersona": "镜像型",
+        "minTop1RetainRate": 0.998
+      },
+      "5": {
+        "averageTop1RetainRate": 0.9975,
+        "minPersona": "观星者",
+        "minTop1RetainRate": 0.994
+      },
+      "10": {
+        "averageTop1RetainRate": 0.9689,
+        "minPersona": "同行者",
+        "minTop1RetainRate": 0.92
+      },
+      "15": {
+        "averageTop1RetainRate": 0.9014,
+        "minPersona": "筑巢型",
+        "minTop1RetainRate": 0.784
+      }
+    }
+  }
+}

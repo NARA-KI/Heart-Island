@@ -1,0 +1,2538 @@
+{
+  "generatedAt": "2026-07-05T06:39:43.257Z",
+  "training": {
+    "middle": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2415,
+          "count": 4831
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0008,
+          "count": 15
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2465,
+          "count": 4930
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0008,
+          "count": 17
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "rate": 0.1537,
+          "count": 3073
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0024,
+          "count": 47
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2464,
+          "count": 4928
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0008,
+          "count": 17
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2367,
+          "count": 4734
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0015,
+          "count": 31
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2338,
+          "count": 4676
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0016,
+          "count": 33
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7128,
+          "p10": 0.7034,
+          "p50": 0.7109,
+          "p90": 0.7183
+        }
+      }
+    },
+    "extreme": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1531,
+          "count": 3062
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0043,
+          "count": 86
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1555,
+          "count": 3110
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0046,
+          "count": 91
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1294,
+          "count": 2588
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0075,
+          "count": 149
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1551,
+          "count": 3102
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0046,
+          "count": 91
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1552,
+          "count": 3103
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0069,
+          "count": 138
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1186,
+          "count": 2372
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0135,
+          "count": 269
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.8415,
+          "p10": 0.85,
+          "p50": 0.85,
+          "p90": 0.85
+        }
+      }
+    },
+    "highAgreement": {
+      "baseline": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7904,
+          "count": 15809
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "筑巢型",
+          "收藏家",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.8176,
+          "count": 16353
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "收藏家",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7656,
+          "count": 15312
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "收藏家",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.8171,
+          "count": 16342
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "收藏家",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7516,
+          "count": 15032
+        },
+        "minTop1": {
+          "id": "explorer",
+          "displayName": "探险家",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家"
+        ],
+        "lowFrequencyPersonas": [
+          "收藏家",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.721,
+          "count": 14420
+        },
+        "minTop1": {
+          "id": "explorer",
+          "displayName": "探险家",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型",
+          "探险家"
+        ],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "收藏家",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.6001,
+          "p10": 0.6,
+          "p50": 0.6,
+          "p90": 0.6
+        }
+      }
+    },
+    "lowAgreement": {
+      "baseline": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9755,
+          "count": 19509
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9755,
+          "count": 19509
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9863,
+          "count": 19727
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "流浪诗人",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "收藏家",
+          "候鸟型",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9752,
+          "count": 19504
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.8078,
+          "count": 16157
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "筑巢型",
+          "月光型",
+          "同行者",
+          "港湾型"
+        ],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "守门人",
+          "观星者",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.6728,
+          "count": 13457
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "筑巢型"
+        ],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.6,
+          "p10": 0.6,
+          "p50": 0.6,
+          "p90": 0.6
+        }
+      }
+    },
+    "conservative": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2829,
+          "count": 5658
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 6
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.289,
+          "count": 5781
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 6
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "rate": 0.1681,
+          "count": 3362
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0006,
+          "count": 13
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2888,
+          "count": 5776
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 6
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2731,
+          "count": 5462
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0005,
+          "count": 10
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2723,
+          "count": 5447
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0006,
+          "count": 12
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7046,
+          "p10": 0.6979,
+          "p50": 0.7045,
+          "p90": 0.7113
+        }
+      }
+    },
+    "volatile": {
+      "baseline": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8196,
+          "count": 16392
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0.0001,
+          "count": 3
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8206,
+          "count": 16412
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0002,
+          "count": 4
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "月光型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8835,
+          "count": 17671
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0.0001,
+          "count": 3
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8205,
+          "count": 16409
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0.0002,
+          "count": 4
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "月光型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8546,
+          "count": 17091
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0.0003,
+          "count": 6
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8014,
+          "count": 16028
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0.0004,
+          "count": 9
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.8479,
+          "p10": 0.85,
+          "p50": 0.85,
+          "p90": 0.85
+        }
+      }
+    },
+    "constructConsistent": {
+      "baseline": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1216,
+          "count": 2432
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0.0164,
+          "count": 328
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1217,
+          "count": 2435
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0188,
+          "count": 376
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.1217,
+          "count": 2434
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0.0236,
+          "count": 471
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1216,
+          "count": 2432
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0188,
+          "count": 377
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1149,
+          "count": 2299
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0239,
+          "count": 478
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1153,
+          "count": 2305
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0235,
+          "count": 470
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7183,
+          "p10": 0.6,
+          "p50": 0.6627,
+          "p90": 0.85
+        }
+      }
+    },
+    "constructConflict": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.6771,
+          "p10": 0.6771,
+          "p50": 0.6771,
+          "p90": 0.6771
+        }
+      }
+    }
+  },
+  "validation": {
+    "middle": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2455,
+          "count": 4911
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0004,
+          "count": 9
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.25,
+          "count": 5001
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0005,
+          "count": 10
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "rate": 0.1553,
+          "count": 3107
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0015,
+          "count": 30
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2492,
+          "count": 4983
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0005,
+          "count": 10
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2424,
+          "count": 4847
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.001,
+          "count": 20
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2373,
+          "count": 4746
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0009,
+          "count": 19
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7132,
+          "p10": 0.7036,
+          "p50": 0.711,
+          "p90": 0.7185
+        }
+      }
+    },
+    "extreme": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1578,
+          "count": 3157
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0037,
+          "count": 74
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1603,
+          "count": 3205
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0041,
+          "count": 82
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1311,
+          "count": 2623
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.007,
+          "count": 141
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.16,
+          "count": 3201
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0043,
+          "count": 86
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1608,
+          "count": 3217
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0069,
+          "count": 137
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.1191,
+          "count": 2381
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0127,
+          "count": 255
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.8418,
+          "p10": 0.85,
+          "p50": 0.85,
+          "p90": 0.85
+        }
+      }
+    },
+    "highAgreement": {
+      "baseline": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7958,
+          "count": 15916
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "收藏家",
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "筑巢型",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.8218,
+          "count": 16436
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "收藏家",
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7664,
+          "count": 15328
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "收藏家",
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.8207,
+          "count": 16414
+        },
+        "minTop1": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "收藏家",
+          "岛屿型",
+          "探险家",
+          "镜像型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "流浪诗人",
+          "星火型",
+          "同行者"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7546,
+          "count": 15092
+        },
+        "minTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型"
+        ],
+        "lowFrequencyPersonas": [
+          "守门人",
+          "收藏家",
+          "探险家",
+          "星火型",
+          "镜像型",
+          "同行者"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "rate": 0.7203,
+          "count": 14406
+        },
+        "minTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "岛屿型"
+        ],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "收藏家",
+          "探险家",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.6,
+          "p10": 0.6,
+          "p50": 0.6,
+          "p90": 0.6
+        }
+      }
+    },
+    "lowAgreement": {
+      "baseline": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9772,
+          "count": 19544
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9772,
+          "count": 19544
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9862,
+          "count": 19725
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "收藏家",
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.9769,
+          "count": 19538
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [
+          "候鸟型",
+          "流浪诗人",
+          "星火型",
+          "镜像型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.8047,
+          "count": 16095
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "筑巢型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型"
+        ],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "守门人",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.6681,
+          "count": 13362
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "筑巢型"
+        ],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "月光型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.6,
+          "p10": 0.6,
+          "p50": 0.6,
+          "p90": 0.6
+        }
+      }
+    },
+    "conservative": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2888,
+          "count": 5776
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 5
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "同行者",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2954,
+          "count": 5908
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 5
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "rate": 0.1674,
+          "count": 3348
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0006,
+          "count": 13
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "同行者"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2952,
+          "count": 5904
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0003,
+          "count": 5
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2814,
+          "count": 5628
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0007,
+          "count": 14
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.2814,
+          "count": 5629
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0006,
+          "count": 13
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "港湾型"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7046,
+          "p10": 0.6978,
+          "p50": 0.7045,
+          "p90": 0.7113
+        }
+      }
+    },
+    "volatile": {
+      "baseline": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8212,
+          "count": 16423
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0.0001,
+          "count": 1
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8222,
+          "count": 16443
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型"
+        ],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "月光型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8862,
+          "count": 17724
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型"
+        ],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.822,
+          "count": 16440
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型"
+        ],
+        "lowFrequencyPersonas": [
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "月光型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8579,
+          "count": 17157
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0.0001,
+          "count": 1
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "stargazer",
+          "displayName": "观星者",
+          "rate": 0.8025,
+          "count": 16051
+        },
+        "minTop1": {
+          "id": "lighthouse",
+          "displayName": "灯塔型",
+          "rate": 0.0001,
+          "count": 2
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [
+          "灯塔型",
+          "筑巢型",
+          "候鸟型",
+          "探险家",
+          "流浪诗人",
+          "港湾型",
+          "摆渡人"
+        ],
+        "alphaDistribution": {
+          "mean": 0.8477,
+          "p10": 0.85,
+          "p50": 0.85,
+          "p90": 0.85
+        }
+      }
+    },
+    "constructConsistent": {
+      "baseline": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1192,
+          "count": 2385
+        },
+        "minTop1": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "rate": 0.0169,
+          "count": 338
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.119,
+          "count": 2379
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.019,
+          "count": 380
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "rate": 0.1215,
+          "count": 2429
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0233,
+          "count": 467
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1192,
+          "count": 2383
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.019,
+          "count": 379
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1132,
+          "count": 2264
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0238,
+          "count": 476
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "rate": 0.1147,
+          "count": 2294
+        },
+        "minTop1": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "rate": 0.0237,
+          "count": 473
+        },
+        "missingPersonas": [],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7189,
+          "p10": 0.6,
+          "p50": 0.6627,
+          "p90": 0.85
+        }
+      }
+    },
+    "constructConflict": {
+      "baseline": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-a": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-b": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": null
+      },
+      "candidate-c": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 1,
+          "p10": 1,
+          "p50": 1,
+          "p90": 1
+        }
+      },
+      "candidate-d": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.7,
+          "p10": 0.7,
+          "p50": 0.7,
+          "p90": 0.7
+        }
+      },
+      "candidate-e-adaptive-hybrid": {
+        "maxTop1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "rate": 0.5,
+          "count": 10000
+        },
+        "minTop1": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "rate": 0,
+          "count": 0
+        },
+        "missingPersonas": [
+          "灯塔型",
+          "守门人",
+          "筑巢型",
+          "岛屿型",
+          "探险家",
+          "流浪诗人",
+          "星火型",
+          "月光型",
+          "镜像型",
+          "观星者",
+          "同行者",
+          "港湾型",
+          "摆渡人"
+        ],
+        "lowFrequencyPersonas": [],
+        "alphaDistribution": {
+          "mean": 0.6771,
+          "p10": 0.6771,
+          "p50": 0.6771,
+          "p90": 0.6771
+        }
+      }
+    }
+  }
+}

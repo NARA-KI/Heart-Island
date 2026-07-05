@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-07-05T06:39:43.258Z",
+  "scenarios": {
+    "distributionFirst": {
+      "weights": {
+        "max": 240,
+        "min": 280,
+        "style": 90,
+        "robust": 70
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 95.275
+        },
+        {
+          "profile": "candidate-d",
+          "score": 88.525
+        },
+        {
+          "profile": "candidate-b",
+          "score": 78.742
+        },
+        {
+          "profile": "baseline",
+          "score": 77.336
+        },
+        {
+          "profile": "candidate-c",
+          "score": 76.723
+        },
+        {
+          "profile": "candidate-a",
+          "score": 76.672
+        }
+      ]
+    },
+    "responseStyleFirst": {
+      "weights": {
+        "max": 120,
+        "min": 100,
+        "style": 260,
+        "robust": 70
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 86.35
+        },
+        {
+          "profile": "candidate-d",
+          "score": 71.076
+        },
+        {
+          "profile": "baseline",
+          "score": 39.924
+        },
+        {
+          "profile": "candidate-c",
+          "score": 39.674
+        },
+        {
+          "profile": "candidate-a",
+          "score": 39.584
+        },
+        {
+          "profile": "candidate-b",
+          "score": 38.588
+        }
+      ]
+    },
+    "semanticFirst": {
+      "weights": {
+        "max": 90,
+        "min": 90,
+        "style": 90,
+        "robust": 40
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 95.275
+        },
+        {
+          "profile": "candidate-d",
+          "score": 89.632
+        },
+        {
+          "profile": "baseline",
+          "score": 78.76
+        },
+        {
+          "profile": "candidate-b",
+          "score": 78.742
+        },
+        {
+          "profile": "candidate-c",
+          "score": 78.544
+        },
+        {
+          "profile": "candidate-a",
+          "score": 78.508
+        }
+      ]
+    },
+    "robustnessFirst": {
+      "weights": {
+        "max": 90,
+        "min": 90,
+        "style": 80,
+        "robust": 240
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 95.8
+        },
+        {
+          "profile": "candidate-d",
+          "score": 90.711
+        },
+        {
+          "profile": "candidate-b",
+          "score": 81.104
+        },
+        {
+          "profile": "baseline",
+          "score": 81.032
+        },
+        {
+          "profile": "candidate-c",
+          "score": 80.813
+        },
+        {
+          "profile": "candidate-a",
+          "score": 80.78
+        }
+      ]
+    },
+    "lowFrequencyProtection": {
+      "weights": {
+        "max": 80,
+        "min": 360,
+        "style": 80,
+        "robust": 60
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 95.8
+        },
+        {
+          "profile": "candidate-d",
+          "score": 90.7
+        },
+        {
+          "profile": "candidate-b",
+          "score": 81.104
+        },
+        {
+          "profile": "baseline",
+          "score": 80.392
+        },
+        {
+          "profile": "candidate-c",
+          "score": 80.256
+        },
+        {
+          "profile": "candidate-a",
+          "score": 80.224
+        }
+      ]
+    },
+    "balanced": {
+      "weights": {
+        "max": 190,
+        "min": 260,
+        "style": 160,
+        "robust": 120
+      },
+      "ranking": [
+        {
+          "profile": "candidate-e-adaptive-hybrid",
+          "score": 91.6
+        },
+        {
+          "profile": "candidate-d",
+          "score": 81.328
+        },
+        {
+          "profile": "candidate-b",
+          "score": 62.208
+        },
+        {
+          "profile": "baseline",
+          "score": 61.794
+        },
+        {
+          "profile": "candidate-c",
+          "score": 61.343
+        },
+        {
+          "profile": "candidate-a",
+          "score": 61.276
+        }
+      ]
+    }
+  }
+}

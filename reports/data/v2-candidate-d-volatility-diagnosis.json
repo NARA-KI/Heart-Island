@@ -1,0 +1,352 @@
+{
+  "generatedAt": "2026-07-05T06:36:59.385Z",
+  "mode": "volatile",
+  "constructStats": {
+    "SC": {
+      "mean": 50.0864,
+      "variance": 158.77,
+      "std": 12.6004,
+      "min": 8.25,
+      "max": 100
+    },
+    "AU": {
+      "mean": 50.074,
+      "variance": 163.5501,
+      "std": 12.7887,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "TR": {
+      "mean": 49.9534,
+      "variance": 161.0656,
+      "std": 12.6912,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "CL": {
+      "mean": 50.0195,
+      "variance": 161.517,
+      "std": 12.7089,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "PA": {
+      "mean": 50.0065,
+      "variance": 161.6516,
+      "std": 12.7142,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "CM": {
+      "mean": 50.0401,
+      "variance": 161.5403,
+      "std": 12.7099,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "SI": {
+      "mean": 77.3595,
+      "variance": 160.2888,
+      "std": 12.6605,
+      "min": 24.75,
+      "max": 100
+    },
+    "NV": {
+      "mean": 22.6182,
+      "variance": 160.2371,
+      "std": 12.6585,
+      "min": 0,
+      "max": 83.5
+    },
+    "RM": {
+      "mean": 77.353,
+      "variance": 160.9194,
+      "std": 12.6854,
+      "min": 24.75,
+      "max": 100
+    },
+    "CS": {
+      "mean": 22.6313,
+      "variance": 161.4995,
+      "std": 12.7082,
+      "min": 0,
+      "max": 75.25
+    },
+    "EC": {
+      "mean": 50.0311,
+      "variance": 159.9612,
+      "std": 12.6476,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "CR": {
+      "mean": 49.9208,
+      "variance": 161.8567,
+      "std": 12.7223,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "ER": {
+      "mean": 50.2401,
+      "variance": 162.7017,
+      "std": 12.7555,
+      "min": 8.25,
+      "max": 91.75
+    },
+    "RI": {
+      "mean": 77.4365,
+      "variance": 161.4993,
+      "std": 12.7082,
+      "min": 16.5,
+      "max": 100
+    },
+    "MN": {
+      "mean": 22.7268,
+      "variance": 161.9785,
+      "std": 12.7271,
+      "min": 0,
+      "max": 75.25
+    }
+  },
+  "topConstructCorrelations": [
+    {
+      "a": "CM",
+      "b": "RI",
+      "correlation": 0.0227
+    },
+    {
+      "a": "CM",
+      "b": "SI",
+      "correlation": 0.0197
+    },
+    {
+      "a": "AU",
+      "b": "RI",
+      "correlation": -0.0187
+    },
+    {
+      "a": "CS",
+      "b": "ER",
+      "correlation": -0.0159
+    },
+    {
+      "a": "SC",
+      "b": "CM",
+      "correlation": 0.0155
+    },
+    {
+      "a": "CM",
+      "b": "CS",
+      "correlation": -0.0137
+    },
+    {
+      "a": "SC",
+      "b": "CL",
+      "correlation": -0.0136
+    },
+    {
+      "a": "CL",
+      "b": "RI",
+      "correlation": -0.0131
+    },
+    {
+      "a": "EC",
+      "b": "MN",
+      "correlation": 0.0131
+    },
+    {
+      "a": "NV",
+      "b": "EC",
+      "correlation": 0.0113
+    },
+    {
+      "a": "EC",
+      "b": "ER",
+      "correlation": -0.0113
+    },
+    {
+      "a": "CS",
+      "b": "MN",
+      "correlation": -0.011
+    }
+  ],
+  "stargazerTop1": {
+    "candidateA": {
+      "count": 16461,
+      "means": {
+        "SC": 49.4937,
+        "AU": 49.7017,
+        "TR": 50.427,
+        "CL": 50.1143,
+        "PA": 50.1263,
+        "CM": 50.5298,
+        "SI": 80.614,
+        "NV": 22.7963,
+        "RM": 78.2578,
+        "CS": 22.4406,
+        "EC": 50.3496,
+        "CR": 49.9217,
+        "ER": 49.6772,
+        "RI": 77.7117,
+        "MN": 22.476
+      }
+    },
+    "candidateD": {
+      "count": 17139,
+      "means": {
+        "SC": 49.4078,
+        "AU": 50.0701,
+        "TR": 50.2026,
+        "CL": 49.8163,
+        "PA": 49.9585,
+        "CM": 50.3457,
+        "SI": 80.0375,
+        "NV": 22.7634,
+        "RM": 77.9108,
+        "CS": 22.2002,
+        "EC": 50.0229,
+        "CR": 49.7717,
+        "ER": 49.7159,
+        "RI": 77.4969,
+        "MN": 22.4956
+      }
+    }
+  },
+  "contribution": {
+    "absoluteContributionMean": 0.7304,
+    "shapeContributionMean": 0.2696
+  },
+  "amplifiedConstructsAfterCentering": [
+    {
+      "construct": "CS",
+      "meanCenteredAbsZ": 1.4783
+    },
+    {
+      "construct": "NV",
+      "meanCenteredAbsZ": 1.4779
+    },
+    {
+      "construct": "SI",
+      "meanCenteredAbsZ": 1.4762
+    },
+    {
+      "construct": "RI",
+      "meanCenteredAbsZ": 1.4753
+    },
+    {
+      "construct": "MN",
+      "meanCenteredAbsZ": 1.4738
+    },
+    {
+      "construct": "RM",
+      "meanCenteredAbsZ": 1.4661
+    },
+    {
+      "construct": "AU",
+      "meanCenteredAbsZ": 0.5318
+    },
+    {
+      "construct": "ER",
+      "meanCenteredAbsZ": 0.5293
+    }
+  ],
+  "comparisonToConstructConsistent": {
+    "volatile": {
+      "sampleCount": 20000,
+      "averageVolatility": null,
+      "constructMeanRange": 54.8183
+    },
+    "constructConsistent": {
+      "sampleCount": 20000,
+      "averageVolatility": null,
+      "constructMeanRange": 1.264
+    }
+  },
+  "alphaSweep": [
+    {
+      "alpha": 0.6,
+      "volatile": {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.8624,
+        "count": 17248
+      },
+      "highAgreement": {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "rate": 0.7141,
+        "count": 14282
+      },
+      "lowAgreement": {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.6707,
+        "count": 13414
+      }
+    },
+    {
+      "alpha": 0.7,
+      "volatile": {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.8569,
+        "count": 17139
+      },
+      "highAgreement": {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "rate": 0.7474,
+        "count": 14949
+      },
+      "lowAgreement": {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.8024,
+        "count": 16047
+      }
+    },
+    {
+      "alpha": 0.8,
+      "volatile": {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.8486,
+        "count": 16971
+      },
+      "highAgreement": {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "rate": 0.7749,
+        "count": 15497
+      },
+      "lowAgreement": {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.8933,
+        "count": 17866
+      }
+    },
+    {
+      "alpha": 0.9,
+      "volatile": {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "rate": 0.8368,
+        "count": 16736
+      },
+      "highAgreement": {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "rate": 0.7983,
+        "count": 15965
+      },
+      "lowAgreement": {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "rate": 0.9481,
+        "count": 18962
+      }
+    }
+  ],
+  "conclusion": "candidate-D fixed alpha improves level-bias modes but lets volatile samples rely too much on centered shape; adaptive alpha should reduce shape weight when structural confidence is low."
+}
