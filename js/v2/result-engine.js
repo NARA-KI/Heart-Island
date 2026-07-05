@@ -1,8 +1,17 @@
 import { CONSTRUCT_LABELS } from './config.js';
-import { scoreAnswers } from './scoring-engine.js';
+import { scoreAnswers, scoreAnswersAdaptiveHybrid } from './scoring-engine.js';
 
 export function buildResult({ questionBank, candidateA, descriptions, answers }) {
   const scoring = scoreAnswers(questionBank, candidateA, answers);
+  return buildResultFromScoring({ scoring, descriptions });
+}
+
+export function buildAdaptiveResult({ questionBank, candidateE, candidateEScoringProfile, descriptions, answers }) {
+  const scoring = scoreAnswersAdaptiveHybrid(questionBank, candidateE, candidateEScoringProfile, answers);
+  return buildResultFromScoring({ scoring, descriptions });
+}
+
+export function buildResultFromScoring({ scoring, descriptions }) {
   const persona = scoring.finalPersona;
   const description = descriptions.personas.find((item) => item.id === persona.id)
     ?? descriptions.personas.find((item) => item.displayName === persona.displayName)

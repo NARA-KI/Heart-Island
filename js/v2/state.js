@@ -1,4 +1,6 @@
-export function createInitialState() {
+import { createPilotState } from './pilot-engine.js';
+
+export function createInitialState(options = {}) {
   return {
     view: 'home',
     currentQuestionIndex: 0,
@@ -8,11 +10,12 @@ export function createInitialState() {
     completedAt: null,
     result: null,
     restoreNotice: null,
+    pilot: createPilotState(options.pilotMode === true),
   };
 }
 
-export function hydrateState(saved, questionBank) {
-  const state = createInitialState();
+export function hydrateState(saved, questionBank, options = {}) {
+  const state = createInitialState(options);
   state.currentQuestionIndex = Math.min(
     Math.max(Number(saved.currentQuestionIndex ?? 0), 0),
     questionBank.questions.length - 1,
@@ -21,6 +24,14 @@ export function hydrateState(saved, questionBank) {
   state.optionOrder = sanitizeOptionOrder(saved.optionOrder ?? {}, questionBank);
   state.startedAt = saved.startedAt ?? new Date().toISOString();
   state.completedAt = saved.completedAt ?? null;
+  if (options.pilotMode === true) {
+    state.pilot = {
+      ...createPilotState(true),
+      ...(saved.pilot ?? {}),
+      enabled: true,
+      pilotId: saved.pilot?.pilotId ?? createPilotState(true).pilotId,
+    };
+  }
   state.view = Object.keys(state.answers).length >= questionBank.questions.length ? 'transition' : 'quiz';
   return state;
 }

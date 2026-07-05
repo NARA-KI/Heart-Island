@@ -457,6 +457,60 @@ p {
   font-weight: 800;
 }
 
+.v2-pilot-feedback,
+.v2-pilot-tools {
+  display: grid;
+  gap: 16px;
+}
+
+.v2-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.v2-feedback-field,
+.v2-import {
+  display: grid;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.v2-feedback-field select,
+.v2-feedback-field textarea,
+.v2-import input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-card);
+  padding: 10px 12px;
+  background: rgba(229, 242, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.v2-feedback-field textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.v2-pilot-card {
+  display: grid;
+  gap: 14px;
+}
+
+.v2-pilot-compact {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.v2-import-summary {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-card);
+  padding: 12px;
+  background: var(--surface-glass);
+}
+
 @media (min-width: 820px) {
   .v2-home {
     grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);

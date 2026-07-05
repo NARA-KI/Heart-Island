@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-07-05T07:35:54.203Z",
+  "branch": "feature/heart-island-v2-alpha-integration",
+  "candidateEHash": "64ed6fb93959dddb34de43bdbec3fbec0ed489507507f80998131fed684a4f33",
+  "candidateEProfileHash": "9f93317f978f5322266d5485187bdc59db3cfb8c5c653674c128fec13bafbf13",
+  "publicProfileCandidateA": true,
+  "fixtures": {
+    "same": {
+      "candidateA": "守门人",
+      "candidateE": "守门人",
+      "agreement": true
+    },
+    "different": {
+      "candidateA": "守门人",
+      "candidateE": "岛屿型",
+      "agreement": false
+    }
+  },
+  "checks": [
+    {
+      "name": "public-entry-hides-pilot",
+      "pass": true,
+      "hasPilotUi": 0,
+      "requestedCandidateE": false
+    },
+    {
+      "name": "pilot-agreement-flow",
+      "pass": true,
+      "cardCount": 1,
+      "agreementAttr": "true",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "hasInternalProfileNames": false,
+      "exportedPilotId": "pilot-c6f3ba7f81b80e46",
+      "candidateA": "守门人",
+      "candidateE": "守门人",
+      "xyOrder": [],
+      "duplicateUniqueCount": 1,
+      "csvComplete": true,
+      "noPii": true
+    },
+    {
+      "name": "pilot-blind-xy-flow",
+      "pass": true,
+      "cardCount": 2,
+      "agreementAttr": "false",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "hasInternalProfileNames": false,
+      "exportedPilotId": "pilot-f68021c3b07bbf91",
+      "candidateA": "守门人",
+      "candidateE": "岛屿型",
+      "xyOrder": [
+        "candidate-a",
+        "candidate-e"
+      ],
+      "duplicateUniqueCount": 1,
+      "csvComplete": true,
+      "noPii": true
+    }
+  ],
+  "pass": true
+}

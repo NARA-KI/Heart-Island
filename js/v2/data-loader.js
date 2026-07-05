@@ -11,7 +11,8 @@ async function loadJson(path) {
   }
 }
 
-export async function loadV2RuntimeData(paths = V2_DATA_PATHS) {
+export async function loadV2RuntimeData(paths = V2_DATA_PATHS, options = {}) {
+  const includePilot = options.includePilot === true;
   const [manifest, questionBank, candidateA, baseline, descriptions] = await Promise.all([
     loadJson(paths.manifest),
     loadJson(paths.questionBank),
@@ -26,7 +27,7 @@ export async function loadV2RuntimeData(paths = V2_DATA_PATHS) {
     descriptions,
   });
 
-  return {
+  const runtime = {
     manifest,
     questionBank,
     candidateA,
@@ -34,4 +35,20 @@ export async function loadV2RuntimeData(paths = V2_DATA_PATHS) {
     descriptions,
     validation,
   };
+
+  if (includePilot) {
+    const [candidateE, candidateEScoringProfile] = await Promise.all([
+      loadJson(paths.candidateE),
+      loadJson(paths.candidateEScoringProfile),
+    ]);
+    assertV2Data({
+      questionBank,
+      personaData: candidateE,
+      descriptions,
+    });
+    runtime.candidateE = candidateE;
+    runtime.candidateEScoringProfile = candidateEScoringProfile;
+  }
+
+  return runtime;
 }

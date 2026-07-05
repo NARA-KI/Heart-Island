@@ -37,6 +37,7 @@ export function saveState(manifest, state) {
     updatedAt: new Date().toISOString(),
     completedAt: state.completedAt,
     view: state.view,
+    pilot: state.pilot,
   };
   localStorage.setItem(V2_STORAGE_KEY, JSON.stringify(payload));
 }

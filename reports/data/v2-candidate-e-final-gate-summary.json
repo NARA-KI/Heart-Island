@@ -1,0 +1,312 @@
+{
+  "generatedAt": "2026-07-05T07:37:13.619Z",
+  "source": "Stage 1.7b frozen machine data + deterministic validation-set recount; no parameter search performed.",
+  "seed": "heart-island-v2-alpha-adaptive-validation-b",
+  "sampleCount": 100000,
+  "hashes": {
+    "candidateE": "64ed6fb93959dddb34de43bdbec3fbec0ed489507507f80998131fed684a4f33",
+    "candidateEProfile": "9f93317f978f5322266d5485187bdc59db3cfb8c5c653674c128fec13bafbf13",
+    "questionBank": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+    "candidateA": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3"
+  },
+  "candidateE": {
+    "method": "adaptive-standardized-shape-hybrid",
+    "publicRuntime": false,
+    "adaptiveAlpha": {
+      "minAlpha": 0.6,
+      "maxAlpha": 0.85,
+      "defaultAlpha": 0.7,
+      "consistencyThreshold": 0.45,
+      "volatilityThreshold": 0.45,
+      "agreementThreshold": 0.25
+    },
+    "highAgreementMax": {
+      "id": "moonlight",
+      "displayName": "月光型",
+      "rate": 0.7203,
+      "count": 14406
+    },
+    "lowAgreementMax": {
+      "id": "islander",
+      "displayName": "岛屿型",
+      "rate": 0.6681,
+      "count": 13362
+    },
+    "volatileMax": {
+      "id": "stargazer",
+      "displayName": "观星者",
+      "rate": 0.8025,
+      "count": 16051
+    },
+    "middleMax": {
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "rate": 0.2373,
+      "count": 4746
+    },
+    "conservativeMax": {
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "rate": 0.2814,
+      "count": 5629
+    },
+    "constructConsistentMax": {
+      "id": "collector",
+      "displayName": "收藏家",
+      "rate": 0.1147,
+      "count": 2294
+    },
+    "constructConsistentMin": {
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "rate": 0.0237,
+      "count": 473
+    },
+    "uniformDistribution": [
+      {
+        "id": "lighthouse",
+        "displayName": "灯塔型",
+        "count": 3975,
+        "rate": 0.0398
+      },
+      {
+        "id": "gatekeeper",
+        "displayName": "守门人",
+        "count": 12038,
+        "rate": 0.1204
+      },
+      {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "count": 630,
+        "rate": 0.0063
+      },
+      {
+        "id": "collector",
+        "displayName": "收藏家",
+        "count": 11924,
+        "rate": 0.1192
+      },
+      {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "count": 15619,
+        "rate": 0.1562
+      },
+      {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "count": 6965,
+        "rate": 0.0697
+      },
+      {
+        "id": "explorer",
+        "displayName": "探险家",
+        "count": 5364,
+        "rate": 0.0536
+      },
+      {
+        "id": "wandering-poet",
+        "displayName": "流浪诗人",
+        "count": 5613,
+        "rate": 0.0561
+      },
+      {
+        "id": "spark",
+        "displayName": "星火型",
+        "count": 6772,
+        "rate": 0.0677
+      },
+      {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "count": 5074,
+        "rate": 0.0507
+      },
+      {
+        "id": "mirror",
+        "displayName": "镜像型",
+        "count": 11415,
+        "rate": 0.1142
+      },
+      {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "count": 4947,
+        "rate": 0.0495
+      },
+      {
+        "id": "companion",
+        "displayName": "同行者",
+        "count": 2203,
+        "rate": 0.022
+      },
+      {
+        "id": "harbor",
+        "displayName": "港湾型",
+        "count": 1230,
+        "rate": 0.0123
+      },
+      {
+        "id": "ferryman",
+        "displayName": "摆渡人",
+        "count": 6231,
+        "rate": 0.0623
+      }
+    ],
+    "harborUniformRate": 0.0123,
+    "nearTieRate": 0.9047,
+    "lowConfidenceRate": 0.9047,
+    "alphaDistribution": {
+      "min": 0.6,
+      "max": 0.85,
+      "mean": 0.8181,
+      "p10": 0.7188,
+      "p25": 0.85,
+      "p50": 0.85,
+      "p75": 0.85,
+      "p90": 0.85
+    }
+  },
+  "candidateA": {
+    "highAgreementMax": {
+      "id": "moonlight",
+      "displayName": "月光型",
+      "rate": 0.8218,
+      "count": 16436
+    },
+    "lowAgreementMax": {
+      "id": "islander",
+      "displayName": "岛屿型",
+      "rate": 0.9772,
+      "count": 19544
+    },
+    "volatileMax": {
+      "id": "stargazer",
+      "displayName": "观星者",
+      "rate": 0.8222,
+      "count": 16443
+    },
+    "uniformMaxTop1": {
+      "id": "migratory-bird",
+      "displayName": "候鸟型",
+      "rate": 0.1892,
+      "count": 18917
+    },
+    "uniformMinTop1": {
+      "id": "nest-builder",
+      "displayName": "筑巢型",
+      "rate": 0.0026,
+      "count": 258
+    },
+    "uniformDistribution": [
+      {
+        "id": "lighthouse",
+        "displayName": "灯塔型",
+        "count": 2812,
+        "rate": 0.0281
+      },
+      {
+        "id": "gatekeeper",
+        "displayName": "守门人",
+        "count": 14590,
+        "rate": 0.1459
+      },
+      {
+        "id": "nest-builder",
+        "displayName": "筑巢型",
+        "count": 250,
+        "rate": 0.0025
+      },
+      {
+        "id": "collector",
+        "displayName": "收藏家",
+        "count": 13733,
+        "rate": 0.1373
+      },
+      {
+        "id": "migratory-bird",
+        "displayName": "候鸟型",
+        "count": 18990,
+        "rate": 0.1899
+      },
+      {
+        "id": "islander",
+        "displayName": "岛屿型",
+        "count": 6165,
+        "rate": 0.0617
+      },
+      {
+        "id": "explorer",
+        "displayName": "探险家",
+        "count": 4840,
+        "rate": 0.0484
+      },
+      {
+        "id": "wandering-poet",
+        "displayName": "流浪诗人",
+        "count": 5384,
+        "rate": 0.0538
+      },
+      {
+        "id": "spark",
+        "displayName": "星火型",
+        "count": 6705,
+        "rate": 0.067
+      },
+      {
+        "id": "moonlight",
+        "displayName": "月光型",
+        "count": 3953,
+        "rate": 0.0395
+      },
+      {
+        "id": "mirror",
+        "displayName": "镜像型",
+        "count": 11383,
+        "rate": 0.1138
+      },
+      {
+        "id": "stargazer",
+        "displayName": "观星者",
+        "count": 4176,
+        "rate": 0.0418
+      },
+      {
+        "id": "companion",
+        "displayName": "同行者",
+        "count": 1828,
+        "rate": 0.0183
+      },
+      {
+        "id": "harbor",
+        "displayName": "港湾型",
+        "count": 606,
+        "rate": 0.0061
+      },
+      {
+        "id": "ferryman",
+        "displayName": "摆渡人",
+        "count": 4585,
+        "rate": 0.0459
+      }
+    ]
+  },
+  "candidateEComparedWithCandidateA": {
+    "differentTop1Count": 28197,
+    "differentTop1Rate": 0.282,
+    "candidateEValidationScore": 91.6,
+    "candidateAValidationScore": 61.276,
+    "volatilePeakHigherThanCandidateA": false
+  },
+  "decision": {
+    "freezeCandidateE": true,
+    "switchPublicProfile": false,
+    "proceedToDebugPilot": true,
+    "proceedToStage2": false,
+    "riskNotes": [
+      "candidate-E volatile峰值未高于candidate-A。",
+      "人工语义复核未完成前不得切换公开profile。"
+    ]
+  }
+}

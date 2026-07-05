@@ -7,6 +7,8 @@ export const V2_DATA_PATHS = {
   manifest: `${V2_DATA_BASE}manifest.json`,
   questionBank: `${V2_DATA_BASE}question-bank.v2.json`,
   candidateA: `${V2_DATA_BASE}persona-target-vectors.v2.candidate-a.json`,
+  candidateE: `${V2_DATA_BASE}persona-target-vectors.v2.candidate-e-adaptive-hybrid.json`,
+  candidateEScoringProfile: `${V2_DATA_BASE}scoring-profile.v2.candidate-e-adaptive-hybrid.json`,
   baseline: `${V2_DATA_BASE}persona-target-vectors.v2.baseline.json`,
   descriptions: `${V2_DATA_BASE}persona-descriptions.v2.json`,
 };
