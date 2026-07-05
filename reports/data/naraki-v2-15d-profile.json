@@ -1,0 +1,1948 @@
+{
+  "generatedAt": "2026-07-05T08:36:28.012Z",
+  "sourceFile": "reports/pilot-input/heart-island-current-test-1783239916728.json",
+  "sourceSha256": "f75613cc431dd2c08dbcd313c6df0c0c1d3f33d62c0b1520f5b16d8e1249aa04",
+  "branch": "feature/heart-island-v2-alpha-integration",
+  "commit": "6a7e010",
+  "answerCount": 60,
+  "duration": {
+    "seconds": 710,
+    "readable": "11分50秒"
+  },
+  "inputMeta": {
+    "ok": true,
+    "errors": [],
+    "answerCount": 60,
+    "questionnaireVersion": "v2.0-60-question-alpha-1",
+    "questionBankHash": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+    "scoringProfile": "candidate-a",
+    "startedAt": "2026-07-05T07:58:23.711Z",
+    "completedAt": "2026-07-05T08:10:13.220Z",
+    "pilotEnabled": false
+  },
+  "constructScores": [
+    {
+      "id": "SI",
+      "label": "灵魂理想",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 334,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 83.5,
+      "runtimeAverage": 83.5,
+      "level": "较高",
+      "explanation": "重视灵魂理解和命运感",
+      "advantage": "较高的灵魂理想让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "灵魂理想很高时，可能会在关系里放大这一类线索。",
+      "contributions": [
+        {
+          "questionId": "v2-q25",
+          "question": "在星潮海面上，你想起自己被一个人真正打动的时刻。最重要的通常是什么？",
+          "optionId": "A",
+          "optionText": "对方懂我的精神世界和那些说不清的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q29",
+          "question": "你很在意的兴趣、信念或创作，对方并不太懂。你更可能怎么感受？",
+          "optionId": "C",
+          "optionText": "我会明显觉得少了被看见的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q33",
+          "question": "对方很适合一起生活，但你总觉得精神上少了一点共鸣。你更可能怎么处理？",
+          "optionId": "C",
+          "optionText": "我会试着创造更多深层交流。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q37",
+          "question": "关系稳定可靠，但没有特别强的精神共鸣。你会怎样看待它？",
+          "optionId": "C",
+          "optionText": "我会继续寻找能不能更深地理解彼此。",
+          "score": 67,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "MN",
+      "label": "回忆牵引 / 关系叙事",
+      "layer": "关系维持",
+      "questionCount": 4,
+      "rawTotal": 334,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 83.5,
+      "runtimeAverage": 83.5,
+      "level": "较高",
+      "explanation": "容易被记忆牵动，并从故事中确认爱",
+      "advantage": "较高的回忆牵引 / 关系叙事让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "回忆牵引 / 关系叙事很高时，可能会在关系里放大这一类线索。",
+      "contributions": [
+        {
+          "questionId": "v2-q54",
+          "question": "翻到一张旧照片时，你想起一段关系里很小但很亮的片段。你通常会怎样看待它？",
+          "optionId": "A",
+          "optionText": "那些片段会在我心里留很久。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q56",
+          "question": "在心岛旧码头，你看见许多被海风磨平的名字。对你来说，关系里的共同记忆更像什么？",
+          "optionId": "A",
+          "optionText": "是爱存在过的证据，我会很珍惜。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q58",
+          "question": "一段关系已经结束，但很多细节还会在某些时刻回来。你通常会怎样处理这些记忆？",
+          "optionId": "A",
+          "optionText": "我会让它们留下，像我生命里的一部分。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q60",
+          "question": "关系翻篇之后，你更希望自己怎样对待过去？",
+          "optionId": "D",
+          "optionText": "我会慢慢整理遗憾，给那段关系一个位置。",
+          "score": 100,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "CL",
+      "label": "亲密连接",
+      "layer": "爱情成分",
+      "questionCount": 4,
+      "rawTotal": 267,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 66.75,
+      "runtimeAverage": 66.75,
+      "level": "偏高",
+      "explanation": "渴望日常靠近和情感连接",
+      "advantage": "较高的亲密连接让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q13",
+          "question": "心岛的浅湾很安静，你想起自己喜欢一个人时，最自然想分享的是什么？",
+          "optionId": "A",
+          "optionText": "一些日常小事，让对方进入我的生活感。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q16",
+          "question": "你有点低落，但事情不算严重。关系里你更希望对方怎么在场？",
+          "optionId": "C",
+          "optionText": "能问我发生了什么，并认真听。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q19",
+          "question": "关系因为忙碌变得疏一些。你更可能怎么回应这种距离？",
+          "optionId": "C",
+          "optionText": "我会想找一个轻松方式重新靠近。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q22",
+          "question": "对方不了解你很多日常细节，但你们相处并不差。你更接近哪种感受？",
+          "optionId": "A",
+          "optionText": "我可以接受，不需要什么都分享。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "RM",
+      "label": "现实匹配",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 234,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 58.5,
+      "runtimeAverage": 58.5,
+      "level": "中等",
+      "explanation": "在现实匹配上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的现实匹配给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q27",
+          "question": "航海图摊开时，你们聊到钱、城市、家庭边界和生活节奏。你最先会看什么？",
+          "optionId": "C",
+          "optionText": "有没有愿意一起解决问题的态度。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q31",
+          "question": "在进入一段关系前，你发现彼此生活节奏差很多。你更可能怎么判断？",
+          "optionId": "B",
+          "optionText": "我会认真看差异会不会长期消耗彼此。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q35",
+          "question": "你们感情很好，但在城市、家庭边界或金钱安排上差异很大。你更可能看重什么？",
+          "optionId": "C",
+          "optionText": "我会先承认差异，再决定能不能继续。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q39",
+          "question": "你明知道现实条件不太合，但感觉非常强烈。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会先跟着感觉走，现实以后再看。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "RI",
+      "label": "关系投入 / 留下倾向",
+      "layer": "关系维持",
+      "questionCount": 4,
+      "rawTotal": 233,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 58.25,
+      "runtimeAverage": 58.25,
+      "level": "中等",
+      "explanation": "在关系投入 / 留下倾向上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的关系投入 / 留下倾向给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q53",
+          "question": "当一段重要关系进入困难期，你通常怎样理解“继续投入”？",
+          "optionId": "B",
+          "optionText": "我会看这段关系是否还值得继续加码。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q55",
+          "question": "你们已经一起投入了很多时间和心力，但眼前关系进入低谷。过去的投入会怎样影响你的选择？",
+          "optionId": "C",
+          "optionText": "我会看这段关系是否还能继续被经营。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q57",
+          "question": "关系变得很重，需要持续投入时间和心力。你更接近哪种选择？",
+          "optionId": "B",
+          "optionText": "我会先评估自己还能投入多少。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q59",
+          "question": "当你发现继续下去会消耗自己，你更可能怎么做？",
+          "optionId": "D",
+          "optionText": "如果还爱，我很难马上撤出来。",
+          "score": 100,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "SC",
+      "label": "安全确认",
+      "layer": "依恋与安全",
+      "questionCount": 4,
+      "rawTotal": 200,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 50,
+      "runtimeAverage": 50,
+      "level": "中等",
+      "explanation": "在安全确认上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的安全确认给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q01",
+          "question": "在近岸灯标旁，你想起一段刚开始靠近的关系。对方没有明确说过你们现在算什么，你通常更在意什么？",
+          "optionId": "D",
+          "optionText": "我更看行动，暂时不需要语言确认。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q04",
+          "question": "夜航时消息迟迟没有回音。你更接近哪种等待方式？",
+          "optionId": "A",
+          "optionText": "我能先做自己的事，不把沉默立刻放大。",
+          "score": 0,
+          "reverse": true
+        },
+        {
+          "questionId": "v2-q07",
+          "question": "海面忽明忽暗。你想起一段关系里，对方有时很热，有时又突然变淡。你最容易在意什么？",
+          "optionId": "A",
+          "optionText": "我想知道这种变化是不是代表对方变心。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q10",
+          "question": "一个对你重要的日子，对方没有主动提起。你最接近哪种反应？",
+          "optionId": "A",
+          "optionText": "我会很在意，这会影响我对被重视的感受。",
+          "score": 100,
+          "reverse": false
+        }
+      ]
+    },
+    {
+      "id": "AU",
+      "label": "自主边界",
+      "layer": "依恋与安全",
+      "questionCount": 4,
+      "rawTotal": 200,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 50,
+      "runtimeAverage": 50,
+      "level": "中等",
+      "explanation": "在自主边界上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的自主边界给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q02",
+          "question": "航线忽然靠近一片热闹港口。你想起对方开始频繁约你、想参与你的日常时，你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会享受这种靠近，让生活自然交叠。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q05",
+          "question": "船停在两条小径前，一条通往两个人的日常，一条通往自己的安静角落。恋爱里你通常更需要什么？",
+          "optionId": "A",
+          "optionText": "有一个只属于自己的角落，关系才不会太满。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q08",
+          "question": "对方很自然地想进入你的社交、时间表和休息日。你更接近哪种感受？",
+          "optionId": "A",
+          "optionText": "我会觉得被需要，也愿意把生活打开。",
+          "score": 0,
+          "reverse": true
+        },
+        {
+          "questionId": "v2-q11",
+          "question": "对方希望你们更快进入稳定节奏，但你心里还没准备好。你身体里的第一反应更像什么？",
+          "optionId": "B",
+          "optionText": "我会需要更多时间，确认自己是否舒服。",
+          "score": 67,
+          "reverse": false
+        }
+      ]
+    },
+    {
+      "id": "CM",
+      "label": "承诺经营",
+      "layer": "爱情成分",
+      "questionCount": 4,
+      "rawTotal": 200,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 50,
+      "runtimeAverage": 50,
+      "level": "中等",
+      "explanation": "在承诺经营上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的承诺经营给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q15",
+          "question": "关系进入稳定期后，需要有人持续维护它的节奏、回应和方向。你更接近哪种状态？",
+          "optionId": "D",
+          "optionText": "我更希望关系自然发展，不太想经营太多。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q18",
+          "question": "一段关系开始稳定后，你最自然会想把它带向哪里？",
+          "optionId": "C",
+          "optionText": "一起规划一些可执行的未来。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q21",
+          "question": "你们开始讨论未来一段时间这段关系要如何持续。你更在意这件事说明什么？",
+          "optionId": "D",
+          "optionText": "我会有点压力，但仍愿意慢慢尝试。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q24",
+          "question": "对方想给关系一个更固定的安排，你心里第一反应更像什么？",
+          "optionId": "B",
+          "optionText": "如果彼此认真，可以慢慢进入稳定节奏。",
+          "score": 67,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "NV",
+      "label": "新鲜探索",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 200,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 50,
+      "runtimeAverage": 50,
+      "level": "中等",
+      "explanation": "在新鲜探索上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的新鲜探索给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q26",
+          "question": "关系进入固定日常后，一切都很稳定，但很少有新的体验。你通常会怎么感受？",
+          "optionId": "D",
+          "optionText": "我会自己寻找变化，不一定要求对方参与。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q30",
+          "question": "长期关系里，你最怕哪一种状态？",
+          "optionId": "B",
+          "optionText": "关系太不确定，随时可能变化。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q34",
+          "question": "一段关系很稳定，但你开始觉得每天都像复制。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会主动提议一起做点没做过的事。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q38",
+          "question": "关系稳定可靠，但你们面前出现一种新的相处方式或生活体验。你更接近哪种反应？",
+          "optionId": "C",
+          "optionText": "新体验会让我重新有活力。",
+          "score": 67,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "CR",
+      "label": "冲突修复",
+      "layer": "关系运转",
+      "questionCount": 4,
+      "rawTotal": 167,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 41.75,
+      "runtimeAverage": 41.75,
+      "level": "中等",
+      "explanation": "在冲突修复上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的冲突修复给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q42",
+          "question": "一次争执后，你们都安静了很久。你更可能怎么做？",
+          "optionId": "D",
+          "optionText": "我会用一个小动作试着恢复连接。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q45",
+          "question": "裂痕出现后，像船身有一道细缝。你通常更相信哪一种可能？",
+          "optionId": "A",
+          "optionText": "有些缝出现后，很难真的回到原来。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q48",
+          "question": "同一个矛盾又出现了。你更可能怎么处理？",
+          "optionId": "B",
+          "optionText": "我会想重新复盘一次问题在哪里。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q51",
+          "question": "关系里出现裂痕后，你脑中冒出“说了也没用”。你更接近哪种状态？",
+          "optionId": "A",
+          "optionText": "我会真的放弃讨论，让它停在那里。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "TR",
+      "label": "关系信任",
+      "layer": "依恋与安全",
+      "questionCount": 4,
+      "rawTotal": 166,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 41.5,
+      "runtimeAverage": 41.5,
+      "level": "中等",
+      "explanation": "在关系信任上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的关系信任给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q03",
+          "question": "雾气让航线暂时看不清。你想起对方临时改了计划，却没有解释太多。你通常会怎么理解？",
+          "optionId": "D",
+          "optionText": "我会暂时不多想，计划变化不一定代表什么。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q06",
+          "question": "对方有件事没有解释完整，你能感觉到还有一点空白。你第一反应更接近哪一种？",
+          "optionId": "B",
+          "optionText": "我会保留疑问，但不急着下判断。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q09",
+          "question": "如果一段关系暂时没有给出所有答案，你通常更容易预设什么？",
+          "optionId": "B",
+          "optionText": "我需要更多证据，才敢真的相信。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q12",
+          "question": "看到一点模糊线索时，你会不会想通过对方反应来确认关系是否稳定？",
+          "optionId": "C",
+          "optionText": "我会用一些小反应看对方会不会靠近。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "CS",
+      "label": "照顾支持",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 133,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 33.25,
+      "runtimeAverage": 33.25,
+      "level": "偏低",
+      "explanation": "更强调各自负责",
+      "advantage": "较低的照顾支持让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q28",
+          "question": "对方遇到一段压力很大的时期。你最自然的反应是什么？",
+          "optionId": "B",
+          "optionText": "我会很快进入支持状态，先补上自己能做的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q32",
+          "question": "对方反复遇到相似问题，每次都很依赖你。你最容易怎么做？",
+          "optionId": "C",
+          "optionText": "我会减少介入，让对方自己面对。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q36",
+          "question": "对方的问题反复出现，你已经有些累了。你最自然的第一反应是什么？",
+          "optionId": "A",
+          "optionText": "我会先确认自己还能给出多少支持。",
+          "score": 33,
+          "reverse": true
+        },
+        {
+          "questionId": "v2-q40",
+          "question": "在亲密关系里，你更容易把自己放在哪个位置？",
+          "optionId": "B",
+          "optionText": "彼此都要照顾好自己，我不会自动托底。",
+          "score": 0,
+          "reverse": false
+        }
+      ]
+    },
+    {
+      "id": "PA",
+      "label": "激情启动",
+      "layer": "爱情成分",
+      "questionCount": 4,
+      "rawTotal": 132,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 33,
+      "runtimeAverage": 33,
+      "level": "偏低",
+      "explanation": "慢热，需更多确认或观察",
+      "advantage": "较低的激情启动让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q14",
+          "question": "你发现自己对一个人有明显心动。下一步你更可能怎么做？",
+          "optionId": "B",
+          "optionText": "我会给一点信号，但等对方也靠近。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q17",
+          "question": "当一段关系让你心里亮了一下，你通常会怎样处理这份心动？",
+          "optionId": "B",
+          "optionText": "我会先享受这种感觉，不急着行动。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q20",
+          "question": "暧昧的热度慢慢降下来，但你还对这段关系有感觉。你更可能怎么做？",
+          "optionId": "D",
+          "optionText": "我会先收回来，不想一个人推动。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q23",
+          "question": "你强烈心动，但还不了解对方。你会怎样处理这份热度？",
+          "optionId": "B",
+          "optionText": "我会慢慢靠近，留一点试探空间。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "ER",
+      "label": "情绪调节",
+      "layer": "关系运转",
+      "questionCount": 4,
+      "rawTotal": 100,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 25,
+      "runtimeAverage": 25,
+      "level": "偏低",
+      "explanation": "容易被情绪淹没或切断情绪",
+      "advantage": "较低的情绪调节让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q43",
+          "question": "对方明明情绪不对，却只说“没事”。你最容易出现什么反应？",
+          "optionId": "A",
+          "optionText": "我会被对方情绪带得很乱。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q46",
+          "question": "一次对话让你情绪突然升上来。你通常第一步会怎么做？",
+          "optionId": "A",
+          "optionText": "我会先停一下，再决定要不要继续说。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q49",
+          "question": "对方低气压很重，虽然没有冲你发作，但你也被影响了。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会很快被带进去，心情跟着沉下去。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q52",
+          "question": "对方情绪很强烈地涌过来时，你更像哪一种反应？",
+          "optionId": "B",
+          "optionText": "我会瞬间关掉感受，不想接触。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "EC",
+      "label": "表达沟通",
+      "layer": "关系运转",
+      "questionCount": 4,
+      "rawTotal": 99,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 24.75,
+      "runtimeAverage": 24.75,
+      "level": "偏低",
+      "explanation": "倾向忍住、沉默或绕开表达",
+      "advantage": "较低的表达沟通让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q41",
+          "question": "当你心里有不舒服，但事情还没严重到争吵，你通常会怎么处理？",
+          "optionId": "C",
+          "optionText": "我会用一些反应让对方察觉。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q44",
+          "question": "对方不是故意的，但确实碰到了你的边界。你更可能怎么说？",
+          "optionId": "B",
+          "optionText": "我会先消化，之后看有没有必要说。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q47",
+          "question": "你被对方误解了，而且当下气氛有点急。你最可能怎样表达自己的重点？",
+          "optionId": "C",
+          "optionText": "我会用反问让对方知道他误会了。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q50",
+          "question": "你明明有话想说，但担心说出来会让气氛变差。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会先收住，暂时不把话说出来。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    }
+  ],
+  "fiveLayerScores": [
+    {
+      "layer": "依恋与安全",
+      "constructs": [
+        {
+          "id": "SC",
+          "label": "安全确认",
+          "tendency": 50
+        },
+        {
+          "id": "AU",
+          "label": "自主边界",
+          "tendency": 50
+        },
+        {
+          "id": "TR",
+          "label": "关系信任",
+          "tendency": 41.5
+        }
+      ],
+      "constructCount": 3,
+      "tendency": 47.17,
+      "level": "中等",
+      "explanation": "关系刚开始靠近时，你如何处理确定感、空间和信任。 本次最突出的坐标是安全确认，相对较轻的是关系信任。",
+      "advantage": "安全确认突出，使依恋与安全这一层有一个清楚的主轴。",
+      "risk": "如果安全确认持续压过关系信任，依恋与安全这一层可能出现单侧用力。"
+    },
+    {
+      "layer": "爱情成分",
+      "constructs": [
+        {
+          "id": "CL",
+          "label": "亲密连接",
+          "tendency": 66.75
+        },
+        {
+          "id": "PA",
+          "label": "激情启动",
+          "tendency": 33
+        },
+        {
+          "id": "CM",
+          "label": "承诺经营",
+          "tendency": 50
+        }
+      ],
+      "constructCount": 3,
+      "tendency": 49.92,
+      "level": "中等",
+      "explanation": "心动、亲密和长期经营如何共同构成你的爱。 本次最突出的坐标是亲密连接，相对较轻的是激情启动。",
+      "advantage": "亲密连接突出，使爱情成分这一层有一个清楚的主轴。",
+      "risk": "如果亲密连接持续压过激情启动，爱情成分这一层可能出现单侧用力。"
+    },
+    {
+      "layer": "爱情风格",
+      "constructs": [
+        {
+          "id": "SI",
+          "label": "灵魂理想",
+          "tendency": 83.5
+        },
+        {
+          "id": "NV",
+          "label": "新鲜探索",
+          "tendency": 50
+        },
+        {
+          "id": "RM",
+          "label": "现实匹配",
+          "tendency": 58.5
+        },
+        {
+          "id": "CS",
+          "label": "照顾支持",
+          "tendency": 33.25
+        }
+      ],
+      "constructCount": 4,
+      "tendency": 56.31,
+      "level": "中等",
+      "explanation": "你在关系中更被意义、变化、现实或照顾哪一类线索牵动。 本次最突出的坐标是灵魂理想，相对较轻的是照顾支持。",
+      "advantage": "灵魂理想突出，使爱情风格这一层有一个清楚的主轴。",
+      "risk": "如果灵魂理想持续压过照顾支持，爱情风格这一层可能出现单侧用力。"
+    },
+    {
+      "layer": "关系运转",
+      "constructs": [
+        {
+          "id": "EC",
+          "label": "表达沟通",
+          "tendency": 24.75
+        },
+        {
+          "id": "CR",
+          "label": "冲突修复",
+          "tendency": 41.75
+        },
+        {
+          "id": "ER",
+          "label": "情绪调节",
+          "tendency": 25
+        }
+      ],
+      "constructCount": 3,
+      "tendency": 30.5,
+      "level": "偏低",
+      "explanation": "关系遇到情绪、误会和表达压力时，你如何让它继续运行。 本次最突出的坐标是冲突修复，相对较轻的是表达沟通。",
+      "advantage": "冲突修复突出，使关系运转这一层有一个清楚的主轴。",
+      "risk": "如果冲突修复持续压过表达沟通，关系运转这一层可能出现单侧用力。"
+    },
+    {
+      "layer": "关系维持",
+      "constructs": [
+        {
+          "id": "RI",
+          "label": "关系投入 / 留下倾向",
+          "tendency": 58.25
+        },
+        {
+          "id": "MN",
+          "label": "回忆牵引 / 关系叙事",
+          "tendency": 83.5
+        }
+      ],
+      "constructCount": 2,
+      "tendency": 70.88,
+      "level": "偏高",
+      "explanation": "当关系变重、进入记忆或面临离开时，你如何理解留下和放下。 本次最突出的坐标是回忆牵引 / 关系叙事，相对较轻的是关系投入 / 留下倾向。",
+      "advantage": "回忆牵引 / 关系叙事突出，使关系维持这一层有一个清楚的主轴。",
+      "risk": "如果回忆牵引 / 关系叙事持续压过关系投入 / 留下倾向，关系维持这一层可能出现单侧用力。"
+    }
+  ],
+  "constructQuestionCounts": {
+    "SI": 4,
+    "MN": 4,
+    "CL": 4,
+    "RM": 4,
+    "RI": 4,
+    "SC": 4,
+    "AU": 4,
+    "CM": 4,
+    "NV": 4,
+    "CR": 4,
+    "TR": 4,
+    "CS": 4,
+    "PA": 4,
+    "ER": 4,
+    "EC": 4
+  },
+  "MN专项分析": {
+    "construct": "MN",
+    "label": "回忆牵引 / 关系叙事",
+    "actualQuestionCount": 4,
+    "shareOfQuestionnaire": 0.0667,
+    "allConstructQuestionCounts": {
+      "SC": 4,
+      "AU": 4,
+      "TR": 4,
+      "CL": 4,
+      "PA": 4,
+      "CM": 4,
+      "SI": 4,
+      "NV": 4,
+      "RM": 4,
+      "CS": 4,
+      "EC": 4,
+      "CR": 4,
+      "ER": 4,
+      "RI": 4,
+      "MN": 4
+    },
+    "scoringAggregation": "运行时按构念内题目平均值计算；不是直接把所有题求和进入人格距离。",
+    "directSumWeightAmplification": false,
+    "stabilityNote": "每个构念当前均为4题，因此MN没有题量优势。若未来某构念题目更多，平均值不会直接放大权重，但可能提高该构念测量稳定性。",
+    "currentContribution": "MN本次倾向值为83.5，是最高维度之一，显著支持收藏家/流浪诗人一类原型参照。",
+    "collectorFirstDecisionFactor": false,
+    "collectorClosestConstructs": [
+      {
+        "id": "RI",
+        "label": "关系投入 / 留下倾向",
+        "delta": 2.25
+      },
+      {
+        "id": "PA",
+        "label": "激情启动",
+        "delta": 3
+      },
+      {
+        "id": "CR",
+        "label": "冲突修复",
+        "delta": 3.25
+      },
+      {
+        "id": "SI",
+        "label": "灵魂理想",
+        "delta": 3.5
+      },
+      {
+        "id": "CL",
+        "label": "亲密连接",
+        "delta": 4.75
+      }
+    ],
+    "replacementWithMiddleValue": [
+      {
+        "replacedQuestionCount": 0,
+        "replacedQuestions": [],
+        "adjustedMN": 83.5,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "流浪诗人"
+        ]
+      },
+      {
+        "replacedQuestionCount": 1,
+        "replacedQuestions": [
+          "v2-q56"
+        ],
+        "adjustedMN": 71,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "流浪诗人"
+        ]
+      },
+      {
+        "replacedQuestionCount": 2,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60"
+        ],
+        "adjustedMN": 58.5,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      },
+      {
+        "replacedQuestionCount": 3,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60",
+          "v2-q54"
+        ],
+        "adjustedMN": 54.25,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      },
+      {
+        "replacedQuestionCount": 4,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60",
+          "v2-q54",
+          "v2-q58"
+        ],
+        "adjustedMN": 50,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      }
+    ],
+    "changedQuestionsBeforePrototypeSwitch": null
+  },
+  "mnAnalysis": {
+    "construct": "MN",
+    "label": "回忆牵引 / 关系叙事",
+    "actualQuestionCount": 4,
+    "shareOfQuestionnaire": 0.0667,
+    "allConstructQuestionCounts": {
+      "SC": 4,
+      "AU": 4,
+      "TR": 4,
+      "CL": 4,
+      "PA": 4,
+      "CM": 4,
+      "SI": 4,
+      "NV": 4,
+      "RM": 4,
+      "CS": 4,
+      "EC": 4,
+      "CR": 4,
+      "ER": 4,
+      "RI": 4,
+      "MN": 4
+    },
+    "scoringAggregation": "运行时按构念内题目平均值计算；不是直接把所有题求和进入人格距离。",
+    "directSumWeightAmplification": false,
+    "stabilityNote": "每个构念当前均为4题，因此MN没有题量优势。若未来某构念题目更多，平均值不会直接放大权重，但可能提高该构念测量稳定性。",
+    "currentContribution": "MN本次倾向值为83.5，是最高维度之一，显著支持收藏家/流浪诗人一类原型参照。",
+    "collectorFirstDecisionFactor": false,
+    "collectorClosestConstructs": [
+      {
+        "id": "RI",
+        "label": "关系投入 / 留下倾向",
+        "delta": 2.25
+      },
+      {
+        "id": "PA",
+        "label": "激情启动",
+        "delta": 3
+      },
+      {
+        "id": "CR",
+        "label": "冲突修复",
+        "delta": 3.25
+      },
+      {
+        "id": "SI",
+        "label": "灵魂理想",
+        "delta": 3.5
+      },
+      {
+        "id": "CL",
+        "label": "亲密连接",
+        "delta": 4.75
+      }
+    ],
+    "replacementWithMiddleValue": [
+      {
+        "replacedQuestionCount": 0,
+        "replacedQuestions": [],
+        "adjustedMN": 83.5,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "流浪诗人"
+        ]
+      },
+      {
+        "replacedQuestionCount": 1,
+        "replacedQuestions": [
+          "v2-q56"
+        ],
+        "adjustedMN": 71,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "流浪诗人"
+        ]
+      },
+      {
+        "replacedQuestionCount": 2,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60"
+        ],
+        "adjustedMN": 58.5,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      },
+      {
+        "replacedQuestionCount": 3,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60",
+          "v2-q54"
+        ],
+        "adjustedMN": 54.25,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      },
+      {
+        "replacedQuestionCount": 4,
+        "replacedQuestions": [
+          "v2-q56",
+          "v2-q60",
+          "v2-q54",
+          "v2-q58"
+        ],
+        "adjustedMN": 50,
+        "candidateANearest": "收藏家",
+        "candidateATop2": [
+          "收藏家",
+          "观星者"
+        ]
+      }
+    ],
+    "changedQuestionsBeforePrototypeSwitch": null
+  },
+  "candidateAResult": {
+    "scoringProfile": "candidate-a",
+    "finalPersona": {
+      "id": "collector",
+      "displayName": "收藏家",
+      "distance": 16.0329,
+      "matchScore": 83.97,
+      "order": 3
+    },
+    "top2": [
+      {
+        "id": "collector",
+        "displayName": "收藏家",
+        "distance": 16.0329,
+        "matchScore": 83.97,
+        "order": 3
+      },
+      {
+        "id": "wandering-poet",
+        "displayName": "流浪诗人",
+        "distance": 22.347,
+        "matchScore": 77.65,
+        "order": 7
+      }
+    ],
+    "top1Top2Gap": 6.3141,
+    "lowConfidence": null,
+    "adaptiveAlpha": null
+  },
+  "candidateEResult": {
+    "scoringProfile": "candidate-e-adaptive-hybrid",
+    "finalPersona": {
+      "id": "collector",
+      "displayName": "收藏家",
+      "distance": 0.8476,
+      "matchScore": 83.05,
+      "order": 3,
+      "alpha": 0.85,
+      "absoluteDistance": 0.8542,
+      "shapeDistance": 0.8107
+    },
+    "top2": [
+      {
+        "id": "collector",
+        "displayName": "收藏家",
+        "distance": 0.8476,
+        "matchScore": 83.05,
+        "order": 3,
+        "alpha": 0.85,
+        "absoluteDistance": 0.8542,
+        "shapeDistance": 0.8107
+      },
+      {
+        "id": "wandering-poet",
+        "displayName": "流浪诗人",
+        "distance": 1.2715,
+        "matchScore": 74.57,
+        "order": 7,
+        "alpha": 0.85,
+        "absoluteDistance": 1.287,
+        "shapeDistance": 1.1837
+      }
+    ],
+    "top1Top2Gap": 0.4239,
+    "lowConfidence": false,
+    "adaptiveAlpha": 0.85
+  },
+  "prototypeTop2": {
+    "publicText": "你的当前画像比较接近“收藏家”和“流浪诗人”，但你并不完全属于其中任何一种。原型只是帮助理解这张关系地图的参照。",
+    "publicPrototypes": [
+      {
+        "id": "collector",
+        "displayName": "收藏家",
+        "note": "你会把关系里的细节和记忆保存得很深：过去的意义、情绪痕迹和精神联结会持续影响你。"
+      },
+      {
+        "id": "wandering-poet",
+        "displayName": "流浪诗人",
+        "note": "你会被关系中的精神远方、意义感和记忆牵引：爱对你不只是稳定，也是一种内在旅程。"
+      }
+    ],
+    "internal": {
+      "candidateA": {
+        "top1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 16.0329,
+          "matchScore": 83.97,
+          "order": 3
+        },
+        "top2": [
+          {
+            "id": "collector",
+            "displayName": "收藏家",
+            "distance": 16.0329,
+            "matchScore": 83.97,
+            "order": 3
+          },
+          {
+            "id": "wandering-poet",
+            "displayName": "流浪诗人",
+            "distance": 22.347,
+            "matchScore": 77.65,
+            "order": 7
+          }
+        ],
+        "gap": 6.3141
+      },
+      "candidateE": {
+        "top1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 0.8476,
+          "matchScore": 83.05,
+          "order": 3,
+          "alpha": 0.85,
+          "absoluteDistance": 0.8542,
+          "shapeDistance": 0.8107
+        },
+        "top2": [
+          {
+            "id": "collector",
+            "displayName": "收藏家",
+            "distance": 0.8476,
+            "matchScore": 83.05,
+            "order": 3,
+            "alpha": 0.85,
+            "absoluteDistance": 0.8542,
+            "shapeDistance": 0.8107
+          },
+          {
+            "id": "wandering-poet",
+            "displayName": "流浪诗人",
+            "distance": 1.2715,
+            "matchScore": 74.57,
+            "order": 7,
+            "alpha": 0.85,
+            "absoluteDistance": 1.287,
+            "shapeDistance": 1.1837
+          }
+        ],
+        "gap": 0.4239,
+        "alpha": 0.85,
+        "lowConfidence": false
+      },
+      "agreement": true
+    }
+  },
+  "highestConstructs": [
+    {
+      "id": "SI",
+      "label": "灵魂理想",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 334,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 83.5,
+      "runtimeAverage": 83.5,
+      "level": "较高",
+      "explanation": "重视灵魂理解和命运感",
+      "advantage": "较高的灵魂理想让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "灵魂理想很高时，可能会在关系里放大这一类线索。",
+      "contributions": [
+        {
+          "questionId": "v2-q25",
+          "question": "在星潮海面上，你想起自己被一个人真正打动的时刻。最重要的通常是什么？",
+          "optionId": "A",
+          "optionText": "对方懂我的精神世界和那些说不清的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q29",
+          "question": "你很在意的兴趣、信念或创作，对方并不太懂。你更可能怎么感受？",
+          "optionId": "C",
+          "optionText": "我会明显觉得少了被看见的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q33",
+          "question": "对方很适合一起生活，但你总觉得精神上少了一点共鸣。你更可能怎么处理？",
+          "optionId": "C",
+          "optionText": "我会试着创造更多深层交流。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q37",
+          "question": "关系稳定可靠，但没有特别强的精神共鸣。你会怎样看待它？",
+          "optionId": "C",
+          "optionText": "我会继续寻找能不能更深地理解彼此。",
+          "score": 67,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "MN",
+      "label": "回忆牵引 / 关系叙事",
+      "layer": "关系维持",
+      "questionCount": 4,
+      "rawTotal": 334,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 83.5,
+      "runtimeAverage": 83.5,
+      "level": "较高",
+      "explanation": "容易被记忆牵动，并从故事中确认爱",
+      "advantage": "较高的回忆牵引 / 关系叙事让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "回忆牵引 / 关系叙事很高时，可能会在关系里放大这一类线索。",
+      "contributions": [
+        {
+          "questionId": "v2-q54",
+          "question": "翻到一张旧照片时，你想起一段关系里很小但很亮的片段。你通常会怎样看待它？",
+          "optionId": "A",
+          "optionText": "那些片段会在我心里留很久。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q56",
+          "question": "在心岛旧码头，你看见许多被海风磨平的名字。对你来说，关系里的共同记忆更像什么？",
+          "optionId": "A",
+          "optionText": "是爱存在过的证据，我会很珍惜。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q58",
+          "question": "一段关系已经结束，但很多细节还会在某些时刻回来。你通常会怎样处理这些记忆？",
+          "optionId": "A",
+          "optionText": "我会让它们留下，像我生命里的一部分。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q60",
+          "question": "关系翻篇之后，你更希望自己怎样对待过去？",
+          "optionId": "D",
+          "optionText": "我会慢慢整理遗憾，给那段关系一个位置。",
+          "score": 100,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "CL",
+      "label": "亲密连接",
+      "layer": "爱情成分",
+      "questionCount": 4,
+      "rawTotal": 267,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 66.75,
+      "runtimeAverage": 66.75,
+      "level": "偏高",
+      "explanation": "渴望日常靠近和情感连接",
+      "advantage": "较高的亲密连接让你更容易在这类关系任务中形成清楚偏好。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q13",
+          "question": "心岛的浅湾很安静，你想起自己喜欢一个人时，最自然想分享的是什么？",
+          "optionId": "A",
+          "optionText": "一些日常小事，让对方进入我的生活感。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q16",
+          "question": "你有点低落，但事情不算严重。关系里你更希望对方怎么在场？",
+          "optionId": "C",
+          "optionText": "能问我发生了什么，并认真听。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q19",
+          "question": "关系因为忙碌变得疏一些。你更可能怎么回应这种距离？",
+          "optionId": "C",
+          "optionText": "我会想找一个轻松方式重新靠近。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q22",
+          "question": "对方不了解你很多日常细节，但你们相处并不差。你更接近哪种感受？",
+          "optionId": "A",
+          "optionText": "我可以接受，不需要什么都分享。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "RM",
+      "label": "现实匹配",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 234,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 58.5,
+      "runtimeAverage": 58.5,
+      "level": "中等",
+      "explanation": "在现实匹配上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的现实匹配给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q27",
+          "question": "航海图摊开时，你们聊到钱、城市、家庭边界和生活节奏。你最先会看什么？",
+          "optionId": "C",
+          "optionText": "有没有愿意一起解决问题的态度。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q31",
+          "question": "在进入一段关系前，你发现彼此生活节奏差很多。你更可能怎么判断？",
+          "optionId": "B",
+          "optionText": "我会认真看差异会不会长期消耗彼此。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q35",
+          "question": "你们感情很好，但在城市、家庭边界或金钱安排上差异很大。你更可能看重什么？",
+          "optionId": "C",
+          "optionText": "我会先承认差异，再决定能不能继续。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q39",
+          "question": "你明知道现实条件不太合，但感觉非常强烈。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会先跟着感觉走，现实以后再看。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "RI",
+      "label": "关系投入 / 留下倾向",
+      "layer": "关系维持",
+      "questionCount": 4,
+      "rawTotal": 233,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 58.25,
+      "runtimeAverage": 58.25,
+      "level": "中等",
+      "explanation": "在关系投入 / 留下倾向上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的关系投入 / 留下倾向给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q53",
+          "question": "当一段重要关系进入困难期，你通常怎样理解“继续投入”？",
+          "optionId": "B",
+          "optionText": "我会看这段关系是否还值得继续加码。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q55",
+          "question": "你们已经一起投入了很多时间和心力，但眼前关系进入低谷。过去的投入会怎样影响你的选择？",
+          "optionId": "C",
+          "optionText": "我会看这段关系是否还能继续被经营。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q57",
+          "question": "关系变得很重，需要持续投入时间和心力。你更接近哪种选择？",
+          "optionId": "B",
+          "optionText": "我会先评估自己还能投入多少。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q59",
+          "question": "当你发现继续下去会消耗自己，你更可能怎么做？",
+          "optionId": "D",
+          "optionText": "如果还爱，我很难马上撤出来。",
+          "score": 100,
+          "reverse": true
+        }
+      ]
+    }
+  ],
+  "lowestConstructs": [
+    {
+      "id": "EC",
+      "label": "表达沟通",
+      "layer": "关系运转",
+      "questionCount": 4,
+      "rawTotal": 99,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 24.75,
+      "runtimeAverage": 24.75,
+      "level": "偏低",
+      "explanation": "倾向忍住、沉默或绕开表达",
+      "advantage": "较低的表达沟通让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q41",
+          "question": "当你心里有不舒服，但事情还没严重到争吵，你通常会怎么处理？",
+          "optionId": "C",
+          "optionText": "我会用一些反应让对方察觉。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q44",
+          "question": "对方不是故意的，但确实碰到了你的边界。你更可能怎么说？",
+          "optionId": "B",
+          "optionText": "我会先消化，之后看有没有必要说。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q47",
+          "question": "你被对方误解了，而且当下气氛有点急。你最可能怎样表达自己的重点？",
+          "optionId": "C",
+          "optionText": "我会用反问让对方知道他误会了。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q50",
+          "question": "你明明有话想说，但担心说出来会让气氛变差。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会先收住，暂时不把话说出来。",
+          "score": 0,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "ER",
+      "label": "情绪调节",
+      "layer": "关系运转",
+      "questionCount": 4,
+      "rawTotal": 100,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 25,
+      "runtimeAverage": 25,
+      "level": "偏低",
+      "explanation": "容易被情绪淹没或切断情绪",
+      "advantage": "较低的情绪调节让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q43",
+          "question": "对方明明情绪不对，却只说“没事”。你最容易出现什么反应？",
+          "optionId": "A",
+          "optionText": "我会被对方情绪带得很乱。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q46",
+          "question": "一次对话让你情绪突然升上来。你通常第一步会怎么做？",
+          "optionId": "A",
+          "optionText": "我会先停一下，再决定要不要继续说。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q49",
+          "question": "对方低气压很重，虽然没有冲你发作，但你也被影响了。你更可能怎么做？",
+          "optionId": "A",
+          "optionText": "我会很快被带进去，心情跟着沉下去。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q52",
+          "question": "对方情绪很强烈地涌过来时，你更像哪一种反应？",
+          "optionId": "B",
+          "optionText": "我会瞬间关掉感受，不想接触。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "PA",
+      "label": "激情启动",
+      "layer": "爱情成分",
+      "questionCount": 4,
+      "rawTotal": 132,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 33,
+      "runtimeAverage": 33,
+      "level": "偏低",
+      "explanation": "慢热，需更多确认或观察",
+      "advantage": "较低的激情启动让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q14",
+          "question": "你发现自己对一个人有明显心动。下一步你更可能怎么做？",
+          "optionId": "B",
+          "optionText": "我会给一点信号，但等对方也靠近。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q17",
+          "question": "当一段关系让你心里亮了一下，你通常会怎样处理这份心动？",
+          "optionId": "B",
+          "optionText": "我会先享受这种感觉，不急着行动。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q20",
+          "question": "暧昧的热度慢慢降下来，但你还对这段关系有感觉。你更可能怎么做？",
+          "optionId": "D",
+          "optionText": "我会先收回来，不想一个人推动。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q23",
+          "question": "你强烈心动，但还不了解对方。你会怎样处理这份热度？",
+          "optionId": "B",
+          "optionText": "我会慢慢靠近，留一点试探空间。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    },
+    {
+      "id": "CS",
+      "label": "照顾支持",
+      "layer": "爱情风格",
+      "questionCount": 4,
+      "rawTotal": 133,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 33.25,
+      "runtimeAverage": 33.25,
+      "level": "偏低",
+      "explanation": "更强调各自负责",
+      "advantage": "较低的照顾支持让你不容易被这类需求单独推着走。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q28",
+          "question": "对方遇到一段压力很大的时期。你最自然的反应是什么？",
+          "optionId": "B",
+          "optionText": "我会很快进入支持状态，先补上自己能做的部分。",
+          "score": 100,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q32",
+          "question": "对方反复遇到相似问题，每次都很依赖你。你最容易怎么做？",
+          "optionId": "C",
+          "optionText": "我会减少介入，让对方自己面对。",
+          "score": 0,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q36",
+          "question": "对方的问题反复出现，你已经有些累了。你最自然的第一反应是什么？",
+          "optionId": "A",
+          "optionText": "我会先确认自己还能给出多少支持。",
+          "score": 33,
+          "reverse": true
+        },
+        {
+          "questionId": "v2-q40",
+          "question": "在亲密关系里，你更容易把自己放在哪个位置？",
+          "optionId": "B",
+          "optionText": "彼此都要照顾好自己，我不会自动托底。",
+          "score": 0,
+          "reverse": false
+        }
+      ]
+    },
+    {
+      "id": "TR",
+      "label": "关系信任",
+      "layer": "依恋与安全",
+      "questionCount": 4,
+      "rawTotal": 166,
+      "theoreticalMin": 0,
+      "theoreticalMax": 400,
+      "tendency": 41.5,
+      "runtimeAverage": 41.5,
+      "level": "中等",
+      "explanation": "在关系信任上处于中间区间，会随关系对象和情境变化。",
+      "advantage": "中等的关系信任给你保留了弹性。",
+      "risk": "当前风险不来自单一高低，而更取决于它和其他维度的组合。",
+      "contributions": [
+        {
+          "questionId": "v2-q03",
+          "question": "雾气让航线暂时看不清。你想起对方临时改了计划，却没有解释太多。你通常会怎么理解？",
+          "optionId": "D",
+          "optionText": "我会暂时不多想，计划变化不一定代表什么。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q06",
+          "question": "对方有件事没有解释完整，你能感觉到还有一点空白。你第一反应更接近哪一种？",
+          "optionId": "B",
+          "optionText": "我会保留疑问，但不急着下判断。",
+          "score": 67,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q09",
+          "question": "如果一段关系暂时没有给出所有答案，你通常更容易预设什么？",
+          "optionId": "B",
+          "optionText": "我需要更多证据，才敢真的相信。",
+          "score": 33,
+          "reverse": false
+        },
+        {
+          "questionId": "v2-q12",
+          "question": "看到一点模糊线索时，你会不会想通过对方反应来确认关系是否稳定？",
+          "optionId": "C",
+          "optionText": "我会用一些小反应看对方会不会靠近。",
+          "score": 33,
+          "reverse": true
+        }
+      ]
+    }
+  ],
+  "combinationInsights": [
+    {
+      "title": "灵魂理想 + 回忆牵引 / 关系叙事",
+      "text": "你最强的关系坐标集中在灵魂理想和回忆牵引 / 关系叙事：这说明你会把关系里的经历、意义和情绪痕迹保存得很深，不只是看当下舒服不舒服。",
+      "constructs": [
+        "SI",
+        "MN"
+      ]
+    },
+    {
+      "title": "关系投入 / 留下倾向 + 承诺经营",
+      "text": "关系进入“要不要继续经营”的阶段时，你并不是轻易抽身的人；但你的承诺经营分数不是最高，说明你更在意关系是否有意义，而不只是按计划推进。",
+      "constructs": [
+        "RI",
+        "CM"
+      ]
+    },
+    {
+      "title": "表达沟通 + 冲突修复",
+      "text": "表达和修复都处在偏低区间，说明你可能很有感受，但不总是第一时间把这些感受变成可讨论的问题。",
+      "constructs": [
+        "EC",
+        "CR"
+      ]
+    }
+  ],
+  "internalConflicts": [
+    {
+      "title": "记得很深，但不一定说得很快",
+      "text": "回忆牵引 / 关系叙事83.5、灵魂理想83.5，而表达沟通24.75。这组差异意味着你可能很会在心里保存关系的意义，却需要更久把它说出口。",
+      "constructs": [
+        "MN",
+        "SI",
+        "EC"
+      ]
+    },
+    {
+      "title": "想留下，但不想只靠经营感推进",
+      "text": "关系投入 / 留下倾向58.25高于承诺经营50。你愿意继续投入，但更需要确认关系本身值得，而不是把关系变成任务。",
+      "constructs": [
+        "RI",
+        "CM"
+      ]
+    }
+  ],
+  "strengths": [
+    "你能保存关系里的细节和证据，这会让重要的人感到“我被认真记住了”。",
+    "你对关系的意义感很敏锐，能从共同经历里看见更深的线索，而不是只看表面互动。",
+    "你的关系投入不低，说明你不会只因为短期波动就轻易否定一段关系。"
+  ],
+  "risks": [
+    "你可能更容易在心里反复整理关系片段，而不是及时把困惑拿出来一起校准。",
+    "当表达沟通和冲突修复偏低时，对方可能只看到你的安静，却看不到你心里已经累积了很多内容。",
+    "现实匹配不算突出，意味着被意义感打动时，你可能会晚一点检查现实节奏是否真的合拍。"
+  ],
+  "relationshipNeeds": [
+    "你需要一种能承认过往、细节和情绪重量的关系，而不是要求你“别想太多”。",
+    "你也需要对方给出可讨论的空间，让深感受可以被慢慢说出来，而不是停留在独自保存。"
+  ],
+  "growthDirections": [
+    "当一个细节反复被你想起时，先写成一句可验证的问题，例如“这件事让我在意的是___，我想确认___”，再决定是否和对方讨论。",
+    "遇到冲突时不要直接整理成结论，先选一个最小可说的事实，让关系有机会参与修复过程。",
+    "被精神意义打动后，给自己增加一个现实检查点：未来两周里，双方是否真的有行动让关系更稳定。"
+  ],
+  "oldPersonaComparison": {
+    "whyCollector": "candidate-A以15维画像到各人格targetVector的整体距离最近者为结果。本次MN、SI、ER、RI等维度组合让收藏家成为最近原型。",
+    "capturedByCollector": [
+      "回忆牵引很高",
+      "灵魂理想较高",
+      "关系中的细节和叙事感较强"
+    ],
+    "missedByCollector": [
+      "表达沟通偏低带来的现实互动成本",
+      "关系投入高于承诺经营的拉扯",
+      "现实匹配不突出"
+    ],
+    "closerToWanderingPoet": [
+      {
+        "id": "SC",
+        "label": "安全确认",
+        "delta": 2
+      },
+      {
+        "id": "CL",
+        "label": "亲密连接",
+        "delta": 4.75
+      },
+      {
+        "id": "CS",
+        "label": "照顾支持",
+        "delta": 4.75
+      },
+      {
+        "id": "CR",
+        "label": "冲突修复",
+        "delta": 6.25
+      },
+      {
+        "id": "TR",
+        "label": "关系信任",
+        "delta": 6.5
+      }
+    ],
+    "whySmallAnswerChangesCanSwitch": "当前Top1/Top2距离接近时，少量题目变化会移动若干构念平均值；单人格标签会因此切换，但15维画像只会显示坐标小幅变化。",
+    "is15dMoreStable": "本次数据支持15维画像更稳定地解释“高MN+高SI+低EC”的组合，因为它不要求把所有差异压成一个标签。",
+    "mnWeightSuspicion": "不支持“MN题量或直接求和导致权重过高”的怀疑；当前MN为4题，与其他构念相同，运行时按构念平均进入距离。",
+    "recommendedFrame": "当前更适合使用“15维画像 + 原型参照”，而不是只给出单一人格判定。"
+  },
+  "responseStyleMetrics": {
+    "globalMean": 0.4998,
+    "agreementBias": 0.0003,
+    "extremity": 0.4833,
+    "constructInternalConsistency": 0.4121,
+    "globalVolatility": 0.4244,
+    "constructSpread": 0.3517,
+    "structuralConfidence": 0.4348,
+    "constructReliability": [
+      0,
+      0.3,
+      0.71,
+      0.183,
+      1,
+      0.25314,
+      0.67,
+      0.2531399,
+      0.27274489,
+      0.183498316,
+      0.7142116168,
+      0.13300807386,
+      0.445202739733,
+      0.4436952274158,
+      0.67
+    ]
+  },
+  "validationChecks": {
+    "inputHas60Answers": true,
+    "constructCount": 15,
+    "allConstructsHaveScores": true,
+    "everyConstructHasQuestions": true,
+    "reverseNotDoubleInverted": true,
+    "tendencyInRange": true,
+    "fiveLayersCover15Constructs": true,
+    "candidateReproducible": true,
+    "htmlReferencesMissingAssets": [],
+    "publicProfileUnchanged": true,
+    "branchNotMainOrMaster": true,
+    "frozenDataModified": false
+  },
+  "warnings": [
+    "输入文件中pilot.enabled=false；本报告按要求仍然分析完整答案。",
+    "本报告中的0-100为倾向值/画像坐标，不是百分位、准确率、人群排名或统计概率。",
+    "当前正式五层结构来自架构报告，层级构念数量为3/3/4/3/2，并非每层3个。"
+  ]
+}

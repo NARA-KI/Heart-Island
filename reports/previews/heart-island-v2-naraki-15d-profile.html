@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>心岛 v2.0 15维画像实验版</title>
+  <style>
+    :root{--bg:#071522;--panel:rgba(10,29,45,.82);--line:rgba(202,228,247,.18);--text:#f1f8ff;--muted:rgba(225,238,249,.72);--accent:#b9e7ff;--accent2:#45a7d7}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 50% 0,rgba(120,198,255,.18),transparent 30%),linear-gradient(180deg,#071522,#050b14);color:var(--text);font-family:Inter,"Noto Sans SC",system-ui,sans-serif;line-height:1.75}
+    main{width:min(960px,100%);margin:auto;padding:22px clamp(16px,5vw,36px) 48px}.hero,.card,.dim,details{border:1px solid var(--line);border-radius:10px;background:var(--panel);box-shadow:0 24px 80px rgba(0,0,0,.28);backdrop-filter:blur(16px)}
+    .hero{padding:28px;margin:12px 0 18px}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}h1{font-size:clamp(34px,10vw,66px);line-height:1.05;margin:.2em 0}h2{margin:30px 0 12px}p{color:var(--muted)}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.card,.dim,details{padding:18px}.bar{height:8px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent2))}.dim{display:grid;grid-template-columns:1fr minmax(90px,190px) 42px;gap:12px;align-items:center;margin:10px 0}.dim p{grid-column:1/-1;margin:0}.dim span{display:block;color:var(--muted);font-size:13px}li{margin:8px 0;color:var(--muted)}summary{cursor:pointer;color:var(--accent);font-weight:800}@media(max-width:560px){.dim{grid-template-columns:1fr 42px}.dim .bar{grid-column:1/-1;grid-row:2}.dim b{grid-column:2;grid-row:1;text-align:right}}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="eyebrow">15维画像实验版</div>
+    <h1>不是把你装进盒子，而是绘制关系地图</h1>
+    <p>这份离线原型基于一次完整60题作答，按15个关系维度生成当前阶段的关系画像。人格原型只作为辅助参照。</p>
+  </section>
+  <h2>五层总览</h2>
+  <div class="grid"><article class="card"><h3>依恋与安全</h3><p>安全确认、自主边界、关系信任</p><div class="bar"><i style="width:47.17%"></i></div><b>47.17</b><p>关系刚开始靠近时，你如何处理确定感、空间和信任。 本次最突出的坐标是安全确认，相对较轻的是关系信任。</p></article><article class="card"><h3>爱情成分</h3><p>亲密连接、激情启动、承诺经营</p><div class="bar"><i style="width:49.92%"></i></div><b>49.92</b><p>心动、亲密和长期经营如何共同构成你的爱。 本次最突出的坐标是亲密连接，相对较轻的是激情启动。</p></article><article class="card"><h3>爱情风格</h3><p>灵魂理想、新鲜探索、现实匹配、照顾支持</p><div class="bar"><i style="width:56.31%"></i></div><b>56.31</b><p>你在关系中更被意义、变化、现实或照顾哪一类线索牵动。 本次最突出的坐标是灵魂理想，相对较轻的是照顾支持。</p></article><article class="card"><h3>关系运转</h3><p>表达沟通、冲突修复、情绪调节</p><div class="bar"><i style="width:30.5%"></i></div><b>30.5</b><p>关系遇到情绪、误会和表达压力时，你如何让它继续运行。 本次最突出的坐标是冲突修复，相对较轻的是表达沟通。</p></article><article class="card"><h3>关系维持</h3><p>关系投入 / 留下倾向、回忆牵引 / 关系叙事</p><div class="bar"><i style="width:70.88%"></i></div><b>70.88</b><p>当关系变重、进入记忆或面临离开时，你如何理解留下和放下。 本次最突出的坐标是回忆牵引 / 关系叙事，相对较轻的是关系投入 / 留下倾向。</p></article></div>
+  <h2>15维倾向条</h2>
+  <section class="dim"><div><strong>安全确认</strong><span>依恋与安全 · 中等</span></div><div class="bar"><i style="width:50%"></i></div><b>50</b><p>在安全确认上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>自主边界</strong><span>依恋与安全 · 中等</span></div><div class="bar"><i style="width:50%"></i></div><b>50</b><p>在自主边界上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>关系信任</strong><span>依恋与安全 · 中等</span></div><div class="bar"><i style="width:41.5%"></i></div><b>41.5</b><p>在关系信任上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>亲密连接</strong><span>爱情成分 · 偏高</span></div><div class="bar"><i style="width:66.75%"></i></div><b>66.75</b><p>渴望日常靠近和情感连接</p></section><section class="dim"><div><strong>激情启动</strong><span>爱情成分 · 偏低</span></div><div class="bar"><i style="width:33%"></i></div><b>33</b><p>慢热，需更多确认或观察</p></section><section class="dim"><div><strong>承诺经营</strong><span>爱情成分 · 中等</span></div><div class="bar"><i style="width:50%"></i></div><b>50</b><p>在承诺经营上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>灵魂理想</strong><span>爱情风格 · 较高</span></div><div class="bar"><i style="width:83.5%"></i></div><b>83.5</b><p>重视灵魂理解和命运感</p></section><section class="dim"><div><strong>新鲜探索</strong><span>爱情风格 · 中等</span></div><div class="bar"><i style="width:50%"></i></div><b>50</b><p>在新鲜探索上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>现实匹配</strong><span>爱情风格 · 中等</span></div><div class="bar"><i style="width:58.5%"></i></div><b>58.5</b><p>在现实匹配上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>照顾支持</strong><span>爱情风格 · 偏低</span></div><div class="bar"><i style="width:33.25%"></i></div><b>33.25</b><p>更强调各自负责</p></section><section class="dim"><div><strong>表达沟通</strong><span>关系运转 · 偏低</span></div><div class="bar"><i style="width:24.75%"></i></div><b>24.75</b><p>倾向忍住、沉默或绕开表达</p></section><section class="dim"><div><strong>冲突修复</strong><span>关系运转 · 中等</span></div><div class="bar"><i style="width:41.75%"></i></div><b>41.75</b><p>在冲突修复上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>情绪调节</strong><span>关系运转 · 偏低</span></div><div class="bar"><i style="width:25%"></i></div><b>25</b><p>容易被情绪淹没或切断情绪</p></section><section class="dim"><div><strong>关系投入 / 留下倾向</strong><span>关系维持 · 中等</span></div><div class="bar"><i style="width:58.25%"></i></div><b>58.25</b><p>在关系投入 / 留下倾向上处于中间区间，会随关系对象和情境变化。</p></section><section class="dim"><div><strong>回忆牵引 / 关系叙事</strong><span>关系维持 · 较高</span></div><div class="bar"><i style="width:83.5%"></i></div><b>83.5</b><p>容易被记忆牵动，并从故事中确认爱</p></section>
+  <h2>组合分析</h2>
+  <div class="grid"><article class="card"><h3>灵魂理想 + 回忆牵引 / 关系叙事</h3><p>你最强的关系坐标集中在灵魂理想和回忆牵引 / 关系叙事：这说明你会把关系里的经历、意义和情绪痕迹保存得很深，不只是看当下舒服不舒服。</p></article><article class="card"><h3>关系投入 / 留下倾向 + 承诺经营</h3><p>关系进入“要不要继续经营”的阶段时，你并不是轻易抽身的人；但你的承诺经营分数不是最高，说明你更在意关系是否有意义，而不只是按计划推进。</p></article><article class="card"><h3>表达沟通 + 冲突修复</h3><p>表达和修复都处在偏低区间，说明你可能很有感受，但不总是第一时间把这些感受变成可讨论的问题。</p></article></div>
+  <h2>内在拉扯</h2>
+  <ul><li><strong>记得很深，但不一定说得很快：</strong>回忆牵引 / 关系叙事83.5、灵魂理想83.5，而表达沟通24.75。这组差异意味着你可能很会在心里保存关系的意义，却需要更久把它说出口。</li><li><strong>想留下，但不想只靠经营感推进：</strong>关系投入 / 留下倾向58.25高于承诺经营50。你愿意继续投入，但更需要确认关系本身值得，而不是把关系变成任务。</li></ul>
+  <h2>辅助原型</h2>
+  <div class="card"><p>你的当前画像比较接近“收藏家”和“流浪诗人”，但你并不完全属于其中任何一种。原型只是帮助理解这张关系地图的参照。</p></div>
+  <h2>与收藏家结果的简短对照</h2>
+  <div class="card"><p>不支持“MN题量或直接求和导致权重过高”的怀疑；当前MN为4题，与其他构念相同，运行时按构念平均进入距离。</p><p>当前更适合使用“15维画像 + 原型参照”，而不是只给出单一人格判定。</p></div>
+  <details>
+    <summary>为什么得到这份画像</summary>
+    <p>输入通过60题完整性、题库hash、题目/选项存在性校验。reverse只作为审计元数据，运行时未二次反转。0-100仅为画像坐标，不是百分位或准确率。</p>
+    <pre>{
+  &quot;inputHas60Answers&quot;: true,
+  &quot;constructCount&quot;: 15,
+  &quot;allConstructsHaveScores&quot;: true,
+  &quot;everyConstructHasQuestions&quot;: true,
+  &quot;reverseNotDoubleInverted&quot;: true,
+  &quot;tendencyInRange&quot;: true,
+  &quot;fiveLayersCover15Constructs&quot;: true,
+  &quot;candidateReproducible&quot;: true,
+  &quot;htmlReferencesMissingAssets&quot;: [],
+  &quot;publicProfileUnchanged&quot;: true,
+  &quot;branchNotMainOrMaster&quot;: true,
+  &quot;frozenDataModified&quot;: false
+}</pre>
+  </details>
+</main>
+</body>
+</html>
