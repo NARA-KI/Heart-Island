@@ -22,7 +22,8 @@
     "v2:prepare:pilot": "node scripts/v2-product-validation/prepare-v2-pilot-readiness.mjs",
     "v2:validate:pilot": "node scripts/v2-product-validation/validate-v2-pilot-readiness.mjs",
     "v2:test:result-core": "node tests/v2-result-core.test.mjs",
-    "v2:test:result-core:browser": "node tests/v2-result-core-browser.mjs"
+    "v2:test:result-core:browser": "node tests/v2-result-core-browser.mjs",
+    "v2:test:ai-report": "node tests/v2-ai-report-service.test.mjs"
   },
   "type": "module",
   "dependencies": {
