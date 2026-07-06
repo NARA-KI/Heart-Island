@@ -106,28 +106,28 @@ function drawText(ctx, facts, report) {
 
   ctx.fillStyle = 'rgba(225,238,249,0.82)';
   ctx.font = '34px sans-serif';
-  wrapText(ctx, report.oneLine, 180, 815, 720, 50);
+  ctx.textAlign = 'left';
+  let y = wrapText(ctx, report.oneLine, 180, 815, 720, 50) + 78;
 
-  const traits = report.keyTraits.slice(0, 3);
-  let y = 995;
+  const traits = facts.topConstructs.slice(0, 3).map((item) => `${item.label}：${item.levelText}`);
   ctx.textAlign = 'left';
   ctx.font = 'bold 30px sans-serif';
   ctx.fillStyle = '#f1f8ff';
   ctx.fillText('三个关键关系特征', 180, y);
   y += 58;
-  ctx.font = '28px sans-serif';
+  ctx.font = '30px sans-serif';
   ctx.fillStyle = 'rgba(225,238,249,0.82)';
   for (const trait of traits) {
-    y = wrapText(ctx, `• ${trait}`, 180, y, 720, 42) + 18;
+    y = wrapText(ctx, `• ${trait}`, 180, y, 720, 46) + 16;
   }
 
   ctx.textAlign = 'center';
   ctx.font = '24px sans-serif';
   ctx.fillStyle = 'rgba(225,238,249,0.62)';
-  ctx.fillText('结果用于自我理解和关系沟通参考', 540, 1295);
+  ctx.fillText('结果用于自我理解和关系沟通参考', 540, 1312);
   ctx.fillStyle = '#b9e7ff';
   ctx.font = 'bold 28px sans-serif';
-  ctx.fillText('心岛计划', 540, 1338);
+  ctx.fillText('心岛计划', 540, 1350);
 }
 
 function loadImage(src) {
@@ -159,7 +159,7 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     }
   }
   if (line) ctx.fillText(line, x, currentY);
-  return currentY;
+  return currentY + lineHeight;
 }
 
 function roundRect(ctx, x, y, width, height, radius) {
