@@ -10,6 +10,8 @@ export function createInitialState(options = {}) {
     completedAt: null,
     result: null,
     restoreNotice: null,
+    shareStatus: {},
+    feedback: {},
     pilot: createPilotState(options.pilotMode === true),
   };
 }
@@ -24,6 +26,8 @@ export function hydrateState(saved, questionBank, options = {}) {
   state.optionOrder = sanitizeOptionOrder(saved.optionOrder ?? {}, questionBank);
   state.startedAt = saved.startedAt ?? new Date().toISOString();
   state.completedAt = saved.completedAt ?? null;
+  state.result = sanitizeSavedResult(saved.result);
+  state.feedback = typeof saved.feedback === 'object' && saved.feedback ? saved.feedback : {};
   if (options.pilotMode === true) {
     state.pilot = {
       ...createPilotState(true),
@@ -32,7 +36,11 @@ export function hydrateState(saved, questionBank, options = {}) {
       pilotId: saved.pilot?.pilotId ?? createPilotState(true).pilotId,
     };
   }
-  state.view = Object.keys(state.answers).length >= questionBank.questions.length ? 'transition' : 'quiz';
+  if (Object.keys(state.answers).length >= questionBank.questions.length) {
+    state.view = state.result ? 'result' : 'transition';
+  } else {
+    state.view = 'quiz';
+  }
   return state;
 }
 
@@ -65,4 +73,14 @@ export function answeredCount(state) {
 
 export function isComplete(state, questionBank) {
   return answeredCount(state) === questionBank.questions.length;
+}
+
+function sanitizeSavedResult(result) {
+  if (!result || typeof result !== 'object') return null;
+  if (result.mode === 'pilot') return null;
+  if (!result.facts?.versions?.resultSchemaVersion || !result.report?.schemaVersion) return null;
+  return {
+    facts: result.facts,
+    report: result.report,
+  };
 }

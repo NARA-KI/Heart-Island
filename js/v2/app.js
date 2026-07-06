@@ -1,9 +1,10 @@
-import { V2_PRODUCT_VERSION, V2_SCORING_PROFILE } from './config.js';
+import { V2_SCORING_PROFILE } from './config.js';
 import { loadV2RuntimeData } from './data-loader.js';
 import { renderRoute } from './router.js';
 import { createInitialState, hydrateState, isComplete } from './state.js';
 import { answerQuestion, goNext, goPrevious } from './question-engine.js';
 import { buildResult } from './result-engine.js';
+import { downloadResultImage, shareResultImage } from './share-card.js';
 import {
   buildPilotResult,
   createPilotCode,
@@ -56,6 +57,9 @@ function route(overrides = {}) {
     onCopyCode: handlePilotCopyCode,
     onImportJson: handlePilotImportJson,
     onExportCsv: handlePilotExportCsv,
+    onSaveResultImage: handleSaveResultImage,
+    onShareResult: handleShareResult,
+    onFeedbackChange: handleResultFeedbackChange,
     ...overrides,
   });
 }
@@ -105,6 +109,7 @@ function showResult() {
   state.result = state.pilot?.enabled
     ? buildPilotResult({ runtime, state })
     : buildResult({
+      manifest: runtime.manifest,
       questionBank: runtime.questionBank,
       candidateA: runtime.candidateA,
       descriptions: runtime.descriptions,
@@ -113,6 +118,42 @@ function showResult() {
   state.view = 'result';
   persist();
   route();
+}
+
+async function handleSaveResultImage() {
+  if (!state.result?.facts || !state.result?.report) return;
+  state.shareStatus = { loading: 'save', message: '' };
+  route();
+  try {
+    await downloadResultImage({ facts: state.result.facts, report: state.result.report });
+    state.shareStatus = { message: '结果图已生成并下载。' };
+  } catch (error) {
+    console.error(error);
+    state.shareStatus = { message: '结果图生成失败，请稍后重试。' };
+  }
+  persist();
+  route();
+}
+
+async function handleShareResult() {
+  if (!state.result?.facts || !state.result?.report) return;
+  state.shareStatus = { loading: 'share', message: '' };
+  route();
+  try {
+    const result = await shareResultImage({ facts: state.result.facts, report: state.result.report });
+    state.shareStatus = { message: result.shared ? '已打开系统分享。' : '当前浏览器不支持直接分享图片，已为你下载结果图。' };
+  } catch (error) {
+    console.error(error);
+    state.shareStatus = { message: '分享图生成失败，请稍后重试。' };
+  }
+  persist();
+  route();
+}
+
+function handleResultFeedbackChange(field, value) {
+  state.feedback ??= {};
+  state.feedback[field] = value;
+  persist();
 }
 
 function handlePilotFeedbackChange(field, value) {
@@ -158,7 +199,7 @@ function handlePilotExportCsv() {
 }
 
 async function boot() {
-  setBootStatus('正在加载 Heart Island v2.0 Alpha 数据...');
+  setBootStatus('正在加载关系倾向测试...');
   runtime = await loadV2RuntimeData(undefined, { includePilot: pilotMode });
   runtime.candidateA.scoringProfile = V2_SCORING_PROFILE;
   if (runtime.candidateE) runtime.candidateE.scoringProfile = 'candidate-e-adaptive-hybrid';
@@ -177,12 +218,24 @@ async function boot() {
     state.restoreNotice = '本地进度无法读取，已重置。';
   }
   if (pilotMode && !state.pilot?.enabled) state.pilot = createPilotState(true);
+  if (!pilotMode && isComplete(state, runtime.questionBank) && !state.result) {
+    state.result = buildResult({
+      manifest: runtime.manifest,
+      questionBank: runtime.questionBank,
+      candidateA: runtime.candidateA,
+      descriptions: runtime.descriptions,
+      answers: state.answers,
+    });
+    state.view = 'result';
+    persist();
+  }
 
-  setBootStatus(`${V2_PRODUCT_VERSION} 已就绪`, 'ready');
+  setBootStatus('关系倾向测试已就绪', 'ready');
   window.__heartIslandV2Debug = {
     get state() { return state; },
     get runtime() { return runtime; },
     score: () => buildResult({
+      manifest: runtime.manifest,
       questionBank: runtime.questionBank,
       candidateA: runtime.candidateA,
       descriptions: runtime.descriptions,

@@ -38,10 +38,21 @@ export function saveState(manifest, state) {
     completedAt: state.completedAt,
     view: state.view,
     pilot: state.pilot,
+    feedback: state.feedback,
+    result: compactResultForStorage(state.result),
   };
   localStorage.setItem(V2_STORAGE_KEY, JSON.stringify(payload));
 }
 
 export function clearSavedState() {
   localStorage.removeItem(V2_STORAGE_KEY);
+}
+
+function compactResultForStorage(result) {
+  if (!result || result.mode === 'pilot') return null;
+  if (!result.facts || !result.report) return null;
+  return {
+    facts: result.facts,
+    report: result.report,
+  };
 }

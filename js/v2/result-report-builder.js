@@ -71,8 +71,8 @@ function buildKeyTraits(facts, top3, bottom2) {
 }
 
 function buildNeededRelationship(facts, top3, bottom2) {
-  const needs = facts.needs.slice(0, 2).join('；');
-  return normalizeSentence(`你真正适合的关系，需要能承接你的${top3[0].label}和${top3[1].label}，也允许你在${bottom2[0].label}不那么强的时候不用勉强表演。${needs}`);
+  const needs = facts.needs.slice(0, 2).map((item) => item.replace(/[。；;]+$/g, ''));
+  return normalizeSentence(`你真正适合的关系，需要能承接你的${top3[0].label}和${top3[1].label}，也允许你在${bottom2[0].label}不那么强的时候不用勉强表演。${needs.join('；')}。`);
 }
 
 function buildMisunderstanding(facts, top3, bottom2, conflict) {

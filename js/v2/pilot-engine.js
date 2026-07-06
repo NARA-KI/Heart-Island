@@ -31,12 +31,14 @@ export function createPilotState(enabled = false) {
 
 export function buildPilotResult({ runtime, state }) {
   const candidateAResult = buildResult({
+    manifest: runtime.manifest,
     questionBank: runtime.questionBank,
     candidateA: runtime.candidateA,
     descriptions: runtime.descriptions,
     answers: state.answers,
   });
   const candidateEResult = buildAdaptiveResult({
+    manifest: runtime.manifest,
     questionBank: runtime.questionBank,
     candidateE: runtime.candidateE,
     candidateEScoringProfile: runtime.candidateEScoringProfile,

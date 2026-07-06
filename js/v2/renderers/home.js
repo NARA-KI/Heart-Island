@@ -6,11 +6,11 @@ export function renderHome(root, { onStart, onContinue, hasDraft, restoreNotice 
         <div class="v2-route"></div>
       </div>
       <div class="v2-home__content">
-        <p class="v2-eyebrow">Heart Island v2.0 Alpha 1</p>
+        <p class="v2-eyebrow">恋爱关系倾向测试</p>
         <h1>心岛计划</h1>
-        <p class="v2-lead">一场关于亲密、距离与关系惯性的内心航行。</p>
-        <p class="v2-meta">60 道关系情境题 · 约 8-10 分钟 · 生成你的心岛人格</p>
-        <p class="v2-note">本测试用于自我理解与产品体验，不构成专业心理诊断。</p>
+        <p class="v2-lead">通过 60 道关系情境题，看见你在亲密、边界、信任和投入中的关系节奏。</p>
+        <p class="v2-meta">约 8-10 分钟 · 获得你的心岛人格与 15 维关系地图</p>
+        <p class="v2-note">结果用于自我理解和关系沟通参考，不作为专业评估或医疗建议。</p>
         ${restoreNotice ? `<p class="v2-alert">${restoreNotice}</p>` : ''}
         <div class="v2-actions">
           <button class="v2-primary" type="button" data-action="start">${hasDraft ? '继续登岛' : '开始登岛'}</button>
