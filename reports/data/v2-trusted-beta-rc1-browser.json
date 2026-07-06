@@ -1,0 +1,198 @@
+{
+  "generatedAt": "2026-07-06T17:57:53.640Z",
+  "screenshotDir": "reports/audit-assets/v2-trusted-beta-rc1",
+  "results": [
+    {
+      "name": "375x667",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/375x667-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/375x667-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/375x667-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/375x667-04-result-long.png"
+      ],
+      "shareCards": [
+        "reports/audit-assets/v2-trusted-beta-rc1/375x667-05-share-card.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "collector",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "390x844",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-04-result-long.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-06-refresh-restored.png"
+      ],
+      "shareCards": [
+        "reports/audit-assets/v2-trusted-beta-rc1/390x844-05-share-card.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "collector",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "1440x900",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/1440x900-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/1440x900-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/1440x900-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/1440x900-04-result-long.png"
+      ],
+      "shareCards": [],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "collector",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "companion-persona",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/companion-result-page.png"
+      ],
+      "shareCards": [
+        "reports/audit-assets/v2-trusted-beta-rc1/companion-share-card.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "companion",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "harbor-persona",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/harbor-result-page.png"
+      ],
+      "shareCards": [
+        "reports/audit-assets/v2-trusted-beta-rc1/harbor-share-card.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "harbor",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "ferryman-persona",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/ferryman-result-page.png"
+      ],
+      "shareCards": [
+        "reports/audit-assets/v2-trusted-beta-rc1/ferryman-share-card.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "ferryman",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "ai-success",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/ai-generating.png",
+        "reports/audit-assets/v2-trusted-beta-rc1/ai-success.png"
+      ],
+      "shareCards": [],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "collector",
+        "reportSource": "ai",
+        "aiStatus": "success",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    },
+    {
+      "name": "ai-invalid-schema",
+      "pass": true,
+      "screenshots": [
+        "reports/audit-assets/v2-trusted-beta-rc1/ai-failed-fallback.png"
+      ],
+      "shareCards": [],
+      "consoleErrors": [],
+      "badResponses": [],
+      "metrics": {
+        "view": "result",
+        "personaId": "collector",
+        "reportSource": "deterministic",
+        "aiStatus": "failed",
+        "brokenImages": 0,
+        "horizontalOverflow": 0,
+        "fallbackPortraits": 0,
+        "apiKeyLeaks": 0
+      }
+    }
+  ],
+  "totals": {
+    "flows": 8,
+    "passFlows": 8,
+    "screenshots": 19,
+    "shareCards": 5,
+    "jsErrors": 0,
+    "brokenImages": 0,
+    "horizontalOverflow": 0,
+    "fallbackPortraits": 0
+  },
+  "pass": true
+}
