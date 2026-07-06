@@ -6,6 +6,7 @@ const layerOrder = CONSTRUCT_LAYER_ORDER;
 export function renderResult(root, { result, state, onRestart, onSaveResultImage, onShareResult, onFeedbackChange }) {
   const { facts, report } = result;
   const shareStatus = state.shareStatus ?? {};
+  const aiStatus = result.aiReportStatus ?? {};
   root.innerHTML = `
     <section class="v2-screen v2-result">
       <article class="v2-result-hero v2-result-hero--trusted">
@@ -23,6 +24,7 @@ export function renderResult(root, { result, state, onRestart, onSaveResultImage
           </div>
           <p class="v2-note">${escapeHtml(facts.confidence.isCloseMatch ? facts.confidence.userMessage : '这不是准确率，而是你这次答案呈现出的主要关系倾向。')}</p>
           ${qualityNotice(facts)}
+          ${aiReportStatus(aiStatus)}
           <div class="v2-actions v2-actions--hero">
             <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '保存结果图'}</button>
             <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在准备...' : '分享我的心岛'}</button>
@@ -100,6 +102,7 @@ export function renderResult(root, { result, state, onRestart, onSaveResultImage
           <p class="v2-note">反馈只保存在当前浏览器，用于你自己记录测试感受。</p>
         </details>
         <p class="v2-note">${escapeHtml(report.safetyDisclaimer)}</p>
+        <p class="v2-ai-disclaimer">个性化文字由AI辅助生成，评分、维度和人格结果由固定规则计算。</p>
       </section>
     </section>
   `;
@@ -124,6 +127,14 @@ function section(title, text) {
 function qualityNotice(facts) {
   if (facts.responseQuality.level === 'normal') return '';
   return `<p class="v2-quality-notice">${escapeHtml(facts.responseQuality.userMessage)}</p>`;
+}
+
+function aiReportStatus(status) {
+  if (!status?.state || status.state === 'idle') return '';
+  const label = status.message || (status.state === 'success'
+    ? '个性化解读已生成'
+    : '当前使用稳定版关系解读，结果内容不受影响。');
+  return `<p class="v2-ai-status" data-ai-state="${escapeHtml(status.state)}">${escapeHtml(label)}</p>`;
 }
 
 function cardList(items) {

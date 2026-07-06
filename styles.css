@@ -470,18 +470,37 @@ p {
 
 .v2-section-intro,
 .v2-status-message,
-.v2-quality-notice {
+.v2-quality-notice,
+.v2-ai-status,
+.v2-ai-disclaimer {
   margin-top: 12px;
   color: var(--text-secondary);
   font-size: 14px;
 }
 
-.v2-quality-notice {
+.v2-quality-notice,
+.v2-ai-status {
   border: 1px solid rgba(255, 231, 184, 0.24);
   border-radius: var(--radius-card);
   padding: 10px 12px;
   background: rgba(255, 231, 184, 0.08);
   color: #ffe6ad;
+}
+
+.v2-ai-status[data-ai-state="success"] {
+  border-color: rgba(185, 231, 255, 0.28);
+  background: rgba(185, 231, 255, 0.08);
+  color: var(--accent-light);
+}
+
+.v2-ai-status[data-ai-state="failed"] {
+  border-color: rgba(225, 238, 249, 0.18);
+  background: rgba(225, 238, 249, 0.06);
+  color: var(--text-secondary);
+}
+
+.v2-ai-disclaimer {
+  color: var(--text-muted);
 }
 
 .v2-radar-wrap {

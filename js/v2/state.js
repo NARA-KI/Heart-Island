@@ -81,6 +81,8 @@ function sanitizeSavedResult(result) {
   if (!result.facts?.versions?.resultSchemaVersion || !result.report?.schemaVersion) return null;
   return {
     facts: result.facts,
+    deterministicReport: result.deterministicReport ?? (result.report?.source === 'deterministic' ? result.report : null),
     report: result.report,
+    aiReportStatus: result.aiReportStatus ?? { state: result.report?.source === 'ai' ? 'success' : 'idle', message: '' },
   };
 }

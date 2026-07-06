@@ -45,7 +45,9 @@ export function buildResultFromScoring({ manifest = {}, questionBank, candidateA
     highConstructs,
     lowConstructs,
     facts,
+    deterministicReport: report,
     report,
+    aiReportStatus: { state: 'idle', message: '' },
     scoring,
     sections: buildSections(description, report),
   };

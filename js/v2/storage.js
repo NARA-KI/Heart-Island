@@ -53,6 +53,8 @@ function compactResultForStorage(result) {
   if (!result.facts || !result.report) return null;
   return {
     facts: result.facts,
+    deterministicReport: result.deterministicReport ?? result.report,
     report: result.report,
+    aiReportStatus: result.aiReportStatus ?? { state: result.report?.source === 'ai' ? 'success' : 'idle', message: '' },
   };
 }

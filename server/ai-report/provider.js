@@ -65,6 +65,7 @@ async function deepseekProvider({ facts, deterministicReport, env, signal }) {
 
 async function mockProvider({ facts, deterministicReport, env, signal }) {
   const mode = env.AI_REPORT_MOCK_MODE || 'success';
+  if (env.AI_REPORT_MOCK_DELAY_MS) await sleep(Number(env.AI_REPORT_MOCK_DELAY_MS), signal);
   if (mode === 'timeout') {
     await sleep(Number(env.AI_REPORT_TIMEOUT_MS || 12000) + 200, signal);
     throw new ProviderError('Mock timeout', { status: 504, retryable: true });

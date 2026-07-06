@@ -5,6 +5,8 @@ import { createInitialState, hydrateState, isComplete } from './state.js';
 import { answerQuestion, goNext, goPrevious } from './question-engine.js';
 import { buildResult } from './result-engine.js';
 import { downloadResultImage, shareResultImage } from './share-card.js';
+import { clearAiReportCache } from './ai/ai-report-cache.js';
+import { generateAiResultReport } from './ai/ai-report-client.js';
 import {
   buildPilotResult,
   createPilotCode,
@@ -21,6 +23,7 @@ const pilotMode = new URLSearchParams(window.location.search).get('pilot') === '
 
 let runtime = null;
 let state = createInitialState({ pilotMode });
+let currentAiReportController = null;
 
 function setBootStatus(message, mode = 'loading') {
   if (!bootStatus) return;
@@ -65,7 +68,9 @@ function route(overrides = {}) {
 }
 
 function startFresh() {
+  currentAiReportController?.abort();
   clearSavedState();
+  clearAiReportCache();
   state = createInitialState({ pilotMode });
   state.view = 'instructions';
   state.startedAt = new Date().toISOString();
@@ -118,6 +123,46 @@ function showResult() {
   state.view = 'result';
   persist();
   route();
+  requestAiReportEnhancement();
+}
+
+function requestAiReportEnhancement() {
+  if (state.pilot?.enabled || !state.result?.facts || !state.result?.report) return;
+  if (state.result.report.source === 'ai') {
+    state.result.aiReportStatus = { state: 'success', message: '个性化解读已生成' };
+    persist();
+    route();
+    return;
+  }
+
+  currentAiReportController?.abort();
+  const controller = new AbortController();
+  currentAiReportController = controller;
+  state.result.aiReportStatus = {
+    state: 'loading',
+    message: '正在结合你的15维关系倾向，整理更贴近本次作答的解读……',
+  };
+  persist();
+  route();
+
+  generateAiResultReport(state.result.facts, { signal: controller.signal })
+    .then((entry) => {
+      if (controller.signal.aborted || state.view !== 'result' || !state.result?.facts) return;
+      state.result.report = entry.report;
+      state.result.aiReportStatus = { state: 'success', message: '个性化解读已生成' };
+      persist();
+      route();
+    })
+    .catch(() => {
+      if (controller.signal.aborted || state.view !== 'result' || !state.result) return;
+      state.result.report = state.result.deterministicReport ?? state.result.report;
+      state.result.aiReportStatus = {
+        state: 'failed',
+        message: '当前使用稳定版关系解读，结果内容不受影响。',
+      };
+      persist();
+      route();
+    });
 }
 
 async function handleSaveResultImage() {
@@ -133,6 +178,7 @@ async function handleSaveResultImage() {
   }
   persist();
   route();
+  if (state.view === 'result' && !state.pilot?.enabled) requestAiReportEnhancement();
 }
 
 async function handleShareResult() {
@@ -246,6 +292,7 @@ async function boot() {
     pilotRecordsToCsv,
   };
   route();
+  if (state.view === 'result' && !state.pilot?.enabled) requestAiReportEnhancement();
 }
 
 function downloadText(filename, text, type) {
