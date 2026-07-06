@@ -1,0 +1,290 @@
+{
+  "generatedAt": "2026-07-06T16:38:10.250Z",
+  "screenshotDir": "reports/audit-assets/v2-persona-art-complete",
+  "personas": [
+    "companion",
+    "harbor",
+    "ferryman"
+  ],
+  "viewports": [
+    "375x667",
+    "390x844",
+    "1440x900"
+  ],
+  "results": [
+    {
+      "name": "companion-375x667",
+      "personaId": "companion",
+      "viewport": "375x667",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/companion-375x667-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "companion",
+        "personaImage": "./assets/personas/companion.webp",
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/companion.webp"
+        }
+      }
+    },
+    {
+      "name": "companion-390x844",
+      "personaId": "companion",
+      "viewport": "390x844",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/companion-390x844-result.png",
+      "shareCard": {
+        "path": "reports/audit-assets/v2-persona-art-complete/companion-share-card.png",
+        "bytes": 1331051,
+        "nonEmpty": true
+      },
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "companion",
+        "personaImage": "./assets/personas/companion.webp",
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/companion.webp"
+        }
+      }
+    },
+    {
+      "name": "companion-1440x900",
+      "personaId": "companion",
+      "viewport": "1440x900",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/companion-1440x900-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "companion",
+        "personaImage": "./assets/personas/companion.webp",
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 192,
+          "renderedHeight": 288,
+          "objectFit": "cover",
+          "src": "./assets/personas/companion.webp"
+        }
+      }
+    },
+    {
+      "name": "harbor-375x667",
+      "personaId": "harbor",
+      "viewport": "375x667",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/harbor-375x667-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "harbor",
+        "personaImage": "./assets/personas/harbor.webp",
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/harbor.webp"
+        }
+      }
+    },
+    {
+      "name": "harbor-390x844",
+      "personaId": "harbor",
+      "viewport": "390x844",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/harbor-390x844-result.png",
+      "shareCard": {
+        "path": "reports/audit-assets/v2-persona-art-complete/harbor-share-card.png",
+        "bytes": 1362842,
+        "nonEmpty": true
+      },
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "harbor",
+        "personaImage": "./assets/personas/harbor.webp",
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/harbor.webp"
+        }
+      }
+    },
+    {
+      "name": "harbor-1440x900",
+      "personaId": "harbor",
+      "viewport": "1440x900",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/harbor-1440x900-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "harbor",
+        "personaImage": "./assets/personas/harbor.webp",
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 192,
+          "renderedHeight": 288,
+          "objectFit": "cover",
+          "src": "./assets/personas/harbor.webp"
+        }
+      }
+    },
+    {
+      "name": "ferryman-375x667",
+      "personaId": "ferryman",
+      "viewport": "375x667",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/ferryman-375x667-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "ferryman",
+        "personaImage": "./assets/personas/ferryman.webp",
+        "scrollWidth": 375,
+        "innerWidth": 375,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/ferryman.webp"
+        }
+      }
+    },
+    {
+      "name": "ferryman-390x844",
+      "personaId": "ferryman",
+      "viewport": "390x844",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/ferryman-390x844-result.png",
+      "shareCard": {
+        "path": "reports/audit-assets/v2-persona-art-complete/ferryman-share-card.png",
+        "bytes": 1322822,
+        "nonEmpty": true
+      },
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "ferryman",
+        "personaImage": "./assets/personas/ferryman.webp",
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 228,
+          "renderedHeight": 342,
+          "objectFit": "cover",
+          "src": "./assets/personas/ferryman.webp"
+        }
+      }
+    },
+    {
+      "name": "ferryman-1440x900",
+      "personaId": "ferryman",
+      "viewport": "1440x900",
+      "pass": true,
+      "screenshot": "reports/audit-assets/v2-persona-art-complete/ferryman-1440x900-result.png",
+      "shareCard": null,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "metrics": {
+        "personaId": "ferryman",
+        "personaImage": "./assets/personas/ferryman.webp",
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "fallbackPortraits": 0,
+        "portrait": {
+          "naturalWidth": 767,
+          "naturalHeight": 1152,
+          "renderedWidth": 192,
+          "renderedHeight": 288,
+          "objectFit": "cover",
+          "src": "./assets/personas/ferryman.webp"
+        }
+      }
+    }
+  ],
+  "totals": {
+    "resultViews": 9,
+    "passedViews": 9,
+    "shareCards": 3,
+    "brokenImages": 0,
+    "horizontalOverflow": 0,
+    "jsErrors": 0,
+    "fallbackPortraits": 0
+  },
+  "pass": true
+}
