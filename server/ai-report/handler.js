@@ -21,18 +21,19 @@ export async function handleAiReportRequest(request, response, options = {}) {
     if (!String(request.headers['content-type'] || '').includes('application/json')) {
       throw httpError(415, 'Content-Type must be application/json');
     }
-    enforceSessionLimit(request, env);
     const payload = JSON.parse(await readBody(request, Number(env.AI_REPORT_BODY_LIMIT_BYTES || DEFAULT_BODY_LIMIT)));
     const validated = validateAiReportRequest(payload);
     const cacheKey = createCacheKey(validated.resultHash);
     const cacheTtlMs = Number(env.AI_REPORT_CACHE_TTL_MS ?? 600000);
     const cached = cacheTtlMs > 0 ? cache.get(cacheKey) : null;
     if (cached && Date.now() - cached.createdAt < cacheTtlMs) {
+      validateAiReportResponse(cached.body.report, validated.facts);
       return json(response, 200, { ...cached.body, cacheHit: true });
     }
     if (pending.has(cacheKey)) {
       return json(response, 200, { ...await pending.get(cacheKey), cacheHit: false });
     }
+    enforceSessionLimit(request, env);
     const promise = createReport(validated, env);
     pending.set(cacheKey, promise);
     try {

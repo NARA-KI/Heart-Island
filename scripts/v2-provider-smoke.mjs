@@ -9,6 +9,7 @@ import { answersForBaselineSource } from '../tests/v2-baseline-samples.mjs';
 const root = process.cwd();
 const outDir = path.join(root, 'reports', 'audit-assets', 'v2-provider-smoke-and-deploy');
 const resultPath = path.join(outDir, 'provider-smoke-summary.json');
+const privateReviewPath = path.join(root, 'reports', 'private', 'v2-real-ai-report-quality-review.md');
 const env = loadPrivateEnv();
 const requiredRealEnv = [
   'AI_REPORT_API_KEY',
@@ -81,7 +82,14 @@ try {
       repeat: true,
     }));
   }
-  const summary = summarize({ runs, cors, sampleCount: samples.length });
+  writePrivateQualityReview({ runs, filePath: privateReviewPath });
+  const summary = summarize({
+    runs,
+    cors,
+    sampleCount: samples.length,
+    realProviderCallCount: Number(serverEnv.__AI_REPORT_PROVIDER_CALLS || 0),
+    privateReviewPath,
+  });
   fs.writeFileSync(resultPath, `${JSON.stringify(summary, null, 2)}\n`);
   console.log(JSON.stringify(summary, null, 2));
   if (summary.schemaFailureRate > 0 || summary.providerErrorRate > 0) process.exitCode = 1;
@@ -155,6 +163,7 @@ async function runSample({ baseUrl, apiPath, origin, sample, repeat }) {
     degraded: !response.ok || body.report?.source !== 'ai',
     errorType: body.errorType ?? null,
     repeat,
+    reviewReport: !repeat && response.ok ? body.report : null,
   };
 }
 
@@ -175,7 +184,7 @@ async function checkCors({ baseUrl, apiPath, allowedOrigin }) {
   };
 }
 
-function summarize({ runs, cors, sampleCount }) {
+function summarize({ runs, cors, sampleCount, realProviderCallCount, privateReviewPath }) {
   const firstRuns = runs.filter((item) => !item.repeat);
   const successCount = firstRuns.filter((item) => item.aiSuccess).length;
   const degradedCount = firstRuns.filter((item) => item.degraded).length;
@@ -198,9 +207,45 @@ function summarize({ runs, cors, sampleCount }) {
     averageCompletionTokens: averageKnown(firstRuns.map((item) => item.completionTokens)),
     averageTotalTokens: averageKnown(firstRuns.map((item) => item.totalTokens)),
     cacheVerified: repeats.every((id) => runs.some((item) => item.sampleId === id && item.repeat && item.cacheHit)),
+    realProviderCallCount,
+    privateReviewPath: path.relative(root, privateReviewPath).replaceAll('\\', '/'),
     cors,
-    runs,
+    runs: runs.map(sanitizeRunForSummary),
   };
+}
+
+function sanitizeRunForSummary(run) {
+  const { reviewReport, ...publicRun } = run;
+  return publicRun;
+}
+
+function writePrivateQualityReview({ runs, filePath }) {
+  const firstRuns = runs.filter((item) => !item.repeat && item.reviewReport);
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  const sections = [
+    '# 心岛 V2 真实 AI Report 人工质量评审',
+    '',
+    `生成时间：${new Date().toISOString()}`,
+    '',
+    '本文件仅供本地人工评审使用，已排除 API Key、原始 60 题答案、完整请求头、用户身份信息和环境变量。',
+    '',
+  ];
+  for (const run of firstRuns) {
+    sections.push(
+      `## ${run.sampleId}`,
+      '',
+      `- personaId: ${run.personaId}`,
+      `- finishReason: ${run.finishReason ?? 'unknown'}`,
+      `- latencyMs: ${run.latencyMs}`,
+      `- cacheHit: ${run.cacheHit}`,
+      '',
+      '```json',
+      JSON.stringify(run.reviewReport, null, 2),
+      '```',
+      '',
+    );
+  }
+  fs.writeFileSync(filePath, `${sections.join('\n')}\n`);
 }
 
 function startServer({ apiPath, env }) {

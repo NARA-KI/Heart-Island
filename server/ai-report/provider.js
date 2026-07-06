@@ -20,6 +20,7 @@ export async function generateWithProvider({ facts, deterministicReport, env = p
 }
 
 async function deepseekProvider({ facts, deterministicReport, env, signal }) {
+  env.__AI_REPORT_PROVIDER_CALLS = Number(env.__AI_REPORT_PROVIDER_CALLS || 0) + 1;
   const apiKey = env.AI_REPORT_API_KEY;
   const baseUrl = env.AI_REPORT_BASE_URL;
   const model = env.AI_REPORT_MODEL;
@@ -91,6 +92,7 @@ export function buildDeepseekRequestBody({ model, facts, deterministicReport, en
 }
 
 async function mockProvider({ facts, deterministicReport, env, signal }) {
+  env.__AI_REPORT_MOCK_CALLS = Number(env.__AI_REPORT_MOCK_CALLS || 0) + 1;
   const mode = env.AI_REPORT_MOCK_MODE || 'success';
   if (env.AI_REPORT_MOCK_DELAY_MS) await sleep(Number(env.AI_REPORT_MOCK_DELAY_MS), signal);
   if (mode === 'timeout') {

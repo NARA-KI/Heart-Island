@@ -22,6 +22,27 @@ const result = buildResult({ manifest, questionBank, candidateA, descriptions, a
 const facts = result.facts;
 const resultHash = createResultHash(facts);
 const validPayload = { requestId: 'test-request', resultHash, facts };
+const otherSample = baselines.samples.find((item) => item.id === 'same-persona-migratory-a');
+const otherAnswers = answersForBaselineSource(questionBank, otherSample.source);
+const otherResult = buildResult({ manifest, questionBank, candidateA, descriptions, answers: otherAnswers });
+const otherFacts = otherResult.facts;
+const otherPayload = {
+  requestId: 'test-request-other',
+  resultHash: createResultHash(otherFacts),
+  facts: otherFacts,
+};
+const thirdSample = baselines.samples.find((item) => item.id === 'balanced-middle');
+const thirdAnswers = answersForBaselineSource(questionBank, thirdSample.source);
+const thirdResult = buildResult({ manifest, questionBank, candidateA, descriptions, answers: thirdAnswers });
+const thirdFacts = thirdResult.facts;
+const thirdPayload = {
+  requestId: 'test-request-third',
+  resultHash: createResultHash(thirdFacts),
+  facts: thirdFacts,
+};
+const invalidOriginPayload = payloadForSample('focused-sc-high');
+const invalidHashPayload = payloadForSample('high-au-low-sc');
+const expiredCachePayload = payloadForSample('high-cl-high-ri');
 
 assert.equal(validateAiReportRequest(validPayload).resultHash, resultHash);
 assertRejects({ ...validPayload, facts: withoutConstruct(facts, 'SC') }, 'construct score count');
@@ -70,6 +91,29 @@ assert.equal(cached.second.status, 200);
 assert.equal(cached.first.body.cacheHit, false);
 assert.equal(cached.second.body.cacheHit, true);
 
+const quotaCache = await exerciseQuotaCacheOrder(otherPayload, thirdPayload);
+assert.equal(quotaCache.first.status, 200);
+assert.equal(quotaCache.cachedAfterLimit.status, 200);
+assert.equal(quotaCache.cachedAfterLimit.body.cacheHit, true);
+assert.equal(quotaCache.uncachedAfterLimit.status, 429);
+assert.equal(quotaCache.mockCallsAfterCachedRead, 1);
+assert.equal(quotaCache.mockCallsAfterUncachedLimit, 1);
+
+const invalidOriginCache = await exerciseInvalidOriginCannotReadCache(invalidOriginPayload);
+assert.equal(invalidOriginCache.first.status, 200);
+assert.equal(invalidOriginCache.invalidOrigin.status, 403);
+assert.equal(invalidOriginCache.mockCalls, 1);
+
+const invalidHashCache = await exerciseInvalidHashCannotReadCache(invalidHashPayload);
+assert.equal(invalidHashCache.first.status, 200);
+assert.equal(invalidHashCache.invalidHash.status, 422);
+assert.equal(invalidHashCache.mockCalls, 1);
+
+const expiredCacheLimit = await exerciseExpiredCacheCannotBypassLimit(expiredCachePayload);
+assert.equal(expiredCacheLimit.first.status, 200);
+assert.equal(expiredCacheLimit.expiredRead.status, 429);
+assert.equal(expiredCacheLimit.mockCalls, 1);
+
 const invalidJson = await postToHandler(validPayload, { AI_REPORT_PROVIDER: 'mock', AI_REPORT_MOCK_MODE: 'invalid-json' });
 assert.equal(invalidJson.status, 502);
 
@@ -111,6 +155,7 @@ console.log(JSON.stringify({
   resultHash,
   providerModes: ['success', 'invalid-json', 'invalid-schema', '429', '500', 'timeout'],
   finishReasonsRejected: ['length', 'content_filter', 'insufficient_system_resource', 'tool_calls', 'unknown', 'missing'],
+  cacheBeforeQuota: true,
 }, null, 2));
 
 function assertRejects(payload, pattern) {
@@ -167,10 +212,100 @@ async function postTwiceToHandler(payload, env = {}) {
   }
 }
 
-async function postJson(port, payload) {
+async function exerciseQuotaCacheOrder(cachedPayload, uncachedPayload) {
+  const env = {
+    AI_REPORT_PROVIDER: 'mock',
+    AI_REPORT_MOCK_MODE: 'success',
+    AI_REPORT_SESSION_LIMIT: '1',
+    AI_REPORT_CACHE_TTL_MS: '600000',
+  };
+  return withHandlerServer(env, async (port) => {
+    const headers = { 'x-forwarded-for': `quota-cache-${Date.now()}` };
+    const first = await postJson(port, cachedPayload, { headers });
+    const cachedAfterLimit = await postJson(port, cachedPayload, { headers });
+    const mockCallsAfterCachedRead = env.__AI_REPORT_MOCK_CALLS;
+    const uncachedAfterLimit = await postJson(port, uncachedPayload, { headers });
+    return {
+      first,
+      cachedAfterLimit,
+      uncachedAfterLimit,
+      mockCallsAfterCachedRead,
+      mockCallsAfterUncachedLimit: env.__AI_REPORT_MOCK_CALLS,
+    };
+  });
+}
+
+async function exerciseInvalidOriginCannotReadCache(payload) {
+  const env = {
+    AI_REPORT_PROVIDER: 'mock',
+    AI_REPORT_MOCK_MODE: 'success',
+    AI_REPORT_SESSION_LIMIT: '1',
+    AI_REPORT_CACHE_TTL_MS: '600000',
+    ALLOWED_ORIGIN: 'http://allowed.example',
+  };
+  return withHandlerServer(env, async (port) => {
+    const headers = {
+      Origin: 'http://allowed.example',
+      'x-forwarded-for': `origin-cache-${Date.now()}`,
+    };
+    const first = await postJson(port, payload, { headers });
+    const invalidOrigin = await postJson(port, payload, {
+      headers: {
+        Origin: 'http://blocked.example',
+        'x-forwarded-for': headers['x-forwarded-for'],
+      },
+    });
+    return { first, invalidOrigin, mockCalls: env.__AI_REPORT_MOCK_CALLS };
+  });
+}
+
+async function exerciseInvalidHashCannotReadCache(payload) {
+  const env = {
+    AI_REPORT_PROVIDER: 'mock',
+    AI_REPORT_MOCK_MODE: 'success',
+    AI_REPORT_SESSION_LIMIT: '1',
+    AI_REPORT_CACHE_TTL_MS: '600000',
+  };
+  return withHandlerServer(env, async (port) => {
+    const headers = { 'x-forwarded-for': `hash-cache-${Date.now()}` };
+    const first = await postJson(port, payload, { headers });
+    const invalidHash = await postJson(port, { ...payload, resultHash: 'air-invalid' }, { headers });
+    return { first, invalidHash, mockCalls: env.__AI_REPORT_MOCK_CALLS };
+  });
+}
+
+async function exerciseExpiredCacheCannotBypassLimit(payload) {
+  const env = {
+    AI_REPORT_PROVIDER: 'mock',
+    AI_REPORT_MOCK_MODE: 'success',
+    AI_REPORT_SESSION_LIMIT: '1',
+    AI_REPORT_CACHE_TTL_MS: '600000',
+  };
+  return withHandlerServer(env, async (port) => {
+    const headers = { 'x-forwarded-for': `expired-cache-${Date.now()}` };
+    const first = await postJson(port, payload, { headers });
+    env.AI_REPORT_CACHE_TTL_MS = '1';
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    const expiredRead = await postJson(port, payload, { headers });
+    return { first, expiredRead, mockCalls: env.__AI_REPORT_MOCK_CALLS };
+  });
+}
+
+async function withHandlerServer(env, callback) {
+  const port = await getPort();
+  const server = http.createServer((request, response) => handleAiReportRequest(request, response, { env }));
+  await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
+  try {
+    return await callback(port);
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+async function postJson(port, payload, options = {}) {
   const response = await fetch(`http://127.0.0.1:${port}/api/v2/ai-report`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', ...options.headers },
     body: JSON.stringify(payload),
   });
   const body = await response.json();
@@ -189,4 +324,16 @@ function getPort() {
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+function payloadForSample(id) {
+  const source = baselines.samples.find((item) => item.id === id)?.source;
+  if (!source) throw new Error(`Missing baseline sample: ${id}`);
+  const sampleAnswers = answersForBaselineSource(questionBank, source);
+  const sampleResult = buildResult({ manifest, questionBank, candidateA, descriptions, answers: sampleAnswers });
+  return {
+    requestId: `test-request-${id}`,
+    resultHash: createResultHash(sampleResult.facts),
+    facts: sampleResult.facts,
+  };
 }
