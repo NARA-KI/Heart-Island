@@ -1,0 +1,725 @@
+{
+  "schemaVersion": "heart-island-v2-result-baselines-1",
+  "createdAt": "2026-07-06",
+  "scoringProfile": "candidate-a",
+  "questionBankVersion": "v2.0-60-question-alpha-1",
+  "precision": 4,
+  "samples": [
+    {
+      "id": "real-collector",
+      "label": "Real stored collector sample",
+      "source": {
+        "id": "real-collector",
+        "label": "Real stored collector sample",
+        "kind": "storedPilot"
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 50,
+          "TR": 41.5,
+          "CL": 66.75,
+          "PA": 33,
+          "CM": 50,
+          "SI": 83.5,
+          "NV": 50,
+          "RM": 58.5,
+          "CS": 33.25,
+          "EC": 24.75,
+          "CR": 41.75,
+          "ER": 25,
+          "RI": 58.25,
+          "MN": 83.5
+        },
+        "persona": {
+          "id": "collector",
+          "displayName": "收藏家"
+        },
+        "top1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 16.0329
+        },
+        "top2": {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 22.347
+        },
+        "top1Top2Gap": 6.3141,
+        "currentResult": {
+          "matchStrength": 83.97,
+          "matchStrengthLevel": "匹配倾向非常明显",
+          "summary": "你会把关系里的细节和记忆保存得很深：过去的意义、情绪痕迹和精神联结会持续影响你。",
+          "highConstructs": [
+            "SI",
+            "MN",
+            "CL",
+            "RM",
+            "RI"
+          ],
+          "lowConstructs": [
+            "EC",
+            "ER",
+            "PA",
+            "CS"
+          ]
+        }
+      }
+    },
+    {
+      "id": "focused-sc-high",
+      "label": "Focused safety-confirmation high",
+      "source": {
+        "id": "focused-sc-high",
+        "label": "Focused safety-confirmation high",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "SC": 100
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 100,
+          "AU": 58.5,
+          "TR": 58.5,
+          "CL": 58.5,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 41.5,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 41.5,
+          "CR": 41.5,
+          "ER": 50,
+          "RI": 33,
+          "MN": 50
+        },
+        "persona": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型"
+        },
+        "top1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 20.7834
+        },
+        "top2": {
+          "id": "mirror",
+          "displayName": "镜像型",
+          "distance": 21.5782
+        },
+        "top1Top2Gap": 0.7948,
+        "currentResult": {
+          "matchStrength": 79.22,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你需要亲密，也需要呼吸感：关系要能靠近，也要允许你保有移动和自我节奏。",
+          "highConstructs": [
+            "SC",
+            "CM",
+            "AU",
+            "TR",
+            "CL"
+          ],
+          "lowConstructs": [
+            "RI",
+            "SI",
+            "RM",
+            "EC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "balanced-middle",
+      "label": "Balanced middle sample",
+      "source": {
+        "id": "balanced-middle",
+        "label": "Balanced middle sample",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {}
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 58.5,
+          "TR": 58.5,
+          "CL": 58.5,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 41.5,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 41.5,
+          "CR": 41.5,
+          "ER": 50,
+          "RI": 33,
+          "MN": 50
+        },
+        "persona": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型"
+        },
+        "top1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 17.2805
+        },
+        "top2": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 20.239
+        },
+        "top1Top2Gap": 2.9585,
+        "currentResult": {
+          "matchStrength": 82.72,
+          "matchStrengthLevel": "匹配倾向非常明显",
+          "summary": "你需要亲密，也需要呼吸感：关系要能靠近，也要允许你保有移动和自我节奏。",
+          "highConstructs": [
+            "CM",
+            "AU",
+            "TR",
+            "CL",
+            "PA"
+          ],
+          "lowConstructs": [
+            "RI",
+            "SI",
+            "RM",
+            "EC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "high-au-low-sc",
+      "label": "High autonomy boundary low safety confirmation",
+      "source": {
+        "id": "high-au-low-sc",
+        "label": "High autonomy boundary low safety confirmation",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "AU": 100,
+          "SC": 0,
+          "TR": 33
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 0,
+          "AU": 100,
+          "TR": 33,
+          "CL": 58.5,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 41.5,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 41.5,
+          "CR": 41.5,
+          "ER": 50,
+          "RI": 33,
+          "MN": 50
+        },
+        "persona": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型"
+        },
+        "top1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 21.6545
+        },
+        "top2": {
+          "id": "islander",
+          "displayName": "岛屿型",
+          "distance": 22.7431
+        },
+        "top1Top2Gap": 1.0886,
+        "currentResult": {
+          "matchStrength": 78.35,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你需要亲密，也需要呼吸感：关系要能靠近，也要允许你保有移动和自我节奏。",
+          "highConstructs": [
+            "AU",
+            "CM",
+            "CL",
+            "PA",
+            "NV"
+          ],
+          "lowConstructs": [
+            "SC",
+            "TR",
+            "RI",
+            "SI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "high-cl-high-ri",
+      "label": "High intimacy connection high relationship investment",
+      "source": {
+        "id": "high-cl-high-ri",
+        "label": "High intimacy connection high relationship investment",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "CL": 100,
+          "RI": 100,
+          "CM": 67,
+          "EC": 67
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 58.5,
+          "TR": 58.5,
+          "CL": 100,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 41.5,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 67,
+          "CR": 41.5,
+          "ER": 50,
+          "RI": 100,
+          "MN": 50
+        },
+        "persona": {
+          "id": "moonlight",
+          "displayName": "月光型"
+        },
+        "top1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 21.4814
+        },
+        "top2": {
+          "id": "nest-builder",
+          "displayName": "筑巢型",
+          "distance": 22.3782
+        },
+        "top1Top2Gap": 0.8968,
+        "currentResult": {
+          "matchStrength": 78.52,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你擅长温柔地看见别人：亲密、照顾和精神理解，是你关系里的主要光源。",
+          "highConstructs": [
+            "CL",
+            "RI",
+            "CM",
+            "EC",
+            "AU"
+          ],
+          "lowConstructs": [
+            "SI",
+            "RM",
+            "CR",
+            "SC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "high-si-high-mn",
+      "label": "High soul ideal high memory pull",
+      "source": {
+        "id": "high-si-high-mn",
+        "label": "High soul ideal high memory pull",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "SI": 100,
+          "MN": 100,
+          "RM": 33,
+          "ER": 33
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 58.5,
+          "TR": 58.5,
+          "CL": 58.5,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 100,
+          "NV": 58.5,
+          "RM": 33,
+          "CS": 50,
+          "EC": 41.5,
+          "CR": 41.5,
+          "ER": 33,
+          "RI": 33,
+          "MN": 100
+        },
+        "persona": {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人"
+        },
+        "top1": {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 17.7365
+        },
+        "top2": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 18.3535
+        },
+        "top1Top2Gap": 0.617,
+        "currentResult": {
+          "matchStrength": 82.26,
+          "matchStrengthLevel": "匹配倾向非常明显",
+          "summary": "你会被关系中的精神远方、意义感和记忆牵引：爱对你不只是稳定，也是一种内在旅程。",
+          "highConstructs": [
+            "SI",
+            "MN",
+            "CM",
+            "AU",
+            "TR"
+          ],
+          "lowConstructs": [
+            "RM",
+            "ER",
+            "RI",
+            "EC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "high-mn-low-er",
+      "label": "High memory pull low emotion regulation",
+      "source": {
+        "id": "high-mn-low-er",
+        "label": "High memory pull low emotion regulation",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "MN": 100,
+          "ER": 0,
+          "SI": 67,
+          "EC": 33
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 58.5,
+          "TR": 58.5,
+          "CL": 58.5,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 67,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 33,
+          "CR": 41.5,
+          "ER": 0,
+          "RI": 33,
+          "MN": 100
+        },
+        "persona": {
+          "id": "collector",
+          "displayName": "收藏家"
+        },
+        "top1": {
+          "id": "collector",
+          "displayName": "收藏家",
+          "distance": 23.5439
+        },
+        "top2": {
+          "id": "wandering-poet",
+          "displayName": "流浪诗人",
+          "distance": 25.261
+        },
+        "top1Top2Gap": 1.7171,
+        "currentResult": {
+          "matchStrength": 76.46,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你会把关系里的细节和记忆保存得很深：过去的意义、情绪痕迹和精神联结会持续影响你。",
+          "highConstructs": [
+            "MN",
+            "CM",
+            "SI",
+            "AU",
+            "TR"
+          ],
+          "lowConstructs": [
+            "ER",
+            "EC",
+            "RI",
+            "RM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "conflict-au-cl-ri-high-sc-low",
+      "label": "High AU CL RI with low SC",
+      "source": {
+        "id": "conflict-au-cl-ri-high-sc-low",
+        "label": "High AU CL RI with low SC",
+        "kind": "targets",
+        "fallback": 50,
+        "targets": {
+          "AU": 100,
+          "CL": 100,
+          "RI": 100,
+          "SC": 0,
+          "ER": 33,
+          "CR": 33
+        }
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 0,
+          "AU": 100,
+          "TR": 58.5,
+          "CL": 100,
+          "PA": 58.5,
+          "CM": 67,
+          "SI": 41.5,
+          "NV": 58.5,
+          "RM": 41.5,
+          "CS": 50,
+          "EC": 41.5,
+          "CR": 33,
+          "ER": 33,
+          "RI": 100,
+          "MN": 50
+        },
+        "persona": {
+          "id": "gatekeeper",
+          "displayName": "守门人"
+        },
+        "top1": {
+          "id": "gatekeeper",
+          "displayName": "守门人",
+          "distance": 26.9128
+        },
+        "top2": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 29.3865
+        },
+        "top1Top2Gap": 2.4737,
+        "currentResult": {
+          "matchStrength": 73.09,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你会认真决定谁能进入你的关系世界：不是冷淡，而是需要确认节奏、承诺和可信度。",
+          "highConstructs": [
+            "AU",
+            "CL",
+            "RI",
+            "CM",
+            "TR"
+          ],
+          "lowConstructs": [
+            "SC",
+            "CR",
+            "ER",
+            "SI"
+          ]
+        }
+      }
+    },
+    {
+      "id": "same-persona-migratory-a",
+      "label": "Same persona migratory bird A",
+      "source": {
+        "id": "same-persona-migratory-a",
+        "label": "Same persona migratory bird A",
+        "kind": "random",
+        "seed": "same-23"
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 25,
+          "AU": 58.25,
+          "TR": 41.75,
+          "CL": 75,
+          "PA": 58.5,
+          "CM": 25,
+          "SI": 8.25,
+          "NV": 41.75,
+          "RM": 41.5,
+          "CS": 16.75,
+          "EC": 75,
+          "CR": 66.5,
+          "ER": 66.75,
+          "RI": 66.75,
+          "MN": 66.5
+        },
+        "persona": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型"
+        },
+        "top1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 25.2038
+        },
+        "top2": {
+          "id": "ferryman",
+          "displayName": "摆渡人",
+          "distance": 25.3317
+        },
+        "top1Top2Gap": 0.1279,
+        "currentResult": {
+          "matchStrength": 74.8,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你需要亲密，也需要呼吸感：关系要能靠近，也要允许你保有移动和自我节奏。",
+          "highConstructs": [
+            "CL",
+            "EC",
+            "ER",
+            "RI",
+            "CR"
+          ],
+          "lowConstructs": [
+            "SI",
+            "CS",
+            "SC",
+            "CM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "same-persona-migratory-b",
+      "label": "Same persona migratory bird B",
+      "source": {
+        "id": "same-persona-migratory-b",
+        "label": "Same persona migratory bird B",
+        "kind": "random",
+        "seed": "same-b-23"
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 50,
+          "AU": 75.25,
+          "TR": 41.75,
+          "CL": 58.25,
+          "PA": 75.25,
+          "CM": 25,
+          "SI": 58.5,
+          "NV": 58.5,
+          "RM": 33.5,
+          "CS": 24.75,
+          "EC": 75,
+          "CR": 25,
+          "ER": 75,
+          "RI": 50,
+          "MN": 41.75
+        },
+        "persona": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型"
+        },
+        "top1": {
+          "id": "migratory-bird",
+          "displayName": "候鸟型",
+          "distance": 12.7007
+        },
+        "top2": {
+          "id": "explorer",
+          "displayName": "探险家",
+          "distance": 14.4698
+        },
+        "top1Top2Gap": 1.7691,
+        "currentResult": {
+          "matchStrength": 87.3,
+          "matchStrengthLevel": "匹配倾向非常明显",
+          "summary": "你需要亲密，也需要呼吸感：关系要能靠近，也要允许你保有移动和自我节奏。",
+          "highConstructs": [
+            "AU",
+            "PA",
+            "EC",
+            "ER",
+            "SI"
+          ],
+          "lowConstructs": [
+            "CS",
+            "CM",
+            "CR",
+            "RM"
+          ]
+        }
+      }
+    },
+    {
+      "id": "abnormal-all-a",
+      "label": "Highly consistent all A options",
+      "source": {
+        "id": "abnormal-all-a",
+        "label": "Highly consistent all A options",
+        "kind": "allOption",
+        "optionId": "A"
+      },
+      "expected": {
+        "constructScores": {
+          "SC": 58.25,
+          "AU": 33.25,
+          "TR": 100,
+          "CL": 50,
+          "PA": 58.5,
+          "CM": 50.25,
+          "SI": 50,
+          "NV": 50,
+          "RM": 33.25,
+          "CS": 66.75,
+          "EC": 75,
+          "CR": 8.25,
+          "ER": 16.75,
+          "RI": 75,
+          "MN": 58.5
+        },
+        "persona": {
+          "id": "moonlight",
+          "displayName": "月光型"
+        },
+        "top1": {
+          "id": "moonlight",
+          "displayName": "月光型",
+          "distance": 27.923
+        },
+        "top2": {
+          "id": "harbor",
+          "displayName": "港湾型",
+          "distance": 28.4756
+        },
+        "top1Top2Gap": 0.5526,
+        "currentResult": {
+          "matchStrength": 72.08,
+          "matchStrengthLevel": "匹配倾向明显",
+          "summary": "你擅长温柔地看见别人：亲密、照顾和精神理解，是你关系里的主要光源。",
+          "highConstructs": [
+            "TR",
+            "EC",
+            "RI",
+            "CS",
+            "PA"
+          ],
+          "lowConstructs": [
+            "CR",
+            "ER",
+            "AU",
+            "RM"
+          ]
+        }
+      }
+    }
+  ]
+}

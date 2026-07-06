@@ -1,7 +1,15 @@
 export const V2_PRODUCT_VERSION = 'Heart Island v2.0 Alpha 1';
+export const V2_PUBLIC_PRODUCT_NAME = '心岛计划';
+export const V2_PUBLIC_PRODUCT_LABEL = 'Heart Island';
 export const V2_SCORING_PROFILE = 'candidate-a';
 export const V2_STORAGE_KEY = 'heart-island-v2-alpha-1-state';
 export const V2_DATA_BASE = './data/v2/';
+export const V2_RESULT_SCHEMA_VERSION = 'v2-trusted-beta-result-facts-1';
+export const V2_REPORT_SCHEMA_VERSION = 'v2-trusted-beta-result-report-1';
+
+// Existing distribution audit uses gap <= 2.5 as the near-tie threshold.
+// Keep this as a "close result" flag only; it must not alter the final persona.
+export const V2_CLOSE_MATCH_GAP_THRESHOLD = 2.5;
 
 export const V2_DATA_PATHS = {
   manifest: `${V2_DATA_BASE}manifest.json`,
@@ -50,3 +58,36 @@ export const CONSTRUCT_LABELS = {
 };
 
 export const V2_EXPECTED_CONSTRUCTS = Object.keys(CONSTRUCT_LABELS);
+
+export const CONSTRUCT_LAYERS = {
+  SC: '安全与信任',
+  AU: '安全与信任',
+  TR: '安全与信任',
+  CL: '亲密与投入',
+  PA: '亲密与投入',
+  CM: '亲密与投入',
+  SI: '理想与现实',
+  NV: '理想与现实',
+  RM: '理想与现实',
+  CS: '支持与沟通',
+  EC: '支持与沟通',
+  CR: '支持与沟通',
+  ER: '情绪与记忆',
+  RI: '情绪与记忆',
+  MN: '情绪与记忆',
+};
+
+export const CONSTRUCT_LEVEL_THRESHOLDS = {
+  veryHigh: 82,
+  high: 66,
+  low: 35,
+  veryLow: 18,
+};
+
+export const RESPONSE_QUALITY_THRESHOLDS = {
+  lowVariance: 12,
+  highUniformity: 0.72,
+  maxSameScoreRun: 12,
+  maxSameOptionShare: 0.9,
+  maxSameOptionRun: 20,
+};

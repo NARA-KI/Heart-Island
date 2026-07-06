@@ -1,21 +1,32 @@
 import { CONSTRUCT_LABELS } from './config.js';
+import { buildResultFactsFromScoring } from './result-facts.js';
+import { buildDeterministicReport } from './result-report-builder.js';
 import { scoreAnswers, scoreAnswersAdaptiveHybrid } from './scoring-engine.js';
 
-export function buildResult({ questionBank, candidateA, descriptions, answers }) {
+export function buildResult({ manifest = {}, questionBank, candidateA, descriptions, answers }) {
   const scoring = scoreAnswers(questionBank, candidateA, answers);
-  return buildResultFromScoring({ scoring, descriptions });
+  return buildResultFromScoring({ manifest, questionBank, candidateA, descriptions, answers, scoring });
 }
 
-export function buildAdaptiveResult({ questionBank, candidateE, candidateEScoringProfile, descriptions, answers }) {
+export function buildAdaptiveResult({ manifest = {}, questionBank, candidateE, candidateEScoringProfile, descriptions, answers }) {
   const scoring = scoreAnswersAdaptiveHybrid(questionBank, candidateE, candidateEScoringProfile, answers);
-  return buildResultFromScoring({ scoring, descriptions });
+  return buildResultFromScoring({ manifest, questionBank, candidateA: candidateE, descriptions, answers, scoring });
 }
 
-export function buildResultFromScoring({ scoring, descriptions }) {
+export function buildResultFromScoring({ manifest = {}, questionBank, candidateA, descriptions, answers, scoring }) {
   const persona = scoring.finalPersona;
   const description = descriptions.personas.find((item) => item.id === persona.id)
     ?? descriptions.personas.find((item) => item.displayName === persona.displayName)
     ?? null;
+  const facts = buildResultFactsFromScoring({
+    manifest,
+    questionBank,
+    candidateA,
+    descriptions,
+    answers,
+    scoring,
+  });
+  const report = buildDeterministicReport(facts);
   const highConstructs = Object.entries(scoring.constructScores)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
@@ -33,8 +44,10 @@ export function buildResultFromScoring({ scoring, descriptions }) {
     matchStrengthNote: '这是本次答案与候选人格画像的贴合倾向分级，不是统计概率，也不是心理测量准确率。',
     highConstructs,
     lowConstructs,
+    facts,
+    report,
     scoring,
-    sections: buildSections(description),
+    sections: buildSections(description, report),
   };
 }
 
@@ -45,13 +58,13 @@ function matchStrengthLevel(score) {
   return '匹配倾向有一定参考价值';
 }
 
-function buildSections(description) {
+function buildSections(description, report) {
   return {
-    corePattern: description?.coreDrive || description?.relationshipPattern || '你的答案显示出一组稳定的关系倾向。',
-    neededRelationship: [description?.relationshipNeeds, description?.suitableRelationshipEnvironment].filter(Boolean).join('\n\n'),
-    inertia: Array.isArray(description?.blindSpots) ? description.blindSpots : [],
-    growth: buildGrowthItems(description),
-    summary: description?.oneLineSummary || '',
+    corePattern: report?.oneLine || description?.coreDrive || description?.relationshipPattern || '你的答案显示出一组稳定的关系倾向。',
+    neededRelationship: report?.neededRelationship || [description?.relationshipNeeds, description?.suitableRelationshipEnvironment].filter(Boolean).join('\n\n'),
+    inertia: report?.repeatPatterns ?? (Array.isArray(description?.blindSpots) ? description.blindSpots : []),
+    growth: report?.advice?.map((item) => `${item.title}：${item.text}`) ?? buildGrowthItems(description),
+    summary: report?.oneLine || description?.oneLineSummary || '',
     keywords: buildKeywords(description),
   };
 }
