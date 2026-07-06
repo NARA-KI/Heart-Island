@@ -5,6 +5,7 @@ import { buildResult } from '../js/v2/result-engine.js';
 import { createResultHash, validateStrictAiReport } from '../js/v2/ai/ai-report-schema.js';
 import { buildDeterministicReport } from '../js/v2/result-report-builder.js';
 import { handleAiReportRequest } from '../server/ai-report/handler.js';
+import { buildDeepseekRequestBody } from '../server/ai-report/provider.js';
 import { validateAiReportRequest } from '../server/ai-report/validation.js';
 import { answersForBaselineSource } from './v2-baseline-samples.mjs';
 
@@ -43,10 +44,31 @@ assert.throws(() => validateStrictAiReport({
   evidence: { ...aiReport.evidence, constructCodes: ['NOPE'] },
 }, facts), /construct/);
 
+const providerBody = buildDeepseekRequestBody({
+  model: 'deepseek-test',
+  facts,
+  deterministicReport: buildDeterministicReport(facts),
+  env: {},
+});
+assert.equal(providerBody.stream, false);
+assert.deepEqual(providerBody.response_format, { type: 'json_object' });
+assert.deepEqual(providerBody.thinking, { type: 'disabled' });
+assert.equal(providerBody.temperature, 0.3);
+assert.equal(providerBody.max_tokens, 1200);
+assert.equal(providerBody.model, 'deepseek-test');
+
 const success = await postToHandler(validPayload, { AI_REPORT_PROVIDER: 'mock', AI_REPORT_MOCK_MODE: 'success' });
 assert.equal(success.status, 200);
 assert.equal(success.body.resultHash, resultHash);
+assert.equal(success.body.cacheHit, false);
+assert.equal(success.body.finishReason, 'stop');
 validateStrictAiReport(success.body.report, facts);
+
+const cached = await postTwiceToHandler(validPayload, { AI_REPORT_PROVIDER: 'mock', AI_REPORT_MOCK_MODE: 'success' });
+assert.equal(cached.first.status, 200);
+assert.equal(cached.second.status, 200);
+assert.equal(cached.first.body.cacheHit, false);
+assert.equal(cached.second.body.cacheHit, true);
 
 const invalidJson = await postToHandler(validPayload, { AI_REPORT_PROVIDER: 'mock', AI_REPORT_MOCK_MODE: 'invalid-json' });
 assert.equal(invalidJson.status, 502);
@@ -67,6 +89,17 @@ const timeout = await postToHandler(validPayload, {
 });
 assert.equal(timeout.status, 504);
 
+for (const finishReason of ['length', 'content_filter', 'insufficient_system_resource', 'tool_calls', 'unknown', 'missing']) {
+  const result = await postToHandler(validPayload, {
+    AI_REPORT_PROVIDER: 'mock',
+    AI_REPORT_MOCK_MODE: `finish-${finishReason}`,
+  });
+  assert.equal(result.status, 502, `finish_reason ${finishReason} should fail`);
+  assert.equal(result.body.errorType, 'provider_finish_reason');
+  assert.equal(result.body.finishReason, finishReason);
+  assert.equal(result.body.cacheHit, false);
+}
+
 const oversized = await postToHandler({ ...validPayload, padding: 'x'.repeat(2000) }, {
   AI_REPORT_PROVIDER: 'mock',
   AI_REPORT_BODY_LIMIT_BYTES: '256',
@@ -77,6 +110,7 @@ console.log(JSON.stringify({
   pass: true,
   resultHash,
   providerModes: ['success', 'invalid-json', 'invalid-schema', '429', '500', 'timeout'],
+  finishReasonsRejected: ['length', 'content_filter', 'insufficient_system_resource', 'tool_calls', 'unknown', 'missing'],
 }, null, 2));
 
 function assertRejects(payload, pattern) {
@@ -111,6 +145,36 @@ async function postToHandler(payload, env = {}) {
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }
+}
+
+async function postTwiceToHandler(payload, env = {}) {
+  const port = await getPort();
+  const server = http.createServer((request, response) => handleAiReportRequest(request, response, {
+    env: {
+      AI_REPORT_PROVIDER: 'mock',
+      AI_REPORT_SESSION_LIMIT: '100',
+      AI_REPORT_CACHE_TTL_MS: '600000',
+      ...env,
+    },
+  }));
+  await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
+  try {
+    const first = await postJson(port, payload);
+    const second = await postJson(port, payload);
+    return { first, second };
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+async function postJson(port, payload) {
+  const response = await fetch(`http://127.0.0.1:${port}/api/v2/ai-report`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const body = await response.json();
+  return { status: response.status, body };
 }
 
 function getPort() {

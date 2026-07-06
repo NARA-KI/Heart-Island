@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED",
+  "reason": "real DeepSeek provider env is not configured",
+  "required": [
+    "AI_REPORT_PROVIDER=deepseek",
+    "AI_REPORT_ENABLED=true",
+    "AI_REPORT_API_KEY",
+    "AI_REPORT_BASE_URL",
+    "AI_REPORT_MODEL"
+  ],
+  "checkedPrivateFiles": [],
+  "generatedAt": "2026-07-06T13:11:27.901Z"
+}
