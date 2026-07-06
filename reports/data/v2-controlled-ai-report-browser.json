@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-07-06T09:08:51.337Z",
+  "screenshotDir": "reports/audit-assets/v2-controlled-ai-report",
+  "results": [
+    {
+      "name": "375x667",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-controlled-ai-report/375x667-01-deterministic-initial.png",
+        "reports/audit-assets/v2-controlled-ai-report/375x667-02-ai-generating.png",
+        "reports/audit-assets/v2-controlled-ai-report/375x667-03-ai-success-result.png",
+        "reports/audit-assets/v2-controlled-ai-report/375x667-04-five-layer-map.png",
+        "reports/audit-assets/v2-controlled-ai-report/375x667-06-refresh-ai-restored.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "initialSource": "deterministic",
+      "successSource": "ai",
+      "restoredSource": "ai",
+      "cacheCleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "apiKeyLeaks": 0,
+        "hasUndefined": false,
+        "hasNaN": false
+      }
+    },
+    {
+      "name": "390x844",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-controlled-ai-report/390x844-01-deterministic-initial.png",
+        "reports/audit-assets/v2-controlled-ai-report/390x844-02-ai-generating.png",
+        "reports/audit-assets/v2-controlled-ai-report/390x844-03-ai-success-result.png",
+        "reports/audit-assets/v2-controlled-ai-report/390x844-04-five-layer-map.png",
+        "reports/audit-assets/v2-controlled-ai-report/390x844-06-refresh-ai-restored.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "initialSource": "deterministic",
+      "successSource": "ai",
+      "restoredSource": "ai",
+      "cacheCleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "apiKeyLeaks": 0,
+        "hasUndefined": false,
+        "hasNaN": false
+      }
+    },
+    {
+      "name": "1440x900",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-controlled-ai-report/1440x900-01-deterministic-initial.png",
+        "reports/audit-assets/v2-controlled-ai-report/1440x900-02-ai-generating.png",
+        "reports/audit-assets/v2-controlled-ai-report/1440x900-03-ai-success-result.png",
+        "reports/audit-assets/v2-controlled-ai-report/1440x900-04-five-layer-map.png",
+        "reports/audit-assets/v2-controlled-ai-report/1440x900-06-refresh-ai-restored.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [],
+      "initialSource": "deterministic",
+      "successSource": "ai",
+      "restoredSource": "ai",
+      "cacheCleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "apiKeyLeaks": 0,
+        "hasUndefined": false,
+        "hasNaN": false
+      }
+    },
+    {
+      "name": "390x844-timeout",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-controlled-ai-report/390x844-timeout-fallback.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:4324/api/v2/ai-report",
+          "status": 504
+        }
+      ],
+      "source": "deterministic",
+      "statusText": "当前使用稳定版关系解读，结果内容不受影响。",
+      "metrics": {
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "apiKeyLeaks": 0,
+        "hasUndefined": false,
+        "hasNaN": false
+      }
+    },
+    {
+      "name": "390x844-invalid-schema",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-controlled-ai-report/390x844-invalid-schema-fallback.png"
+      ],
+      "consoleErrors": [],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:4324/api/v2/ai-report",
+          "status": 500
+        }
+      ],
+      "source": "deterministic",
+      "statusText": "当前使用稳定版关系解读，结果内容不受影响。",
+      "metrics": {
+        "horizontalOverflow": 0,
+        "brokenImages": 0,
+        "apiKeyLeaks": 0,
+        "hasUndefined": false,
+        "hasNaN": false
+      }
+    }
+  ],
+  "pass": true
+}

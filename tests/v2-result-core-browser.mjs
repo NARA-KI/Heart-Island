@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { handleAiReportRequest } from '../server/ai-report/handler.js';
 import { answersFromSameOption, loadStoredPilotAnswers } from './v2-baseline-samples.mjs';
 
 const root = process.cwd();
@@ -195,6 +196,16 @@ function serveStatic() {
   };
   const server = http.createServer((request, response) => {
     const url = new URL(request.url, baseUrl);
+    if (url.pathname === '/api/v2/ai-report') {
+      return handleAiReportRequest(request, response, {
+        env: {
+          AI_REPORT_PROVIDER: 'mock',
+          AI_REPORT_MOCK_MODE: 'success',
+          AI_REPORT_SESSION_LIMIT: '100',
+          AI_REPORT_CACHE_TTL_MS: '0',
+        },
+      });
+    }
     const safePath = path.normalize(url.pathname === '/' ? '/index.html' : decodeURIComponent(url.pathname)).replace(/^([/\\])+/, '');
     const filePath = path.join(root, safePath);
     if (!filePath.startsWith(root) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
