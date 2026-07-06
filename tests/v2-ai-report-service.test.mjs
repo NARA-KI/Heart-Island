@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import { buildResult } from '../js/v2/result-engine.js';
 import { createResultHash, validateStrictAiReport } from '../js/v2/ai/ai-report-schema.js';
+import { V2_AI_REPORT_PROMPT_VERSION, V2_AI_REPORT_PROMPT_VERSION_PREVIOUS } from '../js/v2/config.js';
 import { buildDeterministicReport } from '../js/v2/result-report-builder.js';
 import { handleAiReportRequest } from '../server/ai-report/handler.js';
 import { buildDeepseekRequestBody } from '../server/ai-report/provider.js';
@@ -44,6 +45,10 @@ const invalidOriginPayload = payloadForSample('focused-sc-high');
 const invalidHashPayload = payloadForSample('high-au-low-sc');
 const expiredCachePayload = payloadForSample('high-cl-high-ri');
 
+assert.equal(V2_AI_REPORT_PROMPT_VERSION_PREVIOUS, 'v2-controlled-ai-report-prompt-1');
+assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-controlled-ai-report-prompt-2');
+assert.equal(resultHash, createResultHash(facts));
+
 assert.equal(validateAiReportRequest(validPayload).resultHash, resultHash);
 assertRejects({ ...validPayload, facts: withoutConstruct(facts, 'SC') }, 'construct score count');
 assertRejects({ ...validPayload, facts: { ...facts, persona: { ...facts.persona, id: 'unknown' } } }, 'invalid persona');
@@ -64,6 +69,14 @@ assert.throws(() => validateStrictAiReport({
   ...aiReport,
   evidence: { ...aiReport.evidence, constructCodes: ['NOPE'] },
 }, facts), /construct/);
+assert.throws(() => validateStrictAiReport({
+  ...aiReport,
+  evidence: { ...aiReport.evidence, constructCodes: ['SC', 'AU'] },
+}, facts), /3 to 6/);
+assert.throws(() => validateStrictAiReport({
+  ...aiReport,
+  evidence: { ...aiReport.evidence, constructCodes: ['SC', 'AU', 'TR', 'CL', 'PA', 'CM', 'SI'] },
+}, facts), /3 to 6/);
 
 const providerBody = buildDeepseekRequestBody({
   model: 'deepseek-test',
