@@ -24,6 +24,9 @@ const personaImageMap = {
   moonlight: './assets/personas/moonlight.webp',
   mirror: './assets/personas/mirror.webp',
   stargazer: './assets/personas/stargazer.webp',
+  companion: './assets/personas/companion.webp',
+  harbor: './assets/personas/harbor.webp',
+  ferryman: './assets/personas/ferryman.webp',
 };
 
 export function buildResultFacts({ manifest, questionBank, candidateA, descriptions, answers, generatedAt = new Date().toISOString() }) {
