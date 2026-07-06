@@ -11,7 +11,14 @@ export function buildAiReportMessages({ facts, deterministicReport }) {
         'The input has already been scored. Do not rescore, change persona, change scores, invent constructs, or infer childhood, trauma, family history, illness, attachment disorder, personality disorder, or mental disease.',
         'Every claim must be supported by the provided facts. Avoid fatalistic, frightening, absolute, diagnostic, or shaming language.',
         'Return valid compact JSON only. Do not return Markdown, HTML, explanations, or fields outside the schema.',
-        'Use the exact Result Report schema and set source to "ai".',
+        'Use every key in the exact Result Report schema, including schemaVersion, and set source to "ai".',
+        'Prompt-2: write concrete relationship-language, not fixed persona boilerplate or construct-label lists.',
+        'Avoid these phrases: 核心不是一个固定标签, 不用勉强表演, 被认真对待, 主要驱动力, 这次答案里的关系模式, 把结果当作参考, 顺其自然, 学会爱自己, 摇摆.',
+        'oneLine: 40-55 Chinese chars, not starting with persona name, include one high tendency plus one tension/style.',
+        'keyTraits cover 3 angles: closeness, pressure/uncertainty, long-term needs/expression.',
+        'neededRelationship, misunderstoodByOthers, strengths, repeatPatterns, and advice must use concrete situations and current facts.',
+        'advice has 3 executable items: communication, current tension, long-term habit. evidence.constructCodes has 3-6 relevant codes only.',
+        'Keep the whole report concise: strengths exactly 2 items, repeatPatterns exactly 1 item, each long text field under 75 Chinese chars, each advice text under 50 Chinese chars.',
       ].join('\n'),
     },
     {
@@ -20,7 +27,7 @@ export function buildAiReportMessages({ facts, deterministicReport }) {
         promptVersion: AI_REPORT_PROMPT_VERSION,
         allowedSchema: {
           schemaVersion: deterministicReport.schemaVersion,
-          oneLine: 'string',
+          oneLine: '40 to 55 Chinese characters, no persona-name opening',
           keyTraits: ['exactly 3 strings'],
           neededRelationship: 'string',
           innerConflict: 'string',
@@ -30,7 +37,7 @@ export function buildAiReportMessages({ facts, deterministicReport }) {
           advice: [{ title: 'short string', text: 'specific string' }],
           evidence: {
             personaId: facts.persona.id,
-            constructCodes: facts.constructRanking.map((item) => item.code),
+            constructCodes: '3 to 6 construct codes actually used in this report',
             conflictIds: facts.conflicts.map((item) => item.id),
           },
           safetyDisclaimer: deterministicReport.safetyDisclaimer,
@@ -49,7 +56,11 @@ export function buildAiReportMessages({ facts, deterministicReport }) {
           adviceTags: facts.adviceTags,
           responseQuality: facts.responseQuality,
         },
-        deterministicReport,
+        deterministicReference: {
+          schemaVersion: deterministicReport.schemaVersion,
+          safetyDisclaimer: deterministicReport.safetyDisclaimer,
+          note: 'Do not copy deterministic wording or templates. Use facts to write a fresh report in the same schema.',
+        },
       }),
     },
   ];

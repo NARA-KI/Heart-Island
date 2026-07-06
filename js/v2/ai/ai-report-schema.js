@@ -51,6 +51,9 @@ export function validateStrictAiReport(report, facts) {
 
   const evidence = report?.evidence ?? {};
   if (evidence.personaId !== facts?.persona?.id) errors.push('evidence personaId is outside facts');
+  if (!Array.isArray(evidence.constructCodes) || evidence.constructCodes.length < 3 || evidence.constructCodes.length > 6) {
+    errors.push('evidence constructCodes must contain 3 to 6 items');
+  }
   const allowedConstructs = new Set(V2_EXPECTED_CONSTRUCTS);
   const factConflictIds = new Set((facts?.conflicts ?? []).map((item) => item.id));
   for (const code of evidence.constructCodes ?? []) {
