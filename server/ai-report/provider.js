@@ -6,6 +6,8 @@ export class ProviderError extends Error {
     this.name = 'ProviderError';
     this.status = options.status ?? 502;
     this.retryable = options.retryable === true;
+    this.code = options.code || 'provider_error';
+    this.finishReason = options.finishReason;
   }
 }
 
@@ -34,13 +36,7 @@ async function deepseekProvider({ facts, deterministicReport, env, signal }) {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        model,
-        messages: buildAiReportMessages({ facts, deterministicReport }),
-        temperature: Number(env.AI_REPORT_TEMPERATURE || 0.4),
-        max_tokens: Number(env.AI_REPORT_MAX_TOKENS || 1200),
-        response_format: { type: 'json_object' },
-      }),
+      body: JSON.stringify(buildDeepseekRequestBody({ model, facts, deterministicReport, env })),
       signal: controller.signal,
     });
     if (!response.ok) {
@@ -50,9 +46,24 @@ async function deepseekProvider({ facts, deterministicReport, env, signal }) {
       });
     }
     const payload = await response.json();
-    const content = payload?.choices?.[0]?.message?.content;
+    const choice = payload?.choices?.[0];
+    const finishReason = choice?.finish_reason;
+    if (finishReason !== 'stop') {
+      throw new ProviderError('AI provider did not finish cleanly', {
+        status: 502,
+        code: 'provider_finish_reason',
+        finishReason: normalizeFinishReason(finishReason),
+      });
+    }
+    const content = choice?.message?.content;
     if (!content) throw new ProviderError('AI provider returned empty content', { status: 502 });
-    return JSON.parse(content);
+    return {
+      report: JSON.parse(content),
+      meta: {
+        finishReason,
+        usage: sanitizeUsage(payload?.usage),
+      },
+    };
   } catch (error) {
     if (error instanceof ProviderError) throw error;
     if (error?.name === 'AbortError') throw new ProviderError('AI provider timeout', { status: 504, retryable: true });
@@ -63,6 +74,22 @@ async function deepseekProvider({ facts, deterministicReport, env, signal }) {
   }
 }
 
+export function buildDeepseekRequestBody({ model, facts, deterministicReport, env = process.env }) {
+  const body = {
+    model,
+    messages: buildAiReportMessages({ facts, deterministicReport }),
+    stream: false,
+    temperature: Number(env.AI_REPORT_TEMPERATURE || 0.3),
+    max_tokens: Number(env.AI_REPORT_MAX_TOKENS || 1200),
+    response_format: { type: 'json_object' },
+  };
+  const thinkingType = env.AI_REPORT_THINKING_TYPE || 'disabled';
+  if (thinkingType !== 'omit') {
+    body.thinking = { type: thinkingType };
+  }
+  return body;
+}
+
 async function mockProvider({ facts, deterministicReport, env, signal }) {
   const mode = env.AI_REPORT_MOCK_MODE || 'success';
   if (env.AI_REPORT_MOCK_DELAY_MS) await sleep(Number(env.AI_REPORT_MOCK_DELAY_MS), signal);
@@ -70,9 +97,17 @@ async function mockProvider({ facts, deterministicReport, env, signal }) {
     await sleep(Number(env.AI_REPORT_TIMEOUT_MS || 12000) + 200, signal);
     throw new ProviderError('Mock timeout', { status: 504, retryable: true });
   }
-  if (mode === 'invalid-json') return '__INVALID_JSON__';
+  if (mode === 'invalid-json') return { report: '__INVALID_JSON__', meta: { finishReason: 'stop' } };
   if (mode === '429') throw new ProviderError('Mock rate limit', { status: 429, retryable: true });
   if (mode === '500') throw new ProviderError('Mock server error', { status: 502, retryable: true });
+  if (mode.startsWith('finish-')) {
+    const finishReason = mode.slice('finish-'.length) || undefined;
+    throw new ProviderError('Mock finish reason failure', {
+      status: 502,
+      code: 'provider_finish_reason',
+      finishReason: normalizeFinishReason(finishReason),
+    });
+  }
 
   const report = {
     ...deterministicReport,
@@ -99,11 +134,37 @@ async function mockProvider({ facts, deterministicReport, env, signal }) {
   if (mode === 'invalid-schema') {
     report.advice = report.advice.slice(0, 2);
   }
-  return report;
+  return {
+    report,
+    meta: {
+      finishReason: 'stop',
+      usage: {
+        promptTokens: null,
+        completionTokens: null,
+        totalTokens: null,
+      },
+    },
+  };
 }
 
 function truthy(value) {
   return value === true || value === 'true' || value === '1';
+}
+
+function normalizeFinishReason(value) {
+  return typeof value === 'string' && value ? value : 'missing';
+}
+
+function sanitizeUsage(usage) {
+  return {
+    promptTokens: numberOrNull(usage?.prompt_tokens),
+    completionTokens: numberOrNull(usage?.completion_tokens),
+    totalTokens: numberOrNull(usage?.total_tokens),
+  };
+}
+
+function numberOrNull(value) {
+  return Number.isFinite(value) ? value : null;
 }
 
 function sleep(ms, signal) {

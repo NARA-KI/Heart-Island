@@ -24,30 +24,38 @@ export async function handleAiReportRequest(request, response, options = {}) {
     enforceSessionLimit(request, env);
     const payload = JSON.parse(await readBody(request, Number(env.AI_REPORT_BODY_LIMIT_BYTES || DEFAULT_BODY_LIMIT)));
     const validated = validateAiReportRequest(payload);
-    const cached = cache.get(validated.resultHash);
-    if (cached && Date.now() - cached.createdAt < Number(env.AI_REPORT_CACHE_TTL_MS || 600000)) {
-      return json(response, 200, cached.body);
+    const cacheKey = createCacheKey(validated.resultHash);
+    const cacheTtlMs = Number(env.AI_REPORT_CACHE_TTL_MS ?? 600000);
+    const cached = cacheTtlMs > 0 ? cache.get(cacheKey) : null;
+    if (cached && Date.now() - cached.createdAt < cacheTtlMs) {
+      return json(response, 200, { ...cached.body, cacheHit: true });
     }
-    if (pending.has(validated.resultHash)) {
-      return json(response, 200, await pending.get(validated.resultHash));
+    if (pending.has(cacheKey)) {
+      return json(response, 200, { ...await pending.get(cacheKey), cacheHit: false });
     }
     const promise = createReport(validated, env);
-    pending.set(validated.resultHash, promise);
+    pending.set(cacheKey, promise);
     try {
       const body = await promise;
-      cache.set(validated.resultHash, { createdAt: Date.now(), body });
-      return json(response, 200, body);
+      if (cacheTtlMs > 0) cache.set(cacheKey, { createdAt: Date.now(), body });
+      return json(response, 200, { ...body, cacheHit: false });
     } finally {
-      pending.delete(validated.resultHash);
+      pending.delete(cacheKey);
     }
   } catch (error) {
-    return json(response, sanitizeStatus(error), { error: sanitizeMessage(error) });
+    return json(response, sanitizeStatus(error), {
+      error: sanitizeMessage(error),
+      errorType: sanitizeErrorType(error),
+      finishReason: sanitizeFinishReason(error),
+      cacheHit: false,
+    });
   }
 }
 
 async function createReport({ resultHash, facts }, env) {
   const deterministicReport = buildDeterministicReport(facts);
-  const report = await callProviderWithRetry({ facts, deterministicReport, env });
+  const generated = await callProviderWithRetry({ facts, deterministicReport, env });
+  const report = generated.report;
   validateAiReportResponse(report, facts);
   return {
     resultHash,
@@ -55,20 +63,41 @@ async function createReport({ resultHash, facts }, env) {
     provider: 'ai',
     promptVersion: AI_REPORT_PROMPT_VERSION,
     generatedAt: new Date().toISOString(),
+    finishReason: generated.meta?.finishReason ?? null,
+    usage: generated.meta?.usage ?? {
+      promptTokens: null,
+      completionTokens: null,
+      totalTokens: null,
+    },
   };
 }
 
 async function callProviderWithRetry(input) {
   try {
-    const report = await generateWithProvider(input);
-    if (report === '__INVALID_JSON__') throw new ProviderError('AI provider returned invalid JSON', { status: 502 });
-    return report;
+    const generated = await normalizeProviderResult(await generateWithProvider(input));
+    if (generated.report === '__INVALID_JSON__') throw new ProviderError('AI provider returned invalid JSON', { status: 502 });
+    return generated;
   } catch (error) {
     if (!(error instanceof ProviderError) || !error.retryable) throw error;
-    const retry = await generateWithProvider(input);
-    if (retry === '__INVALID_JSON__') throw new ProviderError('AI provider returned invalid JSON', { status: 502 });
+    const retry = await normalizeProviderResult(await generateWithProvider(input));
+    if (retry.report === '__INVALID_JSON__') throw new ProviderError('AI provider returned invalid JSON', { status: 502 });
     return retry;
   }
+}
+
+function normalizeProviderResult(result) {
+  if (result && typeof result === 'object' && Object.hasOwn(result, 'report')) return result;
+  return {
+    report: result,
+    meta: {
+      finishReason: null,
+      usage: {
+        promptTokens: null,
+        completionTokens: null,
+        totalTokens: null,
+      },
+    },
+  };
 }
 
 function applyCors(request, response, env) {
@@ -128,4 +157,18 @@ function sanitizeMessage(error) {
   const status = sanitizeStatus(error);
   if (status >= 500) return 'AI report is temporarily unavailable';
   return error?.message || 'Invalid AI report request';
+}
+
+function sanitizeErrorType(error) {
+  if (error instanceof ProviderError) return error.code || 'provider_error';
+  return sanitizeStatus(error) >= 500 ? 'server_error' : 'request_error';
+}
+
+function sanitizeFinishReason(error) {
+  if (error instanceof ProviderError && error.finishReason) return error.finishReason;
+  return null;
+}
+
+function createCacheKey(resultHash) {
+  return `${AI_REPORT_PROMPT_VERSION}:${resultHash}`;
 }
