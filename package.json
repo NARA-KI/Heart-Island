@@ -21,7 +21,8 @@
     "v2:audit:calibration": "node scripts/v2-product-validation/audit-v2-calibration-candidates.mjs",
     "v2:prepare:pilot": "node scripts/v2-product-validation/prepare-v2-pilot-readiness.mjs",
     "v2:validate:pilot": "node scripts/v2-product-validation/validate-v2-pilot-readiness.mjs",
-    "v2:test:result-core": "node tests/v2-result-core.test.mjs"
+    "v2:test:result-core": "node tests/v2-result-core.test.mjs",
+    "v2:test:result-core:browser": "node tests/v2-result-core-browser.mjs"
   },
   "type": "module",
   "dependencies": {

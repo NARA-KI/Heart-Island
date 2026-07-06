@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-07-06T08:46:14.071Z",
+  "screenshotDir": "reports/audit-assets/v2-trusted-beta-result-core",
+  "results": [
+    {
+      "name": "375x667",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-04-result-long.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-05-relationship-map.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-06-evidence-expanded.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/375x667-09-refresh-restored.png"
+      ],
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "restoredView": "result",
+      "cleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "smallButtons": 0,
+        "brokenImages": 0,
+        "hasUndefined": false,
+        "hasNaN": false,
+        "hasInternalText": false
+      }
+    },
+    {
+      "name": "390x844",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-04-result-long.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-05-relationship-map.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-06-evidence-expanded.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/390x844-09-refresh-restored.png"
+      ],
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "restoredView": "result",
+      "cleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "smallButtons": 0,
+        "brokenImages": 0,
+        "hasUndefined": false,
+        "hasNaN": false,
+        "hasInternalText": false
+      }
+    },
+    {
+      "name": "1440x900",
+      "pass": true,
+      "shots": [
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-01-home.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-02-quiz.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-03-result-hero.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-04-result-long.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-05-relationship-map.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-06-evidence-expanded.png",
+        "reports/audit-assets/v2-trusted-beta-result-core/1440x900-09-refresh-restored.png"
+      ],
+      "consoleErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "restoredView": "result",
+      "cleared": true,
+      "metrics": {
+        "horizontalOverflow": 0,
+        "smallButtons": 0,
+        "brokenImages": 0,
+        "hasUndefined": false,
+        "hasNaN": false,
+        "hasInternalText": false
+      }
+    },
+    {
+      "name": "quality-notice",
+      "pass": true,
+      "shot": "reports/audit-assets/v2-trusted-beta-result-core/390x844-10-quality-notice.png",
+      "consoleErrors": [],
+      "text": "你这次的选择比较集中，结果可以先作为参考；之后也可以在不同状态下重新测试。"
+    }
+  ],
+  "pass": true
+}
