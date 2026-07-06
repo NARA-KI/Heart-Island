@@ -1,6 +1,11 @@
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import {
+  CONSTRUCT_LAYER_ORDER,
+  CONSTRUCT_LAYERS,
+  V2_EXPECTED_CONSTRUCTS,
+} from '../js/v2/config.js';
 import { buildResult } from '../js/v2/result-engine.js';
 import { validateResultFacts } from '../js/v2/result-facts.js';
 import { validateResultReport } from '../js/v2/result-report-builder.js';
@@ -19,6 +24,16 @@ assert.equal(sha256('data/v2/persona-target-vectors.v2.candidate-a.json'), manif
 assert.equal(questionBank.questions.length, 60, 'question count changed');
 assert.equal(questionBank.constructs.length, 15, 'construct count changed');
 assert.equal(candidateA.personas.length, 15, 'persona count changed');
+assert.equal(CONSTRUCT_LAYER_ORDER.length, 5, 'construct layer count changed');
+assert.equal(V2_EXPECTED_CONSTRUCTS.length, 15, 'expected construct count changed');
+assert.deepEqual([...V2_EXPECTED_CONSTRUCTS].sort(), questionBank.constructs.map((item) => item.code ?? item).sort(), 'config/question-bank construct mismatch');
+for (const construct of V2_EXPECTED_CONSTRUCTS) {
+  assert(CONSTRUCT_LAYERS[construct], `${construct} missing construct layer`);
+  assert.equal(Object.entries(CONSTRUCT_LAYERS).filter(([code]) => code === construct).length, 1, `${construct} layer assignment duplicated`);
+}
+for (const layer of CONSTRUCT_LAYER_ORDER) {
+  assert.equal(V2_EXPECTED_CONSTRUCTS.filter((code) => CONSTRUCT_LAYERS[code] === layer).length, 3, `${layer} should contain three constructs`);
+}
 
 const built = new Map();
 for (const sample of baselines.samples) {
@@ -38,6 +53,10 @@ for (const sample of baselines.samples) {
   validateResultReport(result.report);
   assert.equal(result.facts.persona.id, sample.expected.persona.id);
   assert.equal(result.facts.constructRanking.length, 15);
+  const uiSortedLayers = [...new Set([...result.facts.constructRanking]
+    .sort((a, b) => CONSTRUCT_LAYER_ORDER.indexOf(a.layer) - CONSTRUCT_LAYER_ORDER.indexOf(b.layer) || a.code.localeCompare(b.code))
+    .map((item) => item.layer))];
+  assert.deepEqual(uiSortedLayers, CONSTRUCT_LAYER_ORDER, `${sample.id} UI layers should follow config order`);
   assert.equal(result.report.advice.length, 3);
   assert(!JSON.stringify(result.report).includes('<'), `${sample.id} report contains html-like text`);
   assert(!/依恋障碍|人格障碍|精神疾病|诊断/.test(JSON.stringify(result.report)), `${sample.id} report contains diagnostic term`);

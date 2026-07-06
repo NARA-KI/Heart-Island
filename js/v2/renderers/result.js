@@ -1,6 +1,7 @@
 import { escapeHtml } from '../utils.js';
+import { CONSTRUCT_LAYER_ORDER } from '../config.js';
 
-const layerOrder = ['安全与信任', '亲密与投入', '理想与现实', '支持与沟通', '情绪与记忆'];
+const layerOrder = CONSTRUCT_LAYER_ORDER;
 
 export function renderResult(root, { result, state, onRestart, onSaveResultImage, onShareResult, onFeedbackChange }) {
   const { facts, report } = result;

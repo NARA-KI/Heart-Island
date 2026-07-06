@@ -6,6 +6,7 @@ export const V2_STORAGE_KEY = 'heart-island-v2-alpha-1-state';
 export const V2_DATA_BASE = './data/v2/';
 export const V2_RESULT_SCHEMA_VERSION = 'v2-trusted-beta-result-facts-1';
 export const V2_REPORT_SCHEMA_VERSION = 'v2-trusted-beta-result-report-1';
+export const V2_AI_REPORT_PROMPT_VERSION = 'v2-controlled-ai-report-prompt-1';
 
 // Existing distribution audit uses gap <= 2.5 as the near-tie threshold.
 // Keep this as a "close result" flag only; it must not alter the final persona.
@@ -37,6 +38,24 @@ export const CANONICAL_PERSONA_NAMES = [
   '同行者',
   '港湾型',
   '摆渡人',
+];
+
+export const CANONICAL_PERSONA_IDS = [
+  'lighthouse',
+  'gatekeeper',
+  'nest-builder',
+  'collector',
+  'migratory-bird',
+  'islander',
+  'explorer',
+  'wandering-poet',
+  'spark',
+  'moonlight',
+  'mirror',
+  'stargazer',
+  'companion',
+  'harbor',
+  'ferryman',
 ];
 
 export const CONSTRUCT_LABELS = {
@@ -76,6 +95,8 @@ export const CONSTRUCT_LAYERS = {
   RI: '情绪与记忆',
   MN: '情绪与记忆',
 };
+
+export const CONSTRUCT_LAYER_ORDER = [...new Set(Object.values(CONSTRUCT_LAYERS))];
 
 export const CONSTRUCT_LEVEL_THRESHOLDS = {
   veryHigh: 82,
