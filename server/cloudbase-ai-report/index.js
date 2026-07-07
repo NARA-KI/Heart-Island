@@ -9,11 +9,13 @@ const { handleAiReportRequest } = await loadAiReportHandler();
 
 export function createServer() {
   return http.createServer((request, response) => {
-    routeRequest(request, response);
+    routeRequest(request, response).catch(() => {
+      writeJson(response, 500, { error: 'AI report service unavailable' });
+    });
   });
 }
 
-export function routeRequest(request, response) {
+export async function routeRequest(request, response) {
   const url = new URL(request.url || '/', 'http://127.0.0.1');
   if (request.method === 'GET' && url.pathname === '/health') {
     writeJson(response, 200, { ok: true, service: SERVICE_NAME });
@@ -21,7 +23,7 @@ export function routeRequest(request, response) {
   }
 
   if (isAiReportPath(url.pathname, request.method)) {
-    return handleAiReportRequest(request, response);
+    return forwardAiReportRequest(request, response);
   }
 
   if (url.pathname === '/' && !['POST', 'OPTIONS'].includes(request.method)) {
@@ -30,6 +32,12 @@ export function routeRequest(request, response) {
   }
 
   writeJson(response, 404, { error: 'Not found' });
+}
+
+async function forwardAiReportRequest(request, response) {
+  const captured = new CapturedResponse();
+  await handleAiReportRequest(request, captured);
+  writeCapturedResponse(response, captured);
 }
 
 function isAiReportPath(pathname, method) {
@@ -42,6 +50,105 @@ function isAiReportPath(pathname, method) {
 function writeJson(response, status, body) {
   response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
   response.end(JSON.stringify(body));
+}
+
+function writeCapturedResponse(response, captured) {
+  const headers = captured.finalHeaders();
+  for (const { name, value } of headers.values()) {
+    response.setHeader(name, value);
+  }
+  response.writeHead(captured.statusCode);
+  response.end(captured.body());
+}
+
+class CapturedResponse {
+  constructor() {
+    this.statusCode = 200;
+    this.headers = new Map();
+    this.chunks = [];
+    this.headersSent = false;
+    this.writableEnded = false;
+  }
+
+  setHeader(name, value) {
+    const key = String(name).toLowerCase();
+    this.headers.set(key, {
+      name: canonicalHeaderName(name),
+      value: normalizeHeaderValue(key, value),
+    });
+    return this;
+  }
+
+  getHeader(name) {
+    return this.headers.get(String(name).toLowerCase())?.value;
+  }
+
+  removeHeader(name) {
+    this.headers.delete(String(name).toLowerCase());
+  }
+
+  writeHead(status, headers = undefined) {
+    this.statusCode = Number(status) || this.statusCode;
+    if (headers && typeof headers === 'object') {
+      for (const [name, value] of Object.entries(headers)) this.setHeader(name, value);
+    }
+    this.headersSent = true;
+    return this;
+  }
+
+  write(chunk) {
+    if (chunk !== undefined) this.chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk)));
+    return true;
+  }
+
+  end(chunk) {
+    if (chunk !== undefined) this.write(chunk);
+    this.writableEnded = true;
+    return this;
+  }
+
+  finalHeaders() {
+    return new Map(this.headers);
+  }
+
+  body() {
+    return Buffer.concat(this.chunks);
+  }
+}
+
+function normalizeHeaderValue(key, value) {
+  const raw = Array.isArray(value) ? lastHeaderValue(value) : value;
+  const text = String(raw ?? '');
+  if (key === 'vary') return uniqueCommaTokens(text).join(', ');
+  if (key === 'access-control-allow-origin') return uniqueCommaTokens(text)[0] ?? '';
+  return text;
+}
+
+function lastHeaderValue(values) {
+  for (let index = values.length - 1; index >= 0; index -= 1) {
+    if (values[index] !== undefined && values[index] !== null) return values[index];
+  }
+  return '';
+}
+
+function uniqueCommaTokens(value) {
+  const seen = new Set();
+  const tokens = [];
+  for (const token of String(value).split(',').map((item) => item.trim()).filter(Boolean)) {
+    const key = token.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    tokens.push(token);
+  }
+  return tokens;
+}
+
+function canonicalHeaderName(name) {
+  return String(name)
+    .toLowerCase()
+    .split('-')
+    .map((part) => part ? `${part[0].toUpperCase()}${part.slice(1)}` : part)
+    .join('-');
 }
 
 async function loadAiReportHandler() {
