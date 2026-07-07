@@ -3,7 +3,20 @@ import { CONSTRUCT_LAYER_ORDER } from '../config.js';
 
 const layerOrder = CONSTRUCT_LAYER_ORDER;
 
-export function renderResult(root, { result, state, feedbackEntry, onRestart, onSaveResultImage, onShareResult, onExternalFeedback, onFeedbackChange }) {
+export function renderResult(root, {
+  result,
+  state,
+  feedbackEntry,
+  debugMode = false,
+  onRestart,
+  onSaveResultImage,
+  onShareResult,
+  onNativeShareResult,
+  onDownloadShareCard,
+  onCloseSharePreview,
+  onExternalFeedback,
+  onFeedbackChange,
+}) {
   const { facts, report } = result;
   const shareStatus = state.shareStatus ?? {};
   const aiStatus = result.aiReportStatus ?? {};
@@ -20,16 +33,17 @@ export function renderResult(root, { result, state, feedbackEntry, onRestart, on
           <h1>${escapeHtml(facts.persona.displayName)}</h1>
           <p class="v2-hitline">${escapeHtml(report.oneLine)}</p>
           <div class="v2-key-traits">
-            ${report.keyTraits.map((trait) => `<span>${escapeHtml(trait)}</span>`).join('')}
+            ${report.keyTraits.map((trait) => `<span>${escapeHtml(userFacingText(trait))}</span>`).join('')}
           </div>
-          <p class="v2-note">${escapeHtml(facts.confidence.isCloseMatch ? facts.confidence.userMessage : '这不是准确率，而是你这次答案呈现出的主要关系倾向。')}</p>
+          <p class="v2-note">${escapeHtml(userFacingText(facts.confidence.isCloseMatch ? facts.confidence.userMessage : '这不是准确率，而是你这次答案呈现出的主要关系倾向。'))}</p>
           ${qualityNotice(facts)}
-          ${aiReportStatus(aiStatus)}
+          ${aiReportStatus(aiStatus, debugMode)}
           <div class="v2-actions v2-actions--hero">
-            <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '保存结果图'}</button>
-            <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在准备...' : '分享我的心岛'}</button>
+            <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '生成分享卡'}</button>
+            <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在生成...' : '分享我的心岛'}</button>
           </div>
           ${shareStatus.message ? `<p class="v2-status-message">${escapeHtml(shareStatus.message)}</p>` : ''}
+          ${sharePreview(shareStatus)}
         </div>
       </article>
 
@@ -78,7 +92,7 @@ export function renderResult(root, { result, state, feedbackEntry, onRestart, on
             ${constructList(facts.bottomConstructs)}
           </div>
         </div>
-        <p>${escapeHtml(facts.confidence.userMessage)}</p>
+        <p>${escapeHtml(userFacingText(facts.confidence.userMessage))}</p>
         ${facts.conflicts.length
           ? `<h3>主要张力</h3>${cardList(facts.conflicts.slice(0, 3).map((item) => `${item.title}：${item.detail}`))}`
           : '<p>这次答案里没有命中明显的高低维度张力，整体模式相对一致。</p>'}
@@ -89,11 +103,11 @@ export function renderResult(root, { result, state, feedbackEntry, onRestart, on
       <section class="v2-result-section v2-bottom-actions">
         <h2>保存与反馈</h2>
         <div class="v2-actions">
-          <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>保存结果图</button>
+          <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>生成分享卡</button>
           <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>分享我的心岛</button>
           <button class="v2-ghost" type="button" data-action="restart">重新测试</button>
         </div>
-        ${externalFeedbackBlock(feedbackEntry)}
+        ${externalFeedbackBlock(feedbackEntry, debugMode)}
         <details class="v2-feedback-lite">
           <summary>留下结果反馈</summary>
           <label class="v2-feedback-field">
@@ -110,6 +124,9 @@ export function renderResult(root, { result, state, feedbackEntry, onRestart, on
 
   root.querySelectorAll('[data-action="save-result"]').forEach((button) => button.addEventListener('click', onSaveResultImage));
   root.querySelectorAll('[data-action="share-result"]').forEach((button) => button.addEventListener('click', onShareResult));
+  root.querySelector('[data-action="share-native"]')?.addEventListener('click', onNativeShareResult);
+  root.querySelector('[data-action="download-share-card"]')?.addEventListener('click', onDownloadShareCard);
+  root.querySelector('[data-action="close-share-preview"]')?.addEventListener('click', onCloseSharePreview);
   root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
   root.querySelector('[data-action="restart"]')?.addEventListener('click', onRestart);
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
@@ -117,13 +134,34 @@ export function renderResult(root, { result, state, feedbackEntry, onRestart, on
   });
 }
 
-function externalFeedbackBlock(feedbackEntry) {
+function externalFeedbackBlock(feedbackEntry, debugMode) {
   if (!feedbackEntry?.url) return '';
   return `
     <div class="v2-structured-feedback" data-feedback-entry>
       <p class="v2-structured-feedback__title">测试结果准不准？用 1 分钟告诉我们</p>
       <a class="v2-primary v2-feedback-link" href="${escapeHtml(feedbackEntry.url)}" target="_blank" rel="noopener noreferrer" data-action="external-feedback">提交测试反馈</a>
-      <p class="v2-note">匿名测试编号：<code>${escapeHtml(feedbackEntry.resultId)}</code>${feedbackEntry.clicked ? ' · 已打开过反馈入口' : ''}</p>
+      ${debugMode ? `<p class="v2-note">匿名测试编号：<code>${escapeHtml(feedbackEntry.resultId)}</code>${feedbackEntry.clicked ? ' · 已打开过反馈入口' : ''}</p>` : ''}
+    </div>
+  `;
+}
+
+function sharePreview(shareStatus) {
+  if (!shareStatus?.previewUrl) return '';
+  const hint = shareStatus.isMobile
+    ? '长按图片保存，或使用系统分享'
+    : '点击下载图片';
+  return `
+    <div class="v2-share-preview" data-share-preview>
+      <div class="v2-share-preview__head">
+        <strong>分享卡预览</strong>
+        <button class="v2-ghost v2-share-preview__close" type="button" data-action="close-share-preview" aria-label="关闭分享卡预览">关闭</button>
+      </div>
+      <img src="${escapeHtml(shareStatus.previewUrl)}" alt="心岛结果分享卡预览" />
+      <p class="v2-note">${hint}</p>
+      <div class="v2-actions v2-share-preview__actions">
+        ${shareStatus.canNativeShare ? '<button class="v2-primary" type="button" data-action="share-native">分享</button>' : ''}
+        <button class="v2-ghost" type="button" data-action="download-share-card">下载图片</button>
+      </div>
     </div>
   `;
 }
@@ -132,7 +170,7 @@ function section(title, text) {
   return `
     <section class="v2-result-section">
       <h2>${escapeHtml(title)}</h2>
-      <p>${escapeHtml(text)}</p>
+      <p>${escapeHtml(userFacingText(text))}</p>
     </section>
   `;
 }
@@ -142,7 +180,8 @@ function qualityNotice(facts) {
   return `<p class="v2-quality-notice">${escapeHtml(facts.responseQuality.userMessage)}</p>`;
 }
 
-function aiReportStatus(status) {
+function aiReportStatus(status, debugMode) {
+  if (!debugMode) return '';
   if (!status?.state || status.state === 'idle') return '';
   const label = status.message || (status.state === 'success'
     ? '个性化解读已生成'
@@ -151,7 +190,7 @@ function aiReportStatus(status) {
 }
 
 function cardList(items) {
-  return `<div class="v2-card-list">${items.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</div>`;
+  return `<div class="v2-card-list">${items.map((item) => `<p>${escapeHtml(userFacingText(item))}</p>`).join('')}</div>`;
 }
 
 function constructList(items) {
@@ -215,4 +254,10 @@ function constructBars(constructs) {
       `).join('')}
     </div>
   `;
+}
+
+function userFacingText(value) {
+  return String(value ?? '')
+    .replace('结果接近相邻类型，说明你的关系节奏可能会随情境切换。', '这次结果更适合作为主要关系倾向参考。')
+    .replace('你的结果同时靠近另一种关系倾向，这意味着你在不同情境下可能呈现出两种相邻模式。', '这次结果更适合作为主要关系倾向参考。');
 }

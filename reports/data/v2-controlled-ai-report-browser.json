@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T07:52:05.532Z",
+  "generatedAt": "2026-07-07T09:05:52.905Z",
   "screenshotDir": "reports/audit-assets/v2-controlled-ai-report",
   "results": [
     {
@@ -18,6 +18,29 @@
       "successSource": "ai",
       "restoredSource": "ai",
       "cacheCleared": true,
+      "sharePreview": {
+        "pass": true,
+        "shot": "reports/audit-assets/v2-controlled-ai-report/375x667-05-ai-share-preview.png",
+        "beforeUrl": "http://127.0.0.1:4324/?debug=1",
+        "afterGenerateUrl": "http://127.0.0.1:4324/?debug=1",
+        "nativeShare": {
+          "calls": 1,
+          "fileCount": 1,
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "closed": {
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "previewMetrics": {
+          "visible": true,
+          "imageComplete": true,
+          "nativeShareVisible": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0
+        }
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "brokenImages": 0,
@@ -42,6 +65,29 @@
       "successSource": "ai",
       "restoredSource": "ai",
       "cacheCleared": true,
+      "sharePreview": {
+        "pass": true,
+        "shot": "reports/audit-assets/v2-controlled-ai-report/390x844-05-ai-share-preview.png",
+        "beforeUrl": "http://127.0.0.1:4324/?debug=1",
+        "afterGenerateUrl": "http://127.0.0.1:4324/?debug=1",
+        "nativeShare": {
+          "calls": 1,
+          "fileCount": 1,
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "closed": {
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "previewMetrics": {
+          "visible": true,
+          "imageComplete": true,
+          "nativeShareVisible": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0
+        }
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "brokenImages": 0,
@@ -66,6 +112,29 @@
       "successSource": "ai",
       "restoredSource": "ai",
       "cacheCleared": true,
+      "sharePreview": {
+        "pass": true,
+        "shot": "reports/audit-assets/v2-controlled-ai-report/1440x900-05-ai-share-preview.png",
+        "beforeUrl": "http://127.0.0.1:4324/?debug=1",
+        "afterGenerateUrl": "http://127.0.0.1:4324/?debug=1",
+        "nativeShare": {
+          "calls": 1,
+          "fileCount": 1,
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "closed": {
+          "url": "http://127.0.0.1:4324/?debug=1",
+          "view": "result"
+        },
+        "previewMetrics": {
+          "visible": true,
+          "imageComplete": true,
+          "nativeShareVisible": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0
+        }
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "brokenImages": 0,
@@ -88,7 +157,7 @@
         }
       ],
       "source": "deterministic",
-      "statusText": "当前使用稳定版关系解读，结果内容不受影响。",
+      "productionTextHidden": true,
       "metrics": {
         "horizontalOverflow": 0,
         "brokenImages": 0,
@@ -111,7 +180,7 @@
         }
       ],
       "source": "deterministic",
-      "statusText": "当前使用稳定版关系解读，结果内容不受影响。",
+      "productionTextHidden": true,
       "metrics": {
         "horizontalOverflow": 0,
         "brokenImages": 0,

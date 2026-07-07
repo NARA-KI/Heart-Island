@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T07:51:35.540Z",
+  "generatedAt": "2026-07-07T09:05:09.782Z",
   "screenshotDir": "reports/audit-assets/v2-trusted-beta-result-core",
   "results": [
     {
@@ -26,6 +26,20 @@
         "openedUrl": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=375x667&prefill_viewport=375x667&hide_viewport=1",
         "clicked": true,
         "forbiddenMatches": []
+      },
+      "sharePreview": {
+        "pass": true,
+        "beforeUrl": "http://127.0.0.1:4323/",
+        "afterUrl": "http://127.0.0.1:4323/",
+        "closedUrl": "http://127.0.0.1:4323/",
+        "shot": "reports/audit-assets/v2-trusted-beta-result-core/375x667-07-share-preview.png",
+        "metrics": {
+          "visible": true,
+          "imageComplete": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0,
+          "view": "result"
+        }
       },
       "metrics": {
         "horizontalOverflow": 0,
@@ -61,6 +75,20 @@
         "clicked": true,
         "forbiddenMatches": []
       },
+      "sharePreview": {
+        "pass": true,
+        "beforeUrl": "http://127.0.0.1:4323/",
+        "afterUrl": "http://127.0.0.1:4323/",
+        "closedUrl": "http://127.0.0.1:4323/",
+        "shot": "reports/audit-assets/v2-trusted-beta-result-core/390x844-07-share-preview.png",
+        "metrics": {
+          "visible": true,
+          "imageComplete": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0,
+          "view": "result"
+        }
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "smallButtons": 0,
@@ -94,6 +122,20 @@
         "openedUrl": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=1440x900&prefill_viewport=1440x900&hide_viewport=1",
         "clicked": true,
         "forbiddenMatches": []
+      },
+      "sharePreview": {
+        "pass": true,
+        "beforeUrl": "http://127.0.0.1:4323/",
+        "afterUrl": "http://127.0.0.1:4323/",
+        "closedUrl": "http://127.0.0.1:4323/",
+        "shot": "reports/audit-assets/v2-trusted-beta-result-core/1440x900-07-share-preview.png",
+        "metrics": {
+          "visible": true,
+          "imageComplete": true,
+          "downloadVisible": true,
+          "horizontalOverflow": 0,
+          "view": "result"
+        }
       },
       "metrics": {
         "horizontalOverflow": 0,

@@ -4,7 +4,7 @@ import { renderRoute } from './router.js';
 import { createInitialState, hydrateState, isComplete } from './state.js';
 import { answerQuestion, goNext, goPrevious } from './question-engine.js';
 import { buildResult } from './result-engine.js';
-import { downloadResultImage, shareResultImage } from './share-card.js';
+import { createV2ShareCardBlob } from './share-card.js';
 import { clearAiReportCache } from './ai/ai-report-cache.js';
 import { generateAiResultReport } from './ai/ai-report-client.js';
 import {
@@ -26,12 +26,17 @@ import { clearSavedState, loadSavedState, saveState } from './storage.js';
 
 const root = document.querySelector('#app');
 const bootStatus = document.querySelector('#bootStatus');
-const pilotMode = new URLSearchParams(window.location.search).get('pilot') === '1';
+const urlParams = new URLSearchParams(window.location.search);
+const pilotMode = urlParams.get('pilot') === '1';
+const debugMode = urlParams.get('debug') === '1';
 
 let runtime = null;
 let state = createInitialState({ pilotMode });
 let currentAiReportController = null;
 let feedbackConfig = { enabled: false, url: null };
+let sharePreviewUrl = null;
+let sharePreviewBlob = null;
+let sharePreviewFile = null;
 
 function setBootStatus(message, mode = 'loading') {
   if (!bootStatus) return;
@@ -70,8 +75,12 @@ function route(overrides = {}) {
     onExportCsv: handlePilotExportCsv,
     onSaveResultImage: handleSaveResultImage,
     onShareResult: handleShareResult,
+    onNativeShareResult: handleNativeShareResult,
+    onDownloadShareCard: handleDownloadShareCard,
+    onCloseSharePreview: handleCloseSharePreview,
     onExternalFeedback: handleExternalFeedback,
     feedbackEntry: buildFeedbackEntry(),
+    debugMode,
     onFeedbackChange: handleResultFeedbackChange,
     ...overrides,
   });
@@ -94,6 +103,7 @@ function buildFeedbackEntry() {
 
 function startFresh() {
   currentAiReportController?.abort();
+  clearSharePreview();
   clearSavedState();
   clearAiReportCache();
   state = createInitialState({ pilotMode });
@@ -183,7 +193,7 @@ function requestAiReportEnhancement() {
       state.result.report = state.result.deterministicReport ?? state.result.report;
       state.result.aiReportStatus = {
         state: 'failed',
-        message: '当前使用稳定版关系解读，结果内容不受影响。',
+        message: '',
       };
       persist();
       route();
@@ -195,15 +205,13 @@ async function handleSaveResultImage() {
   state.shareStatus = { loading: 'save', message: '' };
   route();
   try {
-    await downloadResultImage({ facts: state.result.facts, report: state.result.report });
-    state.shareStatus = { message: '结果图已生成并下载。' };
+    await prepareSharePreview();
+    state.shareStatus = createSharePreviewStatus('分享卡已生成。');
   } catch (error) {
     console.error(error);
-    state.shareStatus = { message: '结果图生成失败，请稍后重试。' };
+    state.shareStatus = { message: '分享卡生成失败，请稍后重试。' };
   }
-  persist();
   route();
-  if (state.view === 'result' && !state.pilot?.enabled) requestAiReportEnhancement();
 }
 
 async function handleShareResult() {
@@ -211,14 +219,79 @@ async function handleShareResult() {
   state.shareStatus = { loading: 'share', message: '' };
   route();
   try {
-    const result = await shareResultImage({ facts: state.result.facts, report: state.result.report });
-    state.shareStatus = { message: result.shared ? '已打开系统分享。' : '当前浏览器不支持直接分享图片，已为你下载结果图。' };
+    await prepareSharePreview();
+    state.shareStatus = createSharePreviewStatus('分享卡已生成。');
   } catch (error) {
     console.error(error);
-    state.shareStatus = { message: '分享图生成失败，请稍后重试。' };
+    state.shareStatus = { message: '分享卡生成失败，请稍后重试。' };
   }
-  persist();
   route();
+}
+
+async function handleNativeShareResult() {
+  if (!sharePreviewFile || !state.result?.facts || !state.result?.report) return;
+  const shareData = {
+    title: '我的心岛人格',
+    text: `${state.result.facts.persona.displayName}：${state.result.report.oneLine}`,
+    files: [sharePreviewFile],
+  };
+  if (!navigator.share || !navigator.canShare?.(shareData)) {
+    state.shareStatus = createSharePreviewStatus('当前浏览器不支持系统分享，请长按图片保存或下载。');
+    route();
+    return;
+  }
+  try {
+    await navigator.share(shareData);
+    state.shareStatus = createSharePreviewStatus('已打开系统分享。');
+  } catch (error) {
+    if (error?.name !== 'AbortError') console.error(error);
+    state.shareStatus = createSharePreviewStatus('分享卡仍保留在页面内，可继续保存或下载。');
+  }
+  route();
+}
+
+function handleDownloadShareCard() {
+  if (!sharePreviewUrl || !state.result?.facts) return;
+  const link = document.createElement('a');
+  link.href = sharePreviewUrl;
+  link.download = `heart-island-${state.result.facts.persona.id}-${state.result.facts.resultId}.png`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
+function handleCloseSharePreview() {
+  clearSharePreview();
+  state.shareStatus = {};
+  route();
+}
+
+async function prepareSharePreview() {
+  clearSharePreview();
+  sharePreviewBlob = await createV2ShareCardBlob({ facts: state.result.facts, report: state.result.report });
+  sharePreviewUrl = URL.createObjectURL(sharePreviewBlob);
+  sharePreviewFile = new File([sharePreviewBlob], `heart-island-${state.result.facts.persona.id}.png`, { type: 'image/png' });
+}
+
+function createSharePreviewStatus(message) {
+  const shareData = sharePreviewFile ? {
+    title: '我的心岛人格',
+    text: `${state.result.facts.persona.displayName}：${state.result.report.oneLine}`,
+    files: [sharePreviewFile],
+  } : null;
+  return {
+    message,
+    previewUrl: sharePreviewUrl,
+    canNativeShare: Boolean(shareData && navigator.share && navigator.canShare?.(shareData)),
+    isMobile: window.innerWidth <= 720,
+  };
+}
+
+function clearSharePreview() {
+  if (sharePreviewUrl) URL.revokeObjectURL(sharePreviewUrl);
+  sharePreviewUrl = null;
+  sharePreviewBlob = null;
+  sharePreviewFile = null;
 }
 
 function handleResultFeedbackChange(field, value) {
@@ -326,6 +399,7 @@ async function boot() {
     summarizePilotRecords,
     pilotRecordsToCsv,
     get feedbackConfig() { return feedbackConfig; },
+    get debugMode() { return debugMode; },
   };
   route();
   if (state.view === 'result' && !state.pilot?.enabled) requestAiReportEnhancement();

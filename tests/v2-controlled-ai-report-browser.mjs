@@ -49,10 +49,11 @@ async function runSuccessFlow(browser, { label, viewport }) {
   mockMode = 'success';
   mockDelayMs = '700';
   const context = await browser.newContext({ viewport, acceptDownloads: true });
+  await installNativeShareMock(context);
   const page = await instrumentPage(context);
   const shots = [];
   try {
-    await completeQuiz(page);
+    await completeQuiz(page, { debug: true });
     await page.locator('[data-action="result"]').click();
     await page.waitForSelector('.v2-result-hero--trusted');
     const initialSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
@@ -65,10 +66,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
     await page.locator('.v2-map-section').scrollIntoViewIfNeeded();
     shots.push(await screenshot(page, `${label}-04-five-layer-map.png`));
 
-    const saveDownload = page.waitForEvent('download');
-    await page.locator('[data-action="save-result"]').first().click();
-    const saved = await saveDownload;
-    await saved.saveAs(path.join(outDir, `${label}-05-ai-share-card.png`));
+    const sharePreview = await verifySharePreviewWithNativeShare(page, `${label}-05-ai-share-preview.png`);
 
     await page.reload({ waitUntil: 'networkidle' });
     await page.waitForSelector('.v2-ai-status[data-ai-state="success"]');
@@ -90,6 +88,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
         && successSource === 'ai'
         && restoredSource === 'ai'
         && cacheCleared
+        && sharePreview.pass
         && metrics.horizontalOverflow === 0
         && metrics.brokenImages === 0
         && metrics.apiKeyLeaks === 0
@@ -102,6 +101,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
       successSource,
       restoredSource,
       cacheCleared,
+      sharePreview,
       metrics,
     };
   } finally {
@@ -119,9 +119,9 @@ async function runFailureFlow(browser, mode, label) {
     await completeQuiz(page);
     await page.locator('[data-action="result"]').click();
     await page.waitForSelector('.v2-result-hero--trusted');
-    await page.waitForSelector('.v2-ai-status[data-ai-state="failed"]');
+    await page.waitForFunction(() => window.__heartIslandV2Debug.state.result.aiReportStatus.state === 'failed');
     const source = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
-    const text = await page.locator('.v2-ai-status[data-ai-state="failed"]').innerText();
+    const text = await page.evaluate(() => document.body.innerText);
     shots.push(await screenshot(page, `${label}-fallback.png`));
     const metrics = await collectMetrics(page);
     const expectedStatus = mode === 'timeout' ? 504 : 500;
@@ -131,7 +131,11 @@ async function runFailureFlow(browser, mode, label) {
       pass: page.__errors.length === 0
         && onlyExpectedBadResponses
         && source === 'deterministic'
-        && text.includes('稳定版')
+        && !text.includes('当前使用稳定版关系解读')
+        && !text.includes('结果内容不受影响')
+        && !text.includes('Provider')
+        && !text.includes('Schema')
+        && !text.includes('Prompt 版本')
         && metrics.horizontalOverflow === 0
         && metrics.brokenImages === 0
         && metrics.apiKeyLeaks === 0
@@ -141,7 +145,7 @@ async function runFailureFlow(browser, mode, label) {
       consoleErrors: page.__errors,
       badResponses: page.__badResponses,
       source,
-      statusText: text,
+      productionTextHidden: true,
       metrics,
     };
   } finally {
@@ -149,8 +153,8 @@ async function runFailureFlow(browser, mode, label) {
   }
 }
 
-async function completeQuiz(page) {
-  await page.goto(baseUrl, { waitUntil: 'networkidle' });
+async function completeQuiz(page, { debug = false } = {}) {
+  await page.goto(debug ? `${baseUrl}?debug=1` : baseUrl, { waitUntil: 'networkidle' });
   await page.evaluate(() => localStorage.clear());
   await page.waitForSelector('[data-action="start"]');
   await page.locator('[data-action="start"]').click();
@@ -161,6 +165,70 @@ async function completeQuiz(page) {
     await page.locator(`.v2-option[data-question-id="${questionId}"][data-option-id="${optionId}"]`).click();
   }
   await page.waitForSelector('[data-action="result"]');
+}
+
+async function installNativeShareMock(context) {
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'canShare', {
+      configurable: true,
+      value: (data) => Array.isArray(data?.files) && data.files.length > 0,
+    });
+    Object.defineProperty(navigator, 'share', {
+      configurable: true,
+      value: async (data) => {
+        window.__heartIslandNativeShareCalls = (window.__heartIslandNativeShareCalls || 0) + 1;
+        window.__heartIslandLastShareFileCount = data?.files?.length || 0;
+      },
+    });
+  });
+}
+
+async function verifySharePreviewWithNativeShare(page, shotName) {
+  const beforeUrl = page.url();
+  await page.locator('[data-action="save-result"]').first().click();
+  await page.waitForSelector('[data-share-preview] img');
+  const afterGenerateUrl = page.url();
+  const shot = await screenshot(page, shotName);
+  const previewMetrics = await page.evaluate(() => ({
+    visible: Boolean(document.querySelector('[data-share-preview]')),
+    imageComplete: Boolean(document.querySelector('[data-share-preview] img')?.complete),
+    nativeShareVisible: Boolean(document.querySelector('[data-action="share-native"]')),
+    downloadVisible: Boolean(document.querySelector('[data-action="download-share-card"]')),
+    horizontalOverflow: Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
+  }));
+  await page.locator('[data-action="share-native"]').click();
+  const nativeShare = await page.evaluate(() => ({
+    calls: window.__heartIslandNativeShareCalls || 0,
+    fileCount: window.__heartIslandLastShareFileCount || 0,
+    url: window.location.href,
+    view: window.__heartIslandV2Debug.state.view,
+  }));
+  await page.locator('[data-action="close-share-preview"]').click();
+  await page.waitForSelector('[data-share-preview]', { state: 'detached' });
+  const closed = await page.evaluate(() => ({
+    url: window.location.href,
+    view: window.__heartIslandV2Debug.state.view,
+  }));
+  return {
+    pass: beforeUrl === afterGenerateUrl
+      && afterGenerateUrl === nativeShare.url
+      && nativeShare.url === closed.url
+      && previewMetrics.visible
+      && previewMetrics.imageComplete
+      && previewMetrics.nativeShareVisible
+      && previewMetrics.downloadVisible
+      && previewMetrics.horizontalOverflow === 0
+      && nativeShare.calls === 1
+      && nativeShare.fileCount === 1
+      && nativeShare.view === 'result'
+      && closed.view === 'result',
+    shot,
+    beforeUrl,
+    afterGenerateUrl,
+    nativeShare,
+    closed,
+    previewMetrics,
+  };
 }
 
 async function instrumentPage(context) {

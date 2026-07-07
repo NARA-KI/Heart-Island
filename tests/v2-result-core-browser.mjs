@@ -97,15 +97,7 @@ async function runFullFlow(browser, { label, viewport }) {
     shots.push(await screenshot(page, `${label}-06-evidence-expanded.png`));
     const feedback = await verifyFeedbackLink(page, viewport);
 
-    const saveDownload = page.waitForEvent('download');
-    await page.locator('[data-action="save-result"]').first().click();
-    const saved = await saveDownload;
-    await saved.saveAs(path.join(outDir, `${label}-07-share-card-save.png`));
-
-    const shareDownload = page.waitForEvent('download');
-    await page.locator('[data-action="share-result"]').first().click();
-    const shared = await shareDownload;
-    await shared.saveAs(path.join(outDir, `${label}-08-share-fallback.png`));
+    const sharePreview = await verifySharePreview(page, label);
 
     await page.reload({ waitUntil: 'networkidle' });
     await page.waitForSelector('.v2-result-hero--trusted');
@@ -137,7 +129,8 @@ async function runFullFlow(browser, { label, viewport }) {
         && !/Alpha|ALPHA|pilot|candidate-a/i.test(metrics.text)
         && restoredView === 'result'
         && cleared
-        && feedback.pass,
+        && feedback.pass
+        && sharePreview.pass,
       shots,
       consoleErrors,
       requestFailures,
@@ -145,18 +138,60 @@ async function runFullFlow(browser, { label, viewport }) {
       restoredView,
       cleared,
       feedback,
+      sharePreview,
       metrics: {
         horizontalOverflow: Math.max(0, metrics.scrollWidth - metrics.innerWidth),
         smallButtons: metrics.smallButtons,
         brokenImages: metrics.brokenImages,
         hasUndefined: metrics.text.includes('undefined'),
         hasNaN: metrics.text.includes('NaN'),
-        hasInternalText: /Alpha|ALPHA|pilot|candidate-a/i.test(metrics.text),
+        hasInternalText: /Alpha|ALPHA|pilot|candidate-a|匿名测试编号|已打开过反馈入口|当前使用稳定版关系解读|结果内容不受影响|aiSource|Provider|cache|Schema|Prompt 版本/i.test(metrics.text),
       },
     };
   } finally {
     await context.close();
   }
+}
+
+async function verifySharePreview(page, label) {
+  const beforeUrl = page.url();
+  await page.locator('[data-action="save-result"]').first().click();
+  await page.waitForSelector('[data-share-preview] img');
+  const afterUrl = page.url();
+  const shot = await screenshot(page, `${label}-07-share-preview.png`);
+  const metrics = await page.evaluate(() => {
+    const preview = document.querySelector('[data-share-preview]');
+    const image = preview?.querySelector('img');
+    const download = preview?.querySelector('[data-action="download-share-card"]');
+    return {
+      visible: Boolean(preview),
+      imageComplete: Boolean(image?.complete && image.naturalWidth > 0),
+      downloadVisible: Boolean(download),
+      horizontalOverflow: Math.max(0, document.documentElement.scrollWidth - window.innerWidth),
+      view: window.__heartIslandV2Debug.state.view,
+    };
+  });
+  await page.locator('[data-action="close-share-preview"]').click();
+  await page.waitForSelector('[data-share-preview]', { state: 'detached' });
+  const closedState = await page.evaluate(() => ({
+    view: window.__heartIslandV2Debug.state.view,
+    url: window.location.href,
+  }));
+  return {
+    pass: beforeUrl === afterUrl
+      && afterUrl === closedState.url
+      && metrics.visible
+      && metrics.imageComplete
+      && metrics.downloadVisible
+      && metrics.horizontalOverflow === 0
+      && metrics.view === 'result'
+      && closedState.view === 'result',
+    beforeUrl,
+    afterUrl,
+    closedUrl: closedState.url,
+    shot,
+    metrics,
+  };
 }
 
 async function runFeedbackHiddenFlow(browser, name, config) {
