@@ -9,6 +9,7 @@ import { handleAiReportRequest } from '../server/ai-report/handler.js';
 import { loadStoredPilotAnswers } from './v2-baseline-samples.mjs';
 
 const root = process.cwd();
+const adapterVersion = 'backend-cors-v2';
 const allowedOrigin = 'https://v2-xindao-mvp06-d9gf6ion1b76a1327.webapps.tcloudbase.com';
 const illegalOrigin = 'https://invalid.example.com';
 const sample = buildSample();
@@ -36,35 +37,20 @@ try {
     },
   });
   assert.equal(options.statusCode, 204);
-  assert.equal(accessControlAllowHeaderCount(options.rawHeaders), 0, 'CloudBase OPTIONS should not emit Access-Control-Allow-* headers');
-  assert.equal(varyTokenCount(options.rawHeaders, 'Origin'), 0, 'CloudBase OPTIONS Vary should not contain Origin');
-  assert.equal(headerValue(options.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
+  assertAllowedCors(options.rawHeaders);
+  assert.equal(headerValue(options.rawHeaders, 'X-Heart-Island-Adapter-Version'), adapterVersion);
 
-  const post = await rawRequest({
-    baseUrl,
-    method: 'POST',
-    path: '/api/v2/ai-report',
-    headers: {
-      Origin: allowedOrigin,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      requestId: `cloudbase-cors-test-${Date.now()}`,
-      resultHash: sample.resultHash,
-      facts: sample.facts,
-    }),
-  });
+  const post = await validPost({ baseUrl, requestId: 'cloudbase-cors-success' });
   assert.equal(post.statusCode, 200);
-  assert.equal(accessControlAllowHeaderCount(post.rawHeaders), 0, 'CloudBase POST should not emit Access-Control-Allow-* headers');
-  assert.equal(varyTokenCount(post.rawHeaders, 'Origin'), 0, 'CloudBase POST Vary should not contain Origin');
-  assert.equal(varyHasDuplicates(post.rawHeaders), false, 'CloudBase POST Vary should be deduplicated');
-  assert.equal(headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
+  assertAllowedCors(post.rawHeaders, { requireMethods: false, requireHeaders: false });
+  assert.equal(headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'), adapterVersion);
   assert.equal(headerCount(post.rawHeaders, 'Content-Type'), 1, 'POST should emit one Content-Type header');
   const body = JSON.parse(post.body);
   assert.equal(body.report.source, 'ai');
   validateStrictAiReport(body.report, sample.facts);
   assert.equal(countSecrets(`${post.rawHeaders.join('\n')}\n${post.body}`), 0, 'response should not leak API keys');
 
+  process.env.__AI_REPORT_MOCK_CALLS = '0';
   const rejected = await rawRequest({
     baseUrl,
     method: 'OPTIONS',
@@ -72,8 +58,34 @@ try {
     headers: { Origin: illegalOrigin },
   });
   assert.equal(rejected.statusCode, 403);
-  assert.equal(accessControlAllowHeaderCount(rejected.rawHeaders), 0, 'rejected origin should not receive Access-Control-Allow-* headers');
-  assert.equal(headerValue(rejected.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
+  assertNoAllowOrigin(rejected.rawHeaders);
+  assert.equal(Number(process.env.__AI_REPORT_MOCK_CALLS || 0), 0, 'rejected origin should not enter provider');
+  assert.equal(headerValue(rejected.rawHeaders, 'X-Heart-Island-Adapter-Version'), adapterVersion);
+
+  const unprocessable = await rawRequest({
+    baseUrl,
+    method: 'POST',
+    path: '/api/v2/ai-report',
+    headers: {
+      Origin: allowedOrigin,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ requestId: 'cloudbase-cors-422' }),
+  });
+  assert.equal(unprocessable.statusCode, 422);
+  assertAllowedCors(unprocessable.rawHeaders, { requireMethods: false, requireHeaders: false });
+
+  process.env.AI_REPORT_SESSION_LIMIT = '0';
+  const limited = await validPost({ baseUrl, requestId: 'cloudbase-cors-429' });
+  assert.equal(limited.statusCode, 429);
+  assertAllowedCors(limited.rawHeaders, { requireMethods: false, requireHeaders: false });
+  process.env.AI_REPORT_SESSION_LIMIT = '100';
+
+  process.env.AI_REPORT_MOCK_MODE = '500';
+  const providerError = await validPost({ baseUrl, requestId: 'cloudbase-cors-provider-error' });
+  assert.equal(providerError.statusCode, 502);
+  assertAllowedCors(providerError.rawHeaders, { requireMethods: false, requireHeaders: false });
+  process.env.AI_REPORT_MOCK_MODE = 'success';
 
   const directHandlerOptions = await callHandlerDirectly({
     method: 'OPTIONS',
@@ -85,18 +97,23 @@ try {
 
   const sanitized = sanitizeCloudBaseResponseHeaders(new Map([
     ['vary', { name: 'Vary', value: 'Origin, Accept-Encoding, Origin, Accept-Encoding' }],
-    ['access-control-allow-origin', { name: 'Access-Control-Allow-Origin', value: allowedOrigin }],
+    ['access-control-allow-origin', { name: 'Access-Control-Allow-Origin', value: `${allowedOrigin}, ${allowedOrigin}` }],
+    ['access-control-allow-methods', { name: 'Access-Control-Allow-Methods', value: 'POST, OPTIONS, POST' }],
   ]));
-  assert.equal(sanitized.has('access-control-allow-origin'), false);
-  assert.equal(sanitized.get('vary')?.value, 'Accept-Encoding');
+  assert.equal(sanitized.get('access-control-allow-origin')?.value, allowedOrigin);
+  assert.equal(sanitized.get('vary')?.value, 'Origin, Accept-Encoding');
+  assert.equal(sanitized.get('access-control-allow-methods')?.value, 'POST, OPTIONS');
 
   console.log(JSON.stringify({
     pass: true,
-    optionsAccessControlAllowHeaderCount: accessControlAllowHeaderCount(options.rawHeaders),
-    postAccessControlAllowHeaderCount: accessControlAllowHeaderCount(post.rawHeaders),
+    optionsAccessControlAllowOrigin: headerValue(options.rawHeaders, 'Access-Control-Allow-Origin'),
+    optionsMethods: headerValue(options.rawHeaders, 'Access-Control-Allow-Methods'),
+    optionsHeaders: headerValue(options.rawHeaders, 'Access-Control-Allow-Headers'),
     postContentTypeCount: headerCount(post.rawHeaders, 'Content-Type'),
-    optionsVaryOriginCount: 0,
-    postVaryOriginCount: 0,
+    optionsVaryOriginCount: varyTokenCount(options.rawHeaders, 'Origin'),
+    postVaryOriginCount: varyTokenCount(post.rawHeaders, 'Origin'),
+    rejectedAccessControlAllowOrigin: headerValue(rejected.rawHeaders, 'Access-Control-Allow-Origin'),
+    errorStatusesCovered: [unprocessable.statusCode, limited.statusCode, providerError.statusCode],
     adapterVersion: headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'),
     source: body.report.source,
     apiKeyLeaks: 0,
@@ -131,6 +148,23 @@ function listen(server) {
   });
 }
 
+function validPost({ baseUrl, requestId }) {
+  return rawRequest({
+    baseUrl,
+    method: 'POST',
+    path: '/api/v2/ai-report',
+    headers: {
+      Origin: allowedOrigin,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      requestId: `${requestId}-${Date.now()}`,
+      resultHash: sample.resultHash,
+      facts: sample.facts,
+    }),
+  });
+}
+
 function rawRequest({ baseUrl, method, path: requestPath, headers = {}, body }) {
   const target = new URL(requestPath, baseUrl);
   return new Promise((resolve, reject) => {
@@ -155,6 +189,27 @@ function rawRequest({ baseUrl, method, path: requestPath, headers = {}, body }) 
   });
 }
 
+function assertAllowedCors(rawHeaders, options = {}) {
+  const { requireMethods = true, requireHeaders = true } = options;
+  assert.equal(headerValue(rawHeaders, 'Access-Control-Allow-Origin'), allowedOrigin);
+  assert.equal(varyTokenCount(rawHeaders, 'Origin'), 1, 'Vary should contain Origin once');
+  assert.equal(varyHasDuplicates(rawHeaders), false, 'Vary should be deduplicated');
+  assert.notEqual(headerValue(rawHeaders, 'Access-Control-Allow-Origin'), '*', 'ACAO wildcard is not allowed');
+  if (requireMethods) {
+    const methods = commaTokens(headerValue(rawHeaders, 'Access-Control-Allow-Methods'));
+    assert.equal(methods.includes('post'), true);
+    assert.equal(methods.includes('options'), true);
+  }
+  if (requireHeaders) {
+    const allowedHeaders = commaTokens(headerValue(rawHeaders, 'Access-Control-Allow-Headers'));
+    assert.equal(allowedHeaders.includes('content-type'), true);
+  }
+}
+
+function assertNoAllowOrigin(rawHeaders) {
+  assert.equal(headerValue(rawHeaders, 'Access-Control-Allow-Origin'), null);
+}
+
 function headerCount(rawHeaders, name) {
   let count = 0;
   for (let index = 0; index < rawHeaders.length; index += 2) {
@@ -170,22 +225,16 @@ function headerValue(rawHeaders, name) {
   return null;
 }
 
-function varyTokenCount(rawHeaders, token) {
-  const value = headerValue(rawHeaders, 'Vary') ?? '';
-  return value.split(',').filter((item) => item.trim().toLowerCase() === token.toLowerCase()).length;
+function commaTokens(value) {
+  return String(value ?? '').split(',').map((item) => item.trim().toLowerCase()).filter(Boolean);
 }
 
-function accessControlAllowHeaderCount(rawHeaders) {
-  let count = 0;
-  for (let index = 0; index < rawHeaders.length; index += 2) {
-    if (rawHeaders[index].toLowerCase().startsWith('access-control-allow-')) count += 1;
-  }
-  return count;
+function varyTokenCount(rawHeaders, token) {
+  return commaTokens(headerValue(rawHeaders, 'Vary')).filter((item) => item === token.toLowerCase()).length;
 }
 
 function varyHasDuplicates(rawHeaders) {
-  const value = headerValue(rawHeaders, 'Vary') ?? '';
-  const tokens = value.split(',').map((item) => item.trim().toLowerCase()).filter(Boolean);
+  const tokens = commaTokens(headerValue(rawHeaders, 'Vary'));
   return new Set(tokens).size !== tokens.length;
 }
 

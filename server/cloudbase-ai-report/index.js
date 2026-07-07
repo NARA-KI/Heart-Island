@@ -4,13 +4,14 @@ import { pathToFileURL } from 'node:url';
 const SERVICE_NAME = 'heart-island-ai-report';
 const DEFAULT_PORT = 9000;
 const DEFAULT_API_PATH = '/api/v2/ai-report';
-const ADAPTER_VERSION = 'gateway-cors-v1';
-const GATEWAY_OWNED_CORS_HEADERS = new Set([
-  'access-control-allow-origin',
-  'access-control-allow-methods',
+const ADAPTER_VERSION = 'backend-cors-v2';
+const COMMA_TOKEN_HEADERS = new Set([
   'access-control-allow-headers',
-  'access-control-allow-credentials',
-  'access-control-max-age',
+  'access-control-allow-methods',
+  'vary',
+]);
+const SINGLE_VALUE_HEADERS = new Set([
+  'access-control-allow-origin',
 ]);
 
 const { handleAiReportRequest } = await loadAiReportHandler();
@@ -76,15 +77,9 @@ function writeCapturedResponse(response, captured) {
 export function sanitizeCloudBaseResponseHeaders(headers) {
   const safeHeaders = new Map();
   for (const [key, header] of headers.entries()) {
-    if (GATEWAY_OWNED_CORS_HEADERS.has(key)) continue;
-    if (key === 'vary') {
-      const value = uniqueCommaTokens(header.value)
-        .filter((token) => token.toLowerCase() !== 'origin')
-        .join(', ');
-      if (value) safeHeaders.set(key, { name: header.name, value });
-      continue;
-    }
-    safeHeaders.set(key, header);
+    const value = sanitizeHeaderValue(key, header.value);
+    if (!value) continue;
+    safeHeaders.set(key, { name: header.name, value });
   }
   return safeHeaders;
 }
@@ -149,6 +144,13 @@ function normalizeHeaderValue(key, value) {
   const text = String(raw ?? '');
   if (key === 'vary') return uniqueCommaTokens(text).join(', ');
   if (key === 'access-control-allow-origin') return uniqueCommaTokens(text)[0] ?? '';
+  return text;
+}
+
+function sanitizeHeaderValue(key, value) {
+  const text = String(value ?? '');
+  if (COMMA_TOKEN_HEADERS.has(key)) return uniqueCommaTokens(text).join(', ');
+  if (SINGLE_VALUE_HEADERS.has(key)) return uniqueCommaTokens(text)[0] ?? '';
   return text;
 }
 
