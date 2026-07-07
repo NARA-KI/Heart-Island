@@ -4,7 +4,8 @@ import http from 'node:http';
 import path from 'node:path';
 import { buildResult } from '../js/v2/result-engine.js';
 import { createResultHash, validateStrictAiReport } from '../js/v2/ai/ai-report-schema.js';
-import { createServer } from '../server/cloudbase-ai-report/index.js';
+import { createServer, sanitizeCloudBaseResponseHeaders } from '../server/cloudbase-ai-report/index.js';
+import { handleAiReportRequest } from '../server/ai-report/handler.js';
 import { loadStoredPilotAnswers } from './v2-baseline-samples.mjs';
 
 const root = process.cwd();
@@ -35,9 +36,9 @@ try {
     },
   });
   assert.equal(options.statusCode, 204);
-  assert.equal(headerCount(options.rawHeaders, 'Access-Control-Allow-Origin'), 1, 'OPTIONS should emit one Access-Control-Allow-Origin header');
-  assert.equal(headerValue(options.rawHeaders, 'Access-Control-Allow-Origin'), allowedOrigin);
-  assert.equal(varyTokenCount(options.rawHeaders, 'Origin'), 1, 'OPTIONS Vary should contain Origin once');
+  assert.equal(accessControlAllowHeaderCount(options.rawHeaders), 0, 'CloudBase OPTIONS should not emit Access-Control-Allow-* headers');
+  assert.equal(varyTokenCount(options.rawHeaders, 'Origin'), 0, 'CloudBase OPTIONS Vary should not contain Origin');
+  assert.equal(headerValue(options.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
 
   const post = await rawRequest({
     baseUrl,
@@ -54,9 +55,10 @@ try {
     }),
   });
   assert.equal(post.statusCode, 200);
-  assert.equal(headerCount(post.rawHeaders, 'Access-Control-Allow-Origin'), 1, 'POST should emit one Access-Control-Allow-Origin header');
-  assert.equal(headerValue(post.rawHeaders, 'Access-Control-Allow-Origin'), allowedOrigin);
-  assert.equal(varyTokenCount(post.rawHeaders, 'Origin'), 1, 'POST Vary should contain Origin once');
+  assert.equal(accessControlAllowHeaderCount(post.rawHeaders), 0, 'CloudBase POST should not emit Access-Control-Allow-* headers');
+  assert.equal(varyTokenCount(post.rawHeaders, 'Origin'), 0, 'CloudBase POST Vary should not contain Origin');
+  assert.equal(varyHasDuplicates(post.rawHeaders), false, 'CloudBase POST Vary should be deduplicated');
+  assert.equal(headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
   assert.equal(headerCount(post.rawHeaders, 'Content-Type'), 1, 'POST should emit one Content-Type header');
   const body = JSON.parse(post.body);
   assert.equal(body.report.source, 'ai');
@@ -70,15 +72,32 @@ try {
     headers: { Origin: illegalOrigin },
   });
   assert.equal(rejected.statusCode, 403);
-  assert.equal(headerCount(rejected.rawHeaders, 'Access-Control-Allow-Origin'), 0, 'rejected origin should not receive Access-Control-Allow-Origin');
+  assert.equal(accessControlAllowHeaderCount(rejected.rawHeaders), 0, 'rejected origin should not receive Access-Control-Allow-* headers');
+  assert.equal(headerValue(rejected.rawHeaders, 'X-Heart-Island-Adapter-Version'), 'gateway-cors-v1');
+
+  const directHandlerOptions = await callHandlerDirectly({
+    method: 'OPTIONS',
+    headers: { origin: allowedOrigin },
+    env: { ALLOWED_ORIGIN: allowedOrigin },
+  });
+  assert.equal(directHandlerOptions.statusCode, 204);
+  assert.equal(directHandlerOptions.headers['access-control-allow-origin'], allowedOrigin, 'generic handler should still own CORS rules');
+
+  const sanitized = sanitizeCloudBaseResponseHeaders(new Map([
+    ['vary', { name: 'Vary', value: 'Origin, Accept-Encoding, Origin, Accept-Encoding' }],
+    ['access-control-allow-origin', { name: 'Access-Control-Allow-Origin', value: allowedOrigin }],
+  ]));
+  assert.equal(sanitized.has('access-control-allow-origin'), false);
+  assert.equal(sanitized.get('vary')?.value, 'Accept-Encoding');
 
   console.log(JSON.stringify({
     pass: true,
-    optionsAccessControlAllowOriginCount: headerCount(options.rawHeaders, 'Access-Control-Allow-Origin'),
-    postAccessControlAllowOriginCount: headerCount(post.rawHeaders, 'Access-Control-Allow-Origin'),
+    optionsAccessControlAllowHeaderCount: accessControlAllowHeaderCount(options.rawHeaders),
+    postAccessControlAllowHeaderCount: accessControlAllowHeaderCount(post.rawHeaders),
     postContentTypeCount: headerCount(post.rawHeaders, 'Content-Type'),
-    optionsVaryOriginCount: varyTokenCount(options.rawHeaders, 'Origin'),
-    postVaryOriginCount: varyTokenCount(post.rawHeaders, 'Origin'),
+    optionsVaryOriginCount: 0,
+    postVaryOriginCount: 0,
+    adapterVersion: headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'),
     source: body.report.source,
     apiKeyLeaks: 0,
   }, null, 2));
@@ -156,8 +175,60 @@ function varyTokenCount(rawHeaders, token) {
   return value.split(',').filter((item) => item.trim().toLowerCase() === token.toLowerCase()).length;
 }
 
+function accessControlAllowHeaderCount(rawHeaders) {
+  let count = 0;
+  for (let index = 0; index < rawHeaders.length; index += 2) {
+    if (rawHeaders[index].toLowerCase().startsWith('access-control-allow-')) count += 1;
+  }
+  return count;
+}
+
+function varyHasDuplicates(rawHeaders) {
+  const value = headerValue(rawHeaders, 'Vary') ?? '';
+  const tokens = value.split(',').map((item) => item.trim().toLowerCase()).filter(Boolean);
+  return new Set(tokens).size !== tokens.length;
+}
+
 function countSecrets(text) {
   return (text.match(/AI_REPORT_API_KEY|sk-[A-Za-z0-9_-]{12,}|Bearer\s+[A-Za-z0-9._-]{12,}/g) || []).length;
+}
+
+async function callHandlerDirectly({ method, headers, env }) {
+  const request = createMockRequest({ method, headers });
+  const response = createMockResponse();
+  await handleAiReportRequest(request, response, { env });
+  return response;
+}
+
+function createMockRequest({ method, headers }) {
+  return {
+    method,
+    headers,
+    socket: { remoteAddress: '127.0.0.1' },
+    setEncoding() {},
+    on(event, callback) {
+      if (event === 'end') queueMicrotask(callback);
+      return this;
+    },
+  };
+}
+
+function createMockResponse() {
+  return {
+    statusCode: 200,
+    headers: {},
+    body: '',
+    setHeader(name, value) {
+      this.headers[name.toLowerCase()] = value;
+    },
+    writeHead(status, headers = {}) {
+      this.statusCode = status;
+      for (const [name, value] of Object.entries(headers)) this.setHeader(name, value);
+    },
+    end(chunk = '') {
+      this.body += String(chunk);
+    },
+  };
 }
 
 function readJson(file) {

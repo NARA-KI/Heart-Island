@@ -4,6 +4,14 @@ import { pathToFileURL } from 'node:url';
 const SERVICE_NAME = 'heart-island-ai-report';
 const DEFAULT_PORT = 9000;
 const DEFAULT_API_PATH = '/api/v2/ai-report';
+const ADAPTER_VERSION = 'gateway-cors-v1';
+const GATEWAY_OWNED_CORS_HEADERS = new Set([
+  'access-control-allow-origin',
+  'access-control-allow-methods',
+  'access-control-allow-headers',
+  'access-control-allow-credentials',
+  'access-control-max-age',
+]);
 
 const { handleAiReportRequest } = await loadAiReportHandler();
 
@@ -48,17 +56,37 @@ function isAiReportPath(pathname, method) {
 }
 
 function writeJson(response, status, body) {
-  response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+  response.writeHead(status, {
+    'Content-Type': 'application/json; charset=utf-8',
+    'X-Heart-Island-Adapter-Version': ADAPTER_VERSION,
+  });
   response.end(JSON.stringify(body));
 }
 
 function writeCapturedResponse(response, captured) {
-  const headers = captured.finalHeaders();
+  const headers = sanitizeCloudBaseResponseHeaders(captured.finalHeaders());
   for (const { name, value } of headers.values()) {
     response.setHeader(name, value);
   }
+  response.setHeader('X-Heart-Island-Adapter-Version', ADAPTER_VERSION);
   response.writeHead(captured.statusCode);
   response.end(captured.body());
+}
+
+export function sanitizeCloudBaseResponseHeaders(headers) {
+  const safeHeaders = new Map();
+  for (const [key, header] of headers.entries()) {
+    if (GATEWAY_OWNED_CORS_HEADERS.has(key)) continue;
+    if (key === 'vary') {
+      const value = uniqueCommaTokens(header.value)
+        .filter((token) => token.toLowerCase() !== 'origin')
+        .join(', ');
+      if (value) safeHeaders.set(key, { name: header.name, value });
+      continue;
+    }
+    safeHeaders.set(key, header);
+  }
+  return safeHeaders;
 }
 
 class CapturedResponse {
