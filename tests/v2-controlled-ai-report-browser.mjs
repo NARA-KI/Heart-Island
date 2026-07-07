@@ -25,12 +25,15 @@ try {
   for (const run of [
     { label: '375x667', viewport: { width: 375, height: 667 } },
     { label: '390x844', viewport: { width: 390, height: 844 } },
+    { label: '430x932', viewport: { width: 430, height: 932 } },
     { label: '1440x900', viewport: { width: 1440, height: 900 } },
   ]) {
     results.push(await runSuccessFlow(browser, run));
   }
   results.push(await runFailureFlow(browser, 'timeout', '390x844-timeout'));
+  results.push(await runFailureFlow(browser, '500', '390x844-500'));
   results.push(await runFailureFlow(browser, 'invalid-schema', '390x844-invalid-schema'));
+  results.push(await runRetryFlow(browser));
 } finally {
   await browser.close();
   server.close();
@@ -62,8 +65,9 @@ async function runSuccessFlow(browser, { label, viewport }) {
     await page.waitForSelector('.v2-ai-status[data-ai-state="loading"]');
     shots.push(await screenshot(page, `${label}-01-deterministic-initial.png`));
     shots.push(await screenshot(page, `${label}-02-ai-generating.png`));
-    await page.waitForSelector('.v2-ai-status[data-ai-state="success"]');
-    const successSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
+    await page.waitForSelector('.v2-ai-report-panel[data-ai-state="success"]');
+    const successSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.aiReport.source);
+    const deterministicStillPrimary = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
     shots.push(await screenshot(page, `${label}-03-ai-success-result.png`));
     await page.locator('.v2-map-section').scrollIntoViewIfNeeded();
     shots.push(await screenshot(page, `${label}-04-five-layer-map.png`));
@@ -71,8 +75,8 @@ async function runSuccessFlow(browser, { label, viewport }) {
     const sharePreview = await verifySharePreviewWithNativeShare(page, `${label}-05-ai-share-preview.png`);
 
     await page.reload({ waitUntil: 'networkidle' });
-    await page.waitForSelector('.v2-ai-status[data-ai-state="success"]');
-    const restoredSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
+    await page.waitForSelector('.v2-ai-report-panel[data-ai-state="success"]');
+    const restoredSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.aiReport.source);
     const aiConfig = await page.evaluate(() => window.__heartIslandV2Debug.aiReportConfig);
     shots.push(await screenshot(page, `${label}-06-refresh-ai-restored.png`));
 
@@ -89,10 +93,11 @@ async function runSuccessFlow(browser, { label, viewport }) {
         && page.__badResponses.length === 0
         && initialSource === 'deterministic'
         && successSource === 'ai'
+        && deterministicStillPrimary === 'deterministic'
         && restoredSource === 'ai'
         && aiConfig.endpoint === '/api/v2/ai-report'
         && aiReportRequestUrls.every((url) => url === `${baseUrl}api/v2/ai-report`)
-        && aiReportRequestUrls.length > 0
+        && aiReportRequestUrls.length === 1
         && cacheCleared
         && sharePreview.pass
         && metrics.horizontalOverflow === 0
@@ -105,6 +110,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
       badResponses: page.__badResponses,
       initialSource,
       successSource,
+      deterministicStillPrimary,
       restoredSource,
       aiConfig,
       aiReportRequestUrls: [...aiReportRequestUrls],
@@ -120,6 +126,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
 async function runFailureFlow(browser, mode, label) {
   mockMode = mode;
   mockDelayMs = '0';
+  aiReportRequestUrls = [];
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, acceptDownloads: true });
   const page = await instrumentPage(context);
   const shots = [];
@@ -127,18 +134,21 @@ async function runFailureFlow(browser, mode, label) {
     await completeQuiz(page);
     await page.locator('[data-action="result"]').click();
     await page.waitForSelector('.v2-result-hero--trusted');
-    await page.waitForFunction(() => window.__heartIslandV2Debug.state.result.aiReportStatus.state === 'failed');
+    const expectedState = mode === 'timeout' ? 'timeout' : 'error';
+    await page.waitForFunction((state) => window.__heartIslandV2Debug.state.result.aiReportStatus.state === state, expectedState);
     const source = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
+    const aiSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.aiReport?.source ?? null);
     const text = await page.evaluate(() => document.body.innerText);
     shots.push(await screenshot(page, `${label}-fallback.png`));
     const metrics = await collectMetrics(page);
-    const expectedStatus = mode === 'timeout' ? 504 : 500;
+    const expectedStatus = mode === 'timeout' ? 504 : mode === '500' ? 502 : 500;
     const onlyExpectedBadResponses = page.__badResponses.every((item) => item.status === expectedStatus);
     return {
       name: label,
       pass: page.__errors.length === 0
         && onlyExpectedBadResponses
         && source === 'deterministic'
+        && aiSource === null
         && !text.includes('当前使用稳定版关系解读')
         && !text.includes('结果内容不受影响')
         && !text.includes('Provider')
@@ -153,7 +163,55 @@ async function runFailureFlow(browser, mode, label) {
       consoleErrors: page.__errors,
       badResponses: page.__badResponses,
       source,
+      aiSource,
       productionTextHidden: true,
+      metrics,
+    };
+  } finally {
+    await context.close();
+  }
+}
+
+async function runRetryFlow(browser) {
+  mockMode = '500';
+  mockDelayMs = '0';
+  aiReportRequestUrls = [];
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, acceptDownloads: true });
+  const page = await instrumentPage(context);
+  const shots = [];
+  try {
+    await completeQuiz(page);
+    await page.locator('[data-action="result"]').click();
+    await page.waitForSelector('.v2-result-hero--trusted');
+    await page.waitForFunction(() => window.__heartIslandV2Debug.state.result.aiReportStatus.state === 'error');
+    mockMode = 'success';
+    await page.locator('[data-action="retry-ai-report"]').click();
+    await page.waitForSelector('.v2-ai-report-panel[data-ai-state="success"]');
+    shots.push(await screenshot(page, '390x844-retry-success.png'));
+    const state = await page.evaluate(() => ({
+      reportSource: window.__heartIslandV2Debug.state.result.report.source,
+      aiSource: window.__heartIslandV2Debug.state.result.aiReport?.source,
+      status: window.__heartIslandV2Debug.state.result.aiReportStatus.state,
+      retryUsed: window.__heartIslandV2Debug.state.result.aiReportStatus.retryUsed,
+    }));
+    const metrics = await collectMetrics(page);
+    return {
+      name: '390x844-retry-success',
+      pass: page.__errors.length === 0
+        && page.__badResponses.length === 1
+        && page.__badResponses[0].status === 502
+        && aiReportRequestUrls.length === 2
+        && state.reportSource === 'deterministic'
+        && state.aiSource === 'ai'
+        && state.status === 'success'
+        && state.retryUsed === true
+        && metrics.horizontalOverflow === 0
+        && metrics.brokenImages === 0
+        && metrics.apiKeyLeaks === 0,
+      shots,
+      badResponses: page.__badResponses,
+      aiReportRequestUrls: [...aiReportRequestUrls],
+      state,
       metrics,
     };
   } finally {

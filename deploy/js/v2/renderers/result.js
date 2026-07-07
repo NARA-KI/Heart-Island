@@ -15,9 +15,12 @@ export function renderResult(root, {
   onDownloadShareCard,
   onCloseSharePreview,
   onExternalFeedback,
+  onRetryAiReport,
   onFeedbackChange,
 }) {
-  const { facts, report } = result;
+  const { facts } = result;
+  const report = result.deterministicReport ?? result.report;
+  const aiReport = result.aiReport ?? (result.report?.source === 'ai' ? result.report : null);
   const shareStatus = state.shareStatus ?? {};
   const aiStatus = result.aiReportStatus ?? {};
   root.innerHTML = `
@@ -37,7 +40,6 @@ export function renderResult(root, {
           </div>
           <p class="v2-note">${escapeHtml(userFacingText(facts.confidence.isCloseMatch ? facts.confidence.userMessage : '这不是准确率，而是你这次答案呈现出的主要关系倾向。'))}</p>
           ${qualityNotice(facts)}
-          ${aiReportStatus(aiStatus, debugMode)}
           <div class="v2-actions v2-actions--hero">
             <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '生成分享卡'}</button>
             <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在生成...' : '分享我的心岛'}</button>
@@ -46,6 +48,8 @@ export function renderResult(root, {
           ${sharePreview(shareStatus)}
         </div>
       </article>
+
+      ${aiReportPanel(aiStatus, aiReport)}
 
       ${section('你真正寻找的关系', report.neededRelationship)}
       ${section('你的关系内在张力', report.innerConflict)}
@@ -128,6 +132,7 @@ export function renderResult(root, {
   root.querySelector('[data-action="download-share-card"]')?.addEventListener('click', onDownloadShareCard);
   root.querySelector('[data-action="close-share-preview"]')?.addEventListener('click', onCloseSharePreview);
   root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
+  root.querySelector('[data-action="retry-ai-report"]')?.addEventListener('click', onRetryAiReport);
   root.querySelector('[data-action="restart"]')?.addEventListener('click', onRestart);
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
     field.addEventListener('input', () => onFeedbackChange?.(field.dataset.feedbackField, field.value));
@@ -164,6 +169,75 @@ function sharePreview(shareStatus) {
       </div>
     </div>
   `;
+}
+
+function aiReportPanel(status = {}, report) {
+  const state = status.state ?? 'idle';
+  if (state === 'idle' && !report) return '';
+  const retryButton = (state === 'error' || state === 'timeout') && !status.retryUsed
+    ? '<button class="v2-ghost" type="button" data-action="retry-ai-report">重新生成一次</button>'
+    : '';
+  const stateText = status.message || fallbackAiStatusMessage(state);
+  return `
+    <section class="v2-result-section v2-ai-report-panel" data-ai-report-panel data-ai-state="${escapeHtml(state)}">
+      <div class="v2-ai-report-panel__head">
+        <div>
+          <p class="v2-eyebrow">AI 个性化增强</p>
+          <h2>你的个性化关系解读</h2>
+        </div>
+        ${state === 'success' ? '<span>已生成</span>' : ''}
+      </div>
+      ${state === 'loading' ? `<p class="v2-ai-status" data-ai-state="loading">${escapeHtml(stateText)}</p>` : ''}
+      ${(state === 'error' || state === 'timeout') ? `
+        <div class="v2-ai-status" data-ai-state="${escapeHtml(state)}">
+          <p>${escapeHtml(stateText)}</p>
+          ${retryButton}
+        </div>
+      ` : ''}
+      ${state === 'success' && report ? aiReportContent(report) : ''}
+    </section>
+  `;
+}
+
+function aiReportContent(report) {
+  return `
+    <div class="v2-ai-report-content">
+      <section>
+        <h3>你在关系中的核心样子</h3>
+        <p>${escapeHtml(userFacingText(report.oneLine))}</p>
+        ${cardList([...(report.keyTraits ?? []), ...(report.strengths ?? [])].slice(0, 4))}
+      </section>
+      <section>
+        <h3>你真正需要的关系</h3>
+        <p>${escapeHtml(userFacingText(report.neededRelationship))}</p>
+        <p>${escapeHtml(userFacingText(report.misunderstoodByOthers))}</p>
+      </section>
+      <section>
+        <h3>你容易陷入的拉扯</h3>
+        <p>${escapeHtml(userFacingText(report.innerConflict))}</p>
+        ${cardList(report.repeatPatterns ?? [])}
+      </section>
+      <section>
+        <h3>可执行的关系建议</h3>
+        <div class="v2-advice-list">
+          ${(report.advice ?? []).map((item) => `
+            <article>
+              <h4>${escapeHtml(item.title)}</h4>
+              <p>${escapeHtml(item.text)}</p>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    </div>
+    <p class="v2-ai-disclaimer">${escapeHtml(report.safetyDisclaimer)}</p>
+  `;
+}
+
+function fallbackAiStatusMessage(state) {
+  if (state === 'loading') return '正在结合你的本次作答，整理一份更贴近你的关系解读...';
+  if (state === 'timeout') return '个性化解读生成时间较长，当前结果仍可正常查看。';
+  if (state === 'error') return '个性化解读暂时没有生成，当前结果仍可正常查看。';
+  return '';
 }
 
 function section(title, text) {

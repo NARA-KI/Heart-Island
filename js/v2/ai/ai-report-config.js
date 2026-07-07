@@ -1,8 +1,7 @@
-import { V2_AI_REPORT_CONFIG_PATH } from '../config.js';
+import { V2_AI_REPORT_CONFIG_PATH, V2_AI_REPORT_DEFAULT_ENDPOINT } from '../config.js';
 
-const DEFAULT_ENDPOINT = '/api/v2/ai-report';
 const EMPTY_CONFIG = Object.freeze({
-  endpoint: DEFAULT_ENDPOINT,
+  endpoint: V2_AI_REPORT_DEFAULT_ENDPOINT,
 });
 
 export async function loadAiReportConfig(fetchImpl = globalThis.fetch?.bind(globalThis)) {
@@ -21,7 +20,7 @@ export async function loadAiReportConfig(fetchImpl = globalThis.fetch?.bind(glob
 }
 
 export function normalizeAiReportConfig(config, currentLocation = globalThis.location?.href ?? 'http://127.0.0.1/') {
-  const endpoint = sanitizeAiReportEndpoint(config?.endpoint, { currentLocation }) ?? DEFAULT_ENDPOINT;
+  const endpoint = sanitizeAiReportEndpoint(config?.endpoint, { currentLocation }) ?? V2_AI_REPORT_DEFAULT_ENDPOINT;
   return { endpoint };
 }
 

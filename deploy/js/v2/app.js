@@ -1,4 +1,4 @@
-import { V2_SCORING_PROFILE } from './config.js';
+import { V2_AI_REPORT_DEFAULT_ENDPOINT, V2_SCORING_PROFILE } from './config.js';
 import { loadV2RuntimeData } from './data-loader.js';
 import { renderRoute } from './router.js';
 import { createInitialState, hydrateState, isComplete } from './state.js';
@@ -8,6 +8,7 @@ import { createV2ShareCardBlob } from './share-card.js';
 import { clearAiReportCache } from './ai/ai-report-cache.js';
 import { generateAiResultReport } from './ai/ai-report-client.js';
 import { loadAiReportConfig } from './ai/ai-report-config.js';
+import { createResultHash } from './ai/ai-report-schema.js';
 import {
   buildFeedbackUrl,
   getViewportLabel,
@@ -34,7 +35,8 @@ const debugMode = urlParams.get('debug') === '1';
 let runtime = null;
 let state = createInitialState({ pilotMode });
 let currentAiReportController = null;
-let aiReportConfig = { endpoint: '/api/v2/ai-report' };
+const attemptedAiReportHashes = new Set();
+let aiReportConfig = { endpoint: V2_AI_REPORT_DEFAULT_ENDPOINT };
 let feedbackConfig = { enabled: false, url: null };
 let sharePreviewUrl = null;
 let sharePreviewBlob = null;
@@ -81,6 +83,7 @@ function route(overrides = {}) {
     onDownloadShareCard: handleDownloadShareCard,
     onCloseSharePreview: handleCloseSharePreview,
     onExternalFeedback: handleExternalFeedback,
+    onRetryAiReport: handleRetryAiReport,
     feedbackEntry: buildFeedbackEntry(),
     debugMode,
     onFeedbackChange: handleResultFeedbackChange,
@@ -92,7 +95,7 @@ function buildFeedbackEntry() {
   if (!feedbackConfig.enabled || !feedbackConfig.url || !state.result?.facts) return null;
   const url = buildFeedbackUrl(feedbackConfig.url, {
     facts: state.result.facts,
-    report: state.result.report,
+    report: getShareReport(),
     viewport: getViewportLabel(),
   });
   if (!url) return null;
@@ -163,21 +166,32 @@ function showResult() {
   requestAiReportEnhancement();
 }
 
-function requestAiReportEnhancement() {
+function requestAiReportEnhancement(options = {}) {
   if (state.pilot?.enabled || !state.result?.facts || !state.result?.report) return;
-  if (state.result.report.source === 'ai') {
-    state.result.aiReportStatus = { state: 'success', message: '个性化解读已生成' };
+  const resultHash = createResultHash(state.result.facts);
+  const status = state.result.aiReportStatus ?? { state: 'idle', message: '' };
+  if (state.result.aiReport || state.result.report.source === 'ai') {
+    state.result.aiReport ??= state.result.report.source === 'ai' ? state.result.report : null;
+    state.result.aiReportStatus = { ...status, state: 'success', message: '个性化解读已生成', resultHash };
     persist();
     route();
     return;
   }
+  if (status.state === 'loading') return;
+  if (!options.force && attemptedAiReportHashes.has(resultHash)) return;
+  if (options.force && status.retryUsed) return;
 
   currentAiReportController?.abort();
   const controller = new AbortController();
   currentAiReportController = controller;
+  attemptedAiReportHashes.add(resultHash);
   state.result.aiReportStatus = {
     state: 'loading',
-    message: '正在结合你的15维关系倾向，整理更贴近本次作答的解读……',
+    message: options.force
+      ? '正在重新整理这份个性化关系解读...'
+      : '正在结合你的本次作答，整理一份更贴近你的关系解读...',
+    resultHash,
+    retryUsed: Boolean(status.retryUsed || options.force),
   };
   persist();
   route();
@@ -185,24 +199,41 @@ function requestAiReportEnhancement() {
   generateAiResultReport(state.result.facts, {
     endpoint: aiReportConfig.endpoint,
     signal: controller.signal,
+    force: options.force === true,
   })
     .then((entry) => {
       if (controller.signal.aborted || state.view !== 'result' || !state.result?.facts) return;
-      state.result.report = entry.report;
-      state.result.aiReportStatus = { state: 'success', message: '个性化解读已生成' };
-      persist();
-      route();
-    })
-    .catch(() => {
-      if (controller.signal.aborted || state.view !== 'result' || !state.result) return;
-      state.result.report = state.result.deterministicReport ?? state.result.report;
+      state.result.aiReport = entry.report;
+      if (state.result.report?.source === 'ai') {
+        state.result.report = state.result.deterministicReport ?? state.result.report;
+      }
       state.result.aiReportStatus = {
-        state: 'failed',
-        message: '',
+        state: 'success',
+        message: entry.fromCache ? '已恢复本次个性化解读' : '个性化解读已生成',
+        resultHash,
+        retryUsed: Boolean(status.retryUsed || options.force),
       };
       persist();
       route();
+    })
+    .catch((error) => {
+      if (controller.signal.aborted || state.view !== 'result' || !state.result) return;
+      state.result.report = state.result.deterministicReport ?? state.result.report;
+      state.result.aiReport = null;
+      state.result.aiReportStatus = {
+        state: error?.code === 'timeout' ? 'timeout' : 'error',
+        message: '个性化解读暂时没有生成，当前结果仍可正常查看。',
+        resultHash,
+        retryUsed: Boolean(status.retryUsed || options.force),
+      };
+      if (debugMode) console.warn('AI report enhancement failed', error);
+      persist();
+      route();
     });
+}
+
+function handleRetryAiReport() {
+  requestAiReportEnhancement({ force: true });
 }
 
 async function handleSaveResultImage() {
@@ -235,9 +266,10 @@ async function handleShareResult() {
 
 async function handleNativeShareResult() {
   if (!sharePreviewFile || !state.result?.facts || !state.result?.report) return;
+  const shareReport = getShareReport();
   const shareData = {
     title: '我的心岛人格',
-    text: `${state.result.facts.persona.displayName}：${state.result.report.oneLine}`,
+    text: `${state.result.facts.persona.displayName}：${shareReport.oneLine}`,
     files: [sharePreviewFile],
   };
   if (!navigator.share || !navigator.canShare?.(shareData)) {
@@ -273,15 +305,16 @@ function handleCloseSharePreview() {
 
 async function prepareSharePreview() {
   clearSharePreview();
-  sharePreviewBlob = await createV2ShareCardBlob({ facts: state.result.facts, report: state.result.report });
+  sharePreviewBlob = await createV2ShareCardBlob({ facts: state.result.facts, report: getShareReport() });
   sharePreviewUrl = URL.createObjectURL(sharePreviewBlob);
   sharePreviewFile = new File([sharePreviewBlob], `heart-island-${state.result.facts.persona.id}.png`, { type: 'image/png' });
 }
 
 function createSharePreviewStatus(message) {
+  const shareReport = getShareReport();
   const shareData = sharePreviewFile ? {
     title: '我的心岛人格',
-    text: `${state.result.facts.persona.displayName}：${state.result.report.oneLine}`,
+    text: `${state.result.facts.persona.displayName}：${shareReport.oneLine}`,
     files: [sharePreviewFile],
   } : null;
   return {
@@ -290,6 +323,10 @@ function createSharePreviewStatus(message) {
     canNativeShare: Boolean(shareData && navigator.share && navigator.canShare?.(shareData)),
     isMobile: window.innerWidth <= 720,
   };
+}
+
+function getShareReport() {
+  return state.result?.aiReport ?? state.result?.report;
 }
 
 function clearSharePreview() {

@@ -83,6 +83,14 @@ function sanitizeSavedResult(result) {
     facts: result.facts,
     deterministicReport: result.deterministicReport ?? (result.report?.source === 'deterministic' ? result.report : null),
     report: result.report,
-    aiReportStatus: result.aiReportStatus ?? { state: result.report?.source === 'ai' ? 'success' : 'idle', message: '' },
+    aiReport: result.aiReport ?? (result.report?.source === 'ai' ? result.report : null),
+    aiReportStatus: normalizeAiReportStatus(result),
   };
+}
+
+function normalizeAiReportStatus(result) {
+  const status = result.aiReportStatus;
+  if (status?.state === 'failed') return { ...status, state: 'error' };
+  if (status?.state) return status;
+  return { state: result.aiReport || result.report?.source === 'ai' ? 'success' : 'idle', message: '' };
 }
