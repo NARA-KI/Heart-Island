@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T06:40:53.622Z",
+  "generatedAt": "2026-07-07T07:10:39.999Z",
   "screenshotDir": "reports/audit-assets/v2-trusted-beta-result-core",
   "results": [
     {
@@ -22,8 +22,8 @@
       "feedback": {
         "pass": true,
         "visible": true,
-        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=375x667&prefill_viewport=375x667&hide_viewport=1",
-        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=375x667&prefill_viewport=375x667&hide_viewport=1",
+        "href": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=375x667&prefill_viewport=375x667&hide_viewport=1",
+        "openedUrl": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=375x667&prefill_viewport=375x667&hide_viewport=1",
         "clicked": true,
         "forbiddenMatches": []
       },
@@ -56,8 +56,8 @@
       "feedback": {
         "pass": true,
         "visible": true,
-        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=390x844&prefill_viewport=390x844&hide_viewport=1",
-        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=390x844&prefill_viewport=390x844&hide_viewport=1",
+        "href": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=390x844&prefill_viewport=390x844&hide_viewport=1",
+        "openedUrl": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=390x844&prefill_viewport=390x844&hide_viewport=1",
         "clicked": true,
         "forbiddenMatches": []
       },
@@ -90,8 +90,8 @@
       "feedback": {
         "pass": true,
         "visible": true,
-        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=1440x900&prefill_viewport=1440x900&hide_viewport=1",
-        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=1440x900&prefill_viewport=1440x900&hide_viewport=1",
+        "href": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=1440x900&prefill_viewport=1440x900&hide_viewport=1",
+        "openedUrl": "https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc?version=Heart+Island+v2.0+Alpha+1&prefill_version=Heart+Island+v2.0+Alpha+1&hide_version=1&persona=collector&prefill_persona=collector&hide_persona=1&promptVersion=v2-controlled-ai-report-prompt-2&prefill_promptVersion=v2-controlled-ai-report-prompt-2&hide_promptVersion=1&anonymousResultId=v2-726a2bfd&prefill_anonymousResultId=v2-726a2bfd&hide_anonymousResultId=1&aiSource=ai&prefill_aiSource=ai&hide_aiSource=1&viewport=1440x900&prefill_viewport=1440x900&hide_viewport=1",
         "clicked": true,
         "forbiddenMatches": []
       },

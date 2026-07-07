@@ -7,11 +7,13 @@ import {
 
 const currentLocation = 'http://127.0.0.1:4323/';
 const allowedOrigins = ['https://forms.example.com'];
-const feishuUrl = 'https://bcn5ylnvypio.feishu.cn/wiki/OKzkwuv8LiTeWJk2geqcQ4IRnae?table=tbldqgaEMMZ6VCMV&view=vewCPDfb1E';
+const feishuUrl = 'https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc';
 const feishuOrigin = 'https://bcn5ylnvypio.feishu.cn';
 
 assert.equal(normalizeFeedbackConfig({}, currentLocation).enabled, false, 'blank feedback config should be disabled');
 assert.equal(sanitizeFeedbackBaseUrl('javascript:alert(1)', { currentLocation }), null, 'javascript: URL should be rejected');
+assert.equal(sanitizeFeedbackBaseUrl('http://forms.example.com/form', { currentLocation }), null, 'http: URL should be rejected');
+assert.equal(sanitizeFeedbackBaseUrl('http://127.0.0.1:4323/form', { currentLocation }), null, 'localhost http: URL should be rejected');
 assert.equal(sanitizeFeedbackBaseUrl('data:text/html,hello', { currentLocation }), null, 'data: URL should be rejected');
 assert.equal(sanitizeFeedbackBaseUrl('ftp://forms.example.com/form', { currentLocation }), null, 'ftp: URL should be rejected');
 assert.equal(sanitizeFeedbackBaseUrl('https://user:pass@forms.example.com/form', { currentLocation }), null, 'credentialed URL should be rejected');
@@ -68,8 +70,7 @@ assert(!url.includes('phone'), 'feedback URL must not include phone fields');
 const feishuFeedbackUrl = buildFeedbackUrl(feishuConfig.url, { facts, report, viewport: '1440x900' });
 const feishuParsed = new URL(feishuFeedbackUrl);
 assert.equal(feishuParsed.origin, feishuOrigin);
-assert.equal(feishuParsed.searchParams.get('table'), 'tbldqgaEMMZ6VCMV');
-assert.equal(feishuParsed.searchParams.get('view'), 'vewCPDfb1E');
+assert.equal(feishuParsed.pathname, '/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc');
 assert.equal(feishuParsed.searchParams.get('prefill_version'), 'Heart Island v2.0 Alpha 1');
 assert.equal(feishuParsed.searchParams.get('prefill_persona'), 'mirror & lake');
 assert.equal(feishuParsed.searchParams.get('prefill_promptVersion'), 'v2-controlled-ai-report-prompt-2');
@@ -80,8 +81,12 @@ for (const key of ['version', 'persona', 'promptVersion', 'anonymousResultId', '
   assert.equal(feishuParsed.searchParams.get(`hide_${key}`), '1', `${key} Feishu hide flag should be present`);
 }
 assert(!feishuFeedbackUrl.includes('answers'), 'Feishu URL must not include raw answers');
+assert(!feishuFeedbackUrl.includes('responses'), 'Feishu URL must not include responses');
+assert(!feishuFeedbackUrl.includes('rawAnswers'), 'Feishu URL must not include raw answers aliases');
 assert(!feishuFeedbackUrl.includes('AI_REPORT_API_KEY'), 'Feishu URL must not include API key names');
+assert(!feishuFeedbackUrl.includes('apiKey'), 'Feishu URL must not include API key aliases');
 assert(!feishuFeedbackUrl.includes('Do not leak'), 'Feishu URL must not include full AI report text');
+assert(!feishuFeedbackUrl.includes('reportText'), 'Feishu URL must not include report text aliases');
 assert(!feishuFeedbackUrl.includes('userName'), 'Feishu URL must not include identity fields');
 
 console.log(JSON.stringify({ pass: true }, null, 2));

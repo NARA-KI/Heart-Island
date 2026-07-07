@@ -9,6 +9,8 @@ import { answersFromSameOption, loadStoredPilotAnswers } from './v2-baseline-sam
 const root = process.cwd();
 const port = Number(process.env.V2_RESULT_CORE_PORT || 4323);
 const baseUrl = `http://127.0.0.1:${port}/`;
+const officialFeedbackUrl = 'https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc';
+const officialFeedbackOrigin = 'https://bcn5ylnvypio.feishu.cn';
 const outDir = path.join(root, 'reports', 'audit-assets', 'v2-trusted-beta-result-core');
 const resultPath = path.join(root, 'reports', 'data', 'v2-trusted-beta-result-core-browser.json');
 const questionBank = readJson('data/v2/question-bank.v2.json');
@@ -54,6 +56,7 @@ if (!summary.pass) process.exitCode = 1;
 
 async function runFullFlow(browser, { label, viewport }) {
   const context = await browser.newContext({ viewport, acceptDownloads: true });
+  await mockFeishuFeedbackForm(context);
   const page = await context.newPage();
   page.setDefaultTimeout(12000);
   const consoleErrors = [];
@@ -190,16 +193,26 @@ async function verifyFeedbackLink(page, viewport) {
   assert(visible, 'feedback link should be visible when configured');
   assert(href, 'feedback link should have href');
   const url = new URL(href);
+  assert.equal(url.origin, officialFeedbackOrigin, 'feedback link should use official Feishu origin');
+  assert.equal(url.pathname, '/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc', 'feedback link should use official Feishu public form');
   const state = await page.evaluate(() => window.__heartIslandV2Debug.state);
   const params = url.searchParams;
   const forbidden = [
     'answers',
+    'responses',
+    'rawAnswers',
+    'reportText',
+    'apiKey',
     'AI_REPORT_API_KEY',
     'sk-',
     'v2-q01',
     'constructScores',
     'oneLine',
     'neededRelationship',
+    'email',
+    'phone',
+    'userName',
+    'openId',
   ];
   const forbiddenMatches = forbidden.filter((term) => href.includes(term));
   assert.equal(params.get('version'), state.result.facts.versions.productVersion);
@@ -229,6 +242,16 @@ async function verifyFeedbackLink(page, viewport) {
     clicked,
     forbiddenMatches,
   };
+}
+
+async function mockFeishuFeedbackForm(context) {
+  await context.route('https://bcn5ylnvypio.feishu.cn/**', (route) => {
+    route.fulfill({
+      status: 200,
+      contentType: 'text/html; charset=utf-8',
+      body: '<!doctype html><title>Feishu Feedback</title><main>Feishu feedback form placeholder</main>',
+    });
+  });
 }
 
 async function completeQuiz(page) {
@@ -301,11 +324,6 @@ function serveStatic() {
       response.end(JSON.stringify(feedbackConfigPayload));
       return;
     }
-    if (url.pathname === '/feedback-form') {
-      response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      response.end('<!doctype html><title>Feedback</title><main>Feedback form placeholder</main>');
-      return;
-    }
     if (url.pathname === '/api/v2/ai-report') {
       return handleAiReportRequest(request, response, {
         env: {
@@ -333,8 +351,8 @@ function serveStatic() {
 
 function createFeedbackConfig() {
   return {
-    feedbackFormUrl: `${baseUrl}feedback-form?channel=trusted-beta`,
-    allowedOrigins: [new URL(baseUrl).origin],
+    feedbackFormUrl: officialFeedbackUrl,
+    allowedOrigins: [officialFeedbackOrigin],
   };
 }
 

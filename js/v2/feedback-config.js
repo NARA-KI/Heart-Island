@@ -100,6 +100,5 @@ export function hasFeedbackClicked(storage = globalThis.localStorage) {
 
 function isSafeFeedbackProtocol(url) {
   if (url.protocol === 'https:') return true;
-  if (url.protocol !== 'http:') return false;
-  return ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
+  return false;
 }
