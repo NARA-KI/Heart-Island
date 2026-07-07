@@ -8,6 +8,8 @@ export const V2_RESULT_SCHEMA_VERSION = 'v2-trusted-beta-result-facts-1';
 export const V2_REPORT_SCHEMA_VERSION = 'v2-trusted-beta-result-report-1';
 export const V2_AI_REPORT_PROMPT_VERSION_PREVIOUS = 'v2-controlled-ai-report-prompt-1';
 export const V2_AI_REPORT_PROMPT_VERSION = 'v2-controlled-ai-report-prompt-2';
+export const V2_FEEDBACK_CONFIG_PATH = './feedback-config.json';
+export const V2_FEEDBACK_CLICKED_STORAGE_KEY = 'heart-island-v2-feedback-clicked';
 
 // Existing distribution audit uses gap <= 2.5 as the near-tie threshold.
 // Keep this as a "close result" flag only; it must not alter the final persona.

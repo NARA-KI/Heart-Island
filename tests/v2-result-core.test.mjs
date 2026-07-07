@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import {
   CONSTRUCT_LAYER_ORDER,
   CONSTRUCT_LAYERS,
+  V2_AI_REPORT_PROMPT_VERSION,
   V2_EXPECTED_CONSTRUCTS,
 } from '../js/v2/config.js';
 import { buildResult } from '../js/v2/result-engine.js';
@@ -21,6 +22,9 @@ candidateA.scoringProfile = 'candidate-a';
 
 assert.equal(sha256('data/v2/question-bank.v2.json'), manifest.questionBankHash, 'question bank hash changed');
 assert.equal(sha256('data/v2/persona-target-vectors.v2.candidate-a.json'), manifest.targetVectorHash, 'candidate-a hash changed');
+assert.equal(sha256('data/v2/manifest.json'), 'bcf9cec0a84a204b6dbfe6bf1be46483531ee1b2d087fc12ac49cf7170f5279a', 'manifest hash changed');
+assert.equal(sha256('js/v2/scoring-engine.js'), '8ff69b1249c8164c2a74f84f41e7c4b18add17780f62d8ea0767388cdfe82166', 'scoring engine hash changed');
+assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-controlled-ai-report-prompt-2', 'AI report prompt version changed');
 assert.equal(questionBank.questions.length, 60, 'question count changed');
 assert.equal(questionBank.constructs.length, 15, 'construct count changed');
 assert.equal(candidateA.personas.length, 15, 'persona count changed');

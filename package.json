@@ -23,6 +23,7 @@
     "v2:validate:pilot": "node scripts/v2-product-validation/validate-v2-pilot-readiness.mjs",
     "v2:test:result-core": "node tests/v2-result-core.test.mjs",
     "v2:test:result-core:browser": "node tests/v2-result-core-browser.mjs",
+    "v2:test:feedback": "node tests/v2-feedback-config.test.mjs",
     "v2:test:ai-report": "node tests/v2-ai-report-service.test.mjs",
     "v2:test:ai-report:browser": "node tests/v2-controlled-ai-report-browser.mjs",
     "v2:test:controlled-ai": "npm run v2:test:ai-report",

@@ -3,7 +3,7 @@ import { CONSTRUCT_LAYER_ORDER } from '../config.js';
 
 const layerOrder = CONSTRUCT_LAYER_ORDER;
 
-export function renderResult(root, { result, state, onRestart, onSaveResultImage, onShareResult, onFeedbackChange }) {
+export function renderResult(root, { result, state, feedbackEntry, onRestart, onSaveResultImage, onShareResult, onExternalFeedback, onFeedbackChange }) {
   const { facts, report } = result;
   const shareStatus = state.shareStatus ?? {};
   const aiStatus = result.aiReportStatus ?? {};
@@ -93,6 +93,7 @@ export function renderResult(root, { result, state, onRestart, onSaveResultImage
           <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>分享我的心岛</button>
           <button class="v2-ghost" type="button" data-action="restart">重新测试</button>
         </div>
+        ${externalFeedbackBlock(feedbackEntry)}
         <details class="v2-feedback-lite">
           <summary>留下结果反馈</summary>
           <label class="v2-feedback-field">
@@ -109,10 +110,22 @@ export function renderResult(root, { result, state, onRestart, onSaveResultImage
 
   root.querySelectorAll('[data-action="save-result"]').forEach((button) => button.addEventListener('click', onSaveResultImage));
   root.querySelectorAll('[data-action="share-result"]').forEach((button) => button.addEventListener('click', onShareResult));
+  root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
   root.querySelector('[data-action="restart"]')?.addEventListener('click', onRestart);
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
     field.addEventListener('input', () => onFeedbackChange?.(field.dataset.feedbackField, field.value));
   });
+}
+
+function externalFeedbackBlock(feedbackEntry) {
+  if (!feedbackEntry?.url) return '';
+  return `
+    <div class="v2-structured-feedback" data-feedback-entry>
+      <p class="v2-structured-feedback__title">测试结果准不准？用 1 分钟告诉我们</p>
+      <a class="v2-primary v2-feedback-link" href="${escapeHtml(feedbackEntry.url)}" target="_blank" rel="noopener noreferrer" data-action="external-feedback">提交测试反馈</a>
+      <p class="v2-note">匿名测试编号：<code>${escapeHtml(feedbackEntry.resultId)}</code>${feedbackEntry.clicked ? ' · 已打开过反馈入口' : ''}</p>
+    </div>
+  `;
 }
 
 function section(title, text) {

@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "href": "http://127.0.0.1:4325/feedback-form?version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=deterministic&viewport=390x844",
+  "openedUrl": "http://127.0.0.1:4325/feedback-form?version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=deterministic&viewport=390x844",
+  "consoleErrors": [],
+  "badResponses": [],
+  "metrics": {
+    "horizontalOverflow": 0,
+    "brokenImages": 0,
+    "clicked": true
+  }
+}

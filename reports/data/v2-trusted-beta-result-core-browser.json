@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T17:51:03.088Z",
+  "generatedAt": "2026-07-07T05:47:45.392Z",
   "screenshotDir": "reports/audit-assets/v2-trusted-beta-result-core",
   "results": [
     {
@@ -19,6 +19,14 @@
       "badResponses": [],
       "restoredView": "result",
       "cleared": true,
+      "feedback": {
+        "pass": true,
+        "visible": true,
+        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=375x667",
+        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=375x667",
+        "clicked": true,
+        "forbiddenMatches": []
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "smallButtons": 0,
@@ -45,6 +53,14 @@
       "badResponses": [],
       "restoredView": "result",
       "cleared": true,
+      "feedback": {
+        "pass": true,
+        "visible": true,
+        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=390x844",
+        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=390x844",
+        "clicked": true,
+        "forbiddenMatches": []
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "smallButtons": 0,
@@ -71,6 +87,14 @@
       "badResponses": [],
       "restoredView": "result",
       "cleared": true,
+      "feedback": {
+        "pass": true,
+        "visible": true,
+        "href": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=1440x900",
+        "openedUrl": "http://127.0.0.1:4323/feedback-form?channel=trusted-beta&version=Heart+Island+v2.0+Alpha+1&persona=collector&promptVersion=v2-controlled-ai-report-prompt-2&anonymousResultId=v2-726a2bfd&aiSource=ai&viewport=1440x900",
+        "clicked": true,
+        "forbiddenMatches": []
+      },
       "metrics": {
         "horizontalOverflow": 0,
         "smallButtons": 0,
@@ -86,6 +110,24 @@
       "shot": "reports/audit-assets/v2-trusted-beta-result-core/390x844-10-quality-notice.png",
       "consoleErrors": [],
       "text": "你这次的选择比较集中，结果可以先作为参考；之后也可以在不同状态下重新测试。"
+    },
+    {
+      "name": "unconfigured-feedback",
+      "pass": true,
+      "consoleErrors": [],
+      "buttonCount": 0
+    },
+    {
+      "name": "javascript-feedback-url",
+      "pass": true,
+      "consoleErrors": [],
+      "buttonCount": 0
+    },
+    {
+      "name": "disallowed-feedback-origin",
+      "pass": true,
+      "consoleErrors": [],
+      "buttonCount": 0
     }
   ],
   "pass": true

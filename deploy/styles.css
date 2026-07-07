@@ -600,6 +600,29 @@ p {
   margin-top: 18px;
 }
 
+.v2-structured-feedback {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(180, 226, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(9, 30, 48, 0.48);
+}
+
+.v2-structured-feedback__title {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.v2-feedback-link {
+  justify-self: start;
+}
+
+.v2-structured-feedback code {
+  overflow-wrap: anywhere;
+}
+
 .v2-strength {
   margin-top: 14px;
   color: var(--text-primary);
@@ -728,6 +751,10 @@ p {
   .v2-primary,
   .v2-ghost {
     width: 100%;
+  }
+
+  .v2-feedback-link {
+    justify-self: stretch;
   }
 
   .v2-result-hero,

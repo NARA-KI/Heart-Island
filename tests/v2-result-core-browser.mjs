@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -13,6 +14,7 @@ const resultPath = path.join(root, 'reports', 'data', 'v2-trusted-beta-result-co
 const questionBank = readJson('data/v2/question-bank.v2.json');
 const realAnswers = loadStoredPilotAnswers(root);
 const abnormalAnswers = answersFromSameOption(questionBank, 'A');
+let feedbackConfigPayload = createFeedbackConfig();
 
 fs.mkdirSync(outDir, { recursive: true });
 fs.mkdirSync(path.dirname(resultPath), { recursive: true });
@@ -29,6 +31,12 @@ try {
     results.push(await runFullFlow(browser, run));
   }
   results.push(await runAbnormalQualityFlow(browser));
+  results.push(await runFeedbackHiddenFlow(browser, 'unconfigured-feedback', { feedbackFormUrl: '', allowedOrigins: [] }));
+  results.push(await runFeedbackHiddenFlow(browser, 'javascript-feedback-url', { feedbackFormUrl: 'javascript:alert(1)', allowedOrigins: [] }));
+  results.push(await runFeedbackHiddenFlow(browser, 'disallowed-feedback-origin', {
+    feedbackFormUrl: 'https://evil.example.com/form',
+    allowedOrigins: ['https://forms.example.com'],
+  }));
 } finally {
   await browser.close();
   server.close();
@@ -84,6 +92,7 @@ async function runFullFlow(browser, { label, viewport }) {
     await page.locator('.v2-details summary').click();
     await page.locator('.v2-details').scrollIntoViewIfNeeded();
     shots.push(await screenshot(page, `${label}-06-evidence-expanded.png`));
+    const feedback = await verifyFeedbackLink(page, viewport);
 
     const saveDownload = page.waitForEvent('download');
     await page.locator('[data-action="save-result"]').first().click();
@@ -124,13 +133,15 @@ async function runFullFlow(browser, { label, viewport }) {
         && !metrics.text.includes('NaN')
         && !/Alpha|ALPHA|pilot|candidate-a/i.test(metrics.text)
         && restoredView === 'result'
-        && cleared,
+        && cleared
+        && feedback.pass,
       shots,
       consoleErrors,
       requestFailures,
       badResponses,
       restoredView,
       cleared,
+      feedback,
       metrics: {
         horizontalOverflow: Math.max(0, metrics.scrollWidth - metrics.innerWidth),
         smallButtons: metrics.smallButtons,
@@ -143,6 +154,91 @@ async function runFullFlow(browser, { label, viewport }) {
   } finally {
     await context.close();
   }
+}
+
+async function runFeedbackHiddenFlow(browser, name, config) {
+  feedbackConfigPayload = config;
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  page.setDefaultTimeout(12000);
+  const consoleErrors = [];
+  page.on('console', (message) => {
+    if (message.type() === 'error') consoleErrors.push(message.text());
+  });
+  page.on('pageerror', (error) => consoleErrors.push(error.message));
+  try {
+    await completeQuiz(page);
+    await page.locator('[data-action="result"]').click();
+    await page.waitForSelector('.v2-result-hero--trusted');
+    const buttonCount = await page.locator('[data-action="external-feedback"]').count();
+    return {
+      name,
+      pass: consoleErrors.length === 0 && buttonCount === 0,
+      consoleErrors,
+      buttonCount,
+    };
+  } finally {
+    await context.close();
+    feedbackConfigPayload = createFeedbackConfig();
+  }
+}
+
+async function verifyFeedbackLink(page, viewport) {
+  const link = page.locator('[data-action="external-feedback"]');
+  const visible = await link.isVisible();
+  const href = await link.getAttribute('href');
+  assert(visible, 'feedback link should be visible when configured');
+  assert(href, 'feedback link should have href');
+  const url = new URL(href);
+  const state = await page.evaluate(() => window.__heartIslandV2Debug.state);
+  const params = url.searchParams;
+  const forbidden = [
+    'answers',
+    'AI_REPORT_API_KEY',
+    'sk-',
+    'v2-q01',
+    'constructScores',
+    'oneLine',
+    'neededRelationship',
+  ];
+  const forbiddenMatches = forbidden.filter((term) => href.includes(term));
+  assert.equal(params.get('version'), state.result.facts.versions.productVersion);
+  assert.equal(params.get('persona'), state.result.facts.persona.id);
+  assert.equal(params.get('promptVersion'), 'v2-controlled-ai-report-prompt-2');
+  assert.equal(params.get('anonymousResultId'), state.result.facts.resultId);
+  assert.equal(params.get('aiSource'), state.result.report.source);
+  assert.equal(params.get('viewport'), `${viewport.width}x${viewport.height}`);
+  assert.equal(forbiddenMatches.length, 0, `feedback URL leaked forbidden context: ${forbiddenMatches.join(', ')}`);
+
+  const popupPromise = page.waitForEvent('popup');
+  await link.click();
+  const popup = await popupPromise;
+  await popup.waitForLoadState('domcontentloaded');
+  const openedUrl = popup.url();
+  await popup.close();
+  const clicked = await page.evaluate(() => localStorage.getItem('heart-island-v2-feedback-clicked') === '1');
+  return {
+    pass: openedUrl === href && clicked,
+    visible,
+    href,
+    openedUrl,
+    clicked,
+    forbiddenMatches,
+  };
+}
+
+async function completeQuiz(page) {
+  await page.goto(baseUrl, { waitUntil: 'networkidle' });
+  await page.evaluate(() => localStorage.clear());
+  await page.waitForSelector('[data-action="start"]');
+  await page.locator('[data-action="start"]').click();
+  await page.waitForSelector('[data-action="begin"]');
+  await page.locator('[data-action="begin"]').click();
+  await page.waitForSelector('.v2-option');
+  for (const [questionId, optionId] of Object.entries(realAnswers)) {
+    await page.locator(`.v2-option[data-question-id="${questionId}"][data-option-id="${optionId}"]`).click();
+  }
+  await page.waitForSelector('[data-action="result"]');
 }
 
 async function runAbnormalQualityFlow(browser) {
@@ -196,6 +292,16 @@ function serveStatic() {
   };
   const server = http.createServer((request, response) => {
     const url = new URL(request.url, baseUrl);
+    if (url.pathname === '/feedback-config.json') {
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify(feedbackConfigPayload));
+      return;
+    }
+    if (url.pathname === '/feedback-form') {
+      response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      response.end('<!doctype html><title>Feedback</title><main>Feedback form placeholder</main>');
+      return;
+    }
     if (url.pathname === '/api/v2/ai-report') {
       return handleAiReportRequest(request, response, {
         env: {
@@ -219,6 +325,13 @@ function serveStatic() {
   return new Promise((resolve) => {
     server.listen(port, '127.0.0.1', () => resolve(server));
   });
+}
+
+function createFeedbackConfig() {
+  return {
+    feedbackFormUrl: `${baseUrl}feedback-form?channel=trusted-beta`,
+    allowedOrigins: [new URL(baseUrl).origin],
+  };
 }
 
 function readJson(file) {

@@ -8,6 +8,13 @@ import { downloadResultImage, shareResultImage } from './share-card.js';
 import { clearAiReportCache } from './ai/ai-report-cache.js';
 import { generateAiResultReport } from './ai/ai-report-client.js';
 import {
+  buildFeedbackUrl,
+  getViewportLabel,
+  hasFeedbackClicked,
+  loadFeedbackConfig,
+  recordFeedbackClick,
+} from './feedback-config.js';
+import {
   buildPilotResult,
   createPilotCode,
   createPilotExportRecord,
@@ -24,6 +31,7 @@ const pilotMode = new URLSearchParams(window.location.search).get('pilot') === '
 let runtime = null;
 let state = createInitialState({ pilotMode });
 let currentAiReportController = null;
+let feedbackConfig = { enabled: false, url: null };
 
 function setBootStatus(message, mode = 'loading') {
   if (!bootStatus) return;
@@ -62,9 +70,26 @@ function route(overrides = {}) {
     onExportCsv: handlePilotExportCsv,
     onSaveResultImage: handleSaveResultImage,
     onShareResult: handleShareResult,
+    onExternalFeedback: handleExternalFeedback,
+    feedbackEntry: buildFeedbackEntry(),
     onFeedbackChange: handleResultFeedbackChange,
     ...overrides,
   });
+}
+
+function buildFeedbackEntry() {
+  if (!feedbackConfig.enabled || !feedbackConfig.url || !state.result?.facts) return null;
+  const url = buildFeedbackUrl(feedbackConfig.url, {
+    facts: state.result.facts,
+    report: state.result.report,
+    viewport: getViewportLabel(),
+  });
+  if (!url) return null;
+  return {
+    url,
+    resultId: state.result.facts.resultId,
+    clicked: hasFeedbackClicked(),
+  };
 }
 
 function startFresh() {
@@ -202,6 +227,13 @@ function handleResultFeedbackChange(field, value) {
   persist();
 }
 
+function handleExternalFeedback() {
+  recordFeedbackClick();
+  state.feedback ??= {};
+  state.feedback.externalFeedbackClickedAt = new Date().toISOString();
+  persist();
+}
+
 function handlePilotFeedbackChange(field, value) {
   if (!state.pilot?.enabled) return;
   state.pilot.feedback[field] = value;
@@ -246,7 +278,10 @@ function handlePilotExportCsv() {
 
 async function boot() {
   setBootStatus('正在加载关系倾向测试...');
-  runtime = await loadV2RuntimeData(undefined, { includePilot: pilotMode });
+  [runtime, feedbackConfig] = await Promise.all([
+    loadV2RuntimeData(undefined, { includePilot: pilotMode }),
+    loadFeedbackConfig(),
+  ]);
   runtime.candidateA.scoringProfile = V2_SCORING_PROFILE;
   if (runtime.candidateE) runtime.candidateE.scoringProfile = 'candidate-e-adaptive-hybrid';
 
@@ -290,6 +325,7 @@ async function boot() {
     exportPilotRecord: () => createPilotExportRecord({ runtime, state }),
     summarizePilotRecords,
     pilotRecordsToCsv,
+    get feedbackConfig() { return feedbackConfig; },
   };
   route();
   if (state.view === 'result' && !state.pilot?.enabled) requestAiReportEnhancement();
