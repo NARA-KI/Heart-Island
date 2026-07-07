@@ -8,6 +8,7 @@ export const V2_RESULT_SCHEMA_VERSION = 'v2-trusted-beta-result-facts-1';
 export const V2_REPORT_SCHEMA_VERSION = 'v2-trusted-beta-result-report-1';
 export const V2_AI_REPORT_PROMPT_VERSION_PREVIOUS = 'v2-controlled-ai-report-prompt-1';
 export const V2_AI_REPORT_PROMPT_VERSION = 'v2-controlled-ai-report-prompt-2';
+export const V2_AI_REPORT_CONFIG_PATH = './ai-report-config.json';
 export const V2_FEEDBACK_CONFIG_PATH = './feedback-config.json';
 export const V2_FEEDBACK_CLICKED_STORAGE_KEY = 'heart-island-v2-feedback-clicked';
 

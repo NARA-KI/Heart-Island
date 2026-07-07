@@ -4,11 +4,16 @@ import {
   normalizeFeedbackConfig,
   sanitizeFeedbackBaseUrl,
 } from '../js/v2/feedback-config.js';
+import {
+  normalizeAiReportConfig,
+  sanitizeAiReportEndpoint,
+} from '../js/v2/ai/ai-report-config.js';
 
 const currentLocation = 'http://127.0.0.1:4323/';
 const allowedOrigins = ['https://forms.example.com'];
 const feishuUrl = 'https://bcn5ylnvypio.feishu.cn/share/base/form/shrcnEXYOVL3oqm1of8RhHubJAc';
 const feishuOrigin = 'https://bcn5ylnvypio.feishu.cn';
+const cloudbaseAiEndpoint = 'https://xindao-mvp06-d9gf6ion1b76a1327-1442533234.ap-shanghai.app.tcloudbase.com/api/v2/ai-report';
 
 assert.equal(normalizeFeedbackConfig({}, currentLocation).enabled, false, 'blank feedback config should be disabled');
 assert.equal(sanitizeFeedbackBaseUrl('javascript:alert(1)', { currentLocation }), null, 'javascript: URL should be rejected');
@@ -28,6 +33,25 @@ const config = normalizeFeedbackConfig({
   allowedOrigins,
 }, currentLocation);
 assert.equal(config.enabled, true, 'allowed https feedback URL should be enabled');
+
+assert.equal(
+  normalizeAiReportConfig({ endpoint: cloudbaseAiEndpoint }, currentLocation).endpoint,
+  cloudbaseAiEndpoint,
+  'production AI config should use the full CloudBase endpoint',
+);
+assert.equal(
+  normalizeAiReportConfig({ endpoint: '/api/v2/ai-report' }, currentLocation).endpoint,
+  '/api/v2/ai-report',
+  'local AI config should support the relative endpoint',
+);
+assert.equal(sanitizeAiReportEndpoint('javascript:alert(1)', { currentLocation }), null, 'javascript: AI endpoint should be rejected');
+assert.equal(sanitizeAiReportEndpoint('data:text/html,hello', { currentLocation }), null, 'data: AI endpoint should be rejected');
+assert.equal(sanitizeAiReportEndpoint('http://evil.example.com/api/v2/ai-report', { currentLocation }), null, 'absolute http AI endpoint should be rejected');
+assert.equal(sanitizeAiReportEndpoint('https://user:pass@example.com/api/v2/ai-report', { currentLocation }), null, 'credentialed AI endpoint should be rejected');
+const productionConfigText = JSON.stringify({ endpoint: cloudbaseAiEndpoint });
+for (const secretTerm of ['AI_REPORT_API_KEY', 'apiKey', 'sk-', '.env', 'Authorization', 'Bearer']) {
+  assert.equal(productionConfigText.includes(secretTerm), false, `AI config should not contain secret marker ${secretTerm}`);
+}
 
 const feishuConfig = normalizeFeedbackConfig({
   feedbackFormUrl: feishuUrl,

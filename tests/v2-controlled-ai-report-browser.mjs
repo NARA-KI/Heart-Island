@@ -13,6 +13,7 @@ const resultPath = path.join(root, 'reports', 'data', 'v2-controlled-ai-report-b
 const realAnswers = loadStoredPilotAnswers(root);
 let mockMode = 'success';
 let mockDelayMs = '700';
+let aiReportRequestUrls = [];
 
 fs.mkdirSync(outDir, { recursive: true });
 fs.mkdirSync(path.dirname(resultPath), { recursive: true });
@@ -48,6 +49,7 @@ if (!summary.pass) process.exitCode = 1;
 async function runSuccessFlow(browser, { label, viewport }) {
   mockMode = 'success';
   mockDelayMs = '700';
+  aiReportRequestUrls = [];
   const context = await browser.newContext({ viewport, acceptDownloads: true });
   await installNativeShareMock(context);
   const page = await instrumentPage(context);
@@ -71,6 +73,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
     await page.reload({ waitUntil: 'networkidle' });
     await page.waitForSelector('.v2-ai-status[data-ai-state="success"]');
     const restoredSource = await page.evaluate(() => window.__heartIslandV2Debug.state.result.report.source);
+    const aiConfig = await page.evaluate(() => window.__heartIslandV2Debug.aiReportConfig);
     shots.push(await screenshot(page, `${label}-06-refresh-ai-restored.png`));
 
     await page.locator('[data-action="restart"]').click();
@@ -87,6 +90,9 @@ async function runSuccessFlow(browser, { label, viewport }) {
         && initialSource === 'deterministic'
         && successSource === 'ai'
         && restoredSource === 'ai'
+        && aiConfig.endpoint === '/api/v2/ai-report'
+        && aiReportRequestUrls.every((url) => url === `${baseUrl}api/v2/ai-report`)
+        && aiReportRequestUrls.length > 0
         && cacheCleared
         && sharePreview.pass
         && metrics.horizontalOverflow === 0
@@ -100,6 +106,8 @@ async function runSuccessFlow(browser, { label, viewport }) {
       initialSource,
       successSource,
       restoredSource,
+      aiConfig,
+      aiReportRequestUrls: [...aiReportRequestUrls],
       cacheCleared,
       sharePreview,
       metrics,
@@ -284,6 +292,7 @@ function serveApp() {
   const server = http.createServer((request, response) => {
     const url = new URL(request.url, baseUrl);
     if (url.pathname === '/api/v2/ai-report') {
+      aiReportRequestUrls.push(url.toString());
       return handleAiReportRequest(request, response, {
         env: {
           AI_REPORT_PROVIDER: 'mock',
@@ -294,6 +303,11 @@ function serveApp() {
           AI_REPORT_CACHE_TTL_MS: '0',
         },
       });
+    }
+    if (url.pathname === '/ai-report-config.json') {
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ endpoint: '/api/v2/ai-report' }));
+      return;
     }
     const safePath = path.normalize(url.pathname === '/' ? '/index.html' : decodeURIComponent(url.pathname)).replace(/^([/\\])+/, '');
     const filePath = path.join(root, safePath);

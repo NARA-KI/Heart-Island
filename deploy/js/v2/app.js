@@ -7,6 +7,7 @@ import { buildResult } from './result-engine.js';
 import { createV2ShareCardBlob } from './share-card.js';
 import { clearAiReportCache } from './ai/ai-report-cache.js';
 import { generateAiResultReport } from './ai/ai-report-client.js';
+import { loadAiReportConfig } from './ai/ai-report-config.js';
 import {
   buildFeedbackUrl,
   getViewportLabel,
@@ -33,6 +34,7 @@ const debugMode = urlParams.get('debug') === '1';
 let runtime = null;
 let state = createInitialState({ pilotMode });
 let currentAiReportController = null;
+let aiReportConfig = { endpoint: '/api/v2/ai-report' };
 let feedbackConfig = { enabled: false, url: null };
 let sharePreviewUrl = null;
 let sharePreviewBlob = null;
@@ -180,7 +182,10 @@ function requestAiReportEnhancement() {
   persist();
   route();
 
-  generateAiResultReport(state.result.facts, { signal: controller.signal })
+  generateAiResultReport(state.result.facts, {
+    endpoint: aiReportConfig.endpoint,
+    signal: controller.signal,
+  })
     .then((entry) => {
       if (controller.signal.aborted || state.view !== 'result' || !state.result?.facts) return;
       state.result.report = entry.report;
@@ -351,9 +356,10 @@ function handlePilotExportCsv() {
 
 async function boot() {
   setBootStatus('正在加载关系倾向测试...');
-  [runtime, feedbackConfig] = await Promise.all([
+  [runtime, feedbackConfig, aiReportConfig] = await Promise.all([
     loadV2RuntimeData(undefined, { includePilot: pilotMode }),
     loadFeedbackConfig(),
+    loadAiReportConfig(),
   ]);
   runtime.candidateA.scoringProfile = V2_SCORING_PROFILE;
   if (runtime.candidateE) runtime.candidateE.scoringProfile = 'candidate-e-adaptive-hybrid';
@@ -399,6 +405,7 @@ async function boot() {
     summarizePilotRecords,
     pilotRecordsToCsv,
     get feedbackConfig() { return feedbackConfig; },
+    get aiReportConfig() { return aiReportConfig; },
     get debugMode() { return debugMode; },
   };
   route();

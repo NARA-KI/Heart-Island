@@ -359,6 +359,11 @@ function serveStatic() {
       response.end(JSON.stringify(feedbackConfigPayload));
       return;
     }
+    if (url.pathname === '/ai-report-config.json') {
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ endpoint: '/api/v2/ai-report' }));
+      return;
+    }
     if (url.pathname === '/api/v2/ai-report') {
       return handleAiReportRequest(request, response, {
         env: {
