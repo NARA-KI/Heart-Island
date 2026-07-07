@@ -1,4 +1,6 @@
 {
-  "feedbackFormUrl": "",
-  "allowedOrigins": []
+  "feedbackFormUrl": "https://bcn5ylnvypio.feishu.cn/wiki/OKzkwuv8LiTeWJk2geqcQ4IRnae?table=tbldqgaEMMZ6VCMV&view=vewCPDfb1E",
+  "allowedOrigins": [
+    "https://bcn5ylnvypio.feishu.cn"
+  ]
 }

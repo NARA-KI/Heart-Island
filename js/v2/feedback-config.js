@@ -68,7 +68,10 @@ export function buildFeedbackUrl(baseUrl, { facts, report, viewport } = {}) {
   };
   for (const [key, value] of Object.entries(params)) {
     if (value !== undefined && value !== null && String(value).length > 0) {
-      url.searchParams.set(key, String(value));
+      const safeValue = String(value);
+      url.searchParams.set(key, safeValue);
+      url.searchParams.set(`prefill_${key}`, safeValue);
+      url.searchParams.set(`hide_${key}`, '1');
     }
   }
   return url.toString();

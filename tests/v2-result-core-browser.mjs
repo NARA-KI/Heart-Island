@@ -208,6 +208,10 @@ async function verifyFeedbackLink(page, viewport) {
   assert.equal(params.get('anonymousResultId'), state.result.facts.resultId);
   assert.equal(params.get('aiSource'), state.result.report.source);
   assert.equal(params.get('viewport'), `${viewport.width}x${viewport.height}`);
+  for (const key of ['version', 'persona', 'promptVersion', 'anonymousResultId', 'aiSource', 'viewport']) {
+    assert.equal(params.get(`prefill_${key}`), params.get(key), `${key} prefill should match canonical feedback context`);
+    assert.equal(params.get(`hide_${key}`), '1', `${key} hide flag should be present`);
+  }
   assert.equal(forbiddenMatches.length, 0, `feedback URL leaked forbidden context: ${forbiddenMatches.join(', ')}`);
 
   const popupPromise = page.waitForEvent('popup');
