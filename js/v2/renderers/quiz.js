@@ -1,19 +1,24 @@
 import { orderedOptions } from '../question-engine.js';
 import { escapeHtml } from '../utils.js';
 
+const OPTION_FEEDBACK_MS = 180;
+
 export function renderQuiz(root, { questionBank, state, onAnswer, onPrevious }) {
   const question = questionBank.questions[state.currentQuestionIndex];
   const total = questionBank.questions.length;
   const selectedOptionId = state.answers[question.id] ?? null;
   const progress = state.currentQuestionIndex + 1;
   const percent = (progress / total) * 100;
+  const stage = Math.min(5, Math.ceil(progress / Math.ceil(total / 5)));
 
   root.innerHTML = `
     <section class="v2-screen v2-quiz">
       <header class="v2-quiz__header">
-        <p class="v2-eyebrow">第 ${String(progress).padStart(2, '0')} 题</p>
+        <div class="v2-quiz__stage">
+          <p class="v2-eyebrow">航程 ${stage} / 5</p>
+          <p>${String(progress).padStart(2, '0')} / ${total}</p>
+        </div>
         <div class="v2-progress" aria-hidden="true"><span style="width:${percent}%"></span></div>
-        <p class="v2-progress-text">${progress} / ${total}</p>
       </header>
       <article class="v2-question-card">
         <h1 id="v2QuestionTitle" tabindex="-1">${escapeHtml(question.question)}</h1>
@@ -34,14 +39,23 @@ export function renderQuiz(root, { questionBank, state, onAnswer, onPrevious }) 
       </article>
       <footer class="v2-quiz__footer">
         <button class="v2-ghost" type="button" data-action="previous" ${state.currentQuestionIndex === 0 ? 'disabled' : ''}>上一题</button>
-        <p>选择一个最接近的答案后，将自动进入下一题。</p>
+        <p>选择后会自动进入下一题。</p>
       </footer>
     </section>
   `;
 
   root.querySelectorAll('.v2-option').forEach((button) => {
     button.addEventListener('click', () => {
-      onAnswer(button.dataset.questionId, button.dataset.optionId);
+      if (root.dataset.answering === 'true') return;
+      root.dataset.answering = 'true';
+      root.querySelectorAll('.v2-option').forEach((item) => {
+        item.classList.toggle('selected', item === button);
+        item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
+      });
+      window.setTimeout(() => {
+        delete root.dataset.answering;
+        onAnswer(button.dataset.questionId, button.dataset.optionId);
+      }, OPTION_FEEDBACK_MS);
     });
   });
   root.querySelector('[data-action="previous"]')?.addEventListener('click', onPrevious);

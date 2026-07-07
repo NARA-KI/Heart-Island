@@ -23,52 +23,67 @@ export function renderResult(root, {
   const aiReport = result.aiReport ?? (result.report?.source === 'ai' ? result.report : null);
   const shareStatus = state.shareStatus ?? {};
   const aiStatus = result.aiReportStatus ?? {};
+  const tags = resultTags(facts, report);
+
   root.innerHTML = `
     <section class="v2-screen v2-result">
       <article class="v2-result-hero v2-result-hero--trusted">
-        <div class="v2-result-portrait ${facts.persona.image ? '' : 'fallback'}">
-          ${facts.persona.image
-            ? `<img src="${facts.persona.image}" alt="${escapeHtml(facts.persona.displayName)}" />`
-            : `<span>${escapeHtml(facts.persona.displayName.slice(0, 1))}</span>`}
+        <div class="v2-result-portrait-shell">
+          <div class="v2-result-portrait ${facts.persona.image ? '' : 'fallback'}">
+            ${facts.persona.image
+              ? `<img src="${facts.persona.image}" alt="${escapeHtml(facts.persona.displayName)}" />`
+              : `<span>${escapeHtml(facts.persona.displayName.slice(0, 1))}</span>`}
+          </div>
         </div>
         <div class="v2-result-hero__content">
           <p class="v2-eyebrow">你的心岛人格</p>
           <h1>${escapeHtml(facts.persona.displayName)}</h1>
-          <p class="v2-hitline">${escapeHtml(report.oneLine)}</p>
-          <div class="v2-key-traits">
-            ${report.keyTraits.map((trait) => `<span>${escapeHtml(userFacingText(trait))}</span>`).join('')}
+          <div class="v2-key-traits" aria-label="人格关键词">
+            ${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}
           </div>
-          <p class="v2-note">${escapeHtml(userFacingText(facts.confidence.isCloseMatch ? facts.confidence.userMessage : '这不是准确率，而是你这次答案呈现出的主要关系倾向。'))}</p>
+          <p class="v2-hitline">${escapeHtml(userFacingText(report.oneLine))}</p>
+          <div class="v2-why-persona">
+            <span>为什么是这个人格</span>
+            <p>${escapeHtml(whyPersona(facts))}</p>
+          </div>
           ${qualityNotice(facts)}
-          <div class="v2-actions v2-actions--hero">
-            <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '生成分享卡'}</button>
-            <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在生成...' : '分享我的心岛'}</button>
-          </div>
-          ${shareStatus.message ? `<p class="v2-status-message">${escapeHtml(shareStatus.message)}</p>` : ''}
-          ${sharePreview(shareStatus)}
         </div>
       </article>
 
       ${aiReportPanel(aiStatus, aiReport)}
 
-      ${section('你真正寻找的关系', report.neededRelationship)}
-      ${section('你的关系内在张力', report.innerConflict)}
-      ${section('别人容易误解你的地方', report.misunderstoodByOthers)}
-
-      <section class="v2-result-section">
-        <h2>你带给关系的东西</h2>
-        ${cardList(report.strengths)}
+      <section class="v2-result-section v2-insight-strip">
+        <div>
+          <p class="v2-eyebrow">关系核心</p>
+          <h2>你真正寻找的回应</h2>
+          <p>${escapeHtml(userFacingText(report.neededRelationship))}</p>
+        </div>
+        <div>
+          <p class="v2-eyebrow">容易拉扯</p>
+          <h2>${escapeHtml(facts.conflicts[0]?.title ?? '关系节奏相对一致')}</h2>
+          <p>${escapeHtml(userFacingText(report.innerConflict))}</p>
+        </div>
       </section>
 
-      <section class="v2-result-section">
-        <h2>容易重复的关系模式</h2>
-        ${cardList(report.repeatPatterns)}
+      <section class="v2-result-section v2-construct-summary">
+        <div class="v2-section-heading">
+          <p class="v2-eyebrow">关系维度</p>
+          <h2>这次最突出的 3 个信号</h2>
+          <p>先看最能解释本次结果的维度，完整 15 维关系地图放在下方展开。</p>
+        </div>
+        <div class="v2-focus-constructs">
+          ${facts.topConstructs.slice(0, 3).map((item, index) => constructHighlight(item, index + 1)).join('')}
+        </div>
+        ${watchConstructs(facts)}
       </section>
 
-      <section class="v2-result-section">
-        <h2>给你的三条建议</h2>
+      <section class="v2-result-section v2-advice-section">
+        <div class="v2-section-heading">
+          <p class="v2-eyebrow">可以尝试的一件事</p>
+          <h2>把结果落到关系里</h2>
+        </div>
         <div class="v2-advice-list">
-          ${report.advice.map((item) => `
+          ${report.advice.slice(0, 2).map((item) => `
             <article>
               <h3>${escapeHtml(item.title)}</h3>
               <p>${escapeHtml(item.text)}</p>
@@ -77,40 +92,50 @@ export function renderResult(root, {
         </div>
       </section>
 
-      <section class="v2-result-section v2-map-section">
-        <h2>你的 15 维关系地图</h2>
-        <p class="v2-section-intro">雷达图显示整体轮廓，下方分组显示每个构念的具体位置。高低分不代表好坏，只表示这次答案里的驱动力强弱。</p>
-        ${radarChart(facts.constructRanking)}
-        ${constructBars(facts.constructRanking)}
-      </section>
+      <details class="v2-result-section v2-map-section">
+        <summary>
+          <span>查看完整关系地图</span>
+          <small>15 维雷达图与分层数据</small>
+        </summary>
+        <div class="v2-map-section__body">
+          <p class="v2-section-intro">雷达图保留整体轮廓；下方列表使用中文维度名和解释，分数只代表本次答案里的驱动力强弱。</p>
+          ${radarChart(facts.constructRanking)}
+          ${constructBars(facts.constructRanking)}
+        </div>
+      </details>
 
       <details class="v2-result-section v2-details">
-        <summary>为什么得到这个结果</summary>
+        <summary>
+          <span>更多判读依据</span>
+          <small>高低维度、相邻结果与免责声明</small>
+        </summary>
         <div class="v2-evidence-grid">
           <div>
             <h3>较突出的倾向</h3>
-            ${constructList(facts.topConstructs)}
+            ${constructList(facts.topConstructs.slice(0, 5))}
           </div>
           <div>
             <h3>相对没那么依赖的倾向</h3>
-            ${constructList(facts.bottomConstructs)}
+            ${constructList(facts.bottomConstructs.slice(0, 4))}
           </div>
         </div>
         <p>${escapeHtml(userFacingText(facts.confidence.userMessage))}</p>
-        ${facts.conflicts.length
-          ? `<h3>主要张力</h3>${cardList(facts.conflicts.slice(0, 3).map((item) => `${item.title}：${item.detail}`))}`
-          : '<p>这次答案里没有命中明显的高低维度张力，整体模式相对一致。</p>'}
-        ${facts.responseQuality.level !== 'normal' ? `<p>${escapeHtml(facts.responseQuality.userMessage)}</p>` : ''}
-        <p>${escapeHtml(report.safetyDisclaimer)}</p>
+        <p>${escapeHtml(userFacingText(report.misunderstoodByOthers))}</p>
+        <p class="v2-note">${escapeHtml(report.safetyDisclaimer)}</p>
       </details>
 
       <section class="v2-result-section v2-bottom-actions">
-        <h2>保存与反馈</h2>
+        <div class="v2-section-heading">
+          <p class="v2-eyebrow">保存与分享</p>
+          <h2>读完之后，再把这座心岛带走</h2>
+        </div>
         <div class="v2-actions">
-          <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>生成分享卡</button>
-          <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>分享我的心岛</button>
+          <button class="v2-primary" type="button" data-action="save-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'save' ? '正在生成...' : '生成分享卡'}</button>
+          <button class="v2-ghost" type="button" data-action="share-result" ${shareStatus.loading ? 'disabled' : ''}>${shareStatus.loading === 'share' ? '正在生成...' : '分享我的心岛'}</button>
           <button class="v2-ghost" type="button" data-action="restart">重新测试</button>
         </div>
+        ${shareStatus.message ? `<p class="v2-status-message">${escapeHtml(shareStatus.message)}</p>` : ''}
+        ${sharePreview(shareStatus)}
         ${externalFeedbackBlock(feedbackEntry, debugMode)}
         <details class="v2-feedback-lite">
           <summary>留下结果反馈</summary>
@@ -120,8 +145,8 @@ export function renderResult(root, {
           </label>
           <p class="v2-note">反馈只保存在当前浏览器，用于你自己记录测试感受。</p>
         </details>
+        <p class="v2-ai-disclaimer">个性化文字由 AI 辅助生成；评分、维度和人格结果由固定规则计算。</p>
         <p class="v2-note">${escapeHtml(report.safetyDisclaimer)}</p>
-        <p class="v2-ai-disclaimer">个性化文字由AI辅助生成，评分、维度和人格结果由固定规则计算。</p>
       </section>
     </section>
   `;
@@ -182,12 +207,17 @@ function aiReportPanel(status = {}, report) {
     <section class="v2-result-section v2-ai-report-panel" data-ai-report-panel data-ai-state="${escapeHtml(state)}">
       <div class="v2-ai-report-panel__head">
         <div>
-          <p class="v2-eyebrow">AI 个性化增强</p>
+          <p class="v2-eyebrow">心岛为你写下</p>
           <h2>你的个性化关系解读</h2>
         </div>
         ${state === 'success' ? '<span>已生成</span>' : ''}
       </div>
-      ${state === 'loading' ? `<p class="v2-ai-status" data-ai-state="loading">${escapeHtml(stateText)}</p>` : ''}
+      ${state === 'loading' ? `
+        <div class="v2-ai-status" data-ai-state="loading">
+          <span class="v2-sea-line" aria-hidden="true"></span>
+          <p>${escapeHtml(stateText)}</p>
+        </div>
+      ` : ''}
       ${(state === 'error' || state === 'timeout') ? `
         <div class="v2-ai-status" data-ai-state="${escapeHtml(state)}">
           <p>${escapeHtml(stateText)}</p>
@@ -200,52 +230,94 @@ function aiReportPanel(status = {}, report) {
 }
 
 function aiReportContent(report) {
+  const traits = [...(report.keyTraits ?? []), ...(report.strengths ?? [])].slice(0, 3);
+  const advice = (report.advice ?? []).slice(0, 1);
   return `
     <div class="v2-ai-report-content">
+      <blockquote>${escapeHtml(userFacingText(report.oneLine))}</blockquote>
       <section>
-        <h3>你在关系中的核心样子</h3>
-        <p>${escapeHtml(userFacingText(report.oneLine))}</p>
-        ${cardList([...(report.keyTraits ?? []), ...(report.strengths ?? [])].slice(0, 4))}
+        <h3>你在关系里的样子</h3>
+        ${inlineTextList(traits)}
       </section>
       <section>
-        <h3>你真正需要的关系</h3>
+        <h3>你真正需要的回应</h3>
         <p>${escapeHtml(userFacingText(report.neededRelationship))}</p>
         <p>${escapeHtml(userFacingText(report.misunderstoodByOthers))}</p>
       </section>
       <section>
         <h3>你容易陷入的拉扯</h3>
         <p>${escapeHtml(userFacingText(report.innerConflict))}</p>
-        ${cardList(report.repeatPatterns ?? [])}
+        ${inlineTextList(report.repeatPatterns ?? [])}
       </section>
-      <section>
-        <h3>可执行的关系建议</h3>
-        <div class="v2-advice-list">
-          ${(report.advice ?? []).map((item) => `
-            <article>
+      ${advice.length ? `
+        <section>
+          <h3>你可以尝试的一件事</h3>
+          ${advice.map((item) => `
+            <article class="v2-ai-advice">
               <h4>${escapeHtml(item.title)}</h4>
               <p>${escapeHtml(item.text)}</p>
             </article>
           `).join('')}
-        </div>
-      </section>
+        </section>
+      ` : ''}
     </div>
     <p class="v2-ai-disclaimer">${escapeHtml(report.safetyDisclaimer)}</p>
   `;
 }
 
 function fallbackAiStatusMessage(state) {
-  if (state === 'loading') return '正在结合你的本次作答，整理一份更贴近你的关系解读...';
+  if (state === 'loading') return '正在结合你的本次作答，整理一份更贴近你的关系侧写...';
   if (state === 'timeout') return '个性化解读生成时间较长，当前结果仍可正常查看。';
   if (state === 'error') return '个性化解读暂时没有生成，当前结果仍可正常查看。';
   return '';
 }
 
-function section(title, text) {
+function resultTags(facts, report) {
+  return unique([
+    ...(facts.persona.keywords ?? []),
+    ...(report.keyTraits ?? []).map((item) => String(item).split(/[，。；、]/)[0]),
+    ...facts.topConstructs.map((item) => item.label),
+  ]).slice(0, 3);
+}
+
+function whyPersona(facts) {
+  const constructs = facts.topConstructs.slice(0, 3).map((item) => item.label).join('、');
+  const confidence = facts.confidence.isCloseMatch
+    ? '同时接近相邻类型，所以更适合作为主要关系倾向参考。'
+    : '主导倾向相对清晰。';
+  return `本次答案里，${constructs}最能解释你的关系节奏；${confidence}`;
+}
+
+function constructHighlight(item, index) {
   return `
-    <section class="v2-result-section">
-      <h2>${escapeHtml(title)}</h2>
-      <p>${escapeHtml(userFacingText(text))}</p>
-    </section>
+    <article class="v2-construct-highlight">
+      <span>${String(index).padStart(2, '0')}</span>
+      <h3>${escapeHtml(item.label)}</h3>
+      <p>${escapeHtml(item.explanation)}</p>
+      <div class="v2-score-bar" aria-label="${escapeHtml(item.label)} ${item.score}">
+        <i style="width:${item.score}%"></i>
+      </div>
+    </article>
+  `;
+}
+
+function watchConstructs(facts) {
+  const items = facts.conflicts.length
+    ? facts.conflicts.slice(0, 2).map((item) => ({
+      title: item.title,
+      text: item.detail || item.summary,
+    }))
+    : facts.bottomConstructs.slice(0, 1).map((item) => ({
+      title: `${item.label}相对较低`,
+      text: item.explanation,
+    }));
+  return `
+    <div class="v2-watch-constructs">
+      <h3>需要留意的关系拉扯</h3>
+      ${items.map((item) => `
+        <p><strong>${escapeHtml(item.title)}</strong>${escapeHtml(userFacingText(item.text))}</p>
+      `).join('')}
+    </div>
   `;
 }
 
@@ -254,17 +326,10 @@ function qualityNotice(facts) {
   return `<p class="v2-quality-notice">${escapeHtml(facts.responseQuality.userMessage)}</p>`;
 }
 
-function aiReportStatus(status, debugMode) {
-  if (!debugMode) return '';
-  if (!status?.state || status.state === 'idle') return '';
-  const label = status.message || (status.state === 'success'
-    ? '个性化解读已生成'
-    : '当前使用稳定版关系解读，结果内容不受影响。');
-  return `<p class="v2-ai-status" data-ai-state="${escapeHtml(status.state)}">${escapeHtml(label)}</p>`;
-}
-
-function cardList(items) {
-  return `<div class="v2-card-list">${items.map((item) => `<p>${escapeHtml(userFacingText(item))}</p>`).join('')}</div>`;
+function inlineTextList(items) {
+  const list = (items ?? []).filter(Boolean);
+  if (!list.length) return '';
+  return `<div class="v2-card-list v2-card-list--plain">${list.map((item) => `<p>${escapeHtml(userFacingText(item))}</p>`).join('')}</div>`;
 }
 
 function constructList(items) {
@@ -274,7 +339,7 @@ function constructList(items) {
 function radarChart(constructs) {
   const sorted = [...constructs].sort((a, b) => layerOrder.indexOf(a.layer) - layerOrder.indexOf(b.layer) || a.code.localeCompare(b.code));
   const center = 120;
-  const maxRadius = 92;
+  const maxRadius = 90;
   const points = sorted.map((item, index) => {
     const angle = (-90 + (360 / sorted.length) * index) * (Math.PI / 180);
     const radius = (item.score / 100) * maxRadius;
@@ -282,14 +347,14 @@ function radarChart(constructs) {
       ...item,
       x: center + Math.cos(angle) * radius,
       y: center + Math.sin(angle) * radius,
-      lx: center + Math.cos(angle) * (maxRadius + 16),
-      ly: center + Math.sin(angle) * (maxRadius + 16),
+      lx: center + Math.cos(angle) * (maxRadius + 18),
+      ly: center + Math.sin(angle) * (maxRadius + 18),
     };
   });
   const rings = [25, 50, 75, 100].map((value) => `<circle cx="${center}" cy="${center}" r="${(value / 100) * maxRadius}" />`).join('');
   const axes = points.map((point) => `<line x1="${center}" y1="${center}" x2="${point.lx}" y2="${point.ly}" />`).join('');
   const polygon = points.map((point) => `${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(' ');
-  const labels = points.map((point) => `<text x="${point.lx.toFixed(2)}" y="${point.ly.toFixed(2)}">${escapeHtml(point.code)}</text>`).join('');
+  const labels = points.map((point) => `<text x="${point.lx.toFixed(2)}" y="${point.ly.toFixed(2)}">${escapeHtml(point.label)}</text>`).join('');
   return `
     <div class="v2-radar-wrap" role="img" aria-label="15 维关系地图雷达图">
       <svg class="v2-radar" viewBox="0 0 240 240" aria-hidden="true">
@@ -315,11 +380,11 @@ function constructBars(constructs) {
           ${group.items.map((item) => `
             <div class="v2-construct-row">
               <div>
-                <span>${escapeHtml(item.label)}</span>
+                <span>${escapeHtml(item.label)} <em>${escapeHtml(item.code)}</em></span>
                 <small>${escapeHtml(item.explanation)}</small>
               </div>
               <div class="v2-score-bar" aria-label="${escapeHtml(item.label)} ${item.score}">
-                <span style="width:${item.score}%"></span>
+                <i style="width:${item.score}%"></i>
               </div>
               <strong>${Math.round(item.score)}</strong>
             </div>
@@ -330,8 +395,19 @@ function constructBars(constructs) {
   `;
 }
 
+function unique(items) {
+  const seen = new Set();
+  return items
+    .map((item) => String(item ?? '').trim())
+    .filter((item) => {
+      if (!item || seen.has(item)) return false;
+      seen.add(item);
+      return true;
+    });
+}
+
 function userFacingText(value) {
   return String(value ?? '')
     .replace('结果接近相邻类型，说明你的关系节奏可能会随情境切换。', '这次结果更适合作为主要关系倾向参考。')
-    .replace('你的结果同时靠近另一种关系倾向，这意味着你在不同情境下可能呈现出两种相邻模式。', '这次结果更适合作为主要关系倾向参考。');
+    .replace('你的结果同时靠近另一种关系倾向，这意味着你在不同情境下可能会呈现出两种相邻模式。', '这次结果更适合作为主要关系倾向参考。');
 }
