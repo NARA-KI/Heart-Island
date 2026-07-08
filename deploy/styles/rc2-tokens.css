@@ -1,0 +1,29 @@
+[data-visual-theme="rc2"] {
+  --rc2-paper: #f1ece3;
+  --rc2-paper-soft: #e5ddd1;
+  --rc2-paper-deep: #d5cabc;
+  --rc2-pearl: #f8f3ea;
+  --rc2-ink: #18272b;
+  --rc2-ink-soft: #344449;
+  --rc2-ink-muted: #68777a;
+  --rc2-text-primary: #243236;
+  --rc2-text-secondary: #4f5f62;
+  --rc2-text-muted: #6f7b7d;
+  --rc2-text-faint: #7f8a8b;
+  --rc2-ocean-night: #101b20;
+  --rc2-ocean-deep: #071116;
+  --rc2-ocean-mist: #456b6c;
+  --rc2-sea-salt: #6f9994;
+  --rc2-copper: #a97950;
+  --rc2-copper-light: #c5a07a;
+  --rc2-focus: #2f6f73;
+  --rc2-line-light: rgba(24, 39, 43, 0.14);
+  --rc2-paper-line: rgba(36, 50, 54, 0.14);
+  --rc2-line-dark: rgba(238, 231, 220, 0.14);
+  --rc2-text-on-dark: #eee7dc;
+  --rc2-text-on-light: #243236;
+  --rc2-serif: "Songti SC", "STSong", "Noto Serif SC", serif;
+  --rc2-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --rc2-max: 1180px;
+  --rc2-gutter: clamp(22px, 5vw, 72px);
+}

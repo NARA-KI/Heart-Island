@@ -1,0 +1,181 @@
+[data-visual-theme="rc2"] .v2-quiz {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  max-width: none;
+  min-height: 100dvh;
+  margin: 0;
+  padding: calc(28px + env(safe-area-inset-top, 0px)) var(--rc2-gutter) calc(28px + env(safe-area-inset-bottom, 0px));
+  background:
+    linear-gradient(90deg, rgba(169, 121, 80, 0.08), transparent 36%),
+    var(--rc2-paper);
+  color: var(--rc2-text-on-light);
+}
+
+[data-visual-theme="rc2"] .v2-quiz__header {
+  display: grid;
+  width: min(var(--rc2-max), 100%);
+  margin: 0 auto;
+  gap: 10px;
+  padding: 0;
+}
+
+[data-visual-theme="rc2"] .v2-quiz__stage {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: end;
+}
+
+[data-visual-theme="rc2"] .v2-quiz__stage::before {
+  content: "HEART ISLAND / RELATIONSHIP LOG";
+  color: var(--rc2-ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+[data-visual-theme="rc2"] .v2-quiz__stage p {
+  margin: 0;
+  color: var(--rc2-ink-muted);
+  font-size: 12px;
+}
+
+[data-visual-theme="rc2"] .v2-quiz__stage .v2-eyebrow {
+  grid-column: 1 / 2;
+  grid-row: 2;
+  color: var(--rc2-ink-muted);
+}
+
+[data-visual-theme="rc2"] .v2-progress {
+  display: none;
+}
+
+[data-visual-theme="rc2"] .v2-question-card {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(42px, 8vw, 104px);
+  align-self: center;
+  width: min(var(--rc2-max), 100%);
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+[data-visual-theme="rc2"] .v2-question-card::before {
+  align-self: stretch;
+  border-right: 1px solid var(--rc2-line-light);
+  padding: clamp(30px, 7vw, 96px) clamp(22px, 4vw, 58px) 0 0;
+  color: var(--rc2-copper);
+  content: attr(data-question-number);
+  font-family: var(--rc2-serif);
+  font-size: clamp(58px, 9vw, 118px);
+  line-height: 0.9;
+}
+
+[data-visual-theme="rc2"] .v2-question-card h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--rc2-ink);
+  font-family: var(--rc2-serif);
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+[data-visual-theme="rc2"] .v2-options {
+  display: grid;
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--rc2-line-light);
+}
+
+[data-visual-theme="rc2"] .v2-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  min-height: 62px;
+  border: 0;
+  border-bottom: 1px solid var(--rc2-line-light);
+  border-radius: 0;
+  padding: 18px 0;
+  background: transparent;
+  color: var(--rc2-ink-soft);
+  font-size: 17px;
+  line-height: 1.65;
+  box-shadow: none;
+  transition: background 140ms ease, color 140ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[data-visual-theme="rc2"] .v2-option__letter {
+  color: var(--rc2-copper);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+[data-visual-theme="rc2"] .v2-option:hover {
+  background: linear-gradient(90deg, rgba(169, 121, 80, 0.08), transparent 64%);
+  outline: none;
+  outline-offset: 0;
+}
+
+[data-visual-theme="rc2"] .v2-option:focus {
+  outline: none;
+}
+
+[data-visual-theme="rc2"] .v2-option:focus-visible {
+  outline: 2px solid rgba(47, 111, 115, 0.62);
+  outline-offset: 4px;
+}
+
+[data-visual-theme="rc2"] .v2-option.selected:focus-visible {
+  outline-color: rgba(169, 121, 80, 0.48);
+}
+
+[data-visual-theme="rc2"] .v2-option.selected {
+  color: var(--rc2-ink);
+  background: linear-gradient(90deg, rgba(111, 153, 148, 0.17), rgba(111, 153, 148, 0.04) 68%, transparent);
+  box-shadow: none;
+  transform: none;
+}
+
+[data-visual-theme="rc2"] .v2-option.selected::before {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 0;
+  width: 2px;
+  content: "";
+  background: var(--rc2-sea-salt);
+}
+
+[data-visual-theme="rc2"] .v2-option.selected::after {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  content: "";
+  background: var(--rc2-copper);
+  transform: translateY(-50%);
+}
+
+[data-visual-theme="rc2"] .v2-option.selected .v2-option__letter {
+  color: var(--rc2-sea-salt);
+}
+
+[data-visual-theme="rc2"] .v2-quiz__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(var(--rc2-max), 100%);
+  margin: 20px auto 0;
+  color: var(--rc2-ink-muted);
+  font-size: 13px;
+}
