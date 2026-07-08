@@ -5,6 +5,7 @@
   min-height: 100dvh;
   padding: 0;
   background: var(--rc2-paper);
+  color: var(--rc2-text-primary);
 }
 
 [data-visual-theme="rc2"] .v2-result-hero {
@@ -116,7 +117,7 @@
   margin: 0 auto;
   padding: clamp(42px, 7vw, 78px) var(--rc2-gutter);
   background: var(--rc2-paper);
-  color: var(--rc2-text-on-light);
+  color: var(--rc2-text-primary);
 }
 
 [data-visual-theme="rc2"] .v2-ai-report-panel {
@@ -129,16 +130,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  border-top: 1px solid var(--rc2-line-light);
-  border-bottom: 1px solid var(--rc2-line-light);
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
+  gap: 18px;
+  margin-bottom: 28px;
+  border-top: 1px solid rgba(169, 121, 80, 0.28);
+  border-bottom: 1px solid var(--rc2-paper-line);
+  padding: 14px 0;
 }
 
 [data-visual-theme="rc2"] .v2-restore-notice p {
   margin: 0;
-  color: var(--rc2-ink-soft);
+  color: var(--rc2-text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+[data-visual-theme="rc2"] .v2-restore-notice .v2-ghost {
+  min-height: 44px;
+  color: var(--rc2-text-secondary);
+  font-size: 13px;
 }
 
 [data-visual-theme="rc2"] .v2-ai-report-panel::before {
@@ -179,11 +188,25 @@
 }
 
 [data-visual-theme="rc2"] .v2-ai-status {
-  margin-top: 28px;
+  margin-top: 30px;
   border: 0;
   padding: 0;
   background: transparent;
-  color: var(--rc2-ink-soft);
+  color: var(--rc2-text-secondary);
+}
+
+[data-visual-theme="rc2"] .v2-ai-status h3 {
+  margin: 0;
+  color: var(--rc2-text-primary);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+[data-visual-theme="rc2"] .v2-ai-status p {
+  margin: 0;
+  color: var(--rc2-text-secondary);
+  font-size: 15px;
+  line-height: 1.85;
 }
 
 [data-visual-theme="rc2"] .v2-ai-report-content {
@@ -194,7 +217,7 @@
 }
 
 [data-visual-theme="rc2"] .v2-ai-report-content::before {
-  color: var(--rc2-ink-muted);
+  color: var(--rc2-text-muted);
   content: "01 / RELATION POSTURE\A 02 / NEEDED RESPONSE\A 03 / REPEATED TENSION\A 04 / SMALL ACTION";
   white-space: pre-line;
   font-size: 12px;
@@ -208,7 +231,7 @@
   border: 0;
   border-bottom: 1px solid var(--rc2-line-light);
   padding: 0 0 30px;
-  color: var(--rc2-ink-soft);
+  color: var(--rc2-text-secondary);
   font-family: var(--rc2-serif);
   font-size: clamp(21px, 3vw, 34px);
   line-height: 1.75;
@@ -236,7 +259,7 @@
 [data-visual-theme="rc2"] .v2-ai-report-content p,
 [data-visual-theme="rc2"] .v2-ai-action-list span {
   margin: 0;
-  color: var(--rc2-ink-soft);
+  color: var(--rc2-text-secondary);
   font-size: 17px;
   line-height: 1.95;
 }
@@ -276,12 +299,13 @@
 }
 
 [data-visual-theme="rc2"] .v2-section-heading p,
+[data-visual-theme="rc2"] .v2-insight-strip p:not(.v2-eyebrow),
 [data-visual-theme="rc2"] .v2-construct-highlight p,
 [data-visual-theme="rc2"] .v2-watch-constructs p,
 [data-visual-theme="rc2"] .v2-advice-list p,
 [data-visual-theme="rc2"] .v2-details p,
 [data-visual-theme="rc2"] .v2-section-intro {
-  color: var(--rc2-ink-soft);
+  color: var(--rc2-text-secondary);
   line-height: 1.85;
 }
 
@@ -299,7 +323,7 @@
 
 [data-visual-theme="rc2"] .v2-map-section summary small,
 [data-visual-theme="rc2"] .v2-details summary small {
-  color: var(--rc2-ink-muted);
+  color: var(--rc2-text-muted);
 }
 
 [data-visual-theme="rc2"] .v2-map-section__body,
@@ -324,6 +348,11 @@
   border-bottom: 1px solid var(--rc2-line-light);
   border-radius: 0;
   background: transparent;
+  color: var(--rc2-text-primary);
+}
+
+[data-visual-theme="rc2"] .v2-construct-row small {
+  color: var(--rc2-text-secondary);
 }
 
 [data-visual-theme="rc2"] .v2-construct-row em {

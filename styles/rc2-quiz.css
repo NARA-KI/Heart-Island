@@ -107,6 +107,7 @@
   line-height: 1.65;
   box-shadow: none;
   transition: background 140ms ease, color 140ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 [data-visual-theme="rc2"] .v2-option__letter {
@@ -118,11 +119,21 @@
 
 [data-visual-theme="rc2"] .v2-option:hover {
   background: linear-gradient(90deg, rgba(169, 121, 80, 0.08), transparent 64%);
+  outline: none;
+  outline-offset: 0;
+}
+
+[data-visual-theme="rc2"] .v2-option:focus {
+  outline: none;
 }
 
 [data-visual-theme="rc2"] .v2-option:focus-visible {
-  outline: 1px solid rgba(111, 153, 148, 0.32);
-  outline-offset: -2px;
+  outline: 2px solid rgba(47, 111, 115, 0.62);
+  outline-offset: 4px;
+}
+
+[data-visual-theme="rc2"] .v2-option.selected:focus-visible {
+  outline-color: rgba(169, 121, 80, 0.48);
 }
 
 [data-visual-theme="rc2"] .v2-option.selected {

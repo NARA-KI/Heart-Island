@@ -50,16 +50,7 @@ export function renderResult(root, {
         </div>
       </article>
 
-      ${state.restoreNotice ? `
-        <section class="v2-result-section v2-restore-notice">
-          <p>${escapeHtml(state.restoreNotice)}</p>
-          <div class="v2-actions">
-            <a class="v2-ghost" href="#app">继续查看</a>
-          </div>
-        </section>
-      ` : ''}
-
-      ${aiReportPanel(aiStatus, aiReport)}
+      ${aiReportPanel(aiStatus, aiReport, state.restoreNotice)}
 
       <section class="v2-result-section v2-insight-strip">
         <div>
@@ -167,6 +158,7 @@ export function renderResult(root, {
   root.querySelector('[data-action="close-share-preview"]')?.addEventListener('click', onCloseSharePreview);
   root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
   root.querySelector('[data-action="retry-ai-report"]')?.addEventListener('click', onRetryAiReport);
+  root.querySelector('[data-action="restart-from-restore"]')?.addEventListener('click', onRestart);
   root.querySelectorAll('[data-action="restart"]').forEach((button) => button.addEventListener('click', onRestart));
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
     field.addEventListener('input', () => onFeedbackChange?.(field.dataset.feedbackField, field.value));
@@ -205,7 +197,7 @@ function sharePreview(shareStatus) {
   `;
 }
 
-function aiReportPanel(status = {}, report) {
+function aiReportPanel(status = {}, report, restoreNotice = '') {
   const state = status.state ?? 'idle';
   if (state === 'idle' && !report) return '';
   const retryButton = (state === 'error' || state === 'timeout') && !status.retryUsed
@@ -214,6 +206,15 @@ function aiReportPanel(status = {}, report) {
   const stateText = status.message || fallbackAiStatusMessage(state);
   return `
     <section class="v2-result-section v2-ai-report-panel" data-ai-report-panel data-ai-state="${escapeHtml(state)}">
+      ${restoreNotice ? `
+        <div class="v2-restore-notice">
+          <p>${escapeHtml(restoreNotice)}</p>
+          <div class="v2-actions">
+            <a class="v2-ghost" href="#app">继续查看</a>
+            <button class="v2-ghost" type="button" data-action="restart-from-restore">重新测试</button>
+          </div>
+        </div>
+      ` : ''}
       <div class="v2-ai-report-panel__head">
         <div>
           <p class="v2-eyebrow">心岛为你写下</p>
@@ -224,11 +225,13 @@ function aiReportPanel(status = {}, report) {
       ${state === 'loading' ? `
         <div class="v2-ai-status" data-ai-state="loading">
           <span class="v2-sea-line" aria-hidden="true"></span>
-          <p>${escapeHtml(stateText)}</p>
+          <h3>正在整理你的个性化关系解读</h3>
+          <p>${escapeHtml(stateText)} 你可以先继续查看下方确定性结果，通常约 10 秒后完成。</p>
         </div>
       ` : ''}
       ${(state === 'error' || state === 'timeout') ? `
         <div class="v2-ai-status" data-ai-state="${escapeHtml(state)}">
+          <h3>${state === 'timeout' ? '个性化解读生成时间较长' : '个性化解读暂时没有生成'}</h3>
           <p>${escapeHtml(stateText)}</p>
           ${retryButton}
         </div>

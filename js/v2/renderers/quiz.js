@@ -45,6 +45,9 @@ export function renderQuiz(root, { questionBank, state, onAnswer, onPrevious }) 
   `;
 
   root.querySelectorAll('.v2-option').forEach((button) => {
+    button.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'mouse') button.dataset.pointerInput = 'true';
+    });
     button.addEventListener('click', () => {
       if (root.dataset.answering === 'true') return;
       root.dataset.answering = 'true';
@@ -52,6 +55,11 @@ export function renderQuiz(root, { questionBank, state, onAnswer, onPrevious }) 
         item.classList.toggle('selected', item === button);
         item.setAttribute('aria-pressed', item === button ? 'true' : 'false');
       });
+      if (button.dataset.pointerInput === 'true') {
+        document.activeElement?.blur?.();
+        button.blur();
+        delete button.dataset.pointerInput;
+      }
       window.setTimeout(() => {
         delete root.dataset.answering;
         onAnswer(button.dataset.questionId, button.dataset.optionId);

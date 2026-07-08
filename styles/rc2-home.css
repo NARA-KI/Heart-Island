@@ -36,7 +36,7 @@
   content: "";
   background:
     linear-gradient(90deg, rgba(7, 17, 22, 0.88), rgba(7, 17, 22, 0.45) 46%, rgba(7, 17, 22, 0.18)),
-    linear-gradient(180deg, rgba(7, 17, 22, 0.1), rgba(7, 17, 22, 0.86));
+    linear-gradient(180deg, rgba(7, 17, 22, 0.08), rgba(7, 17, 22, 0.72) 58%, rgba(7, 17, 22, 0.94));
 }
 
 [data-visual-theme="rc2"] .v2-loading-route {

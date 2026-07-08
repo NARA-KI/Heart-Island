@@ -4,13 +4,18 @@
     font-size: 11px;
   }
 
+  [data-visual-theme="rc2"] #bootStatus {
+    font-size: 9px;
+    opacity: 0.5;
+  }
+
   [data-visual-theme="rc2"] .v2-home {
     grid-template-rows: auto 1fr;
   }
 
   [data-visual-theme="rc2"] .v2-home__visual,
   [data-visual-theme="rc2"] .v2-loading-scene {
-    height: 52dvh;
+    height: 50dvh;
     inset: 0 0 auto;
   }
 
@@ -22,8 +27,14 @@
   [data-visual-theme="rc2"] .v2-home::before,
   [data-visual-theme="rc2"] .v2-loading-panel::before {
     background:
-      linear-gradient(180deg, rgba(7, 17, 22, 0.12), rgba(7, 17, 22, 0.35) 38%, rgba(7, 17, 22, 0.96) 61%, rgba(7, 17, 22, 1)),
+      linear-gradient(180deg, rgba(7, 17, 22, 0.12), rgba(7, 17, 22, 0.34) 34%, rgba(7, 17, 22, 0.9) 54%, rgba(7, 17, 22, 1)),
       linear-gradient(90deg, rgba(7, 17, 22, 0.2), rgba(7, 17, 22, 0.06));
+  }
+
+  [data-visual-theme="rc2"] .v2-loading-panel {
+    align-content: start;
+    padding-top: calc(50dvh + 44px);
+    padding-bottom: calc(38px + env(safe-area-inset-bottom, 0px));
   }
 
   [data-visual-theme="rc2"] .v2-home__content {
