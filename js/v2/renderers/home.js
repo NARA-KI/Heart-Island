@@ -2,8 +2,8 @@ export function renderHome(root, { onStart, onContinue, hasDraft, restoreNotice 
   root.innerHTML = `
     <section class="v2-screen v2-home">
       <div class="v2-home__visual" aria-hidden="true">
-        <div class="v2-island"></div>
-        <div class="v2-route"></div>
+        <img src="./assets/result/voyage.webp" alt="" />
+        <span class="v2-route"></span>
       </div>
       <div class="v2-home__content">
         <p class="v2-eyebrow">恋爱关系倾向测试</p>

@@ -123,36 +123,29 @@ button:disabled {
 
 .v2-home__visual {
   position: relative;
+  height: clamp(180px, 26vh, 300px);
   min-height: 190px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-card);
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(185, 231, 255, 0.18), transparent 46%),
-    url("./assets/result/common-bg.webp") center / cover,
-    linear-gradient(160deg, rgba(15, 48, 72, 0.96), rgba(2, 8, 18, 0.96));
+  background: rgba(2, 8, 18, 0.96);
   box-shadow: var(--shadow-soft);
+}
+
+.v2-home__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
 }
 
 .v2-home__visual::after {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, transparent 0%, rgba(4, 11, 20, 0.72) 100%);
-}
-
-.v2-island {
-  position: absolute;
-  right: 12%;
-  bottom: 15%;
-  z-index: 1;
-  width: 150px;
-  height: 52px;
-  border-radius: 50%;
   background:
-    radial-gradient(ellipse at 50% 20%, rgba(232, 247, 255, 0.42), transparent 48%),
-    linear-gradient(180deg, rgba(48, 104, 124, 0.72), rgba(11, 36, 46, 0.95));
-  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.42));
+    linear-gradient(180deg, rgba(4, 11, 20, 0.1), rgba(4, 11, 20, 0.48)),
+    linear-gradient(90deg, rgba(4, 11, 20, 0.32), transparent 45%, rgba(4, 11, 20, 0.18));
 }
 
 .v2-route {
@@ -989,22 +982,51 @@ body::after {
   overflow: hidden;
 }
 
-.v2-loading-orbit {
+.v2-loading-scene {
   position: absolute;
-  right: 12%;
-  bottom: 20%;
-  width: min(42vw, 240px);
-  aspect-ratio: 2.7 / 1;
-  border: 1px solid rgba(217, 185, 120, 0.22);
-  border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 50% 38%, rgba(217, 185, 120, 0.25), transparent 34%),
-    linear-gradient(180deg, rgba(107, 184, 199, 0.14), transparent);
-  filter: blur(0.2px);
+  right: clamp(18px, 7vw, 92px);
+  bottom: clamp(22px, 9vh, 88px);
+  width: min(44vw, 260px);
+  aspect-ratio: 0.72 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(217, 185, 120, 0.18);
+  border-radius: 22px;
+  box-shadow: 0 18px 42px rgba(4, 14, 23, 0.32);
+  opacity: 0.72;
+}
+
+.v2-loading-scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.v2-loading-scene::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(4, 14, 23, 0.05), rgba(4, 14, 23, 0.36));
+}
+
+.v2-loading-route {
+  position: absolute;
+  right: 22%;
+  bottom: 19%;
+  z-index: 1;
+  width: 46%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(217, 185, 120, 0.9), transparent);
+  animation: v2-sea-line 1.8s ease-in-out infinite;
 }
 
 .v2-instructions {
   max-width: 680px;
+}
+
+.v2-screen.v2-instructions {
+  min-height: auto;
+  padding-bottom: clamp(28px, 4vw, 38px);
 }
 
 .v2-instructions h1 {
@@ -1036,6 +1058,12 @@ body::after {
 .v2-quiz {
   gap: 18px;
   max-width: 760px;
+}
+
+@media (min-width: 900px) {
+  .v2-quiz {
+    max-width: 900px;
+  }
 }
 
 .v2-quiz__header {
@@ -1079,7 +1107,7 @@ body::after {
 }
 
 .v2-question-card h1 {
-  font-size: clamp(22px, 6vw, 32px);
+  font-size: clamp(24px, 6.5vw, 31px);
   font-weight: 650;
   line-height: 1.35;
 }
@@ -1095,8 +1123,9 @@ body::after {
   border-radius: 14px;
   background: rgba(238, 244, 243, 0.045);
   color: rgba(238, 244, 243, 0.9);
+  font-size: 17px;
   line-height: 1.55;
-  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
 .v2-option:hover,
@@ -1106,12 +1135,9 @@ body::after {
 }
 
 .v2-option.selected {
-  border-color: rgba(107, 184, 199, 0.78);
-  background:
-    linear-gradient(135deg, rgba(107, 184, 199, 0.24), rgba(217, 185, 120, 0.08)),
-    rgba(238, 244, 243, 0.055);
-  box-shadow: inset 0 0 0 1px rgba(238, 244, 243, 0.08), 0 0 24px rgba(107, 184, 199, 0.12);
-  transform: translateY(-1px);
+  border-color: rgba(107, 184, 199, 0.66);
+  background: rgba(107, 184, 199, 0.13);
+  box-shadow: 0 0 18px rgba(107, 184, 199, 0.1);
 }
 
 .v2-quiz__footer {
@@ -1315,6 +1341,31 @@ body::after {
   color: var(--text-secondary);
 }
 
+.v2-ai-action-list {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v2-ai-action-list li {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid rgba(238, 244, 243, 0.08);
+  padding-top: 10px;
+  color: var(--text-secondary);
+}
+
+.v2-ai-action-list strong {
+  color: var(--text-primary);
+  font-weight: 680;
+}
+
+.v2-ai-action-list span {
+  line-height: 1.72;
+}
+
 .v2-ai-advice {
   margin-top: 12px;
 }
@@ -1471,9 +1522,52 @@ body::after {
   background: linear-gradient(90deg, var(--warm-gold), var(--moon-blue));
 }
 
+.v2-construct-groups--layered {
+  gap: 14px;
+}
+
+.v2-construct-layer {
+  border: 1px solid rgba(238, 244, 243, 0.08);
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(238, 244, 243, 0.025);
+}
+
+.v2-construct-layer__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.v2-construct-layer__header span {
+  color: var(--warm-gold);
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.v2-construct-layer__header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.v2-construct-layer__items {
+  display: grid;
+  gap: 8px;
+}
+
 .v2-construct-row {
   border-color: rgba(238, 244, 243, 0.1);
   background: rgba(238, 244, 243, 0.035);
+}
+
+.v2-construct-row--compact {
+  grid-template-columns: minmax(0, 1fr) minmax(82px, 0.36fr) 30px;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 9px 10px;
+  background: rgba(4, 14, 23, 0.2);
 }
 
 .v2-construct-row em {
@@ -1489,6 +1583,32 @@ body::after {
   background:
     linear-gradient(180deg, rgba(217, 185, 120, 0.07), transparent 48%),
     rgba(8, 25, 37, 0.56);
+}
+
+@media (max-width: 680px) {
+  .v2-loading-scene {
+    right: 18px;
+    bottom: 28px;
+    width: min(38vw, 148px);
+    opacity: 0.36;
+  }
+
+  .v2-question-card h1 {
+    font-size: clamp(24px, 6.5vw, 27px);
+  }
+
+  .v2-option {
+    font-size: 17px;
+  }
+
+  .v2-construct-row--compact {
+    grid-template-columns: 1fr 40px;
+  }
+
+  .v2-construct-row--compact .v2-score-bar {
+    grid-column: 1 / -1;
+    order: 3;
+  }
 }
 
 .v2-share-preview,
@@ -1554,6 +1674,7 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   .v2-option,
+  .v2-loading-route,
   .v2-sea-line::before {
     transition: none;
     animation: none;

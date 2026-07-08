@@ -231,33 +231,36 @@ function aiReportPanel(status = {}, report) {
 
 function aiReportContent(report) {
   const traits = [...(report.keyTraits ?? []), ...(report.strengths ?? [])].slice(0, 3);
+  const repeatPatterns = (report.repeatPatterns ?? []).slice(0, 2);
   const advice = (report.advice ?? []).slice(0, 1);
+  const relationshipNeeds = [report.neededRelationship, report.misunderstoodByOthers].filter(Boolean);
+  const conflictPatterns = [report.innerConflict, ...repeatPatterns].filter(Boolean);
   return `
     <div class="v2-ai-report-content">
       <blockquote>${escapeHtml(userFacingText(report.oneLine))}</blockquote>
       <section>
         <h3>你在关系里的样子</h3>
-        ${inlineTextList(traits)}
+        <p>${escapeHtml(joinAiText(traits))}</p>
       </section>
       <section>
         <h3>你真正需要的回应</h3>
-        <p>${escapeHtml(userFacingText(report.neededRelationship))}</p>
-        <p>${escapeHtml(userFacingText(report.misunderstoodByOthers))}</p>
+        <p>${escapeHtml(joinAiText(relationshipNeeds))}</p>
       </section>
       <section>
         <h3>你容易陷入的拉扯</h3>
-        <p>${escapeHtml(userFacingText(report.innerConflict))}</p>
-        ${inlineTextList(report.repeatPatterns ?? [])}
+        <p>${escapeHtml(joinAiText(conflictPatterns))}</p>
       </section>
       ${advice.length ? `
         <section>
           <h3>你可以尝试的一件事</h3>
-          ${advice.map((item) => `
-            <article class="v2-ai-advice">
-              <h4>${escapeHtml(item.title)}</h4>
-              <p>${escapeHtml(item.text)}</p>
-            </article>
-          `).join('')}
+          <ul class="v2-ai-action-list">
+            ${advice.map((item) => `
+              <li>
+                <strong>${escapeHtml(item.title)}</strong>
+                <span>${escapeHtml(item.text)}</span>
+              </li>
+            `).join('')}
+          </ul>
         </section>
       ` : ''}
     </div>
@@ -326,10 +329,11 @@ function qualityNotice(facts) {
   return `<p class="v2-quality-notice">${escapeHtml(facts.responseQuality.userMessage)}</p>`;
 }
 
-function inlineTextList(items) {
-  const list = (items ?? []).filter(Boolean);
-  if (!list.length) return '';
-  return `<div class="v2-card-list v2-card-list--plain">${list.map((item) => `<p>${escapeHtml(userFacingText(item))}</p>`).join('')}</div>`;
+function joinAiText(items) {
+  return (items ?? [])
+    .filter(Boolean)
+    .map((item) => userFacingText(item))
+    .join(' ');
 }
 
 function constructList(items) {
@@ -370,15 +374,19 @@ function radarChart(constructs) {
 function constructBars(constructs) {
   const groups = layerOrder.map((layer) => ({
     layer,
-    items: constructs.filter((item) => item.layer === layer).sort((a, b) => b.score - a.score),
+    items: constructs.filter((item) => item.layer === layer),
   }));
   return `
-    <div class="v2-construct-groups">
-      ${groups.map((group) => `
-        <section>
-          <h3>${escapeHtml(group.layer)}</h3>
+    <div class="v2-construct-groups v2-construct-groups--layered">
+      ${groups.map((group, index) => `
+        <section class="v2-construct-layer">
+          <div class="v2-construct-layer__header">
+            <span>${String(index + 1).padStart(2, '0')}</span>
+            <h3>${escapeHtml(group.layer)}</h3>
+          </div>
+          <div class="v2-construct-layer__items">
           ${group.items.map((item) => `
-            <div class="v2-construct-row">
+            <div class="v2-construct-row v2-construct-row--compact">
               <div>
                 <span>${escapeHtml(item.label)} <em>${escapeHtml(item.code)}</em></span>
                 <small>${escapeHtml(item.explanation)}</small>
@@ -389,6 +397,7 @@ function constructBars(constructs) {
               <strong>${Math.round(item.score)}</strong>
             </div>
           `).join('')}
+          </div>
         </section>
       `).join('')}
     </div>
