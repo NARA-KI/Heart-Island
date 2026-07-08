@@ -1,25 +1,28 @@
-import { createSeededRng } from './utils.js';
+const OPTION_DISPLAY_ORDER = ['A', 'B', 'C', 'D'];
+const OPTION_DISPLAY_RANK = new Map(OPTION_DISPLAY_ORDER.map((id, index) => [id, index]));
 
 export function currentQuestion(questionBank, state) {
   return questionBank.questions[state.currentQuestionIndex];
 }
 
 export function ensureOptionOrder(question, state) {
-  if (!state.optionOrder[question.id]) {
-    const rng = createSeededRng(`heart-island-v2-alpha:${question.id}`);
-    const order = question.options.map((option) => option.id);
-    for (let index = order.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(rng() * (index + 1));
-      [order[index], order[swapIndex]] = [order[swapIndex], order[index]];
-    }
-    state.optionOrder[question.id] = order;
-  }
+  const order = [...question.options].sort(stableOptionComparator).map((option) => option.id);
+  state.optionOrder[question.id] = order;
   return state.optionOrder[question.id];
 }
 
 export function orderedOptions(question, state) {
-  const optionMap = new Map(question.options.map((option) => [option.id, option]));
-  return ensureOptionOrder(question, state).map((id) => optionMap.get(id)).filter(Boolean);
+  ensureOptionOrder(question, state);
+  return [...question.options].sort(stableOptionComparator);
+}
+
+export function stableOptionComparator(a, b) {
+  const rankA = OPTION_DISPLAY_RANK.get(a.id);
+  const rankB = OPTION_DISPLAY_RANK.get(b.id);
+  if (rankA !== undefined || rankB !== undefined) {
+    return (rankA ?? Number.MAX_SAFE_INTEGER) - (rankB ?? Number.MAX_SAFE_INTEGER);
+  }
+  return String(a.id).localeCompare(String(b.id));
 }
 
 export function answerQuestion(questionBank, state, questionId, optionId) {

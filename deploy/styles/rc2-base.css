@@ -83,9 +83,26 @@
 [data-visual-theme="rc2"] .v2-note,
 [data-visual-theme="rc2"] .v2-status-message,
 [data-visual-theme="rc2"] .v2-ai-disclaimer {
-  color: var(--rc2-text-muted);
+  color: var(--rc2-text-secondary);
   font-size: 13px;
   line-height: 1.8;
+}
+
+[data-visual-theme="rc2"] .v2-transition {
+  background: var(--rc2-paper);
+  color: var(--rc2-text-primary);
+}
+
+[data-visual-theme="rc2"] .v2-transition h1 {
+  color: var(--rc2-ink);
+}
+
+[data-visual-theme="rc2"] .v2-transition .v2-lead {
+  color: var(--rc2-text-secondary);
+}
+
+[data-visual-theme="rc2"] .v2-transition .v2-note {
+  color: var(--rc2-text-muted);
 }
 
 [data-visual-theme="rc2"] .v2-actions {
