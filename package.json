@@ -26,6 +26,7 @@
     "v2:test:feedback": "node tests/v2-feedback-config.test.mjs",
     "v2:test:ai-report": "node tests/v2-ai-report-service.test.mjs && node tests/v2-ai-report-client.test.mjs",
     "v2:test:ai-report:browser": "node tests/v2-controlled-ai-report-browser.mjs",
+    "v2:test:rc2-visual": "node scripts/rc2-production-review.mjs",
     "v2:test:controlled-ai": "npm run v2:test:ai-report",
     "v2:test:controlled-ai:browser": "npm run v2:test:ai-report:browser",
     "v2:test:provider-smoke": "node scripts/v2-provider-smoke.mjs"
