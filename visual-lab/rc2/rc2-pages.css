@@ -86,8 +86,8 @@
   }
 
   .rc2-question-copy h1 {
-    font-size: 28px;
-    line-height: 1.5;
+    font-size: 26px;
+    line-height: 1.47;
   }
 
   .rc2-option {
@@ -136,7 +136,7 @@
   }
 
   .rc2-dossier-inner {
-    padding-top: 68px;
+    padding-top: 62px;
   }
 
   .rc2-ai-file {

@@ -171,6 +171,7 @@
 }
 
 .rc2-option {
+  position: relative;
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 16px;
@@ -195,11 +196,33 @@
 
 .rc2-option.is-selected {
   color: var(--rc2-ink);
-  background: linear-gradient(90deg, rgba(111, 153, 148, 0.13), transparent 62%);
+  background: linear-gradient(90deg, rgba(111, 153, 148, 0.17), rgba(111, 153, 148, 0.04) 68%, transparent);
 }
 
 .rc2-option.is-selected span:first-child {
   color: #557e7a;
+}
+
+.rc2-option.is-selected::before {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 0;
+  width: 2px;
+  content: "";
+  background: var(--rc2-sea-salt);
+}
+
+.rc2-option.is-selected::after {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  content: "";
+  background: var(--rc2-copper);
+  transform: translateY(-50%);
 }
 
 .rc2-quiz-foot {
@@ -290,16 +313,25 @@
 
 .rc2-dossier {
   position: relative;
-  margin-top: -1px;
-  background:
-    linear-gradient(180deg, rgba(16, 27, 32, 0.88), rgba(241, 236, 227, 0.94) 150px, var(--rc2-paper) 260px),
-    var(--rc2-paper);
+  margin-top: -36px;
+  background: var(--rc2-paper);
+  box-shadow: 0 -18px 34px rgba(7, 17, 22, 0.2);
+}
+
+.rc2-dossier::before {
+  position: absolute;
+  top: 0;
+  right: var(--rc2-gutter);
+  left: var(--rc2-gutter);
+  height: 1px;
+  content: "";
+  background: rgba(169, 121, 80, 0.35);
 }
 
 .rc2-dossier-inner {
   width: min(980px, 100%);
   margin: 0 auto;
-  padding: clamp(58px, 9vw, 112px) var(--rc2-gutter) 86px;
+  padding: clamp(52px, 8vw, 96px) var(--rc2-gutter) 86px;
 }
 
 .rc2-ai-file {
