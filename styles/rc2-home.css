@@ -70,12 +70,18 @@
 [data-visual-theme="rc2"] .v2-home {
   position: relative;
   display: grid;
-  min-height: 100dvh;
+  min-height: 100vh;
   overflow: hidden;
   padding: calc(80px + env(safe-area-inset-top, 0px)) var(--rc2-gutter) calc(42px + env(safe-area-inset-bottom, 0px));
   background: var(--rc2-ocean-deep);
   color: var(--rc2-text-on-dark);
   isolation: isolate;
+}
+
+@supports (min-height: 100lvh) {
+  [data-visual-theme="rc2"] .v2-home {
+    min-height: 100lvh;
+  }
 }
 
 [data-visual-theme="rc2"] .v2-home__visual {

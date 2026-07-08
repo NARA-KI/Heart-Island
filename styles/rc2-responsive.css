@@ -10,13 +10,19 @@
   }
 
   [data-visual-theme="rc2"] .v2-home {
-    grid-template-rows: auto 1fr;
+    align-content: end;
+    padding-top: calc(72px + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   }
 
-  [data-visual-theme="rc2"] .v2-home__visual,
   [data-visual-theme="rc2"] .v2-loading-scene {
     height: 50dvh;
     inset: 0 0 auto;
+  }
+
+  [data-visual-theme="rc2"] .v2-home__visual {
+    inset: 0;
+    height: auto;
   }
 
   [data-visual-theme="rc2"] .v2-home__visual img,
@@ -38,17 +44,28 @@
   }
 
   [data-visual-theme="rc2"] .v2-home__content {
+    align-self: end;
     margin-left: 0;
   }
 
   [data-visual-theme="rc2"] .v2-home h1,
   [data-visual-theme="rc2"] .v2-loading-panel h1 {
-    font-size: clamp(56px, 18vw, 72px);
+    font-size: clamp(50px, 15vw, 64px);
   }
 
   [data-visual-theme="rc2"] .v2-home .v2-lead {
-    font-size: 18px;
-    line-height: 1.75;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.68;
+  }
+
+  [data-visual-theme="rc2"] .v2-home .v2-meta {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  [data-visual-theme="rc2"] .v2-home .v2-actions {
+    margin-top: 24px;
   }
 
   [data-visual-theme="rc2"] .v2-instructions {
