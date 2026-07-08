@@ -404,7 +404,9 @@ async function boot() {
   const saved = loadSavedState(runtime.manifest);
   if (saved.status === 'ok') {
     state = hydrateState(saved.state, runtime.questionBank, { pilotMode });
-    state.restoreNotice = '已恢复上次未完成的测试进度。';
+    state.restoreNotice = state.result
+      ? '这是你上一次保存的心岛结果。'
+      : '已恢复上次未完成的测试进度。';
   } else if (saved.status === 'stale') {
     clearSavedState();
     state = createInitialState({ pilotMode });

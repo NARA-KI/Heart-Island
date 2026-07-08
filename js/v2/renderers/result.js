@@ -50,6 +50,15 @@ export function renderResult(root, {
         </div>
       </article>
 
+      ${state.restoreNotice ? `
+        <section class="v2-result-section v2-restore-notice">
+          <p>${escapeHtml(state.restoreNotice)}</p>
+          <div class="v2-actions">
+            <a class="v2-ghost" href="#app">继续查看</a>
+          </div>
+        </section>
+      ` : ''}
+
       ${aiReportPanel(aiStatus, aiReport)}
 
       <section class="v2-result-section v2-insight-strip">
@@ -158,7 +167,7 @@ export function renderResult(root, {
   root.querySelector('[data-action="close-share-preview"]')?.addEventListener('click', onCloseSharePreview);
   root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
   root.querySelector('[data-action="retry-ai-report"]')?.addEventListener('click', onRetryAiReport);
-  root.querySelector('[data-action="restart"]')?.addEventListener('click', onRestart);
+  root.querySelectorAll('[data-action="restart"]').forEach((button) => button.addEventListener('click', onRestart));
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
     field.addEventListener('input', () => onFeedbackChange?.(field.dataset.feedbackField, field.value));
   });
@@ -388,7 +397,7 @@ function constructBars(constructs) {
           ${group.items.map((item) => `
             <div class="v2-construct-row v2-construct-row--compact">
               <div>
-                <span>${escapeHtml(item.label)} <em>${escapeHtml(item.code)}</em></span>
+                <span>${escapeHtml(item.label)}</span>
                 <small>${escapeHtml(item.explanation)}</small>
               </div>
               <div class="v2-score-bar" aria-label="${escapeHtml(item.label)} ${item.score}">
