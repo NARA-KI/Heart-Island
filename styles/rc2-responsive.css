@@ -129,6 +129,27 @@
     padding-inline: var(--rc2-gutter);
   }
 
+  [data-visual-theme="rc2"] .v2-map-section summary,
+  [data-visual-theme="rc2"] .v2-details summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+
+  [data-visual-theme="rc2"] .v2-map-section summary span,
+  [data-visual-theme="rc2"] .v2-details summary span {
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 38px);
+    text-wrap: balance;
+  }
+
+  [data-visual-theme="rc2"] .v2-map-section summary small,
+  [data-visual-theme="rc2"] .v2-details summary small {
+    color: var(--rc2-text-secondary);
+    text-align: left;
+  }
+
   [data-visual-theme="rc2"] .v2-ai-report-panel__head,
   [data-visual-theme="rc2"] .v2-ai-report-content,
   [data-visual-theme="rc2"] .v2-ai-report-content > section,
