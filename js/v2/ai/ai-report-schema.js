@@ -26,6 +26,9 @@ export function createResultHash(facts) {
   const payload = {
     questionBankVersion: facts?.versions?.questionBankVersion,
     scoringProfile: facts?.versions?.scoringProfile,
+    quizMode: facts?.assessment?.quizMode,
+    answeredCount: facts?.assessment?.answeredCount,
+    answeredQuestionIds: [...(facts?.assessment?.answeredQuestionIds ?? [])].sort(),
     personaId: facts?.persona?.id,
     constructScores: Object.fromEntries(
       Object.entries(facts?.constructScores ?? {})

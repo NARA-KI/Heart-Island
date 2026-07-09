@@ -32,7 +32,7 @@ AI_REPORT_THINKING_TYPE=disabled
 AI_REPORT_BODY_LIMIT_BYTES=64000
 AI_REPORT_SESSION_LIMIT=6
 AI_REPORT_CACHE_TTL_MS=600000
-ALLOWED_ORIGIN=<official origin or explicit local origin>
+ALLOWED_ORIGINS=<comma-separated exact origins>
 ```
 
 可选：
@@ -40,7 +40,7 @@ ALLOWED_ORIGIN=<official origin or explicit local origin>
 ```text
 AI_REPORT_API_PATH=/api/v2/ai-report
 AI_REPORT_PUBLIC_BASE_URL=
-AI_REPORT_MOCK_MODE=success
+AI_REPORT_MOCK_MODE=
 ```
 
 秘密变量：`AI_REPORT_API_KEY`。  
@@ -92,14 +92,16 @@ OPTIONS /api/v2/ai-report
 
 ## CORS
 
-`ALLOWED_ORIGIN` 只允许正式域名或明确的本地开发域名，例如：
+`ALLOWED_ORIGINS` 使用逗号分隔的明确 Origin 白名单。旧的单值
+`ALLOWED_ORIGIN` 仍兼容，但新部署应优先使用复数变量。
 
 ```text
-https://example.com
-http://127.0.0.1:4324
+ALLOWED_ORIGINS=https://example.com,http://127.0.0.1:4173,http://localhost:4173
 ```
 
-非法 Origin 应返回 403。OPTIONS 预检应返回 204，并带上合法 Origin 的 `Access-Control-Allow-Origin`。
+匹配使用标准化后的完整 Origin，不使用 `contains`、后缀或通配符匹配。配置值可以带末尾 `/`，运行时会规范化为不带路径的 Origin。没有配置白名单时，跨域请求默认拒绝。
+
+非法 Origin 应返回 403。合法 OPTIONS 预检应返回 204，并带上请求 Origin 对应的 `Access-Control-Allow-Origin`、`POST, OPTIONS`、`Content-Type` 和 `Vary: Origin`。
 
 ## 超时
 
@@ -127,7 +129,7 @@ AI_REPORT_ENABLED=false
 - 503：未开启 AI 或服务端缺少真实 provider 配置。
 - 502：provider 失败、非法 JSON、非 `stop` finish_reason、schema 不合法。
 - 504：provider 超时。
-- 403：Origin 不在 `ALLOWED_ORIGIN`。
+- 403：Origin 不在 `ALLOWED_ORIGINS`，或旧版 `ALLOWED_ORIGIN` 白名单中。
 - 422：请求 facts、resultHash 或 schema 不合法。
 
 排查时不得打印完整 API Key、完整 facts 或完整 AI 报告。只记录样本 ID、personaId、HTTP 状态、finish_reason、脱敏错误类型、延迟和 token usage。

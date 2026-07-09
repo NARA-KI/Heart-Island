@@ -103,18 +103,43 @@ function normalizeProviderResult(result) {
 
 function applyCors(request, response, env) {
   const origin = request.headers.origin;
-  const allowedOrigin = env.ALLOWED_ORIGIN;
-  if (origin && allowedOrigin && origin !== allowedOrigin) {
+  const allowedOrigins = readAllowedOrigins(env);
+  if (origin && !allowedOrigins.has(normalizeRequestOrigin(origin))) {
     json(response, 403, { error: 'Origin not allowed' });
     return false;
   }
-  if (origin && (!allowedOrigin || origin === allowedOrigin)) {
-    response.setHeader('Access-Control-Allow-Origin', origin);
+  if (origin) {
+    response.setHeader('Access-Control-Allow-Origin', normalizeRequestOrigin(origin));
     response.setHeader('Vary', 'Origin');
   }
   response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   return true;
+}
+
+export function readAllowedOrigins(env = process.env) {
+  const plural = String(env.ALLOWED_ORIGINS || '').trim();
+  const values = plural
+    ? plural.split(',')
+    : [String(env.ALLOWED_ORIGIN || '')];
+  return new Set(values.map(normalizeConfiguredOrigin).filter(Boolean));
+}
+
+function normalizeRequestOrigin(value) {
+  try {
+    const url = new URL(String(value));
+    if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return '';
+    if (url.pathname !== '/' || url.search || url.hash) return '';
+    return url.origin;
+  } catch {
+    return '';
+  }
+}
+
+function normalizeConfiguredOrigin(value) {
+  const text = String(value || '').trim();
+  if (!text || text === '*' || text.toLowerCase() === 'null') return '';
+  return normalizeRequestOrigin(text);
 }
 
 function enforceSessionLimit(request, env) {

@@ -33,6 +33,26 @@ export function validateAiReportRequest(payload) {
     const score = facts?.constructScores?.[code];
     if (typeof score !== 'number' || score < 0 || score > 100) errors.push(`invalid construct score: ${code}`);
   }
+  const assessment = facts?.assessment;
+  if (!['quick', 'full'].includes(assessment?.quizMode)) errors.push('invalid quizMode');
+  const expectedAnsweredCount = assessment?.quizMode === 'quick' ? 30 : 60;
+  if (assessment?.answeredCount !== expectedAnsweredCount) errors.push('answeredCount does not match quizMode');
+  if (assessment?.totalQuestionCount !== expectedAnsweredCount) errors.push('totalQuestionCount does not match quizMode');
+  if (!Array.isArray(assessment?.answeredQuestionIds)
+    || assessment.answeredQuestionIds.length !== expectedAnsweredCount
+    || new Set(assessment.answeredQuestionIds).size !== expectedAnsweredCount) {
+    errors.push('answeredQuestionIds are invalid');
+  }
+  if (typeof assessment?.elapsedMs !== 'number' || assessment.elapsedMs < 0) errors.push('invalid elapsedMs');
+  if (Object.keys(assessment?.normalizedConstructScores ?? {}).length !== 15) {
+    errors.push('normalizedConstructScores must include all 15 constructs');
+  }
+  for (const code of V2_EXPECTED_CONSTRUCTS) {
+    const normalized = assessment?.normalizedConstructScores?.[code];
+    if (typeof normalized !== 'number' || normalized < 0 || normalized > 100) {
+      errors.push(`invalid normalized construct score: ${code}`);
+    }
+  }
   const validConflictIds = new Set(CONFLICT_RULES.map((rule) => rule.id));
   for (const conflict of facts?.conflicts ?? []) {
     if (!validConflictIds.has(conflict.id)) errors.push(`invalid conflict id: ${conflict.id}`);

@@ -1,6 +1,6 @@
 import { CANONICAL_PERSONA_NAMES, V2_EXPECTED_CONSTRUCTS } from './config.js';
 
-export function validateV2Data({ questionBank, personaData, descriptions }) {
+export function validateV2Data({ questionBank, personaData, descriptions }, options = {}) {
   const errors = [];
   const questionIds = new Set();
   const personaIds = new Set();
@@ -14,8 +14,9 @@ export function validateV2Data({ questionBank, personaData, descriptions }) {
     }
   }
 
-  if (!Array.isArray(questionBank?.questions) || questionBank.questions.length !== 60) {
-    errors.push(`question count must be 60, got ${questionBank?.questions?.length ?? 0}`);
+  const allowedQuestionCounts = options.allowedQuestionCounts ?? [30, 60];
+  if (!Array.isArray(questionBank?.questions) || !allowedQuestionCounts.includes(questionBank.questions.length)) {
+    errors.push(`question count must be one of ${allowedQuestionCounts.join(', ')}, got ${questionBank?.questions?.length ?? 0}`);
   }
 
   for (const question of questionBank?.questions ?? []) {
@@ -43,6 +44,14 @@ export function validateV2Data({ questionBank, personaData, descriptions }) {
       optionIds.add(option.id);
       if (typeof option.text !== 'string' || !option.text.trim()) errors.push(`${question.id}/${option.id} option text is empty`);
       if (![0, 33, 67, 100].includes(option.score)) errors.push(`${question.id}/${option.id} invalid score ${option.score}`);
+    }
+  }
+
+  for (const construct of questionBank?.constructs ?? []) {
+    const count = questionBank.questions.filter((question) => question.construct === construct).length;
+    const expectedCount = questionBank.questions.length / questionBank.constructs.length;
+    if (!Number.isInteger(expectedCount) || count !== expectedCount) {
+      errors.push(`${construct} question count must be ${expectedCount}, got ${count}`);
     }
   }
 
@@ -83,8 +92,8 @@ export function validateV2Data({ questionBank, personaData, descriptions }) {
   };
 }
 
-export function assertV2Data(data) {
-  const result = validateV2Data(data);
+export function assertV2Data(data, options) {
+  const result = validateV2Data(data, options);
   if (!result.ok) throw new Error(result.errors.join('\n'));
   return result;
 }
@@ -215,7 +224,10 @@ export function buildAnswerSample(questionBank, answers) {
 
   const constructScores = Object.fromEntries(questionBank.constructs.map((construct) => {
     const values = constructValues[construct];
-    if (values.length !== 4) throw new Error(`Construct ${construct} expected 4 answers, got ${values.length}`);
+    const expectedCount = questionBank.questions.length / questionBank.constructs.length;
+    if (!Number.isInteger(expectedCount) || values.length !== expectedCount) {
+      throw new Error(`Construct ${construct} expected ${expectedCount} answers, got ${values.length}`);
+    }
     return [construct, Number((values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(2))];
   }));
 

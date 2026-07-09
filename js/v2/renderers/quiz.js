@@ -1,26 +1,33 @@
-import { orderedOptions } from '../question-engine.js';
+import { currentQuestion, orderedOptions } from '../question-engine.js';
+import { QUIZ_MODES } from '../quiz-modes.js';
+import { currentElapsedMs, formatElapsedTime } from '../quiz-timer.js';
 import { escapeHtml } from '../utils.js';
 
 const OPTION_FEEDBACK_MS = 180;
 
 export function renderQuiz(root, { questionBank, state, onAnswer, onPrevious }) {
-  const question = questionBank.questions[state.currentQuestionIndex];
-  const total = questionBank.questions.length;
-  const selectedOptionId = state.answers[question.id] ?? null;
-  const progress = state.currentQuestionIndex + 1;
+  const question = currentQuestion(questionBank, state);
+  const mode = QUIZ_MODES[state.quizMode] ?? QUIZ_MODES.full;
+  const total = mode.questionCount;
+  const selectedOptionId = state.answersByQuestionId[question.id] ?? null;
+  const progress = state.quizPath === 'continuation'
+    ? 30 + state.currentQuestionIndex + 1
+    : state.currentQuestionIndex + 1;
   const percent = (progress / total) * 100;
-  const stage = Math.min(5, Math.ceil(progress / Math.ceil(total / 5)));
 
   root.innerHTML = `
     <section class="v2-screen v2-quiz">
       <header class="v2-quiz__header">
         <div class="v2-quiz__stage">
-          <p class="v2-eyebrow">航程 ${stage} / 5</p>
-          <p>${String(progress).padStart(2, '0')} / ${total}</p>
+          <p class="v2-eyebrow">${mode.title}</p>
+          <div class="v2-quiz__meta">
+            <span>${progress} / ${total}</span>
+            <span class="v2-quiz-timer" data-quiz-timer aria-label="本次作答用时">◷ ${formatElapsedTime(currentElapsedMs(state))}</span>
+          </div>
         </div>
-        <div class="v2-progress" aria-hidden="true"><span style="width:${percent}%"></span></div>
+        <div class="v2-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${progress}"><span style="width:${percent}%"></span></div>
       </header>
-      <article class="v2-question-card" data-question-number="${String(progress).padStart(2, '0')}">
+      <article class="v2-question-card">
         <h1 id="v2QuestionTitle" tabindex="-1">${escapeHtml(question.question)}</h1>
         <div class="v2-options" role="list">
           ${orderedOptions(question, state).map((option) => {

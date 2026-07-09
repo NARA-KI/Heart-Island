@@ -3,9 +3,17 @@ import { buildResultFactsFromScoring } from './result-facts.js';
 import { buildDeterministicReport } from './result-report-builder.js';
 import { scoreAnswers, scoreAnswersAdaptiveHybrid } from './scoring-engine.js';
 
-export function buildResult({ manifest = {}, questionBank, candidateA, descriptions, answers }) {
+export function buildResult({ manifest = {}, questionBank, candidateA, descriptions, answers, assessment }) {
   const scoring = scoreAnswers(questionBank, candidateA, answers);
-  return buildResultFromScoring({ manifest, questionBank, candidateA, descriptions, answers, scoring });
+  return buildResultFromScoring({
+    manifest,
+    questionBank,
+    candidateA,
+    descriptions,
+    answers,
+    scoring,
+    assessment,
+  });
 }
 
 export function buildAdaptiveResult({ manifest = {}, questionBank, candidateE, candidateEScoringProfile, descriptions, answers }) {
@@ -13,7 +21,15 @@ export function buildAdaptiveResult({ manifest = {}, questionBank, candidateE, c
   return buildResultFromScoring({ manifest, questionBank, candidateA: candidateE, descriptions, answers, scoring });
 }
 
-export function buildResultFromScoring({ manifest = {}, questionBank, candidateA, descriptions, answers, scoring }) {
+export function buildResultFromScoring({
+  manifest = {},
+  questionBank,
+  candidateA,
+  descriptions,
+  answers,
+  scoring,
+  assessment,
+}) {
   const persona = scoring.finalPersona;
   const description = descriptions.personas.find((item) => item.id === persona.id)
     ?? descriptions.personas.find((item) => item.displayName === persona.displayName)
@@ -25,6 +41,7 @@ export function buildResultFromScoring({ manifest = {}, questionBank, candidateA
     descriptions,
     answers,
     scoring,
+    assessment,
   });
   const report = buildDeterministicReport(facts);
   const highConstructs = Object.entries(scoring.constructScores)
