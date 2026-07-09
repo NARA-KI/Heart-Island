@@ -539,35 +539,43 @@ async function auditStorageRecovery() {
     await page.goto(baseUrl, { waitUntil: 'networkidle' });
     await page.evaluate(() => localStorage.clear());
 
-    checks.corruptLocalStorage = await withStorage(page, 'not-json', async () => {
+    checks.corruptLocalStoragePreserved = await withStorage(page, 'not-json', async () => {
       await page.reload({ waitUntil: 'networkidle' });
       await page.waitForSelector('[data-action="start"]');
-      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === null);
+      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === 'not-json');
     });
 
     const partial = makeSavedState({ answerCount: 2, currentQuestionIndex: 2 });
     const stale = structuredClone(partial);
     stale.meta.questionBankHash = 'stale-hash';
-    checks.hashMismatchClears = await withStorage(page, JSON.stringify(stale), async () => {
+    checks.hashMismatchPreserved = await withStorage(page, JSON.stringify(stale), async () => {
       await page.reload({ waitUntil: 'networkidle' });
       await page.waitForSelector('[data-action="start"]');
-      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === null);
+      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') !== null);
     });
 
     const profileMismatch = structuredClone(partial);
     profileMismatch.meta.scoringProfile = 'baseline';
-    checks.profileMismatchClears = await withStorage(page, JSON.stringify(profileMismatch), async () => {
+    checks.profileMismatchPreserved = await withStorage(page, JSON.stringify(profileMismatch), async () => {
       await page.reload({ waitUntil: 'networkidle' });
       await page.waitForSelector('[data-action="start"]');
-      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === null);
+      return page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') !== null);
     });
 
     const incompleteTransition = makeSavedState({ answerCount: 59, currentQuestionIndex: 59, view: 'transition' });
     checks.incompleteCannotResult = await withStorage(page, JSON.stringify(incompleteTransition), async () => {
       await page.reload({ waitUntil: 'networkidle' });
+      await page.waitForSelector('[data-action="continue"], [data-action="start"]');
+      if (await page.locator('[data-action="continue"]').count() !== 1) {
+        throw new Error(JSON.stringify(await page.evaluate(() => ({
+          state: window.__heartIslandV2Debug?.state,
+          stored: localStorage.getItem('heart-island-v2-alpha-1-state'),
+        }))));
+      }
+      await page.locator('[data-action="continue"]').click();
       await page.waitForSelector('.v2-option');
       return page.evaluate(() => window.__heartIslandV2Debug.state.view === 'quiz'
-        && Object.keys(window.__heartIslandV2Debug.state.answers).length === 59);
+        && Object.keys(window.__heartIslandV2Debug.state.answersByQuestionId).length === 59);
     });
 
     checks.modifyAnswerRecomputes = await verifyModifyAnswerRecomputes(page);
@@ -607,9 +615,16 @@ function makeSavedState({ answerCount, currentQuestionIndex, view = 'quiz' }) {
 
 async function withStorage(page, value, fn) {
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
+  await page.addInitScript(() => {
+    const injected = sessionStorage.getItem('heart-island-v2-test-state');
+    if (injected === null) return;
+    localStorage.setItem('heart-island-v2-alpha-1-state', injected);
+    sessionStorage.removeItem('heart-island-v2-test-state');
+  });
   await page.evaluate((stored) => {
-    localStorage.setItem('heart-island-v2-alpha-1-state', stored);
+    sessionStorage.setItem('heart-island-v2-test-state', stored);
   }, value);
+  await page.reload({ waitUntil: 'networkidle' });
   return fn();
 }
 
@@ -620,12 +635,14 @@ async function verifyModifyAnswerRecomputes(page) {
   const answersB = { ...answersA, [questionBank.questions[0].id]: questionBank.questions[0].options[1].id };
   const resultA = await page.evaluate((answers) => {
     const state = window.__heartIslandV2Debug.state;
-    state.answers = answers;
+    state.answersByQuestionId = answers;
+    state.answers = state.answersByQuestionId;
     return window.__heartIslandV2Debug.score().scoring.constructScores;
   }, answersA);
   const resultB = await page.evaluate((answers) => {
     const state = window.__heartIslandV2Debug.state;
-    state.answers = answers;
+    state.answersByQuestionId = answers;
+    state.answers = state.answersByQuestionId;
     return window.__heartIslandV2Debug.score().scoring.constructScores;
   }, answersB);
   return JSON.stringify(resultA) !== JSON.stringify(resultB);
@@ -637,12 +654,14 @@ async function verifyTwoRunsDoNotMix(page) {
   const answersA = Object.fromEntries(questionBank.questions.map((question) => [question.id, question.options[0].id]));
   const answersB = Object.fromEntries(questionBank.questions.map((question) => [question.id, question.options.at(-1).id]));
   const a = await page.evaluate((answers) => {
-    window.__heartIslandV2Debug.state.answers = answers;
+    window.__heartIslandV2Debug.state.answersByQuestionId = answers;
+    window.__heartIslandV2Debug.state.answers = window.__heartIslandV2Debug.state.answersByQuestionId;
     return window.__heartIslandV2Debug.score().persona.displayName;
   }, answersA);
   await page.evaluate(() => localStorage.clear());
   const b = await page.evaluate((answers) => {
-    window.__heartIslandV2Debug.state.answers = answers;
+    window.__heartIslandV2Debug.state.answersByQuestionId = answers;
+    window.__heartIslandV2Debug.state.answers = window.__heartIslandV2Debug.state.answersByQuestionId;
     return window.__heartIslandV2Debug.score().persona.displayName;
   }, answersB);
   return a !== b || JSON.stringify(answersA) !== JSON.stringify(answersB);

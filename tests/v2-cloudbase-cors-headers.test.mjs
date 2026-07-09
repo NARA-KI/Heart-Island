@@ -11,12 +11,16 @@ import { loadStoredPilotAnswers } from './v2-baseline-samples.mjs';
 const root = process.cwd();
 const adapterVersion = 'backend-cors-v2';
 const allowedOrigin = 'https://v2-xindao-mvp06-d9gf6ion1b76a1327.webapps.tcloudbase.com';
+const localOrigin = 'http://127.0.0.1:4173';
+const localhostOrigin = 'http://localhost:4173';
+const legacyOrigin = 'https://legacy.example.com';
 const illegalOrigin = 'https://invalid.example.com';
 const sample = buildSample();
 const originalEnv = { ...process.env };
 
 Object.assign(process.env, {
-  ALLOWED_ORIGIN: allowedOrigin,
+  ALLOWED_ORIGINS: `${allowedOrigin}, ${localOrigin}/,${localhostOrigin}`,
+  ALLOWED_ORIGIN: '',
   AI_REPORT_PROVIDER: 'mock',
   AI_REPORT_MOCK_MODE: 'success',
   AI_REPORT_SESSION_LIMIT: '100',
@@ -39,6 +43,41 @@ try {
   assert.equal(options.statusCode, 204);
   assertAllowedCors(options.rawHeaders);
   assert.equal(headerValue(options.rawHeaders, 'X-Heart-Island-Adapter-Version'), adapterVersion);
+
+  for (const origin of [localOrigin, localhostOrigin]) {
+    const localOptions = await rawRequest({
+      baseUrl,
+      method: 'OPTIONS',
+      path: '/api/v2/ai-report',
+      headers: {
+        Origin: origin,
+        'Access-Control-Request-Method': 'POST',
+        'Access-Control-Request-Headers': 'content-type',
+      },
+    });
+    assert.equal(localOptions.statusCode, 204);
+    assert.equal(headerValue(localOptions.rawHeaders, 'Access-Control-Allow-Origin'), origin);
+    assert.equal(varyTokenCount(localOptions.rawHeaders, 'Origin'), 1);
+  }
+
+  const pluralWins = await callHandlerDirectly({
+    method: 'OPTIONS',
+    headers: { origin: legacyOrigin },
+    env: {
+      ALLOWED_ORIGINS: `${allowedOrigin}, ${localOrigin}/`,
+      ALLOWED_ORIGIN: legacyOrigin,
+    },
+  });
+  assert.equal(pluralWins.statusCode, 403, 'non-empty ALLOWED_ORIGINS must not merge legacy ALLOWED_ORIGIN');
+  assert.equal(pluralWins.headers['access-control-allow-origin'], undefined);
+
+  const legacyFallback = await callHandlerDirectly({
+    method: 'OPTIONS',
+    headers: { origin: legacyOrigin },
+    env: { ALLOWED_ORIGINS: '   ', ALLOWED_ORIGIN: `${legacyOrigin}/` },
+  });
+  assert.equal(legacyFallback.statusCode, 204);
+  assert.equal(legacyFallback.headers['access-control-allow-origin'], legacyOrigin);
 
   const post = await validPost({ baseUrl, requestId: 'cloudbase-cors-success' });
   assert.equal(post.statusCode, 200);
@@ -87,13 +126,72 @@ try {
   assertAllowedCors(providerError.rawHeaders, { requireMethods: false, requireHeaders: false });
   process.env.AI_REPORT_MOCK_MODE = 'success';
 
+  process.env.AI_REPORT_PROVIDER = 'deepseek';
+  process.env.AI_REPORT_ENABLED = 'true';
+  delete process.env.AI_REPORT_API_KEY;
+  delete process.env.AI_REPORT_BASE_URL;
+  delete process.env.AI_REPORT_MODEL;
+  const missingProviderConfig = await validPost({ baseUrl, requestId: 'cloudbase-cors-provider-missing' });
+  assert.equal(missingProviderConfig.statusCode, 503);
+  assertAllowedCors(missingProviderConfig.rawHeaders, { requireMethods: false, requireHeaders: false });
+  assert.equal(JSON.parse(missingProviderConfig.body).errorType, 'provider_error');
+  process.env.AI_REPORT_PROVIDER = 'mock';
+  process.env.AI_REPORT_ENABLED = 'false';
+
+  process.env.AI_REPORT_MOCK_MODE = 'timeout';
+  process.env.AI_REPORT_TIMEOUT_MS = '1';
+  const providerTimeout = await validPost({ baseUrl, requestId: 'cloudbase-cors-provider-timeout' });
+  assert.equal(providerTimeout.statusCode, 504);
+  assertAllowedCors(providerTimeout.rawHeaders, { requireMethods: false, requireHeaders: false });
+  process.env.AI_REPORT_MOCK_MODE = 'success';
+  delete process.env.AI_REPORT_TIMEOUT_MS;
+
   const directHandlerOptions = await callHandlerDirectly({
     method: 'OPTIONS',
     headers: { origin: allowedOrigin },
-    env: { ALLOWED_ORIGIN: allowedOrigin },
+    env: { ALLOWED_ORIGINS: `${allowedOrigin},${localOrigin}` },
   });
   assert.equal(directHandlerOptions.statusCode, 204);
   assert.equal(directHandlerOptions.headers['access-control-allow-origin'], allowedOrigin, 'generic handler should still own CORS rules');
+
+  const noAllowlist = await callHandlerDirectly({
+    method: 'OPTIONS',
+    headers: { origin: allowedOrigin },
+    env: {},
+  });
+  assert.equal(noAllowlist.statusCode, 403, 'cross-origin request must fail closed without an allowlist');
+  assert.equal(noAllowlist.headers['access-control-allow-origin'], undefined);
+
+  for (const origin of [
+    `${allowedOrigin}.evil.example`,
+    'null',
+  ]) {
+    const rejectedOrigin = await callHandlerDirectly({
+      method: 'OPTIONS',
+      headers: { origin },
+      env: { ALLOWED_ORIGINS: allowedOrigin },
+    });
+    assert.equal(rejectedOrigin.statusCode, 403, `${origin} must not match`);
+    assert.equal(rejectedOrigin.headers['access-control-allow-origin'], undefined);
+  }
+
+  for (const configuredOrigin of [
+    '*',
+    'null',
+    `${allowedOrigin}/path`,
+    `${allowedOrigin}?query=1`,
+    `${allowedOrigin}#hash`,
+    'https://user:password@example.com',
+    'ftp://example.com',
+  ]) {
+    const invalidConfiguration = await callHandlerDirectly({
+      method: 'OPTIONS',
+      headers: { origin: allowedOrigin },
+      env: { ALLOWED_ORIGINS: configuredOrigin },
+    });
+    assert.equal(invalidConfiguration.statusCode, 403, `invalid configured origin must fail closed: ${configuredOrigin}`);
+    assert.equal(invalidConfiguration.headers['access-control-allow-origin'], undefined);
+  }
 
   const sanitized = sanitizeCloudBaseResponseHeaders(new Map([
     ['vary', { name: 'Vary', value: 'Origin, Accept-Encoding, Origin, Accept-Encoding' }],
@@ -113,7 +211,13 @@ try {
     optionsVaryOriginCount: varyTokenCount(options.rawHeaders, 'Origin'),
     postVaryOriginCount: varyTokenCount(post.rawHeaders, 'Origin'),
     rejectedAccessControlAllowOrigin: headerValue(rejected.rawHeaders, 'Access-Control-Allow-Origin'),
-    errorStatusesCovered: [unprocessable.statusCode, limited.statusCode, providerError.statusCode],
+    errorStatusesCovered: [
+      unprocessable.statusCode,
+      limited.statusCode,
+      providerError.statusCode,
+      missingProviderConfig.statusCode,
+      providerTimeout.statusCode,
+    ],
     adapterVersion: headerValue(post.rawHeaders, 'X-Heart-Island-Adapter-Version'),
     source: body.report.source,
     apiKeyLeaks: 0,

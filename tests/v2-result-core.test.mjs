@@ -22,9 +22,9 @@ candidateA.scoringProfile = 'candidate-a';
 
 assert.equal(sha256('data/v2/question-bank.v2.json'), manifest.questionBankHash, 'question bank hash changed');
 assert.equal(sha256('data/v2/persona-target-vectors.v2.candidate-a.json'), manifest.targetVectorHash, 'candidate-a hash changed');
-assert.equal(sha256('data/v2/manifest.json'), 'bcf9cec0a84a204b6dbfe6bf1be46483531ee1b2d087fc12ac49cf7170f5279a', 'manifest hash changed');
-assert.equal(sha256('js/v2/scoring-engine.js'), '8ff69b1249c8164c2a74f84f41e7c4b18add17780f62d8ea0767388cdfe82166', 'scoring engine hash changed');
-assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-controlled-ai-report-prompt-2', 'AI report prompt version changed');
+assert.equal(sha256('data/v2/manifest.json'), 'a6fa4b682fb0c92aca56f724e7ba1f5e061f80899003c97ac605c6c6fe1c2ac3', 'manifest hash changed');
+assert.equal(sha256('js/v2/scoring-engine.js'), '6e5860481592d6bdaa4c400f5f979fe947e2e7c84192022e8256b65dc7e51683', 'scoring engine hash changed');
+assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-dual-quiz-ai-report-prompt-3', 'AI report prompt version changed');
 assert.equal(questionBank.questions.length, 60, 'question count changed');
 assert.equal(questionBank.constructs.length, 15, 'construct count changed');
 assert.equal(candidateA.personas.length, 15, 'persona count changed');
@@ -96,7 +96,8 @@ function readJson(file) {
 }
 
 function sha256(file) {
-  return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+  const content = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+  return crypto.createHash('sha256').update(content).digest('hex');
 }
 
 function round(value, digits = 4) {

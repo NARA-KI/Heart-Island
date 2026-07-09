@@ -5,6 +5,7 @@ import { createResultHash } from '../js/v2/ai/ai-report-schema.js';
 import { buildResult } from '../js/v2/result-engine.js';
 import { buildDeterministicReport } from '../js/v2/result-report-builder.js';
 import { answersForBaselineSource } from './v2-baseline-samples.mjs';
+import { V2_AI_REPORT_PROMPT_VERSION } from '../js/v2/config.js';
 
 const manifest = readJson('data/v2/manifest.json');
 const questionBank = readJson('data/v2/question-bank.v2.json');
@@ -144,7 +145,7 @@ function jsonResponse(status, body) {
 }
 
 function validReportPromptVersion() {
-  return 'v2-controlled-ai-report-prompt-2';
+  return V2_AI_REPORT_PROMPT_VERSION;
 }
 
 function installMemoryStorage() {

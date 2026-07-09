@@ -45,8 +45,8 @@ const invalidOriginPayload = payloadForSample('focused-sc-high');
 const invalidHashPayload = payloadForSample('high-au-low-sc');
 const expiredCachePayload = payloadForSample('high-cl-high-ri');
 
-assert.equal(V2_AI_REPORT_PROMPT_VERSION_PREVIOUS, 'v2-controlled-ai-report-prompt-1');
-assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-controlled-ai-report-prompt-2');
+assert.equal(V2_AI_REPORT_PROMPT_VERSION_PREVIOUS, 'v2-controlled-ai-report-prompt-2');
+assert.equal(V2_AI_REPORT_PROMPT_VERSION, 'v2-dual-quiz-ai-report-prompt-3');
 assert.equal(resultHash, createResultHash(facts));
 
 assert.equal(validateAiReportRequest(validPayload).resultHash, resultHash);

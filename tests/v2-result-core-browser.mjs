@@ -77,6 +77,7 @@ async function runFullFlow(browser, { label, viewport }) {
     await page.evaluate(() => localStorage.clear());
     await page.waitForSelector('[data-action="start"]');
     shots.push(await screenshot(page, `${label}-01-home.png`));
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.waitForSelector('[data-action="begin"]');
     await page.locator('[data-action="begin"]').click();
@@ -104,7 +105,8 @@ async function runFullFlow(browser, { label, viewport }) {
     shots.push(await screenshot(page, `${label}-09-refresh-restored.png`));
     const restoredView = await page.evaluate(() => window.__heartIslandV2Debug.state.view);
     await page.locator('[data-action="restart"]').click();
-    await page.waitForSelector('[data-action="begin"]');
+    await page.waitForSelector('[data-action="start"]');
+    await page.waitForFunction(() => [...document.images].every((image) => image.complete));
     const cleared = await page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === null);
     const metrics = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
@@ -252,9 +254,9 @@ async function verifyFeedbackLink(page, viewport) {
   const forbiddenMatches = forbidden.filter((term) => href.includes(term));
   assert.equal(params.get('version'), state.result.facts.versions.productVersion);
   assert.equal(params.get('persona'), state.result.facts.persona.id);
-  assert.equal(params.get('promptVersion'), 'v2-controlled-ai-report-prompt-2');
+  assert.equal(params.get('promptVersion'), 'v2-dual-quiz-ai-report-prompt-3');
   assert.equal(params.get('anonymousResultId'), state.result.facts.resultId);
-  assert.equal(params.get('aiSource'), state.result.report.source);
+  assert.equal(params.get('aiSource'), state.result.aiReport?.source ?? state.result.report.source);
   assert.equal(params.get('viewport'), `${viewport.width}x${viewport.height}`);
   for (const key of ['version', 'persona', 'promptVersion', 'anonymousResultId', 'aiSource', 'viewport']) {
     assert.equal(params.get(`prefill_${key}`), params.get(key), `${key} prefill should match canonical feedback context`);
@@ -293,6 +295,7 @@ async function completeQuiz(page) {
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
   await page.evaluate(() => localStorage.clear());
   await page.waitForSelector('[data-action="start"]');
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.waitForSelector('[data-action="begin"]');
   await page.locator('[data-action="begin"]').click();
@@ -313,6 +316,7 @@ async function runAbnormalQualityFlow(browser) {
   try {
     await page.goto(baseUrl, { waitUntil: 'networkidle' });
     await page.evaluate(() => localStorage.clear());
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.locator('[data-action="begin"]').click();
     for (const [questionId, optionId] of Object.entries(abnormalAnswers)) {
@@ -371,6 +375,7 @@ function serveStatic() {
           AI_REPORT_MOCK_MODE: 'success',
           AI_REPORT_SESSION_LIMIT: '100',
           AI_REPORT_CACHE_TTL_MS: '0',
+          ALLOWED_ORIGINS: baseUrl,
         },
       });
     }

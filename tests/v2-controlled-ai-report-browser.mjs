@@ -81,7 +81,7 @@ async function runSuccessFlow(browser, { label, viewport }) {
     shots.push(await screenshot(page, `${label}-06-refresh-ai-restored.png`));
 
     await page.locator('[data-action="restart"]').click();
-    await page.waitForSelector('[data-action="begin"]');
+    await page.waitForSelector('[data-action="start"]');
     const cacheCleared = await page.evaluate(() => {
       const keys = Object.keys(localStorage);
       return !keys.some((key) => key.includes('ai-report-cache')) && localStorage.getItem('heart-island-v2-alpha-1-state') === null;
@@ -223,6 +223,7 @@ async function completeQuiz(page, { debug = false } = {}) {
   await page.goto(debug ? `${baseUrl}?debug=1` : baseUrl, { waitUntil: 'networkidle' });
   await page.evaluate(() => localStorage.clear());
   await page.waitForSelector('[data-action="start"]');
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.waitForSelector('[data-action="begin"]');
   await page.locator('[data-action="begin"]').click();
@@ -359,6 +360,7 @@ function serveApp() {
           AI_REPORT_TIMEOUT_MS: '10',
           AI_REPORT_SESSION_LIMIT: '100',
           AI_REPORT_CACHE_TTL_MS: '0',
+          ALLOWED_ORIGINS: baseUrl,
         },
       });
     }

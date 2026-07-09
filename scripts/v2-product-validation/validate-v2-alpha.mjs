@@ -3,6 +3,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { validateV2Data, scoreAnswers } from '../../js/v2/scoring-engine.js';
+import { handleAiReportRequest } from '../../server/ai-report/handler.js';
 
 const root = process.cwd();
 const port = Number(process.env.V2_ALPHA_PORT || 4181);
@@ -51,6 +52,22 @@ function validateDataLayer() {
 function serveStatic() {
   const server = http.createServer((request, response) => {
     const url = new URL(request.url, baseUrl);
+    if (url.pathname === '/ai-report-config.json') {
+      response.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      response.end(JSON.stringify({ endpoint: '/api/v2/ai-report' }));
+      return;
+    }
+    if (url.pathname === '/api/v2/ai-report') {
+      return handleAiReportRequest(request, response, {
+        env: {
+          AI_REPORT_PROVIDER: 'mock',
+          AI_REPORT_MOCK_MODE: 'success',
+          AI_REPORT_SESSION_LIMIT: '100',
+          AI_REPORT_CACHE_TTL_MS: '0',
+          ALLOWED_ORIGINS: baseUrl,
+        },
+      });
+    }
     const decoded = decodeURIComponent(url.pathname);
     const safePath = path.normalize(decoded === '/' ? '/index.html' : decoded).replace(/^([/\\])+/, '');
     const filePath = path.join(root, safePath);
@@ -91,6 +108,7 @@ async function runBrowserFlow({ name, viewport, executablePath }) {
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-action="start"]', { timeout: 10000 });
   const homeOverflow = await hasHorizontalOverflow(page);
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.waitForSelector('[data-action="begin"]');
   await page.locator('[data-action="begin"]').click();
@@ -120,12 +138,14 @@ async function runBrowserFlow({ name, viewport, executablePath }) {
   await clickOption(page, 2, answerLog);
   const q3Id = await currentQuestionId(page);
   await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-action="continue"]');
+  await page.locator('[data-action="continue"]').click();
   await page.waitForSelector('.v2-option');
   stateChecks.refreshRestored = await currentQuestionId(page) === q3Id;
 
   while (await page.locator('.v2-option').count()) {
     const qid = await currentQuestionId(page);
-    const progressText = await page.locator('.v2-progress-text').innerText();
+    const progressText = await page.locator('.v2-quiz__meta span').first().innerText();
     const index = Number(progressText.split('/')[0].trim());
     await clickOption(page, index % 4, answerLog);
     if (index >= 60) break;
@@ -145,7 +165,7 @@ async function runBrowserFlow({ name, viewport, executablePath }) {
   const resultContainsInternalInfo = ['Top2', 'Top3', 'baseline', 'candidate-A', 'targetVector', 'lowConfidence', 'gap', '距离'].some((needle) => resultText.includes(needle));
   const resultOverflow = await hasHorizontalOverflow(page);
   await page.locator('[data-action="restart"]').click();
-  await page.waitForSelector('[data-action="begin"]');
+  await page.waitForSelector('[data-action="start"]');
   const restartCleared = await page.evaluate(() => localStorage.getItem('heart-island-v2-alpha-1-state') === null);
 
   await browser.close();

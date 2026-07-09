@@ -120,6 +120,7 @@ async function runMobileViewport(browser, viewport) {
   const run = { name: viewport.name, pass: false };
   try {
     await openFresh(page);
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.waitForSelector('[data-action="begin"]');
     await page.locator('[data-action="begin"]').click();
@@ -133,6 +134,8 @@ async function runMobileViewport(browser, viewport) {
     await page.waitForSelector(`.v2-option[data-question-id="${firstQuestion}"]`);
     const previousRestore = await selectedOptionId(page);
     await page.reload({ waitUntil: 'networkidle' });
+    await page.waitForSelector('[data-action="continue"]');
+    await page.locator('[data-action="continue"]').click();
     await page.waitForSelector(`.v2-option[data-question-id="${firstQuestion}"]`);
     const refreshRestore = await selectedOptionId(page);
     if (viewport.capture) await shot(page, '04-quiz-selected.png');
@@ -151,7 +154,7 @@ async function runMobileViewport(browser, viewport) {
     if (viewport.capture) await shot(page, '05-completion-transition.png');
     const transitionReadability = await readability(page, [
       '.v2-transition .v2-lead',
-      '.v2-transition .v2-note',
+      '.v2-transition .v2-transition__meta',
     ]);
     await page.locator('[data-action="result"]').click();
     await page.waitForSelector('.v2-result-hero--trusted');
@@ -247,6 +250,7 @@ async function runDesktopViewport(browser) {
   const run = { name: '1440x900', pass: false };
   try {
     await openFresh(page);
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.locator('[data-action="begin"]').click();
     await page.waitForSelector('.v2-option');
@@ -424,6 +428,7 @@ function serveApp() {
           AI_REPORT_TIMEOUT_MS: '5000',
           AI_REPORT_SESSION_LIMIT: '100',
           AI_REPORT_CACHE_TTL_MS: '600000',
+          ALLOWED_ORIGINS: baseUrl,
         },
       });
     }

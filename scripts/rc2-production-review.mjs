@@ -59,6 +59,7 @@ async function runMobileFlow(browser) {
     const quizMetrics = await captureQuizSelected(page, '02-quiz-selected.png');
 
     await openFresh(page);
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.locator('[data-action="begin"]').click();
     await completeQuizFromCurrent(page);
@@ -147,6 +148,7 @@ async function runDesktopFlow(browser) {
   try {
     const quizMetrics = await captureQuizSelected(page, '08-quiz-selected.png');
     await openFresh(page);
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.locator('[data-action="begin"]').click();
     await completeQuizFromCurrent(page);
@@ -190,6 +192,7 @@ async function runAiFallbackFlow(browser, { name, mode, expectedState, expectedS
   const result = { name, pass: false };
   try {
     await openFresh(page);
+    await page.locator('[data-quiz-mode="full"]').click();
     await page.locator('[data-action="start"]').click();
     await page.locator('[data-action="begin"]').click();
     await completeQuizFromCurrent(page);
@@ -222,12 +225,14 @@ async function runAiFallbackFlow(browser, { name, mode, expectedState, expectedS
 
 async function captureQuizSelected(page, fileName) {
   await openFresh(page);
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.locator('[data-action="begin"]').click();
   await page.waitForSelector('.v2-option');
   await page.keyboard.press('Tab');
   const keyboardFocusVisible = await page.evaluate(() => document.activeElement?.classList.contains('v2-option') === true);
   await openFresh(page);
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.locator('[data-action="begin"]').click();
   await page.waitForSelector('.v2-option');
@@ -241,6 +246,7 @@ async function captureQuizSelected(page, fileName) {
     }));
   }
   await openFresh(page);
+  await page.locator('[data-quiz-mode="full"]').click();
   await page.locator('[data-action="start"]').click();
   await page.locator('[data-action="begin"]').click();
   await page.waitForSelector('.v2-option');
@@ -437,6 +443,7 @@ function serveApp() {
           AI_REPORT_TIMEOUT_MS: aiTimeoutMs,
           AI_REPORT_SESSION_LIMIT: '100',
           AI_REPORT_CACHE_TTL_MS: aiCacheTtlMs,
+          ALLOWED_ORIGINS: baseUrl,
         },
       });
     }
