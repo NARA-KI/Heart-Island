@@ -7,6 +7,17 @@
 - **当前模型**: DeepSeek (deepseek-v4-pro)
 - **接入说明**: Claude Code 扩展作为前端交互层，底层模型通过 Anthropic API 兼容网关路由到 DeepSeek
 
+## 安装模式
+
+**用户全局安装**（`C:\Users\Haru\.claude\skills\`），非项目级安装。
+
+- 全局 Skills：17 个（在所有项目中可用）
+- 心岛项目级配置：`CLAUDE.md` + `docs/agents/`（仅心岛项目）
+
+### 迁移记录
+
+最初安装到心岛项目级目录 `.claude/skills/`，后按用户要求迁移到用户全局目录。迁移时所有文件哈希已验证一致，无丢失。项目级 `.claude/skills/` 目录已删除。
+
 ## 安装基线
 
 | 项目 | 状态 |
@@ -155,9 +166,11 @@ rm -rf docs/agents/
 
 | 指标 | 值 |
 |------|-----|
-| 成功安装 | 15 |
-| 失败/跳过 | 0 |
-| 自定义 Skill | 1 (zh-project-workflow) |
+| 安装模式 | **用户全局** (`C:\Users\Haru\.claude\skills\`) |
+| 全局 Skill 数量 | 17（15 通用 + 1 zh-dev-workflow + 1 context7-mcp 已有） |
+| 心岛项目级 Skill | 0（已删除 `.claude/skills/`，CLAUDE.md + docs/agents/ 保留） |
+| 第二个项目验证 | 待 Reload Window 后确认 |
+| 自定义 Skill | 1 (zh-dev-workflow, 全局通用) |
 | 高风险 Skill | 0 |
 | 中风险 Skill | 1 (senior-backend, 脚本默认禁止) |
 | 修改业务代码 | 否 |
