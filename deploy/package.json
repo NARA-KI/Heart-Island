@@ -1,6 +1,6 @@
 {
   "name": "heart-island",
-  "version": "0.9.9.7-beta",
+  "version": "0.9.9.8-alpha.0",
   "description": "心岛计划 — 沉浸式恋爱人格测试 H5",
   "private": true,
   "scripts": {
@@ -26,6 +26,12 @@
     "v2:test:feedback": "node tests/v2-feedback-config.test.mjs",
     "v2:test:ai-report": "node tests/v2-ai-report-service.test.mjs && node tests/v2-ai-report-client.test.mjs",
     "v2:test:ai-report:browser": "node tests/v2-controlled-ai-report-browser.mjs",
+    "v2:test:ios-home": "node tests/v2-rc2-ios-home-viewport.test.mjs",
+    "v2:test:option-readability": "node tests/v2-option-order-and-rc2-readability.test.mjs",
+    "v2:test:dual-quiz": "node tests/v2-dual-quiz-core.test.mjs && node tests/v2-dual-quiz-ai-report.test.mjs",
+    "v2:test:quick-stability": "node tests/v2-quick-stability.test.mjs",
+    "v2:test:dual-quiz:browser": "node tests/v2-dual-quiz-browser.mjs",
+    "v2:test:rc2-visual": "node scripts/rc2-production-review.mjs",
     "v2:test:controlled-ai": "npm run v2:test:ai-report",
     "v2:test:controlled-ai:browser": "npm run v2:test:ai-report:browser",
     "v2:test:provider-smoke": "node scripts/v2-provider-smoke.mjs"

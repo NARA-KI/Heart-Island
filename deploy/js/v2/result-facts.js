@@ -29,7 +29,15 @@ const personaImageMap = {
   ferryman: './assets/personas/ferryman.webp',
 };
 
-export function buildResultFacts({ manifest, questionBank, candidateA, descriptions, answers, generatedAt = new Date().toISOString() }) {
+export function buildResultFacts({
+  manifest,
+  questionBank,
+  candidateA,
+  descriptions,
+  answers,
+  assessment,
+  generatedAt = new Date().toISOString(),
+}) {
   const scoring = scoreAnswers(questionBank, candidateA, answers);
   return buildResultFactsFromScoring({
     manifest,
@@ -38,11 +46,21 @@ export function buildResultFacts({ manifest, questionBank, candidateA, descripti
     descriptions,
     answers,
     scoring,
+    assessment,
     generatedAt,
   });
 }
 
-export function buildResultFactsFromScoring({ manifest, questionBank, candidateA, descriptions, answers, scoring, generatedAt = new Date().toISOString() }) {
+export function buildResultFactsFromScoring({
+  manifest,
+  questionBank,
+  candidateA,
+  descriptions,
+  answers,
+  scoring,
+  assessment,
+  generatedAt = new Date().toISOString(),
+}) {
   const top1 = scoring.top5[0];
   const top2 = scoring.top5[1];
   const description = descriptions.personas.find((item) => item.id === top1.id)
@@ -55,6 +73,13 @@ export function buildResultFactsFromScoring({ manifest, questionBank, candidateA
   const derived = buildNeedsStrengthsRisks({ description, topConstructs, bottomConstructs, conflicts });
   const isCloseMatch = scoring.top1Top2Gap <= V2_CLOSE_MATCH_GAP_THRESHOLD;
   const responseQuality = detectResponseQuality(scoring, answers, questionBank);
+  const assessmentFacts = buildAssessmentFacts({
+    assessment,
+    questionBank,
+    answers,
+    scoring,
+    top2,
+  });
 
   const facts = {
     resultId: createResultId({ answers, questionBankVersion: manifest.questionnaireVersion, scoringProfile: candidateA.scoringProfile ?? 'candidate-a' }),
@@ -66,6 +91,7 @@ export function buildResultFactsFromScoring({ manifest, questionBank, candidateA
       scoringProfile: candidateA.scoringProfile ?? manifest.scoringProfile ?? 'candidate-a',
       resultSchemaVersion: V2_RESULT_SCHEMA_VERSION,
     },
+    assessment: assessmentFacts,
     persona: {
       id: top1.id,
       displayName: top1.displayName,
@@ -119,8 +145,43 @@ export function validateResultFacts(facts) {
   if (!Array.isArray(facts?.topConstructs) || facts.topConstructs.length < 3) errors.push('topConstructs must include at least three entries');
   if (!Array.isArray(facts?.bottomConstructs) || facts.bottomConstructs.length < 2) errors.push('bottomConstructs must include at least two entries');
   if (!facts?.responseQuality?.level) errors.push('missing responseQuality');
+  if (!['quick', 'full'].includes(facts?.assessment?.quizMode)) errors.push('invalid assessment quizMode');
+  if (![30, 60].includes(facts?.assessment?.answeredCount)) errors.push('invalid assessment answeredCount');
+  if (facts?.assessment?.answeredQuestionIds?.length !== facts?.assessment?.answeredCount) {
+    errors.push('assessment answeredQuestionIds count mismatch');
+  }
+  if (Object.keys(facts?.assessment?.normalizedConstructScores ?? {}).length !== 15) {
+    errors.push('assessment normalizedConstructScores must include all 15 constructs');
+  }
   if (errors.length) throw new Error(errors.join('\n'));
   return true;
+}
+
+function buildAssessmentFacts({ assessment = {}, questionBank, answers, scoring, top2 }) {
+  const answeredQuestionIds = questionBank.questions
+    .map((question) => question.id)
+    .filter((id) => Boolean(answers[id]));
+  const inferredMode = questionBank.questions.length === 30 ? 'quick' : 'full';
+  return {
+    quizMode: assessment.quizMode === 'quick' || assessment.quizMode === 'full'
+      ? assessment.quizMode
+      : inferredMode,
+    answeredCount: answeredQuestionIds.length,
+    totalQuestionCount: assessment.totalQuestionCount ?? questionBank.questions.length,
+    answeredQuestionIds,
+    elapsedMs: Math.max(0, Number(assessment.elapsedMs) || 0),
+    quickElapsedMs: assessment.quickElapsedMs === null || assessment.quickElapsedMs === undefined
+      ? null
+      : Math.max(0, Number(assessment.quickElapsedMs) || 0),
+    normalizedConstructScores: scoring.normalizedConstructScores,
+    secondaryTendency: top2 ? {
+      id: top2.id,
+      displayName: top2.displayName,
+      rank: 2,
+      distance: top2.distance,
+    } : null,
+    dataSufficiency: inferredMode === 'quick' ? 'complete-15d-quick' : 'extended-15d-full',
+  };
 }
 
 function buildKeywords(description, topConstructs) {

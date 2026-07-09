@@ -16,6 +16,7 @@ export function renderResult(root, {
   onCloseSharePreview,
   onExternalFeedback,
   onRetryAiReport,
+  onContinueFull,
   onFeedbackChange,
 }) {
   const { facts } = result;
@@ -24,6 +25,7 @@ export function renderResult(root, {
   const shareStatus = state.shareStatus ?? {};
   const aiStatus = result.aiReportStatus ?? {};
   const tags = resultTags(facts, report);
+  const quick = facts.assessment?.quizMode === 'quick';
 
   root.innerHTML = `
     <section class="v2-screen v2-result">
@@ -36,8 +38,11 @@ export function renderResult(root, {
           </div>
         </div>
         <div class="v2-result-hero__content">
-          <p class="v2-eyebrow">你的心岛人格</p>
+          <p class="v2-eyebrow">${quick ? '快速探索报告' : '深度探索报告'}</p>
           <h1>${escapeHtml(facts.persona.displayName)}</h1>
+          <p class="v2-report-basis">${quick
+            ? '本次结果基于30题生成，已覆盖全部15个关系维度。'
+            : '本次结果基于60题生成，在更多关系场景下完成了进一步校准。'}</p>
           <div class="v2-key-traits" aria-label="人格关键词">
             ${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('')}
           </div>
@@ -124,6 +129,15 @@ export function renderResult(root, {
         <p class="v2-note">${escapeHtml(report.safetyDisclaimer)}</p>
       </details>
 
+      ${quick ? `
+        <section class="v2-result-section v2-continue-full">
+          <p class="v2-eyebrow">继续深度探索</p>
+          <h2>继续完成剩余30题，进一步校准你的关系画像。</h2>
+          <p>本次快速探索已经覆盖全部15个关系维度。继续完成剩余题目，可以让分析更稳定、更细致。</p>
+          <button class="v2-primary" type="button" data-action="continue-full">继续完成剩余30题</button>
+        </section>
+      ` : ''}
+
       <section class="v2-result-section v2-bottom-actions">
         <div class="v2-section-heading">
           <p class="v2-eyebrow">保存与分享</p>
@@ -158,6 +172,7 @@ export function renderResult(root, {
   root.querySelector('[data-action="close-share-preview"]')?.addEventListener('click', onCloseSharePreview);
   root.querySelector('[data-action="external-feedback"]')?.addEventListener('click', onExternalFeedback);
   root.querySelector('[data-action="retry-ai-report"]')?.addEventListener('click', onRetryAiReport);
+  root.querySelector('[data-action="continue-full"]')?.addEventListener('click', onContinueFull);
   root.querySelector('[data-action="restart-from-restore"]')?.addEventListener('click', onRestart);
   root.querySelectorAll('[data-action="restart"]').forEach((button) => button.addEventListener('click', onRestart));
   root.querySelectorAll('[data-feedback-field]').forEach((field) => {
@@ -231,7 +246,7 @@ function aiReportPanel(status = {}, report, restoreNotice = '') {
       ` : ''}
       ${(state === 'error' || state === 'timeout') ? `
         <div class="v2-ai-status" data-ai-state="${escapeHtml(state)}">
-          <h3>${state === 'timeout' ? '个性化解读生成时间较长' : '个性化解读暂时没有生成'}</h3>
+          <h3>${state === 'timeout' ? '个性化报告生成时间较长' : '个性化报告暂时生成失败'}</h3>
           <p>${escapeHtml(stateText)}</p>
           ${retryButton}
         </div>
@@ -283,7 +298,7 @@ function aiReportContent(report) {
 function fallbackAiStatusMessage(state) {
   if (state === 'loading') return '正在结合你的本次作答，整理一份更贴近你的关系侧写...';
   if (state === 'timeout') return '个性化解读生成时间较长，当前结果仍可正常查看。';
-  if (state === 'error') return '个性化解读暂时没有生成，当前结果仍可正常查看。';
+  if (state === 'error') return '个性化报告暂时生成失败，当前基础分析仍可正常查看。';
   return '';
 }
 

@@ -3,7 +3,7 @@ import { AI_REPORT_PROMPT_VERSION, createResultHash, validateStrictAiReport } fr
 import { V2_AI_REPORT_DEFAULT_ENDPOINT } from '../config.js';
 
 const inflight = new Map();
-const SESSION_LIMIT = 3;
+const SESSION_LIMIT = 6;
 const SESSION_COUNT_KEY = 'heart-island-v2-ai-report-session-count';
 const DEFAULT_TIMEOUT_MS = 25000;
 

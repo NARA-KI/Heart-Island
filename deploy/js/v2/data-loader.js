@@ -25,7 +25,7 @@ export async function loadV2RuntimeData(paths = V2_DATA_PATHS, options = {}) {
     questionBank,
     personaData: candidateA,
     descriptions,
-  });
+  }, { allowedQuestionCounts: [60] });
 
   const runtime = {
     manifest,
@@ -45,7 +45,7 @@ export async function loadV2RuntimeData(paths = V2_DATA_PATHS, options = {}) {
       questionBank,
       personaData: candidateE,
       descriptions,
-    });
+    }, { allowedQuestionCounts: [60] });
     runtime.candidateE = candidateE;
     runtime.candidateEScoringProfile = candidateEScoringProfile;
   }

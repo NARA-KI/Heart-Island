@@ -1,13 +1,13 @@
-export const V2_PRODUCT_VERSION = 'Heart Island v2.0 Alpha 1';
+export const V2_PRODUCT_VERSION = 'Heart Island v2.0 Alpha 2';
 export const V2_PUBLIC_PRODUCT_NAME = '心岛计划';
 export const V2_PUBLIC_PRODUCT_LABEL = 'Heart Island';
 export const V2_SCORING_PROFILE = 'candidate-a';
 export const V2_STORAGE_KEY = 'heart-island-v2-alpha-1-state';
 export const V2_DATA_BASE = './data/v2/';
-export const V2_RESULT_SCHEMA_VERSION = 'v2-trusted-beta-result-facts-1';
+export const V2_RESULT_SCHEMA_VERSION = 'v2-dual-quiz-result-facts-2';
 export const V2_REPORT_SCHEMA_VERSION = 'v2-trusted-beta-result-report-1';
-export const V2_AI_REPORT_PROMPT_VERSION_PREVIOUS = 'v2-controlled-ai-report-prompt-1';
-export const V2_AI_REPORT_PROMPT_VERSION = 'v2-controlled-ai-report-prompt-2';
+export const V2_AI_REPORT_PROMPT_VERSION_PREVIOUS = 'v2-controlled-ai-report-prompt-2';
+export const V2_AI_REPORT_PROMPT_VERSION = 'v2-dual-quiz-ai-report-prompt-3';
 export const V2_AI_REPORT_CONFIG_PATH = './ai-report-config.json';
 export const V2_AI_REPORT_DEFAULT_ENDPOINT = '/api/v2/ai-report';
 export const V2_FEEDBACK_CONFIG_PATH = './feedback-config.json';

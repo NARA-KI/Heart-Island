@@ -2,6 +2,7 @@ import { V2_PRODUCT_VERSION, V2_STORAGE_KEY } from './config.js';
 
 export function createStorageMeta(manifest) {
   return {
+    storageSchemaVersion: 2,
     productVersion: V2_PRODUCT_VERSION,
     questionnaireVersion: manifest.questionnaireVersion,
     questionBankHash: manifest.questionBankHash,
@@ -17,7 +18,7 @@ export function loadSavedState(manifest) {
     const parsed = JSON.parse(raw);
     const expected = createStorageMeta(manifest);
     const meta = parsed.meta ?? {};
-    const compatible = Object.entries(expected).every(([key, value]) => meta[key] === value);
+    const compatible = isCompatibleMeta(meta, manifest);
     if (!compatible) {
       return { status: 'stale', state: parsed, expected };
     }
@@ -30,18 +31,41 @@ export function loadSavedState(manifest) {
 export function saveState(manifest, state) {
   const payload = {
     meta: createStorageMeta(manifest),
+    schemaVersion: 2,
+    quizMode: state.quizMode,
+    quizPath: state.quizPath,
     currentQuestionIndex: state.currentQuestionIndex,
-    answers: state.answers,
+    orderedQuestionIds: state.orderedQuestionIds,
+    answersByQuestionId: state.answersByQuestionId,
     optionOrder: state.optionOrder,
     startedAt: state.startedAt,
+    startTimestamp: state.startTimestamp,
+    elapsedMs: state.elapsedMs,
+    quickElapsedMs: state.quickElapsedMs,
     updatedAt: new Date().toISOString(),
     completedAt: state.completedAt,
+    completionStatus: state.completionStatus,
+    quickCompleted: state.quickCompleted,
+    fullCompleted: state.fullCompleted,
     view: state.view,
     pilot: state.pilot,
     feedback: state.feedback,
-    result: compactResultForStorage(state.result),
+    quickReport: compactResultForStorage(state.quickReport),
+    fullReport: compactResultForStorage(state.fullReport),
+    reportGenerationStatus: state.reportGenerationStatus,
   };
   localStorage.setItem(V2_STORAGE_KEY, JSON.stringify(payload));
+}
+
+function isCompatibleMeta(meta, manifest) {
+  if (!meta || typeof meta !== 'object') return false;
+  const compatibleQuestionBankHashes = new Set([
+    manifest.questionBankHash,
+    ...(manifest.compatibleQuestionBankHashes ?? []),
+  ]);
+  return compatibleQuestionBankHashes.has(meta.questionBankHash)
+    && meta.scoringProfile === manifest.scoringProfile
+    && meta.targetVectorHash === manifest.targetVectorHash;
 }
 
 export function clearSavedState() {

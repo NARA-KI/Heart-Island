@@ -1,14 +1,29 @@
 import { V2_AI_REPORT_DEFAULT_ENDPOINT, V2_SCORING_PROFILE } from './config.js';
 import { loadV2RuntimeData } from './data-loader.js';
 import { renderRoute } from './router.js';
-import { createInitialState, hydrateState, isComplete } from './state.js';
+import { createInitialState, hydrateState, isComplete, syncAnsweredCount } from './state.js';
 import { answerQuestion, goNext, goPrevious } from './question-engine.js';
 import { buildResult } from './result-engine.js';
+import {
+  QUIZ_MODE_FULL,
+  QUIZ_MODE_QUICK,
+  createQuestionBankForMode,
+  getOrderedQuestionIds,
+  isQuizMode,
+  pickAnswersForQuestionIds,
+  validateQuizQuestionSets,
+} from './quiz-modes.js';
 import { createV2ShareCardBlob } from './share-card.js';
 import { clearAiReportCache } from './ai/ai-report-cache.js';
 import { generateAiResultReport } from './ai/ai-report-client.js';
 import { loadAiReportConfig } from './ai/ai-report-config.js';
 import { createResultHash } from './ai/ai-report-schema.js';
+import {
+  currentElapsedMs,
+  formatElapsedTime,
+  pauseQuizTimer,
+  resumeQuizTimer,
+} from './quiz-timer.js';
 import {
   buildFeedbackUrl,
   getViewportLabel,
@@ -41,6 +56,8 @@ let feedbackConfig = { enabled: false, url: null };
 let sharePreviewUrl = null;
 let sharePreviewBlob = null;
 let sharePreviewFile = null;
+let timerIntervalId = null;
+let statePersistenceEnabled = true;
 
 function setBootStatus(message, mode = 'loading') {
   if (!bootStatus) return;
@@ -49,20 +66,25 @@ function setBootStatus(message, mode = 'loading') {
 }
 
 function persist() {
-  if (!runtime) return;
+  if (!runtime || !statePersistenceEnabled) return;
   saveState(runtime.manifest, state);
 }
 
 function route(overrides = {}) {
+  const hasDraft = state.orderedQuestionIds.length > 0
+    && state.orderedQuestionIds.some((id) => !state.answersByQuestionId[id])
+    && Object.keys(state.answersByQuestionId).length > 0;
   renderRoute(root, {
     runtime,
     state,
     questionBank: runtime.questionBank,
     result: state.result,
-    hasDraft: Object.keys(state.answers).length > 0 && !isComplete(state, runtime.questionBank),
+    hasDraft,
     restoreNotice: state.restoreNotice,
+    onSelectMode: selectQuizMode,
     onStart: startFresh,
     onContinue: continueDraft,
+    onRestart: restartToHome,
     onBack: () => {
       state.view = 'home';
       route();
@@ -71,7 +93,7 @@ function route(overrides = {}) {
     onAnswer: handleAnswer,
     onPrevious: handlePrevious,
     onShowResult: showResult,
-    onRestart: startFresh,
+    onContinueFull: continueFullExploration,
     onFeedbackChange: handlePilotFeedbackChange,
     onExportJson: handlePilotExportJson,
     onCopyCode: handlePilotCopyCode,
@@ -89,6 +111,7 @@ function route(overrides = {}) {
     onFeedbackChange: handleResultFeedbackChange,
     ...overrides,
   });
+  syncTimerLoop();
 }
 
 function buildFeedbackEntry() {
@@ -106,34 +129,84 @@ function buildFeedbackEntry() {
   };
 }
 
-function startFresh() {
+function selectQuizMode(mode) {
+  if (!isQuizMode(mode) || Object.keys(state.answersByQuestionId).length > 0) return;
+  state.quizMode = mode;
+  state.quizPath = 'direct';
+  state.orderedQuestionIds = getOrderedQuestionIds(runtime.questionBank, mode);
+  state.currentQuestionIndex = 0;
+  persist();
+  route();
+}
+
+function startFresh(mode = state.quizMode) {
+  if (!isQuizMode(mode)) return;
+  statePersistenceEnabled = true;
   currentAiReportController?.abort();
   clearSharePreview();
   clearSavedState();
   clearAiReportCache();
   state = createInitialState({ pilotMode });
+  state.quizMode = mode;
+  state.quizPath = 'direct';
+  state.orderedQuestionIds = getOrderedQuestionIds(runtime.questionBank, mode);
   state.view = 'instructions';
   state.startedAt = new Date().toISOString();
+  state.completionStatus = 'in-progress';
+  persist();
+  route();
+}
+
+function restartToHome() {
+  statePersistenceEnabled = true;
+  currentAiReportController?.abort();
+  clearSharePreview();
+  clearSavedState();
+  clearAiReportCache();
+  state = createInitialState({ pilotMode });
+  if (pilotMode) {
+    state.quizMode = QUIZ_MODE_FULL;
+    state.quizPath = 'direct';
+    state.orderedQuestionIds = getOrderedQuestionIds(runtime.questionBank, QUIZ_MODE_FULL);
+  }
   route();
 }
 
 function continueDraft() {
   state.view = 'quiz';
+  state.completionStatus = 'in-progress';
+  resumeQuizTimer(state);
+  persist();
   route();
 }
 
 function beginQuiz() {
   state.view = 'quiz';
   state.startedAt ??= new Date().toISOString();
+  state.completionStatus = 'in-progress';
+  resumeQuizTimer(state);
   persist();
   route();
 }
 
 function handleAnswer(questionId, optionId) {
   answerQuestion(runtime.questionBank, state, questionId, optionId);
+  invalidateCurrentModeReport();
   const nextView = goNext(runtime.questionBank, state);
   state.view = nextView;
-  if (nextView === 'transition') state.completedAt = new Date().toISOString();
+  if (nextView === 'transition') {
+    pauseQuizTimer(state);
+    state.completedAt = new Date().toISOString();
+    if (state.quizMode === QUIZ_MODE_QUICK) {
+      state.quickCompleted = true;
+      state.quickElapsedMs = state.elapsedMs;
+      state.completionStatus = 'quick-complete';
+    } else {
+      state.fullCompleted = true;
+      state.completionStatus = 'full-complete';
+    }
+  }
+  syncAnsweredCount(state);
   persist();
   route();
 }
@@ -151,19 +224,108 @@ function showResult() {
     route();
     return;
   }
+  const resultQuestionBank = createQuestionBankForMode(runtime.questionBank, state.quizMode);
+  const resultQuestionIds = resultQuestionBank.questions.map((question) => question.id);
+  const resultAnswers = pickAnswersForQuestionIds(state.answersByQuestionId, resultQuestionIds);
   state.result = state.pilot?.enabled
     ? buildPilotResult({ runtime, state })
     : buildResult({
       manifest: runtime.manifest,
-      questionBank: runtime.questionBank,
+      questionBank: resultQuestionBank,
       candidateA: runtime.candidateA,
       descriptions: runtime.descriptions,
-      answers: state.answers,
+      answers: resultAnswers,
+      assessment: {
+        quizMode: state.quizMode,
+        totalQuestionCount: state.quizMode === QUIZ_MODE_QUICK ? 30 : 60,
+        elapsedMs: state.elapsedMs,
+        quickElapsedMs: state.quickElapsedMs,
+      },
     });
+  if (state.quizMode === QUIZ_MODE_QUICK) {
+    state.quickCompleted = true;
+    state.quickReport = state.result;
+  } else {
+    state.fullCompleted = true;
+    state.fullReport = state.result;
+  }
+  syncCurrentReportStatus();
   state.view = 'result';
   persist();
   route();
   requestAiReportEnhancement();
+}
+
+function continueFullExploration() {
+  if (!state.quickCompleted || Object.keys(state.answersByQuestionId).length < 30) return;
+  currentAiReportController?.abort();
+  clearSharePreview();
+  state.quizMode = QUIZ_MODE_FULL;
+  state.quizPath = 'continuation';
+  state.orderedQuestionIds = getOrderedQuestionIds(runtime.questionBank, QUIZ_MODE_FULL, { continuation: true });
+  state.currentQuestionIndex = Math.max(
+    0,
+    state.orderedQuestionIds.findIndex((id) => !state.answersByQuestionId[id]),
+  );
+  state.result = null;
+  state.fullReport = null;
+  state.fullCompleted = false;
+  state.completedAt = null;
+  state.completionStatus = 'in-progress';
+  state.reportGenerationStatus.full = { state: 'idle', message: '' };
+  state.view = 'quiz';
+  resumeQuizTimer(state);
+  persist();
+  route();
+}
+
+function syncTimerLoop() {
+  if (state.view === 'quiz' && document.visibilityState !== 'hidden') {
+    resumeQuizTimer(state);
+    if (!timerIntervalId) {
+      timerIntervalId = window.setInterval(() => {
+        const timer = root.querySelector('[data-quiz-timer]');
+        if (timer) timer.textContent = `◷ ${formatElapsedTime(currentElapsedMs(state))}`;
+      }, 1000);
+    }
+    return;
+  }
+  if (timerIntervalId) {
+    window.clearInterval(timerIntervalId);
+    timerIntervalId = null;
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    pauseQuizTimer(state);
+    persist();
+    syncTimerLoop();
+  } else if (state.view === 'quiz') {
+    resumeQuizTimer(state);
+    persist();
+    syncTimerLoop();
+  }
+});
+
+window.addEventListener('pagehide', () => {
+  if (state.view === 'quiz') {
+    pauseQuizTimer(state);
+    persist();
+  }
+});
+
+function invalidateCurrentModeReport() {
+  if (state.quizMode === QUIZ_MODE_QUICK) {
+    state.quickReport = null;
+    state.quickCompleted = false;
+    state.reportGenerationStatus.quick = { state: 'idle', message: '' };
+  } else {
+    state.fullReport = null;
+    state.fullCompleted = false;
+    state.reportGenerationStatus.full = { state: 'idle', message: '' };
+  }
+  state.result = null;
 }
 
 function requestAiReportEnhancement(options = {}) {
@@ -173,6 +335,7 @@ function requestAiReportEnhancement(options = {}) {
   if (state.result.aiReport || state.result.report.source === 'ai') {
     state.result.aiReport ??= state.result.report.source === 'ai' ? state.result.report : null;
     state.result.aiReportStatus = { ...status, state: 'success', message: '个性化解读已生成', resultHash };
+    syncCurrentReportStatus();
     persist();
     route();
     return;
@@ -193,6 +356,7 @@ function requestAiReportEnhancement(options = {}) {
     resultHash,
     retryUsed: Boolean(status.retryUsed || options.force),
   };
+  syncCurrentReportStatus();
   persist();
   route();
 
@@ -213,6 +377,7 @@ function requestAiReportEnhancement(options = {}) {
         resultHash,
         retryUsed: Boolean(status.retryUsed || options.force),
       };
+      syncCurrentReportStatus();
       persist();
       route();
     })
@@ -222,14 +387,24 @@ function requestAiReportEnhancement(options = {}) {
       state.result.aiReport = null;
       state.result.aiReportStatus = {
         state: error?.code === 'timeout' ? 'timeout' : 'error',
-        message: '个性化解读暂时没有生成，当前结果仍可正常查看。',
+        message: '个性化报告暂时生成失败，当前基础分析仍可正常查看。',
         resultHash,
         retryUsed: Boolean(status.retryUsed || options.force),
       };
+      syncCurrentReportStatus();
       if (debugMode) console.warn('AI report enhancement failed', error);
       persist();
       route();
     });
+}
+
+function syncCurrentReportStatus() {
+  if (!state.result || !isQuizMode(state.quizMode)) return;
+  state.reportGenerationStatus[state.quizMode] = {
+    ...(state.result.aiReportStatus ?? { state: 'idle', message: '' }),
+  };
+  if (state.quizMode === QUIZ_MODE_QUICK) state.quickReport = state.result;
+  if (state.quizMode === QUIZ_MODE_FULL) state.fullReport = state.result;
 }
 
 function handleRetryAiReport() {
@@ -401,6 +576,8 @@ async function boot() {
   runtime.candidateA.scoringProfile = V2_SCORING_PROFILE;
   if (runtime.candidateE) runtime.candidateE.scoringProfile = 'candidate-e-adaptive-hybrid';
 
+  validateQuizQuestionSets(runtime.questionBank);
+
   const saved = loadSavedState(runtime.manifest);
   if (saved.status === 'ok') {
     state = hydrateState(saved.state, runtime.questionBank, { pilotMode });
@@ -408,25 +585,21 @@ async function boot() {
       ? '这是你上一次保存的心岛结果。'
       : '已恢复上次未完成的测试进度。';
   } else if (saved.status === 'stale') {
-    clearSavedState();
+    statePersistenceEnabled = false;
     state = createInitialState({ pilotMode });
-    state.restoreNotice = '测试版本已更新，旧进度已停用，请重新开始。';
+    state.restoreNotice = '检测到无法安全迁移的旧进度。原记录仍保留，请选择模式重新开始。';
   } else if (saved.status === 'invalid') {
-    clearSavedState();
+    statePersistenceEnabled = false;
     state = createInitialState({ pilotMode });
-    state.restoreNotice = '本地进度无法读取，已重置。';
+    state.restoreNotice = '本地进度暂时无法读取。原记录未删除，请选择模式重新开始。';
   }
-  if (pilotMode && !state.pilot?.enabled) state.pilot = createPilotState(true);
-  if (!pilotMode && isComplete(state, runtime.questionBank) && !state.result) {
-    state.result = buildResult({
-      manifest: runtime.manifest,
-      questionBank: runtime.questionBank,
-      candidateA: runtime.candidateA,
-      descriptions: runtime.descriptions,
-      answers: state.answers,
-    });
-    state.view = 'result';
-    persist();
+  if (pilotMode) {
+    if (!state.pilot?.enabled) state.pilot = createPilotState(true);
+    state.quizMode ??= QUIZ_MODE_FULL;
+    state.quizPath ??= 'direct';
+    if (!state.orderedQuestionIds.length) {
+      state.orderedQuestionIds = getOrderedQuestionIds(runtime.questionBank, QUIZ_MODE_FULL);
+    }
   }
 
   setBootStatus('关系倾向测试已就绪', 'ready');
@@ -435,10 +608,20 @@ async function boot() {
     get runtime() { return runtime; },
     score: () => buildResult({
       manifest: runtime.manifest,
-      questionBank: runtime.questionBank,
+      questionBank: createQuestionBankForMode(runtime.questionBank, state.quizMode ?? QUIZ_MODE_FULL),
       candidateA: runtime.candidateA,
       descriptions: runtime.descriptions,
-      answers: state.answers,
+      answers: pickAnswersForQuestionIds(
+        state.answersByQuestionId,
+        state.quizMode === QUIZ_MODE_QUICK
+          ? getOrderedQuestionIds(runtime.questionBank, QUIZ_MODE_QUICK)
+          : getOrderedQuestionIds(runtime.questionBank, QUIZ_MODE_FULL),
+      ),
+      assessment: {
+        quizMode: state.quizMode ?? QUIZ_MODE_FULL,
+        elapsedMs: state.elapsedMs,
+        quickElapsedMs: state.quickElapsedMs,
+      },
     }),
     exportPilotRecord: () => createPilotExportRecord({ runtime, state }),
     summarizePilotRecords,

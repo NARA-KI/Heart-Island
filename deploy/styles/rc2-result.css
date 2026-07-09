@@ -460,3 +460,36 @@
   background: rgba(248, 243, 234, 0.56);
   color: var(--rc2-ink);
 }
+[data-visual-theme="rc2"] .v2-report-basis {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: rgba(238, 231, 220, 0.7);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+[data-visual-theme="rc2"] .v2-continue-full {
+  background:
+    linear-gradient(120deg, rgba(111, 153, 148, 0.12), rgba(197, 160, 122, 0.08)),
+    var(--rc2-paper) !important;
+}
+
+[data-visual-theme="rc2"] .v2-continue-full h2 {
+  max-width: 780px;
+  margin: 10px 0 14px;
+  color: var(--rc2-ink);
+  font-family: var(--rc2-serif);
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+[data-visual-theme="rc2"] .v2-continue-full > p:not(.v2-eyebrow) {
+  max-width: 680px;
+  color: var(--rc2-text-secondary);
+  line-height: 1.8;
+}
+
+[data-visual-theme="rc2"] .v2-continue-full .v2-primary {
+  margin-top: 16px;
+}
