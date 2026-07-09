@@ -1,0 +1,68 @@
+{
+  "description": "Pre-modification text snapshot of the 5 items changed in the narrative fix. Used by scripts/v2-validation/validate-5-item-fix.mjs to verify only intended fields changed.",
+  "generatedAt": "2026-07-09",
+  "sourceFile": "data/v2/question-bank.v2.json",
+  "sourceCommit": "c52851b",
+  "items": [
+    {
+      "id": "v2-q30",
+      "construct": "NV",
+      "reverse": false,
+      "question": "长期关系里，你最怕哪一种状态？",
+      "options": [
+        { "id": "A", "text": "一切太重复，像再也没有新风景。", "score": 100 },
+        { "id": "B", "text": "关系太不确定，随时可能变化。", "score": 0 },
+        { "id": "C", "text": "只有稳定，没有一起探索的空间。", "score": 67 },
+        { "id": "D", "text": "每天都很好预测，很少出现意外惊喜。", "score": 33 }
+      ]
+    },
+    {
+      "id": "v2-q53",
+      "construct": "RI",
+      "reverse": false,
+      "question": "当一段重要关系进入困难期，你通常怎样理解“继续投入”？",
+      "options": [
+        { "id": "A", "text": "如果还重要，我愿意继续把心力放进去。", "score": 100 },
+        { "id": "B", "text": "我会看这段关系是否还值得继续加码。", "score": 33 },
+        { "id": "C", "text": "我更倾向及时止损，不让自己陷太深。", "score": 0 },
+        { "id": "D", "text": "我愿意留下，但需要看到双方都在努力。", "score": 67 }
+      ]
+    },
+    {
+      "id": "v2-q55",
+      "construct": "RI",
+      "reverse": false,
+      "question": "你们已经一起投入了很多时间和心力，但眼前关系进入低谷。过去的投入会怎样影响你的选择？",
+      "options": [
+        { "id": "A", "text": "它会让我更想再努力一次。", "score": 100 },
+        { "id": "B", "text": "我会承认投入过，但不一定继续留下。", "score": 33 },
+        { "id": "C", "text": "我会看这段关系是否还能继续被经营。", "score": 67 },
+        { "id": "D", "text": "我不想因为已经投入而拖住现在。", "score": 0 }
+      ]
+    },
+    {
+      "id": "v2-q56",
+      "construct": "MN",
+      "reverse": false,
+      "question": "在心岛旧码头，你看见许多被海风磨平的名字。对你来说，关系里的共同记忆更像什么？",
+      "options": [
+        { "id": "A", "text": "是爱存在过的证据，我会很珍惜。", "score": 100 },
+        { "id": "B", "text": "是一部分经历，但不该决定现在。", "score": 33 },
+        { "id": "C", "text": "是推动我继续理解这段关系的线索。", "score": 67 },
+        { "id": "D", "text": "是过去的事，我不太会反复翻看。", "score": 0 }
+      ]
+    },
+    {
+      "id": "v2-q57",
+      "construct": "RI",
+      "reverse": false,
+      "question": "关系变得很重，需要持续投入时间和心力。你更接近哪种选择？",
+      "options": [
+        { "id": "A", "text": "如果这段关系重要，我会继续把心力放进去。", "score": 100 },
+        { "id": "B", "text": "我会先评估自己还能投入多少。", "score": 33 },
+        { "id": "C", "text": "我会开始减少投入，避免继续变重。", "score": 0 },
+        { "id": "D", "text": "我愿意继续，但前提是双方都在投入。", "score": 67 }
+      ]
+    }
+  ]
+}

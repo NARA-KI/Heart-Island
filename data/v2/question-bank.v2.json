@@ -895,31 +895,31 @@
       "id": "v2-q30",
       "construct": "NV",
       "reverse": false,
-      "question": "长期关系里，你最怕哪一种状态？",
+      "question": "一段关系稳定了很久。你内心更接近哪种感受？",
       "options": [
         {
           "id": "A",
-          "text": "一切太重复，像再也没有新风景。",
+          "text": "我开始觉得闷，总想一起找些新的东西。",
           "score": 100
         },
         {
           "id": "B",
-          "text": "关系太不确定，随时可能变化。",
+          "text": "我不太需要变化，安安静静就挺好。",
           "score": 0
         },
         {
           "id": "C",
-          "text": "只有稳定，没有一起探索的空间。",
+          "text": "我希望能不时一起尝试没做过的事。",
           "score": 67
         },
         {
           "id": "D",
-          "text": "每天都很好预测，很少出现意外惊喜。",
+          "text": "稳定就好，偶尔有点变化是加分。",
           "score": 33
         }
       ],
-      "sourceVersion": "pass-2-prep",
-      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+      "sourceVersion": "narrative-fix-20260709",
+      "reviewStatus": "narrative-fix-q30-q53-q55-q56-q57"
     },
     {
       "id": "v2-q31",
@@ -1585,31 +1585,31 @@
       "id": "v2-q53",
       "construct": "RI",
       "reverse": false,
-      "question": "当一段重要关系进入困难期，你通常怎样理解“继续投入”？",
+      "question": "一段重要的关系进入了困难期。你心里更接近哪种想法？",
       "options": [
         {
           "id": "A",
-          "text": "如果还重要，我愿意继续把心力放进去。",
+          "text": "只要这段关系还重要，我就愿意继续付出。",
           "score": 100
         },
         {
           "id": "B",
-          "text": "我会看这段关系是否还值得继续加码。",
+          "text": "我会先收回来一点，少放些心思在关系上。",
           "score": 33
         },
         {
           "id": "C",
-          "text": "我更倾向及时止损，不让自己陷太深。",
+          "text": "我觉得该停下来了，不想越陷越深。",
           "score": 0
         },
         {
           "id": "D",
-          "text": "我愿意留下，但需要看到双方都在努力。",
+          "text": "我愿意再等一段时间，看能不能好转。",
           "score": 67
         }
       ],
-      "sourceVersion": "heart-island-v2-question-bank-and-scoring-draft",
-      "reviewStatus": "original-candidate-pending-isolated-validation"
+      "sourceVersion": "narrative-fix-20260709",
+      "reviewStatus": "narrative-fix-q30-q53-q55-q56-q57"
     },
     {
       "id": "v2-q54",
@@ -1645,91 +1645,91 @@
       "id": "v2-q55",
       "construct": "RI",
       "reverse": false,
-      "question": "你们已经一起投入了很多时间和心力，但眼前关系进入低谷。过去的投入会怎样影响你的选择？",
+      "question": "你们已经为这段关系付出了很多，但现在关系不如以前了。你更接近哪种？",
       "options": [
         {
           "id": "A",
-          "text": "它会让我更想再努力一次。",
+          "text": "付出这么多，我还是想再努力一次。",
           "score": 100
         },
         {
           "id": "B",
-          "text": "我会承认投入过，但不一定继续留下。",
+          "text": "付出了很多，但我也可以选择停下来。",
           "score": 33
         },
         {
           "id": "C",
-          "text": "我会看这段关系是否还能继续被经营。",
+          "text": "过去的付出让我想多留一阵，但我也在看现在合不合适。",
           "score": 67
         },
         {
           "id": "D",
-          "text": "我不想因为已经投入而拖住现在。",
+          "text": "不能因为已经付出很多，就继续勉强自己。",
           "score": 0
         }
       ],
-      "sourceVersion": "pass-2-prep",
-      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+      "sourceVersion": "narrative-fix-20260709",
+      "reviewStatus": "narrative-fix-q30-q53-q55-q56-q57"
     },
     {
       "id": "v2-q56",
       "construct": "MN",
       "reverse": false,
-      "question": "在心岛旧码头，你看见许多被海风磨平的名字。对你来说，关系里的共同记忆更像什么？",
+      "question": "一段关系结束后，那些共同回忆在你心里占多大的分量？",
       "options": [
         {
           "id": "A",
-          "text": "是爱存在过的证据，我会很珍惜。",
+          "text": "占很大的分量，它们一直在我心里。",
           "score": 100
         },
         {
           "id": "B",
-          "text": "是一部分经历，但不该决定现在。",
+          "text": "有一点分量，但不会太重。",
           "score": 33
         },
         {
           "id": "C",
-          "text": "是推动我继续理解这段关系的线索。",
+          "text": "有分量，想起来的时候会想一阵。",
           "score": 67
         },
         {
           "id": "D",
-          "text": "是过去的事，我不太会反复翻看。",
+          "text": "没什么分量了，我已经向前走了。",
           "score": 0
         }
       ],
-      "sourceVersion": "pass-2-prep",
-      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+      "sourceVersion": "narrative-fix-20260709",
+      "reviewStatus": "narrative-fix-q30-q53-q55-q56-q57"
     },
     {
       "id": "v2-q57",
       "construct": "RI",
       "reverse": false,
-      "question": "关系变得很重，需要持续投入时间和心力。你更接近哪种选择？",
+      "question": "这段关系让你觉得越来越累。你更接近哪种？",
       "options": [
         {
           "id": "A",
-          "text": "如果这段关系重要，我会继续把心力放进去。",
+          "text": "虽然累，我还是想继续。",
           "score": 100
         },
         {
           "id": "B",
-          "text": "我会先评估自己还能投入多少。",
+          "text": "我会慢慢淡出，不再那么用心。",
           "score": 33
         },
         {
           "id": "C",
-          "text": "我会开始减少投入，避免继续变重。",
+          "text": "太累了，我会退出来。",
           "score": 0
         },
         {
           "id": "D",
-          "text": "我愿意继续，但前提是双方都在投入。",
+          "text": "我会减少投入，但还不会离开。",
           "score": 67
         }
       ],
-      "sourceVersion": "pass-2-prep",
-      "reviewStatus": "pass-2-prep-modified-pending-isolated-validation"
+      "sourceVersion": "narrative-fix-20260709",
+      "reviewStatus": "narrative-fix-q30-q53-q55-q56-q57"
     },
     {
       "id": "v2-q58",
