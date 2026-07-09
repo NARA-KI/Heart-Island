@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "v2-scoring-profile-alpha-1",
+  "id": "candidate-c",
+  "method": "standardized-distance",
+  "targetVectorFile": "persona-target-vectors.v2.candidate-c.json",
+  "sourceProfile": "candidate-a",
+  "standardization": {
+    "source": "training uniform set only",
+    "seed": "heart-island-v2-alpha-calibration-training-a",
+    "sampleCount": 100000,
+    "constructs": {
+      "SC": {
+        "mean": 50.039,
+        "std": 18.7062,
+        "min": 0,
+        "max": 100
+      },
+      "AU": {
+        "mean": 50.0137,
+        "std": 18.6093,
+        "min": 0,
+        "max": 100
+      },
+      "TR": {
+        "mean": 49.9923,
+        "std": 18.5906,
+        "min": 0,
+        "max": 100
+      },
+      "CL": {
+        "mean": 50.0996,
+        "std": 18.6624,
+        "min": 0,
+        "max": 100
+      },
+      "PA": {
+        "mean": 50.0327,
+        "std": 18.6631,
+        "min": 0,
+        "max": 100
+      },
+      "CM": {
+        "mean": 49.9813,
+        "std": 18.6835,
+        "min": 0,
+        "max": 100
+      },
+      "SI": {
+        "mean": 50.0185,
+        "std": 18.6383,
+        "min": 0,
+        "max": 100
+      },
+      "NV": {
+        "mean": 50.0424,
+        "std": 18.6635,
+        "min": 0,
+        "max": 100
+      },
+      "RM": {
+        "mean": 50.0673,
+        "std": 18.7292,
+        "min": 0,
+        "max": 100
+      },
+      "CS": {
+        "mean": 50.0762,
+        "std": 18.6849,
+        "min": 0,
+        "max": 100
+      },
+      "EC": {
+        "mean": 49.9819,
+        "std": 18.6417,
+        "min": 0,
+        "max": 100
+      },
+      "CR": {
+        "mean": 49.9883,
+        "std": 18.6077,
+        "min": 0,
+        "max": 100
+      },
+      "ER": {
+        "mean": 50.0539,
+        "std": 18.6057,
+        "min": 0,
+        "max": 100
+      },
+      "RI": {
+        "mean": 50.0302,
+        "std": 18.7044,
+        "min": 0,
+        "max": 100
+      },
+      "MN": {
+        "mean": 50.0098,
+        "std": 18.6319,
+        "min": 0,
+        "max": 100
+      }
+    }
+  },
+  "notes": "Experimental profile only. Public runtime remains candidate-a until manual approval."
+}

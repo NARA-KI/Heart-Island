@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "heart-island-v2-alpha-manifest-1",
+  "productVersion": "Heart Island v2.0 Alpha 2",
+  "questionnaireVersion": "v2.0-dual-mode-60-question-alpha-2",
+  "questionBankFile": "question-bank.v2.json",
+  "questionBankHash": "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9",
+  "compatibleQuestionBankHashes": [
+    "1b101a0a9a7e9b8e1e45ce22bf96dc88f2dd0781d71b931b2062a4c3cd1400e9"
+  ],
+  "scoringProfile": "candidate-a",
+  "targetVectorFile": "persona-target-vectors.v2.candidate-a.json",
+  "targetVectorHash": "f656ae63cf4f8eb1f398e92005996b347ea3348cda8894baa3b145a096c5ecd3",
+  "baselineVectorFile": "persona-target-vectors.v2.baseline.json",
+  "baselineVectorHash": "ecd622dfb5f58d42ecad6161d8b71f0c2de505c9eac2e865ec038f92ce9248e3",
+  "personaDescriptionFile": "persona-descriptions.v2.json",
+  "personaDescriptionVersion": "v2-pilot-persona-descriptions-1",
+  "personaDescriptionHash": "904987972f14576478418872a99dad5195dbb4fa5f7df2e8c73104150ede48c6",
+  "resultPageVersion": "v2-dual-quiz-complete-report-alpha-2",
+  "assetManifestVersion": "v2-alpha-assets-audit-pending",
+  "sourceCommit": "f9614f5",
+  "createdAt": "2026-07-04",
+  "notes": "Dual-mode runtime for Heart Island v2.0 Alpha 2. Candidate-A remains frozen validation candidate data, not final production parameters."
+}

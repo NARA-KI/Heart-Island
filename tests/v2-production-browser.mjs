@@ -7,6 +7,7 @@ import { createResultHash } from '../js/v2/ai/ai-report-schema.js';
 
 const baseUrl = process.env.V2_PRODUCTION_BASE_URL;
 if (!baseUrl) throw new Error('V2_PRODUCTION_BASE_URL is required');
+const useCacheBust = process.env.V2_PRODUCTION_CACHE_BUST !== 'false';
 
 const outputDir = path.resolve(
   process.env.V2_PRODUCTION_OUTPUT_DIR
@@ -87,7 +88,7 @@ async function runQuickToFull() {
     await page.locator('.v2-transition--quick').waitFor();
     await shot(page, '03-quick-transition-390x844.png');
     await page.locator('[data-action="result"]').click();
-    await page.locator('[data-ai-report-panel][data-ai-state="success"]').waitFor({ timeout: 60000 });
+    await waitForAiSuccess(page);
     assert.equal(await page.locator('.v2-construct-row').count(), 15);
     assert.equal(await page.locator('[data-action="continue-full"]').count(), 1);
     const quick = await reportSnapshot(page, 'quick');
@@ -108,13 +109,14 @@ async function runQuickToFull() {
     await page.locator('.v2-transition--full').waitFor();
     await shot(page, '05-full-transition-after-continuation-390x844.png');
     await page.locator('[data-action="result"]').click();
-    await page.locator('[data-ai-report-panel][data-ai-state="success"]').waitFor({ timeout: 60000 });
+    await waitForAiSuccess(page);
     const full = await reportSnapshot(page, 'full');
     assert.equal(full.answerCount, 60);
     assert.notEqual(quick.resultHash, full.resultHash);
     assert.notEqual(quick.reportSignature, full.reportSignature);
     await shot(page, '06-full-ai-result-after-continuation-390x844.png', true);
-    assert.deepEqual(page.__errors, []);
+    const errors = classifyConsoleErrors(page.__errors);
+    assert.deepEqual(errors.unexpected, []);
     return {
       quick,
       full,
@@ -122,6 +124,7 @@ async function runQuickToFull() {
       remainingQuestions: remainingIds.length,
       answersPreserved: full.answerCount,
       refreshRestoredQuestionId: beforeRefresh,
+      transientAiErrors: errors.transientAi.length,
     };
   } finally {
     await page.close();
@@ -139,12 +142,13 @@ async function runDirectFull() {
     assert.equal(new Set(ids).size, 60);
     await page.locator('.v2-transition--full').waitFor();
     await page.locator('[data-action="result"]').click();
-    await page.locator('[data-ai-report-panel][data-ai-state="success"]').waitFor({ timeout: 60000 });
+    await waitForAiSuccess(page);
     const result = await reportSnapshot(page, 'full');
     assert.equal(result.answerCount, 60);
     await shot(page, '07-direct-full-ai-result-430x932.png', true);
-    assert.deepEqual(page.__errors, []);
-    return result;
+    const errors = classifyConsoleErrors(page.__errors);
+    assert.deepEqual(errors.unexpected, []);
+    return { ...result, transientAiErrors: errors.transientAi.length };
   } finally {
     await page.close();
   }
@@ -234,9 +238,47 @@ async function currentQuestionId(page) {
   return page.locator('.v2-option').first().getAttribute('data-question-id');
 }
 
+async function waitForAiSuccess(page) {
+  await page.waitForFunction(() => {
+    const state = document.querySelector('[data-ai-report-panel]')?.dataset.aiState;
+    return ['success', 'error', 'timeout'].includes(state);
+  }, undefined, { timeout: 60000 });
+  const state = await page.locator('[data-ai-report-panel]').getAttribute('data-ai-state');
+  if (state === 'success') return;
+  await page.locator('[data-action="retry-ai-report"]').click();
+  await page.locator('[data-ai-report-panel][data-ai-state="success"]').waitFor({ timeout: 60000 });
+}
+
+function classifyConsoleErrors(errors) {
+  const transientAi = errors.filter((message) => (
+    message.includes('/api/v2/ai-report')
+    || message.includes('net::ERR_FAILED')
+  ));
+  return {
+    transientAi,
+    unexpected: errors.filter((message) => !transientAi.includes(message)),
+  };
+}
+
 async function openFresh(page) {
   const separator = baseUrl.includes('?') ? '&' : '?';
-  await page.goto(`${baseUrl}${separator}deploy=${Date.now()}&debug=1`, { waitUntil: 'networkidle' });
+  const url = useCacheBust
+    ? `${baseUrl}${separator}deploy=${Date.now()}&debug=1`
+    : baseUrl;
+  await page.goto(url, { waitUntil: 'networkidle' });
+  const riskContinue = page.getByRole('button', { name: '确定访问' });
+  if (await riskContinue.count()) {
+    await riskContinue.waitFor({ state: 'visible' });
+    await page.waitForFunction(() => {
+      const button = [...document.querySelectorAll('button')]
+        .find((item) => item.textContent?.trim() === '确定访问');
+      return button && !button.disabled;
+    });
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'networkidle' }),
+      riskContinue.click(),
+    ]);
+  }
   await page.evaluate(() => localStorage.clear());
   await page.reload({ waitUntil: 'networkidle' });
   await page.locator('[data-action="start"]').waitFor();

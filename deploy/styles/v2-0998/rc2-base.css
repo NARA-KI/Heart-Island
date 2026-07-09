@@ -1,0 +1,190 @@
+[data-visual-theme="rc2"] {
+  min-width: 0;
+  background: var(--rc2-paper);
+  color: var(--rc2-text-primary);
+  font-family: var(--rc2-sans);
+}
+
+[data-visual-theme="rc2"]::before,
+[data-visual-theme="rc2"]::after {
+  display: none;
+}
+
+[data-visual-theme="rc2"] .v2-page-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  padding: 0;
+}
+
+[data-visual-theme="rc2"] .v2-topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  height: auto;
+  border: 0;
+  padding: calc(18px + env(safe-area-inset-top, 0px)) var(--rc2-gutter) 0;
+  background: transparent;
+  color: rgba(238, 231, 220, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+[data-visual-theme="rc2"] #bootStatus {
+  color: inherit;
+  opacity: 0.62;
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+[data-visual-theme="rc2"] main {
+  width: 100%;
+}
+
+[data-visual-theme="rc2"] .v2-screen {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+[data-visual-theme="rc2"] .v2-eyebrow {
+  margin: 0;
+  color: var(--rc2-copper);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[data-visual-theme="rc2"] .v2-primary,
+[data-visual-theme="rc2"] .v2-ghost {
+  min-width: 44px;
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+[data-visual-theme="rc2"] .v2-primary {
+  background: var(--rc2-sea-salt);
+  color: #fbf7ef;
+}
+
+[data-visual-theme="rc2"] .v2-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+[data-visual-theme="rc2"] .v2-ghost {
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+[data-visual-theme="rc2"] .v2-note,
+[data-visual-theme="rc2"] .v2-status-message,
+[data-visual-theme="rc2"] .v2-ai-disclaimer {
+  color: var(--rc2-text-secondary);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+[data-visual-theme="rc2"] .v2-transition {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--rc2-paper);
+  color: var(--rc2-text-primary);
+  isolation: isolate;
+}
+
+[data-visual-theme="rc2"] .v2-transition h1 {
+  color: var(--rc2-ink);
+}
+
+[data-visual-theme="rc2"] .v2-transition .v2-lead {
+  color: var(--rc2-text-secondary);
+}
+
+[data-visual-theme="rc2"] .v2-transition .v2-note {
+  color: var(--rc2-text-muted);
+}
+
+[data-visual-theme="rc2"] .v2-transition__meta {
+  margin: 4px 0 26px;
+  color: var(--rc2-text-muted);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+[data-visual-theme="rc2"] .v2-transition__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 28%, rgba(111, 153, 148, 0.18), transparent 28%),
+    radial-gradient(circle at 22% 78%, rgba(197, 160, 122, 0.13), transparent 32%);
+}
+
+[data-visual-theme="rc2"] .v2-transition__glow span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(169, 121, 80, 0.42);
+  animation: v2-transition-breathe 4.8s ease-in-out infinite;
+}
+
+[data-visual-theme="rc2"] .v2-transition__glow span:nth-child(1) {
+  top: 24%;
+  right: 22%;
+}
+
+[data-visual-theme="rc2"] .v2-transition__glow span:nth-child(2) {
+  right: 34%;
+  bottom: 24%;
+  animation-delay: -1.6s;
+}
+
+[data-visual-theme="rc2"] .v2-transition__glow span:nth-child(3) {
+  top: 44%;
+  right: 12%;
+  width: 4px;
+  height: 4px;
+  animation-delay: -3.2s;
+}
+
+@keyframes v2-transition-breathe {
+  0%, 100% { opacity: 0.28; transform: translateY(0) scale(0.88); }
+  50% { opacity: 0.72; transform: translateY(-8px) scale(1); }
+}
+
+[data-visual-theme="rc2"] .v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+[data-visual-theme="rc2"] .v2-panel,
+[data-visual-theme="rc2"] .v2-question-card,
+[data-visual-theme="rc2"] .v2-result-section,
+[data-visual-theme="rc2"] .v2-result-hero {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-visual-theme="rc2"] *:focus-visible {
+  outline: 2px solid rgba(47, 111, 115, 0.72);
+  outline-offset: 4px;
+}

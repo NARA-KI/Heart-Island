@@ -1,0 +1,53 @@
+[data-visual-theme="rc2"] .v2-instructions {
+  display: grid;
+  align-content: center;
+  max-width: none;
+  min-height: 100dvh;
+  padding: calc(86px + env(safe-area-inset-top, 0px)) var(--rc2-gutter) calc(42px + env(safe-area-inset-bottom, 0px));
+  background:
+    linear-gradient(90deg, rgba(169, 121, 80, 0.08), transparent 38%),
+    var(--rc2-paper);
+  color: var(--rc2-text-on-light);
+}
+
+[data-visual-theme="rc2"] .v2-instructions > * {
+  width: min(760px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+[data-visual-theme="rc2"] .v2-instructions h1 {
+  max-width: 720px;
+  margin-top: 18px;
+  color: var(--rc2-ink);
+  font-family: var(--rc2-serif);
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+[data-visual-theme="rc2"] .v2-info-list {
+  display: grid;
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--rc2-line-light);
+}
+
+[data-visual-theme="rc2"] .v2-info-list p {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr);
+  gap: 18px;
+  min-height: auto;
+  margin: 0;
+  border-bottom: 1px solid var(--rc2-line-light);
+  padding: 18px 0;
+  color: var(--rc2-ink-soft);
+}
+
+[data-visual-theme="rc2"] .v2-info-list b {
+  color: var(--rc2-copper);
+}
+
+[data-visual-theme="rc2"] .v2-instructions .v2-actions {
+  margin-top: 32px;
+}
